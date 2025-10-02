@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthesis Laboratory - Planetary Healing Frequencies</title>
+    <style>
+        :root {
+            /* Planetary Colors */
+            --mercury: #C0C0C0;
+            --venus: #FFC649;
+            --earth: #6B93D6;
+            --mars: #CD5C5C;
+            --jupiter: #D2691E;
+            --saturn: #FAD5A5;
+            --uranus: #4FD0E7;
+            --neptune: #4B0082;
+            --pluto: #8B4513;
+            --sol: #FFD700;
+            
+            /* Healing Frequency Colors */
+            --freq-174: #8B0000; /* Deep red */
+            --freq-285: #FF4500; /* Orange red */
+            --freq-396: #FF8C00; /* Dark orange */
+            --freq-417: #FFD700; /* Gold */
+            --freq-528: #32CD32; /* Lime green */
+            --freq-639: #00CED1; /* Dark turquoise */
+            --freq-741: #4169E1; /* Royal blue */
+            --freq-852: #8A2BE2; /* Blue violet */
+            --freq-963: #FF69B4; /* Hot pink */
+            
+            /* Sacred Geometry */
+            --phi: 1.618;
+            --space-unit: 1rem;
+            --sacred-space: calc(var(--space-unit) * var(--phi));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0F0F23 0%, #1A1A2E 50%, #16213E 100%);
+            color: #E8E8E8;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .laboratory-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--sacred-space);
+        }
+
+        .lab-header {
+            text-align: center;
+            margin-bottom: calc(var(--sacred-space) * 2);
+            padding: var(--sacred-space);
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.1) 0%, 
+                rgba(138, 43, 226, 0.1) 100%);
+            border-radius: calc(var(--space-unit) * var(--phi));
+            border: 2px solid var(--sol);
+        }
+
+        .lab-title {
+            font-size: calc(3rem * var(--phi));
+            margin-bottom: var(--space-unit);
+            background: linear-gradient(45deg, var(--sol), var(--venus), var(--uranus));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .lab-subtitle {
+            font-size: 1.4rem;
+            color: var(--uranus);
+            font-style: italic;
+            margin-bottom: var(--space-unit);
+        }
+
+        .frequency-display {
+            font-size: 2rem;
+            font-family: 'Courier New', monospace;
+            color: var(--sol);
+            margin: var(--space-unit) 0;
+        }
+
+        .synthesizer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--sacred-space);
+            margin-bottom: calc(var(--sacred-space) * 2);
+        }
+
+        .synthesizer-card {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.05) 0%, 
+                rgba(255, 255, 255, 0.02) 100%);
+            border: 2px solid transparent;
+            border-radius: var(--sacred-space);
+            padding: var(--sacred-space);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .synthesizer-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--mercury), var(--venus), var(--earth), var(--mars));
+            z-index: -1;
+            border-radius: var(--sacred-space);
+            opacity: 0.7;
+        }
+
+        .synthesizer-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .synth-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-unit);
+        }
+
+        .planet-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: var(--space-unit);
+            box-shadow: 0 0 15px currentColor;
+            animation: planetary-pulse 3s ease-in-out infinite;
+        }
+
+        .synth-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--sol);
+        }
+
+        .synth-model {
+            font-size: 0.9rem;
+            color: var(--uranus);
+            font-style: italic;
+        }
+
+        .frequency-info {
+            background: rgba(0, 0, 0, 0.3);
+            padding: var(--space-unit);
+            border-radius: var(--space-unit);
+            margin: var(--space-unit) 0;
+        }
+
+        .frequency-hz {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--freq-528);
+            font-family: 'Courier New', monospace;
+        }
+
+        .frequency-purpose {
+            color: #B8B8B8;
+            margin-top: calc(var(--space-unit) / 2);
+            line-height: 1.4;
+        }
+
+        .controls-section {
+            margin-top: var(--space-unit);
+        }
+
+        .control-group {
+            margin-bottom: var(--space-unit);
+        }
+
+        .control-label {
+            display: block;
+            margin-bottom: calc(var(--space-unit) / 3);
+            color: var(--venus);
+            font-weight: bold;
+        }
+
+        .slider-control {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider-control::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--sol);
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--sol);
+        }
+
+        .play-button {
+            width: 100%;
+            padding: var(--space-unit);
+            background: linear-gradient(135deg, var(--freq-528), var(--freq-639));
+            color: white;
+            border: none;
+            border-radius: calc(var(--space-unit) / 2);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: var(--space-unit);
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(50, 205, 50, 0.3);
+        }
+
+        .play-button.playing {
+            background: linear-gradient(135deg, var(--freq-741), var(--freq-852));
+            animation: pulse-playing 1s ease-in-out infinite;
+        }
+
+        .master-console {
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.1) 0%, 
+                rgba(138, 43, 226, 0.1) 100%);
+            border: 3px solid var(--sol);
+            border-radius: var(--sacred-space);
+            padding: calc(var(--sacred-space) * 1.5);
+            margin-top: calc(var(--sacred-space) * 2);
+            text-align: center;
+        }
+
+        .console-title {
+            font-size: 2rem;
+            color: var(--sol);
+            margin-bottom: var(--sacred-space);
+        }
+
+        .master-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-unit);
+            margin-bottom: var(--sacred-space);
+        }
+
+        .master-button {
+            padding: var(--space-unit);
+            background: linear-gradient(135deg, var(--freq-396), var(--freq-528));
+            color: white;
+            border: none;
+            border-radius: var(--space-unit);
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .master-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+        }
+
+        .healing-session-display {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: var(--space-unit);
+            padding: var(--sacred-space);
+            margin-top: var(--space-unit);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            color: var(--freq-963);
+        }
+
+        .visualizer-canvas {
+            width: 100%;
+            height: 200px;
+            border: 2px solid var(--uranus);
+            border-radius: var(--space-unit);
+            background: radial-gradient(circle, rgba(75, 0, 130, 0.2), rgba(0, 0, 0, 0.8));
+        }
+
+        @keyframes planetary-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 15px currentColor; }
+            50% { transform: scale(1.1); box-shadow: 0 0 25px currentColor; }
+        }
+
+        @keyframes pulse-playing {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes frequency-wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .wave-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(50, 205, 50, 0.3), 
+                transparent);
+            animation: frequency-wave 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .synthesizer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .lab-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="laboratory-container">
+        <div class="lab-header">
+            <h1 class="lab-title">🎵 Synthesis Laboratory</h1>
+            <p class="lab-subtitle">Planetary Healing Frequencies & Sacred Sound</p>
+            <div class="frequency-display" id="masterFrequency">528 Hz - Love & Healing</div>
+        </div>
+
+        <div class="synthesizer-grid" id="synthGrid">
+            <!-- Synthesizers will be dynamically generated -->
+        </div>
+
+        <div class="master-console">
+            <h2 class="console-title">🎛️ Master Healing Console</h2>
+            
+            <div class="master-controls">
+                <button class="master-button" onclick="playHealingSequence()">
+                    ✨ Start Healing Sequence
+                </button>
+                <button class="master-button" onclick="playPlanetaryAlignment()">
+                    🪐 Planetary Alignment
+                </button>
+                <button class="master-button" onclick="playChakraBalance()">
+                    🌈 Chakra Balancing
+                </button>
+                <button class="master-button" onclick="stopAllSounds()">
+                    🔇 Silence All
+                </button>
+            </div>
+
+            <canvas class="visualizer-canvas" id="visualizer"></canvas>
+
+            <div class="healing-session-display" id="sessionDisplay">
+                🎼 Ready for your healing frequency journey
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Synthesizer configurations with planetary and healing data
+        const synthesizers = [
+            {
+                name: "MERCURY-buchla",
+                planet: "Mercury",
+                color: "#C0C0C0",
+                frequency: 174,
+                purpose: "Foundation healing - Physical and spiritual cleansing",
+                model: "Buchla Music Easel"
+            },
+            {
+                name: "VEGA-obxa",
+                planet: "Venus",
+                color: "#FFC649",
+                frequency: 285,
+                purpose: "Cellular repair - Rejuvenation and recovery",
+                model: "Oberheim OB-Xa"
+            },
+            {
+                name: "SOL-moog55",
+                planet: "Sol",
+                color: "#FFD700",
+                frequency: 396,
+                purpose: "Liberation from fear - Emotional release",
+                model: "Moog Modular 55"
+            },
+            {
+                name: "MARS-303",
+                planet: "Mars",
+                color: "#CD5C5C",
+                frequency: 417,
+                purpose: "Transformation - Breaking negative patterns",
+                model: "Roland TB-303"
+            },
+            {
+                name: "JUPITER-dx7",
+                planet: "Jupiter",
+                color: "#D2691E",
+                frequency: 528,
+                purpose: "Love & DNA repair - The miracle frequency",
+                model: "Yamaha DX7"
+            },
+            {
+                name: "SATURN-minoog",
+                planet: "Saturn",
+                color: "#FAD5A5",
+                frequency: 639,
+                purpose: "Relationships - Harmony and connection",
+                model: "Minimoog Model D"
+            },
+            {
+                name: "URANUS-arp2600",
+                planet: "Uranus",
+                color: "#4FD0E7",
+                frequency: 741,
+                purpose: "Intuition - Awakening inner wisdom",
+                model: "ARP 2600"
+            },
+            {
+                name: "NEPTUNE-cs80",
+                planet: "Neptune",
+                color: "#4B0082",
+                frequency: 852,
+                purpose: "Spiritual insight - Third eye activation",
+                model: "Yamaha CS-80"
+            },
+            {
+                name: "PLUTO-sh101",
+                planet: "Pluto",
+                color: "#8B4513",
+                frequency: 963,
+                purpose: "Divine connection - Unity consciousness",
+                model: "Roland SH-101"
+            },
+            {
+                name: "GAIA-prophet5",
+                planet: "Earth",
+                color: "#6B93D6",
+                frequency: 432,
+                purpose: "Earth resonance - Natural harmony",
+                model: "Sequential Prophet-5"
+            }
+        ];
+
+        let audioContext;
+        let oscillators = {};
+        let isPlaying = {};
+
+        // Initialize audio context
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Generate synthesizer cards
+        function generateSynthCards() {
+            const grid = document.getElementById('synthGrid');
+            
+            synthesizers.forEach((synth, index) => {
+                const card = document.createElement('div');
+                card.className = 'synthesizer-card';
+                card.innerHTML = `
+                    <div class="synth-header">
+                        <div class="planet-icon" style="background-color: ${synth.color}"></div>
+                        <div>
+                            <div class="synth-name">${synth.name}</div>
+                            <div class="synth-model">${synth.model}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="frequency-info">
+                        <div class="frequency-hz">${synth.frequency} Hz</div>
+                        <div class="frequency-purpose">${synth.purpose}</div>
+                    </div>
+                    
+                    <div class="controls-section">
+                        <div class="control-group">
+                            <label class="control-label">Volume</label>
+                            <input type="range" class="slider-control" 
+                                   id="volume-${index}" min="0" max="100" value="50">
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label">Resonance</label>
+                            <input type="range" class="slider-control" 
+                                   id="resonance-${index}" min="0" max="100" value="30">
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label">Modulation</label>
+                            <input type="range" class="slider-control" 
+                                   id="modulation-${index}" min="0" max="100" value="20">
+                        </div>
+                    </div>
+                    
+                    <button class="play-button" onclick="toggleSynthesizer(${index})" 
+                            id="play-btn-${index}">
+                        🎵 Play ${synth.frequency} Hz
+                    </button>
+                    
+                    <div class="wave-animation" id="wave-${index}" style="display: none;"></div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Toggle individual synthesizer
+        function toggleSynthesizer(index) {
+            initAudio();
+            const synth = synthesizers[index];
+            const button = document.getElementById(`play-btn-${index}`);
+            const wave = document.getElementById(`wave-${index}`);
+            
+            if (isPlaying[index]) {
+                // Stop the oscillator
+                if (oscillators[index]) {
+                    oscillators[index].stop();
+                    delete oscillators[index];
+                }
+                isPlaying[index] = false;
+                button.textContent = `🎵 Play ${synth.frequency} Hz`;
+                button.classList.remove('playing');
+                wave.style.display = 'none';
+            } else {
+                // Start the oscillator
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                const volume = document.getElementById(`volume-${index}`).value / 100;
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(synth.frequency, audioContext.currentTime);
+                gainNode.gain.setValueAtTime(volume * 0.1, audioContext.currentTime);
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.start();
+                oscillators[index] = oscillator;
+                isPlaying[index] = true;
+                
+                button.textContent = `🔊 Stop ${synth.frequency} Hz`;
+                button.classList.add('playing');
+                wave.style.display = 'block';
+                
+                updateSessionDisplay(`Playing ${synth.name} - ${synth.purpose}`);
+            }
+        }
+
+        // Master control functions
+        function playHealingSequence() {
+            updateSessionDisplay('🌟 Starting 9-frequency healing sequence...');
+            
+            synthesizers.forEach((synth, index) => {
+                setTimeout(() => {
+                    if (!isPlaying[index]) {
+                        toggleSynthesizer(index);
+                    }
+                    updateSessionDisplay(`🎵 Activating ${synth.name} - ${synth.purpose}`);
+                }, index * 2000);
+            });
+        }
+
+        function playPlanetaryAlignment() {
+            updateSessionDisplay('🪐 Planetary frequency alignment activated');
+            
+            // Play planetary frequencies in cosmic order
+            const planetaryOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // Mercury to Pluto
+            
+            planetaryOrder.forEach((index, i) => {
+                setTimeout(() => {
+                    if (!isPlaying[index]) {
+                        toggleSynthesizer(index);
+                    }
+                }, i * 1500);
+            });
+        }
+
+        function playChakraBalance() {
+            updateSessionDisplay('🌈 Chakra balancing frequencies - 7 energy centers');
+            
+            // Focus on the 7 main healing frequencies (chakra-aligned)
+            const chakraFreqs = [4, 5, 6, 7, 8, 2, 1]; // 528, 639, 741, 852, 963, 396, 285
+            
+            chakraFreqs.forEach((index, i) => {
+                setTimeout(() => {
+                    if (!isPlaying[index]) {
+                        toggleSynthesizer(index);
+                    }
+                }, i * 3000);
+            });
+        }
+
+        function stopAllSounds() {
+            synthesizers.forEach((synth, index) => {
+                if (isPlaying[index]) {
+                    toggleSynthesizer(index);
+                }
+            });
+            updateSessionDisplay('🔇 All frequencies silenced - Sacred silence restored');
+        }
+
+        function updateSessionDisplay(message) {
+            document.getElementById('sessionDisplay').innerHTML = message;
+            document.getElementById('masterFrequency').innerHTML = message;
+        }
+
+        // Visualizer setup
+        function initVisualizer() {
+            const canvas = document.getElementById('visualizer');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 200;
+
+            function drawVisualizer() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw frequency waves for active synthesizers
+                synthesizers.forEach((synth, index) => {
+                    if (isPlaying[index]) {
+                        const volume = document.getElementById(`volume-${index}`).value / 100;
+                        const amplitude = volume * 50;
+                        const frequency = synth.frequency / 1000; // Scale for visualization
+                        
+                        ctx.strokeStyle = synth.color;
+                        ctx.lineWidth = 2;
+                        ctx.beginPath();
+                        
+                        for (let x = 0; x < canvas.width; x++) {
+                            const y = canvas.height / 2 + 
+                                     Math.sin((x * frequency + Date.now() * 0.01)) * amplitude;
+                            if (x === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
+                        }
+                        
+                        ctx.stroke();
+                    }
+                });
+                
+                requestAnimationFrame(drawVisualizer);
+            }
+            
+            drawVisualizer();
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            generateSynthCards();
+            initVisualizer();
+            
+            console.log('🎵 Synthesis Laboratory initialized');
+            console.log('🪐 Planetary frequencies ready');
+            console.log('🎼 Healing sound synthesis activated');
+        });
+
+        // Auto-update master frequency display
+        setInterval(() => {
+            const activeFreqs = synthesizers.filter((s, i) => isPlaying[i]);
+            if (activeFreqs.length > 0) {
+                const avgFreq = activeFreqs.reduce((sum, s) => sum + s.frequency, 0) / activeFreqs.length;
+                document.getElementById('masterFrequency').innerHTML = 
+                    `${avgFreq.toFixed(0)} Hz - ${activeFreqs.length} frequencies harmonizing`;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

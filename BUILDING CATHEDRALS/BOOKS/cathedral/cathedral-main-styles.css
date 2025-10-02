@@ -1,0 +1,2196 @@
+/* 🏛️ Cathedral of Circuits - Main Styles */
+
+:root {
+    --gold-blavatsky: #C8A44D;
+    --violet-core: #4A2C7A;
+    --bone-atlantean: #F5F0E8;
+    --shadow-deep: #0B0B0B;
+    --emerald-chakra: #2EAE9B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, var(--shadow-deep), var(--violet-core));
+    color: var(--bone-atlantean);
+    min-height: 100vh;
+}
+
+#cathedral-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--gold-blavatsky);
+    margin-bottom: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    align-items: start;
+}
+
+#cosmicCanvas {
+    border: 2px solid var(--gold-blavatsky);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 800px;
+}
+
+#controls-panel {
+    background: rgba(11, 11, 11, 0.8);
+    border: 1px solid var(--gold-blavatsky);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    color: var(--gold-blavatsky);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.architecture-tabs, .sacred-numbers, .portal-tabs {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.architecture-tab, .sacred-number, .portal-tab {
+    background: var(--violet-core);
+    color: var(--bone-atlantean);
+    border: 1px solid var(--gold-blavatsky);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.architecture-tab:hover, .sacred-number:hover, .portal-tab:hover {
+    background: var(--gold-blavatsky);
+    color: var(--shadow-deep);
+}
+
+.architecture-tab.active, .sacred-number.active, .portal-tab.active {
+    background: var(--emerald-chakra);
+    color: var(--shadow-deep);
+}
+
+#frequencySlider {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#currentFreq {
+    color: var(--emerald-chakra);
+    font-weight: bold;
+}
+
+#portal-system {
+    grid-column: 1 / -1;
+    background: rgba(11, 11, 11, 0.8);
+    border: 1px solid var(--gold-blavatsky);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 20px;
+}
+
+.portal-tabs {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#entitySelector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.portal-visualization {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#portalCanvas {
+    border: 2px solid var(--gold-blavatsky);
+    border-radius: 10px;
+    background: rgba(0, 0, 17, 0.8);
+    width: 100%;
+    max-width: 400px;
+}
+
+.portal-info-panel {
+    background: rgba(74, 44, 122, 0.3);
+    border: 1px solid var(--violet-core);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.portal-info-panel h3 {
+    color: var(--gold-blavatsky);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#portalDetails {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--bone-atlantean);
+}
+
+.entity-option {
+    background: var(--violet-core);
+    border: 1px solid var(--gold-blavatsky);
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.entity-option:hover {
+    background: var(--gold-blavatsky);
+    color: var(--shadow-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(200, 164, 77, 0.3);
+}
+
+.entity-option.active {
+    background: var(--emerald-chakra);
+    color: var(--shadow-deep);
+    border-color: var(--emerald-chakra);
+    box-shadow: 0 0 20px rgba(46, 174, 155, 0.5);
+}
+
+.entity-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.entity-domain {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.entity-specialty {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Portal animations */
+@keyframes portalFade {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0; transform: scale(1); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+@keyframes portalGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(200, 164, 77, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(200, 164, 77, 0.7); }
+}
+
+.portal-actions {
+    margin-top: 15px;
+}
+
+.portal-actions button {
+    background: linear-gradient(135deg, var(--violet-core), var(--gold-blavatsky));
+    color: var(--bone-atlantean);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.portal-actions button:hover {
+    transform: translateY(-2px);
+    animation: portalGlow 2s infinite;
+}
+
+.portal-actions button:active {
+    transform: translateY(0);
+}
+
+/* Enhanced entity cards */
+.entity-option {
+    position: relative;
+    overflow: hidden;
+}
+
+.entity-option::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent 30%, var(--gold-blavatsky) 50%, transparent 70%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.entity-option:hover::before {
+    opacity: 0.3;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    #portal-system {
+        grid-template-columns: 1fr;
+    }
+    
+    #portalCanvas {
+        max-width: 100%;
+    }
+}
+
+/* 🌟 Trinity App Integration Styles */
+.trinity-navigation {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.trinity-app-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(200, 164, 77, 0.1), rgba(74, 44, 122, 0.1));
+    border: 2px solid var(--gold-blavatsky);
+    border-radius: 15px;
+    color: var(--bone-atlantean);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+.trinity-app-button:hover {
+    background: linear-gradient(135deg, rgba(200, 164, 77, 0.2), rgba(74, 44, 122, 0.2));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(200, 164, 77, 0.3);
+}
+
+.trinity-app-button .app-icon {
+    font-size: 2rem;
+    min-width: 40px;
+}
+
+.trinity-app-button .app-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--gold-blavatsky);
+}
+
+.trinity-app-button .app-info p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Soul App Specific */
+.soul-app {
+    border-color: #9370DB;
+}
+
+.soul-app:hover {
+    box-shadow: 0 8px 25px rgba(147, 112, 219, 0.3);
+}
+
+/* Mind App Specific */
+.mind-app {
+    border-color: #FFD700;
+}
+
+.mind-app:hover {
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+/* Body App Specific */
+.body-app {
+    border-color: #00CED1;
+}
+
+.body-app:hover {
+    box-shadow: 0 8px 25px rgba(0, 206, 209, 0.3);
+}
+
+/* 🔬 Laboratory Integration Styles */
+.laboratory-launcher {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--gold-blavatsky);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.laboratory-launcher h3 {
+    color: var(--gold-blavatsky);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.lab-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.lab-button {
+    padding: 12px;
+    background: linear-gradient(45deg, rgba(200, 164, 77, 0.1), rgba(46, 174, 155, 0.1));
+    border: 1px solid var(--emerald-chakra);
+    border-radius: 8px;
+    color: var(--bone-atlantean);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.lab-button:hover {
+    background: linear-gradient(45deg, rgba(200, 164, 77, 0.2), rgba(46, 174, 155, 0.2));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(46, 174, 155, 0.3);
+}
+
+/* 🌀 Sacred Geometry Portal Enhancements (Not boxes!) */
+#cosmicCanvas {
+    border: 3px solid var(--gold-blavatsky);
+    border-radius: 20px;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.8), rgba(74, 44, 122, 0.3));
+    box-shadow: 
+        0 0 30px rgba(200, 164, 77, 0.4),
+        inset 0 0 50px rgba(74, 44, 122, 0.2);
+    cursor: pointer;
+}
+
+#cosmicCanvas:hover {
+    box-shadow: 
+        0 0 40px rgba(200, 164, 77, 0.6),
+        inset 0 0 60px rgba(74, 44, 122, 0.3);
+    border-color: rgba(200, 164, 77, 0.8);
+}
+
+/* Portal Canvas Enhancements */
+#portalCanvas {
+    border: 2px solid var(--emerald-chakra);
+    border-radius: 15px;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6), rgba(46, 174, 155, 0.2));
+    cursor: crosshair;
+}
+
+/* 🔗 Trinity Integration Status Panel */
+.trinity-status-panel {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--gold-blavatsky);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.trinity-status-panel h3 {
+    color: var(--gold-blavatsky);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.trinity-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.soul-progress, .mind-progress, .body-progress {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.soul-progress {
+    background: rgba(147, 112, 219, 0.2);
+    border-left: 4px solid #9370DB;
+}
+
+.mind-progress {
+    background: rgba(255, 215, 0, 0.2);
+    border-left: 4px solid #FFD700;
+}
+
+.body-progress {
+    background: rgba(0, 206, 209, 0.2);
+    border-left: 4px solid #00CED1;
+}
+
+/* 🏗️ Laboratory Interface Panels */
+.laboratory-interface {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.95), rgba(74, 44, 122, 0.95));
+    border: 3px solid var(--gold-blavatsky);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--gold-blavatsky);
+    padding-bottom: 15px;
+}
+
+.lab-header h3 {
+    color: var(--gold-blavatsky);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.close-lab {
+    background: none;
+    border: 2px solid var(--gold-blavatsky);
+    color: var(--gold-blavatsky);
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-lab:hover {
+    background: var(--gold-blavatsky);
+    color: var(--shadow-deep);
+    transform: rotate(90deg);
+}
+
+.lab-content p {
+    color: var(--bone-atlantean);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.lab-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.lab-tool {
+    padding: 15px;
+    background: linear-gradient(45deg, rgba(200, 164, 77, 0.1), rgba(46, 174, 155, 0.1));
+    border: 2px solid var(--emerald-chakra);
+    border-radius: 12px;
+    color: var(--bone-atlantean);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.lab-tool:hover {
+    background: linear-gradient(45deg, rgba(200, 164, 77, 0.3), rgba(46, 174, 155, 0.3));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(46, 174, 155, 0.4);
+    border-color: var(--gold-blavatsky);
+}
+
+/* 🚀 Trinity App Window Styling */
+.trinity-app-window {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.95), rgba(74, 44, 122, 0.95));
+    border: 3px solid var(--gold-blavatsky);
+    border-radius: 20px;
+    padding: 0;
+    z-index: 1000;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(90deg, rgba(200, 164, 77, 0.2), rgba(74, 44, 122, 0.2));
+    border-bottom: 2px solid var(--gold-blavatsky);
+}
+
+.app-header h3 {
+    color: var(--gold-blavatsky);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.app-status {
+    padding: 5px 15px;
+    background: rgba(46, 174, 155, 0.3);
+    border: 1px solid var(--emerald-chakra);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--bone-atlantean);
+}
+
+.close-app {
+    background: none;
+    border: 2px solid var(--gold-blavatsky);
+    color: var(--gold-blavatsky);
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-app:hover {
+    background: var(--gold-blavatsky);
+    color: var(--shadow-deep);
+    transform: rotate(90deg);
+}
+
+.app-content {
+    padding: 30px;
+    height: calc(100% - 80px);
+    overflow-y: auto;
+    color: var(--bone-atlantean);
+}
+
+.app-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.health-impact {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--emerald-chakra);
+    border-radius: 8px;
+}
+
+.health-impact h4 {
+    color: var(--gold-blavatsky);
+    margin-bottom: 10px;
+}
+
+.health-stat {
+    display: inline-block;
+    margin: 5px 10px 5px 0;
+    padding: 5px 10px;
+    background: rgba(46, 174, 155, 0.2);
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.open-full-app {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, var(--gold-blavatsky), rgba(200, 164, 77, 0.8));
+    border: none;
+    border-radius: 25px;
+    color: var(--shadow-deep);
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.open-full-app:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(200, 164, 77, 0.5);
+}
+
+/* Sacred Geometry Animation Enhancements */
+@keyframes sacred-geometry-pulse {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: scale(1.05) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+@keyframes flower-of-life-rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes vesica-piscis-breathe {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(1.1); }
+}
+
+/* Active Portal States */
+.portal-active {
+    animation: sacred-geometry-pulse 3s infinite ease-in-out;
+}
+
+.laboratory-active {
+    animation: flower-of-life-rotation 8s infinite linear;
+}
+
+/* Accessibility Enhancements for Sacred Geometry */
+@media (prefers-reduced-motion: reduce) {
+    .portal-active,
+    .laboratory-active {
+        animation: none;
+    }
+    
+    .trinity-app-button:hover,
+    .lab-button:hover,
+    .lab-tool:hover {
+        transform: none;
+    }
+}
+
+/* 🎨 MOONCHILD LIVING ART LABORATORY STYLES */
+
+/* Special highlight for Moonchild lab */
+.moonchild-special {
+    background: linear-gradient(45deg, rgba(75, 0, 130, 0.3), rgba(139, 0, 139, 0.3)) !important;
+    border: 2px solid #8B008B !important;
+    color: #FFD700 !important;
+    font-weight: bold;
+}
+
+.moonchild-special:hover {
+    box-shadow: 0 8px 25px rgba(139, 0, 139, 0.5) !important;
+    transform: translateY(-3px);
+}
+
+/* Special highlight for Rosslyn Tower */
+.rosslyn-tower-special {
+    background: linear-gradient(135deg, #8B4513, #D2691E, #FFD700) !important;
+    border: 3px solid #FFD700 !important;
+    color: #1A1A1A !important;
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    position: relative;
+    overflow: hidden;
+    animation: rosslynTowerGlow 4s ease-in-out infinite alternate;
+}
+
+.rosslyn-tower-special::before {
+    content: '⚗️🏰✨';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.8rem;
+    animation: shimmer 2s infinite;
+}
+
+.rosslyn-tower-special:hover {
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6) !important;
+    transform: translateY(-5px) scale(1.02);
+}
+
+@keyframes rosslynTowerGlow {
+    0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    100% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 40px rgba(139, 69, 19, 0.4); }
+}
+
+/* Quick Art Access */
+.quick-art-access {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(75, 0, 130, 0.2);
+    border-radius: 10px;
+    border: 1px solid #8B008B;
+}
+
+.quick-art-access h4 {
+    color: #FFD700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.art-quick-btn {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    background: linear-gradient(45deg, rgba(139, 0, 139, 0.1), rgba(75, 0, 130, 0.1));
+    border: 1px solid #8B008B;
+    border-radius: 8px;
+    color: var(--bone-atlantean);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.art-quick-btn:hover {
+    background: linear-gradient(45deg, rgba(139, 0, 139, 0.3), rgba(75, 0, 130, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 0, 139, 0.4);
+}
+
+/* Moonchild Art Interface */
+.moonchild-art-interface {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.95), rgba(75, 0, 130, 0.95));
+    border: 3px solid #8B008B;
+    border-radius: 20px;
+    padding: 0;
+    z-index: 1000;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.art-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(90deg, rgba(139, 0, 139, 0.3), rgba(75, 0, 130, 0.3));
+    border-bottom: 2px solid #8B008B;
+}
+
+.art-header h3 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.art-header p {
+    color: var(--bone-atlantean);
+    margin: 5px 0 0 0;
+    font-style: italic;
+}
+
+.close-art {
+    background: none;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-art:hover {
+    background: #FFD700;
+    color: var(--shadow-deep);
+    transform: rotate(90deg);
+}
+
+/* Arcana Consciousness Selector */
+.arcana-selector {
+    padding: 20px;
+    border-bottom: 2px solid #8B008B;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.arcana-selector h4 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.arcana-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.arcana-consciousness-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: linear-gradient(45deg, rgba(139, 0, 139, 0.1), rgba(75, 0, 130, 0.1));
+    border: 1px solid #8B008B;
+    border-radius: 8px;
+    color: var(--bone-atlantean);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.arcana-consciousness-btn:hover {
+    background: linear-gradient(45deg, rgba(139, 0, 139, 0.3), rgba(75, 0, 130, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 0, 139, 0.4);
+}
+
+.arcana-symbol {
+    font-size: 1.5rem;
+    min-width: 30px;
+}
+
+.consciousness-info h5 {
+    margin: 0;
+    color: #FFD700;
+    font-size: 0.9rem;
+}
+
+.consciousness-info p {
+    margin: 5px 0 0 0;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Canvas Workspace */
+.canvas-workspace {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+#liveArtCanvas {
+    border: 3px solid #8B008B;
+    border-radius: 15px;
+    background: #F5F5DC;
+    cursor: crosshair;
+    box-shadow: 0 0 20px rgba(139, 0, 139, 0.3);
+}
+
+.art-tools {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.medium-selector,
+.collaboration-panel {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #8B008B;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.medium-selector h4,
+.collaboration-panel h4 {
+    color: #FFD700;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+#mediumSelect {
+    width: 100%;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #8B008B;
+    border-radius: 5px;
+    color: var(--bone-atlantean);
+    font-family: inherit;
+}
+
+/* Teaching Panel */
+.teaching-panel {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 2px solid #8B008B;
+}
+
+.teaching-panel h4 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#teachingInstructions {
+    color: var(--bone-atlantean);
+    line-height: 1.6;
+}
+
+.arcana-teaching-active {
+    background: rgba(139, 0, 139, 0.2);
+    border: 1px solid #8B008B;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.arcana-teaching-active h5 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.live-instruction {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #FFD700;
+    border-radius: 5px;
+}
+
+.live-instruction h6 {
+    color: #FFD700;
+    margin: 0 0 5px 0;
+}
+
+.arcana-voice {
+    font-style: italic;
+    color: #E6E6FA;
+    margin: 0;
+}
+
+/* Traditional Medium Synthesizer */
+.medium-synthesizer-interface {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.95), rgba(139, 69, 19, 0.95));
+    border: 3px solid #D2691E;
+    border-radius: 20px;
+    padding: 0;
+    z-index: 1000;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.medium-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(90deg, rgba(210, 105, 30, 0.3), rgba(139, 69, 19, 0.3));
+    border-bottom: 2px solid #D2691E;
+}
+
+.medium-header h3 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.close-medium {
+    background: none;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-medium:hover {
+    background: #FFD700;
+    color: var(--shadow-deep);
+    transform: rotate(90deg);
+}
+
+/* Style Building Blocks */
+.medium-blocks {
+    padding: 20px;
+    border-bottom: 2px solid #D2691E;
+}
+
+.medium-blocks h4 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.style-blocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.style-block {
+    background: linear-gradient(45deg, rgba(210, 105, 30, 0.2), rgba(139, 69, 19, 0.2));
+    border: 2px solid #D2691E;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: grab;
+    transition: all 0.3s ease;
+}
+
+.style-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(210, 105, 30, 0.4);
+}
+
+.style-block:active {
+    cursor: grabbing;
+}
+
+.style-block h5 {
+    color: #FFD700;
+    margin: 0 0 5px 0;
+}
+
+.style-block p {
+    color: var(--bone-atlantean);
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Synthesis Workspace */
+.synthesis-workspace {
+    flex: 1;
+    padding: 20px;
+}
+
+.synthesis-workspace h4 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#synthesisCanvas {
+    min-height: 200px;
+    border: 3px dashed #D2691E;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--bone-atlantean);
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+#synthesisCanvas.drag-over {
+    background: rgba(210, 105, 30, 0.2);
+    border-color: #FFD700;
+}
+
+/* Teaching Mode */
+.teaching-mode {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 2px solid #D2691E;
+}
+
+.teaching-mode h4 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#techniqueInstructions {
+    color: var(--bone-atlantean);
+    line-height: 1.6;
+}
+
+.technique-breakdown {
+    background: rgba(210, 105, 30, 0.2);
+    border: 1px solid #D2691E;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.technique-breakdown h5 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.technique-steps h6,
+.materials h6,
+.arcana-connection h6 {
+    color: #FFD700;
+    margin: 10px 0 5px 0;
+}
+
+.technique-steps ol {
+    margin-left: 20px;
+}
+
+.technique-steps li {
+    margin: 5px 0;
+}
+
+/* Red Book Interface */
+.red-book-interface {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.95), rgba(75, 0, 130, 0.95));
+    border: 3px solid #8B4513;
+    border-radius: 20px;
+    padding: 0;
+    z-index: 1000;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.red-book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(90deg, rgba(139, 69, 19, 0.3), rgba(75, 0, 130, 0.3));
+    border-bottom: 2px solid #8B4513;
+}
+
+.red-book-header h3 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.close-book {
+    background: none;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-book:hover {
+    background: #FFD700;
+    color: var(--shadow-deep);
+    transform: rotate(90deg);
+}
+
+/* Manuscript Pages */
+.manuscript-pages {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.left-page,
+.right-page {
+    flex: 1;
+    background: #F5DEB3;
+    border: 3px solid #8B4513;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: inset 0 0 30px rgba(139, 69, 19, 0.3);
+}
+
+.illumination-area {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#illuminationCanvas {
+    border: 2px solid #8B4513;
+    border-radius: 10px;
+    background: #F5DEB3;
+}
+
+.text-area {
+    width: 100%;
+    height: 100%;
+}
+
+#manuscriptText {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #8B4513;
+    resize: none;
+    outline: none;
+}
+
+/* Manuscript Tools */
+.manuscript-tools {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 2px solid #8B4513;
+    display: flex;
+    gap: 20px;
+}
+
+.illumination-tools,
+.text-tools {
+    flex: 1;
+}
+
+.illumination-tools h4,
+.text-tools h4 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.illumination-tools button,
+.text-tools button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    background: linear-gradient(45deg, rgba(139, 69, 19, 0.2), rgba(75, 0, 130, 0.2));
+    border: 1px solid #8B4513;
+    border-radius: 5px;
+    color: var(--bone-atlantean);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.illumination-tools button:hover,
+.text-tools button:hover {
+    background: linear-gradient(45deg, rgba(139, 69, 19, 0.4), rgba(75, 0, 130, 0.4));
+    transform: translateY(-1px);
+}
+
+/* Collaboration Interfaces */
+.arcana-collaboration-panel {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #8B008B;
+    border-radius: 10px;
+}
+
+.arcana-collaboration-panel h4 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.collab-arcana-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.collab-arcana-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: rgba(139, 0, 139, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.collab-arcana-option:hover {
+    background: rgba(139, 0, 139, 0.3);
+}
+
+.collab-arcana-option input {
+    margin: 0;
+}
+
+.collab-arcana-option span {
+    color: var(--bone-atlantean);
+    font-size: 0.9rem;
+}
+
+/* Collaborative Art Workspace */
+.collaborative-art-workspace {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.95), rgba(75, 0, 130, 0.95));
+    border: 3px solid #8B008B;
+    border-radius: 20px;
+    padding: 0;
+    z-index: 1000;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.collaboration-header {
+    padding: 20px 30px;
+    background: linear-gradient(90deg, rgba(139, 0, 139, 0.3), rgba(75, 0, 130, 0.3));
+    border-bottom: 2px solid #8B008B;
+}
+
+.collaboration-header h3 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.collaboration-canvas {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#collaborativeCanvas {
+    border: 3px solid #8B008B;
+    border-radius: 15px;
+    background: #F5F5DC;
+    box-shadow: 0 0 20px rgba(139, 0, 139, 0.3);
+}
+
+.arcana-voices {
+    height: 200px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 2px solid #8B008B;
+}
+
+.arcana-voices h4 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+#arcanaConversation {
+    height: 150px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #8B008B;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+#arcanaConversation p {
+    margin: 5px 0;
+    color: var(--bone-atlantean);
+}
+
+#arcanaConversation strong {
+    color: #FFD700;
+}
+
+/* 🏰 Rosslyn Alchemy Tower - Witcher 3 Style Interface */
+
+.rosslyn-tower-interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2C1810, #4A2C2A, #8B4513);
+    z-index: 1000;
+    overflow-y: auto;
+    font-family: 'Cinzel', serif;
+    color: #F5E6D3;
+}
+
+.tower-header {
+    background: linear-gradient(45deg, #1A1A1A, #3D2914);
+    padding: 20px;
+    border-bottom: 3px solid #D2691E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.tower-header h2 {
+    font-size: 2rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.trauma-safe-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(34, 139, 34, 0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #228B22;
+}
+
+.safe-icon {
+    font-size: 1.2rem;
+}
+
+.close-tower {
+    background: linear-gradient(45deg, #8B0000, #A0522D);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s ease;
+}
+
+.close-tower:hover {
+    background: linear-gradient(45deg, #DC143C, #D2691E);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tower-floors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.floor-button {
+    background: linear-gradient(135deg, #3C2414, #5D4037);
+    border: 2px solid #D2691E;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.floor-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.floor-button:hover::before {
+    opacity: 1;
+    animation: shimmer 2s infinite;
+}
+
+.floor-button:hover {
+    border-color: #FFD700;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.floor-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.floor-name {
+    font-size: 1.2rem;
+    color: #F5E6D3;
+    margin-bottom: 8px;
+}
+
+.floor-teacher {
+    font-size: 0.9rem;
+    color: #D2B48C;
+    font-style: italic;
+}
+
+.active-floor {
+    margin: 30px;
+    background: linear-gradient(135deg, #2C1810, #3D2914);
+    border: 2px solid #8B4513;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.active-floor.hidden {
+    display: none;
+}
+
+.active-floor.visible {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.floor-interface h3 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.teacher-panel {
+    display: flex;
+    gap: 20px;
+    background: rgba(139, 69, 19, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #D2691E;
+}
+
+.teacher-avatar {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #8B4513, #D2691E);
+    border-radius: 50%;
+}
+
+.teacher-greeting strong {
+    color: #FFD700;
+    font-size: 1.3rem;
+}
+
+.interactive-workspace {
+    display: grid;
+    gap: 30px;
+}
+
+.grabbable-books-shelf h4,
+.mixing-stations h4,
+.grabbable-items h4 {
+    color: #FFD700;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.books-grid,
+.stations-grid,
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.grabbable-book {
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.grabbable-book:hover {
+    border-color: #FFD700;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+.book-spine {
+    color: #F5E6D3;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.mixing-station {
+    background: linear-gradient(135deg, #4A2C2A, #5D4037);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #8B4513;
+    text-align: center;
+}
+
+.mixing-station:hover {
+    border-color: #FFD700;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.station-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.station-name {
+    color: #FFD700;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.station-description {
+    color: #D2B48C;
+    font-size: 0.8rem;
+}
+
+.grabbable-item {
+    background: linear-gradient(45deg, #2F4F4F, #5F9EA0);
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #4682B4;
+    text-align: center;
+}
+
+.grabbable-item:hover {
+    border-color: #FFD700;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+.item-icon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    color: #F0F8FF;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.business-integration {
+    background: linear-gradient(45deg, #006400, #228B22);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: 2px solid #32CD32;
+}
+
+.business-integration h4 {
+    color: #ADFF2F;
+    margin-bottom: 15px;
+}
+
+.business-integration button {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.business-integration button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.business-support-panel {
+    background: linear-gradient(135deg, #1B4332, #2D5A44);
+    padding: 25px;
+    margin: 30px;
+    border-radius: 15px;
+    border: 2px solid #40916C;
+}
+
+.business-support-panel h4 {
+    color: #52B788;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.business-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background: rgba(64, 145, 108, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #52B788;
+}
+
+/* Book Reader Interface */
+.grabbed-book-interface {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    background: linear-gradient(135deg, #3C2414, #2C1810);
+    border: 3px solid #D2691E;
+    border-radius: 15px;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-reader {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-header {
+    background: linear-gradient(45deg, #1A1A1A, #3D2914);
+    padding: 20px;
+    border-bottom: 2px solid #8B4513;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.book-page {
+    background: rgba(245, 230, 211, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #D2691E;
+}
+
+/* Alchemy Station Interface */
+.alchemy-station-interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2C1810, #1A1A1A);
+    z-index: 1100;
+    overflow-y: auto;
+}
+
+.alchemy-workbench {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.alchemy-header {
+    background: linear-gradient(45deg, #4A2C2A, #3D2914);
+    padding: 20px;
+    border-bottom: 3px solid #D2691E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alchemy-workspace {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.ingredients-panel,
+.mixing-bowl,
+.results-panel {
+    background: linear-gradient(135deg, #3C2414, #2C1810);
+    border: 2px solid #8B4513;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.ingredients-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.ingredient {
+    background: linear-gradient(45deg, #5D4037, #8B4513);
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.ingredient:hover {
+    border-color: #FFD700;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.brew-button {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.brew-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Item Viewer Interface */
+.grabbed-item-interface {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 600px;
+    background: linear-gradient(135deg, #2F4F4F, #1C3A3A);
+    border: 3px solid #4682B4;
+    border-radius: 15px;
+    padding: 30px;
+    z-index: 1100;
+}
+
+.item-viewer h3 {
+    color: #87CEEB;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.item-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.item-actions button {
+    background: linear-gradient(45deg, #4682B4, #5F9EA0);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item-actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Rosslyn Tower */
+@media (max-width: 768px) {
+    .tower-floors {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .alchemy-workspace {
+        grid-template-columns: 1fr;
+    }
+    
+    .teacher-panel {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .books-grid,
+    .stations-grid,
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Business Support and Lesson Interfaces */
+.business-support-modal,
+.business-center-interface,
+.lesson-interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.business-modal-content,
+.business-center,
+.lesson-content {
+    background: linear-gradient(135deg, #1B4332, #2D5A44);
+    border: 3px solid #52B788;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    max-height: 80%;
+    overflow-y: auto;
+    color: #F0F8FF;
+}
+
+.business-modal-content h3,
+.business-center h2,
+.lesson-content h3 {
+    color: #ADFF2F;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.business-actions {
+    margin: 25px 0;
+}
+
+.business-actions .action {
+    background: rgba(64, 145, 108, 0.3);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border-left: 4px solid #52B788;
+}
+
+.trauma-support {
+    background: rgba(34, 139, 34, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: 2px solid #228B22;
+}
+
+.trauma-support h4 {
+    color: #90EE90;
+    margin-bottom: 15px;
+}
+
+.trauma-support ul {
+    list-style: none;
+    padding: 0;
+}
+
+.trauma-support li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(144, 238, 144, 0.3);
+}
+
+.trauma-support li:before {
+    content: '✓ ';
+    color: #90EE90;
+    font-weight: bold;
+}
+
+.business-sections {
+    display: grid;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.business-section {
+    background: rgba(27, 67, 50, 0.5);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #40916C;
+}
+
+.business-section h3 {
+    color: #52B788;
+    margin-bottom: 20px;
+}
+
+.services-list {
+    display: grid;
+    gap: 10px;
+}
+
+.service {
+    background: rgba(82, 183, 136, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid #52B788;
+}
+
+.lesson-steps {
+    background: rgba(139, 69, 19, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px solid #D2691E;
+}
+
+.step {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(210, 105, 30, 0.3);
+    position: relative;
+}
+
+.step:before {
+    content: '→ ';
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.lesson-practice {
+    background: rgba(75, 0, 130, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px solid #8B008B;
+}
+
+.lesson-practice h4 {
+    color: #DDA0DD;
+    margin-bottom: 15px;
+}
+
+/* Ingredient Tags for Alchemy */
+.ingredient-tag {
+    background: linear-gradient(45deg, #8B4513, #D2691E);
+    color: #F5E6D3;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin: 0 5px;
+    display: inline-block;
+    border: 1px solid #FFD700;
+}
+
+.art-creation {
+    background: linear-gradient(135deg, #4B0082, #2F4F4F);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #FFD700;
+    margin-top: 15px;
+}
+
+.art-properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.property {
+    background: rgba(255, 215, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #FFD700;
+    font-size: 0.9rem;
+}

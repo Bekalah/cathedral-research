@@ -1,0 +1,100 @@
+name: 📚 Deploy BOOKS Collection to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+        
+      - name: 🏗️ Build BOOKS collection site
+        run: |
+          echo "📚 Building BOOKS collection site..."
+          mkdir -p _site
+          
+          # Copy main documentation and HTML files
+          cp -r *.html *.md _site/ 2>/dev/null || echo "No HTML/MD files to copy"
+          
+          # Create a simple index if none exists
+          if [ ! -f "_site/index.html" ]; then
+            cat > _site/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>📚 BOOKS Collection</title>
+              <style>
+                  body { font-family: 'Georgia', serif; margin: 2rem; background: #1a1a2e; color: #eee; }
+                  h1 { color: #ff6b6b; text-align: center; }
+                  .collection { max-width: 800px; margin: 0 auto; }
+                  .item { margin: 1rem 0; padding: 1rem; background: #16213e; border-radius: 8px; }
+                  a { color: #4ecdc4; text-decoration: none; }
+                  a:hover { text-decoration: underline; }
+              </style>
+          </head>
+          <body>
+              <div class="collection">
+                  <h1>📚 BOOKS Collection</h1>
+                  <div class="item">
+                      <h2><a href="cathedral/">🏛️ Cathedral</a></h2>
+                      <p>The unified Cathedral monorepo with Codex 144:99, Living Arcanae, and Fusion Kink Heaven.</p>
+                  </div>
+                  <div class="item">
+                      <h2>📖 Documentation</h2>
+                      <p>Repository consolidation, integration reports, and architectural documentation.</p>
+                  </div>
+              </div>
+          </body>
+          </html>
+          EOF
+          fi
+          
+          # Copy cathedral files if present (as submodule)
+          if [ -d "cathedral" ]; then
+            echo "📁 Copying Cathedral content..."
+            mkdir -p _site/cathedral
+            cp -r cathedral/*.html cathedral/*.css cathedral/*.js _site/cathedral/ 2>/dev/null || echo "No web files in cathedral"
+            
+            # If cathedral has its own built files, copy those
+            if [ -d "cathedral/dist" ]; then
+              cp -r cathedral/dist/* _site/cathedral/ 2>/dev/null || true
+            fi
+            if [ -d "cathedral/apps/web/dist" ]; then
+              cp -r cathedral/apps/web/dist/* _site/cathedral/ 2>/dev/null || true
+            fi
+          fi
+          
+          echo "📁 Final site structure:"
+          find _site -type f | head -20
+        
+      - name: 🌐 Setup GitHub Pages
+        uses: actions/configure-pages@v4
+        
+      - name: 📤 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_site'
+          
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,143 @@
+{
+  "_meta": {
+    "language": "en",
+    "language_name": "English",
+    "file": "tarot.json",
+    "status": "base",
+    "completion": "100%",
+    "translator_notes": "Base English Tarot terminology - maintain traditional naming conventions",
+    "rtl": false
+  },
+  "major_arcana": {
+    "0_fool": "The Fool",
+    "1_magician": "The Magician", 
+    "2_high_priestess": "The High Priestess",
+    "3_empress": "The Empress",
+    "4_emperor": "The Emperor",
+    "5_hierophant": "The Hierophant",
+    "6_lovers": "The Lovers",
+    "7_chariot": "The Chariot",
+    "8_strength": "Strength",
+    "9_hermit": "The Hermit",
+    "10_wheel_fortune": "Wheel of Fortune",
+    "11_justice": "Justice",
+    "12_hanged_man": "The Hanged Man",
+    "13_death": "Death",
+    "14_temperance": "Temperance",
+    "15_devil": "The Devil",
+    "16_tower": "The Tower",
+    "17_star": "The Star",
+    "18_moon": "The Moon",
+    "19_sun": "The Sun", 
+    "20_judgement": "Judgement",
+    "21_world": "The World"
+  },
+  "minor_arcana_suits": {
+    "cups": "Cups",
+    "wands": "Wands",
+    "swords": "Swords", 
+    "pentacles": "Pentacles",
+    "chalices": "Chalices",
+    "rods": "Rods",
+    "staves": "Staves",
+    "coins": "Coins",
+    "discs": "Discs"
+  },
+  "court_cards": {
+    "page": "Page",
+    "knight": "Knight",
+    "queen": "Queen", 
+    "king": "King",
+    "princess": "Princess",
+    "prince": "Prince"
+  },
+  "numbers": {
+    "ace": "Ace",
+    "two": "Two",
+    "three": "Three",
+    "four": "Four",
+    "five": "Five",
+    "six": "Six",
+    "seven": "Seven",
+    "eight": "Eight",
+    "nine": "Nine",
+    "ten": "Ten"
+  },
+  "reading_types": {
+    "single_card": "Single Card Reading",
+    "three_card": "Three Card Spread", 
+    "celtic_cross": "Celtic Cross",
+    "horseshoe": "Horseshoe Spread",
+    "relationship": "Relationship Spread",
+    "career": "Career Spread",
+    "spiritual": "Spiritual Guidance",
+    "daily_draw": "Daily Draw",
+    "weekly": "Weekly Forecast",
+    "monthly": "Monthly Overview",
+    "yearly": "Yearly Outlook"
+  },
+  "positions": {
+    "past": "Past",
+    "present": "Present",
+    "future": "Future",
+    "situation": "Current Situation",
+    "challenge": "Challenge",
+    "outcome": "Outcome",
+    "advice": "Advice", 
+    "external_influences": "External Influences",
+    "hopes_fears": "Hopes and Fears",
+    "final_outcome": "Final Outcome",
+    "heart_matter": "Heart of the Matter",
+    "self": "Self",
+    "environment": "Environment"
+  },
+  "meanings": {
+    "upright": "Upright Meaning",
+    "reversed": "Reversed Meaning", 
+    "keywords": "Keywords",
+    "interpretation": "Interpretation",
+    "guidance": "Guidance",
+    "lesson": "Lesson",
+    "energy": "Energy",
+    "theme": "Theme",
+    "message": "Message",
+    "insight": "Insight"
+  },
+  "elements_suits": {
+    "fire_wands": "Fire - Wands - Passion, Creativity, Action",
+    "water_cups": "Water - Cups - Emotion, Intuition, Relationships",
+    "air_swords": "Air - Swords - Thought, Communication, Conflict", 
+    "earth_pentacles": "Earth - Pentacles - Material, Practical, Resources"
+  },
+  "actions": {
+    "shuffle": "Shuffle Cards",
+    "cut_deck": "Cut the Deck",
+    "draw_card": "Draw Card",
+    "flip_card": "Flip Card",
+    "new_spread": "New Spread", 
+    "save_reading": "Save Reading",
+    "share_reading": "Share Reading",
+    "print_reading": "Print Reading",
+    "reset_deck": "Reset Deck",
+    "choose_spread": "Choose Spread",
+    "select_deck": "Select Deck"
+  },
+  "deck_info": {
+    "total_cards": "78 Cards Total",
+    "major_arcana_count": "22 Major Arcana",
+    "minor_arcana_count": "56 Minor Arcana", 
+    "four_suits": "Four Suits",
+    "court_cards_per_suit": "4 Court Cards per Suit",
+    "pip_cards_per_suit": "10 Pip Cards per Suit"
+  },
+  "guidance": {
+    "trust_intuition": "Trust your intuition when interpreting the cards",
+    "personal_meaning": "Consider what each card means personally to you",
+    "context_important": "Context and card combinations are important",
+    "not_fortune_telling": "Tarot is for guidance, not fortune telling",
+    "free_will": "You always have free will to change your path", 
+    "meditation_tool": "Use cards as a meditation and reflection tool",
+    "journal_readings": "Consider journaling about your readings",
+    "professional_reader": "Consult a professional reader for deeper insights"
+  }
+}

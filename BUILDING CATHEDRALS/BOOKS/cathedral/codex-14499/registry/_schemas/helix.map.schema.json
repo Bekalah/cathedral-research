@@ -1,0 +1,47 @@
+{
+  "$id": "helix.map.schema.json",
+  "schema_version": "1.0.0",
+  "type": "object",
+  "required": ["merge_strategy","links"],
+  "properties": {
+    "merge_strategy": { "type": "string", "enum": ["append"] },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["arcana_id","node_id","bond","weights","emit"],
+        "properties": {
+          "arcana_id": { "type": "string" },
+          "node_id": { "type": "string", "description": "Codex node id (spiral/tesseract/temple)" },
+          "bond": {
+            "type": "object",
+            "required": ["resonance_keys"],
+            "properties": {
+              "resonance_keys": {
+                "type": "array",
+                "items": { "type": "string", "enum": ["element","degree","planet","zodiac","angel","daemon","color"] }
+              }
+            }
+          },
+          "weights": {
+            "type": "object",
+            "properties": {
+              "ritual": { "type": "number" },
+              "lore": { "type": "number" },
+              "combat": { "type": "number" },
+              "puzzle": { "type": "number" }
+            }
+          },
+          "emit": {
+            "type": "object",
+            "required": ["seed","params"],
+            "properties": {
+              "seed": { "type": "string" },
+              "params": { "type": "object" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

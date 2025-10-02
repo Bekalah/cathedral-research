@@ -1,0 +1,67 @@
+{
+  "$schema": "internal/audio-map.schema.json",
+  "version": 1,
+  "generated": "2025-10-01T00:00:00Z",
+  "motifs": [
+    {
+      "id": "primordial-seed",
+      "energy": [1,2],
+      "mode": "aeolian",
+      "palette": ["soft_pad","low_drone"],
+      "family": "pad",
+      "layers": ["soft-noise","low-sine","slow-filter"],
+      "description": "Foundational quiet field; establishes safety and grounding.",
+      "safety": true
+    },
+    {
+      "id": "ascending-veil",
+      "energy": [2,4],
+      "mode": "lydian",
+      "palette": ["bell_glass","shimmer_choir"],
+      "family": "texture",
+      "layers": ["glass-bell","shimmer-harmonics"],
+      "description": "Gentle upward harmonic unveiling.",
+      "safety": true
+    },
+    {
+      "id": "threshold-heart",
+      "energy": [4,7],
+      "mode": "dorian",
+      "palette": ["warm_strings","pulse_bass"],
+      "family": "support",
+      "layers": ["warm-strings","pulse-bass"],
+      "description": "Balanced tension before transformation; heart center resonance.",
+      "safety": true
+    },
+    {
+      "id": "fractal-fire",
+      "energy": [6,9],
+      "mode": "phrygian",
+      "palette": ["granular_sparks","resonant_perc"],
+      "family": "activation",
+      "layers": ["granular-sparks","resonant-perc"],
+      "description": "High activation fractal ignition; climax or revelation.",
+      "safety": false
+    },
+    {
+      "id": "crystal-gate",
+      "energy": [3,6],
+      "mode": "mixolydian",
+      "palette": ["bell_glass","soft_pad"],
+      "family": "arpeggio",
+      "layers": ["pluck-seq","soft-delay"],
+      "description": "Transitional harmonic lattice; gateway shimmer.",
+      "safety": false
+    }
+  ],
+  "instrumentPalettes": {
+    "soft_pad": {"type": "synth", "env": "slow", "notes": ["A2","E3","B3"]},
+    "low_drone": {"type": "drone", "layer": 1},
+    "bell_glass": {"type": "fm", "attack": 0.01, "notes": ["C4","G4","D5"]},
+    "shimmer_choir": {"type": "granular", "texture": "airy"},
+    "warm_strings": {"type": "ensemble", "bow": "soft"},
+    "pulse_bass": {"type": "mono", "pattern": "pulse-quarters"},
+    "granular_sparks": {"type": "granular", "density": 0.4},
+    "resonant_perc": {"type": "percussion", "accent": "medium"}
+  }
+}

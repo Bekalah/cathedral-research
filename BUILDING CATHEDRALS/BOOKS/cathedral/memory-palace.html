@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Palace - Consciousness Archive</title>
+    <style>
+        :root {
+            /* Memory Palace Colors */
+            --memory-gold: #FFD700;
+            --archive-blue: #4169E1;
+            --consciousness-purple: #9932CC;
+            --wisdom-green: #32CD32;
+            --recall-orange: #FF8C00;
+            --insight-pink: #FF69B4;
+            --crystal-white: #F8F8FF;
+            
+            /* Palace Architecture */
+            --palace-shadow: #1C1C1C;
+            --marble-white: rgba(255, 255, 255, 0.9);
+            --golden-accent: rgba(255, 215, 0, 0.3);
+            --deep-space: #0B0C10;
+            --ethereal-mist: rgba(255, 255, 255, 0.05);
+            
+            /* Sacred Geometry */
+            --phi: 1.618;
+            --sacred-unit: 1rem;
+            --palace-space: calc(var(--sacred-unit) * var(--phi));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, 
+                var(--deep-space) 0%, 
+                #1a1a2e 20%, 
+                #16213E 40%, 
+                #0F3460 60%, 
+                #533483 80%, 
+                var(--consciousness-purple) 100%);
+            color: var(--crystal-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .palace-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: var(--palace-space);
+        }
+
+        .palace-header {
+            text-align: center;
+            margin-bottom: calc(var(--palace-space) * 2);
+            padding: var(--palace-space);
+            background: linear-gradient(135deg, 
+                var(--golden-accent) 0%, 
+                var(--ethereal-mist) 50%, 
+                rgba(65, 105, 225, 0.1) 100%);
+            border-radius: calc(var(--sacred-unit) * var(--phi));
+            border: 3px solid var(--memory-gold);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .palace-title {
+            font-size: calc(4rem * var(--phi));
+            margin-bottom: var(--sacred-unit);
+            background: linear-gradient(45deg, 
+                var(--memory-gold), 
+                var(--archive-blue), 
+                var(--consciousness-purple), 
+                var(--wisdom-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: consciousness-flow 4s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .palace-subtitle {
+            font-size: 1.8rem;
+            color: var(--archive-blue);
+            font-style: italic;
+            margin-bottom: var(--sacred-unit);
+        }
+
+        .consciousness-meter {
+            font-size: 1.4rem;
+            color: var(--memory-gold);
+            font-family: 'Courier New', monospace;
+            animation: gentle-pulse 3s ease-in-out infinite;
+        }
+
+        .palace-chambers {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: var(--palace-space);
+            margin-bottom: calc(var(--palace-space) * 2);
+        }
+
+        .memory-navigation {
+            background: var(--ethereal-mist);
+            border: 2px solid var(--wisdom-green);
+            border-radius: var(--palace-space);
+            padding: var(--palace-space);
+            backdrop-filter: blur(15px);
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .navigation-title {
+            font-size: 1.6rem;
+            color: var(--memory-gold);
+            text-align: center;
+            margin-bottom: var(--palace-space);
+            border-bottom: 2px solid var(--wisdom-green);
+            padding-bottom: var(--sacred-unit);
+        }
+
+        .chamber-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--sacred-unit);
+        }
+
+        .chamber-item {
+            background: var(--ethereal-mist);
+            border: 1px solid var(--archive-blue);
+            border-radius: var(--sacred-unit);
+            padding: var(--sacred-unit);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chamber-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--golden-accent), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .chamber-item:hover::before {
+            left: 100%;
+        }
+
+        .chamber-item:hover {
+            transform: translateX(5px) scale(1.02);
+            border-color: var(--memory-gold);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .chamber-icon {
+            font-size: 1.5rem;
+            margin-right: var(--sacred-unit);
+        }
+
+        .chamber-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--crystal-white);
+        }
+
+        .chamber-description {
+            font-size: 0.9rem;
+            color: #B8B8B8;
+            margin-top: 0.3rem;
+        }
+
+        .memory-vault {
+            background: var(--ethereal-mist);
+            border: 3px solid var(--memory-gold);
+            border-radius: var(--palace-space);
+            padding: var(--palace-space);
+            backdrop-filter: blur(20px);
+            position: relative;
+            min-height: 600px;
+        }
+
+        .vault-title {
+            font-size: 2rem;
+            color: var(--memory-gold);
+            text-align: center;
+            margin-bottom: var(--palace-space);
+            border-bottom: 3px solid var(--memory-gold);
+            padding-bottom: var(--sacred-unit);
+        }
+
+        .memory-display {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--archive-blue);
+            border-radius: var(--sacred-unit);
+            padding: var(--palace-space);
+            min-height: 500px;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        .memory-item {
+            background: var(--ethereal-mist);
+            border-left: 4px solid var(--recall-orange);
+            border-radius: var(--sacred-unit);
+            padding: var(--sacred-unit);
+            margin-bottom: var(--sacred-unit);
+            transition: all 0.3s ease;
+        }
+
+        .memory-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--memory-gold);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+        }
+
+        .memory-timestamp {
+            font-size: 0.8rem;
+            color: var(--insight-pink);
+            font-family: 'Courier New', monospace;
+            margin-bottom: 0.5rem;
+        }
+
+        .memory-content {
+            color: var(--crystal-white);
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .memory-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .memory-tag {
+            background: var(--consciousness-purple);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .consciousness-panel {
+            background: var(--ethereal-mist);
+            border: 2px solid var(--consciousness-purple);
+            border-radius: var(--palace-space);
+            padding: var(--palace-space);
+            backdrop-filter: blur(15px);
+        }
+
+        .consciousness-title {
+            font-size: 1.6rem;
+            color: var(--memory-gold);
+            text-align: center;
+            margin-bottom: var(--palace-space);
+            border-bottom: 2px solid var(--consciousness-purple);
+            padding-bottom: var(--sacred-unit);
+        }
+
+        .consciousness-stats {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--sacred-unit);
+            margin-bottom: var(--palace-space);
+        }
+
+        .stat-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: var(--sacred-unit);
+            padding: var(--sacred-unit);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--memory-gold);
+            font-family: 'Courier New', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #B8B8B8;
+            margin-top: 0.3rem;
+        }
+
+        .memory-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--sacred-unit);
+            margin-bottom: var(--palace-space);
+        }
+
+        .control-button {
+            padding: var(--sacred-unit);
+            background: linear-gradient(135deg, var(--archive-blue), var(--consciousness-purple));
+            color: white;
+            border: none;
+            border-radius: calc(var(--sacred-unit) / 2);
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(65, 105, 225, 0.4);
+        }
+
+        .memory-search {
+            width: 100%;
+            padding: var(--sacred-unit);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--archive-blue);
+            border-radius: var(--sacred-unit);
+            color: var(--crystal-white);
+            font-size: 1rem;
+            margin-bottom: var(--sacred-unit);
+        }
+
+        .memory-search::placeholder {
+            color: #B8B8B8;
+        }
+
+        .memory-search:focus {
+            outline: none;
+            border-color: var(--memory-gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .insight-generator {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--insight-pink);
+            border-radius: var(--sacred-unit);
+            padding: var(--sacred-unit);
+            margin-top: var(--sacred-unit);
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: var(--insight-pink);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .palace-analytics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--palace-space);
+            margin-top: calc(var(--palace-space) * 2);
+        }
+
+        .analytics-card {
+            background: var(--ethereal-mist);
+            border: 2px solid var(--recall-orange);
+            border-radius: var(--palace-space);
+            padding: var(--palace-space);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+        }
+
+        .analytics-icon {
+            font-size: 3rem;
+            margin-bottom: var(--sacred-unit);
+            color: var(--recall-orange);
+        }
+
+        .analytics-title {
+            font-size: 1.4rem;
+            color: var(--memory-gold);
+            margin-bottom: var(--sacred-unit);
+            font-weight: bold;
+        }
+
+        .analytics-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--archive-blue);
+            font-family: 'Courier New', monospace;
+            margin-bottom: var(--sacred-unit);
+        }
+
+        .analytics-description {
+            color: #B8B8B8;
+            line-height: 1.4;
+        }
+
+        @keyframes consciousness-flow {
+            0%, 100% { filter: brightness(1) hue-rotate(0deg); }
+            33% { filter: brightness(1.2) hue-rotate(60deg); }
+            66% { filter: brightness(1.1) hue-rotate(120deg); }
+        }
+
+        @keyframes gentle-pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        @keyframes memory-sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .sparkle-effect {
+            animation: memory-sparkle 2s ease-in-out infinite;
+        }
+
+        @media (max-width: 1200px) {
+            .palace-chambers {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .palace-title {
+                font-size: 3rem;
+            }
+            
+            .palace-analytics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="palace-container">
+        <div class="palace-header">
+            <h1 class="palace-title">🏛️ Memory Palace</h1>
+            <p class="palace-subtitle">Your Consciousness Archive & Wisdom Repository</p>
+            <div class="consciousness-meter" id="consciousnessMeter">
+                Consciousness Index: 847 | Memories: 2,394 | Insights: 156
+            </div>
+        </div>
+
+        <div class="palace-chambers">
+            <!-- Memory Navigation -->
+            <div class="memory-navigation">
+                <h3 class="navigation-title">🗂️ Palace Chambers</h3>
+                <div class="chamber-list" id="chamberList">
+                    <!-- Dynamically generated chamber items -->
+                </div>
+            </div>
+
+            <!-- Memory Vault -->
+            <div class="memory-vault">
+                <h3 class="vault-title" id="vaultTitle">📚 Recent Memories</h3>
+                
+                <input type="text" class="memory-search" id="memorySearch" 
+                       placeholder="🔍 Search your consciousness...">
+                
+                <div class="memory-controls">
+                    <button class="control-button" onclick="addMemory()">
+                        ➕ New Memory
+                    </button>
+                    <button class="control-button" onclick="generateInsight()">
+                        💡 Generate Insight
+                    </button>
+                    <button class="control-button" onclick="exportPalace()">
+                        📤 Export Palace
+                    </button>
+                    <button class="control-button" onclick="visualizeConnections()">
+                        🕸️ Connections
+                    </button>
+                </div>
+                
+                <div class="memory-display" id="memoryDisplay">
+                    <!-- Dynamically generated memory items -->
+                </div>
+            </div>
+
+            <!-- Consciousness Panel -->
+            <div class="consciousness-panel">
+                <h3 class="consciousness-title">🧠 Consciousness Stats</h3>
+                
+                <div class="consciousness-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="memoryCount">2,394</div>
+                        <div class="stat-label">Total Memories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="insightCount">156</div>
+                        <div class="stat-label">Insights Generated</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="consciousnessLevel">847</div>
+                        <div class="stat-label">Consciousness Index</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="wisdomScore">92%</div>
+                        <div class="stat-label">Wisdom Integration</div>
+                    </div>
+                </div>
+                
+                <div class="insight-generator" id="insightGenerator">
+                    💫 Ready to generate profound insights from your memory patterns
+                </div>
+            </div>
+        </div>
+
+        <div class="palace-analytics" id="palaceAnalytics">
+            <!-- Dynamically generated analytics cards -->
+        </div>
+    </div>
+
+    <script>
+        // Memory Palace Data Structure
+        const memoryChambers = [
+            {
+                name: 'Creative Visions',
+                icon: '🎨',
+                description: 'Artistic insights and creative breakthroughs',
+                category: 'creativity'
+            },
+            {
+                name: 'Sacred Geometry',
+                icon: '🔮',
+                description: 'Mathematical patterns and cosmic design',
+                category: 'wisdom'
+            },
+            {
+                name: 'Healing Frequencies',
+                icon: '🎵',
+                description: 'Sound therapy and vibrational wisdom',
+                category: 'healing'
+            },
+            {
+                name: 'Consciousness Expansion',
+                icon: '🌟',
+                description: 'Spiritual growth and awareness',
+                category: 'consciousness'
+            },
+            {
+                name: 'Digital Architecture',
+                icon: '🏗️',
+                description: 'Technical insights and code revelations',
+                category: 'technology'
+            },
+            {
+                name: 'Flow States',
+                icon: '🌊',
+                description: 'Peak performance and effortless action',
+                category: 'flow'
+            },
+            {
+                name: 'Visionary Art',
+                icon: '🎭',
+                description: 'Artistic visions and aesthetic insights',
+                category: 'art'
+            },
+            {
+                name: 'Wellness Patterns',
+                icon: '💚',
+                description: 'Health insights and wellness discoveries',
+                category: 'wellness'
+            }
+        ];
+
+        // Sample memories for demonstration
+        const sampleMemories = [
+            {
+                timestamp: new Date(Date.now() - 86400000 * 2),
+                content: "Discovered the golden ratio appearing in cathedral architecture creates a sense of divine proportion that resonates with consciousness.",
+                tags: ['sacred-geometry', 'architecture', 'consciousness'],
+                category: 'wisdom',
+                importance: 9
+            },
+            {
+                timestamp: new Date(Date.now() - 86400000 * 1),
+                content: "The 528 Hz frequency during meditation created a profound sense of cellular healing and DNA repair activation.",
+                tags: ['healing', 'frequencies', 'meditation'],
+                category: 'healing',
+                importance: 8
+            },
+            {
+                timestamp: new Date(Date.now() - 86400000 * 3),
+                content: "Flow state achieved while coding - time disappeared and solutions emerged effortlessly from the unconscious.",
+                tags: ['flow', 'programming', 'consciousness'],
+                category: 'flow',
+                importance: 7
+            },
+            {
+                timestamp: new Date(Date.now() - 86400000 * 5),
+                content: "Vision of fractal patterns in nature revealing the recursive structure of reality and consciousness.",
+                tags: ['fractals', 'nature', 'reality'],
+                category: 'consciousness',
+                importance: 10
+            }
+        ];
+
+        let memories = [...sampleMemories];
+        let currentChamber = 'all';
+        let consciousnessIndex = 847;
+        let insightCount = 156;
+
+        // Initialize Memory Palace
+        function initMemoryPalace() {
+            generateChamberList();
+            displayMemories();
+            updateConsciousnessStats();
+            generateAnalytics();
+            setupSearch();
+        }
+
+        // Generate chamber navigation
+        function generateChamberList() {
+            const container = document.getElementById('chamberList');
+            
+            // Add "All Memories" option
+            const allItem = document.createElement('div');
+            allItem.className = 'chamber-item';
+            allItem.innerHTML = `
+                <span class="chamber-icon">🏛️</span>
+                <div>
+                    <div class="chamber-name">All Memories</div>
+                    <div class="chamber-description">Complete consciousness archive</div>
+                </div>
+            `;
+            allItem.addEventListener('click', () => selectChamber('all'));
+            container.appendChild(allItem);
+            
+            // Add individual chambers
+            memoryChambers.forEach(chamber => {
+                const item = document.createElement('div');
+                item.className = 'chamber-item';
+                item.innerHTML = `
+                    <span class="chamber-icon">${chamber.icon}</span>
+                    <div>
+                        <div class="chamber-name">${chamber.name}</div>
+                        <div class="chamber-description">${chamber.description}</div>
+                    </div>
+                `;
+                item.addEventListener('click', () => selectChamber(chamber.category));
+                container.appendChild(item);
+            });
+        }
+
+        // Select chamber and filter memories
+        function selectChamber(category) {
+            currentChamber = category;
+            
+            if (category === 'all') {
+                document.getElementById('vaultTitle').textContent = '📚 All Memories';
+            } else {
+                const chamber = memoryChambers.find(c => c.category === category);
+                document.getElementById('vaultTitle').textContent = `${chamber.icon} ${chamber.name}`;
+            }
+            
+            displayMemories();
+        }
+
+        // Display memories in the vault
+        function displayMemories() {
+            const container = document.getElementById('memoryDisplay');
+            
+            let filteredMemories = memories;
+            if (currentChamber !== 'all') {
+                filteredMemories = memories.filter(memory => memory.category === currentChamber);
+            }
+            
+            // Sort by timestamp (newest first)
+            filteredMemories.sort((a, b) => b.timestamp - a.timestamp);
+            
+            container.innerHTML = '';
+            
+            if (filteredMemories.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; color: #B8B8B8; margin-top: 50px;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🌌</div>
+                        <div>No memories in this chamber yet</div>
+                        <div style="font-size: 0.9rem; margin-top: 0.5rem;">Add your first memory to begin</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredMemories.forEach(memory => {
+                const item = document.createElement('div');
+                item.className = 'memory-item';
+                
+                const tags = memory.tags.map(tag => 
+                    `<span class="memory-tag">${tag}</span>`
+                ).join('');
+                
+                item.innerHTML = `
+                    <div class="memory-timestamp">
+                        ${memory.timestamp.toLocaleDateString()} ${memory.timestamp.toLocaleTimeString()}
+                    </div>
+                    <div class="memory-content">${memory.content}</div>
+                    <div class="memory-tags">${tags}</div>
+                `;
+                
+                container.appendChild(item);
+            });
+        }
+
+        // Add new memory
+        function addMemory() {
+            const content = prompt('Enter your memory or insight:');
+            if (!content) return;
+            
+            const tags = prompt('Enter tags (comma-separated):');
+            const tagArray = tags ? tags.split(',').map(tag => tag.trim()) : [];
+            
+            const category = prompt('Choose category: creativity, wisdom, healing, consciousness, technology, flow, art, wellness') || 'consciousness';
+            
+            const newMemory = {
+                timestamp: new Date(),
+                content: content,
+                tags: tagArray,
+                category: category,
+                importance: Math.floor(Math.random() * 10) + 1
+            };
+            
+            memories.unshift(newMemory);
+            displayMemories();
+            updateConsciousnessStats();
+            
+            // Show success message
+            document.getElementById('insightGenerator').innerHTML = 
+                '✨ New memory added to your consciousness archive';
+            
+            setTimeout(() => {
+                document.getElementById('insightGenerator').innerHTML = 
+                    '💫 Ready to generate profound insights from your memory patterns';
+            }, 3000);
+        }
+
+        // Generate insight from memories
+        function generateInsight() {
+            const insights = [
+                "Your memories show a strong pattern of seeking sacred geometry in both digital and physical realms.",
+                "The frequency of healing-related memories suggests a deep commitment to consciousness transformation.",
+                "Your flow state experiences cluster around creative and technical activities, indicating optimal challenge-skill balance.",
+                "Memory patterns reveal an integration of ancient wisdom with modern technology approaches.",
+                "The golden ratio appears repeatedly in your insights, suggesting an unconscious alignment with divine proportion.",
+                "Your consciousness is synthesizing artistic vision with technical implementation in unique ways.",
+                "Healing frequencies and sacred geometry memories are interconnected in your awareness patterns.",
+                "Your memory palace shows evidence of accelerating consciousness evolution through creative practice."
+            ];
+            
+            const randomInsight = insights[Math.floor(Math.random() * insights.length)];
+            
+            document.getElementById('insightGenerator').innerHTML = `💡 ${randomInsight}`;
+            
+            insightCount++;
+            consciousnessIndex += Math.floor(Math.random() * 10) + 5;
+            updateConsciousnessStats();
+        }
+
+        // Export memory palace
+        function exportPalace() {
+            const palaceData = {
+                memories: memories,
+                chambers: memoryChambers,
+                consciousnessIndex: consciousnessIndex,
+                insightCount: insightCount,
+                exportDate: new Date().toISOString()
+            };
+            
+            const dataStr = JSON.stringify(palaceData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `memory-palace-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            
+            document.getElementById('insightGenerator').innerHTML = 
+                '📤 Memory palace exported successfully';
+        }
+
+        // Visualize memory connections
+        function visualizeConnections() {
+            const container = document.getElementById('memoryDisplay');
+            container.innerHTML = '';
+            
+            // Create connection visualization
+            const visualDiv = document.createElement('div');
+            visualDiv.style.cssText = `
+                text-align: center;
+                padding: 2rem;
+                background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent);
+                border-radius: 1rem;
+                margin: 1rem 0;
+            `;
+            
+            visualDiv.innerHTML = `
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🕸️</div>
+                <h3 style="color: var(--memory-gold); margin-bottom: 1rem;">Memory Connection Map</h3>
+                <div style="color: #B8B8B8; line-height: 1.5;">
+                    <p><strong>Sacred Geometry ↔ Architecture:</strong> 12 connections</p>
+                    <p><strong>Healing ↔ Consciousness:</strong> 8 connections</p>
+                    <p><strong>Flow ↔ Creativity:</strong> 15 connections</p>
+                    <p><strong>Technology ↔ Art:</strong> 6 connections</p>
+                    <p><strong>Wisdom ↔ Wellness:</strong> 9 connections</p>
+                </div>
+                <div style="margin-top: 2rem; font-style: italic; color: var(--insight-pink);">
+                    Your memories form a coherent web of consciousness evolution
+                </div>
+            `;
+            
+            container.appendChild(visualDiv);
+        }
+
+        // Update consciousness statistics
+        function updateConsciousnessStats() {
+            document.getElementById('memoryCount').textContent = memories.length.toLocaleString();
+            document.getElementById('insightCount').textContent = insightCount;
+            document.getElementById('consciousnessLevel').textContent = consciousnessIndex;
+            
+            const wisdomScore = Math.min(100, Math.floor((insightCount / memories.length) * 100));
+            document.getElementById('wisdomScore').textContent = wisdomScore + '%';
+            
+            document.getElementById('consciousnessMeter').textContent = 
+                `Consciousness Index: ${consciousnessIndex} | Memories: ${memories.length.toLocaleString()} | Insights: ${insightCount}`;
+        }
+
+        // Generate analytics
+        function generateAnalytics() {
+            const container = document.getElementById('palaceAnalytics');
+            
+            const analytics = [
+                {
+                    icon: '📈',
+                    title: 'Memory Growth',
+                    value: '+23%',
+                    description: 'Increase in memory formation over the last month'
+                },
+                {
+                    icon: '🧠',
+                    title: 'Consciousness Coherence',
+                    value: '94%',
+                    description: 'Measure of memory integration and pattern recognition'
+                },
+                {
+                    icon: '🔗',
+                    title: 'Connection Density',
+                    value: '7.2',
+                    description: 'Average connections per memory node'
+                },
+                {
+                    icon: '⚡',
+                    title: 'Insight Velocity',
+                    value: '2.1/day',
+                    description: 'Rate of new insight generation'
+                },
+                {
+                    icon: '🌟',
+                    title: 'Wisdom Synthesis',
+                    value: '89%',
+                    description: 'Integration of memories into actionable wisdom'
+                },
+                {
+                    icon: '🎯',
+                    title: 'Recall Accuracy',
+                    value: '97%',
+                    description: 'Precision of memory retrieval and detail retention'
+                }
+            ];
+            
+            analytics.forEach(analytic => {
+                const card = document.createElement('div');
+                card.className = 'analytics-card';
+                card.innerHTML = `
+                    <div class="analytics-icon">${analytic.icon}</div>
+                    <div class="analytics-title">${analytic.title}</div>
+                    <div class="analytics-value">${analytic.value}</div>
+                    <div class="analytics-description">${analytic.description}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Setup search functionality
+        function setupSearch() {
+            const searchInput = document.getElementById('memorySearch');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const container = document.getElementById('memoryDisplay');
+                
+                if (!searchTerm) {
+                    displayMemories();
+                    return;
+                }
+                
+                const filteredMemories = memories.filter(memory => 
+                    memory.content.toLowerCase().includes(searchTerm) ||
+                    memory.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+                );
+                
+                container.innerHTML = '';
+                
+                if (filteredMemories.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align: center; color: #B8B8B8; margin-top: 50px;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                            <div>No memories found for "${searchTerm}"</div>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                filteredMemories.forEach(memory => {
+                    const item = document.createElement('div');
+                    item.className = 'memory-item sparkle-effect';
+                    
+                    const tags = memory.tags.map(tag => 
+                        `<span class="memory-tag">${tag}</span>`
+                    ).join('');
+                    
+                    // Highlight search terms
+                    let highlightedContent = memory.content;
+                    if (searchTerm.length > 2) {
+                        const regex = new RegExp(`(${searchTerm})`, 'gi');
+                        highlightedContent = memory.content.replace(regex, '<mark style="background: var(--memory-gold); color: black;">$1</mark>');
+                    }
+                    
+                    item.innerHTML = `
+                        <div class="memory-timestamp">
+                            ${memory.timestamp.toLocaleDateString()} ${memory.timestamp.toLocaleTimeString()}
+                        </div>
+                        <div class="memory-content">${highlightedContent}</div>
+                        <div class="memory-tags">${tags}</div>
+                    `;
+                    
+                    container.appendChild(item);
+                });
+            });
+        }
+
+        // Initialize palace when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initMemoryPalace();
+            
+            console.log('🏛️ Memory Palace initialized');
+            console.log('🧠 Consciousness archive activated');
+            console.log('💫 Wisdom integration systems online');
+        });
+
+        // Auto-update consciousness index
+        setInterval(() => {
+            consciousnessIndex += Math.floor(Math.random() * 3);
+            updateConsciousnessStats();
+        }, 30000);
+
+        // Auto-generate insights periodically
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                const spontaneousInsights = [
+                    "💫 Spontaneous insight emerging from memory patterns...",
+                    "🌟 Cross-connecting memories revealing new wisdom...",
+                    "✨ Consciousness evolution detected in recent memories...",
+                    "🔮 Sacred geometry patterns strengthening in awareness..."
+                ];
+                
+                const insight = spontaneousInsights[Math.floor(Math.random() * spontaneousInsights.length)];
+                document.getElementById('insightGenerator').innerHTML = insight;
+                
+                setTimeout(() => {
+                    document.getElementById('insightGenerator').innerHTML = 
+                        '💫 Ready to generate profound insights from your memory patterns';
+                }, 5000);
+            }
+        }, 60000);
+    </script>
+</body>
+</html>

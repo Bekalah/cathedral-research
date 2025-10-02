@@ -1,0 +1,143 @@
+{
+  "_meta": {
+    "language": "en",
+    "language_name": "English",
+    "file": "sacred.json",
+    "status": "base",
+    "completion": "100%",
+    "translator_notes": "Base English sacred and spiritual terminology - translate with cultural sensitivity",
+    "rtl": false
+  },
+  "geometry": {
+    "sacred_geometry": "Sacred Geometry",
+    "merkaba": "Merkaba",
+    "flower_of_life": "Flower of Life",
+    "seed_of_life": "Seed of Life",
+    "tree_of_life": "Tree of Life",
+    "mandala": "Mandala", 
+    "fibonacci": "Fibonacci Spiral",
+    "golden_ratio": "Golden Ratio",
+    "platonic_solids": "Platonic Solids",
+    "vesica_piscis": "Vesica Piscis",
+    "sri_yantra": "Sri Yantra",
+    "metatrons_cube": "Metatron's Cube"
+  },
+  "numerology": {
+    "sacred_numbers": "Sacred Numbers",
+    "codex_ratio": "Codex 144:99",
+    "master_numbers": "Master Numbers",
+    "life_path": "Life Path",
+    "soul_number": "Soul Number",
+    "expression_number": "Expression Number",
+    "karmic_numbers": "Karmic Numbers",
+    "personal_year": "Personal Year",
+    "numerological_chart": "Numerological Chart"
+  },
+  "frequencies": {
+    "solfeggio": "Solfeggio Frequencies",
+    "healing_tones": "Healing Tones",
+    "binaural_beats": "Binaural Beats",
+    "harmonic_series": "Harmonic Series",
+    "resonance": "Resonance",
+    "vibration": "Vibration",
+    "frequency_healing": "Frequency Healing",
+    "sound_therapy": "Sound Therapy"
+  },
+  "consciousness": {
+    "awareness": "Awareness",
+    "consciousness": "Consciousness", 
+    "mindfulness": "Mindfulness",
+    "presence": "Presence",
+    "transcendence": "Transcendence",
+    "enlightenment": "Enlightenment",
+    "awakening": "Awakening",
+    "realization": "Realization",
+    "higher_self": "Higher Self",
+    "soul_purpose": "Soul Purpose",
+    "divine_connection": "Divine Connection"
+  },
+  "archetypal": {
+    "archetype": "Archetype",
+    "universal_patterns": "Universal Patterns",
+    "collective_unconscious": "Collective Unconscious",
+    "shadow_work": "Shadow Work",
+    "inner_child": "Inner Child",
+    "anima_animus": "Anima/Animus",
+    "hero_journey": "Hero's Journey", 
+    "wise_elder": "Wise Elder",
+    "divine_feminine": "Divine Feminine",
+    "divine_masculine": "Divine Masculine",
+    "great_mother": "Great Mother",
+    "eternal_child": "Eternal Child"
+  },
+  "elements": {
+    "four_elements": "Four Elements",
+    "fire": "Fire",
+    "water": "Water", 
+    "air": "Air",
+    "earth": "Earth",
+    "ether": "Ether",
+    "quintessence": "Quintessence",
+    "elemental_balance": "Elemental Balance",
+    "elemental_healing": "Elemental Healing"
+  },
+  "chakras": {
+    "energy_centers": "Energy Centers",
+    "root_chakra": "Root Chakra",
+    "sacral_chakra": "Sacral Chakra", 
+    "solar_plexus": "Solar Plexus Chakra",
+    "heart_chakra": "Heart Chakra",
+    "throat_chakra": "Throat Chakra",
+    "third_eye": "Third Eye Chakra",
+    "crown_chakra": "Crown Chakra",
+    "chakra_balancing": "Chakra Balancing",
+    "energy_healing": "Energy Healing"
+  },
+  "mystical": {
+    "mysticism": "Mysticism",
+    "esoteric": "Esoteric",
+    "occult": "Occult",
+    "hermetic": "Hermetic",
+    "gnostic": "Gnostic",
+    "kabbalah": "Kabbalah",
+    "sufism": "Sufism",
+    "tantra": "Tantra",
+    "vedanta": "Vedanta",
+    "zen": "Zen",
+    "taoism": "Taoism"
+  },
+  "transformation": {
+    "alchemy": "Alchemy",
+    "transmutation": "Transmutation",
+    "transformation": "Transformation",
+    "metamorphosis": "Metamorphosis",
+    "rebirth": "Rebirth",
+    "renewal": "Renewal",
+    "resurrection": "Resurrection",
+    "phoenix_rising": "Phoenix Rising",
+    "death_rebirth": "Death and Rebirth",
+    "initiation": "Initiation"
+  },
+  "unity": {
+    "oneness": "Oneness",
+    "unity": "Unity",
+    "wholeness": "Wholeness",
+    "integration": "Integration",
+    "synthesis": "Synthesis",
+    "harmony": "Harmony",
+    "balance": "Balance",
+    "equilibrium": "Equilibrium",
+    "divine_union": "Divine Union",
+    "cosmic_consciousness": "Cosmic Consciousness"
+  },
+  "wisdom": {
+    "ancient_wisdom": "Ancient Wisdom",
+    "perennial_philosophy": "Perennial Philosophy", 
+    "universal_truths": "Universal Truths",
+    "eternal_principles": "Eternal Principles",
+    "sacred_teachings": "Sacred Teachings",
+    "mystery_schools": "Mystery Schools",
+    "wisdom_traditions": "Wisdom Traditions",
+    "divine_knowledge": "Divine Knowledge"
+  }
+}

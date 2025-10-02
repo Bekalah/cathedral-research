@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "language": "en",
+    "language_name": "English", 
+    "file": "safety.json",
+    "status": "base",
+    "completion": "100%",
+    "translator_notes": "Base English safety and trauma-informed messaging",
+    "rtl": false
+  },
+  "emergency": {
+    "pause_button": "EMERGENCY PAUSE",
+    "pause_activated": "Emergency pause activated. You are completely safe.",
+    "pause_message": "Take a deep breath. You are in control. You can leave at any time.",
+    "pause_instructions": "Press Space to continue when ready, or Escape to safely exit.",
+    "exit_available": "Safe exit is always available",
+    "you_are_safe": "You are safe here",
+    "breathe_reminder": "Remember to breathe deeply",
+    "ground_yourself": "Feel your feet on the ground"
+  },
+  "trauma_informed": {
+    "consent_required": "All interactions require your explicit consent",
+    "boundaries_respected": "Your boundaries are completely respected",
+    "safe_container": "This is a safe, contained space for exploration", 
+    "professional_support": "Professional therapeutic support is recommended",
+    "not_therapy": "This is not therapy, but trauma-informed spiritual practice",
+    "trigger_warning": "Content may include spiritual themes and archetypal material",
+    "pace_yourself": "Go at your own pace - there is no rush",
+    "self_compassion": "Please practice self-compassion and self-care",
+    "integration_time": "Allow time for integration of experiences",
+    "community_support": "Supportive community resources are available"
+  },
+  "consent": {
+    "explicit_required": "Explicit consent is required for all activities",
+    "can_withdraw": "You can withdraw consent at any time",
+    "informed_choice": "You have the right to make informed choices", 
+    "no_pressure": "There is no pressure to participate in anything",
+    "your_autonomy": "Your autonomy and agency are paramount",
+    "ask_questions": "Please ask questions if anything is unclear",
+    "comfort_level": "Only engage at your comfort level",
+    "respect_limits": "Your limits and boundaries will be respected"
+  },
+  "grounding": {
+    "breathing_space": "Take space to breathe if needed",
+    "grounding_techniques": "Grounding techniques are available",
+    "feel_your_body": "Notice your body and physical sensations",
+    "present_moment": "You are safe in this present moment",
+    "solid_ground": "Feel the solid ground beneath you",
+    "supportive_space": "This is a supportive, contained space",
+    "gentle_awareness": "Bring gentle awareness to your experience",
+    "self_regulation": "Use your self-regulation skills as needed"
+  },
+  "cptsd_adaptations": {
+    "hypervigilance_support": "Hypervigilance is understood and accommodated",
+    "emotional_regulation": "Emotional regulation support is available", 
+    "dissociation_awareness": "Dissociation experiences are normalized",
+    "flashback_protocol": "Flashback support protocols are in place",
+    "attachment_safety": "Secure attachment patterns are modeled",
+    "shame_resilience": "Shame-resilient environment maintained",
+    "inner_critic_work": "Inner critic compassion practices available",
+    "parts_work_safe": "Internal parts work is done safely"
+  },
+  "neurodivergent_safety": {
+    "sensory_accommodations": "Full sensory accommodations provided",
+    "processing_time": "Extended processing time is completely normal",
+    "stimming_welcome": "Stimming and self-regulation movements are welcome",
+    "overwhelm_prevention": "Overwhelm prevention measures are active",
+    "executive_function": "Executive function supports are available", 
+    "communication_styles": "All communication styles are respected",
+    "masking_unnecessary": "Masking is unnecessary - be authentically yourself",
+    "neurodivergent_celebration": "Neurodivergent ways of being are celebrated"
+  },
+  "crisis_resources": {
+    "crisis_text": "Crisis Text Line: Text HOME to 741741",
+    "suicide_prevention": "988 Suicide & Crisis Lifeline",
+    "domestic_violence": "National Domestic Violence Hotline: 1-800-799-7233",
+    "rainn_hotline": "RAINN Sexual Assault Hotline: 1-800-656-4673",
+    "lgbtq_support": "Trevor Project: 1-866-488-7386",
+    "crisis_disclaimer": "In case of emergency, please contact local emergency services",
+    "professional_help": "Please seek professional help for mental health concerns",
+    "not_replacement": "This platform does not replace professional therapeutic care"
+  },
+  "warnings": {
+    "spiritual_content": "Contains spiritual and archetypal content",
+    "deep_work": "Involves deep psychological and spiritual exploration",
+    "transformation": "May catalyze personal transformation processes",
+    "integration_needed": "Integration time and support recommended",
+    "not_for_crisis": "Not appropriate during acute mental health crises",
+    "professional_guidance": "Professional therapeutic guidance recommended",
+    "community_support": "Engage with supportive community members"
+  }
+}

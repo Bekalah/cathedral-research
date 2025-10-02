@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEX - The Living Library of Masters</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap');
+
+        :root {
+            --bg-abyss: #0a0e17;
+            --text-luminous: #e8dcc4;
+            --gold-alchemical: #d4af37;
+            --purple-mystical: #6b3aa0;
+            --blue-akashic: #2e4c8b;
+            --red-rubedo: #8b2635;
+            --green-viriditas: #2a5434;
+            --silver-lunar: #c0c0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--bg-abyss);
+            color: var(--text-luminous);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Geometric Canvas Background */
+        .geometric-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .geometric-canvas::before,
+        .geometric-canvas::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: sacred-rotation 60s linear infinite;
+        }
+
+        .geometric-canvas::before {
+            border: 1px solid var(--gold-alchemical);
+            box-shadow: 
+                0 0 40px var(--gold-alchemical),
+                inset 0 0 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .geometric-canvas::after {
+            border: 1px solid var(--purple-mystical);
+            transform: translate(-50%, -50%) rotate(45deg);
+            animation-direction: reverse;
+            box-shadow: 
+                0 0 40px var(--purple-mystical),
+                inset 0 0 40px rgba(107, 58, 160, 0.2);
+        }
+
+        @keyframes sacred-rotation {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Header */
+        .grimoire-header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            background: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, transparent);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--gold-alchemical);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .cathedral-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Navigation Tabs */
+        .tradition-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .tradition-tab {
+            padding: 0.8rem 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold-alchemical);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .tradition-tab:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .tradition-tab[aria-pressed="true"] {
+            background: var(--gold-alchemical);
+            color: var(--bg-abyss);
+            font-weight: bold;
+        }
+
+        /* Masters Grid */
+        .masters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .master-card {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.05) 0%, 
+                rgba(107, 58, 160, 0.05) 100%);
+            border: 1px solid rgba(192, 192, 192, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .master-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-alchemical);
+            box-shadow: 
+                0 10px 30px rgba(212, 175, 55, 0.2),
+                inset 0 0 30px rgba(212, 175, 55, 0.05);
+        }
+
+        .master-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--gold-alchemical);
+            margin-bottom: 0.5rem;
+        }
+
+        .master-tradition {
+            color: var(--silver-lunar);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .master-contribution {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Node System */
+        #node-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .node-element {
+            background: rgba(46, 76, 139, 0.1);
+            border: 1px solid var(--blue-akashic);
+            border-radius: 8px;
+            padding: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .node-element:hover {
+            background: rgba(46, 76, 139, 0.2);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(46, 76, 139, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .masters-grid { grid-template-columns: 1fr; }
+            .tradition-tabs { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body data-motion="reduced">
+    <div class="geometric-canvas"></div>
+    
+    <header class="grimoire-header">
+        <h1>CODEX</h1>
+        <p class="subtitle">The Living Library • 300+ Sacred Texts • Easy Portal Access</p>
+    </header>
+
+    <main class="cathedral-container">
+        <nav class="tradition-tabs" role="tablist">
+            <button class="tradition-tab" aria-pressed="true" data-tradition="hermetic">Hermetic</button>
+            <button class="tradition-tab" aria-pressed="false" data-tradition="solomonic">Solomonic</button>
+            <button class="tradition-tab" aria-pressed="false" data-tradition="enochian">Enochian</button>
+            <button class="tradition-tab" aria-pressed="false" data-tradition="surrealist">Vienna School</button>
+            <button class="tradition-tab" aria-pressed="false" data-tradition="consciousness">Consciousness</button>
+            <button class="tradition-tab" aria-pressed="false" data-tradition="theosophical">Theosophical</button>
+            <button class="tradition-tab" aria-pressed="false" data-tradition="psychomagic">Psychomagic</button>
+        </nav>
+
+        <section class="masters-grid">
+            <!-- Hermetic Tradition -->
+            <article class="master-card" data-tradition="hermetic">
+                <h3 class="master-name">Heinrich Cornelius Agrippa</h3>
+                <p class="master-tradition">Three Books of Occult Philosophy (1531)</p>
+                <p class="master-contribution">
+                    Systematized the three worlds: Elemental, Celestial, and Intellectual. 
+                    Created comprehensive correspondence tables linking planets, angels, demons, 
+                    herbs, stones, and divine names.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="hermetic">
+                <h3 class="master-name">John Dee</h3>
+                <p class="master-tradition">Monas Hieroglyphica (1564)</p>
+                <p class="master-contribution">
+                    Synthesized all creation into one glyph. The Monad contains the secret of 
+                    transmutation and demonstrates the unity of astronomical, alchemical, and 
+                    Kabbalistic mysteries.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="hermetic">
+                <h3 class="master-name">Paul Foster Case</h3>
+                <p class="master-tradition">B.O.T.A. System (1922)</p>
+                <p class="master-contribution">
+                    Color-sound-letter correspondences creating synesthetic meditation systems. 
+                    The Tarot as living keys to consciousness transformation through precise 
+                    coloring techniques.
+                </p>
+            </article>
+
+            <!-- Solomonic Tradition -->
+            <article class="master-card" data-tradition="solomonic">
+                <h3 class="master-name">King Solomon</h3>
+                <p class="master-tradition">Lesser Key & Greater Key</p>
+                <p class="master-contribution">
+                    72 demons of the Goetia paired with 72 angels of the Shem HaMephorash. 
+                    Pentacles for planetary magic. The original ceremonial magic system.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="solomonic">
+                <h3 class="master-name">Dr. Stephen Skinner</h3>
+                <p class="master-tradition">Grimoire Revival</p>
+                <p class="master-contribution">
+                    Critical editions of classical grimoires with operational notes. 
+                    Restored authentic practices from manuscript sources, removing Victorian 
+                    obfuscations.
+                </p>
+            </article>
+
+            <!-- Vienna Surrealists -->
+            <article class="master-card" data-tradition="surrealist">
+                <h3 class="master-name">Ernst Fuchs</h3>
+                <p class="master-tradition">Vienna School of Fantastic Realism</p>
+                <p class="master-contribution">
+                    Mische technique creating jewel-like luminosity. Visionary art combining 
+                    Old Master techniques with mystical Jewish and Christian symbolism.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="surrealist">
+                <h3 class="master-name">Remedios Varo</h3>
+                <p class="master-tradition">Alchemical Surrealism</p>
+                <p class="master-contribution">
+                    Sacred geometry machines, spiral architectures, and feminine alchemy. 
+                    Art as spiritual technology for consciousness transformation.
+                </p>
+            </article>
+
+            <!-- Consciousness Researchers -->
+            <article class="master-card" data-tradition="consciousness">
+                <h3 class="master-name">William James</h3>
+                <p class="master-tradition">Varieties of Religious Experience</p>
+                <p class="master-contribution">
+                    First scientific study of mystical states. Identified four marks: 
+                    ineffability, noetic quality, transiency, and passivity.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="consciousness">
+                <h3 class="master-name">Wilhelm Reich</h3>
+                <p class="master-tradition">Orgone Energy</p>
+                <p class="master-contribution">
+                    Life force accumulation through geometric structures. Body armor 
+                    dissolution for spiritual liberation. Cloudbusters and energy medicine.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="consciousness">
+                <h3 class="master-name">Timothy Leary</h3>
+                <p class="master-tradition">8-Circuit Model</p>
+                <p class="master-contribution">
+                    Consciousness as programmable system. Set and setting for sacred experiences. 
+                    SMI²LE formula: Space Migration, Intelligence Increase, Life Extension.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="consciousness">
+                <h3 class="master-name">Stanislav Grof</h3>
+                <p class="master-tradition">Holotropic Breathwork</p>
+                <p class="master-contribution">
+                    Cartography of psyche: biographical, perinatal, transpersonal. 
+                    Non-ordinary states as healing technology. COEX systems integration.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="consciousness">
+                <h3 class="master-name">Ken Wilber</h3>
+                <p class="master-tradition">Integral Theory</p>
+                <p class="master-contribution">
+                    AQAL model: All Quadrants, All Levels. Spectrum of consciousness from 
+                    matter to spirit. Integration of Eastern/Western psychology.
+                </p>
+            </article>
+
+            <!-- Theosophical -->
+            <article class="master-card" data-tradition="theosophical">
+                <h3 class="master-name">H.P. Blavatsky</h3>
+                <p class="master-tradition">The Secret Doctrine</p>
+                <p class="master-contribution">
+                    Seven Rays, Root Races, and cosmic evolution. Synthesized Eastern 
+                    and Western esotericism into unified cosmology.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="theosophical">
+                <h3 class="master-name">Dion Fortune</h3>
+                <p class="master-tradition">Mystical Qabalah</p>
+                <p class="master-contribution">
+                    Psychic self-defense and Western mystery tradition. Glastonbury 
+                    mysteries and Arthurian magic. Practical occultism for modern times.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="theosophical">
+                <h3 class="master-name">Israel Regardie</h3>
+                <p class="master-tradition">The Tree of Life</p>
+                <p class="master-contribution">
+                    Complete Golden Dawn system published openly. Middle Pillar exercise 
+                    for energy circulation. Psychotherapy integrated with magic.
+                </p>
+            </article>
+
+            <!-- Psychomagic -->
+            <article class="master-card" data-tradition="psychomagic">
+                <h3 class="master-name">Antero Alli</h3>
+                <p class="master-tradition">ParaTheatrical ReSearch</p>
+                <p class="master-contribution">
+                    8-circuit brain navigation through ritual performance. Vertical 
+                    energy sources and No-Form practice. Angel Tech manual.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="psychomagic">
+                <h3 class="master-name">Alan Watts</h3>
+                <p class="master-tradition">Eastern Philosophy for West</p>
+                <p class="master-contribution">
+                    The wisdom of insecurity. Consciousness as cosmic game of hide-and-seek. 
+                    Integration of Zen, Taoism, and Vedanta.
+                </p>
+            </article>
+
+            <article class="master-card" data-tradition="psychomagic">
+                <h3 class="master-name">Frater Achad</h3>
+                <p class="master-tradition">Liber 31</p>
+                <p class="master-contribution">
+                    Discovered the key to Liber AL. Inverted Tree of Life and Aeon of Maat. 
+                    Q.B.L. as restored Qabalah.
+                </p>
+            </article>
+        </section>
+
+        <div id="node-list"></div>
+    </main>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tradition-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Update aria-pressed
+                document.querySelectorAll('.tradition-tab').forEach(t => 
+                    t.setAttribute('aria-pressed', 'false')
+                );
+                this.setAttribute('aria-pressed', 'true');
+                
+                // Filter master cards
+                const tradition = this.dataset.tradition;
+                document.querySelectorAll('.master-card').forEach(card => {
+                    if (tradition === 'hermetic' || card.dataset.tradition === tradition) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Load nodes when available
+        if (typeof loadNodes === 'function') {
+            loadNodes();
+        }
+    </script>
+
+    <!-- Brain Config -->
+    <script id="brain-config" type="application/json">
+    {
+        "version": "1.0.0",
+        "traditions": ["hermetic", "solomonic", "enochian", "theosophical"],
+        "nodeTypes": ["sephirah", "path", "arcana", "angel", "demon"]
+    }
+    </script>
+
+    <!-- Nodes Fallback -->
+    <script id="nodes-fallback" type="application/json">
+    {
+        "nodes": [
+            {"id": 0, "name": "The Fool", "type": "arcana", "numerology": 0},
+            {"id": 1, "name": "Kether", "type": "sephirah", "numerology": 1},
+            {"id": 2, "name": "Chokmah", "type": "sephirah", "numerology": 2}
+        ]
+    }
+    </script>
+</body>
+</html>

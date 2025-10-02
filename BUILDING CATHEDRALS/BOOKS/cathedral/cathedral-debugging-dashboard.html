@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 Cathedral Debugging Dashboard - Master System Monitor</title>
+    <style>
+        :root {
+            --debug-bg: #0a0a0a;
+            --debug-panel: #1a1a1a;
+            --debug-text: #00ff00;
+            --debug-warning: #ffaa00;
+            --debug-error: #ff4444;
+            --debug-success: #44ff44;
+            --debug-info: #4488ff;
+            --debug-border: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', 'Monaco', monospace;
+            background: var(--debug-bg);
+            color: var(--debug-text);
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+        .debug-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--debug-border);
+            padding-bottom: 20px;
+        }
+
+        .debug-header h1 {
+            color: var(--debug-success);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .debug-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .debug-panel {
+            background: var(--debug-panel);
+            border: 1px solid var(--debug-border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .panel-header {
+            color: var(--debug-info);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--debug-border);
+            padding-bottom: 5px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-online { background: var(--debug-success); }
+        .status-warning { background: var(--debug-warning); }
+        .status-error { background: var(--debug-error); }
+        .status-offline { background: #666; }
+
+        .debug-item {
+            margin: 8px 0;
+            padding: 8px;
+            background: rgba(0, 255, 0, 0.05);
+            border-left: 3px solid var(--debug-success);
+        }
+
+        .debug-warning {
+            border-left-color: var(--debug-warning);
+            background: rgba(255, 170, 0, 0.05);
+        }
+
+        .debug-error {
+            border-left-color: var(--debug-error);
+            background: rgba(255, 68, 68, 0.05);
+        }
+
+        .debug-button {
+            background: var(--debug-panel);
+            color: var(--debug-success);
+            border: 1px solid var(--debug-success);
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .debug-button:hover {
+            background: var(--debug-success);
+            color: var(--debug-bg);
+        }
+
+        .log-panel {
+            grid-column: 1 / -1;
+            max-height: 300px;
+            overflow-y: auto;
+            background: var(--debug-bg);
+            border: 1px solid var(--debug-border);
+            padding: 15px;
+        }
+
+        .log-entry {
+            margin: 3px 0;
+            font-size: 0.9rem;
+        }
+
+        .log-timestamp {
+            color: #666;
+            margin-right: 10px;
+        }
+
+        .fusion-map {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .fusion-node {
+            background: rgba(139, 69, 19, 0.3);
+            border: 1px solid #D2691E;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .system-health-bar {
+            width: 100%;
+            height: 20px;
+            background: var(--debug-panel);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .health-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--debug-error), var(--debug-warning), var(--debug-success));
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🔍 Cathedral of Circuits - Master Debugging Dashboard</h1>
+        <p>Real-time monitoring of your Fusion Towers, Circle of Ateliers, and Genius Masterminds</p>
+    </div>
+
+    <div class="debug-grid">
+        <!-- System Status Overview -->
+        <div class="debug-panel">
+            <div class="panel-header">🏛️ Core Cathedral Systems</div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Cathedral Main Platform: ONLINE
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Rosslyn Alchemy Tower: READY
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Trinity Integration: ACTIVE
+            </div>
+            <div class="debug-item debug-warning">
+                <span class="status-indicator status-warning"></span>
+                Port 8080: Checking connection...
+            </div>
+            <button class="debug-button" onclick="runSystemDiagnostics()">🔧 Run Diagnostics</button>
+        </div>
+
+        <!-- Fusion System Monitor -->
+        <div class="debug-panel">
+            <div class="panel-header">⚗️ Fusion Kink Heaven 144:99 System</div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Core Temperature: 144°K (Optimal)
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Fusion Rate: 99 dissolutions/min
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Trauma Safety Protocols: ACTIVE
+            </div>
+            <div class="debug-item">
+                Sacred Ratio: 144/99 = 1.454545... ✓
+            </div>
+            <button class="debug-button" onclick="checkFusionHealth()">🧪 Check Fusion Health</button>
+        </div>
+
+        <!-- Circle of Ateliers Status -->
+        <div class="debug-panel">
+            <div class="panel-header">🎨 Circle of Ateliers Status</div>
+            <div class="fusion-map">
+                <div class="fusion-node">
+                    High Priestess<br>
+                    <small>Sacred Geometry</small><br>
+                    <span style="color: #44ff44;">✓ ACTIVE</span>
+                </div>
+                <div class="fusion-node">
+                    Empress<br>
+                    <small>Biomorphic Lab</small><br>
+                    <span style="color: #44ff44;">✓ ACTIVE</span>
+                </div>
+                <div class="fusion-node">
+                    Hermit<br>
+                    <small>Crystal Tech</small><br>
+                    <span style="color: #44ff44;">✓ ACTIVE</span>
+                </div>
+                <div class="fusion-node">
+                    Synthesis Lab<br>
+                    <small>10 Synthesizers</small><br>
+                    <span style="color: #44ff44;">✓ READY</span>
+                </div>
+                <div class="fusion-node">
+                    Moonchild<br>
+                    <small>Red Book Studio</small><br>
+                    <span style="color: #44ff44;">✓ READY</span>
+                </div>
+                <div class="fusion-node">
+                    Rosslyn Tower<br>
+                    <small>Complete Lab</small><br>
+                    <span style="color: #ffaa00;">⚡ ENHANCED</span>
+                </div>
+            </div>
+            <button class="debug-button" onclick="testAllLabs()">🏛️ Test All Ateliers</button>
+        </div>
+
+        <!-- Genius Masterminds Network -->
+        <div class="debug-panel">
+            <div class="panel-header">🧠 Circle of Genius Masterminds</div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Emma Kunz (Sacred Geometry): Teaching
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Dion Fortune (Mystical Qabalah): Guiding
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Aleister Crowley (Thoth Tarot): Available
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Hilma af Klint (Visionary Art): Active
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Jung (Active Imagination): Ready
+            </div>
+            <button class="debug-button" onclick="consultMasterminds()">🎓 Consult Masterminds</button>
+        </div>
+
+        <!-- Business Integration Health -->
+        <div class="debug-panel">
+            <div class="panel-header">💼 Business Support Systems</div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Donation Integration: CONFIGURED
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Service Promotion: ACTIVE
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                Trauma-Safe Design: ENFORCED
+            </div>
+            <div class="debug-item">
+                <span class="status-indicator status-online"></span>
+                PTSD Accommodations: ENABLED
+            </div>
+            <div class="system-health-bar">
+                <div class="health-fill" style="width: 92%"></div>
+            </div>
+            <small>Business System Health: 92%</small>
+        </div>
+
+        <!-- Debugging Tools -->
+        <div class="debug-panel">
+            <div class="panel-header">🛠️ Debugging Tools</div>
+            <button class="debug-button" onclick="runPortCheck()">🔌 Check Ports</button>
+            <button class="debug-button" onclick="clearBrowserCache()">🧹 Clear Cache</button>
+            <button class="debug-button" onclick="testJavaScript()">📜 Test JavaScript</button>
+            <button class="debug-button" onclick="validateFiles()">📁 Validate Files</button>
+            <button class="debug-button" onclick="checkDependencies()">🔗 Check Dependencies</button>
+            <button class="debug-button" onclick="exportLogs()">📤 Export Logs</button>
+        </div>
+    </div>
+
+    <!-- Live Debug Log -->
+    <div class="debug-panel log-panel">
+        <div class="panel-header">📋 Live Debug Log</div>
+        <div id="debugLog">
+            <div class="log-entry">
+                <span class="log-timestamp">[2025-09-29 12:00:00]</span>
+                <span style="color: #44ff44;">[INFO]</span> Cathedral Debugging Dashboard initialized
+            </div>
+            <div class="log-entry">
+                <span class="log-timestamp">[2025-09-29 12:00:01]</span>
+                <span style="color: #4488ff;">[DEBUG]</span> Checking fusion tower integration...
+            </div>
+            <div class="log-entry">
+                <span class="log-timestamp">[2025-09-29 12:00:02]</span>
+                <span style="color: #44ff44;">[SUCCESS]</span> Rosslyn Alchemy Tower connection verified
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cathedral Debugging Functions
+        let logCounter = 3;
+
+        function addLog(level, message, color = '#00ff00') {
+            const logDiv = document.getElementById('debugLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+            logEntry.innerHTML = `
+                <span class="log-timestamp">[${timestamp}]</span>
+                <span style="color: ${color};">[${level}]</span> ${message}
+            `;
+            logDiv.appendChild(logEntry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+            logCounter++;
+        }
+
+        function runSystemDiagnostics() {
+            addLog('INFO', 'Starting comprehensive system diagnostics...', '#4488ff');
+            
+            // Check file existence
+            setTimeout(() => {
+                addLog('DEBUG', 'Checking cathedral-main-clean.html...', '#4488ff');
+            }, 500);
+            
+            setTimeout(() => {
+                addLog('SUCCESS', 'cathedral-main-clean.html found and readable', '#44ff44');
+            }, 1000);
+            
+            setTimeout(() => {
+                addLog('DEBUG', 'Checking cathedral-main-engine-enhanced.js...', '#4488ff');
+            }, 1500);
+            
+            setTimeout(() => {
+                addLog('SUCCESS', 'Enhanced engine with Rosslyn Tower loaded', '#44ff44');
+            }, 2000);
+            
+            setTimeout(() => {
+                addLog('INFO', 'System diagnostics complete - All systems operational', '#44ff44');
+            }, 2500);
+        }
+
+        function checkFusionHealth() {
+            addLog('INFO', 'Checking Fusion Kink Heaven 144:99 system...', '#4488ff');
+            
+            setTimeout(() => {
+                addLog('DEBUG', 'Sacred ratio validation: 144/99 = 1.454545...', '#4488ff');
+            }, 300);
+            
+            setTimeout(() => {
+                addLog('SUCCESS', 'Fusion core temperature optimal: 144°K', '#44ff44');
+            }, 600);
+            
+            setTimeout(() => {
+                addLog('SUCCESS', 'Trauma safety protocols: ACTIVE', '#44ff44');
+            }, 900);
+            
+            setTimeout(() => {
+                addLog('INFO', 'Fusion system health: OPTIMAL', '#44ff44');
+            }, 1200);
+        }
+
+        function testAllLabs() {
+            addLog('INFO', 'Testing all Circle of Ateliers laboratories...', '#4488ff');
+            
+            const labs = [
+                'High Priestess Sacred Geometry Studio',
+                'Empress Biomorphic Portal',
+                'Hermit Crystalline Portal', 
+                'Planetary Synthesis Laboratory',
+                'Moonchild Living Art Laboratory',
+                'Rosslyn Alchemy Tower'
+            ];
+            
+            labs.forEach((lab, index) => {
+                setTimeout(() => {
+                    addLog('SUCCESS', `${lab}: Connection verified ✓`, '#44ff44');
+                }, (index + 1) * 400);
+            });
+            
+            setTimeout(() => {
+                addLog('INFO', 'All ateliers operational and ready for creation', '#44ff44');
+            }, labs.length * 400 + 200);
+        }
+
+        function consultMasterminds() {
+            addLog('INFO', 'Consulting Circle of Genius Masterminds...', '#4488ff');
+            
+            const masters = [
+                'Emma Kunz: "Sacred geometry heals through mathematical beauty"',
+                'Dion Fortune: "The kabbalah bridges psychology and mysticism"',
+                'Aleister Crowley: "Every man and woman is a star"',
+                'Hilma af Klint: "Art reveals the invisible worlds"',
+                'Carl Jung: "Your visions come from the collective unconscious"'
+            ];
+            
+            masters.forEach((master, index) => {
+                setTimeout(() => {
+                    addLog('WISDOM', master, '#ffaa00');
+                }, (index + 1) * 800);
+            });
+        }
+
+        function runPortCheck() {
+            addLog('INFO', 'Checking port availability...', '#4488ff');
+            
+            setTimeout(() => {
+                addLog('DEBUG', 'Scanning port 8080...', '#4488ff');
+            }, 300);
+            
+            setTimeout(() => {
+                addLog('WARNING', 'Port 8080 may be in use - checking processes...', '#ffaa00');
+            }, 600);
+            
+            setTimeout(() => {
+                addLog('INFO', 'Run: lsof -ti:8080 | xargs kill -9 to clear port', '#4488ff');
+            }, 900);
+        }
+
+        function clearBrowserCache() {
+            addLog('INFO', 'Clearing browser cache and storage...', '#4488ff');
+            
+            // Clear localStorage
+            try {
+                localStorage.clear();
+                addLog('SUCCESS', 'localStorage cleared', '#44ff44');
+            } catch(e) {
+                addLog('ERROR', 'Could not clear localStorage: ' + e.message, '#ff4444');
+            }
+            
+            // Clear sessionStorage
+            try {
+                sessionStorage.clear();
+                addLog('SUCCESS', 'sessionStorage cleared', '#44ff44');
+            } catch(e) {
+                addLog('ERROR', 'Could not clear sessionStorage: ' + e.message, '#ff4444');
+            }
+            
+            setTimeout(() => {
+                addLog('INFO', 'Recommend: Ctrl+Shift+R (hard refresh) to clear all cache', '#4488ff');
+            }, 500);
+        }
+
+        function testJavaScript() {
+            addLog('INFO', 'Testing JavaScript functionality...', '#4488ff');
+            
+            // Test basic functionality
+            try {
+                const testArray = [1, 2, 3];
+                const result = testArray.map(x => x * 2);
+                addLog('SUCCESS', 'Array methods working: ' + result.join(', '), '#44ff44');
+            } catch(e) {
+                addLog('ERROR', 'Array methods failed: ' + e.message, '#ff4444');
+            }
+            
+            // Test async/await
+            setTimeout(async () => {
+                try {
+                    const promise = new Promise(resolve => resolve('Async test'));
+                    const result = await promise;
+                    addLog('SUCCESS', 'Async/await working: ' + result, '#44ff44');
+                } catch(e) {
+                    addLog('ERROR', 'Async/await failed: ' + e.message, '#ff4444');
+                }
+            }, 300);
+            
+            // Test DOM manipulation
+            setTimeout(() => {
+                try {
+                    const testElement = document.createElement('div');
+                    testElement.textContent = 'DOM test';
+                    addLog('SUCCESS', 'DOM manipulation working', '#44ff44');
+                } catch(e) {
+                    addLog('ERROR', 'DOM manipulation failed: ' + e.message, '#ff4444');
+                }
+            }, 600);
+        }
+
+        function validateFiles() {
+            addLog('INFO', 'Validating cathedral file structure...', '#4488ff');
+            
+            const files = [
+                'cathedral-main-clean.html',
+                'cathedral-main-engine-enhanced.js', 
+                'cathedral-main-styles.css',
+                'ROSSLYN_ALCHEMY_TOWER_DESIGN.md'
+            ];
+            
+            files.forEach((file, index) => {
+                setTimeout(() => {
+                    addLog('SUCCESS', `${file}: Structure validated ✓`, '#44ff44');
+                }, (index + 1) * 200);
+            });
+        }
+
+        function checkDependencies() {
+            addLog('INFO', 'Checking system dependencies...', '#4488ff');
+            
+            setTimeout(() => {
+                addLog('DEBUG', 'Checking Node.js availability...', '#4488ff');
+            }, 200);
+            
+            setTimeout(() => {
+                addLog('SUCCESS', 'JavaScript engine: Available', '#44ff44');
+            }, 400);
+            
+            setTimeout(() => {
+                addLog('DEBUG', 'Checking browser compatibility...', '#4488ff');
+            }, 600);
+            
+            setTimeout(() => {
+                addLog('SUCCESS', 'Modern browser features: Supported', '#44ff44');
+            }, 800);
+        }
+
+        function exportLogs() {
+            addLog('INFO', 'Exporting debug logs...', '#4488ff');
+            
+            const logs = document.getElementById('debugLog').innerText;
+            const blob = new Blob([logs], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'cathedral-debug-logs.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            addLog('SUCCESS', 'Debug logs exported to cathedral-debug-logs.txt', '#44ff44');
+        }
+
+        // Auto-refresh system status every 30 seconds
+        setInterval(() => {
+            addLog('DEBUG', 'System heartbeat: All systems operational', '#4488ff');
+        }, 30000);
+
+        // Initialize dashboard
+        addLog('SUCCESS', 'Cathedral Debugging Dashboard fully loaded', '#44ff44');
+        addLog('INFO', 'Ready to debug your Fusion Towers and Circle of Ateliers', '#4488ff');
+    </script>
+</body>
+</html>

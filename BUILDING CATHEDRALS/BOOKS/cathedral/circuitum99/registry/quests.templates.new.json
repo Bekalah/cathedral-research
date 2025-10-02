@@ -1,0 +1,384 @@
+{
+  "merge_strategy": "append",
+  "schema_version": "1.0.0",
+  "templates": [
+    {
+      "id": "tower-fall",
+      "name": "The Tower's Fall",
+      "stage": "Nigredo",
+      "modes": [
+        "Ritual",
+        "Puzzle"
+      ],
+      "effects": [
+        "Loss",
+        "Rebuild"
+      ],
+      "rewards": [
+        "Trait:TrueHumility",
+        "Sigil:Reforged"
+      ],
+      "synthesizer_integration": {
+        "primary_station": "station-01-obsidian",
+        "secondary_station": "station-06-giger",
+        "audio_cues": [
+          "grounding_drone",
+          "transformation_pulse"
+        ],
+        "visual_elements": [
+          "mandala_destruction",
+          "foundation_laying"
+        ]
+      },
+      "nd_safe_adaptations": {
+        "calm_mode_override": true,
+        "intensity_reduction": 0.7,
+        "break_points": [
+          "after_destruction",
+          "before_rebuild"
+        ],
+        "safety_exits": [
+          "overwhelm_detected",
+          "user_request"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source_refs": [
+        "Rosarium",
+        "Tarot XVI essays"
+      ]
+    },
+    {
+      "id": "river-of-obsidian",
+      "name": "River of Obsidian",
+      "stage": "Nigredo",
+      "modes": [
+        "Ritual",
+        "Lore"
+      ],
+      "effects": [
+        "GriefWitness",
+        "Stillness"
+      ],
+      "rewards": [
+        "Spell:Calm-Waters",
+        "Lore:Underworld-Cartography"
+      ],
+      "synthesizer_integration": {
+        "primary_station": "station-01-obsidian",
+        "secondary_station": "station-08-nihonga",
+        "audio_cues": [
+          "delta_grounding",
+          "stillness_tone"
+        ],
+        "visual_elements": [
+          "obsidian_flow",
+          "river_reflection"
+        ]
+      },
+      "nd_safe_adaptations": {
+        "calm_mode_override": true,
+        "intensity_reduction": 0.8,
+        "break_points": [
+          "entering_river",
+          "witnessing_grief",
+          "finding_stillness"
+        ],
+        "safety_exits": [
+          "emotional_overload",
+          "user_choice"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source_refs": [
+        "Aka Dua: Void",
+        "Black Madonna hymns"
+      ]
+    },
+    {
+      "id": "break-the-seal",
+      "name": "Break the Iron Seal",
+      "stage": "Nigredo",
+      "modes": [
+        "Combat",
+        "Ritual"
+      ],
+      "effects": [
+        "Chainbreak",
+        "Oathcraft"
+      ],
+      "rewards": [
+        "Trait:Unbound",
+        "Tool:Saturnine-Key"
+      ],
+      "synthesizer_integration": {
+        "primary_station": "station-06-giger",
+        "secondary_station": "station-01-obsidian",
+        "audio_cues": [
+          "mechanical_resonance",
+          "breaking_chains"
+        ],
+        "visual_elements": [
+          "iron_dissolution",
+          "key_forging"
+        ]
+      },
+      "nd_safe_adaptations": {
+        "calm_mode_override": false,
+        "intensity_reduction": 0.6,
+        "break_points": [
+          "approaching_seal",
+          "breaking_moment",
+          "liberation"
+        ],
+        "safety_exits": [
+          "intensity_overload",
+          "contraindication_warning"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source_refs": [
+        "Agrippa",
+        "Saturnine operations"
+      ]
+    },
+    {
+      "id": "choose-the-real",
+      "name": "Choose the Real Cup",
+      "stage": "Albedo",
+      "modes": [
+        "Puzzle",
+        "Ritual"
+      ],
+      "effects": [
+        "Discernment",
+        "Clarity"
+      ],
+      "rewards": [
+        "Trait:Truthsense",
+        "Talisman:Tear-Gem"
+      ],
+      "synthesizer_integration": {
+        "primary_station": "station-03-afklint",
+        "secondary_station": "station-08-nihonga",
+        "audio_cues": [
+          "clarity_tone",
+          "discernment_chime"
+        ],
+        "visual_elements": [
+          "cup_illusions",
+          "truth_revelation"
+        ]
+      },
+      "nd_safe_adaptations": {
+        "calm_mode_override": true,
+        "intensity_reduction": 0.9,
+        "break_points": [
+          "surveying_cups",
+          "making_choice",
+          "receiving_truth"
+        ],
+        "safety_exits": [
+          "choice_paralysis",
+          "clarity_achieved"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source_refs": [
+        "Case: Seven of Cups",
+        "Neptune rites"
+      ]
+    },
+    {
+      "id": "first-step",
+      "name": "The First Step",
+      "stage": "Void",
+      "modes": [
+        "Ritual",
+        "Puzzle"
+      ],
+      "effects": [
+        "BeginnerMind",
+        "QuantumLeap"
+      ],
+      "rewards": [
+        "Trait:InfinitePotential",
+        "Tool:PossibilityKey"
+      ],
+      "synthesizer_integration": {
+        "primary_station": "station-10-mandala",
+        "secondary_station": "station-02-kunz",
+        "audio_cues": [
+          "possibility_tone",
+          "quantum_resonance"
+        ],
+        "visual_elements": [
+          "threshold_opening",
+          "potential_field"
+        ]
+      },
+      "nd_safe_adaptations": {
+        "calm_mode_override": true,
+        "intensity_reduction": 1,
+        "break_points": [
+          "approaching_threshold",
+          "taking_step",
+          "entering_possibility"
+        ],
+        "safety_exits": [
+          "overwhelm_prevention",
+          "gentle_return"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source_refs": [
+        "Quantum consciousness",
+        "Beginner's Mind texts"
+      ]
+    },
+    {
+      "id": "temptation-labyrinth",
+      "name": "The Labyrinth of Temptation",
+      "stage": "Nigredo",
+      "modes": [
+        "Puzzle",
+        "Ritual"
+      ],
+      "effects": [
+        "ShadowWork",
+        "Integration"
+      ],
+      "rewards": [
+        "Trait:ShadowIntegration",
+        "Tool:DiscernmentMirror"
+      ],
+      "synthesizer_integration": {
+        "primary_station": "station-01-obsidian",
+        "secondary_station": "station-06-giger",
+        "audio_cues": [
+          "stage_resonance",
+          "element_tone"
+        ],
+        "visual_elements": [
+          "card_mandala",
+          "stage_colors"
+        ]
+      },
+      "nd_safe_adaptations": {
+        "calm_mode_override": true,
+        "intensity_reduction": 0.6,
+        "break_points": [
+          "quest_start",
+          "mid_point",
+          "completion"
+        ],
+        "safety_exits": [
+          "overwhelm_detected",
+          "user_request",
+          "time_limit"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source_refs": [
+        "Agrippa: De Occulta",
+        "Saturnine rites"
+      ]
+    },
+    {
+      "id": "tears-to-talisman",
+      "name": "Tears into Sacred Talisman",
+      "stage": "Albedo",
+      "modes": [
+        "Ritual",
+        "Lore"
+      ],
+      "effects": [
+        "Healing",
+        "Transmutation"
+      ],
+      "rewards": [
+        "Talisman:HealingTears",
+        "Spell:EmotionalAlchemy"
+      ],
+      "synthesizer_integration": {
+        "primary_station": "station-03-afklint",
+        "secondary_station": "station-08-nihonga",
+        "audio_cues": [
+          "stage_resonance",
+          "element_tone"
+        ],
+        "visual_elements": [
+          "card_mandala",
+          "stage_colors"
+        ]
+      },
+      "nd_safe_adaptations": {
+        "calm_mode_override": true,
+        "intensity_reduction": 0.8,
+        "break_points": [
+          "quest_start",
+          "mid_point",
+          "completion"
+        ],
+        "safety_exits": [
+          "overwhelm_detected",
+          "user_request",
+          "time_limit"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source_refs": [
+        "Case: Tarot",
+        "Neptunian hymns"
+      ]
+    },
+    {
+      "id": "reality-engineering",
+      "name": "Engineering New Reality",
+      "stage": "Void",
+      "modes": [
+        "Puzzle",
+        "Creation"
+      ],
+      "effects": [
+        "Creation",
+        "Manifestation"
+      ],
+      "rewards": [
+        "Tool:RealityShaper",
+        "Trait:Manifestor"
+      ],
+      "synthesizer_integration": {
+        "primary_station": "station-10-mandala",
+        "secondary_station": "station-02-kunz",
+        "audio_cues": [
+          "stage_resonance",
+          "element_tone"
+        ],
+        "visual_elements": [
+          "card_mandala",
+          "stage_colors"
+        ]
+      },
+      "nd_safe_adaptations": {
+        "calm_mode_override": true,
+        "intensity_reduction": 0.8,
+        "break_points": [
+          "quest_start",
+          "mid_point",
+          "completion"
+        ],
+        "safety_exits": [
+          "overwhelm_detected",
+          "user_request",
+          "time_limit"
+        ]
+      },
+      "schema_version": "1.0.0",
+      "source_refs": [
+        "Fortune: Mystical Qabalah",
+        "Quantum consciousness studies"
+      ]
+    }
+  ]
+}

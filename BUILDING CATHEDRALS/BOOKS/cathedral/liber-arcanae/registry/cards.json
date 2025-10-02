@@ -1,0 +1,162 @@
+{
+  "merge_strategy": "append",
+  "schema_version": "1.0.0",
+  "cards": [
+    {
+      "id": "XIII",
+      "name": "Death",
+      "rank": "Major",
+      "suit": null,
+      "element": "Water",
+      "stage": "Nigredo",
+      "numerology": 13,
+      "lineage_card": true,
+      "resonances": {
+        "planet": "Pluto",
+        "zodiac": "Scorpio",
+        "degree": 210.0,
+        "color_lab": "lab(20% 5 -5)", 
+        "angel": "Shem-42",
+        "daemon": "Transformer-Shadow",
+        "gate": "Da'ath-Underpass"
+      },
+      "progression": {
+        "unlocks": ["Necromancy.Rites", "Rebirth.Invocation"],
+        "skill_trees": ["Underworld.Path", "Shadow.Surgery"]
+      },
+      "quests": ["tower-fall", "river-of-obsidian"],
+      "art_style": "obsidian+gold mandala / Black Madonna mirror",
+      "living": {
+        "book_roles": ["Chapter:Descent", "Appendix:ShadowWork"],
+        "library_nodes": ["underworld-cartography", "transformation-rites"],
+        "cathedral_zones": ["foundation-crypt", "abyss-mirror"],
+        "art_realms": ["obsidian-mandala", "black-madonna-void"],
+        "temple_functions": ["healing", "initiation", "transformation"],
+        "reiki_grid_tokens": {"grounding": 0.8, "release": 0.9, "transformation": 1.0},
+        "atelier_exercises": ["grounding_meditation", "shadow_integration", "grief_witness"],
+        "interaction_model": "solo"
+      },
+      "provenance": {
+        "source_refs": ["Fortune: Mystical Qabalah", "Regardie: Middle Pillar", "Abyssia Void notes"],
+        "notes": "Death as putrefactio; crossing abyss via compassionate witness."
+      }
+    },
+    {
+      "id": "XV",
+      "name": "The Devil",
+      "rank": "Major",
+      "suit": null,
+      "element": "Earth",
+      "stage": "Nigredo",
+      "numerology": 15,
+      "lineage_card": false,
+      "resonances": {
+        "planet": "Saturn",
+        "zodiac": "Capricorn",
+        "degree": 300.0,
+        "color_lab": "lab(18% 3 2)",
+        "angel": "Shem-32",
+        "daemon": "Binder-of-Chains",
+        "gate": "Iron-Crypt"
+      },
+      "progression": {
+        "unlocks": ["Shadow.Contracts", "Chainbreaking.Techniques"],
+        "skill_trees": ["Constraint.Alchemy", "Oathcraft"]
+      },
+      "quests": ["break-the-seal", "temptation-labyrinth"],
+      "art_style": "iron sigils, geometric fetters, coal-red glow",
+      "living": {
+        "book_roles": ["Chapter:Binding", "Appendix:Liberation"],
+        "library_nodes": ["constraint-studies", "liberation-techniques"],
+        "cathedral_zones": ["foundation-crypt", "iron-sanctum"],
+        "art_realms": ["giger-mechorganic", "obsidian-mandala"],
+        "temple_functions": ["binding", "liberation", "constraint-work"],
+        "reiki_grid_tokens": {"constraint": 0.9, "liberation": 0.8, "shadow_work": 0.7},
+        "atelier_exercises": ["constraint_recognition", "liberation_practice", "oath_analysis"],
+        "interaction_model": "solo"
+      },
+      "provenance": {
+        "source_refs": ["Agrippa: De Occulta", "Saturnine rites"],
+        "notes": "Integration of compulsion; liberation through conscious oath."
+      }
+    },
+    {
+      "id": "Cups-7",
+      "name": "Seven of Cups",
+      "rank": "Minor",
+      "suit": "Cups",
+      "element": "Water",
+      "stage": "Albedo",
+      "numerology": 7,
+      "lineage_card": false,
+      "resonances": {
+        "planet": "Venus",
+        "zodiac": "Scorpio-Decan2",
+        "degree": 226.0,
+        "color_lab": "lab(58% -3 -6)",
+        "angel": "Shem-47",
+        "daemon": "Fata-Mirage",
+        "gate": "Dream-Bazaar"
+      },
+      "progression": {
+        "unlocks": ["One-True-Cup", "Dream-Distillation"],
+        "skill_trees": ["Empathy", "Oneirognosis"]
+      },
+      "quests": ["choose-the-real", "tears-to-talisman"],
+      "art_style": "opalescent rain, mirror-mist, cup halos",
+      "living": {
+        "book_roles": ["Chapter:Choices", "Appendix:Discernment"],
+        "library_nodes": ["choice-studies", "discernment-training"],
+        "cathedral_zones": ["dream-laboratory", "choice-chamber"],
+        "art_realms": ["afklint-automatic", "living-mandala"],
+        "temple_functions": ["discernment", "choice-making", "clarity"],
+        "reiki_grid_tokens": {"clarity": 0.8, "discernment": 0.9, "flow": 0.7},
+        "atelier_exercises": ["choice_meditation", "discernment_practice", "cup_selection"],
+        "interaction_model": "solo"
+      },
+      "provenance": {
+        "source_refs": ["Case: Tarot", "Neptunian hymns"],
+        "notes": "Discernment ritual: dissolve false glamours."
+      }
+    },
+    {
+      "id": "0",
+      "name": "The Fool",
+      "rank": "Major",
+      "suit": null,
+      "element": "Air",
+      "stage": "Void",
+      "numerology": 0,
+      "lineage_card": true,
+      "resonances": {
+        "planet": "Uranus",
+        "zodiac": "Aquarius",
+        "degree": 0.0,
+        "color_lab": "lab(90% -5 -2)",
+        "angel": "Shem-1",
+        "daemon": "Beginner-Mind",
+        "gate": "Threshold-Dawn"
+      },
+      "progression": {
+        "unlocks": ["Infinite.Potential", "Reality.Reset"],
+        "skill_trees": ["Quantum.Leap", "Possibility.Theory"]
+      },
+      "quests": ["first-step", "reality-engineering"],
+      "art_style": "crystalline sphere of pure possibility",
+      "living": {
+        "book_roles": ["Chapter:Beginning", "Appendix:Infinite"],
+        "library_nodes": ["possibility-theory", "quantum-mechanics"],
+        "cathedral_zones": ["threshold-gate", "possibility-chamber"],
+        "art_realms": ["living-mandala", "synthwave-arcana"],
+        "temple_functions": ["initiation", "new-beginnings", "possibility"],
+        "reiki_grid_tokens": {"potential": 1.0, "beginning": 0.9, "freedom": 0.8},
+        "atelier_exercises": ["beginner_mind", "possibility_exploration", "quantum_leap"],
+        "interaction_model": "solo"
+      },
+      "provenance": {
+        "source_refs": ["Fortune: Mystical Qabalah", "Quantum consciousness studies"],
+        "notes": "Pure potential; infinite possibility activation."
+      }
+    }
+  ]
+}

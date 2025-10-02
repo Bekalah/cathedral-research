@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral of Circuits - Visually Stunning Living Grimoire</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Julius+Sans+One&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== CATHEDRAL VISUAL FOUNDATION ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cinzel', serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 105, 180, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 100%);
+            color: #e6d3a7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            animation: cathedral-breathe 8s ease-in-out infinite alternate;
+        }
+        
+        @keyframes cathedral-breathe {
+            0% { background-size: 100% 100%; }
+            100% { background-size: 110% 110%; }
+        }
+        
+        /* ========== HEADER ========== */
+        .cathedral-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cathedral-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: shimmer 4s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .cathedral-title {
+            font-size: 3rem;
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cathedral-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ========== NAVIGATION ========== */
+        .cathedral-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(6, 182, 212, 0.8));
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+            font-family: inherit;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .nav-button:hover::before {
+            left: 100%;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+            border-color: #FFD700;
+        }
+        
+        /* ========== MAIN CONTENT GRID ========== */
+        .cathedral-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        /* ========== ARCANA CARDS ========== */
+        .arcana-section {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .arcana-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tarot-card {
+            aspect-ratio: 2.5/3.5;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(30, 30, 60, 0.8));
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+        
+        .tarot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tarot-card:hover::before {
+            opacity: 1;
+        }
+        
+        .tarot-card:hover {
+            transform: translateY(-10px) scale(1.05) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .card-figure {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+        
+        .card-symbol {
+            font-size: 3rem;
+            margin: 20px 0;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+        }
+        
+        .card-description {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        
+        /* ========== CENTRAL INTERFACE ========== */
+        .central-interface {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 25px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            position: relative;
+        }
+        
+        .interface-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .interface-title {
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .status-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .status-card:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .status-value {
+            font-size: 1.5rem;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .status-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        
+        /* ========== QUEST INTERFACE ========== */
+        .quest-interface {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .quest-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .quest-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quest-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateX(5px);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+        
+        .quest-name {
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 5px;
+        }
+        
+        .quest-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* ========== FOOTER CONTROLS ========== */
+        .cathedral-footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(15px);
+        }
+        
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .control-button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.6), rgba(6, 182, 212, 0.6));
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .control-button:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(6, 182, 212, 0.8));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1200px) {
+            .cathedral-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .cathedral-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cathedral-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                width: 80%;
+                max-width: 300px;
+            }
+            
+            .arcana-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .cathedral-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* ========== ACCESSIBILITY ========== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+        
+        /* ========== LOADING STATE ========== */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+            flex-direction: column;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            border-top: 3px solid #FFD700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* ========== ENHANCED STYLES FOR INTEGRATION ========== */
+        .cathedral-enhanced {
+            position: relative;
+        }
+        
+        .fractal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.3;
+            mix-blend-mode: screen;
+            z-index: 1;
+        }
+        
+        .enhanced-element {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="cathedral-container">
+    
+    <!-- Header -->
+    <header class="cathedral-header">
+        <h1 class="cathedral-title">🏛️ Cathedral of Circuits</h1>
+        <p class="cathedral-subtitle">Living Grimoire • 22 Tradition Engines • Björk × BIG × Burton × Oz Aesthetic</p>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="cathedral-nav">
+        <a href="./circuitum99-immersive-reality.html" class="nav-button">⚡ Circuitum99</a>
+        <a href="./liber-arcanae-living-arcana-deck.html" class="nav-button">🃏 Liber Arcanae</a>
+        <a href="./cathedral-of-circuits-main-platform.html" class="nav-button">🏛️ Main Platform</a>
+        <a href="./fusion-laboratory.html" class="nav-button">🔬 Fusion Labs</a>
+        <a href="./cathedral-hub.html" class="nav-button">🌐 Hub</a>
+    </nav>
+    
+    <!-- Main Content Grid -->
+    <main class="cathedral-grid">
+        
+        <!-- Left Panel: Major Arcana -->
+        <section class="arcana-section">
+            <h2 style="color: #FFD700; text-align: center; margin-bottom: 20px;">🃏 Major Arcana</h2>
+            <div class="arcana-grid" id="arcana-grid">
+                <!-- Populated by JavaScript -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading Archetypal Masters...</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Central Interface -->
+        <section class="central-interface">
+            <div class="interface-header">
+                <h2 class="interface-title">🌟 Cathedral Command Center</h2>
+                <p>Living Tradition Engines • Fractal Node System • Visual Enhancement Active</p>
+            </div>
+            
+            <div class="status-grid" id="status-grid">
+                <div class="status-card">
+                    <div class="status-value" id="nodes-count">Loading...</div>
+                    <div class="status-label">Active Nodes</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-value" id="fractals-count">Loading...</div>
+                    <div class="status-label">Fractals</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-value" id="synth-count">Loading...</div>
+                    <div class="status-label">Synth Stations</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-value" id="enhancement-status">Loading...</div>
+                    <div class="status-label">Visual Engine</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <p style="font-size: 1.1rem; line-height: 1.6; opacity: 0.9;">
+                    Welcome to the Cathedral of Circuits, where sacred geometry meets living tradition engines. 
+                    Each archetypal node generates unique fractal patterns, creating a breathtaking fusion of 
+                    Björk's organic breathing, Bjarke Ingels' architectural precision, Alice's curious wonder, 
+                    Tim Burton's gothic beauty, and the Wizard of Oz's magical rainbow bridge.
+                </p>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="control-button" onclick="toggleFractals()">🎨 Toggle Fractals</button>
+                <button class="control-button" onclick="randomizeVisuals()">🎲 Randomize</button>
+                <button class="control-button" onclick="openDialogue()">💭 Dialogue Mode</button>
+            </div>
+        </section>
+        
+        <!-- Right Panel: Active Quests -->
+        <section class="quest-interface">
+            <h2 style="color: #FFD700; text-align: center; margin-bottom: 20px;">🗡️ Active Quests</h2>
+            <ul class="quest-list" id="quest-list">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading Archetypal Quests...</p>
+                </div>
+            </ul>
+        </section>
+        
+    </main>
+    
+    <!-- Footer Controls -->
+    <footer class="cathedral-footer">
+        <div class="control-buttons">
+            <button class="control-button" onclick="window.cathedralSystem?.toggleFullFractalMode()">🌟 Full Fractal Mode</button>
+            <button class="control-button" onclick="window.cathedralSystem?.togglePerformanceMode()">⚡ Performance Mode</button>
+            <button class="control-button" onclick="showSystemStatus()">📊 System Status</button>
+            <button class="control-button" onclick="exportSession()">💾 Export Session</button>
+        </div>
+        
+        <p style="opacity: 0.8;">
+            🔑 Keyboard Shortcuts: Ctrl/Cmd + Space (Toggle Fractals) • Ctrl/Cmd + Shift + F (Full Mode) • Ctrl/Cmd + Shift + P (Performance)
+        </p>
+        
+        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">
+            Cathedral of Circuits v2.0 • Living Tradition Engines • Forever Free • Museum Quality
+        </p>
+    </footer>
+    
+    <!-- Load Enhancement Scripts -->
+    <script src="cathedral-visual-enhancement-engine.js"></script>
+    <script src="cathedral-system-integration.js"></script>
+    
+    <script>
+        // ========== CATHEDRAL MAIN INTERFACE CONTROLLER ==========
+        
+        class CathedralMainInterface {
+            constructor() {
+                this.isLoaded = false;
+                this.nodes = [];
+                this.quests = [];
+            }
+            
+            async initialize() {
+                console.log('🏛️ Initializing Cathedral Main Interface...');
+                
+                try {
+                    // Wait for system integration to load
+                    await this.waitForCathedralSystem();
+                    
+                    // Load interface data
+                    await this.loadInterfaceData();
+                    
+                    // Populate UI elements
+                    this.populateArcanaGrid();
+                    this.populateQuestList();
+                    this.updateStatusCards();
+                    
+                    this.isLoaded = true;
+                    console.log('✨ Cathedral Main Interface Ready!');
+                    
+                } catch (error) {
+                    console.warn('⚠️ Interface loading error:', error);
+                    this.showFallbackInterface();
+                }
+            }
+            
+            async waitForCathedralSystem() {
+                let attempts = 0;
+                while (!window.cathedralSystem?.isInitialized && attempts < 50) {
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    attempts++;
+                }
+                
+                if (!window.cathedralSystem?.isInitialized) {
+                    throw new Error('Cathedral system not available');
+                }
+            }
+            
+            async loadInterfaceData() {
+                // Get nodes from cathedral system
+                if (window.cathedralSystem) {
+                    this.nodes = window.cathedralSystem.getAllNodes();
+                    console.log(`📊 Loaded ${this.nodes.length} archetypal nodes`);
+                }
+                
+                // Load quests from registry or fallback
+                try {
+                    const response = await fetch('./circuitum99/registry/quests.templates.json');
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.quests = data.templates || [];
+                    }
+                } catch (error) {
+                    this.quests = this.getFallbackQuests();
+                }
+                
+                console.log(`🗡️ Loaded ${this.quests.length} available quests`);
+            }
+            
+            populateArcanaGrid() {
+                const grid = document.getElementById('arcana-grid');
+                if (!grid) return;
+                
+                // Default arcana if no nodes loaded
+                const arcanaData = this.nodes.length > 0 ? this.nodes : this.getFallbackArcana();
+                
+                grid.innerHTML = arcanaData.map(node => {
+                    const arcana = node.arcana || node;
+                    const symbol = this.getArcanaSymbol(arcana.name || arcana.id);
+                    
+                    return `
+                        <div class="tarot-card" 
+                             data-card-id="${arcana.id}" 
+                             data-node-number="${node.nodeNumber || arcana.id}"
+                             onclick="interactWithArcana(${arcana.id})">
+                            <div class="card-title">${arcana.name || `Archetype ${arcana.id}`}</div>
+                            <div class="card-figure">${node.historicalFigure || arcana.historical_figure || 'Mystery Guide'}</div>
+                            <div class="card-symbol">${symbol}</div>
+                            <div class="card-description">
+                                ${this.getArcanaDescription(arcana.name)}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                // Re-enhance newly created elements
+                if (window.cathedralSystem) {
+                    const cards = grid.querySelectorAll('.tarot-card');
+                    cards.forEach((card, index) => {
+                        const nodeNumber = parseInt(card.dataset.nodeNumber) || index;
+                        window.cathedralSystem.enhanceNewElement(card, nodeNumber);
+                    });
+                }
+            }
+            
+            populateQuestList() {
+                const list = document.getElementById('quest-list');
+                if (!list) return;
+                
+                const questData = this.quests.length > 0 ? this.quests : this.getFallbackQuests();
+                
+                list.innerHTML = questData.slice(0, 6).map(quest => `
+                    <li class="quest-item" onclick="startQuest('${quest.id}')">
+                        <div class="quest-name">${quest.name}</div>
+                        <div class="quest-description">
+                            Stage: ${quest.stage || 'Mystery'} • 
+                            Rewards: ${quest.rewards?.join(', ') || 'Wisdom & Growth'}
+                        </div>
+                    </li>
+                `).join('');
+            }
+            
+            updateStatusCards() {
+                const status = window.cathedralSystem?.getSystemStatus() || {
+                    nodesConnected: this.nodes.length,
+                    visualEngineActive: false,
+                    synthStations: 0,
+                    initialized: false
+                };
+                
+                document.getElementById('nodes-count').textContent = status.nodesConnected;
+                document.getElementById('fractals-count').textContent = status.nodesConnected;
+                document.getElementById('synth-count').textContent = status.synthStations;
+                document.getElementById('enhancement-status').textContent = status.visualEngineActive ? 'Active' : 'Basic';
+            }
+            
+            getArcanaSymbol(name = '') {
+                const symbols = {
+                    'fool': '🤹',
+                    'magician': '🎩',
+                    'high priestess': '🌙',
+                    'priestess': '🌙',
+                    'empress': '👑',
+                    'emperor': '⚡',
+                    'hierophant': '🏛️',
+                    'lovers': '💕',
+                    'chariot': '🏇',
+                    'strength': '🦁',
+                    'hermit': '🕯️',
+                    'wheel': '☸️',
+                    'justice': '⚖️',
+                    'hanged man': '🙃',
+                    'death': '🦋',
+                    'temperance': '🧪',
+                    'devil': '😈',
+                    'tower': '🏗️',
+                    'star': '⭐',
+                    'moon': '🌙',
+                    'sun': '☀️',
+                    'judgement': '📯',
+                    'world': '🌍'
+                };
+                
+                const key = name.toLowerCase();
+                return symbols[key] || Object.values(symbols)[Math.floor(Math.random() * Object.values(symbols).length)];
+            }
+            
+            getArcanaDescription(name = '') {
+                const descriptions = {
+                    'The Fool': 'Infinite potential and new beginnings',
+                    'The Magician': 'Manifestation and willpower',
+                    'The High Priestess': 'Intuition and inner wisdom',
+                    'The Empress': 'Creativity and abundance',
+                    'The Emperor': 'Authority and structure',
+                    'The Hierophant': 'Tradition and spiritual guidance',
+                    'The Lovers': 'Choice and harmonious relationships',
+                    'The Chariot': 'Determination and control',
+                    'Strength': 'Inner strength and courage',
+                    'The Hermit': 'Soul searching and inner guidance',
+                    'Wheel of Fortune': 'Change and cycles',
+                    'Justice': 'Fairness and truth',
+                    'The Hanged Man': 'Suspension and letting go',
+                    'Death': 'Transformation and rebirth',
+                    'Temperance': 'Balance and moderation',
+                    'The Devil': 'Bondage and materialism',
+                    'The Tower': 'Sudden change and revelation',
+                    'The Star': 'Hope and spiritual guidance',
+                    'The Moon': 'Illusion and intuition',
+                    'The Sun': 'Joy and success',
+                    'Judgement': 'Rebirth and inner calling',
+                    'The World': 'Completion and accomplishment'
+                };
+                
+                return descriptions[name] || 'A path of wisdom and transformation';
+            }
+            
+            getFallbackArcana() {
+                return [
+                    { id: 0, name: 'The Fool', historical_figure: 'Rebecca Respawn' },
+                    { id: 1, name: 'The Magician', historical_figure: 'John Dee' },
+                    { id: 2, name: 'The High Priestess', historical_figure: 'Dion Fortune' },
+                    { id: 3, name: 'The Empress', historical_figure: 'Maria Sibylla Merian' },
+                    { id: 21, name: 'The World', historical_figure: 'Cosmic Dancer' }
+                ];
+            }
+            
+            getFallbackQuests() {
+                return [
+                    { id: 'first-step', name: 'The First Step', stage: 'Void', rewards: ['Infinite Potential'] },
+                    { id: 'reality-engineering', name: 'Engineering New Reality', stage: 'Void', rewards: ['Reality Shaper'] },
+                    { id: 'wisdom-seeking', name: 'Seeking Ancient Wisdom', stage: 'Albedo', rewards: ['Truth Sight'] },
+                    { id: 'shadow-integration', name: 'Shadow Integration', stage: 'Nigredo', rewards: ['Wholeness'] }
+                ];
+            }
+            
+            showFallbackInterface() {
+                // Show basic interface if full system fails
+                this.populateArcanaGrid();
+                this.populateQuestList();
+                this.updateStatusCards();
+                
+                console.log('🔄 Fallback interface active');
+            }
+        }
+        
+        // ========== GLOBAL FUNCTIONS ==========
+        
+        function interactWithArcana(cardId) {
+            console.log(`🎭 Interacting with Arcana ${cardId}`);
+            
+            if (window.cathedralSystem) {
+                const nodeData = window.cathedralSystem.getNodeData(cardId);
+                if (nodeData) {
+                    // This will trigger the dialogue system
+                    const element = document.querySelector(`[data-card-id="${cardId}"]`);
+                    if (element) {
+                        element.click(); // Trigger the enhanced click handler
+                    }
+                    return;
+                }
+            }
+            
+            // Fallback interaction
+            alert(`Welcome to the path of Arcana ${cardId}! This would open the dialogue interface with your archetypal guide.`);
+        }
+        
+        function startQuest(questId) {
+            console.log(`🗡️ Starting quest: ${questId}`);
+            alert(`Beginning quest: ${questId}. This would launch the quest interface with your chosen archetypal guide.`);
+        }
+        
+        function toggleFractals() {
+            if (window.cathedralSystem) {
+                window.cathedralSystem.toggleAllFractals();
+            } else {
+                console.log('🎨 Fractal system not available');
+            }
+        }
+        
+        function randomizeVisuals() {
+            if (window.cathedralEnhancer) {
+                // Randomize fractal parameters
+                const cards = document.querySelectorAll('.tarot-card');
+                cards.forEach((card, index) => {
+                    const nodeNumber = Math.floor(Math.random() * 144) + 1;
+                    card.dataset.nodeNumber = nodeNumber;
+                    if (window.cathedralSystem) {
+                        window.cathedralSystem.enhanceNewElement(card, nodeNumber);
+                    }
+                });
+                console.log('🎲 Visuals randomized!');
+            }
+        }
+        
+        function openDialogue() {
+            alert('Dialogue mode would open a central interface for communicating with all 22 tradition engines simultaneously!');
+        }
+        
+        function showSystemStatus() {
+            const status = window.cathedralSystem?.getSystemStatus() || { initialized: false };
+            const statusText = `
+Cathedral System Status:
+• Initialized: ${status.initialized ? 'Yes' : 'No'}
+• Visual Engine: ${status.visualEngineActive ? 'Active' : 'Basic'}
+• Nodes Connected: ${status.nodesConnected || 0}
+• Synth Stations: ${status.synthStations || 0}
+• Registries Loaded: ${status.registriesLoaded || 0}
+            `;
+            alert(statusText);
+        }
+        
+        function exportSession() {
+            const sessionData = {
+                timestamp: new Date().toISOString(),
+                systemStatus: window.cathedralSystem?.getSystemStatus(),
+                loadedNodes: window.cathedralInterface?.nodes?.length || 0,
+                activeQuests: window.cathedralInterface?.quests?.length || 0
+            };
+            
+            const blob = new Blob([JSON.stringify(sessionData, null, 2)], {
+                type: 'application/json'
+            });
+            
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `cathedral-session-${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            console.log('💾 Session exported');
+        }
+        
+        // ========== INITIALIZATION ==========
+        
+        // Initialize interface when page loads
+        window.cathedralInterface = new CathedralMainInterface();
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                window.cathedralInterface.initialize();
+            });
+        } else {
+            window.cathedralInterface.initialize();
+        }
+        
+        console.log('🏛️✨ Cathedral Main Interface loaded - Preparing stunning visual experience...');
+    </script>
+</body>
+</html>

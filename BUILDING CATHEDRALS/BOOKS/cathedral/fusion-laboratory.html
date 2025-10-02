@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion Laboratory - AI Tool Synthesis</title>
+    <style>
+        :root {
+            /* Fusion Colors */
+            --fusion-primary: #FF6B9D;
+            --fusion-secondary: #4ECDC4;
+            --fusion-accent: #F39C12;
+            --energy-purple: #9B59B6;
+            --cosmic-blue: #3498DB;
+            --neural-green: #2ECC71;
+            --quantum-gold: #FFD700;
+            
+            /* Laboratory Colors */
+            --lab-bg: #0A0A0A;
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --glass-effect: rgba(255, 255, 255, 0.08);
+            --text-primary: #FFFFFF;
+            --text-secondary: #B8B8B8;
+            --border-glow: #00FFFF;
+            
+            /* Sacred Geometry */
+            --phi: 1.618;
+            --sacred-unit: 1rem;
+            --sacred-space: calc(var(--sacred-unit) * var(--phi));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, 
+                var(--lab-bg) 0%, 
+                #1a1a2e 25%, 
+                #16213E 50%, 
+                #0F3460 75%, 
+                #533483 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .fusion-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: var(--sacred-space);
+        }
+
+        .fusion-header {
+            text-align: center;
+            margin-bottom: calc(var(--sacred-space) * 2);
+            padding: var(--sacred-space);
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 157, 0.1) 0%, 
+                rgba(78, 205, 196, 0.1) 50%, 
+                rgba(243, 156, 18, 0.1) 100%);
+            border-radius: calc(var(--sacred-unit) * var(--phi));
+            border: 2px solid var(--quantum-gold);
+            backdrop-filter: blur(20px);
+        }
+
+        .fusion-title {
+            font-size: calc(3.5rem * var(--phi));
+            margin-bottom: var(--sacred-unit);
+            background: linear-gradient(45deg, 
+                var(--fusion-primary), 
+                var(--fusion-secondary), 
+                var(--fusion-accent), 
+                var(--energy-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: title-glow 3s ease-in-out infinite;
+        }
+
+        .fusion-subtitle {
+            font-size: 1.6rem;
+            color: var(--border-glow);
+            font-style: italic;
+            margin-bottom: var(--sacred-unit);
+        }
+
+        .fusion-status {
+            font-size: 1.3rem;
+            color: var(--quantum-gold);
+            font-family: 'Courier New', monospace;
+        }
+
+        .laboratory-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: var(--sacred-space);
+            margin-bottom: calc(var(--sacred-space) * 2);
+        }
+
+        .tool-palette {
+            background: var(--panel-bg);
+            border: 2px solid var(--fusion-primary);
+            border-radius: var(--sacred-space);
+            padding: var(--sacred-space);
+            backdrop-filter: blur(15px);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .palette-title {
+            font-size: 1.5rem;
+            color: var(--quantum-gold);
+            text-align: center;
+            margin-bottom: var(--sacred-space);
+            border-bottom: 2px solid var(--fusion-primary);
+            padding-bottom: var(--sacred-unit);
+        }
+
+        .tool-category {
+            margin-bottom: var(--sacred-space);
+        }
+
+        .category-title {
+            font-size: 1.2rem;
+            color: var(--fusion-secondary);
+            margin-bottom: var(--sacred-unit);
+            display: flex;
+            align-items: center;
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--sacred-unit);
+        }
+
+        .tool-card {
+            background: var(--glass-effect);
+            border: 1px solid transparent;
+            border-radius: calc(var(--sacred-unit) / 2);
+            padding: var(--sacred-unit);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, var(--fusion-primary), var(--fusion-secondary), var(--fusion-accent));
+            z-index: -1;
+            border-radius: calc(var(--sacred-unit) / 2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tool-card:hover::before {
+            opacity: 0.7;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .tool-card.selected {
+            background: linear-gradient(135deg, var(--fusion-accent), var(--energy-purple));
+            transform: scale(1.1);
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-name {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .fusion-workspace {
+            background: var(--panel-bg);
+            border: 3px solid var(--border-glow);
+            border-radius: var(--sacred-space);
+            padding: var(--sacred-space);
+            backdrop-filter: blur(20px);
+            position: relative;
+            min-height: 600px;
+        }
+
+        .workspace-title {
+            font-size: 1.8rem;
+            color: var(--quantum-gold);
+            text-align: center;
+            margin-bottom: var(--sacred-space);
+        }
+
+        .fusion-canvas {
+            width: 100%;
+            height: 500px;
+            border: 2px solid var(--cosmic-blue);
+            border-radius: var(--sacred-unit);
+            background: radial-gradient(circle, 
+                rgba(52, 152, 219, 0.1) 0%, 
+                rgba(155, 89, 182, 0.1) 50%, 
+                rgba(0, 0, 0, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fusion-node {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: move;
+            transition: all 0.3s ease;
+            border: 2px solid var(--quantum-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .fusion-node:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px currentColor;
+        }
+
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neural-green), var(--border-glow));
+            border-radius: 1px;
+            animation: energy-flow 2s linear infinite;
+        }
+
+        .output-panel {
+            background: var(--panel-bg);
+            border: 2px solid var(--neural-green);
+            border-radius: var(--sacred-space);
+            padding: var(--sacred-space);
+            backdrop-filter: blur(15px);
+        }
+
+        .output-title {
+            font-size: 1.5rem;
+            color: var(--quantum-gold);
+            text-align: center;
+            margin-bottom: var(--sacred-space);
+            border-bottom: 2px solid var(--neural-green);
+            padding-bottom: var(--sacred-unit);
+        }
+
+        .fusion-recipe {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--fusion-accent);
+            border-radius: var(--sacred-unit);
+            padding: var(--sacred-unit);
+            margin-bottom: var(--sacred-unit);
+            font-family: 'Courier New', monospace;
+        }
+
+        .recipe-title {
+            color: var(--fusion-accent);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-steps {
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .control-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--sacred-unit);
+            margin-bottom: var(--sacred-space);
+        }
+
+        .control-button {
+            padding: var(--sacred-unit);
+            background: linear-gradient(135deg, var(--cosmic-blue), var(--energy-purple));
+            color: white;
+            border: none;
+            border-radius: calc(var(--sacred-unit) / 2);
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(52, 152, 219, 0.4);
+        }
+
+        .fusion-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--sacred-space);
+            margin-top: calc(var(--sacred-space) * 2);
+        }
+
+        .project-card {
+            background: var(--glass-effect);
+            border: 2px solid var(--fusion-secondary);
+            border-radius: var(--sacred-space);
+            padding: var(--sacred-space);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(78, 205, 196, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: var(--quantum-gold);
+            margin-bottom: var(--sacred-unit);
+            text-align: center;
+        }
+
+        .project-tools {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: var(--sacred-unit);
+        }
+
+        .project-tool-tag {
+            background: var(--fusion-accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin-bottom: var(--sacred-unit);
+        }
+
+        .project-button {
+            width: 100%;
+            padding: var(--sacred-unit);
+            background: linear-gradient(135deg, var(--fusion-primary), var(--fusion-secondary));
+            color: white;
+            border: none;
+            border-radius: calc(var(--sacred-unit) / 2);
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .project-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        @keyframes title-glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2) drop-shadow(0 0 20px currentColor); }
+        }
+
+        @keyframes energy-flow {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
+        @keyframes node-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .node-active {
+            animation: node-pulse 2s ease-in-out infinite;
+        }
+
+        @media (max-width: 1200px) {
+            .laboratory-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fusion-title {
+                font-size: 2.5rem;
+            }
+            
+            .tool-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fusion-container">
+        <div class="fusion-header">
+            <h1 class="fusion-title">⚗️ Fusion Laboratory</h1>
+            <p class="fusion-subtitle">AI Tool Synthesis & Creative Fusion</p>
+            <div class="fusion-status" id="fusionStatus">Ready for infinite creative combinations</div>
+        </div>
+
+        <div class="laboratory-grid">
+            <!-- Tool Palette -->
+            <div class="tool-palette">
+                <h3 class="palette-title">🛠️ AI Tool Arsenal</h3>
+                <div id="toolCategories">
+                    <!-- Dynamically generated tool categories -->
+                </div>
+            </div>
+
+            <!-- Fusion Workspace -->
+            <div class="fusion-workspace">
+                <h3 class="workspace-title">🔮 Fusion Canvas</h3>
+                <div class="fusion-canvas" id="fusionCanvas">
+                    <!-- Fusion nodes and connections will be drawn here -->
+                </div>
+                <div class="control-panel">
+                    <button class="control-button" onclick="clearFusion()">🗑️ Clear</button>
+                    <button class="control-button" onclick="saveFusion()">💾 Save</button>
+                    <button class="control-button" onclick="loadFusion()">📂 Load</button>
+                    <button class="control-button" onclick="generateFusion()">⚡ Auto-Fuse</button>
+                    <button class="control-button" onclick="exportFusion()">📤 Export</button>
+                </div>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="output-panel">
+                <h3 class="output-title">📋 Fusion Recipes</h3>
+                <div id="fusionOutput">
+                    <div class="fusion-recipe">
+                        <div class="recipe-title">🎨 Visual Art Generator</div>
+                        <div class="recipe-steps">
+                            1. DALL-E 3 → Generate base image<br>
+                            2. Stable Diffusion → Enhance details<br>
+                            3. Suno AI → Create soundtrack<br>
+                            4. Result: Multimedia art piece
+                        </div>
+                    </div>
+                    <div class="fusion-recipe">
+                        <div class="recipe-title">📚 Story Creator</div>
+                        <div class="recipe-steps">
+                            1. Claude → Write narrative<br>
+                            2. Midjourney → Illustrate scenes<br>
+                            3. ElevenLabs → Voice narration<br>
+                            4. Result: Audiovisual story
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fusion-projects" id="fusionProjects">
+            <!-- Dynamically generated fusion project templates -->
+        </div>
+    </div>
+
+    <script>
+        // AI Tool Categories and Tools
+        const toolCategories = {
+            'Image Generation': {
+                icon: '🎨',
+                tools: [
+                    { name: 'DALL-E 3', icon: '🖼️', color: '#FF6B9D', api: 'openai' },
+                    { name: 'Midjourney', icon: '🌈', color: '#4ECDC4', api: 'midjourney' },
+                    { name: 'Stable Diffusion', icon: '🎭', color: '#F39C12', api: 'stability' },
+                    { name: 'Leonardo AI', icon: '🎪', color: '#9B59B6', api: 'leonardo' }
+                ]
+            },
+            'Text Generation': {
+                icon: '✍️',
+                tools: [
+                    { name: 'GPT-4', icon: '🤖', color: '#3498DB', api: 'openai' },
+                    { name: 'Claude', icon: '🧠', color: '#2ECC71', api: 'anthropic' },
+                    { name: 'Gemini', icon: '💫', color: '#E74C3C', api: 'google' }
+                ]
+            },
+            'Audio Creation': {
+                icon: '🎵',
+                tools: [
+                    { name: 'Suno AI', icon: '🎼', color: '#FFD700', api: 'suno' },
+                    { name: 'Udio', icon: '🎹', color: '#FF69B4', api: 'udio' },
+                    { name: 'ElevenLabs', icon: '🗣️', color: '#32CD32', api: 'elevenlabs' },
+                    { name: 'Mubert', icon: '🎶', color: '#FF4500', api: 'mubert' }
+                ]
+            },
+            'Video Generation': {
+                icon: '🎬',
+                tools: [
+                    { name: 'RunwayML', icon: '🎥', color: '#8A2BE2', api: 'runway' },
+                    { name: 'Pika Labs', icon: '🎞️', color: '#FF1493', api: 'pika' },
+                    { name: 'Stable Video', icon: '📹', color: '#00CED1', api: 'stability' }
+                ]
+            },
+            'Code Generation': {
+                icon: '💻',
+                tools: [
+                    { name: 'GitHub Copilot', icon: '🐙', color: '#4169E1', api: 'github' },
+                    { name: 'Cursor', icon: '⚡', color: '#FFD700', api: 'cursor' },
+                    { name: 'Replit AI', icon: '🔧', color: '#FF6347', api: 'replit' }
+                ]
+            },
+            'Sacred Geometry': {
+                icon: '🔮',
+                tools: [
+                    { name: 'Mandala Gen', icon: '🕸️', color: '#DA70D6', api: 'custom' },
+                    { name: 'Fractal AI', icon: '🌀', color: '#00FA9A', api: 'custom' },
+                    { name: 'Golden Ratio', icon: '🏛️', color: '#FFD700', api: 'custom' }
+                ]
+            }
+        };
+
+        // Fusion project templates
+        const fusionProjects = [
+            {
+                title: 'Sacred Art Generator',
+                tools: ['DALL-E 3', 'Mandala Gen', 'Golden Ratio', 'Suno AI'],
+                description: 'Create sacred geometric art with divine proportions and healing frequencies.',
+                workflow: [
+                    'Generate base sacred imagery with DALL-E 3',
+                    'Apply golden ratio proportions',
+                    'Overlay mandala patterns',
+                    'Add healing frequency soundtrack'
+                ]
+            },
+            {
+                title: 'Visionary Architecture',
+                tools: ['Midjourney', 'Stable Diffusion', 'GPT-4', 'RunwayML'],
+                description: 'Design impossible architectural spaces that transcend physical limitations.',
+                workflow: [
+                    'Conceptualize with GPT-4',
+                    'Generate initial designs with Midjourney',
+                    'Refine details with Stable Diffusion',
+                    'Animate walkthrough with RunwayML'
+                ]
+            },
+            {
+                title: 'Consciousness Symphony',
+                tools: ['Claude', 'Suno AI', 'ElevenLabs', 'Fractal AI'],
+                description: 'Compose music that reflects states of consciousness and inner journeys.',
+                workflow: [
+                    'Map consciousness states with Claude',
+                    'Generate fractal visualizations',
+                    'Compose adaptive music with Suno AI',
+                    'Add guided meditation with ElevenLabs'
+                ]
+            },
+            {
+                title: 'Interactive Mandala',
+                tools: ['GitHub Copilot', 'DALL-E 3', 'Mandala Gen', 'Mubert'],
+                description: 'Build responsive mandala interfaces that adapt to user consciousness.',
+                workflow: [
+                    'Code interactive framework with Copilot',
+                    'Generate mandala elements with DALL-E 3',
+                    'Apply sacred geometry with Mandala Gen',
+                    'Add adaptive soundscape with Mubert'
+                ]
+            },
+            {
+                title: 'Healing Story World',
+                tools: ['Claude', 'Leonardo AI', 'Udio', 'Pika Labs'],
+                description: 'Create immersive therapeutic narratives with visual and audio elements.',
+                workflow: [
+                    'Write healing narrative with Claude',
+                    'Illustrate scenes with Leonardo AI',
+                    'Compose therapeutic music with Udio',
+                    'Animate story elements with Pika Labs'
+                ]
+            },
+            {
+                title: 'Cosmic Interface',
+                tools: ['Cursor', 'Stable Diffusion', 'ElevenLabs', 'Stable Video'],
+                description: 'Build interfaces that connect users to cosmic consciousness.',
+                workflow: [
+                    'Design cosmic UI/UX with Cursor',
+                    'Generate space imagery with Stable Diffusion',
+                    'Add cosmic narration with ElevenLabs',
+                    'Create space animations with Stable Video'
+                ]
+            }
+        ];
+
+        let selectedTools = [];
+        let fusionNodes = [];
+        let connections = [];
+
+        // Initialize the laboratory
+        function initLaboratory() {
+            generateToolPalette();
+            generateFusionProjects();
+            setupFusionCanvas();
+            updateFusionStatus();
+        }
+
+        // Generate tool palette
+        function generateToolPalette() {
+            const container = document.getElementById('toolCategories');
+            
+            Object.entries(toolCategories).forEach(([categoryName, category]) => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'tool-category';
+                
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'category-title';
+                titleDiv.innerHTML = `
+                    <span class="category-icon">${category.icon}</span>
+                    ${categoryName}
+                `;
+                
+                const gridDiv = document.createElement('div');
+                gridDiv.className = 'tool-grid';
+                
+                category.tools.forEach(tool => {
+                    const toolCard = document.createElement('div');
+                    toolCard.className = 'tool-card';
+                    toolCard.innerHTML = `
+                        <div class="tool-icon" style="color: ${tool.color}">${tool.icon}</div>
+                        <div class="tool-name">${tool.name}</div>
+                    `;
+                    
+                    toolCard.addEventListener('click', () => selectTool(tool));
+                    gridDiv.appendChild(toolCard);
+                });
+                
+                categoryDiv.appendChild(titleDiv);
+                categoryDiv.appendChild(gridDiv);
+                container.appendChild(categoryDiv);
+            });
+        }
+
+        // Select tool for fusion
+        function selectTool(tool) {
+            if (!selectedTools.some(t => t.name === tool.name)) {
+                selectedTools.push(tool);
+                addFusionNode(tool);
+                updateFusionStatus();
+                generateFusionRecipe();
+            }
+        }
+
+        // Add fusion node to canvas
+        function addFusionNode(tool) {
+            const canvas = document.getElementById('fusionCanvas');
+            const node = document.createElement('div');
+            node.className = 'fusion-node node-active';
+            node.innerHTML = tool.icon;
+            node.style.backgroundColor = tool.color;
+            node.style.left = Math.random() * (canvas.offsetWidth - 60) + 'px';
+            node.style.top = Math.random() * (canvas.offsetHeight - 60) + 'px';
+            node.title = tool.name;
+            
+            // Make node draggable
+            makeDraggable(node);
+            
+            canvas.appendChild(node);
+            fusionNodes.push({ element: node, tool: tool });
+            
+            // Create connections if multiple nodes
+            if (fusionNodes.length > 1) {
+                createConnections();
+            }
+        }
+
+        // Make node draggable
+        function makeDraggable(element) {
+            let isDragging = false;
+            let startX, startY, startLeft, startTop;
+            
+            element.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                startX = e.clientX;
+                startY = e.clientY;
+                startLeft = parseInt(element.style.left);
+                startTop = parseInt(element.style.top);
+                element.style.zIndex = 1000;
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (isDragging) {
+                    const deltaX = e.clientX - startX;
+                    const deltaY = e.clientY - startY;
+                    element.style.left = (startLeft + deltaX) + 'px';
+                    element.style.top = (startTop + deltaY) + 'px';
+                    updateConnections();
+                }
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+                element.style.zIndex = 1;
+            });
+        }
+
+        // Create connections between nodes
+        function createConnections() {
+            // Clear existing connections
+            const existingLines = document.querySelectorAll('.connection-line');
+            existingLines.forEach(line => line.remove());
+            connections = [];
+            
+            // Create new connections
+            for (let i = 0; i < fusionNodes.length - 1; i++) {
+                for (let j = i + 1; j < fusionNodes.length; j++) {
+                    createConnection(fusionNodes[i], fusionNodes[j]);
+                }
+            }
+        }
+
+        // Create single connection line
+        function createConnection(node1, node2) {
+            const canvas = document.getElementById('fusionCanvas');
+            const line = document.createElement('div');
+            line.className = 'connection-line';
+            
+            const rect1 = node1.element.getBoundingClientRect();
+            const rect2 = node2.element.getBoundingClientRect();
+            const canvasRect = canvas.getBoundingClientRect();
+            
+            const x1 = rect1.left - canvasRect.left + rect1.width / 2;
+            const y1 = rect1.top - canvasRect.top + rect1.height / 2;
+            const x2 = rect2.left - canvasRect.left + rect2.width / 2;
+            const y2 = rect2.top - canvasRect.top + rect2.height / 2;
+            
+            const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+            
+            line.style.width = length + 'px';
+            line.style.left = x1 + 'px';
+            line.style.top = y1 + 'px';
+            line.style.transform = `rotate(${angle}deg)`;
+            line.style.transformOrigin = '0 50%';
+            
+            canvas.appendChild(line);
+            connections.push(line);
+        }
+
+        // Update connections when nodes move
+        function updateConnections() {
+            createConnections();
+        }
+
+        // Generate fusion projects
+        function generateFusionProjects() {
+            const container = document.getElementById('fusionProjects');
+            
+            fusionProjects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'project-card';
+                
+                const toolTags = project.tools.map(tool => 
+                    `<span class="project-tool-tag">${tool}</span>`
+                ).join('');
+                
+                card.innerHTML = `
+                    <div class="project-title">${project.title}</div>
+                    <div class="project-tools">${toolTags}</div>
+                    <div class="project-description">${project.description}</div>
+                    <button class="project-button" onclick="loadProject('${project.title}')">
+                        🚀 Launch Project
+                    </button>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Load fusion project
+        function loadProject(title) {
+            const project = fusionProjects.find(p => p.title === title);
+            if (!project) return;
+            
+            // Clear current fusion
+            clearFusion();
+            
+            // Add project tools
+            project.tools.forEach(toolName => {
+                // Find tool in categories
+                for (const category of Object.values(toolCategories)) {
+                    const tool = category.tools.find(t => t.name === toolName);
+                    if (tool) {
+                        selectTool(tool);
+                        break;
+                    }
+                }
+            });
+            
+            // Update fusion recipe with project workflow
+            generateProjectRecipe(project);
+            updateFusionStatus(`${title} loaded - ${project.tools.length} tools connected`);
+        }
+
+        // Generate fusion recipe
+        function generateFusionRecipe() {
+            if (selectedTools.length < 2) return;
+            
+            const output = document.getElementById('fusionOutput');
+            const recipe = document.createElement('div');
+            recipe.className = 'fusion-recipe';
+            
+            const title = `🔮 Custom Fusion (${selectedTools.length} tools)`;
+            const steps = selectedTools.map((tool, index) => 
+                `${index + 1}. ${tool.name} → Process with ${tool.api} API`
+            ).join('<br>');
+            
+            recipe.innerHTML = `
+                <div class="recipe-title">${title}</div>
+                <div class="recipe-steps">${steps}</div>
+            `;
+            
+            // Add to top of output
+            output.insertBefore(recipe, output.firstChild);
+        }
+
+        // Generate project recipe
+        function generateProjectRecipe(project) {
+            const output = document.getElementById('fusionOutput');
+            const recipe = document.createElement('div');
+            recipe.className = 'fusion-recipe';
+            
+            const steps = project.workflow.map((step, index) => 
+                `${index + 1}. ${step}`
+            ).join('<br>');
+            
+            recipe.innerHTML = `
+                <div class="recipe-title">🚀 ${project.title}</div>
+                <div class="recipe-steps">${steps}</div>
+            `;
+            
+            // Replace current output
+            output.innerHTML = '';
+            output.appendChild(recipe);
+        }
+
+        // Control functions
+        function clearFusion() {
+            selectedTools = [];
+            fusionNodes = [];
+            connections = [];
+            
+            const canvas = document.getElementById('fusionCanvas');
+            canvas.innerHTML = '';
+            
+            updateFusionStatus('Fusion canvas cleared - ready for new combinations');
+        }
+
+        function saveFusion() {
+            const fusionData = {
+                tools: selectedTools,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('fusion-save', JSON.stringify(fusionData));
+            updateFusionStatus('Fusion saved to local storage');
+        }
+
+        function loadFusion() {
+            const saved = localStorage.getItem('fusion-save');
+            if (saved) {
+                const fusionData = JSON.parse(saved);
+                clearFusion();
+                
+                fusionData.tools.forEach(tool => selectTool(tool));
+                updateFusionStatus('Fusion loaded from local storage');
+            } else {
+                updateFusionStatus('No saved fusion found');
+            }
+        }
+
+        function generateFusion() {
+            clearFusion();
+            
+            // Auto-select 3-5 random tools from different categories
+            const categories = Object.values(toolCategories);
+            const numTools = 3 + Math.floor(Math.random() * 3);
+            
+            for (let i = 0; i < numTools; i++) {
+                const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+                const randomTool = randomCategory.tools[Math.floor(Math.random() * randomCategory.tools.length)];
+                selectTool(randomTool);
+            }
+            
+            updateFusionStatus('Auto-fusion generated - explore the possibilities!');
+        }
+
+        function exportFusion() {
+            if (selectedTools.length === 0) {
+                updateFusionStatus('No tools selected for export');
+                return;
+            }
+            
+            const exportData = {
+                fusionName: `Fusion-${Date.now()}`,
+                tools: selectedTools,
+                workflow: selectedTools.map((tool, index) => 
+                    `Step ${index + 1}: Use ${tool.name} (${tool.api} API)`
+                ),
+                apis: [...new Set(selectedTools.map(tool => tool.api))],
+                timestamp: new Date().toISOString()
+            };
+            
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `${exportData.fusionName}.json`;
+            link.click();
+            
+            updateFusionStatus(`Fusion exported as ${exportData.fusionName}.json`);
+        }
+
+        function updateFusionStatus(message = null) {
+            const status = document.getElementById('fusionStatus');
+            if (message) {
+                status.textContent = message;
+            } else {
+                if (selectedTools.length === 0) {
+                    status.textContent = 'Ready for infinite creative combinations';
+                } else {
+                    status.textContent = `${selectedTools.length} tools selected - fusion potential: ${Math.pow(selectedTools.length, 2)}`;
+                }
+            }
+        }
+
+        // Setup fusion canvas
+        function setupFusionCanvas() {
+            const canvas = document.getElementById('fusionCanvas');
+            
+            // Add click handler for canvas
+            canvas.addEventListener('click', function(e) {
+                if (e.target === canvas) {
+                    // Deselect all tools when clicking empty space
+                    document.querySelectorAll('.tool-card.selected').forEach(card => {
+                        card.classList.remove('selected');
+                    });
+                }
+            });
+        }
+
+        // Initialize laboratory when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initLaboratory();
+            
+            console.log('⚗️ Fusion Laboratory initialized');
+            console.log('🛠️ AI tool arsenal ready');
+            console.log('🔮 Infinite fusion possibilities activated');
+        });
+
+        // Auto-update fusion animations
+        setInterval(() => {
+            // Add sparkle effects to active nodes
+            fusionNodes.forEach(node => {
+                if (Math.random() > 0.9) {
+                    node.element.style.boxShadow = `0 0 30px ${node.tool.color}`;
+                    setTimeout(() => {
+                        node.element.style.boxShadow = '';
+                    }, 500);
+                }
+            });
+        }, 2000);
+    </script>
+</body>
+</html>

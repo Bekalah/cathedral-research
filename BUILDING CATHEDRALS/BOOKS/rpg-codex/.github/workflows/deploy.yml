@@ -1,0 +1,74 @@
+name: 🚀 Deploy RPG Codex to Cloudflare Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 📦 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: 📚 Install Dependencies
+      run: |
+        npm install -g @11ty/eleventy
+        npm install
+        
+    - name: 🎨 Process Art Generation
+      run: |
+        echo "🎨 Processing AI-generated artwork..."
+        # This would integrate with art generation APIs
+        # mkdir -p assets/images/generated
+        # python3 tools/art-generator.py --batch-process
+        
+    - name: 📖 Build RPG Book
+      run: |
+        echo "📖 Building RPG Codex..."
+        # Process markdown content into HTML
+        # Generate character sheets
+        # Optimize images and assets
+        
+    - name: ✅ Validate Content
+      run: |
+        echo "✅ Validating RPG content..."
+        # Check for broken links
+        # Validate game mechanic consistency
+        # Spell check content
+        
+    - name: 📄 Generate PDF Version
+      run: |
+        echo "📄 Generating PDF version..."
+        # This would use puppeteer or similar to generate PDF
+        # npm install -g puppeteer
+        # node tools/pdf-generator.js
+        
+    - name: ☁️ Deploy to Cloudflare Pages
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: rpg-codex
+        directory: .
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: 🎉 Deployment Success
+      run: |
+        echo "🎉 RPG Codex deployed successfully!"
+        echo "🌍 Live at: https://rpg-codex.pages.dev"
+        echo "📊 Build stats:"
+        echo "   - Pages: $(find . -name '*.html' | wc -l)"
+        echo "   - Images: $(find assets/images -type f | wc -l)"
+        echo "   - CSS files: $(find . -name '*.css' | wc -l)"
+        echo "   - JS files: $(find . -name '*.js' | wc -l)"
