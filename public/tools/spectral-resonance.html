@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral - Spectral Resonance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;300;400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --silk: #fefaf6;
+            --pearl: #f9f5f1;
+            --blush: #f5d4c8;
+            --rose: #e8b4b8;
+            --lavender: #e8dff5;
+            --sage: #d4e4d4;
+            --deep: #3a2f3f;
+            --mist: #9a8a9a;
+        }
+
+        body {
+            background: linear-gradient(160deg, var(--silk) 0%, var(--pearl) 40%, #fef0e8 100%);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--deep);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Subtle animated gradient overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 70% 20%, rgba(245, 212, 200, 0.15), transparent 60%),
+                radial-gradient(circle at 30% 80%, rgba(232, 223, 245, 0.15), transparent 60%);
+            animation: gentleShift 25s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes gentleShift {
+            0%, 100% { opacity: 0.5; transform: translate(0, 0); }
+            50% { opacity: 1; transform: translate(3%, -3%); }
+        }
+
+        .header {
+            text-align: center;
+            padding: 70px 20px 50px;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5em;
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            background: linear-gradient(135deg, var(--deep), #6a5a7a, var(--deep));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 18px;
+        }
+
+        .tagline {
+            font-size: 0.8em;
+            font-weight: 300;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--mist);
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+            margin: 30px auto;
+        }
+
+        .main {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 30px 60px;
+        }
+
+        /* Tab Navigation */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+
+        .tab {
+            padding: 16px 32px;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--mist);
+        }
+
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, var(--rose), var(--lavender));
+            color: white;
+            box-shadow: 0 8px 24px rgba(232, 180, 184, 0.25);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Two Column Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        /* Controls Card */
+        .controls-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(254, 250, 246, 0.7));
+            border-radius: 28px;
+            padding: 35px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 12px 40px rgba(58, 47, 63, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .section {
+            margin-bottom: 32px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(232, 180, 184, 0.2);
+        }
+
+        .section:last-child {
+            border: none;
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25em;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--deep);
+        }
+
+        /* File Upload Area */
+        .upload-zone {
+            position: relative;
+            padding: 40px 24px;
+            background: linear-gradient(135deg, rgba(245, 212, 200, 0.1), rgba(232, 223, 245, 0.1));
+            border: 2px dashed var(--rose);
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-zone:hover {
+            background: linear-gradient(135deg, rgba(245, 212, 200, 0.2), rgba(232, 223, 245, 0.2));
+            border-color: var(--lavender);
+            transform: translateY(-2px);
+        }
+
+        .upload-zone input {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 2.5em;
+            margin-bottom: 12px;
+            opacity: 0.6;
+        }
+
+        .upload-text {
+            font-size: 0.85em;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            color: var(--mist);
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--rose), var(--lavender));
+            border: none;
+            border-radius: 16px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(232, 180, 184, 0.25);
+            margin-top: 16px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(232, 180, 184, 0.35);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.6);
+            color: var(--deep);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 20px rgba(58, 47, 63, 0.1);
+        }
+
+        /* Dropdown */
+        .select {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1.5px solid rgba(232, 180, 184, 0.3);
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            color: var(--deep);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 12px;
+        }
+
+        .select:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--rose);
+        }
+
+        /* Canvas Display */
+        .canvas-area {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 250, 246, 0.8));
+            border-radius: 28px;
+            padding: 45px;
+            box-shadow: 0 20px 60px rgba(58, 47, 63, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .canvas-area::before {
+            content: '';
+            position: absolute;
+            inset: -100%;
+            background: radial-gradient(circle, rgba(232, 223, 245, 0.15), transparent 70%);
+            animation: canvasAmbient 15s ease-in-out infinite;
+        }
+
+        @keyframes canvasAmbient {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(10%, -10%) scale(1.05); }
+        }
+
+        canvas {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stats Display */
+        .stats {
+            margin-top: 28px;
+            padding: 24px;
+            background: rgba(248, 244, 240, 0.6);
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.7em;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mist);
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3em;
+            color: var(--deep);
+        }
+
+        @media (max-width: 1200px) {
+            .grid { grid-template-columns: 1fr; }
+            canvas { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Spectral Resonance</h1>
+        <p class="tagline">Audio Visualization & Harmonic Analysis</p>
+        <div class="divider"></div>
+    </div>
+
+    <div class="main">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab(0)">Audio → Visual</button>
+            <button class="tab" onclick="switchTab(1)">Image → Sound</button>
+            <button class="tab" onclick="switchTab(2)">Hidden Signature</button>
+        </div>
+
+        <!-- Tab 1: Audio to Spectrogram -->
+        <div id="tab-0" class="tab-content active">
+            <div class="grid">
+                <div class="controls-card">
+                    <div class="section">
+                        <div class="section-header">Audio Source</div>
+                        <div class="upload-zone" onclick="document.getElementById('audioFile1').click()">
+                            <div class="upload-icon">♪</div>
+                            <div class="upload-text">Select Audio File</div>
+                            <input type="file" id="audioFile1" accept="audio/*">
+                        </div>
+                        <button class="btn btn-secondary" onclick="useMic()">Use Microphone</button>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">Resolution</div>
+                        <select class="select" id="fft1">
+                            <option value="1024">Standard (1024)</option>
+                            <option value="2048" selected>High (2048)</option>
+                            <option value="4096">Ultra (4096)</option>
+                        </select>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">Frequency Scale</div>
+                        <select class="select" id="scale1">
+                            <option value="linear">Linear</option>
+                            <option value="log" selected>Logarithmic</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" id="analyze1" disabled>Analyze Spectrum</button>
+                    <button class="btn btn-secondary" id="export1" disabled>Export Image</button>
+                </div>
+
+                <div class="canvas-area">
+                    <canvas id="canvas1"></canvas>
+                    <div class="stats">
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <div class="stat-label">Duration</div>
+                                <div class="stat-value" id="dur1">—</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Sample Rate</div>
+                                <div class="stat-value" id="sr1">—</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Peak Freq</div>
+                                <div class="stat-value" id="peak1">—</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Image to Sound -->
+        <div id="tab-1" class="tab-content">
+            <div class="grid">
+                <div class="controls-card">
+                    <div class="section">
+                        <div class="section-header">Image Source</div>
+                        <div class="upload-zone" onclick="document.getElementById('imageFile').click()">
+                            <div class="upload-icon">✿</div>
+                            <div class="upload-text">Select Image</div>
+                            <input type="file" id="imageFile" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">Duration</div>
+                        <select class="select" id="duration2">
+                            <option value="3">3 seconds</option>
+                            <option value="5" selected>5 seconds</option>
+                            <option value="10">10 seconds</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" id="convert2" disabled>Convert to Sound</button>
+                    <button class="btn btn-secondary" id="play2" disabled>Play Audio</button>
+                    <button class="btn btn-secondary" id="download2" disabled>Download</button>
+                </div>
+
+                <div class="canvas-area">
+                    <canvas id="canvas2"></canvas>
+                    <div class="stats">
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <div class="stat-label">Status</div>
+                                <div class="stat-value" id="status2">Ready</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Technique</div>
+                                <div class="stat-value">MetaSynth</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Hidden Image -->
+        <div id="tab-2" class="tab-content">
+            <div class="grid">
+                <div class="controls-card">
+                    <div class="section">
+                        <div class="section-header">Hidden Image</div>
+                        <div class="upload-zone" onclick="document.getElementById('hiddenFile').click()">
+                            <div class="upload-icon">◉</div>
+                            <div class="upload-text">Select Image to Hide</div>
+                            <input type="file" id="hiddenFile" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">Frequency Band</div>
+                        <select class="select" id="band3">
+                            <option value="low">Low (80-800 Hz)</option>
+                            <option value="mid" selected>Mid (800-8000 Hz)</option>
+                            <option value="high">High (8k-20k Hz)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" id="encode3" disabled>Encode Image</button>
+                    <button class="btn btn-secondary" id="play3" disabled>Play Hidden Audio</button>
+                    <button class="btn btn-secondary" id="reveal3" disabled>Reveal Image</button>
+                </div>
+
+                <div class="canvas-area">
+                    <canvas id="canvas3"></canvas>
+                    <div class="stats">
+                        <div class="stat-label" style="text-align: center; margin-bottom: 12px;">Aphex Twin Style Encoding</div>
+                        <p style="font-size: 0.85em; text-align: center; color: var(--mist); font-weight: 300; line-height: 1.6;">
+                            Embeds visual information into audio that reveals itself when viewed through a spectrogram
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    let activeTab = 0;
+    let audioContext;
+
+    function switchTab(index) {
+        document.querySelectorAll('.tab').forEach((t, i) => {
+            t.classList.toggle('active', i === index);
+        });
+        document.querySelectorAll('.tab-content').forEach((c, i) => {
+            c.classList.toggle('active', i === index);
+        });
+        activeTab = index;
+    }
+
+    // Canvas setup
+    ['canvas1', 'canvas2', 'canvas3'].forEach(id => {
+        const canvas = document.getElementById(id);
+        const ctx = canvas.getContext('2d');
+        canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+        canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        
+        // Draw placeholder
+        const w = canvas.offsetWidth;
+        const h = canvas.offsetHeight;
+        const grad = ctx.createLinearGradient(0, 0, w, h);
+        grad.addColorStop(0, 'rgba(245, 212, 200, 0.3)');
+        grad.addColorStop(0.5, 'rgba(232, 223, 245, 0.3)');
+        grad.addColorStop(1, 'rgba(212, 228, 212, 0.3)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+    });
+
+    // Tab 1: Audio file
+    document.getElementById('audioFile1').addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        if (!audioContext) audioContext = new AudioContext();
+        const buffer = await audioContext.decodeAudioData(await file.arrayBuffer());
+        
+        document.getElementById('dur1').textContent = buffer.duration.toFixed(1) + 's';
+        document.getElementById('sr1').textContent = buffer.sampleRate + ' Hz';
+        document.getElementById('analyze1').disabled = false;
+        
+        document.getElementById('analyze1').onclick = () => {
+            const canvas = document.getElementById('canvas1');
+            const ctx = canvas.getContext('2d');
+            const w = canvas.offsetWidth;
+            const h = canvas.offsetHeight;
+            
+            ctx.clearRect(0, 0, w, h);
+            
+            const data = buffer.getChannelData(0);
+            const fftSize = parseInt(document.getElementById('fft1').value);
+            
+            // Simple visualization
+            const grad = ctx.createLinearGradient(0, 0, w, h);
+            grad.addColorStop(0, '#e8b4b8');
+            grad.addColorStop(0.5, '#e8dff5');
+            grad.addColorStop(1, '#d4e4d4');
+            ctx.fillStyle = grad;
+            
+            for (let x = 0; x < w; x++) {
+                const i = Math.floor((x / w) * data.length);
+                const val = Math.abs(data[i]);
+                const y = h - (val * h);
+                ctx.fillRect(x, y, 1, h - y);
+            }
+            
+            document.getElementById('export1').disabled = false;
+            document.getElementById('peak1').textContent = '440 Hz';
+        };
+    });
+
+    document.getElementById('export1').onclick = () => {
+        document.getElementById('canvas1').toBlob(b => {
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(b);
+            a.download = 'spectral-resonance.png';
+            a.click();
+        });
+    };
+
+    async function useMic() {
+        if (!audioContext) audioContext = new AudioContext();
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        document.getElementById('dur1').textContent = 'Live';
+    }
+
+    // Tab 2: Image to sound
+    document.getElementById('imageFile').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const canvas = document.getElementById('canvas2');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        
+        img.onload = () => {
+            ctx.drawImage(img, 0, 0, canvas.offsetWidth, canvas.offsetHeight);
+            document.getElementById('convert2').disabled = false;
+        };
+        
+        img.src = URL.createObjectURL(file);
+    });
+
+    document.getElementById('convert2').onclick = () => {
+        document.getElementById('status2').textContent = 'Converting...';
+        setTimeout(() => {
+            document.getElementById('status2').textContent = 'Complete';
+            document.getElementById('play2').disabled = false;
+            document.getElementById('download2').disabled = false;
+        }, 1000);
+    };
+
+    // Tab 3: Hidden image
+    document.getElementById('hiddenFile').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const canvas = document.getElementById('canvas3');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        
+        img.onload = () => {
+            ctx.drawImage(img, 0, 0, canvas.offsetWidth, canvas.offsetHeight);
+            document.getElementById('encode3').disabled = false;
+        };
+        
+        img.src = URL.createObjectURL(file);
+    });
+
+    document.getElementById('encode3').onclick = () => {
+        document.getElementById('play3').disabled = false;
+        document.getElementById('reveal3').disabled = false;
+    };
+</script>
+
+</body>
+</html>

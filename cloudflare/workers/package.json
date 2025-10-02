@@ -1,0 +1,39 @@
+{
+  "name": "cathedral-cloudflare",
+  "version": "1.0.0",
+  "description": "Cathedral Cloudflare Workers for edge routing and caching",
+  "main": "cathedral-edge-router.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy --env production",
+    "tail": "wrangler tail",
+    "logs": "wrangler tail --format pretty",
+    "test": "wrangler dev --local",
+    "validate": "wrangler validate",
+    "whoami": "wrangler whoami"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "edge",
+    "routing",
+    "cache",
+    "cathedral",
+    "cdn"
+  ],
+  "author": "Cathedral Project",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral-research.git",
+    "directory": "cloudflare/workers"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral - Fractal Biomorphology</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;300;400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ivory: #fefaf6;
+            --pearl: #f8f4f0;
+            --rose-quartz: #f5d4c8;
+            --blush: #e8b4b8;
+            --lavender-mist: #e8dff5;
+            --sage: #d4e4d4;
+            --deep-plum: #3a2f3f;
+            --twilight: #6a5d7a;
+        }
+
+        body {
+            background: radial-gradient(circle at top left, var(--pearl) 0%, var(--ivory) 50%, #fef5ed 100%);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--deep-plum);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Organic blob background animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(245, 212, 200, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(232, 180, 184, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(232, 223, 245, 0.15) 0%, transparent 50%);
+            animation: morphBlob 20s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes morphBlob {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            33% { transform: scale(1.1) rotate(5deg); }
+            66% { transform: scale(0.9) rotate(-5deg); }
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--blush), transparent);
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4em;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            background: linear-gradient(135deg, var(--deep-plum), var(--twilight), var(--deep-plum));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 0.85em;
+            font-weight: 300;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--twilight);
+            opacity: 0.7;
+        }
+
+        .layout {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 50px;
+        }
+
+        /* Controls Panel */
+        .panel {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(254, 250, 246, 0.6));
+            border-radius: 24px;
+            padding: 28px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 40px rgba(58, 47, 63, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .card:hover {
+            box-shadow: 0 15px 50px rgba(58, 47, 63, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--deep-plum);
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            height: 1.5px;
+            background: linear-gradient(90deg, var(--blush), transparent);
+        }
+
+        /* Fractal Type Selection */
+        .fractal-types {
+            display: grid;
+            gap: 12px;
+        }
+
+        .fractal-option {
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1.5px solid transparent;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .fractal-option .icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--blush), var(--lavender-mist));
+            border-radius: 8px;
+            font-size: 1.1em;
+            color: white;
+        }
+
+        .fractal-option .label {
+            flex: 1;
+            font-size: 0.9em;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+        }
+
+        .fractal-option:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--blush);
+            transform: translateX(4px);
+        }
+
+        .fractal-option.active {
+            background: linear-gradient(135deg, var(--blush) 0%, var(--lavender-mist) 100%);
+            border-color: transparent;
+            color: white;
+        }
+
+        .fractal-option.active .icon {
+            background: white;
+            color: var(--blush);
+        }
+
+        /* Elegant Slider */
+        .param {
+            margin: 20px 0;
+        }
+
+        .param-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .param-label {
+            font-size: 0.8em;
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--twilight);
+        }
+
+        .param-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15em;
+            color: var(--deep-plum);
+        }
+
+        .slider-container {
+            position: relative;
+            height: 45px;
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.1), rgba(232, 223, 245, 0.1));
+            border-radius: 23px;
+            overflow: hidden;
+        }
+
+        .slider-progress {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, var(--blush), var(--lavender-mist));
+            border-radius: 23px;
+            transition: width 0.2s ease;
+            opacity: 0.6;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, white, var(--pearl));
+            border: 2px solid var(--blush);
+            border-radius: 50%;
+            cursor: grab;
+            box-shadow: 0 4px 12px rgba(232, 180, 184, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(232, 180, 184, 0.6);
+        }
+
+        input[type="range"]::-webkit-slider-thumb:active {
+            cursor: grabbing;
+            transform: scale(0.95);
+        }
+
+        /* Color Palette */
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .color-swatch {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .color-swatch::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(135deg, transparent, var(--blush));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .color-swatch:hover::after {
+            opacity: 1;
+        }
+
+        .color-swatch.active {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Preset Buttons */
+        .presets {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .preset-btn {
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.6);
+            border: none;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--twilight);
+        }
+
+        .preset-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 180, 184, 0.2);
+        }
+
+        /* Action Button */
+        .generate-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--blush), var(--lavender-mist));
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9em;
+            font-weight: 300;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(232, 180, 184, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .generate-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+            transition: transform 0.5s;
+        }
+
+        .generate-btn:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(232, 180, 184, 0.4);
+        }
+
+        /* Canvas Area */
+        .canvas-wrapper {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 250, 246, 0.7));
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(58, 47, 63, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .canvas-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(232, 180, 184, 0.1) 0%, transparent 50%);
+            animation: canvasGlow 12s ease-in-out infinite;
+        }
+
+        @keyframes canvasGlow {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20%, 20%); }
+        }
+
+        #fractalCanvas {
+            width: 100%;
+            height: 650px;
+            border-radius: 20px;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), rgba(254, 250, 246, 0.5));
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Info Display */
+        .info {
+            margin-top: 24px;
+            padding: 20px;
+            background: rgba(248, 244, 240, 0.5);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 0.7em;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--twilight);
+            opacity: 0.7;
+            margin-bottom: 6px;
+        }
+
+        .info-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+            color: var(--deep-plum);
+        }
+
+        @media (max-width: 1200px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+            #fractalCanvas {
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Biomorphology</h1>
+        <p class="subtitle">Fractal Forms & Natural Patterns</p>
+    </div>
+
+    <div class="layout">
+        <!-- Control Panel -->
+        <div class="panel">
+            <div class="card">
+                <div class="card-title">Fractal Algorithm</div>
+                <div class="fractal-types">
+                    <div class="fractal-option active" data-type="mandelbrot">
+                        <div class="icon">◉</div>
+                        <div class="label">Mandelbrot</div>
+                    </div>
+                    <div class="fractal-option" data-type="julia">
+                        <div class="icon">✿</div>
+                        <div class="label">Julia Set</div>
+                    </div>
+                    <div class="fractal-option" data-type="burning-ship">
+                        <div class="icon">⟡</div>
+                        <div class="label">Burning Ship</div>
+                    </div>
+                    <div class="fractal-option" data-type="newton">
+                        <div class="icon">❋</div>
+                        <div class="label">Newton</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Parameters</div>
+                
+                <div class="param">
+                    <div class="param-header">
+                        <span class="param-label">Iterations</span>
+                        <span class="param-value" id="iterVal">256</span>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-progress" id="iterProg"></div>
+                        <input type="range" id="iterations" min="50" max="1000" value="256">
+                    </div>
+                </div>
+
+                <div class="param">
+                    <div class="param-header">
+                        <span class="param-label">Zoom</span>
+                        <span class="param-value" id="zoomVal">1.0×</span>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-progress" id="zoomProg"></div>
+                        <input type="range" id="zoom" min="0.1" max="20" step="0.1" value="1">
+                    </div>
+                </div>
+
+                <div class="param">
+                    <div class="param-header">
+                        <span class="param-label">Center X</span>
+                        <span class="param-value" id="cxVal">-0.5</span>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-progress" id="cxProg"></div>
+                        <input type="range" id="centerX" min="-2" max="2" step="0.01" value="-0.5">
+                    </div>
+                </div>
+
+                <div class="param">
+                    <div class="param-header">
+                        <span class="param-label">Center Y</span>
+                        <span class="param-value" id="cyVal">0.0</span>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-progress" id="cyProg"></div>
+                        <input type="range" id="centerY" min="-2" max="2" step="0.01" value="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Color Palette</div>
+                <div class="palette">
+                    <div class="color-swatch active" data-palette="0" style="background: linear-gradient(135deg, #f5d4c8, #e8b4b8);"></div>
+                    <div class="color-swatch" data-palette="1" style="background: linear-gradient(135deg, #c8b8db, #b8a8d8);"></div>
+                    <div class="color-swatch" data-palette="2" style="background: linear-gradient(135deg, #d4e4d4, #b8c9b8);"></div>
+                    <div class="color-swatch" data-palette="3" style="background: linear-gradient(135deg, #e8dff5, #d8cfe5);"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Presets</div>
+                <div class="presets">
+                    <button class="preset-btn" onclick="loadPreset('seahorse')">Seahorse</button>
+                    <button class="preset-btn" onclick="loadPreset('spiral')">Spiral</button>
+                    <button class="preset-btn" onclick="loadPreset('dendrite')">Dendrite</button>
+                    <button class="preset-btn" onclick="loadPreset('elephant')">Elephant</button>
+                </div>
+            </div>
+
+            <button class="generate-btn" onclick="generate()">Generate Fractal</button>
+        </div>
+
+        <!-- Canvas Area -->
+        <div>
+            <div class="canvas-wrapper">
+                <canvas id="fractalCanvas"></canvas>
+            </div>
+            <div class="info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Render Time</div>
+                        <div class="info-value" id="renderTime">0ms</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Complexity</div>
+                        <div class="info-value" id="complexity">2.0</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Form</div>
+                        <div class="info-value" id="formName">Mandelbrot</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    const canvas = document.getElementById('fractalCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    let currentType = 'mandelbrot';
+    let currentPalette = 0;
+    
+    const palettes = [
+        [[245, 212, 200], [232, 180, 184], [220, 160, 170]],
+        [[200, 184, 219], [184, 168, 208], [160, 140, 190]],
+        [[212, 228, 212], [184, 201, 184], [160, 180, 160]],
+        [[232, 223, 245], [216, 207, 229], [200, 190, 210]]
+    ];
+
+    function resizeCanvas() {
+        canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+        canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Slider updates
+    ['iterations', 'zoom', 'centerX', 'centerY'].forEach(id => {
+        const slider = document.getElementById(id);
+        const progress = document.getElementById(id.slice(0, 2) + 'Prog');
+        const value = document.getElementById(id.slice(0, 2) + 'Val');
+        
+        slider.addEventListener('input', () => {
+            const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            progress.style.width = percent + '%';
+            
+            let val = parseFloat(slider.value);
+            if (id === 'zoom') val = val.toFixed(1) + '×';
+            else if (id.includes('center')) val = val.toFixed(2);
+            value.textContent = val;
+        });
+        
+        slider.dispatchEvent(new Event('input'));
+    });
+
+    // Fractal type selection
+    document.querySelectorAll('.fractal-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+            document.querySelectorAll('.fractal-option').forEach(o => o.classList.remove('active'));
+            opt.classList.add('active');
+            currentType = opt.dataset.type;
+            document.getElementById('formName').textContent = opt.querySelector('.label').textContent;
+        });
+    });
+
+    // Palette selection
+    document.querySelectorAll('.color-swatch').forEach((swatch, i) => {
+        swatch.addEventListener('click', () => {
+            document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+            swatch.classList.add('active');
+            currentPalette = i;
+        });
+    });
+
+    function generate() {
+        const start = performance.now();
+        const w = canvas.offsetWidth;
+        const h = canvas.offsetHeight;
+        
+        const maxIter = parseInt(document.getElementById('iterations').value);
+        const zoom = parseFloat(document.getElementById('zoom').value);
+        const centerX = parseFloat(document.getElementById('centerX').value);
+        const centerY = parseFloat(document.getElementById('centerY').value);
+        
+        const imageData = ctx.createImageData(w, h);
+        const data = imageData.data;
+        const palette = palettes[currentPalette];
+        
+        for (let px = 0; px < w; px++) {
+            for (let py = 0; py < h; py++) {
+                const x0 = (px / w - 0.5) * 4 / zoom + centerX;
+                const y0 = (py / h - 0.5) * 4 / zoom + centerY;
+                
+                let iter = 0;
+                
+                if (currentType === 'mandelbrot') {
+                    let x = 0, y = 0;
+                    while (x*x + y*y <= 4 && iter < maxIter) {
+                        const xtemp = x*x - y*y + x0;
+                        y = 2*x*y + y0;
+                        x = xtemp;
+                        iter++;
+                    }
+                } else if (currentType === 'julia') {
+                    let x = x0, y = y0;
+                    const cReal = -0.7, cImag = 0.27015;
+                    while (x*x + y*y <= 4 && iter < maxIter) {
+                        const xtemp = x*x - y*y + cReal;
+                        y = 2*x*y + cImag;
+                        x = xtemp;
+                        iter++;
+                    }
+                } else if (currentType === 'burning-ship') {
+                    let x = 0, y = 0;
+                    while (x*x + y*y <= 4 && iter < maxIter) {
+                        const xtemp = x*x - y*y + x0;
+                        y = Math.abs(2*x*y) + y0;
+                        x = Math.abs(xtemp);
+                        iter++;
+                    }
+                }
+                
+                const idx = (py * w + px) * 4;
+                
+                if (iter === maxIter) {
+                    data[idx] = palette[0][0] * 0.3;
+                    data[idx+1] = palette[0][1] * 0.3;
+                    data[idx+2] = palette[0][2] * 0.3;
+                } else {
+                    const t = iter / maxIter;
+                    const smoothT = Math.sqrt(t);
+                    
+                    const colorIndex = Math.floor(smoothT * (palette.length - 1));
+                    const nextColorIndex = Math.min(colorIndex + 1, palette.length - 1);
+                    const localT = (smoothT * (palette.length - 1)) % 1;
+                    
+                    data[idx] = palette[colorIndex][0] * (1 - localT) + palette[nextColorIndex][0] * localT;
+                    data[idx+1] = palette[colorIndex][1] * (1 - localT) + palette[nextColorIndex][1] * localT;
+                    data[idx+2] = palette[colorIndex][2] * (1 - localT) + palette[nextColorIndex][2] * localT;
+                }
+                data[idx+3] = 255;
+            }
+        }
+        
+        ctx.putImageData(imageData, 0, 0);
+        
+        const elapsed = Math.round(performance.now() - start);
+        document.getElementById('renderTime').textContent = elapsed + 'ms';
+        
+        const dim = (Math.log(maxIter) / Math.log(2)).toFixed(1);
+        document.getElementById('complexity').textContent = dim;
+    }
+
+    function loadPreset(name) {
+        const presets = {
+            seahorse: { x: -0.75, y: 0.1, z: 3, i: 500 },
+            spiral: { x: -0.7, y: 0.27, z: 2, i: 300 },
+            dendrite: { x: -0.1, y: 0.8, z: 1.5, i: 400 },
+            elephant: { x: 0.3, y: -0.01, z: 5, i: 600 }
+        };
+        
+        const p = presets[name];
+        document.getElementById('centerX').value = p.x;
+        document.getElementById('centerY').value = p.y;
+        document.getElementById('zoom').value = p.z;
+        document.getElementById('iterations').value = p.i;
+        
+        ['centerX', 'centerY', 'zoom', 'iterations'].forEach(id => {
+            document.getElementById(id).dispatchEvent(new Event('input'));
+        });
+    }
+
+    generate();
+</script>
+
+</body>
+</html>
