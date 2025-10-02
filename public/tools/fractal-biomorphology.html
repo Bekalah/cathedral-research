@@ -72,8 +72,9 @@
             font-size: 4em;
             font-weight: 300;
             letter-spacing: 0.15em;
-            background: linear-gradient(135deg, var(--deep-plum), var(--twilight), var(--deep-plum));
+            background: linear-gradient(135deg, var(--deep), #6a5a7a, var(--deep));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
         }
@@ -237,6 +238,7 @@
 
         input[type="range"] {
             -webkit-appearance: none;
+            appearance: none;
             width: 100%;
             height: 100%;
             background: transparent;
@@ -292,6 +294,7 @@
             padding: 2px;
             background: linear-gradient(135deg, transparent, var(--blush));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             opacity: 0;
