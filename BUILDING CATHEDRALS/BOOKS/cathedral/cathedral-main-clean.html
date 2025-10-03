@@ -1,192 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏛️ Cathedral of Circuits - Trinity Integration Platform</title>
-    <link rel="stylesheet" href="cathedral-main-styles.css">
-</head>
-<body>
-    <div id="cathedral-container">
-        <header>
-            <h1>🏛️ Cathedral of Circuits</h1>
-            <p>Trinity Open World System - Three Apps Working Together or Independently</p>
-            
-            <!-- Trinity App Launcher -->
-            <div class="trinity-navigation">
-                <button class="trinity-app-button soul-app" data-app="lumina-keys">
-                    <span class="app-icon">🌟</span>
-                    <div class="app-info">
-                        <h3>LUMINA KEYS</h3>
-                        <p>SOUL - Archetypal Voice Portal</p>
-                    </div>
-                </button>
-                
-                <button class="trinity-app-button mind-app" data-app="codex-magna">
-                    <span class="app-icon">📚</span>
-                    <div class="app-info">
-                        <h3>CODEX MAGNA</h3>
-                        <p>MIND - Sacred Wisdom Research</p>
-                    </div>
-                </button>
-                
-                <button class="trinity-app-button body-app" data-app="geometrix-nova">
-                    <span class="app-icon">🔺</span>
-                    <div class="app-info">
-                        <h3>GEOMETRIX NOVA</h3>
-                        <p>BODY - Sacred Geometry Laboratory</p>
-                    </div>
-                </button>
-            </div>
-        </header>
-        
-        <main>
-            <!-- Sacred Geometry Portal Canvas (Not boxes!) -->
-            <canvas id="cosmicCanvas" width="800" height="600" aria-label="Sacred Geometry Portal Visualization"></canvas>
-            
-            <!-- Laboratory Quick Access -->
-            <div class="laboratory-launcher">
-                <h3>🔬 Sacred Geometry Laboratories</h3>
-                <div class="lab-buttons">
-                    <button class="lab-button" onclick="cathedralEngine.activateLaboratory('high-priestess-lab')">
-                        🌙 Emma Kunz Pendulum Art
-                    </button>
-                    <button class="lab-button" onclick="cathedralEngine.activateLaboratory('empress-lab')">
-                        🌹 Biomorphic Portal Lab
-                    </button>
-                    <button class="lab-button" onclick="cathedralEngine.activateLaboratory('hermit-lab')">
-                        🔯 Crystal Technology Lab
-                    </button>
-                    <button class="lab-button" onclick="cathedralEngine.activateLaboratory('synthesis-lab')">
-                        🎹 Planetary Synthesis Lab
-                    </button>
-                    <button class="lab-button moonchild-special" onclick="cathedralEngine.activateLaboratory('moonchild-art-laboratory')">
-                        📖 Moonchild Living Art Laboratory
-                    </button>
-                    <button class="lab-button rosslyn-tower-special" onclick="cathedralEngine.activateLaboratory('rosslyn-alchemy-tower')">
-                        🏰 Rosslyn Alchemy Tower - Complete Art Laboratory
-                    </button>
-                </div>
-                
-                <!-- Quick Art Creation -->
-                <div class="quick-art-access">
-                    <h4>🎨 Quick Art Creation</h4>
-                    <button class="art-quick-btn" onclick="cathedralEngine.openArcanaConsciousnessPainter()">
-                        🃏 Paint as Tarot Arcana
-                    </button>
-                    <button class="art-quick-btn" onclick="cathedralEngine.openRedBookManuscriptGenerator()">
-                        📖 Create Red Book Pages
-                    </button>
-                    <button class="art-quick-btn" onclick="cathedralEngine.openTraditionalMediumSynthesizer()">
-                        🧱 Lego-Sculpt Art Styles
-                    </button>
-                </div>
-            </div>
-            
-            <div id="controls-panel">
-                <div class="control-group">
-                    <label>Trinity Architecture</label>
-                    <div class="architecture-tabs">
-                        <button class="architecture-tab active" data-arch="corpus" aria-selected="true">BODY</button>
-                        <button class="architecture-tab" data-arch="psyche" aria-selected="false">MIND</button>
-                        <button class="architecture-tab" data-arch="spiritus" aria-selected="false">SOUL</button>
-                    </div>
-                </div>
-                
-                <div class="control-group">
-                    <label>Sacred Frequency</label>
-                    <input type="range" id="frequencySlider" min="174" max="963" value="528" step="1">
-                    <span id="currentFreq">528 Hz</span>
-                </div>
-                
-                <div class="control-group">
-                    <label>Sacred Number</label>
-                    <div class="sacred-numbers">
-                        <button class="sacred-number" data-number="7">7</button>
-                        <button class="sacred-number" data-number="22">22</button>
-                        <button class="sacred-number active" data-number="99">99</button>
-                        <button class="sacred-number" data-number="144">144</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="portal-system">
-                <div class="portal-tabs">
-                    <button class="portal-tab active" data-portal="realms">🏰 Realms</button>
-                    <button class="portal-tab" data-portal="arcana">🃏 Sacred Geometry Portals</button>
-                    <button class="portal-tab" data-portal="angels">👼 Quality Guardians</button>
-                    <button class="portal-tab" data-portal="demons">😈 Creative Helpers</button>
-                    <button class="portal-tab" data-portal="synths">🎹 Synths</button>
-                </div>
-                <div id="entitySelector"></div>
-                
-                <!-- Sacred Geometry Portal Visualization Canvas (Not boxes!) -->
-                <canvas id="portalCanvas" width="400" height="300" aria-label="Interactive Portal Visualization"></canvas>
-                
-                <!-- Active Portal Info -->
-                <div id="activePortalInfo" class="portal-info-panel">
-                    <h3>🌟 Portal Status</h3>
-                    <div id="portalDetails">Click on the sacred geometry portals above to begin your journey...</div>
-                </div>
-                
-                <!-- Trinity Integration Status -->
-                <div id="trinityStatus" class="trinity-status-panel">
-                    <h3>🔗 Trinity Integration</h3>
-                    <div class="trinity-progress">
-                        <div class="soul-progress">SOUL: <span id="soulStatus">Ready</span></div>
-                        <div class="mind-progress">MIND: <span id="mindStatus">Ready</span></div>
-                        <div class="body-progress">BODY: <span id="bodyStatus">Ready</span></div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-    
-    <!-- Performance Monitoring System -->
-    <script src="performance-monitoring-system.js"></script>
-    
-    <!-- Bundle Monitoring System -->
-    <script src="bundle-monitoring-system.js"></script>
-    
-    <!-- Enhanced Cathedral Engine with Trinity Integration -->
-    <script src="cathedral-main-engine-enhanced.js"></script>
-    
-    <!-- Initialize Trinity System -->
-    <script>
-        // Trinity initialization without syntax errors
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('🏛️ Cathedral Trinity System Loading...');
-            
-            try {
-                // Initialize error boundary
-                window.cathedralErrorBoundary = new CathedralErrorBoundary();
-                
-                // Initialize enhanced engine with trinity integration
-                window.cathedralEngine = new CosmogenesisNovaElegantia();
-                
-                // Initialize performance monitoring
-                if (typeof CathedralPerformanceMonitor !== 'undefined') {
-                    window.performanceMonitor = new CathedralPerformanceMonitor();
-                }
-                
-                // Initialize bundle monitoring  
-                if (typeof CathedralBundleMonitor !== 'undefined') {
-                    window.bundleMonitor = new CathedralBundleMonitor();
-                }
-                
-                console.log('✅ Cathedral Trinity System Initialized Successfully!');
-                console.log('🌟 LUMINA KEYS (Soul) - Ready for archetypal voices');
-                console.log('📚 CODEX MAGNA (Mind) - Ready for wisdom research');
-                console.log('🔺 GEOMETRIX NOVA (Body) - Ready for sacred geometry');
-                console.log('🔬 Sacred Geometry Laboratories - Active');
-                console.log('🌀 Portal System - Sacred geometry gateways, not boxes!');
-                
-            } catch (error) {
-                console.error('Trinity initialization error:', error);
-                // Fallback to basic functionality
-                console.log('🛡️ Trinity system running in safe mode');
-            }
-        });
-    </script>
-</body>
-</html>
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🏛️ Cathedral of Circuits - Trinity Integration Platform</title>
+            <link rel="stylesheet" href="cathedral-main-styles.css">
+        </head>
+        <body>
+            <div id="cathedral-container">
+                <header>
+                    <h1>🏛️ Cathedral of Circuits</h1>
+                        <p>Trinity Open World System - Three Apps Working Together or Independently</p>
+                            <!-- Trinity App Launcher -->
+                            <div class="trinity-navigation">
+                                <button class="trinity-app-button soul-app" data-app="lumina-keys">
+                                    <span class="app-icon">🌟</span>
+                                        <div class="app-info">
+                                            <h3>LUMINA KEYS</h3>
+                                                <p>SOUL - Archetypal Voice Portal</p>
+                                                </div>
+                                            </button>
+                                            <button class="trinity-app-button mind-app" data-app="codex-magna">
+                                                <span class="app-icon">📚</span>
+                                                    <div class="app-info">
+                                                        <h3>CODEX MAGNA</h3>
+                                                            <p>MIND - Sacred Wisdom Research</p>
+                                                            </div>
+                                                        </button>
+                                                        <button class="trinity-app-button body-app" data-app="geometrix-nova">
+                                                            <span class="app-icon">🔺</span>
+                                                                <div class="app-info">
+                                                                    <h3>GEOMETRIX NOVA</h3>
+                                                                        <p>BODY - Sacred Geometry Laboratory</p>
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
+                                                            </header>
+                                                            <main>
+                                                                <!-- Sacred Geometry Portal Canvas (Not boxes!) -->
+                                                                <canvas id="cosmicCanvas" width="800" height="600" aria-label="Sacred Geometry Portal Visualization">
+                                                                </canvas>
+                                                                <!-- Laboratory Quick Access -->
+                                                                <div class="laboratory-launcher">
+                                                                    <h3>🔬 Sacred Geometry Laboratories</h3>
+                                                                        <div class="lab-buttons">
+                                                                            <button class="lab-button" onclick="cathedralEngine.activateLaboratory('high-priestess-lab')">
+                                                                                🌙 Emma Kunz Pendulum Art
+                                                                            </button>
+                                                                            <button class="lab-button" onclick="cathedralEngine.activateLaboratory('empress-lab')">
+                                                                                🌹 Biomorphic Portal Lab
+                                                                            </button>
+                                                                            <button class="lab-button" onclick="cathedralEngine.activateLaboratory('hermit-lab')">
+                                                                                🔯 Crystal Technology Lab
+                                                                            </button>
+                                                                            <button class="lab-button" onclick="cathedralEngine.activateLaboratory('synthesis-lab')">
+                                                                                🎹 Planetary Synthesis Lab
+                                                                            </button>
+                                                                            <button class="lab-button moonchild-special" onclick="cathedralEngine.activateLaboratory('moonchild-art-laboratory')">
+                                                                                📖 Moonchild Living Art Laboratory
+                                                                            </button>
+                                                                            <button class="lab-button rosslyn-tower-special" onclick="cathedralEngine.activateLaboratory('rosslyn-alchemy-tower')">
+                                                                                🏰 Rosslyn Alchemy Tower - Complete Art Laboratory
+                                                                            </button>
+                                                                        </div>
+                                                                        <!-- Quick Art Creation -->
+                                                                        <div class="quick-art-access">
+                                                                            <h4>🎨 Quick Art Creation</h4>
+                                                                                <button class="art-quick-btn" onclick="cathedralEngine.openArcanaConsciousnessPainter()">
+                                                                                    🃏 Paint as Tarot Arcana
+                                                                                </button>
+                                                                                <button class="art-quick-btn" onclick="cathedralEngine.openRedBookManuscriptGenerator()">
+                                                                                    📖 Create Red Book Pages
+                                                                                </button>
+                                                                                <button class="art-quick-btn" onclick="cathedralEngine.openTraditionalMediumSynthesizer()">
+                                                                                    🧱 Lego-Sculpt Art Styles
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div id="controls-panel">
+                                                                            <div class="control-group">
+                                                                                <label>Trinity Architecture</label>
+                                                                                    <div class="architecture-tabs">
+                                                                                        <button class="architecture-tab active" data-arch="corpus" aria-selected="true">BODY</button>
+                                                                                            <button class="architecture-tab" data-arch="psyche" aria-selected="false">MIND</button>
+                                                                                                <button class="architecture-tab" data-arch="spiritus" aria-selected="false">SOUL</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="control-group">
+                                                                                                <label>Sacred Frequency</label>
+                                                                                                    <input type="range" id="frequencySlider" min="174" max="963" value="528" step="1">
+                                                                                                    <span id="currentFreq">528 Hz</span>
+                                                                                                    </div>
+                                                                                                    <div class="control-group">
+                                                                                                        <label>Sacred Number</label>
+                                                                                                            <div class="sacred-numbers">
+                                                                                                                <button class="sacred-number" data-number="7">7</button>
+                                                                                                                    <button class="sacred-number" data-number="22">22</button>
+                                                                                                                        <button class="sacred-number active" data-number="99">99</button>
+                                                                                                                            <button class="sacred-number" data-number="144">144</button>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <div id="portal-system">
+                                                                                                                        <div class="portal-tabs">
+                                                                                                                            <button class="portal-tab active" data-portal="realms">🏰 Realms</button>
+                                                                                                                                <button class="portal-tab" data-portal="arcana">🃏 Sacred Geometry Portals</button>
+                                                                                                                                    <button class="portal-tab" data-portal="angels">👼 Quality Guardians</button>
+                                                                                                                                        <button class="portal-tab" data-portal="demons">😈 Creative Helpers</button>
+                                                                                                                                            <button class="portal-tab" data-portal="synths">🎹 Synths</button>
+                                                                                                                                            </div>
+                                                                                                                                            <div id="entitySelector">
+                                                                                                                                            </div>
+                                                                                                                                            <!-- Sacred Geometry Portal Visualization Canvas (Not boxes!) -->
+                                                                                                                                            <canvas id="portalCanvas" width="400" height="300" aria-label="Interactive Portal Visualization">
+                                                                                                                                            </canvas>
+                                                                                                                                            <!-- Active Portal Info -->
+                                                                                                                                            <div id="activePortalInfo" class="portal-info-panel">
+                                                                                                                                                <h3>🌟 Portal Status</h3>
+                                                                                                                                                    <div id="portalDetails">Click on the sacred geometry portals above to begin your journey...</div>
+                                                                                                                                                    </div>
+                                                                                                                                                    <!-- Trinity Integration Status -->
+                                                                                                                                                    <div id="trinityStatus" class="trinity-status-panel">
+                                                                                                                                                        <h3>🔗 Trinity Integration</h3>
+                                                                                                                                                            <div class="trinity-progress">
+                                                                                                                                                                <div class="soul-progress">SOUL: <span id="soulStatus">Ready</span>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div class="mind-progress">MIND: <span id="mindStatus">Ready</span>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div class="body-progress">BODY: <span id="bodyStatus">Ready</span>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </main>
+                                                                                                                                            </div>
+                                                                                                                                            <!-- Performance Monitoring System -->
+                                                                                                                                            <script src="performance-monitoring-system.js">
+                                                                                                                                            </script>
+                                                                                                                                            <!-- Bundle Monitoring System -->
+                                                                                                                                            <script src="bundle-monitoring-system.js">
+                                                                                                                                            </script>
+                                                                                                                                            <!-- Enhanced Cathedral Engine with Trinity Integration -->
+                                                                                                                                            <script src="cathedral-main-engine-enhanced.js">
+                                                                                                                                            </script>
+                                                                                                                                            <!-- Initialize Trinity System -->
+                                                                                                                                            <script>
+                                                                                                                                                // Trinity initialization without syntax errors
+                                                                                                                                                document.addEventListener('DOMContentLoaded', function() {
+                                                                                                                                                console.log('🏛️ Cathedral Trinity System Loading...');
+                                                                                                                                                try {
+                                                                                                                                                // Initialize error boundary
+                                                                                                                                                window.cathedralErrorBoundary = new CathedralErrorBoundary();
+                                                                                                                                                // Initialize enhanced engine with trinity integration
+                                                                                                                                                window.cathedralEngine = new CosmogenesisNovaElegantia();
+                                                                                                                                                // Initialize performance monitoring
+                                                                                                                                                if (typeof CathedralPerformanceMonitor !== 'undefined') {
+                                                                                                                                                window.performanceMonitor = new CathedralPerformanceMonitor();
+                                                                                                                                                }
+                                                                                                                                                // Initialize bundle monitoring
+                                                                                                                                                if (typeof CathedralBundleMonitor !== 'undefined') {
+                                                                                                                                                window.bundleMonitor = new CathedralBundleMonitor();
+                                                                                                                                                }
+                                                                                                                                                console.log('✅ Cathedral Trinity System Initialized Successfully!');
+                                                                                                                                                console.log('🌟 LUMINA KEYS (Soul) - Ready for archetypal voices');
+                                                                                                                                                console.log('📚 CODEX MAGNA (Mind) - Ready for wisdom research');
+                                                                                                                                                console.log('🔺 GEOMETRIX NOVA (Body) - Ready for sacred geometry');
+                                                                                                                                                console.log('🔬 Sacred Geometry Laboratories - Active');
+                                                                                                                                                console.log('🌀 Portal System - Sacred geometry gateways, not boxes!');
+                                                                                                                                                } catch (error) {
+                                                                                                                                                console.error('Trinity initialization error:', error);
+                                                                                                                                                // Fallback to basic functionality
+                                                                                                                                                console.log('🛡️ Trinity system running in safe mode');
+                                                                                                                                                }
+                                                                                                                                                });
+                                                                                                                                            </script>
+                                                                                                                                        </body>
+                                                                                                                                    </html>

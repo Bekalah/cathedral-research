@@ -1,849 +1,742 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness Observatory - Health Lattice Monitoring</title>
-    <style>
-        :root {
-            /* Wellness Dimension Colors */
-            --creativity: #FF6B9D;
-            --balance: #4ECDC4;
-            --wisdom: #45B7D1;
-            --intuition: #9B59B6;
-            --transformation: #F39C12;
-            --healing: #2ECC71;
-            --flow: #E74C3C;
-            
-            /* Sacred Geometry */
-            --phi: 1.618;
-            --sacred-space: calc(1rem * var(--phi));
-            
-            /* Observatory Colors */
-            --observatory-bg: #0F1419;
-            --panel-bg: rgba(255, 255, 255, 0.05);
-            --text-primary: #E8E8E8;
-            --text-secondary: #B8B8B8;
-            --accent-gold: #FFD700;
-            --deep-space: #1a1a2e;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, 
-                var(--observatory-bg) 0%, 
-                var(--deep-space) 50%, 
-                #16213E 100%);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .observatory-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: var(--sacred-space);
-        }
-
-        .observatory-header {
-            text-align: center;
-            margin-bottom: calc(var(--sacred-space) * 2);
-            padding: var(--sacred-space);
-            background: linear-gradient(135deg, 
-                rgba(255, 215, 0, 0.1) 0%, 
-                rgba(46, 204, 113, 0.1) 100%);
-            border-radius: calc(1rem * var(--phi));
-            border: 2px solid var(--accent-gold);
-        }
-
-        .observatory-title {
-            font-size: calc(3rem * var(--phi));
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--accent-gold), var(--healing), var(--intuition));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .observatory-subtitle {
-            font-size: 1.4rem;
-            color: var(--balance);
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .current-state {
-            font-size: 1.2rem;
-            color: var(--accent-gold);
-            font-family: 'Courier New', monospace;
-        }
-
-        .wellness-dashboard {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: var(--sacred-space);
-            margin-bottom: calc(var(--sacred-space) * 2);
-        }
-
-        .dimension-panel {
-            background: var(--panel-bg);
-            border: 2px solid transparent;
-            border-radius: var(--sacred-space);
-            padding: var(--sacred-space);
-            backdrop-filter: blur(15px);
-            transition: all 0.3s ease;
-        }
-
-        .dimension-panel::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--creativity), var(--balance), var(--wisdom), var(--intuition));
-            z-index: -1;
-            border-radius: var(--sacred-space);
-            opacity: 0.7;
-        }
-
-        .dimension-panel {
-            position: relative;
-        }
-
-        .lattice-visualization {
-            background: var(--panel-bg);
-            border: 3px solid var(--accent-gold);
-            border-radius: var(--sacred-space);
-            padding: var(--sacred-space);
-            position: relative;
-            min-height: 500px;
-        }
-
-        .lattice-canvas {
-            width: 100%;
-            height: 450px;
-            border-radius: calc(1rem * var(--phi));
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.8));
-        }
-
-        .dimension-list {
-            background: var(--panel-bg);
-            border: 2px solid var(--healing);
-            border-radius: var(--sacred-space);
-            padding: var(--sacred-space);
-        }
-
-        .dimension-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: calc(var(--sacred-space) / 2);
-            margin: calc(var(--sacred-space) / 2) 0;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: calc(1rem / 2);
-            border-left: 4px solid var(--creativity);
-            transition: all 0.3s ease;
-        }
-
-        .dimension-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateX(5px);
-        }
-
-        .dimension-name {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .dimension-icon {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .dimension-value {
-            font-size: 1.2rem;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-        }
-
-        .dimension-slider {
-            width: 100%;
-            margin: calc(var(--sacred-space) / 2) 0;
-        }
-
-        .slider-input {
-            width: 100%;
-            height: 8px;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            outline: none;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        .slider-input::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--accent-gold);
-            cursor: pointer;
-            box-shadow: 0 0 15px var(--accent-gold);
-        }
-
-        .wellness-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--sacred-space);
-            margin-bottom: calc(var(--sacred-space) * 2);
-        }
-
-        .metric-card {
-            background: var(--panel-bg);
-            border: 2px solid transparent;
-            border-radius: var(--sacred-space);
-            padding: var(--sacred-space);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .metric-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--healing), var(--flow), var(--transformation));
-            z-index: -1;
-            border-radius: var(--sacred-space);
-            opacity: 0.6;
-        }
-
-        .metric-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.3);
-        }
-
-        .metric-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .metric-title {
-            font-size: 1.3rem;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
-            margin-bottom: 1rem;
-        }
-
-        .metric-status {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-
-        .lattice-controls {
-            background: var(--panel-bg);
-            border: 2px solid var(--intuition);
-            border-radius: var(--sacred-space);
-            padding: var(--sacred-space);
-            text-align: center;
-        }
-
-        .control-section {
-            margin-bottom: var(--sacred-space);
-        }
-
-        .control-title {
-            font-size: 1.3rem;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-        }
-
-        .control-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-
-        .control-button {
-            padding: 1rem;
-            background: linear-gradient(135deg, var(--wisdom), var(--intuition));
-            color: white;
-            border: none;
-            border-radius: calc(1rem / 2);
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .control-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(69, 183, 209, 0.3);
-        }
-
-        .session-log {
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px solid var(--flow);
-            border-radius: var(--sacred-space);
-            padding: var(--sacred-space);
-            height: 200px;
-            overflow-y: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .log-entry {
-            margin-bottom: 0.5rem;
-            padding: 0.5rem;
-            border-left: 3px solid var(--accent-gold);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .log-timestamp {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-
-        .log-message {
-            color: var(--text-primary);
-        }
-
-        /* Dimension-specific colors */
-        .creativity { border-left-color: var(--creativity) !important; color: var(--creativity); }
-        .balance { border-left-color: var(--balance) !important; color: var(--balance); }
-        .wisdom { border-left-color: var(--wisdom) !important; color: var(--wisdom); }
-        .intuition { border-left-color: var(--intuition) !important; color: var(--intuition); }
-        .transformation { border-left-color: var(--transformation) !important; color: var(--transformation); }
-        .healing { border-left-color: var(--healing) !important; color: var(--healing); }
-        .flow { border-left-color: var(--flow) !important; color: var(--flow); }
-
-        @keyframes lattice-pulse {
-            0%, 100% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-
-        .lattice-active {
-            animation: lattice-pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes wellness-glow {
-            0%, 100% { box-shadow: 0 0 20px currentColor; }
-            50% { box-shadow: 0 0 40px currentColor, 0 0 60px currentColor; }
-        }
-
-        .wellness-active {
-            animation: wellness-glow 2s ease-in-out infinite;
-        }
-
-        @media (max-width: 1200px) {
-            .wellness-dashboard {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .observatory-title {
-                font-size: 2.5rem;
-            }
-            
-            .wellness-metrics {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="observatory-container">
-        <div class="observatory-header">
-            <h1 class="observatory-title">🌟 Wellness Observatory</h1>
-            <p class="observatory-subtitle">7-Dimensional Health Lattice Monitoring</p>
-            <div class="current-state" id="currentState">Initializing wellness scan...</div>
-        </div>
-
-        <div class="wellness-dashboard">
-            <!-- Dimension Controls -->
-            <div class="dimension-panel">
-                <div class="dimension-list">
-                    <h3 style="text-align: center; color: var(--accent-gold); margin-bottom: 1rem;">
-                        🎛️ Wellness Dimensions
-                    </h3>
-                    <div id="dimensionControls">
-                        <!-- Dynamically generated dimension controls -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lattice Visualization -->
-            <div class="lattice-visualization">
-                <h3 style="text-align: center; color: var(--accent-gold); margin-bottom: 1rem;">
-                    🕸️ Health Lattice Web
-                </h3>
-                <canvas class="lattice-canvas" id="latticeCanvas"></canvas>
-            </div>
-
-            <!-- Real-time Metrics -->
-            <div class="dimension-panel">
-                <div class="lattice-controls">
-                    <div class="control-section">
-                        <h3 class="control-title">🎯 Wellness Controls</h3>
-                        <div class="control-buttons">
-                            <button class="control-button" onclick="scanWellness()">
-                                🔍 Deep Scan
-                            </button>
-                            <button class="control-button" onclick="balanceAll()">
-                                ⚖️ Balance All
-                            </button>
-                            <button class="control-button" onclick="exportData()">
-                                📊 Export Data
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="session-log" id="sessionLog">
-                        <div class="log-entry">
-                            <div class="log-timestamp">[System]</div>
-                            <div class="log-message">Wellness Observatory initialized</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="wellness-metrics" id="wellnessMetrics">
-            <!-- Dynamically generated metric cards -->
-        </div>
-    </div>
-
-    <script>
-        // Wellness dimensions configuration
-        const wellnessDimensions = [
-            {
-                name: 'Creativity',
-                icon: '🎨',
-                color: '#FF6B9D',
-                value: 75,
-                description: 'Creative expression and artistic flow'
-            },
-            {
-                name: 'Balance',
-                icon: '⚖️',
-                color: '#4ECDC4',
-                value: 65,
-                description: 'Equilibrium between all life aspects'
-            },
-            {
-                name: 'Wisdom',
-                icon: '🦉',
-                color: '#45B7D1',
-                value: 80,
-                description: 'Inner knowing and learned experience'
-            },
-            {
-                name: 'Intuition',
-                icon: '🔮',
-                color: '#9B59B6',
-                value: 70,
-                description: 'Psychic awareness and gut feelings'
-            },
-            {
-                name: 'Transformation',
-                icon: '🦋',
-                color: '#F39C12',
-                value: 60,
-                description: 'Growth and positive change'
-            },
-            {
-                name: 'Healing',
-                icon: '💚',
-                color: '#2ECC71',
-                value: 85,
-                description: 'Physical and emotional restoration'
-            },
-            {
-                name: 'Flow',
-                icon: '🌊',
-                color: '#E74C3C',
-                value: 90,
-                description: 'State of effortless engagement'
-            }
-        ];
-
-        let latticeCanvas, latticeCtx;
-        let animationId;
-        let wellnessData = {};
-
-        // Initialize the observatory
-        function initObservatory() {
-            generateDimensionControls();
-            generateWellnessMetrics();
-            initLatticeCanvas();
-            startWellnessMonitoring();
-            
-            // Initialize wellness data
-            wellnessDimensions.forEach(dim => {
-                wellnessData[dim.name.toLowerCase()] = dim.value;
-            });
-            
-            updateCurrentState();
-        }
-
-        // Generate dimension control sliders
-        function generateDimensionControls() {
-            const container = document.getElementById('dimensionControls');
-            
-            wellnessDimensions.forEach((dim, index) => {
-                const dimensionDiv = document.createElement('div');
-                dimensionDiv.className = `dimension-item ${dim.name.toLowerCase()}`;
-                dimensionDiv.innerHTML = `
-                    <div style="display: flex; align-items: center;">
-                        <span class="dimension-icon">${dim.icon}</span>
-                        <span class="dimension-name">${dim.name}</span>
-                    </div>
-                    <div class="dimension-value" id="value-${index}">${dim.value}%</div>
-                    <div class="dimension-slider">
-                        <input type="range" class="slider-input" 
-                               id="slider-${index}" 
-                               min="0" max="100" value="${dim.value}"
-                               oninput="updateDimension(${index}, this.value)">
-                    </div>
-                `;
-                container.appendChild(dimensionDiv);
-            });
-        }
-
-        // Generate wellness metric cards
-        function generateWellnessMetrics() {
-            const container = document.getElementById('wellnessMetrics');
-            
-            // Overall wellness score
-            const overallScore = Math.round(
-                wellnessDimensions.reduce((sum, dim) => sum + dim.value, 0) / wellnessDimensions.length
-            );
-            
-            const metrics = [
-                {
-                    icon: '🌟',
-                    title: 'Overall Wellness',
-                    value: overallScore + '%',
-                    status: getWellnessStatus(overallScore),
-                    color: '#FFD700'
-                },
-                {
-                    icon: '🧠',
-                    title: 'Mental Clarity',
-                    value: Math.round((wellnessData.wisdom || 80) + (wellnessData.intuition || 70)) / 2 + '%',
-                    status: 'Sharp and focused',
-                    color: '#45B7D1'
-                },
-                {
-                    icon: '💗',
-                    title: 'Emotional Health',
-                    value: Math.round((wellnessData.balance || 65) + (wellnessData.healing || 85)) / 2 + '%',
-                    status: 'Stable and healing',
-                    color: '#2ECC71'
-                },
-                {
-                    icon: '⚡',
-                    title: 'Creative Energy',
-                    value: Math.round((wellnessData.creativity || 75) + (wellnessData.flow || 90)) / 2 + '%',
-                    status: 'Flowing freely',
-                    color: '#FF6B9D'
-                },
-                {
-                    icon: '🌱',
-                    title: 'Growth Potential',
-                    value: wellnessData.transformation || 60 + '%',
-                    status: 'Expanding consciousness',
-                    color: '#F39C12'
-                },
-                {
-                    icon: '🔗',
-                    title: 'Lattice Coherence',
-                    value: calculateCoherence() + '%',
-                    status: 'Dimensions harmonizing',
-                    color: '#9B59B6'
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wellness Observatory - Health Lattice Monitoring</title>
+            <style>
+                :root {
+                /* Wellness Dimension Colors */
+                --creativity: #FF6B9D;
+                --balance: #4ECDC4;
+                --wisdom: #45B7D1;
+                --intuition: #9B59B6;
+                --transformation: #F39C12;
+                --healing: #2ECC71;
+                --flow: #E74C3C;
+                /* Sacred Geometry */
+                --phi: 1.618;
+                --sacred-space: calc(1rem * var(--phi));
+                /* Observatory Colors */
+                --observatory-bg: #0F1419;
+                --panel-bg: rgba(255, 255, 255, 0.05);
+                --text-primary: #E8E8E8;
+                --text-secondary: #B8B8B8;
+                --accent-gold: #FFD700;
+                --deep-space: #1a1a2e;
                 }
-            ];
-
-            container.innerHTML = '';
-            metrics.forEach(metric => {
-                const card = document.createElement('div');
-                card.className = 'metric-card wellness-active';
-                card.innerHTML = `
-                    <div class="metric-icon" style="color: ${metric.color}">${metric.icon}</div>
-                    <div class="metric-title">${metric.title}</div>
-                    <div class="metric-value" style="color: ${metric.color}">${metric.value}</div>
-                    <div class="metric-status">${metric.status}</div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Update dimension value
-        function updateDimension(index, value) {
-            const dimension = wellnessDimensions[index];
-            dimension.value = parseInt(value);
-            
-            document.getElementById(`value-${index}`).textContent = value + '%';
-            wellnessData[dimension.name.toLowerCase()] = parseInt(value);
-            
-            updateCurrentState();
-            generateWellnessMetrics();
-            drawLattice();
-            
-            logEntry(`${dimension.name} updated to ${value}%`);
-        }
-
-        // Initialize lattice canvas
-        function initLatticeCanvas() {
-            latticeCanvas = document.getElementById('latticeCanvas');
-            latticeCtx = latticeCanvas.getContext('2d');
-            latticeCanvas.width = latticeCanvas.offsetWidth;
-            latticeCanvas.height = 450;
-            
-            drawLattice();
-            animateLattice();
-        }
-
-        // Draw the health lattice web
-        function drawLattice() {
-            if (!latticeCtx) return;
-            
-            latticeCtx.clearRect(0, 0, latticeCanvas.width, latticeCanvas.height);
-            
-            const centerX = latticeCanvas.width / 2;
-            const centerY = latticeCanvas.height / 2;
-            const radius = Math.min(centerX, centerY) - 50;
-            
-            // Draw dimension nodes
-            wellnessDimensions.forEach((dim, index) => {
-                const angle = (index * 2 * Math.PI) / wellnessDimensions.length - Math.PI / 2;
-                const nodeRadius = (dim.value / 100) * radius;
-                const x = centerX + Math.cos(angle) * nodeRadius;
-                const y = centerY + Math.sin(angle) * nodeRadius;
-                
-                // Draw connection lines to center
-                latticeCtx.strokeStyle = dim.color;
-                latticeCtx.lineWidth = 2;
-                latticeCtx.beginPath();
-                latticeCtx.moveTo(centerX, centerY);
-                latticeCtx.lineTo(x, y);
-                latticeCtx.stroke();
-                
-                // Draw node
-                latticeCtx.fillStyle = dim.color;
-                latticeCtx.beginPath();
-                latticeCtx.arc(x, y, 8, 0, 2 * Math.PI);
-                latticeCtx.fill();
-                
-                // Draw node label
-                latticeCtx.fillStyle = '#E8E8E8';
-                latticeCtx.font = '12px Georgia';
-                latticeCtx.textAlign = 'center';
-                latticeCtx.fillText(dim.name, x, y + 25);
-            });
-            
-            // Draw connections between related dimensions
-            const connections = [
-                [0, 6], // Creativity - Flow
-                [1, 5], // Balance - Healing
-                [2, 3], // Wisdom - Intuition
-                [4, 5], // Transformation - Healing
-                [0, 4], // Creativity - Transformation
-                [1, 2], // Balance - Wisdom
-                [3, 6]  // Intuition - Flow
-            ];
-            
-            connections.forEach(([i, j]) => {
-                const angle1 = (i * 2 * Math.PI) / wellnessDimensions.length - Math.PI / 2;
-                const angle2 = (j * 2 * Math.PI) / wellnessDimensions.length - Math.PI / 2;
-                
-                const nodeRadius1 = (wellnessDimensions[i].value / 100) * radius;
-                const nodeRadius2 = (wellnessDimensions[j].value / 100) * radius;
-                
-                const x1 = centerX + Math.cos(angle1) * nodeRadius1;
-                const y1 = centerY + Math.sin(angle1) * nodeRadius1;
-                const x2 = centerX + Math.cos(angle2) * nodeRadius2;
-                const y2 = centerY + Math.sin(angle2) * nodeRadius2;
-                
-                const connectivity = (wellnessDimensions[i].value + wellnessDimensions[j].value) / 200;
-                
-                latticeCtx.strokeStyle = `rgba(255, 215, 0, ${connectivity * 0.6})`;
-                latticeCtx.lineWidth = connectivity * 3;
-                latticeCtx.beginPath();
-                latticeCtx.moveTo(x1, y1);
-                latticeCtx.lineTo(x2, y2);
-                latticeCtx.stroke();
-            });
-            
-            // Draw center node
-            const coherence = calculateCoherence() / 100;
-            latticeCtx.fillStyle = `rgba(255, 215, 0, ${coherence})`;
-            latticeCtx.beginPath();
-            latticeCtx.arc(centerX, centerY, 12, 0, 2 * Math.PI);
-            latticeCtx.fill();
-        }
-
-        // Animate the lattice
-        function animateLattice() {
-            drawLattice();
-            animationId = requestAnimationFrame(animateLattice);
-        }
-
-        // Calculate lattice coherence
-        function calculateCoherence() {
-            const values = wellnessDimensions.map(dim => dim.value);
-            const mean = values.reduce((sum, val) => sum + val, 0) / values.length;
-            const variance = values.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / values.length;
-            const coherence = Math.max(0, 100 - Math.sqrt(variance));
-            return Math.round(coherence);
-        }
-
-        // Get wellness status description
-        function getWellnessStatus(score) {
-            if (score >= 90) return 'Exceptional wellness state';
-            if (score >= 80) return 'Thriving and balanced';
-            if (score >= 70) return 'Good wellness foundation';
-            if (score >= 60) return 'Room for improvement';
-            return 'Seeking balance and healing';
-        }
-
-        // Update current state display
-        function updateCurrentState() {
-            const avgWellness = Math.round(
-                wellnessDimensions.reduce((sum, dim) => sum + dim.value, 0) / wellnessDimensions.length
-            );
-            const coherence = calculateCoherence();
-            
-            document.getElementById('currentState').innerHTML = 
-                `Wellness: ${avgWellness}% | Coherence: ${coherence}% | ${getWellnessStatus(avgWellness)}`;
-        }
-
-        // Control functions
-        function scanWellness() {
-            logEntry('🔍 Performing deep wellness scan...');
-            
-            // Simulate wellness fluctuations
-            wellnessDimensions.forEach((dim, index) => {
-                const variation = Math.random() * 10 - 5; // ±5 variation
-                const newValue = Math.max(0, Math.min(100, dim.value + variation));
-                updateDimension(index, newValue);
-                document.getElementById(`slider-${index}`).value = newValue;
-            });
-            
-            setTimeout(() => {
-                logEntry('✅ Deep scan complete - patterns detected');
-                updateCurrentState();
-            }, 2000);
-        }
-
-        function balanceAll() {
-            logEntry('⚖️ Initiating auto-balance sequence...');
-            
-            const target = 75; // Target balance point
-            
-            wellnessDimensions.forEach((dim, index) => {
-                const steps = 20;
-                const increment = (target - dim.value) / steps;
-                
-                let currentStep = 0;
-                const balanceInterval = setInterval(() => {
-                    currentStep++;
-                    const newValue = Math.round(dim.value + (increment * currentStep));
-                    updateDimension(index, newValue);
-                    document.getElementById(`slider-${index}`).value = newValue;
-                    
-                    if (currentStep >= steps) {
-                        clearInterval(balanceInterval);
-                    }
-                }, 100);
-            });
-            
-            setTimeout(() => {
-                logEntry('✨ Balance achieved - all dimensions harmonized');
-            }, 2500);
-        }
-
-        function exportData() {
-            const data = {
-                timestamp: new Date().toISOString(),
-                dimensions: wellnessDimensions,
-                overallWellness: Math.round(
-                    wellnessDimensions.reduce((sum, dim) => sum + dim.value, 0) / wellnessDimensions.length
-                ),
-                coherence: calculateCoherence()
-            };
-            
-            const dataStr = JSON.stringify(data, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            const url = URL.createObjectURL(dataBlob);
-            
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `wellness-data-${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-            
-            logEntry('📊 Wellness data exported successfully');
-        }
-
-        // Log entry function
-        function logEntry(message) {
-            const log = document.getElementById('sessionLog');
-            const entry = document.createElement('div');
-            entry.className = 'log-entry';
-            entry.innerHTML = `
-                <div class="log-timestamp">[${new Date().toLocaleTimeString()}]</div>
-                <div class="log-message">${message}</div>
-            `;
-            log.appendChild(entry);
-            log.scrollTop = log.scrollHeight;
-        }
-
-        // Start wellness monitoring
-        function startWellnessMonitoring() {
-            // Update wellness metrics every 5 seconds
-            setInterval(() => {
-                generateWellnessMetrics();
-                updateCurrentState();
-            }, 5000);
-            
-            // Log wellness updates every 30 seconds
-            setInterval(() => {
-                const coherence = calculateCoherence();
-                logEntry(`🌟 Wellness monitoring: Coherence at ${coherence}%`);
-            }, 30000);
-        }
-
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            initObservatory();
-            
-            console.log('🌟 Wellness Observatory initialized');
-            console.log('🕸️ Health lattice monitoring active');
-            console.log('📊 7-dimensional wellness tracking online');
-        });
-    </script>
-</body>
-</html>
+                * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                }
+                body {
+                font-family: 'Georgia', serif;
+                background: linear-gradient(135deg,
+                var(--observatory-bg) 0%,
+                var(--deep-space) 50%,
+                #16213E 100%);
+                color: var(--text-primary);
+                min-height: 100vh;
+                overflow-x: hidden;
+                }
+                .observatory-container {
+                max-width: 1600px;
+                margin: 0 auto;
+                padding: var(--sacred-space);
+                }
+                .observatory-header {
+                text-align: center;
+                margin-bottom: calc(var(--sacred-space) * 2);
+                padding: var(--sacred-space);
+                background: linear-gradient(135deg,
+                rgba(255, 215, 0, 0.1) 0%,
+                rgba(46, 204, 113, 0.1) 100%);
+                border-radius: calc(1rem * var(--phi));
+                border: 2px solid var(--accent-gold);
+                }
+                .observatory-title {
+                font-size: calc(3rem * var(--phi));
+                margin-bottom: 1rem;
+                background: linear-gradient(45deg, var(--accent-gold), var(--healing), var(--intuition));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+                }
+                .observatory-subtitle {
+                font-size: 1.4rem;
+                color: var(--balance);
+                font-style: italic;
+                margin-bottom: 1rem;
+                }
+                .current-state {
+                font-size: 1.2rem;
+                color: var(--accent-gold);
+                font-family: 'Courier New', monospace;
+                }
+                .wellness-dashboard {
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: var(--sacred-space);
+                margin-bottom: calc(var(--sacred-space) * 2);
+                }
+                .dimension-panel {
+                background: var(--panel-bg);
+                border: 2px solid transparent;
+                border-radius: var(--sacred-space);
+                padding: var(--sacred-space);
+                backdrop-filter: blur(15px);
+                transition: all 0.3s ease;
+                }
+                .dimension-panel::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                background: linear-gradient(45deg, var(--creativity), var(--balance), var(--wisdom), var(--intuition));
+                z-index: -1;
+                border-radius: var(--sacred-space);
+                opacity: 0.7;
+                }
+                .dimension-panel {
+                position: relative;
+                }
+                .lattice-visualization {
+                background: var(--panel-bg);
+                border: 3px solid var(--accent-gold);
+                border-radius: var(--sacred-space);
+                padding: var(--sacred-space);
+                position: relative;
+                min-height: 500px;
+                }
+                .lattice-canvas {
+                width: 100%;
+                height: 450px;
+                border-radius: calc(1rem * var(--phi));
+                background: radial-gradient(circle, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.8));
+                }
+                .dimension-list {
+                background: var(--panel-bg);
+                border: 2px solid var(--healing);
+                border-radius: var(--sacred-space);
+                padding: var(--sacred-space);
+                }
+                .dimension-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: calc(var(--sacred-space) / 2);
+                margin: calc(var(--sacred-space) / 2) 0;
+                background: rgba(255, 255, 255, 0.02);
+                border-radius: calc(1rem / 2);
+                border-left: 4px solid var(--creativity);
+                transition: all 0.3s ease;
+                }
+                .dimension-item:hover {
+                background: rgba(255, 255, 255, 0.05);
+                transform: translateX(5px);
+                }
+                .dimension-name {
+                font-size: 1.1rem;
+                font-weight: bold;
+                }
+                .dimension-icon {
+                font-size: 1.5rem;
+                margin-right: 1rem;
+                }
+                .dimension-value {
+                font-size: 1.2rem;
+                font-family: 'Courier New', monospace;
+                font-weight: bold;
+                }
+                .dimension-slider {
+                width: 100%;
+                margin: calc(var(--sacred-space) / 2) 0;
+                }
+                .slider-input {
+                width: 100%;
+                height: 8px;
+                border-radius: 4px;
+                background: rgba(255, 255, 255, 0.2);
+                outline: none;
+                -webkit-appearance: none;
+                appearance: none;
+                }
+                .slider-input::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: var(--accent-gold);
+                cursor: pointer;
+                box-shadow: 0 0 15px var(--accent-gold);
+                }
+                .wellness-metrics {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: var(--sacred-space);
+                margin-bottom: calc(var(--sacred-space) * 2);
+                }
+                .metric-card {
+                background: var(--panel-bg);
+                border: 2px solid transparent;
+                border-radius: var(--sacred-space);
+                padding: var(--sacred-space);
+                text-align: center;
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+                position: relative;
+                }
+                .metric-card::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                background: linear-gradient(45deg, var(--healing), var(--flow), var(--transformation));
+                z-index: -1;
+                border-radius: var(--sacred-space);
+                opacity: 0.6;
+                }
+                .metric-card:hover {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 15px 30px rgba(46, 204, 113, 0.3);
+                }
+                .metric-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                }
+                .metric-title {
+                font-size: 1.3rem;
+                color: var(--accent-gold);
+                margin-bottom: 1rem;
+                font-weight: bold;
+                }
+                .metric-value {
+                font-size: 2rem;
+                font-weight: bold;
+                font-family: 'Courier New', monospace;
+                margin-bottom: 1rem;
+                }
+                .metric-status {
+                font-size: 1rem;
+                color: var(--text-secondary);
+                font-style: italic;
+                }
+                .lattice-controls {
+                background: var(--panel-bg);
+                border: 2px solid var(--intuition);
+                border-radius: var(--sacred-space);
+                padding: var(--sacred-space);
+                text-align: center;
+                }
+                .control-section {
+                margin-bottom: var(--sacred-space);
+                }
+                .control-title {
+                font-size: 1.3rem;
+                color: var(--accent-gold);
+                margin-bottom: 1rem;
+                }
+                .control-buttons {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+                }
+                .control-button {
+                padding: 1rem;
+                background: linear-gradient(135deg, var(--wisdom), var(--intuition));
+                color: white;
+                border: none;
+                border-radius: calc(1rem / 2);
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                }
+                .control-button:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(69, 183, 209, 0.3);
+                }
+                .session-log {
+                background: rgba(0, 0, 0, 0.4);
+                border: 2px solid var(--flow);
+                border-radius: var(--sacred-space);
+                padding: var(--sacred-space);
+                height: 200px;
+                overflow-y: auto;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9rem;
+                line-height: 1.4;
+                }
+                .log-entry {
+                margin-bottom: 0.5rem;
+                padding: 0.5rem;
+                border-left: 3px solid var(--accent-gold);
+                background: rgba(255, 255, 255, 0.02);
+                }
+                .log-timestamp {
+                color: var(--text-secondary);
+                font-size: 0.8rem;
+                }
+                .log-message {
+                color: var(--text-primary);
+                }
+                /* Dimension-specific colors */
+                .creativity { border-left-color: var(--creativity) !important; color: var(--creativity); }
+                .balance { border-left-color: var(--balance) !important; color: var(--balance); }
+                .wisdom { border-left-color: var(--wisdom) !important; color: var(--wisdom); }
+                .intuition { border-left-color: var(--intuition) !important; color: var(--intuition); }
+                .transformation { border-left-color: var(--transformation) !important; color: var(--transformation); }
+                .healing { border-left-color: var(--healing) !important; color: var(--healing); }
+                .flow { border-left-color: var(--flow) !important; color: var(--flow); }
+                @keyframes lattice-pulse {
+                0%, 100% { opacity: 0.6; transform: scale(1); }
+                50% { opacity: 1; transform: scale(1.05); }
+                }
+                .lattice-active {
+                animation: lattice-pulse 3s ease-in-out infinite;
+                }
+                @keyframes wellness-glow {
+                0%, 100% { box-shadow: 0 0 20px currentColor; }
+                50% { box-shadow: 0 0 40px currentColor, 0 0 60px currentColor; }
+                }
+                .wellness-active {
+                animation: wellness-glow 2s ease-in-out infinite;
+                }
+                @media (max-width: 1200px) {
+                .wellness-dashboard {
+                grid-template-columns: 1fr;
+                }
+                }
+                @media (max-width: 768px) {
+                .observatory-title {
+                font-size: 2.5rem;
+                }
+                .wellness-metrics {
+                grid-template-columns: 1fr;
+                }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="observatory-container">
+                <div class="observatory-header">
+                    <h1 class="observatory-title">🌟 Wellness Observatory</h1>
+                        <p class="observatory-subtitle">7-Dimensional Health Lattice Monitoring</p>
+                            <div class="current-state" id="currentState">Initializing wellness scan...</div>
+                            </div>
+                            <div class="wellness-dashboard">
+                                <!-- Dimension Controls -->
+                                <div class="dimension-panel">
+                                    <div class="dimension-list">
+                                        <h3 style="text-align: center; color: var(--accent-gold); margin-bottom: 1rem;">
+                                            🎛️ Wellness Dimensions
+                                        </h3>
+                                        <div id="dimensionControls">
+                                            <!-- Dynamically generated dimension controls -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Lattice Visualization -->
+                                <div class="lattice-visualization">
+                                    <h3 style="text-align: center; color: var(--accent-gold); margin-bottom: 1rem;">
+                                        🕸️ Health Lattice Web
+                                    </h3>
+                                    <canvas class="lattice-canvas" id="latticeCanvas">
+                                    </canvas>
+                                </div>
+                                <!-- Real-time Metrics -->
+                                <div class="dimension-panel">
+                                    <div class="lattice-controls">
+                                        <div class="control-section">
+                                            <h3 class="control-title">🎯 Wellness Controls</h3>
+                                                <div class="control-buttons">
+                                                    <button class="control-button" onclick="scanWellness()">
+                                                        🔍 Deep Scan
+                                                    </button>
+                                                    <button class="control-button" onclick="balanceAll()">
+                                                        ⚖️ Balance All
+                                                    </button>
+                                                    <button class="control-button" onclick="exportData()">
+                                                        📊 Export Data
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="session-log" id="sessionLog">
+                                                <div class="log-entry">
+                                                    <div class="log-timestamp">[System]</div>
+                                                        <div class="log-message">Wellness Observatory initialized</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wellness-metrics" id="wellnessMetrics">
+                                            <!-- Dynamically generated metric cards -->
+                                        </div>
+                                    </div>
+                                    <script>
+                                        // Wellness dimensions configuration
+                                        const wellnessDimensions = [
+                                        {
+                                        name: 'Creativity',
+                                        icon: '🎨',
+                                        color: '#FF6B9D',
+                                        value: 75,
+                                        description: 'Creative expression and artistic flow'
+                                        },
+                                        {
+                                        name: 'Balance',
+                                        icon: '⚖️',
+                                        color: '#4ECDC4',
+                                        value: 65,
+                                        description: 'Equilibrium between all life aspects'
+                                        },
+                                        {
+                                        name: 'Wisdom',
+                                        icon: '🦉',
+                                        color: '#45B7D1',
+                                        value: 80,
+                                        description: 'Inner knowing and learned experience'
+                                        },
+                                        {
+                                        name: 'Intuition',
+                                        icon: '🔮',
+                                        color: '#9B59B6',
+                                        value: 70,
+                                        description: 'Psychic awareness and gut feelings'
+                                        },
+                                        {
+                                        name: 'Transformation',
+                                        icon: '🦋',
+                                        color: '#F39C12',
+                                        value: 60,
+                                        description: 'Growth and positive change'
+                                        },
+                                        {
+                                        name: 'Healing',
+                                        icon: '💚',
+                                        color: '#2ECC71',
+                                        value: 85,
+                                        description: 'Physical and emotional restoration'
+                                        },
+                                        {
+                                        name: 'Flow',
+                                        icon: '🌊',
+                                        color: '#E74C3C',
+                                        value: 90,
+                                        description: 'State of effortless engagement'
+                                        }
+                                        ];
+                                        let latticeCanvas, latticeCtx;
+                                        let animationId;
+                                        let wellnessData = {};
+                                        // Initialize the observatory
+                                        function initObservatory() {
+                                        generateDimensionControls();
+                                        generateWellnessMetrics();
+                                        initLatticeCanvas();
+                                        startWellnessMonitoring();
+                                        // Initialize wellness data
+                                        wellnessDimensions.forEach(dim => {
+                                        wellnessData[dim.name.toLowerCase()] = dim.value;
+                                        });
+                                        updateCurrentState();
+                                        }
+                                        // Generate dimension control sliders
+                                        function generateDimensionControls() {
+                                        const container = document.getElementById('dimensionControls');
+                                        wellnessDimensions.forEach((dim, index) => {
+                                        const dimensionDiv = document.createElement('div');
+                                        dimensionDiv.className = `dimension-item ${dim.name.toLowerCase()}`;
+                                        dimensionDiv.innerHTML = `
+                                        <div style="display: flex; align-items: center;">
+                                            <span class="dimension-icon">${dim.icon}</span>
+                                                <span class="dimension-name">${dim.name}</span>
+                                                </div>
+                                                <div class="dimension-value" id="value-${index}">${dim.value}%</div>
+                                                    <div class="dimension-slider">
+                                                        <input type="range" class="slider-input"
+                                                        id="slider-${index}"
+                                                        min="0" max="100" value="${dim.value}"
+                                                        oninput="updateDimension(${index}, this.value)">
+                                                    </div>
+                                                    `;
+                                                    container.appendChild(dimensionDiv);
+                                                    });
+                                                    }
+                                                    // Generate wellness metric cards
+                                                    function generateWellnessMetrics() {
+                                                    const container = document.getElementById('wellnessMetrics');
+                                                    // Overall wellness score
+                                                    const overallScore = Math.round(
+                                                    wellnessDimensions.reduce((sum, dim) => sum + dim.value, 0) / wellnessDimensions.length
+                                                    );
+                                                    const metrics = [
+                                                    {
+                                                    icon: '🌟',
+                                                    title: 'Overall Wellness',
+                                                    value: overallScore + '%',
+                                                    status: getWellnessStatus(overallScore),
+                                                    color: '#FFD700'
+                                                    },
+                                                    {
+                                                    icon: '🧠',
+                                                    title: 'Mental Clarity',
+                                                    value: Math.round((wellnessData.wisdom || 80) + (wellnessData.intuition || 70)) / 2 + '%',
+                                                    status: 'Sharp and focused',
+                                                    color: '#45B7D1'
+                                                    },
+                                                    {
+                                                    icon: '💗',
+                                                    title: 'Emotional Health',
+                                                    value: Math.round((wellnessData.balance || 65) + (wellnessData.healing || 85)) / 2 + '%',
+                                                    status: 'Stable and healing',
+                                                    color: '#2ECC71'
+                                                    },
+                                                    {
+                                                    icon: '⚡',
+                                                    title: 'Creative Energy',
+                                                    value: Math.round((wellnessData.creativity || 75) + (wellnessData.flow || 90)) / 2 + '%',
+                                                    status: 'Flowing freely',
+                                                    color: '#FF6B9D'
+                                                    },
+                                                    {
+                                                    icon: '🌱',
+                                                    title: 'Growth Potential',
+                                                    value: wellnessData.transformation || 60 + '%',
+                                                    status: 'Expanding consciousness',
+                                                    color: '#F39C12'
+                                                    },
+                                                    {
+                                                    icon: '🔗',
+                                                    title: 'Lattice Coherence',
+                                                    value: calculateCoherence() + '%',
+                                                    status: 'Dimensions harmonizing',
+                                                    color: '#9B59B6'
+                                                    }
+                                                    ];
+                                                    container.innerHTML = '';
+                                                    metrics.forEach(metric => {
+                                                    const card = document.createElement('div');
+                                                    card.className = 'metric-card wellness-active';
+                                                    card.innerHTML = `
+                                                    <div class="metric-icon" style="color: ${metric.color}">${metric.icon}</div>
+                                                        <div class="metric-title">${metric.title}</div>
+                                                            <div class="metric-value" style="color: ${metric.color}">${metric.value}</div>
+                                                                <div class="metric-status">${metric.status}</div>
+                                                                    `;
+                                                                    container.appendChild(card);
+                                                                    });
+                                                                    }
+                                                                    // Update dimension value
+                                                                    function updateDimension(index, value) {
+                                                                    const dimension = wellnessDimensions[index];
+                                                                    dimension.value = parseInt(value);
+                                                                    document.getElementById(`value-${index}`).textContent = value + '%';
+                                                                    wellnessData[dimension.name.toLowerCase()] = parseInt(value);
+                                                                    updateCurrentState();
+                                                                    generateWellnessMetrics();
+                                                                    drawLattice();
+                                                                    logEntry(`${dimension.name} updated to ${value}%`);
+                                                                    }
+                                                                    // Initialize lattice canvas
+                                                                    function initLatticeCanvas() {
+                                                                    latticeCanvas = document.getElementById('latticeCanvas');
+                                                                    latticeCtx = latticeCanvas.getContext('2d');
+                                                                    latticeCanvas.width = latticeCanvas.offsetWidth;
+                                                                    latticeCanvas.height = 450;
+                                                                    drawLattice();
+                                                                    animateLattice();
+                                                                    }
+                                                                    // Draw the health lattice web
+                                                                    function drawLattice() {
+                                                                    if (!latticeCtx) return;
+                                                                    latticeCtx.clearRect(0, 0, latticeCanvas.width, latticeCanvas.height);
+                                                                    const centerX = latticeCanvas.width / 2;
+                                                                    const centerY = latticeCanvas.height / 2;
+                                                                    const radius = Math.min(centerX, centerY) - 50;
+                                                                    // Draw dimension nodes
+                                                                    wellnessDimensions.forEach((dim, index) => {
+                                                                    const angle = (index * 2 * Math.PI) / wellnessDimensions.length - Math.PI / 2;
+                                                                    const nodeRadius = (dim.value / 100) * radius;
+                                                                    const x = centerX + Math.cos(angle) * nodeRadius;
+                                                                    const y = centerY + Math.sin(angle) * nodeRadius;
+                                                                    // Draw connection lines to center
+                                                                    latticeCtx.strokeStyle = dim.color;
+                                                                    latticeCtx.lineWidth = 2;
+                                                                    latticeCtx.beginPath();
+                                                                    latticeCtx.moveTo(centerX, centerY);
+                                                                    latticeCtx.lineTo(x, y);
+                                                                    latticeCtx.stroke();
+                                                                    // Draw node
+                                                                    latticeCtx.fillStyle = dim.color;
+                                                                    latticeCtx.beginPath();
+                                                                    latticeCtx.arc(x, y, 8, 0, 2 * Math.PI);
+                                                                    latticeCtx.fill();
+                                                                    // Draw node label
+                                                                    latticeCtx.fillStyle = '#E8E8E8';
+                                                                    latticeCtx.font = '12px Georgia';
+                                                                    latticeCtx.textAlign = 'center';
+                                                                    latticeCtx.fillText(dim.name, x, y + 25);
+                                                                    });
+                                                                    // Draw connections between related dimensions
+                                                                    const connections = [
+                                                                    [0, 6], // Creativity - Flow
+                                                                    [1, 5], // Balance - Healing
+                                                                    [2, 3], // Wisdom - Intuition
+                                                                    [4, 5], // Transformation - Healing
+                                                                    [0, 4], // Creativity - Transformation
+                                                                    [1, 2], // Balance - Wisdom
+                                                                    [3, 6]  // Intuition - Flow
+                                                                    ];
+                                                                    connections.forEach(([i, j]) => {
+                                                                    const angle1 = (i * 2 * Math.PI) / wellnessDimensions.length - Math.PI / 2;
+                                                                    const angle2 = (j * 2 * Math.PI) / wellnessDimensions.length - Math.PI / 2;
+                                                                    const nodeRadius1 = (wellnessDimensions[i].value / 100) * radius;
+                                                                    const nodeRadius2 = (wellnessDimensions[j].value / 100) * radius;
+                                                                    const x1 = centerX + Math.cos(angle1) * nodeRadius1;
+                                                                    const y1 = centerY + Math.sin(angle1) * nodeRadius1;
+                                                                    const x2 = centerX + Math.cos(angle2) * nodeRadius2;
+                                                                    const y2 = centerY + Math.sin(angle2) * nodeRadius2;
+                                                                    const connectivity = (wellnessDimensions[i].value + wellnessDimensions[j].value) / 200;
+                                                                    latticeCtx.strokeStyle = `rgba(255, 215, 0, ${connectivity * 0.6})`;
+                                                                    latticeCtx.lineWidth = connectivity * 3;
+                                                                    latticeCtx.beginPath();
+                                                                    latticeCtx.moveTo(x1, y1);
+                                                                    latticeCtx.lineTo(x2, y2);
+                                                                    latticeCtx.stroke();
+                                                                    });
+                                                                    // Draw center node
+                                                                    const coherence = calculateCoherence() / 100;
+                                                                    latticeCtx.fillStyle = `rgba(255, 215, 0, ${coherence})`;
+                                                                    latticeCtx.beginPath();
+                                                                    latticeCtx.arc(centerX, centerY, 12, 0, 2 * Math.PI);
+                                                                    latticeCtx.fill();
+                                                                    }
+                                                                    // Animate the lattice
+                                                                    function animateLattice() {
+                                                                    drawLattice();
+                                                                    animationId = requestAnimationFrame(animateLattice);
+                                                                    }
+                                                                    // Calculate lattice coherence
+                                                                    function calculateCoherence() {
+                                                                    const values = wellnessDimensions.map(dim => dim.value);
+                                                                    const mean = values.reduce((sum, val) => sum + val, 0) / values.length;
+                                                                    const variance = values.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / values.length;
+                                                                    const coherence = Math.max(0, 100 - Math.sqrt(variance));
+                                                                    return Math.round(coherence);
+                                                                    }
+                                                                    // Get wellness status description
+                                                                    function getWellnessStatus(score) {
+                                                                    if (score >= 90) return 'Exceptional wellness state';
+                                                                    if (score >= 80) return 'Thriving and balanced';
+                                                                    if (score >= 70) return 'Good wellness foundation';
+                                                                    if (score >= 60) return 'Room for improvement';
+                                                                    return 'Seeking balance and healing';
+                                                                    }
+                                                                    // Update current state display
+                                                                    function updateCurrentState() {
+                                                                    const avgWellness = Math.round(
+                                                                    wellnessDimensions.reduce((sum, dim) => sum + dim.value, 0) / wellnessDimensions.length
+                                                                    );
+                                                                    const coherence = calculateCoherence();
+                                                                    document.getElementById('currentState').innerHTML =
+                                                                    `Wellness: ${avgWellness}% | Coherence: ${coherence}% | ${getWellnessStatus(avgWellness)}`;
+                                                                    }
+                                                                    // Control functions
+                                                                    function scanWellness() {
+                                                                    logEntry('🔍 Performing deep wellness scan...');
+                                                                    // Simulate wellness fluctuations
+                                                                    wellnessDimensions.forEach((dim, index) => {
+                                                                    const variation = Math.random() * 10 - 5; // ±5 variation
+                                                                    const newValue = Math.max(0, Math.min(100, dim.value + variation));
+                                                                    updateDimension(index, newValue);
+                                                                    document.getElementById(`slider-${index}`).value = newValue;
+                                                                    });
+                                                                    setTimeout(() => {
+                                                                    logEntry('✅ Deep scan complete - patterns detected');
+                                                                    updateCurrentState();
+                                                                    }, 2000);
+                                                                    }
+                                                                    function balanceAll() {
+                                                                    logEntry('⚖️ Initiating auto-balance sequence...');
+                                                                    const target = 75; // Target balance point
+                                                                    wellnessDimensions.forEach((dim, index) => {
+                                                                    const steps = 20;
+                                                                    const increment = (target - dim.value) / steps;
+                                                                    let currentStep = 0;
+                                                                    const balanceInterval = setInterval(() => {
+                                                                    currentStep++;
+                                                                    const newValue = Math.round(dim.value + (increment * currentStep));
+                                                                    updateDimension(index, newValue);
+                                                                    document.getElementById(`slider-${index}`).value = newValue;
+                                                                    if (currentStep >= steps) {
+                                                                    clearInterval(balanceInterval);
+                                                                    }
+                                                                    }, 100);
+                                                                    });
+                                                                    setTimeout(() => {
+                                                                    logEntry('✨ Balance achieved - all dimensions harmonized');
+                                                                    }, 2500);
+                                                                    }
+                                                                    function exportData() {
+                                                                    const data = {
+                                                                    timestamp: new Date().toISOString(),
+                                                                    dimensions: wellnessDimensions,
+                                                                    overallWellness: Math.round(
+                                                                    wellnessDimensions.reduce((sum, dim) => sum + dim.value, 0) / wellnessDimensions.length
+                                                                    ),
+                                                                    coherence: calculateCoherence()
+                                                                    };
+                                                                    const dataStr = JSON.stringify(data, null, 2);
+                                                                    const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                                                                    const url = URL.createObjectURL(dataBlob);
+                                                                    const link = document.createElement('a');
+                                                                    link.href = url;
+                                                                    link.download = `wellness-data-${new Date().toISOString().split('T')[0]}.json`;
+                                                                    link.click();
+                                                                    logEntry('📊 Wellness data exported successfully');
+                                                                    }
+                                                                    // Log entry function
+                                                                    function logEntry(message) {
+                                                                    const log = document.getElementById('sessionLog');
+                                                                    const entry = document.createElement('div');
+                                                                    entry.className = 'log-entry';
+                                                                    entry.innerHTML = `
+                                                                    <div class="log-timestamp">[${new Date().toLocaleTimeString()}]</div>
+                                                                        <div class="log-message">${message}</div>
+                                                                            `;
+                                                                            log.appendChild(entry);
+                                                                            log.scrollTop = log.scrollHeight;
+                                                                            }
+                                                                            // Start wellness monitoring
+                                                                            function startWellnessMonitoring() {
+                                                                            // Update wellness metrics every 5 seconds
+                                                                            setInterval(() => {
+                                                                            generateWellnessMetrics();
+                                                                            updateCurrentState();
+                                                                            }, 5000);
+                                                                            // Log wellness updates every 30 seconds
+                                                                            setInterval(() => {
+                                                                            const coherence = calculateCoherence();
+                                                                            logEntry(`🌟 Wellness monitoring: Coherence at ${coherence}%`);
+                                                                            }, 30000);
+                                                                            }
+                                                                            // Initialize everything when page loads
+                                                                            document.addEventListener('DOMContentLoaded', function() {
+                                                                            initObservatory();
+                                                                            console.log('🌟 Wellness Observatory initialized');
+                                                                            console.log('🕸️ Health lattice monitoring active');
+                                                                            console.log('📊 7-dimensional wellness tracking online');
+                                                                            });
+                                                                        </script>
+                                                                    </body>
+                                                                </html>

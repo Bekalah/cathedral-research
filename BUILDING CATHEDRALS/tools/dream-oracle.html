@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" data-nd-safe="true" data-tool="dream-oracle" data-archetype="high-priestess">
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🌙 Dream Oracle — Lunar Wisdom & Subconscious Navigation</title>
+            <meta name="description" content="Advanced dream interpretation and lunar guidance system. ND-safe, trauma-informed design with gentle interactions.">
+            <style>
+                :root {
+                --midnight: #0f0f23; --deep-blue: #1a1a3a; --lunar: #2d2d5a; --silver: #b8b8dc;
+                --moon-glow: #e6e6fa; --pearl: #f0f0ff; --intuition: #9370db; --mystic: #663399;
+                --dream-mist: #dda0dd; --gentle: #e6d3f7; --escape-glow: #ffff00;
+                --radius: 20px; --shadow: 0 12px 40px rgba(15, 15, 35, 0.4);
+                }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body {
+                background: linear-gradient(180deg, var(--midnight) 0%, var(--deep-blue) 40%, var(--lunar) 100%);
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--silver);
+                min-height: 100vh;
+                overflow-x: hidden;
+                position: relative;
+                }
+                /* Floating dream particles */
+                .dream-particles {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+                }
+                .particle {
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: var(--moon-glow);
+                border-radius: 50%;
+                opacity: 0.6;
+                animation: float 8s infinite ease-in-out;
+                }
+                @keyframes float {
+                0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.3;
+                }
+                50% {
+                transform: translateY(-20px) scale(1.2);
+                opacity: 0.8;
+                }
+                }
+                /* Emergency Escape Portal */
+                .escape-portal {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid var(--escape-glow);
+                border-radius: 12px;
+                padding: 12px;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .escape-key {
+                background: var(--escape-glow);
+                color: black;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 14px;
+                }
+                .escape-text {
+                color: white;
+                font-size: 12px;
+                }
+                .header {
+                text-align: center;
+                padding: 50px 20px;
+                position: relative;
+                }
+                h1 {
+                font-size: 3.8em;
+                font-weight: 300;
+                letter-spacing: 0.1em;
+                background: linear-gradient(135deg, var(--moon-glow), var(--intuition), var(--dream-mist));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 16px;
+                filter: drop-shadow(0 0 25px rgba(230, 230, 250, 0.4));
+                }
+                .tagline {
+                font-size: 1em;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: var(--silver);
+                margin-bottom: 20px;
+                opacity: 0.8;
+                }
+                .moon-phase-indicator {
+                display: inline-flex;
+                align-items: center;
+                gap: 15px;
+                background: rgba(45, 45, 90, 0.6);
+                padding: 12px 24px;
+                border-radius: 50px;
+                border: 1px solid var(--intuition);
+                backdrop-filter: blur(10px);
+                }
+                .moon-icon {
+                font-size: 1.8em;
+                animation: gentleGlow 3s ease-in-out infinite;
+                }
+                @keyframes gentleGlow {
+                0%, 100% { filter: drop-shadow(0 0 5px var(--moon-glow)); }
+                50% { filter: drop-shadow(0 0 15px var(--moon-glow)); }
+                }
+                .main {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px 40px;
+                display: grid;
+                grid-template-columns: 400px 1fr;
+                gap: 40px;
+                }
+                /* Left Panel: Dream Input */
+                .dream-input-panel {
+                background: linear-gradient(135deg, rgba(45, 45, 90, 0.8), rgba(26, 26, 58, 0.9));
+                border-radius: var(--radius);
+                padding: 30px;
+                box-shadow: var(--shadow);
+                backdrop-filter: blur(15px);
+                border: 1px solid rgba(147, 112, 219, 0.3);
+                height: fit-content;
+                }
+                .section {
+                margin-bottom: 30px;
+                padding-bottom: 25px;
+                border-bottom: 1px solid rgba(147, 112, 219, 0.2);
+                }
+                .section:last-child {
+                border: none;
+                margin-bottom: 0;
+                }
+                .section-title {
+                font-size: 1.4em;
+                font-weight: 400;
+                margin-bottom: 20px;
+                color: var(--moon-glow);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .input-group {
+                margin-bottom: 20px;
+                }
+                .input-label {
+                display: block;
+                font-size: 0.95em;
+                color: var(--silver);
+                margin-bottom: 8px;
+                letter-spacing: 0.05em;
+                }
+                .text-input, .text-area, .select-input {
+                width: 100%;
+                padding: 15px 20px;
+                border: 2px solid rgba(147, 112, 219, 0.3);
+                border-radius: 15px;
+                background: rgba(15, 15, 35, 0.8);
+                font-family: inherit;
+                font-size: 0.95em;
+                color: var(--moon-glow);
+                transition: all 0.3s ease;
+                }
+                .text-input:focus, .text-area:focus, .select-input:focus {
+                outline: none;
+                border-color: var(--intuition);
+                background: rgba(15, 15, 35, 0.9);
+                box-shadow: 0 0 0 3px rgba(147, 112, 219, 0.1);
+                }
+                .text-area {
+                min-height: 120px;
+                resize: vertical;
+                line-height: 1.6;
+                }
+                .dream-mood-selector {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                margin-top: 10px;
+                }
+                .mood-option {
+                padding: 12px;
+                background: rgba(45, 45, 90, 0.6);
+                border: 2px solid transparent;
+                border-radius: 12px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-size: 0.85em;
+                }
+                .mood-option:hover {
+                background: rgba(147, 112, 219, 0.2);
+                border-color: var(--intuition);
+                }
+                .mood-option.selected {
+                background: var(--intuition);
+                color: white;
+                border-color: var(--moon-glow);
+                }
+                /* Right Panel: Oracle Response */
+                .oracle-panel {
+                background: linear-gradient(135deg, rgba(45, 45, 90, 0.8), rgba(26, 26, 58, 0.9));
+                border-radius: var(--radius);
+                padding: 30px;
+                box-shadow: var(--shadow);
+                backdrop-filter: blur(15px);
+                border: 1px solid rgba(147, 112, 219, 0.3);
+                min-height: 600px;
+                display: flex;
+                flex-direction: column;
+                }
+                .oracle-eye {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background: radial-gradient(circle, var(--moon-glow), var(--intuition));
+                margin: 0 auto 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3em;
+                color: var(--midnight);
+                box-shadow: 0 0 30px rgba(147, 112, 219, 0.5);
+                animation: oracleBreath 4s ease-in-out infinite;
+                }
+                @keyframes oracleBreath {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                }
+                .interpretation {
+                background: rgba(15, 15, 35, 0.6);
+                border-radius: 15px;
+                padding: 25px;
+                margin-bottom: 20px;
+                border-left: 4px solid var(--dream-mist);
+                min-height: 200px;
+                display: none;
+                }
+                .interpretation.active {
+                display: block;
+                animation: fadeInUp 0.8s ease-out;
+                }
+                @keyframes fadeInUp {
+                from {
+                opacity: 0;
+                transform: translateY(20px);
+                }
+                to {
+                opacity: 1;
+                transform: translateY(0);
+                }
+                }
+                .interpretation-title {
+                font-size: 1.3em;
+                color: var(--moon-glow);
+                margin-bottom: 15px;
+                font-weight: 500;
+                }
+                .interpretation-text {
+                line-height: 1.8;
+                color: var(--silver);
+                margin-bottom: 20px;
+                }
+                .dream-symbols {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 15px;
+                }
+                .symbol-tag {
+                background: rgba(147, 112, 219, 0.2);
+                color: var(--moon-glow);
+                padding: 6px 12px;
+                border-radius: 20px;
+                font-size: 0.8em;
+                border: 1px solid rgba(147, 112, 219, 0.3);
+                }
+                .lunar-guidance {
+                background: rgba(221, 160, 221, 0.1);
+                border-radius: 12px;
+                padding: 20px;
+                margin-top: 20px;
+                border: 1px solid var(--dream-mist);
+                }
+                .guidance-title {
+                font-size: 1.1em;
+                color: var(--dream-mist);
+                margin-bottom: 10px;
+                font-weight: 500;
+                }
+                .guidance-text {
+                font-size: 0.9em;
+                line-height: 1.6;
+                color: var(--silver);
+                }
+                .buttons {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-top: auto;
+                padding-top: 20px;
+                }
+                .btn {
+                padding: 15px 25px;
+                border: none;
+                border-radius: 15px;
+                font-family: inherit;
+                font-size: 0.95em;
+                font-weight: 500;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                }
+                .btn-primary {
+                background: linear-gradient(135deg, var(--intuition), var(--dream-mist));
+                color: white;
+                box-shadow: 0 6px 20px rgba(147, 112, 219, 0.3);
+                }
+                .btn-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(147, 112, 219, 0.4);
+                }
+                .btn-secondary {
+                background: rgba(45, 45, 90, 0.6);
+                color: var(--silver);
+                border: 1px solid rgba(147, 112, 219, 0.3);
+                }
+                .btn-secondary:hover {
+                background: rgba(45, 45, 90, 0.8);
+                transform: translateY(-1px);
+                }
+                @media (max-width: 1000px) {
+                .main {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="dream-particles" id="dreamParticles">
+            </div>
+            <!-- Emergency Escape Portal -->
+            <div class="escape-portal">
+                <div class="escape-key">ESC</div>
+                    <div class="escape-text">Safety Exit</div>
+                    </div>
+                    <div class="header">
+                        <h1>🌙 Dream Oracle</h1>
+                            <p class="tagline">Lunar Wisdom & Subconscious Navigation</p>
+                                <div class="moon-phase-indicator">
+                                    <div class="moon-icon" id="moonIcon">🌓</div>
+                                        <span id="moonPhase">Waxing Crescent - Time for New Insights</span>
+                                        </div>
+                                    </div>
+                                    <div class="main">
+                                        <!-- Left Panel: Dream Input -->
+                                        <div class="dream-input-panel">
+                                            <div class="section">
+                                                <div class="section-title">
+                                                    💭 Share Your Dream
+                                                </div>
+                                                <div class="input-group">
+                                                    <label class="input-label" for="dream-narrative">Dream Narrative</label>
+                                                        <textarea
+                                                            id="dream-narrative"
+                                                            class="text-area"
+                                                            placeholder="Describe your dream in as much detail as you remember. Include emotions, colors, people, places, and any symbols that stood out..."
+                                                            maxlength="2000"
+                                                            >
+                                                        </textarea>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <label class="input-label">Dream Mood</label>
+                                                            <div class="dream-mood-selector">
+                                                                <div class="mood-option" data-mood="peaceful">🕊️ Peaceful</div>
+                                                                    <div class="mood-option" data-mood="mysterious">🔮 Mysterious</div>
+                                                                        <div class="mood-option" data-mood="intense">⚡ Intense</div>
+                                                                            <div class="mood-option" data-mood="joyful">✨ Joyful</div>
+                                                                                <div class="mood-option" data-mood="fearful">🌪️ Fearful</div>
+                                                                                    <div class="mood-option" data-mood="prophetic">👁️ Prophetic</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="section">
+                                                                                <div class="section-title">
+                                                                                    🌟 Context & Focus
+                                                                                </div>
+                                                                                <div class="input-group">
+                                                                                    <label class="input-label" for="life-situation">Current Life Situation</label>
+                                                                                        <select id="life-situation" class="select-input">
+                                                                                            <option value="transition">Major Life Transition</option>
+                                                                                                <option value="relationship">Relationship Questions</option>
+                                                                                                    <option value="career">Career/Purpose Seeking</option>
+                                                                                                        <option value="healing">Healing Journey</option>
+                                                                                                            <option value="spiritual">Spiritual Development</option>
+                                                                                                                <option value="creativity">Creative Blocks</option>
+                                                                                                                    <option value="general">General Guidance</option>
+                                                                                                                    </select>
+                                                                                                                </div>
+                                                                                                                <div class="input-group">
+                                                                                                                    <label class="input-label" for="specific-question">Specific Question (Optional)</label>
+                                                                                                                        <input
+                                                                                                                        type="text"
+                                                                                                                        id="specific-question"
+                                                                                                                        class="text-input"
+                                                                                                                        placeholder="What am I being called to understand?"
+                                                                                                                        maxlength="200"
+                                                                                                                        />
+                                                                                                                    </div>
+                                                                                                                    <div class="input-group">
+                                                                                                                        <label class="input-label" for="interpretation-depth">Interpretation Depth</label>
+                                                                                                                            <select id="interpretation-depth" class="select-input">
+                                                                                                                                <option value="gentle">Gentle & Supportive</option>
+                                                                                                                                    <option value="comprehensive">Comprehensive Analysis</option>
+                                                                                                                                        <option value="symbolic">Focus on Symbols</option>
+                                                                                                                                            <option value="psychological">Psychological Insights</option>
+                                                                                                                                                <option value="spiritual">Spiritual Messages</option>
+                                                                                                                                                </select>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                    <!-- Right Panel: Oracle Response -->
+                                                                                                                                    <div class="oracle-panel">
+                                                                                                                                        <div class="oracle-eye" id="oracleEye">👁️</div>
+                                                                                                                                            <div id="welcomeMessage" style="text-align: center; color: var(--silver); line-height: 1.6;">
+                                                                                                                                                <p style="margin-bottom: 15px;">Welcome to the Dream Oracle, where the wisdom of night meets the light of understanding.</p>
+                                                                                                                                                    <p>Share your dream, and let the lunar wisdom illuminate its hidden meanings.</p>
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="interpretation" id="interpretation">
+                                                                                                                                                        <div class="interpretation-title" id="interpretationTitle">Dream Interpretation</div>
+                                                                                                                                                            <div class="interpretation-text" id="interpretationText">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="dream-symbols" id="dreamSymbols">
+                                                                                                                                                                <!-- Populated by JavaScript -->
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="lunar-guidance">
+                                                                                                                                                                <div class="guidance-title">🌙 Lunar Guidance</div>
+                                                                                                                                                                    <div class="guidance-text" id="guidanceText">
+                                                                                                                                                                        <!-- Populated by JavaScript -->
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="buttons">
+                                                                                                                                                                <button class="btn btn-secondary" onclick="clearDream()">Clear</button>
+                                                                                                                                                                    <button class="btn btn-primary" onclick="interpretDream()">Receive Oracle</button>
+                                                                                                                                                                        <button class="btn btn-secondary" onclick="saveDreamJournal()">Save to Journal</button>
+                                                                                                                                                                        </div>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                                <script>
+                                                                                                                                                                    let selectedMood = '';
+                                                                                                                                                                    // Create floating dream particles
+                                                                                                                                                                    function createDreamParticles() {
+                                                                                                                                                                    const container = document.getElementById('dreamParticles');
+                                                                                                                                                                    for (let i = 0; i < 30; i++) {
+                                                                                                                                                                        const particle = document.createElement('div');
+                                                                                                                                                                        particle.className = 'particle';
+                                                                                                                                                                        particle.style.left = Math.random() * 100 + '%';
+                                                                                                                                                                        particle.style.top = Math.random() * 100 + '%';
+                                                                                                                                                                        particle.style.animationDelay = Math.random() * 8 + 's';
+                                                                                                                                                                        particle.style.animationDuration = (8 + Math.random() * 4) + 's';
+                                                                                                                                                                        container.appendChild(particle);
+                                                                                                                                                                        }
+                                                                                                                                                                        }
+                                                                                                                                                                        // Mood selection
+                                                                                                                                                                        document.querySelectorAll('.mood-option').forEach(option => {
+                                                                                                                                                                        option.addEventListener('click', function() {
+                                                                                                                                                                        document.querySelectorAll('.mood-option').forEach(opt => opt.classList.remove('selected'));
+                                                                                                                                                                        this.classList.add('selected');
+                                                                                                                                                                        selectedMood = this.dataset.mood;
+                                                                                                                                                                        });
+                                                                                                                                                                        });
+                                                                                                                                                                        function interpretDream() {
+                                                                                                                                                                        const narrative = document.getElementById('dream-narrative').value.trim();
+                                                                                                                                                                        const situation = document.getElementById('life-situation').value;
+                                                                                                                                                                        const question = document.getElementById('specific-question').value.trim();
+                                                                                                                                                                        const depth = document.getElementById('interpretation-depth').value;
+                                                                                                                                                                        if (!narrative) {
+                                                                                                                                                                        alert('Please share your dream narrative before seeking interpretation.');
+                                                                                                                                                                        return;
+                                                                                                                                                                        }
+                                                                                                                                                                        // Hide welcome message and show interpretation
+                                                                                                                                                                        document.getElementById('welcomeMessage').style.display = 'none';
+                                                                                                                                                                        const interpretation = document.getElementById('interpretation');
+                                                                                                                                                                        interpretation.classList.add('active');
+                                                                                                                                                                        // Generate interpretation based on input
+                                                                                                                                                                        generateInterpretation(narrative, selectedMood, situation, question, depth);
+                                                                                                                                                                        }
+                                                                                                                                                                        function generateInterpretation(narrative, mood, situation, question, depth) {
+                                                                                                                                                                        const symbols = extractSymbols(narrative);
+                                                                                                                                                                        const interpretation = createInterpretation(narrative, mood, situation, depth);
+                                                                                                                                                                        const guidance = createGuidance(situation, mood);
+                                                                                                                                                                        document.getElementById('interpretationTitle').textContent =
+                                                                                                                                                                        getInterpretationTitle(mood, depth);
+                                                                                                                                                                        document.getElementById('interpretationText').textContent = interpretation;
+                                                                                                                                                                        document.getElementById('guidanceText').textContent = guidance;
+                                                                                                                                                                        // Display symbols
+                                                                                                                                                                        const symbolsContainer = document.getElementById('dreamSymbols');
+                                                                                                                                                                        symbolsContainer.innerHTML = symbols.map(symbol =>
+                                                                                                                                                                        `<div class="symbol-tag">${symbol}</div>`
+                                                                                                                                                                            ).join('');
+                                                                                                                                                                            }
+                                                                                                                                                                            function extractSymbols(narrative) {
+                                                                                                                                                                            const commonSymbols = {
+                                                                                                                                                                            'water': 'Emotions & Flow',
+                                                                                                                                                                            'fire': 'Passion & Transformation',
+                                                                                                                                                                            'flying': 'Freedom & Transcendence',
+                                                                                                                                                                            'falling': 'Release & Surrender',
+                                                                                                                                                                            'house': 'Self & Foundation',
+                                                                                                                                                                            'door': 'Opportunities & Transitions',
+                                                                                                                                                                            'animal': 'Instincts & Nature',
+                                                                                                                                                                            'child': 'Innocence & New Beginnings',
+                                                                                                                                                                            'death': 'Endings & Rebirth',
+                                                                                                                                                                            'birth': 'New Creations',
+                                                                                                                                                                            'chase': 'Avoiding & Confronting',
+                                                                                                                                                                            'lost': 'Searching & Finding',
+                                                                                                                                                                            'light': 'Awareness & Clarity',
+                                                                                                                                                                            'dark': 'Unknown & Mystery',
+                                                                                                                                                                            'mountain': 'Challenges & Achievement',
+                                                                                                                                                                            'ocean': 'Unconscious & Depth',
+                                                                                                                                                                            'mirror': 'Self-Reflection',
+                                                                                                                                                                            'key': 'Solutions & Access',
+                                                                                                                                                                            'bridge': 'Connections & Transitions',
+                                                                                                                                                                            'tree': 'Growth & Wisdom'
+                                                                                                                                                                            };
+                                                                                                                                                                            const found = [];
+                                                                                                                                                                            const text = narrative.toLowerCase();
+                                                                                                                                                                            for (const [symbol, meaning] of Object.entries(commonSymbols)) {
+                                                                                                                                                                            if (text.includes(symbol)) {
+                                                                                                                                                                            found.push(`${symbol} - ${meaning}`);
+                                                                                                                                                                            }
+                                                                                                                                                                            }
+                                                                                                                                                                            return found.length > 0 ? found : ['Mystery', 'Intuition', 'Inner Wisdom'];
+                                                                                                                                                                            }
+                                                                                                                                                                            function createInterpretation(narrative, mood, situation, depth) {
+                                                                                                                                                                            const base = "Your dream carries profound wisdom from the depths of your subconscious. ";
+                                                                                                                                                                            const moodInterpretations = {
+                                                                                                                                                                            'peaceful': "The peaceful nature of your dream suggests harmony and alignment in your inner world. ",
+                                                                                                                                                                            'mysterious': "The mysterious quality indicates hidden knowledge seeking to emerge into consciousness. ",
+                                                                                                                                                                            'intense': "The intensity reflects powerful transformative energies at work in your life. ",
+                                                                                                                                                                            'joyful': "The joyful essence celebrates new possibilities and positive developments ahead. ",
+                                                                                                                                                                            'fearful': "The fear present is your psyche's way of preparing you for important growth. ",
+                                                                                                                                                                            'prophetic': "The prophetic nature suggests your soul is receiving guidance about future possibilities. "
+                                                                                                                                                                            };
+                                                                                                                                                                            const situationGuidance = {
+                                                                                                                                                                            'transition': "Your dream reflects the natural process of change and evolution in your life journey.",
+                                                                                                                                                                            'relationship': "The dream illuminates patterns and potentials in your connections with others.",
+                                                                                                                                                                            'career': "Your subconscious is processing your path of service and creative expression.",
+                                                                                                                                                                            'healing': "The dream offers medicine and insight for your healing journey.",
+                                                                                                                                                                            'spiritual': "Your dream is a sacred message from your higher self and spiritual guides.",
+                                                                                                                                                                            'creativity': "The imagery represents creative energies seeking expression and manifestation.",
+                                                                                                                                                                            'general': "Your dream provides general guidance for navigating your current life path."
+                                                                                                                                                                            };
+                                                                                                                                                                            return base +
+                                                                                                                                                                            (moodInterpretations[mood] || '') +
+                                                                                                                                                                            (situationGuidance[situation] || '') +
+                                                                                                                                                                            "Trust the wisdom that comes through your dreams, for they are letters from your soul.";
+                                                                                                                                                                            }
+                                                                                                                                                                            function createGuidance(situation, mood) {
+                                                                                                                                                                            const guidanceMap = {
+                                                                                                                                                                            'transition': "Honor this time of change. Like the moon phases, transformation is natural and necessary.",
+                                                                                                                                                                            'relationship': "Approach your connections with the moon's gentle wisdom - patient, nurturing, and intuitive.",
+                                                                                                                                                                            'career': "Your true path will illuminate itself when you align with your authentic purpose.",
+                                                                                                                                                                            'healing': "Healing happens in cycles, like lunar phases. Be gentle with your process.",
+                                                                                                                                                                            'spiritual': "Your spiritual gifts are awakening. Trust your intuitive insights.",
+                                                                                                                                                                            'creativity': "Creative inspiration flows like moonlight - receive it with an open heart.",
+                                                                                                                                                                            'general': "Follow the moon's example: reflect, release, renew, and trust divine timing."
+                                                                                                                                                                            };
+                                                                                                                                                                            return guidanceMap[situation] || "Trust in the wisdom of your inner knowing and the guidance of lunar cycles.";
+                                                                                                                                                                            }
+                                                                                                                                                                            function getInterpretationTitle(mood, depth) {
+                                                                                                                                                                            const titles = {
+                                                                                                                                                                            'gentle': '🌸 Gentle Wisdom',
+                                                                                                                                                                            'comprehensive': '🔍 Deep Analysis',
+                                                                                                                                                                            'symbolic': '🔮 Sacred Symbols',
+                                                                                                                                                                            'psychological': '🧠 Inner Landscape',
+                                                                                                                                                                            'spiritual': '✨ Soul Messages'
+                                                                                                                                                                            };
+                                                                                                                                                                            return titles[depth] || '🌙 Dream Wisdom';
+                                                                                                                                                                            }
+                                                                                                                                                                            function clearDream() {
+                                                                                                                                                                            document.getElementById('dream-narrative').value = '';
+                                                                                                                                                                            document.getElementById('specific-question').value = '';
+                                                                                                                                                                            document.querySelectorAll('.mood-option').forEach(opt => opt.classList.remove('selected'));
+                                                                                                                                                                            selectedMood = '';
+                                                                                                                                                                            document.getElementById('interpretation').classList.remove('active');
+                                                                                                                                                                            document.getElementById('welcomeMessage').style.display = 'block';
+                                                                                                                                                                            }
+                                                                                                                                                                            function saveDreamJournal() {
+                                                                                                                                                                            const narrative = document.getElementById('dream-narrative').value.trim();
+                                                                                                                                                                            if (!narrative) {
+                                                                                                                                                                            alert('Please enter a dream narrative first.');
+                                                                                                                                                                            return;
+                                                                                                                                                                            }
+                                                                                                                                                                            // This would implement actual saving functionality
+                                                                                                                                                                            alert('Dream interpretation saved to your lunar journal! 🌙');
+                                                                                                                                                                            }
+                                                                                                                                                                            // Emergency escape
+                                                                                                                                                                            document.addEventListener('keydown', function(e) {
+                                                                                                                                                                            if (e.key === 'Escape') {
+                                                                                                                                                                            clearDream();
+                                                                                                                                                                            window.parent.postMessage({ action: 'escape', tool: 'dream-oracle' }, '*');
+                                                                                                                                                                            }
+                                                                                                                                                                            });
+                                                                                                                                                                            // Initialize
+                                                                                                                                                                            createDreamParticles();
+                                                                                                                                                                            // Announce tool ready
+                                                                                                                                                                            window.addEventListener('load', function() {
+                                                                                                                                                                            window.parent.postMessage({
+                                                                                                                                                                            action: 'tool-ready',
+                                                                                                                                                                            tool: 'dream-oracle',
+                                                                                                                                                                            archetype: 'high-priestess',
+                                                                                                                                                                            capabilities: ['dream-interpretation', 'lunar-guidance', 'symbol-analysis']
+                                                                                                                                                                            }, '*');
+                                                                                                                                                                            });
+                                                                                                                                                                        </script>
+                                                                                                                                                                    </body>
+                                                                                                                                                                </html>

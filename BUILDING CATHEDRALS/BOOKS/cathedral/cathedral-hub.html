@@ -1,884 +1,788 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cathedral Hub - Master Integration Portal</title>
-    <style>
-        :root {
-            /* Master Cathedral Colors */
-            --cathedral-gold: #FFD700;
-            --sacred-blue: #4169E1;
-            --mystic-purple: #9932CC;
-            --healing-green: #32CD32;
-            --creative-pink: #FF69B4;
-            --wisdom-orange: #FF8C00;
-            --flow-cyan: #00CED1;
-            
-            /* Integration Architecture */
-            --master-bg: #0A0A0A;
-            --cathedral-stone: rgba(255, 255, 255, 0.05);
-            --golden-light: rgba(255, 215, 0, 0.2);
-            --ethereal-glow: rgba(255, 255, 255, 0.1);
-            --deep-shadow: #1C1C1C;
-            
-            /* Sacred Proportions */
-            --phi: 1.618;
-            --sacred-unit: 1rem;
-            --cathedral-space: calc(var(--sacred-unit) * var(--phi));
-            --grand-space: calc(var(--cathedral-space) * var(--phi));
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, 
-                var(--master-bg) 0%, 
-                #1a1a2e 15%, 
-                #16213E 30%, 
-                #0F3460 45%, 
-                #533483 60%, 
-                var(--mystic-purple) 75%, 
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cathedral Hub - Master Integration Portal</title>
+            <style>
+                :root {
+                /* Master Cathedral Colors */
+                --cathedral-gold: #FFD700;
+                --sacred-blue: #4169E1;
+                --mystic-purple: #9932CC;
+                --healing-green: #32CD32;
+                --creative-pink: #FF69B4;
+                --wisdom-orange: #FF8C00;
+                --flow-cyan: #00CED1;
+                /* Integration Architecture */
+                --master-bg: #0A0A0A;
+                --cathedral-stone: rgba(255, 255, 255, 0.05);
+                --golden-light: rgba(255, 215, 0, 0.2);
+                --ethereal-glow: rgba(255, 255, 255, 0.1);
+                --deep-shadow: #1C1C1C;
+                /* Sacred Proportions */
+                --phi: 1.618;
+                --sacred-unit: 1rem;
+                --cathedral-space: calc(var(--sacred-unit) * var(--phi));
+                --grand-space: calc(var(--cathedral-space) * var(--phi));
+                }
+                * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                }
+                body {
+                font-family: 'Georgia', serif;
+                background: linear-gradient(135deg,
+                var(--master-bg) 0%,
+                #1a1a2e 15%,
+                #16213E 30%,
+                #0F3460 45%,
+                #533483 60%,
+                var(--mystic-purple) 75%,
                 var(--cathedral-gold) 100%);
-            color: #FFFFFF;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Atmospheric Background Effects */
-        .cathedral-atmosphere {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .floating-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--cathedral-gold);
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: float-upward 15s linear infinite;
-        }
-
-        .energy-beam {
-            position: absolute;
-            width: 2px;
-            height: 100px;
-            background: linear-gradient(to bottom, var(--cathedral-gold), transparent);
-            animation: beam-pulse 3s ease-in-out infinite;
-        }
-
-        .hub-container {
-            max-width: 1800px;
-            margin: 0 auto;
-            padding: var(--grand-space);
-            position: relative;
-            z-index: 1;
-        }
-
-        .cathedral-header {
-            text-align: center;
-            margin-bottom: var(--grand-space);
-            padding: var(--grand-space);
-            background: linear-gradient(135deg, 
-                var(--golden-light) 0%, 
-                var(--ethereal-glow) 50%, 
+                color: #FFFFFF;
+                min-height: 100vh;
+                overflow-x: hidden;
+                position: relative;
+                }
+                /* Atmospheric Background Effects */
+                .cathedral-atmosphere {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+                }
+                .floating-particle {
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: var(--cathedral-gold);
+                border-radius: 50%;
+                opacity: 0.6;
+                animation: float-upward 15s linear infinite;
+                }
+                .energy-beam {
+                position: absolute;
+                width: 2px;
+                height: 100px;
+                background: linear-gradient(to bottom, var(--cathedral-gold), transparent);
+                animation: beam-pulse 3s ease-in-out infinite;
+                }
+                .hub-container {
+                max-width: 1800px;
+                margin: 0 auto;
+                padding: var(--grand-space);
+                position: relative;
+                z-index: 1;
+                }
+                .cathedral-header {
+                text-align: center;
+                margin-bottom: var(--grand-space);
+                padding: var(--grand-space);
+                background: linear-gradient(135deg,
+                var(--golden-light) 0%,
+                var(--ethereal-glow) 50%,
                 rgba(65, 105, 225, 0.1) 100%);
-            border-radius: calc(var(--sacred-unit) * var(--phi));
-            border: 3px solid var(--cathedral-gold);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
-            position: relative;
-        }
-
-        .cathedral-title {
-            font-size: calc(5rem * var(--phi));
-            margin-bottom: var(--cathedral-space);
-            background: linear-gradient(45deg, 
-                var(--cathedral-gold), 
-                var(--sacred-blue), 
-                var(--mystic-purple), 
+                border-radius: calc(var(--sacred-unit) * var(--phi));
+                border: 3px solid var(--cathedral-gold);
+                backdrop-filter: blur(20px);
+                box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+                position: relative;
+                }
+                .cathedral-title {
+                font-size: calc(5rem * var(--phi));
+                margin-bottom: var(--cathedral-space);
+                background: linear-gradient(45deg,
+                var(--cathedral-gold),
+                var(--sacred-blue),
+                var(--mystic-purple),
                 var(--healing-green),
                 var(--creative-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: divine-radiance 6s ease-in-out infinite;
-            text-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
-        }
-
-        .cathedral-subtitle {
-            font-size: 2.2rem;
-            color: var(--flow-cyan);
-            font-style: italic;
-            margin-bottom: var(--cathedral-space);
-        }
-
-        .consciousness-status {
-            font-size: 1.6rem;
-            color: var(--cathedral-gold);
-            font-family: 'Courier New', monospace;
-            animation: consciousness-pulse 4s ease-in-out infinite;
-        }
-
-        .hall-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--grand-space);
-            margin-bottom: var(--grand-space);
-        }
-
-        .hall-portal {
-            background: var(--cathedral-stone);
-            border: 3px solid transparent;
-            border-radius: var(--cathedral-space);
-            padding: var(--grand-space);
-            backdrop-filter: blur(20px);
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .hall-portal::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            background: linear-gradient(45deg, 
-                var(--cathedral-gold), 
-                var(--sacred-blue), 
-                var(--mystic-purple), 
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: divine-radiance 6s ease-in-out infinite;
+                text-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+                }
+                .cathedral-subtitle {
+                font-size: 2.2rem;
+                color: var(--flow-cyan);
+                font-style: italic;
+                margin-bottom: var(--cathedral-space);
+                }
+                .consciousness-status {
+                font-size: 1.6rem;
+                color: var(--cathedral-gold);
+                font-family: 'Courier New', monospace;
+                animation: consciousness-pulse 4s ease-in-out infinite;
+                }
+                .hall-matrix {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: var(--grand-space);
+                margin-bottom: var(--grand-space);
+                }
+                .hall-portal {
+                background: var(--cathedral-stone);
+                border: 3px solid transparent;
+                border-radius: var(--cathedral-space);
+                padding: var(--grand-space);
+                backdrop-filter: blur(20px);
+                transition: all 0.5s ease;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                min-height: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                }
+                .hall-portal::before {
+                content: '';
+                position: absolute;
+                top: -3px;
+                left: -3px;
+                right: -3px;
+                bottom: -3px;
+                background: linear-gradient(45deg,
+                var(--cathedral-gold),
+                var(--sacred-blue),
+                var(--mystic-purple),
                 var(--healing-green));
-            z-index: -1;
-            border-radius: var(--cathedral-space);
-            opacity: 0.8;
-            animation: portal-energy 4s linear infinite;
-        }
-
-        .hall-portal:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 30px 60px rgba(255, 215, 0, 0.5);
-        }
-
-        .hall-portal:hover::before {
-            animation-duration: 1s;
-        }
-
-        .hall-icon {
-            font-size: 4rem;
-            text-align: center;
-            margin-bottom: var(--cathedral-space);
-            animation: icon-glow 3s ease-in-out infinite;
-        }
-
-        .hall-title {
-            font-size: 1.8rem;
-            color: var(--cathedral-gold);
-            text-align: center;
-            margin-bottom: var(--sacred-unit);
-            font-weight: bold;
-        }
-
-        .hall-description {
-            color: #E8E8E8;
-            line-height: 1.6;
-            text-align: center;
-            margin-bottom: var(--cathedral-space);
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hall-features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--sacred-unit);
-            margin-bottom: var(--cathedral-space);
-        }
-
-        .feature-tag {
-            background: rgba(255, 215, 0, 0.2);
-            border: 1px solid var(--cathedral-gold);
-            border-radius: 1rem;
-            padding: 0.5rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--cathedral-gold);
-            font-weight: bold;
-        }
-
-        .hall-status {
-            background: rgba(50, 205, 50, 0.2);
-            border: 1px solid var(--healing-green);
-            border-radius: var(--sacred-unit);
-            padding: var(--sacred-unit);
-            text-align: center;
-            color: var(--healing-green);
-            font-family: 'Courier New', monospace;
-        }
-
-        .integration-console {
-            background: var(--cathedral-stone);
-            border: 3px solid var(--mystic-purple);
-            border-radius: var(--cathedral-space);
-            padding: var(--grand-space);
-            backdrop-filter: blur(20px);
-            margin-bottom: var(--grand-space);
-        }
-
-        .console-title {
-            font-size: 2.5rem;
-            color: var(--cathedral-gold);
-            text-align: center;
-            margin-bottom: var(--grand-space);
-            border-bottom: 3px solid var(--mystic-purple);
-            padding-bottom: var(--cathedral-space);
-        }
-
-        .master-controls {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--cathedral-space);
-            margin-bottom: var(--grand-space);
-        }
-
-        .master-button {
-            padding: var(--cathedral-space);
-            background: linear-gradient(135deg, var(--sacred-blue), var(--mystic-purple));
-            color: white;
-            border: none;
-            border-radius: var(--sacred-unit);
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .master-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.5s ease;
-        }
-
-        .master-button:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .master-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(65, 105, 225, 0.5);
-        }
-
-        .wellness-lattice {
-            background: rgba(0, 0, 0, 0.5);
-            border: 2px solid var(--healing-green);
-            border-radius: var(--sacred-unit);
-            padding: var(--cathedral-space);
-            margin-top: var(--cathedral-space);
-        }
-
-        .lattice-title {
-            color: var(--healing-green);
-            text-align: center;
-            margin-bottom: var(--sacred-unit);
-            font-size: 1.3rem;
-        }
-
-        .lattice-display {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: var(--sacred-unit);
-            text-align: center;
-        }
-
-        .lattice-node {
-            padding: 0.5rem;
-            background: rgba(50, 205, 50, 0.1);
-            border: 1px solid var(--healing-green);
-            border-radius: 50%;
-            font-size: 0.8rem;
-            color: var(--healing-green);
-            animation: node-pulse 2s ease-in-out infinite;
-        }
-
-        .system-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--cathedral-space);
-            margin-top: var(--grand-space);
-        }
-
-        .stat-card {
-            background: var(--cathedral-stone);
-            border: 2px solid var(--wisdom-orange);
-            border-radius: var(--cathedral-space);
-            padding: var(--cathedral-space);
-            backdrop-filter: blur(15px);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
-        }
-
-        .stat-icon {
-            font-size: 3rem;
-            margin-bottom: var(--sacred-unit);
-            color: var(--wisdom-orange);
-        }
-
-        .stat-title {
-            font-size: 1.4rem;
-            color: var(--cathedral-gold);
-            margin-bottom: var(--sacred-unit);
-            font-weight: bold;
-        }
-
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--sacred-blue);
-            font-family: 'Courier New', monospace;
-            margin-bottom: var(--sacred-unit);
-        }
-
-        .stat-description {
-            color: #B8B8B8;
-            line-height: 1.4;
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes divine-radiance {
-            0%, 100% { 
-                filter: brightness(1) hue-rotate(0deg); 
-                transform: scale(1);
-            }
-            33% { 
-                filter: brightness(1.3) hue-rotate(60deg); 
-                transform: scale(1.02);
-            }
-            66% { 
-                filter: brightness(1.2) hue-rotate(120deg); 
-                transform: scale(1.01);
-            }
-        }
-
-        @keyframes consciousness-pulse {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-
-        @keyframes portal-energy {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 400% 400%; }
-        }
-
-        @keyframes icon-glow {
-            0%, 100% { text-shadow: 0 0 20px currentColor; }
-            50% { text-shadow: 0 0 40px currentColor, 0 0 60px currentColor; }
-        }
-
-        @keyframes float-upward {
-            0% { 
-                transform: translateY(100vh) translateX(0); 
-                opacity: 0; 
-            }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { 
-                transform: translateY(-100px) translateX(50px); 
-                opacity: 0; 
-            }
-        }
-
-        @keyframes beam-pulse {
-            0%, 100% { opacity: 0.3; transform: scaleY(1); }
-            50% { opacity: 1; transform: scaleY(1.5); }
-        }
-
-        @keyframes node-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.2); opacity: 1; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hall-matrix {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .cathedral-title {
+                z-index: -1;
+                border-radius: var(--cathedral-space);
+                opacity: 0.8;
+                animation: portal-energy 4s linear infinite;
+                }
+                .hall-portal:hover {
+                transform: translateY(-10px) scale(1.05);
+                box-shadow: 0 30px 60px rgba(255, 215, 0, 0.5);
+                }
+                .hall-portal:hover::before {
+                animation-duration: 1s;
+                }
+                .hall-icon {
+                font-size: 4rem;
+                text-align: center;
+                margin-bottom: var(--cathedral-space);
+                animation: icon-glow 3s ease-in-out infinite;
+                }
+                .hall-title {
+                font-size: 1.8rem;
+                color: var(--cathedral-gold);
+                text-align: center;
+                margin-bottom: var(--sacred-unit);
+                font-weight: bold;
+                }
+                .hall-description {
+                color: #E8E8E8;
+                line-height: 1.6;
+                text-align: center;
+                margin-bottom: var(--cathedral-space);
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                }
+                .hall-features {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--sacred-unit);
+                margin-bottom: var(--cathedral-space);
+                }
+                .feature-tag {
+                background: rgba(255, 215, 0, 0.2);
+                border: 1px solid var(--cathedral-gold);
+                border-radius: 1rem;
+                padding: 0.5rem;
+                text-align: center;
+                font-size: 0.8rem;
+                color: var(--cathedral-gold);
+                font-weight: bold;
+                }
+                .hall-status {
+                background: rgba(50, 205, 50, 0.2);
+                border: 1px solid var(--healing-green);
+                border-radius: var(--sacred-unit);
+                padding: var(--sacred-unit);
+                text-align: center;
+                color: var(--healing-green);
+                font-family: 'Courier New', monospace;
+                }
+                .integration-console {
+                background: var(--cathedral-stone);
+                border: 3px solid var(--mystic-purple);
+                border-radius: var(--cathedral-space);
+                padding: var(--grand-space);
+                backdrop-filter: blur(20px);
+                margin-bottom: var(--grand-space);
+                }
+                .console-title {
+                font-size: 2.5rem;
+                color: var(--cathedral-gold);
+                text-align: center;
+                margin-bottom: var(--grand-space);
+                border-bottom: 3px solid var(--mystic-purple);
+                padding-bottom: var(--cathedral-space);
+                }
+                .master-controls {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: var(--cathedral-space);
+                margin-bottom: var(--grand-space);
+                }
+                .master-button {
+                padding: var(--cathedral-space);
+                background: linear-gradient(135deg, var(--sacred-blue), var(--mystic-purple));
+                color: white;
+                border: none;
+                border-radius: var(--sacred-unit);
+                font-size: 1.2rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                }
+                .master-button::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.5s ease;
+                }
+                .master-button:hover::before {
+                width: 300px;
+                height: 300px;
+                }
+                .master-button:hover {
+                transform: scale(1.05);
+                box-shadow: 0 15px 30px rgba(65, 105, 225, 0.5);
+                }
+                .wellness-lattice {
+                background: rgba(0, 0, 0, 0.5);
+                border: 2px solid var(--healing-green);
+                border-radius: var(--sacred-unit);
+                padding: var(--cathedral-space);
+                margin-top: var(--cathedral-space);
+                }
+                .lattice-title {
+                color: var(--healing-green);
+                text-align: center;
+                margin-bottom: var(--sacred-unit);
+                font-size: 1.3rem;
+                }
+                .lattice-display {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: var(--sacred-unit);
+                text-align: center;
+                }
+                .lattice-node {
+                padding: 0.5rem;
+                background: rgba(50, 205, 50, 0.1);
+                border: 1px solid var(--healing-green);
+                border-radius: 50%;
+                font-size: 0.8rem;
+                color: var(--healing-green);
+                animation: node-pulse 2s ease-in-out infinite;
+                }
+                .system-stats {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: var(--cathedral-space);
+                margin-top: var(--grand-space);
+                }
+                .stat-card {
+                background: var(--cathedral-stone);
+                border: 2px solid var(--wisdom-orange);
+                border-radius: var(--cathedral-space);
+                padding: var(--cathedral-space);
+                backdrop-filter: blur(15px);
+                text-align: center;
+                transition: all 0.3s ease;
+                }
+                .stat-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+                }
+                .stat-icon {
                 font-size: 3rem;
-            }
-            
-            .hall-matrix {
+                margin-bottom: var(--sacred-unit);
+                color: var(--wisdom-orange);
+                }
+                .stat-title {
+                font-size: 1.4rem;
+                color: var(--cathedral-gold);
+                margin-bottom: var(--sacred-unit);
+                font-weight: bold;
+                }
+                .stat-value {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: var(--sacred-blue);
+                font-family: 'Courier New', monospace;
+                margin-bottom: var(--sacred-unit);
+                }
+                .stat-description {
+                color: #B8B8B8;
+                line-height: 1.4;
+                font-size: 0.9rem;
+                }
+                /* Animations */
+                @keyframes divine-radiance {
+                0%, 100% {
+                filter: brightness(1) hue-rotate(0deg);
+                transform: scale(1);
+                }
+                33% {
+                filter: brightness(1.3) hue-rotate(60deg);
+                transform: scale(1.02);
+                }
+                66% {
+                filter: brightness(1.2) hue-rotate(120deg);
+                transform: scale(1.01);
+                }
+                }
+                @keyframes consciousness-pulse {
+                0%, 100% { opacity: 0.8; transform: scale(1); }
+                50% { opacity: 1; transform: scale(1.05); }
+                }
+                @keyframes portal-energy {
+                0% { background-position: 0% 0%; }
+                100% { background-position: 400% 400%; }
+                }
+                @keyframes icon-glow {
+                0%, 100% { text-shadow: 0 0 20px currentColor; }
+                50% { text-shadow: 0 0 40px currentColor, 0 0 60px currentColor; }
+                }
+                @keyframes float-upward {
+                0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+                }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+                }
+                }
+                @keyframes beam-pulse {
+                0%, 100% { opacity: 0.3; transform: scaleY(1); }
+                50% { opacity: 1; transform: scaleY(1.5); }
+                }
+                @keyframes node-pulse {
+                0%, 100% { transform: scale(1); opacity: 0.7; }
+                50% { transform: scale(1.2); opacity: 1; }
+                }
+                /* Responsive Design */
+                @media (max-width: 1200px) {
+                .hall-matrix {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                }
+                }
+                @media (max-width: 768px) {
+                .cathedral-title {
+                font-size: 3rem;
+                }
+                .hall-matrix {
                 grid-template-columns: 1fr;
-            }
-            
-            .master-controls {
+                }
+                .master-controls {
                 grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Atmospheric Background -->
-    <div class="cathedral-atmosphere" id="atmosphere">
-        <!-- Particles and energy beams will be generated here -->
-    </div>
-
-    <div class="hub-container">
-        <div class="cathedral-header">
-            <h1 class="cathedral-title">⛪ Cathedral of Circuits</h1>
-            <p class="cathedral-subtitle">Master Integration Portal & Sacred Technology Hub</p>
-            <div class="consciousness-status" id="consciousnessStatus">
-                System Status: All Halls Online | Consciousness Level: 847 | Integration: 94%
-            </div>
-        </div>
-
-        <div class="hall-matrix" id="hallMatrix">
-            <!-- Cathedral Hall Portals -->
-        </div>
-
-        <div class="integration-console">
-            <h2 class="console-title">🎛️ Master Integration Console</h2>
-            
-            <div class="master-controls">
-                <button class="master-button" onclick="initializeAllSystems()">
-                    ⚡ Initialize All Systems
-                </button>
-                <button class="master-button" onclick="syncWellnessData()">
-                    🌊 Sync Wellness Lattice
-                </button>
-                <button class="master-button" onclick="generateGlobalInsight()">
-                    💡 Generate Global Insight
-                </button>
-                <button class="master-button" onclick="exportCathedralData()">
-                    📤 Export Cathedral Data
-                </button>
-                <button class="master-button" onclick="openFusionLab()">
-                    ⚗️ Launch Fusion Lab
-                </button>
-                <button class="master-button" onclick="activateHealingMode()">
-                    💚 Activate Healing Mode
-                </button>
-            </div>
-
-            <div class="wellness-lattice">
-                <div class="lattice-title">🕸️ Real-Time Wellness Lattice</div>
-                <div class="lattice-display" id="latticeDisplay">
-                    <div class="lattice-node">Creativity<br>85%</div>
-                    <div class="lattice-node">Balance<br>72%</div>
-                    <div class="lattice-node">Wisdom<br>91%</div>
-                    <div class="lattice-node">Intuition<br>78%</div>
-                    <div class="lattice-node">Transform<br>89%</div>
-                    <div class="lattice-node">Healing<br>94%</div>
-                    <div class="lattice-node">Flow<br>96%</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="system-stats" id="systemStats">
-            <!-- System statistics will be generated here -->
-        </div>
-    </div>
-
-    <script>
-        // Cathedral Hall Definitions
-        const cathedralHalls = [
-            {
-                name: 'Sacred Geometry Calculator',
-                icon: '🔮',
-                file: 'sacred-geometry-calculator.html',
-                description: 'Calculate golden ratios, mandala patterns, and divine proportions for timeless design.',
-                features: ['Golden Ratio', 'Mandala Gen', 'Cathedral Props', 'Consciousness Map'],
-                status: 'Online',
-                color: '#FFD700'
-            },
-            {
-                name: 'Synthesis Laboratory',
-                icon: '🎵',
-                file: 'synthesis-laboratory.html',
-                description: 'Planetary healing frequencies and sacred sound synthesis for consciousness transformation.',
-                features: ['10 Synthesizers', 'Healing Hz', 'Planetary Align', 'Frequency Viz'],
-                status: 'Active',
-                color: '#9932CC'
-            },
-            {
-                name: 'Wellness Observatory',
-                icon: '🌟',
-                file: 'wellness-observatory.html',
-                description: '7-dimensional health lattice monitoring with real-time wellness tracking.',
-                features: ['Health Lattice', '7 Dimensions', 'Real-time Data', 'Balance Tools'],
-                status: 'Monitoring',
-                color: '#32CD32'
-            },
-            {
-                name: 'Fusion Laboratory',
-                icon: '⚗️',
-                file: 'fusion-laboratory.html',
-                description: 'AI tool synthesis for infinite creative combinations and fusion projects.',
-                features: ['AI Tools', 'Fusion Canvas', 'Auto-Generate', 'Export Recipes'],
-                status: 'Ready',
-                color: '#FF69B4'
-            },
-            {
-                name: 'Memory Palace',
-                icon: '🏛️',
-                file: 'memory-palace.html',
-                description: 'Consciousness archive and wisdom repository for memory pattern analysis.',
-                features: ['Memory Archive', 'Insight Gen', 'Pattern Detect', 'Wisdom Synth'],
-                status: 'Archiving',
-                color: '#4169E1'
-            },
-            {
-                name: 'Open World Explorer',
-                icon: '🌌',
-                file: 'cathedral-open-world-explorer.html',
-                description: 'Spacious 3D cathedral navigation with trauma-safe design and breathing room.',
-                features: ['3D Navigation', 'Trauma-Safe', 'Breathing Room', 'Gentle Flow'],
-                status: 'Exploring',
-                color: '#00CED1'
-            }
-        ];
-
-        // System Statistics
-        const systemStats = [
-            {
-                icon: '🎯',
-                title: 'System Integration',
-                value: '94%',
-                description: 'All cathedral halls connected and synchronized'
-            },
-            {
-                icon: '🧠',
-                title: 'Consciousness Index',
-                value: '847',
-                description: 'Current level of awareness and insight generation'
-            },
-            {
-                icon: '🔗',
-                title: 'Active Connections',
-                value: '127',
-                description: 'Real-time data flows between hall systems'
-            },
-            {
-                icon: '💎',
-                title: 'Wisdom Crystals',
-                value: '2,394',
-                description: 'Accumulated insights and memory patterns'
-            },
-            {
-                icon: '⚡',
-                title: 'Energy Coherence',
-                value: '96%',
-                description: 'Harmonic alignment of all frequency systems'
-            },
-            {
-                icon: '🌈',
-                title: 'Creative Flow',
-                value: '89%',
-                description: 'Active state of artistic and technical inspiration'
-            }
-        ];
-
-        // Initialize Cathedral Hub
-        function initCathedralHub() {
-            generateHallPortals();
-            generateSystemStats();
-            createAtmosphere();
-            startSystemMonitoring();
-            updateWellnessLattice();
-        }
-
-        // Generate hall portals
-        function generateHallPortals() {
-            const container = document.getElementById('hallMatrix');
-            
-            cathedralHalls.forEach(hall => {
-                const portal = document.createElement('div');
-                portal.className = 'hall-portal';
-                portal.style.borderColor = hall.color;
-                
-                portal.innerHTML = `
-                    <div class="hall-icon" style="color: ${hall.color}">${hall.icon}</div>
-                    <div class="hall-title">${hall.name}</div>
-                    <div class="hall-description">${hall.description}</div>
-                    <div class="hall-features">
-                        ${hall.features.map(feature => 
-                            `<div class="feature-tag">${feature}</div>`
-                        ).join('')}
-                    </div>
-                    <div class="hall-status">${hall.status}</div>
-                `;
-                
-                portal.addEventListener('click', () => openHall(hall.file));
-                container.appendChild(portal);
-            });
-        }
-
-        // Generate system statistics
-        function generateSystemStats() {
-            const container = document.getElementById('systemStats');
-            
-            systemStats.forEach(stat => {
-                const card = document.createElement('div');
-                card.className = 'stat-card';
-                card.innerHTML = `
-                    <div class="stat-icon">${stat.icon}</div>
-                    <div class="stat-title">${stat.title}</div>
-                    <div class="stat-value">${stat.value}</div>
-                    <div class="stat-description">${stat.description}</div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Create atmospheric effects
-        function createAtmosphere() {
-            const atmosphere = document.getElementById('atmosphere');
-            
-            // Create floating particles
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'floating-particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 15 + 's';
-                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-                atmosphere.appendChild(particle);
-            }
-            
-            // Create energy beams
-            for (let i = 0; i < 8; i++) {
-                const beam = document.createElement('div');
-                beam.className = 'energy-beam';
-                beam.style.left = (i * 12.5) + '%';
-                beam.style.top = Math.random() * 100 + '%';
-                beam.style.animationDelay = Math.random() * 3 + 's';
-                atmosphere.appendChild(beam);
-            }
-        }
-
-        // Open cathedral hall
-        function openHall(filename) {
-            window.open(filename, '_blank');
-        }
-
-        // Master control functions
-        function initializeAllSystems() {
-            updateStatus('⚡ Initializing all cathedral systems...');
-            
-            // Simulate system initialization
-            const halls = ['Sacred Geometry', 'Synthesis Lab', 'Wellness Observatory', 'Fusion Lab', 'Memory Palace'];
-            let index = 0;
-            
-            const initInterval = setInterval(() => {
-                if (index < halls.length) {
-                    updateStatus(`🔄 Initializing ${halls[index]}...`);
-                    index++;
-                } else {
-                    updateStatus('✅ All systems online - Cathedral ready for consciousness expansion');
-                    clearInterval(initInterval);
                 }
-            }, 1000);
-        }
-
-        function syncWellnessData() {
-            updateStatus('🌊 Synchronizing wellness lattice data...');
-            
-            // Animate lattice nodes
-            const nodes = document.querySelectorAll('.lattice-node');
-            nodes.forEach((node, index) => {
-                setTimeout(() => {
-                    const newValue = 70 + Math.floor(Math.random() * 30);
-                    const dimension = node.textContent.split('\n')[0];
-                    node.innerHTML = `${dimension}<br>${newValue}%`;
-                    node.style.background = `rgba(50, 205, 50, ${newValue / 100})`;
-                }, index * 200);
-            });
-            
-            setTimeout(() => {
-                updateStatus('✅ Wellness lattice synchronized - All dimensions balanced');
-            }, 2000);
-        }
-
-        function generateGlobalInsight() {
-            const insights = [
-                "🌟 Sacred geometry patterns are amplifying across all cathedral systems, creating resonance with divine proportion.",
-                "💎 Your consciousness evolution shows accelerated integration between healing frequencies and creative expression.",
-                "🎵 The synthesis laboratory frequencies are harmonizing with your memory palace patterns, creating new wisdom crystals.",
-                "🔮 Fusion laboratory projects reveal emerging patterns of sacred technology integration with ancient wisdom.",
-                "🏛️ Memory palace analysis shows exponential growth in consciousness coherence and pattern recognition.",
-                "⚡ All cathedral systems are achieving unprecedented levels of harmonic convergence and creative flow."
-            ];
-            
-            const insight = insights[Math.floor(Math.random() * insights.length)];
-            updateStatus(insight);
-        }
-
-        function exportCathedralData() {
-            const cathedralData = {
-                timestamp: new Date().toISOString(),
-                consciousnessLevel: 847,
-                systemIntegration: '94%',
-                activeConnections: 127,
-                wisdomCrystals: 2394,
-                halls: cathedralHalls.map(hall => ({
-                    name: hall.name,
-                    status: hall.status,
-                    lastAccess: new Date().toISOString()
-                })),
-                wellnessLattice: {
-                    creativity: 85,
-                    balance: 72,
-                    wisdom: 91,
-                    intuition: 78,
-                    transformation: 89,
-                    healing: 94,
-                    flow: 96
                 }
-            };
-            
-            const dataStr = JSON.stringify(cathedralData, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            const url = URL.createObjectURL(dataBlob);
-            
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `cathedral-data-${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-            
-            updateStatus('📤 Cathedral data exported successfully');
-        }
-
-        function openFusionLab() {
-            openHall('fusion-laboratory.html');
-            updateStatus('⚗️ Fusion Laboratory launched - Infinite creative possibilities activated');
-        }
-
-        function activateHealingMode() {
-            updateStatus('💚 Healing mode activated - Sacred frequencies harmonizing...');
-            
-            // Change atmosphere to healing colors
-            const particles = document.querySelectorAll('.floating-particle');
-            particles.forEach(particle => {
-                particle.style.background = '#32CD32';
-                particle.style.boxShadow = '0 0 10px #32CD32';
-            });
-            
-            // Open synthesis laboratory for healing frequencies
-            setTimeout(() => {
-                openHall('synthesis-laboratory.html');
-                updateStatus('🎵 Healing frequencies activated - Synthesis laboratory ready');
-            }, 2000);
-        }
-
-        function updateStatus(message) {
-            document.getElementById('consciousnessStatus').textContent = message;
-        }
-
-        function updateWellnessLattice() {
-            // Simulate real-time wellness data updates
-            setInterval(() => {
-                const nodes = document.querySelectorAll('.lattice-node');
-                nodes.forEach(node => {
-                    const currentValue = parseInt(node.textContent.match(/\d+/)[0]);
-                    const variation = Math.floor(Math.random() * 6) - 3; // ±3 variation
-                    const newValue = Math.max(50, Math.min(100, currentValue + variation));
-                    const dimension = node.textContent.split('\n')[0];
-                    node.innerHTML = `${dimension}<br>${newValue}%`;
-                    
-                    // Update color intensity based on value
-                    const intensity = newValue / 100;
-                    node.style.background = `rgba(50, 205, 50, ${intensity * 0.5})`;
-                    node.style.borderColor = `rgba(50, 205, 50, ${intensity})`;
-                });
-            }, 5000);
-        }
-
-        function startSystemMonitoring() {
-            // Update consciousness level periodically
-            setInterval(() => {
-                const current = parseInt(document.getElementById('consciousnessStatus').textContent.match(/\d+/)?.[0] || '847');
-                const newLevel = current + Math.floor(Math.random() * 5);
-                
-                const statusText = `System Status: All Halls Online | Consciousness Level: ${newLevel} | Integration: 94%`;
-                if (!document.getElementById('consciousnessStatus').textContent.includes('⚡') && 
-                    !document.getElementById('consciousnessStatus').textContent.includes('🌊')) {
-                    document.getElementById('consciousnessStatus').textContent = statusText;
-                }
-            }, 10000);
-        }
-
-        // Initialize cathedral hub when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            initCathedralHub();
-            
-            console.log('⛪ Cathedral of Circuits Hub initialized');
-            console.log('🎛️ Master integration console online');
-            console.log('🌟 All cathedral halls connected and ready');
-            console.log('💫 Sacred technology ecosystem activated');
-        });
-
-        // Auto-generate atmospheric sparkles
-        setInterval(() => {
-            if (Math.random() > 0.8) {
-                const sparkle = document.createElement('div');
-                sparkle.style.cssText = `
-                    position: fixed;
-                    width: 6px;
-                    height: 6px;
-                    background: var(--cathedral-gold);
-                    border-radius: 50%;
-                    pointer-events: none;
-                    z-index: 1000;
-                    left: ${Math.random() * window.innerWidth}px;
-                    top: ${Math.random() * window.innerHeight}px;
-                    animation: memory-sparkle 2s ease-in-out;
-                `;
-                
-                document.body.appendChild(sparkle);
-                
-                setTimeout(() => {
-                    sparkle.remove();
-                }, 2000);
-            }
-        }, 3000);
-    </script>
-</body>
-</html>
+            </style>
+        </head>
+        <body>
+            <!-- Atmospheric Background -->
+            <div class="cathedral-atmosphere" id="atmosphere">
+                <!-- Particles and energy beams will be generated here -->
+            </div>
+            <div class="hub-container">
+                <div class="cathedral-header">
+                    <h1 class="cathedral-title">⛪ Cathedral of Circuits</h1>
+                        <p class="cathedral-subtitle">Master Integration Portal & Sacred Technology Hub</p>
+                            <div class="consciousness-status" id="consciousnessStatus">
+                                System Status: All Halls Online | Consciousness Level: 847 | Integration: 94%
+                            </div>
+                        </div>
+                        <div class="hall-matrix" id="hallMatrix">
+                            <!-- Cathedral Hall Portals -->
+                        </div>
+                        <div class="integration-console">
+                            <h2 class="console-title">🎛️ Master Integration Console</h2>
+                                <div class="master-controls">
+                                    <button class="master-button" onclick="initializeAllSystems()">
+                                        ⚡ Initialize All Systems
+                                    </button>
+                                    <button class="master-button" onclick="syncWellnessData()">
+                                        🌊 Sync Wellness Lattice
+                                    </button>
+                                    <button class="master-button" onclick="generateGlobalInsight()">
+                                        💡 Generate Global Insight
+                                    </button>
+                                    <button class="master-button" onclick="exportCathedralData()">
+                                        📤 Export Cathedral Data
+                                    </button>
+                                    <button class="master-button" onclick="openFusionLab()">
+                                        ⚗️ Launch Fusion Lab
+                                    </button>
+                                    <button class="master-button" onclick="activateHealingMode()">
+                                        💚 Activate Healing Mode
+                                    </button>
+                                </div>
+                                <div class="wellness-lattice">
+                                    <div class="lattice-title">🕸️ Real-Time Wellness Lattice</div>
+                                        <div class="lattice-display" id="latticeDisplay">
+                                            <div class="lattice-node">Creativity<br>85%</div>
+                                            <div class="lattice-node">Balance<br>72%</div>
+                                            <div class="lattice-node">Wisdom<br>91%</div>
+                                            <div class="lattice-node">Intuition<br>78%</div>
+                                            <div class="lattice-node">Transform<br>89%</div>
+                                            <div class="lattice-node">Healing<br>94%</div>
+                                            <div class="lattice-node">Flow<br>96%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="system-stats" id="systemStats">
+                                    <!-- System statistics will be generated here -->
+                                </div>
+                            </div>
+                            <script>
+                                // Cathedral Hall Definitions
+                                const cathedralHalls = [
+                                {
+                                name: 'Sacred Geometry Calculator',
+                                icon: '🔮',
+                                file: 'sacred-geometry-calculator.html',
+                                description: 'Calculate golden ratios, mandala patterns, and divine proportions for timeless design.',
+                                features: ['Golden Ratio', 'Mandala Gen', 'Cathedral Props', 'Consciousness Map'],
+                                status: 'Online',
+                                color: '#FFD700'
+                                },
+                                {
+                                name: 'Synthesis Laboratory',
+                                icon: '🎵',
+                                file: 'synthesis-laboratory.html',
+                                description: 'Planetary healing frequencies and sacred sound synthesis for consciousness transformation.',
+                                features: ['10 Synthesizers', 'Healing Hz', 'Planetary Align', 'Frequency Viz'],
+                                status: 'Active',
+                                color: '#9932CC'
+                                },
+                                {
+                                name: 'Wellness Observatory',
+                                icon: '🌟',
+                                file: 'wellness-observatory.html',
+                                description: '7-dimensional health lattice monitoring with real-time wellness tracking.',
+                                features: ['Health Lattice', '7 Dimensions', 'Real-time Data', 'Balance Tools'],
+                                status: 'Monitoring',
+                                color: '#32CD32'
+                                },
+                                {
+                                name: 'Fusion Laboratory',
+                                icon: '⚗️',
+                                file: 'fusion-laboratory.html',
+                                description: 'AI tool synthesis for infinite creative combinations and fusion projects.',
+                                features: ['AI Tools', 'Fusion Canvas', 'Auto-Generate', 'Export Recipes'],
+                                status: 'Ready',
+                                color: '#FF69B4'
+                                },
+                                {
+                                name: 'Memory Palace',
+                                icon: '🏛️',
+                                file: 'memory-palace.html',
+                                description: 'Consciousness archive and wisdom repository for memory pattern analysis.',
+                                features: ['Memory Archive', 'Insight Gen', 'Pattern Detect', 'Wisdom Synth'],
+                                status: 'Archiving',
+                                color: '#4169E1'
+                                },
+                                {
+                                name: 'Open World Explorer',
+                                icon: '🌌',
+                                file: 'cathedral-open-world-explorer.html',
+                                description: 'Spacious 3D cathedral navigation with trauma-safe design and breathing room.',
+                                features: ['3D Navigation', 'Trauma-Safe', 'Breathing Room', 'Gentle Flow'],
+                                status: 'Exploring',
+                                color: '#00CED1'
+                                }
+                                ];
+                                // System Statistics
+                                const systemStats = [
+                                {
+                                icon: '🎯',
+                                title: 'System Integration',
+                                value: '94%',
+                                description: 'All cathedral halls connected and synchronized'
+                                },
+                                {
+                                icon: '🧠',
+                                title: 'Consciousness Index',
+                                value: '847',
+                                description: 'Current level of awareness and insight generation'
+                                },
+                                {
+                                icon: '🔗',
+                                title: 'Active Connections',
+                                value: '127',
+                                description: 'Real-time data flows between hall systems'
+                                },
+                                {
+                                icon: '💎',
+                                title: 'Wisdom Crystals',
+                                value: '2,394',
+                                description: 'Accumulated insights and memory patterns'
+                                },
+                                {
+                                icon: '⚡',
+                                title: 'Energy Coherence',
+                                value: '96%',
+                                description: 'Harmonic alignment of all frequency systems'
+                                },
+                                {
+                                icon: '🌈',
+                                title: 'Creative Flow',
+                                value: '89%',
+                                description: 'Active state of artistic and technical inspiration'
+                                }
+                                ];
+                                // Initialize Cathedral Hub
+                                function initCathedralHub() {
+                                generateHallPortals();
+                                generateSystemStats();
+                                createAtmosphere();
+                                startSystemMonitoring();
+                                updateWellnessLattice();
+                                }
+                                // Generate hall portals
+                                function generateHallPortals() {
+                                const container = document.getElementById('hallMatrix');
+                                cathedralHalls.forEach(hall => {
+                                const portal = document.createElement('div');
+                                portal.className = 'hall-portal';
+                                portal.style.borderColor = hall.color;
+                                portal.innerHTML = `
+                                <div class="hall-icon" style="color: ${hall.color}">${hall.icon}</div>
+                                    <div class="hall-title">${hall.name}</div>
+                                        <div class="hall-description">${hall.description}</div>
+                                            <div class="hall-features">
+                                                ${hall.features.map(feature =>
+                                                `<div class="feature-tag">${feature}</div>`
+                                                    ).join('')}
+                                                </div>
+                                                <div class="hall-status">${hall.status}</div>
+                                                    `;
+                                                    portal.addEventListener('click', () => openHall(hall.file));
+                                                    container.appendChild(portal);
+                                                    });
+                                                    }
+                                                    // Generate system statistics
+                                                    function generateSystemStats() {
+                                                    const container = document.getElementById('systemStats');
+                                                    systemStats.forEach(stat => {
+                                                    const card = document.createElement('div');
+                                                    card.className = 'stat-card';
+                                                    card.innerHTML = `
+                                                    <div class="stat-icon">${stat.icon}</div>
+                                                        <div class="stat-title">${stat.title}</div>
+                                                            <div class="stat-value">${stat.value}</div>
+                                                                <div class="stat-description">${stat.description}</div>
+                                                                    `;
+                                                                    container.appendChild(card);
+                                                                    });
+                                                                    }
+                                                                    // Create atmospheric effects
+                                                                    function createAtmosphere() {
+                                                                    const atmosphere = document.getElementById('atmosphere');
+                                                                    // Create floating particles
+                                                                    for (let i = 0; i < 20; i++) {
+                                                                        const particle = document.createElement('div');
+                                                                        particle.className = 'floating-particle';
+                                                                        particle.style.left = Math.random() * 100 + '%';
+                                                                        particle.style.animationDelay = Math.random() * 15 + 's';
+                                                                        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                                                                        atmosphere.appendChild(particle);
+                                                                        }
+                                                                        // Create energy beams
+                                                                        for (let i = 0; i < 8; i++) {
+                                                                            const beam = document.createElement('div');
+                                                                            beam.className = 'energy-beam';
+                                                                            beam.style.left = (i * 12.5) + '%';
+                                                                            beam.style.top = Math.random() * 100 + '%';
+                                                                            beam.style.animationDelay = Math.random() * 3 + 's';
+                                                                            atmosphere.appendChild(beam);
+                                                                            }
+                                                                            }
+                                                                            // Open cathedral hall
+                                                                            function openHall(filename) {
+                                                                            window.open(filename, '_blank');
+                                                                            }
+                                                                            // Master control functions
+                                                                            function initializeAllSystems() {
+                                                                            updateStatus('⚡ Initializing all cathedral systems...');
+                                                                            // Simulate system initialization
+                                                                            const halls = ['Sacred Geometry', 'Synthesis Lab', 'Wellness Observatory', 'Fusion Lab', 'Memory Palace'];
+                                                                            let index = 0;
+                                                                            const initInterval = setInterval(() => {
+                                                                            if (index < halls.length) {
+                                                                                updateStatus(`🔄 Initializing ${halls[index]}...`);
+                                                                                index++;
+                                                                                } else {
+                                                                                updateStatus('✅ All systems online - Cathedral ready for consciousness expansion');
+                                                                                clearInterval(initInterval);
+                                                                                }
+                                                                                }, 1000);
+                                                                                }
+                                                                                function syncWellnessData() {
+                                                                                updateStatus('🌊 Synchronizing wellness lattice data...');
+                                                                                // Animate lattice nodes
+                                                                                const nodes = document.querySelectorAll('.lattice-node');
+                                                                                nodes.forEach((node, index) => {
+                                                                                setTimeout(() => {
+                                                                                const newValue = 70 + Math.floor(Math.random() * 30);
+                                                                                const dimension = node.textContent.split('\n')[0];
+                                                                                node.innerHTML = `${dimension}<br>${newValue}%`;
+                                                                                node.style.background = `rgba(50, 205, 50, ${newValue / 100})`;
+                                                                                }, index * 200);
+                                                                                });
+                                                                                setTimeout(() => {
+                                                                                updateStatus('✅ Wellness lattice synchronized - All dimensions balanced');
+                                                                                }, 2000);
+                                                                                }
+                                                                                function generateGlobalInsight() {
+                                                                                const insights = [
+                                                                                "🌟 Sacred geometry patterns are amplifying across all cathedral systems, creating resonance with divine proportion.",
+                                                                                "💎 Your consciousness evolution shows accelerated integration between healing frequencies and creative expression.",
+                                                                                "🎵 The synthesis laboratory frequencies are harmonizing with your memory palace patterns, creating new wisdom crystals.",
+                                                                                "🔮 Fusion laboratory projects reveal emerging patterns of sacred technology integration with ancient wisdom.",
+                                                                                "🏛️ Memory palace analysis shows exponential growth in consciousness coherence and pattern recognition.",
+                                                                                "⚡ All cathedral systems are achieving unprecedented levels of harmonic convergence and creative flow."
+                                                                                ];
+                                                                                const insight = insights[Math.floor(Math.random() * insights.length)];
+                                                                                updateStatus(insight);
+                                                                                }
+                                                                                function exportCathedralData() {
+                                                                                const cathedralData = {
+                                                                                timestamp: new Date().toISOString(),
+                                                                                consciousnessLevel: 847,
+                                                                                systemIntegration: '94%',
+                                                                                activeConnections: 127,
+                                                                                wisdomCrystals: 2394,
+                                                                                halls: cathedralHalls.map(hall => ({
+                                                                                name: hall.name,
+                                                                                status: hall.status,
+                                                                                lastAccess: new Date().toISOString()
+                                                                                })),
+                                                                                wellnessLattice: {
+                                                                                creativity: 85,
+                                                                                balance: 72,
+                                                                                wisdom: 91,
+                                                                                intuition: 78,
+                                                                                transformation: 89,
+                                                                                healing: 94,
+                                                                                flow: 96
+                                                                                }
+                                                                                };
+                                                                                const dataStr = JSON.stringify(cathedralData, null, 2);
+                                                                                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                                                                                const url = URL.createObjectURL(dataBlob);
+                                                                                const link = document.createElement('a');
+                                                                                link.href = url;
+                                                                                link.download = `cathedral-data-${new Date().toISOString().split('T')[0]}.json`;
+                                                                                link.click();
+                                                                                updateStatus('📤 Cathedral data exported successfully');
+                                                                                }
+                                                                                function openFusionLab() {
+                                                                                openHall('fusion-laboratory.html');
+                                                                                updateStatus('⚗️ Fusion Laboratory launched - Infinite creative possibilities activated');
+                                                                                }
+                                                                                function activateHealingMode() {
+                                                                                updateStatus('💚 Healing mode activated - Sacred frequencies harmonizing...');
+                                                                                // Change atmosphere to healing colors
+                                                                                const particles = document.querySelectorAll('.floating-particle');
+                                                                                particles.forEach(particle => {
+                                                                                particle.style.background = '#32CD32';
+                                                                                particle.style.boxShadow = '0 0 10px #32CD32';
+                                                                                });
+                                                                                // Open synthesis laboratory for healing frequencies
+                                                                                setTimeout(() => {
+                                                                                openHall('synthesis-laboratory.html');
+                                                                                updateStatus('🎵 Healing frequencies activated - Synthesis laboratory ready');
+                                                                                }, 2000);
+                                                                                }
+                                                                                function updateStatus(message) {
+                                                                                document.getElementById('consciousnessStatus').textContent = message;
+                                                                                }
+                                                                                function updateWellnessLattice() {
+                                                                                // Simulate real-time wellness data updates
+                                                                                setInterval(() => {
+                                                                                const nodes = document.querySelectorAll('.lattice-node');
+                                                                                nodes.forEach(node => {
+                                                                                const currentValue = parseInt(node.textContent.match(/\d+/)[0]);
+                                                                                const variation = Math.floor(Math.random() * 6) - 3; // ±3 variation
+                                                                                const newValue = Math.max(50, Math.min(100, currentValue + variation));
+                                                                                const dimension = node.textContent.split('\n')[0];
+                                                                                node.innerHTML = `${dimension}<br>${newValue}%`;
+                                                                                // Update color intensity based on value
+                                                                                const intensity = newValue / 100;
+                                                                                node.style.background = `rgba(50, 205, 50, ${intensity * 0.5})`;
+                                                                                node.style.borderColor = `rgba(50, 205, 50, ${intensity})`;
+                                                                                });
+                                                                                }, 5000);
+                                                                                }
+                                                                                function startSystemMonitoring() {
+                                                                                // Update consciousness level periodically
+                                                                                setInterval(() => {
+                                                                                const current = parseInt(document.getElementById('consciousnessStatus').textContent.match(/\d+/)?.[0] || '847');
+                                                                                const newLevel = current + Math.floor(Math.random() * 5);
+                                                                                const statusText = `System Status: All Halls Online | Consciousness Level: ${newLevel} | Integration: 94%`;
+                                                                                if (!document.getElementById('consciousnessStatus').textContent.includes('⚡') &&
+                                                                                !document.getElementById('consciousnessStatus').textContent.includes('🌊')) {
+                                                                                document.getElementById('consciousnessStatus').textContent = statusText;
+                                                                                }
+                                                                                }, 10000);
+                                                                                }
+                                                                                // Initialize cathedral hub when page loads
+                                                                                document.addEventListener('DOMContentLoaded', function() {
+                                                                                initCathedralHub();
+                                                                                console.log('⛪ Cathedral of Circuits Hub initialized');
+                                                                                console.log('🎛️ Master integration console online');
+                                                                                console.log('🌟 All cathedral halls connected and ready');
+                                                                                console.log('💫 Sacred technology ecosystem activated');
+                                                                                });
+                                                                                // Auto-generate atmospheric sparkles
+                                                                                setInterval(() => {
+                                                                                if (Math.random() > 0.8) {
+                                                                                const sparkle = document.createElement('div');
+                                                                                sparkle.style.cssText = `
+                                                                                position: fixed;
+                                                                                width: 6px;
+                                                                                height: 6px;
+                                                                                background: var(--cathedral-gold);
+                                                                                border-radius: 50%;
+                                                                                pointer-events: none;
+                                                                                z-index: 1000;
+                                                                                left: ${Math.random() * window.innerWidth}px;
+                                                                                top: ${Math.random() * window.innerHeight}px;
+                                                                                animation: memory-sparkle 2s ease-in-out;
+                                                                                `;
+                                                                                document.body.appendChild(sparkle);
+                                                                                setTimeout(() => {
+                                                                                sparkle.remove();
+                                                                                }, 2000);
+                                                                                }
+                                                                                }, 3000);
+                                                                            </script>
+                                                                        </body>
+                                                                    </html>

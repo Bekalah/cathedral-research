@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cathedral OS - Central Node Management System</title>
+            <meta name="cathedral:purpose" content="Trauma-aware sacred technology operating system">
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap');
+                :root {
+                /* Cathedral color system */
+                --deep-purple: #4a148c;
+                --royal-purple: #7b1fa2;
+                --mystic-blue: #283593;
+                --sacred-gold: #d4af37;
+                --ethereal-silver: #e8eaf6;
+                --void-black: #0a0a0f;
+                --light-purple: #9c27b0;
+                --soft-white: #fefefe;
+                /* Safety colors */
+                --escape-glow: #ffff00;
+                --safe-green: #2ecc71;
+                --warning-orange: #f39c12;
+                --danger-red: #e74c3c;
+                }
+                * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                }
+                body {
+                background: linear-gradient(135deg, var(--void-black) 0%, var(--deep-purple) 50%, var(--mystic-blue) 100%);
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--ethereal-silver);
+                min-height: 100vh;
+                overflow-x: hidden;
+                position: relative;
+                }
+                /* Safety Features */
+                .escape-portal {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid var(--escape-glow);
+                border-radius: 12px;
+                padding: 12px;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .escape-key {
+                background: var(--escape-glow);
+                color: black;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-family: 'Cinzel', serif;
+                font-weight: 600;
+                font-size: 14px;
+                }
+                .escape-text {
+                color: var(--safe-green);
+                font-size: 12px;
+                font-weight: 300;
+                }
+                /* Header */
+                .cathedral-header {
+                text-align: center;
+                padding: 40px 20px;
+                position: relative;
+                z-index: 100;
+                }
+                .cathedral-title {
+                font-family: 'Cinzel', serif;
+                font-size: 3.5em;
+                font-weight: 600;
+                color: var(--sacred-gold);
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+                margin-bottom: 10px;
+                letter-spacing: 0.1em;
+                }
+                .cathedral-subtitle {
+                font-size: 1.2em;
+                color: var(--ethereal-silver);
+                font-weight: 300;
+                letter-spacing: 0.05em;
+                }
+                /* Dashboard Grid */
+                .dashboard {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 20px;
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 30px;
+                position: relative;
+                z-index: 50;
+                }
+                /* Control Panels */
+                .control-panel {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(212, 175, 55, 0.3);
+                border-radius: 20px;
+                padding: 25px;
+                backdrop-filter: blur(20px);
+                height: fit-content;
+                }
+                .panel-title {
+                font-family: 'Cinzel', serif;
+                font-size: 1.4em;
+                color: var(--sacred-gold);
+                margin-bottom: 20px;
+                text-align: center;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+                padding-bottom: 10px;
+                }
+                /* Node Status Grid */
+                .node-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 8px;
+                margin-bottom: 20px;
+                }
+                .node-indicator {
+                aspect-ratio: 1;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.7em;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                .node-indicator.major-arcana {
+                background: linear-gradient(135deg, var(--royal-purple), var(--sacred-gold));
+                color: white;
+                }
+                .node-indicator.minor-arcana {
+                background: linear-gradient(135deg, var(--mystic-blue), var(--light-purple));
+                color: var(--ethereal-silver);
+                }
+                .node-indicator.active {
+                transform: scale(1.1);
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+                }
+                .node-indicator:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+                }
+                /* Central Visualization */
+                .central-display {
+                background: rgba(0, 0, 0, 0.3);
+                border: 2px solid rgba(212, 175, 55, 0.4);
+                border-radius: 25px;
+                padding: 20px;
+                position: relative;
+                min-height: 600px;
+                overflow: hidden;
+                }
+                .display-title {
+                text-align: center;
+                font-family: 'Cinzel', serif;
+                font-size: 1.6em;
+                color: var(--sacred-gold);
+                margin-bottom: 20px;
+                }
+                /* Canvas for 3D visualization */
+                #cathedral-canvas {
+                width: 100%;
+                height: 500px;
+                border-radius: 15px;
+                background: radial-gradient(circle at center, rgba(74, 20, 140, 0.3), transparent);
+                }
+                /* Tool Launcher */
+                .tool-launcher {
+                display: grid;
+                gap: 10px;
+                }
+                .tool-button {
+                background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(156, 39, 176, 0.2));
+                border: 1px solid rgba(212, 175, 55, 0.4);
+                border-radius: 12px;
+                padding: 15px;
+                color: var(--ethereal-silver);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                text-align: center;
+                }
+                .tool-button:hover {
+                background: linear-gradient(135deg, rgba(212, 175, 55, 0.4), rgba(156, 39, 176, 0.4));
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+                }
+                .tool-name {
+                font-weight: 600;
+                font-size: 0.9em;
+                margin-bottom: 5px;
+                }
+                .tool-description {
+                font-size: 0.7em;
+                opacity: 0.8;
+                line-height: 1.3;
+                }
+                /* Status Indicators */
+                .status-grid {
+                display: grid;
+                gap: 15px;
+                }
+                .status-item {
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 10px;
+                padding: 15px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                .status-label {
+                font-size: 0.8em;
+                opacity: 0.7;
+                margin-bottom: 5px;
+                }
+                .status-value {
+                font-weight: 600;
+                font-size: 1.1em;
+                color: var(--sacred-gold);
+                }
+                .progress-bar {
+                width: 100%;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 2px;
+                margin-top: 8px;
+                overflow: hidden;
+                }
+                .progress-fill {
+                height: 100%;
+                background: linear-gradient(90deg, var(--sacred-gold), var(--light-purple));
+                border-radius: 2px;
+                transition: width 0.3s ease;
+                }
+                /* Floating particles background */
+                .particle {
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: var(--sacred-gold);
+                border-radius: 50%;
+                opacity: 0.3;
+                animation: float 15s infinite linear;
+                }
+                @keyframes float {
+                0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+                }
+                10% {
+                opacity: 0.3;
+                }
+                90% {
+                opacity: 0.3;
+                }
+                100% {
+                transform: translateY(-10vh) translateX(100px);
+                opacity: 0;
+                }
+                }
+                /* Responsive */
+                @media (max-width: 1200px) {
+                .dashboard {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                }
+                .cathedral-title {
+                font-size: 2.5em;
+                }
+                }
+                /* Reduced motion support */
+                @media (prefers-reduced-motion: reduce) {
+                * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                }
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Emergency Escape Portal -->
+            <div class="escape-portal">
+                <div class="escape-key">ESC</div>
+                    <div class="escape-text">Safety Exit</div>
+                    </div>
+                    <!-- Floating particles -->
+                    <div id="particles">
+                    </div>
+                    <!-- Header -->
+                    <div class="cathedral-header">
+                        <h1 class="cathedral-title">Cathedral OS</h1>
+                            <p class="cathedral-subtitle">Sacred Node Management System • Codex 144:99</p>
+                            </div>
+                            <!-- Main Dashboard -->
+                            <div class="dashboard">
+                                <!-- Left Panel: Node Status -->
+                                <div class="control-panel">
+                                    <h2 class="panel-title">Node Status</h2>
+                                        <h3 style="color: var(--sacred-gold); font-size: 1em; margin: 15px 0 10px;">Major Arcana (0-21)</h3>
+                                            <div class="node-grid" id="major-arcana-grid">
+                                            </div>
+                                            <h3 style="color: var(--light-purple); font-size: 1em; margin: 15px 0 10px;">Minor Arcana (22-143)</h3>
+                                                <div class="node-grid" id="minor-arcana-grid">
+                                                </div>
+                                                <div class="status-grid" style="margin-top: 20px;">
+                                                    <div class="status-item">
+                                                        <div class="status-label">Active Nodes</div>
+                                                            <div class="status-value" id="active-nodes">0/144</div>
+                                                                <div class="progress-bar">
+                                                                    <div class="progress-fill" id="node-progress" style="width: 0%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="status-item">
+                                                                <div class="status-label">System Health</div>
+                                                                    <div class="status-value" style="color: var(--safe-green);">Optimal</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Center Panel: 3D Visualization -->
+                                                            <div class="central-display">
+                                                                <h2 class="display-title">Cathedral Visualization</h2>
+                                                                    <canvas id="cathedral-canvas">
+                                                                    </canvas>
+                                                                    <div style="text-align: center; margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                                                                        <p>Click nodes to activate • WASD to navigate • Mouse to rotate</p>
+                                                                            <p style="margin-top: 5px; font-size: 0.8em;">
+                                                                                This is trauma-informed sacred technology.<br>
+                                                                                All interactions are gentle and user-controlled.
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Right Panel: Tool Launcher -->
+                                                                    <div class="control-panel">
+                                                                        <h2 class="panel-title">Sacred Tools</h2>
+                                                                            <div class="tool-launcher">
+                                                                                <div class="tool-button" onclick="launchTool('spectral-resonance')">
+                                                                                    <div class="tool-name">Spectral Resonance</div>
+                                                                                        <div class="tool-description">Audio visualization & harmonic analysis</div>
+                                                                                        </div>
+                                                                                        <div class="tool-button" onclick="launchTool('fractal-biomorphology')">
+                                                                                            <div class="tool-name">Fractal Biomorphology</div>
+                                                                                                <div class="tool-description">Sacred geometry & living patterns</div>
+                                                                                                </div>
+                                                                                                <div class="tool-button" onclick="launchTool('manifestation-engine')">
+                                                                                                    <div class="tool-name">Manifestation Engine</div>
+                                                                                                        <div class="tool-description">Transform ideas into reality</div>
+                                                                                                        </div>
+                                                                                                        <div class="tool-button" onclick="launchTool('dream-oracle')">
+                                                                                                            <div class="tool-name">Dream Oracle</div>
+                                                                                                                <div class="tool-description">AI-enhanced dream analysis</div>
+                                                                                                                </div>
+                                                                                                                <div class="tool-button" onclick="launchTool('harmony-generator')">
+                                                                                                                    <div class="tool-name">Harmony Generator</div>
+                                                                                                                        <div class="tool-description">Create musical harmonies</div>
+                                                                                                                        </div>
+                                                                                                                        <div class="tool-button" onclick="launchTool('pattern-recognizer')">
+                                                                                                                            <div class="tool-name">Pattern Recognition</div>
+                                                                                                                                <div class="tool-description">Identify cycles and patterns</div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <div class="status-grid" style="margin-top: 25px;">
+                                                                                                                                <div class="status-item">
+                                                                                                                                    <div class="status-label">Tools Available</div>
+                                                                                                                                        <div class="status-value">144+</div>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="status-item">
+                                                                                                                                            <div class="status-label">Resources Connected</div>
+                                                                                                                                                <div class="status-value">∞</div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="status-item">
+                                                                                                                                                    <div class="status-label">Sacred Frequency</div>
+                                                                                                                                                        <div class="status-value">432 Hz</div>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+                                                                                                                                            </script>
+                                                                                                                                            <script>
+                                                                                                                                                // Cathedral OS Core System
+                                                                                                                                                class CathedralOS {
+                                                                                                                                                constructor() {
+                                                                                                                                                this.nodes = [];
+                                                                                                                                                this.activeNodes = new Set();
+                                                                                                                                                this.tools = new Map();
+                                                                                                                                                this.setupSafetyControls();
+                                                                                                                                                this.initializeNodes();
+                                                                                                                                                this.setupVisualization();
+                                                                                                                                                this.createParticles();
+                                                                                                                                                this.loadNodeResources();
+                                                                                                                                                }
+                                                                                                                                                setupSafetyControls() {
+                                                                                                                                                // ESC key safety exit
+                                                                                                                                                document.addEventListener('keydown', (e) => {
+                                                                                                                                                if (e.key === 'Escape') {
+                                                                                                                                                this.emergencyExit();
+                                                                                                                                                }
+                                                                                                                                                });
+                                                                                                                                                // Respect reduced motion preference
+                                                                                                                                                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                                                                                                                                                document.body.classList.add('reduced-motion');
+                                                                                                                                                }
+                                                                                                                                                }
+                                                                                                                                                emergencyExit() {
+                                                                                                                                                // Immediate safety exit
+                                                                                                                                                if (this.scene) {
+                                                                                                                                                this.scene.children.forEach(child => {
+                                                                                                                                                if (child.userData && child.userData.animation) {
+                                                                                                                                                child.userData.animation = false;
+                                                                                                                                                }
+                                                                                                                                                });
+                                                                                                                                                }
+                                                                                                                                                // Stop all animations
+                                                                                                                                                if (this.animationId) {
+                                                                                                                                                cancelAnimationFrame(this.animationId);
+                                                                                                                                                }
+                                                                                                                                                console.log('🛡️ Emergency exit activated - All animations stopped');
+                                                                                                                                                // Optional: fade to safe state
+                                                                                                                                                document.body.style.background = 'linear-gradient(135deg, #2c3e50, #34495e)';
+                                                                                                                                                }
+                                                                                                                                                async loadNodeResources() {
+                                                                                                                                                try {
+                                                                                                                                                const response = await fetch('./cathedral-node-resources.json');
+                                                                                                                                                this.nodeResources = await response.json();
+                                                                                                                                                console.log('✅ Node resources loaded:', this.nodeResources);
+                                                                                                                                                } catch (error) {
+                                                                                                                                                console.log('ℹ️ Using default node configuration');
+                                                                                                                                                this.nodeResources = this.getDefaultNodeConfig();
+                                                                                                                                                }
+                                                                                                                                                }
+                                                                                                                                                getDefaultNodeConfig() {
+                                                                                                                                                return {
+                                                                                                                                                cathedral_codex_144: {
+                                                                                                                                                major_arcana: {
+                                                                                                                                                "0_fool": { name: "The Fool - White Rabbit Portal", tools: [] },
+                                                                                                                                                "1_magician": { name: "The Magician - Manifestation Engine", tools: [] },
+                                                                                                                                                // ... more would be loaded from the JSON
+                                                                                                                                                }
+                                                                                                                                                }
+                                                                                                                                                };
+                                                                                                                                                }
+                                                                                                                                                initializeNodes() {
+                                                                                                                                                // Major Arcana (0-21)
+                                                                                                                                                const majorGrid = document.getElementById('major-arcana-grid');
+                                                                                                                                                for (let i = 0; i < 22; i++) {
+                                                                                                                                                    const node = document.createElement('div');
+                                                                                                                                                    node.className = 'node-indicator major-arcana';
+                                                                                                                                                    node.textContent = i;
+                                                                                                                                                    node.title = `Major Arcana ${i}`;
+                                                                                                                                                    node.onclick = () => this.activateNode(i, 'major');
+                                                                                                                                                    majorGrid.appendChild(node);
+                                                                                                                                                    }
+                                                                                                                                                    // Minor Arcana (22-143)
+                                                                                                                                                    const minorGrid = document.getElementById('minor-arcana-grid');
+                                                                                                                                                    for (let i = 22; i < 144; i++) {
+                                                                                                                                                        const node = document.createElement('div');
+                                                                                                                                                        node.className = 'node-indicator minor-arcana';
+                                                                                                                                                        node.textContent = i;
+                                                                                                                                                        node.title = `Node ${i}`;
+                                                                                                                                                        node.onclick = () => this.activateNode(i, 'minor');
+                                                                                                                                                        minorGrid.appendChild(node);
+                                                                                                                                                        }
+                                                                                                                                                        }
+                                                                                                                                                        activateNode(nodeId, type) {
+                                                                                                                                                        const nodeElement = document.querySelector(`[onclick*="${nodeId}"]`);
+                                                                                                                                                        if (this.activeNodes.has(nodeId)) {
+                                                                                                                                                        // Deactivate
+                                                                                                                                                        this.activeNodes.delete(nodeId);
+                                                                                                                                                        nodeElement.classList.remove('active');
+                                                                                                                                                        } else {
+                                                                                                                                                        // Activate
+                                                                                                                                                        this.activeNodes.add(nodeId);
+                                                                                                                                                        nodeElement.classList.add('active');
+                                                                                                                                                        // Show node info and tools
+                                                                                                                                                        this.displayNodeInfo(nodeId, type);
+                                                                                                                                                        }
+                                                                                                                                                        this.updateStatus();
+                                                                                                                                                        }
+                                                                                                                                                        displayNodeInfo(nodeId, type) {
+                                                                                                                                                        console.log(`🔮 Activated Node ${nodeId} (${type})`);
+                                                                                                                                                        // Here we would show the specific tools and resources for this node
+                                                                                                                                                        // For now, we'll show a simple notification
+                                                                                                                                                        const notification = document.createElement('div');
+                                                                                                                                                        notification.style.cssText = `
+                                                                                                                                                        position: fixed;
+                                                                                                                                                        top: 100px;
+                                                                                                                                                        right: 20px;
+                                                                                                                                                        background: rgba(212, 175, 55, 0.9);
+                                                                                                                                                        color: black;
+                                                                                                                                                        padding: 15px;
+                                                                                                                                                        border-radius: 10px;
+                                                                                                                                                        z-index: 1000;
+                                                                                                                                                        max-width: 300px;
+                                                                                                                                                        backdrop-filter: blur(10px);
+                                                                                                                                                        `;
+                                                                                                                                                        if (this.nodeResources && this.nodeResources.cathedral_codex_144.major_arcana) {
+                                                                                                                                                        const nodeKey = Object.keys(this.nodeResources.cathedral_codex_144.major_arcana)[nodeId];
+                                                                                                                                                        const nodeData = this.nodeResources.cathedral_codex_144.major_arcana[nodeKey];
+                                                                                                                                                        if (nodeData) {
+                                                                                                                                                        notification.innerHTML = `
+                                                                                                                                                        <strong>${nodeData.name}</strong>
+                                                                                                                                                            <br>
+                                                                                                                                                            <small>Tools: ${nodeData.tools ? nodeData.tools.length : 0} available</small>
+                                                                                                                                                                `;
+                                                                                                                                                                } else {
+                                                                                                                                                                notification.innerHTML = `<strong>Node ${nodeId}</strong>
+                                                                                                                                                                    <br>
+                                                                                                                                                                    <small>Loading resources...</small>`;
+                                                                                                                                                                        }
+                                                                                                                                                                        } else {
+                                                                                                                                                                        notification.innerHTML = `<strong>Node ${nodeId}</strong>
+                                                                                                                                                                            <br>
+                                                                                                                                                                            <small>Activated successfully</small>`;
+                                                                                                                                                                                }
+                                                                                                                                                                                document.body.appendChild(notification);
+                                                                                                                                                                                setTimeout(() => {
+                                                                                                                                                                                notification.remove();
+                                                                                                                                                                                }, 3000);
+                                                                                                                                                                                }
+                                                                                                                                                                                updateStatus() {
+                                                                                                                                                                                const activeCount = this.activeNodes.size;
+                                                                                                                                                                                const percentage = (activeCount / 144) * 100;
+                                                                                                                                                                                document.getElementById('active-nodes').textContent = `${activeCount}/144`;
+                                                                                                                                                                                document.getElementById('node-progress').style.width = `${percentage}%`;
+                                                                                                                                                                                }
+                                                                                                                                                                                setupVisualization() {
+                                                                                                                                                                                const canvas = document.getElementById('cathedral-canvas');
+                                                                                                                                                                                const width = canvas.offsetWidth;
+                                                                                                                                                                                const height = canvas.offsetHeight;
+                                                                                                                                                                                // Three.js scene setup
+                                                                                                                                                                                this.scene = new THREE.Scene();
+                                                                                                                                                                                this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+                                                                                                                                                                                this.renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+                                                                                                                                                                                this.renderer.setSize(width, height);
+                                                                                                                                                                                this.renderer.setClearColor(0x000000, 0);
+                                                                                                                                                                                // Create simple node visualization
+                                                                                                                                                                                this.createNodeVisualization();
+                                                                                                                                                                                this.camera.position.z = 50;
+                                                                                                                                                                                // Basic animation loop
+                                                                                                                                                                                this.animate();
+                                                                                                                                                                                }
+                                                                                                                                                                                createNodeVisualization() {
+                                                                                                                                                                                // Central core
+                                                                                                                                                                                const coreGeometry = new THREE.SphereGeometry(2, 32, 32);
+                                                                                                                                                                                const coreMaterial = new THREE.MeshBasicMaterial({
+                                                                                                                                                                                color: 0xd4af37,
+                                                                                                                                                                                transparent: true,
+                                                                                                                                                                                opacity: 0.8
+                                                                                                                                                                                });
+                                                                                                                                                                                this.core = new THREE.Mesh(coreGeometry, coreMaterial);
+                                                                                                                                                                                this.scene.add(this.core);
+                                                                                                                                                                                // Node rings
+                                                                                                                                                                                this.createNodeRings();
+                                                                                                                                                                                }
+                                                                                                                                                                                createNodeRings() {
+                                                                                                                                                                                // Major Arcana ring
+                                                                                                                                                                                for (let i = 0; i < 22; i++) {
+                                                                                                                                                                                    const angle = (i / 22) * Math.PI * 2;
+                                                                                                                                                                                    const radius = 15;
+                                                                                                                                                                                    const geometry = new THREE.OctahedronGeometry(0.5, 1);
+                                                                                                                                                                                    const material = new THREE.MeshBasicMaterial({
+                                                                                                                                                                                    color: 0x9c27b0,
+                                                                                                                                                                                    transparent: true,
+                                                                                                                                                                                    opacity: 0.7
+                                                                                                                                                                                    });
+                                                                                                                                                                                    const mesh = new THREE.Mesh(geometry, material);
+                                                                                                                                                                                    mesh.position.x = Math.cos(angle) * radius;
+                                                                                                                                                                                    mesh.position.z = Math.sin(angle) * radius;
+                                                                                                                                                                                    mesh.userData = { nodeId: i, type: 'major' };
+                                                                                                                                                                                    this.scene.add(mesh);
+                                                                                                                                                                                    }
+                                                                                                                                                                                    // Minor Arcana rings
+                                                                                                                                                                                    for (let ring = 0; ring < 3; ring++) {
+                                                                                                                                                                                        const nodesInRing = 40;
+                                                                                                                                                                                        for (let i = 0; i < nodesInRing; i++) {
+                                                                                                                                                                                            const nodeId = 22 + ring * 40 + i;
+                                                                                                                                                                                            if (nodeId >= 144) break;
+                                                                                                                                                                                            const angle = (i / nodesInRing) * Math.PI * 2;
+                                                                                                                                                                                            const radius = 25 + ring * 10;
+                                                                                                                                                                                            const geometry = new THREE.TetrahedronGeometry(0.3, 0);
+                                                                                                                                                                                            const material = new THREE.MeshBasicMaterial({
+                                                                                                                                                                                            color: 0x283593,
+                                                                                                                                                                                            transparent: true,
+                                                                                                                                                                                            opacity: 0.6
+                                                                                                                                                                                            });
+                                                                                                                                                                                            const mesh = new THREE.Mesh(geometry, material);
+                                                                                                                                                                                            mesh.position.x = Math.cos(angle) * radius;
+                                                                                                                                                                                            mesh.position.z = Math.sin(angle) * radius;
+                                                                                                                                                                                            mesh.position.y = ring * 2;
+                                                                                                                                                                                            mesh.userData = { nodeId: nodeId, type: 'minor' };
+                                                                                                                                                                                            this.scene.add(mesh);
+                                                                                                                                                                                            }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            animate() {
+                                                                                                                                                                                            this.animationId = requestAnimationFrame(() => this.animate());
+                                                                                                                                                                                            // Rotate core
+                                                                                                                                                                                            if (this.core) {
+                                                                                                                                                                                            this.core.rotation.y += 0.01;
+                                                                                                                                                                                            this.core.rotation.x += 0.005;
+                                                                                                                                                                                            }
+                                                                                                                                                                                            // Gentle node rotations
+                                                                                                                                                                                            this.scene.children.forEach(child => {
+                                                                                                                                                                                            if (child.userData && child.userData.nodeId !== undefined) {
+                                                                                                                                                                                            child.rotation.y += 0.002;
+                                                                                                                                                                                            child.rotation.x += 0.001;
+                                                                                                                                                                                            }
+                                                                                                                                                                                            });
+                                                                                                                                                                                            this.renderer.render(this.scene, this.camera);
+                                                                                                                                                                                            }
+                                                                                                                                                                                            createParticles() {
+                                                                                                                                                                                            const particleContainer = document.getElementById('particles');
+                                                                                                                                                                                            for (let i = 0; i < 50; i++) {
+                                                                                                                                                                                                const particle = document.createElement('div');
+                                                                                                                                                                                                particle.className = 'particle';
+                                                                                                                                                                                                particle.style.left = Math.random() * 100 + '%';
+                                                                                                                                                                                                particle.style.animationDelay = Math.random() * 15 + 's';
+                                                                                                                                                                                                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                                                                                                                                                                                                particleContainer.appendChild(particle);
+                                                                                                                                                                                                }
+                                                                                                                                                                                                }
+                                                                                                                                                                                                }
+                                                                                                                                                                                                // Tool launcher functions
+                                                                                                                                                                                                function launchTool(toolName) {
+                                                                                                                                                                                                console.log(`🔧 Launching tool: ${toolName}`);
+                                                                                                                                                                                                const toolUrls = {
+                                                                                                                                                                                                'spectral-resonance': '../public/tools/spectral-resonance.html',
+                                                                                                                                                                                                'fractal-biomorphology': '../public/tools/fractal-biomorphology.html',
+                                                                                                                                                                                                'manifestation-engine': './manifestation-engine.html',
+                                                                                                                                                                                                'dream-oracle': './dream-oracle.html',
+                                                                                                                                                                                                'harmony-generator': './harmony-generator.html',
+                                                                                                                                                                                                'pattern-recognizer': './pattern-recognizer.html'
+                                                                                                                                                                                                };
+                                                                                                                                                                                                const url = toolUrls[toolName];
+                                                                                                                                                                                                if (url) {
+                                                                                                                                                                                                window.open(url, '_blank');
+                                                                                                                                                                                                } else {
+                                                                                                                                                                                                alert(`Tool "${toolName}" is being prepared. Coming soon!`);
+                                                                                                                                                                                                }
+                                                                                                                                                                                                }
+                                                                                                                                                                                                // Initialize Cathedral OS when page loads
+                                                                                                                                                                                                document.addEventListener('DOMContentLoaded', () => {
+                                                                                                                                                                                                console.log('🏛️ Initializing Cathedral OS...');
+                                                                                                                                                                                                window.cathedralOS = new CathedralOS();
+                                                                                                                                                                                                console.log('✅ Cathedral OS initialized successfully');
+                                                                                                                                                                                                });
+                                                                                                                                                                                                // Handle window resize
+                                                                                                                                                                                                window.addEventListener('resize', () => {
+                                                                                                                                                                                                if (window.cathedralOS && window.cathedralOS.camera && window.cathedralOS.renderer) {
+                                                                                                                                                                                                const canvas = document.getElementById('cathedral-canvas');
+                                                                                                                                                                                                const width = canvas.offsetWidth;
+                                                                                                                                                                                                const height = canvas.offsetHeight;
+                                                                                                                                                                                                window.cathedralOS.camera.aspect = width / height;
+                                                                                                                                                                                                window.cathedralOS.camera.updateProjectionMatrix();
+                                                                                                                                                                                                window.cathedralOS.renderer.setSize(width, height);
+                                                                                                                                                                                                }
+                                                                                                                                                                                                });
+                                                                                                                                                                                            </script>
+                                                                                                                                                                                        </body>
+                                                                                                                                                                                    </html>

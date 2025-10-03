@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en" data-nd-safe="true" data-tool="geomantic-engine" data-archetype="magician">
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🔮 Geomantic Engine — Sacred Earth Wisdom & Geometric Divination</title>
+            <meta name="description" content="Advanced geomantic divination interface combining sacred geometry, earth wisdom, and hermetic principles. ND-safe design.">
+            <style>
+                :root {
+                --earth-deep: #1a0e0a; --earth-rich: #2d1810; --earth-warm: #4a2c17; --clay: #6b3e20;
+                --amber: #d4a574; --gold: #ffd700; --emerald: #50c878; --crystal: #e8f4f8;
+                --sage: #87a96b; --copper: #b87333; --sienna: #a0522d; --ochre: #cc7722;
+                --escape-glow: #ffff00; --radius: 25px; --shadow-deep: 0 20px 60px rgba(26, 14, 10, 0.6);
+                }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body {
+                background: radial-gradient(ellipse at center bottom, var(--earth-warm) 0%, var(--earth-rich) 40%, var(--earth-deep) 100%);
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--crystal);
+                min-height: 100vh;
+                overflow-x: hidden;
+                position: relative;
+                }
+                /* Sacred geometry patterns floating */
+                .geometric-field {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+                }
+                .geo-pattern {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border: 1px solid var(--amber);
+                opacity: 0.3;
+                animation: geometricFloat 20s infinite linear;
+                }
+                .geo-pattern.triangle {
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-bottom: 35px solid var(--emerald);
+                border-top: none;
+                background: none;
+                }
+                .geo-pattern.circle {
+                border-radius: 50%;
+                border-color: var(--gold);
+                }
+                .geo-pattern.hexagon {
+                width: 30px;
+                height: 26px;
+                background: transparent;
+                border: 2px solid var(--copper);
+                border-radius: 0;
+                position: relative;
+                }
+                .geo-pattern.hexagon::before,
+                .geo-pattern.hexagon::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                }
+                .geo-pattern.hexagon::before {
+                bottom: 100%;
+                border-bottom: 8px solid var(--copper);
+                }
+                .geo-pattern.hexagon::after {
+                top: 100%;
+                border-top: 8px solid var(--copper);
+                }
+                @keyframes geometricFloat {
+                0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+                }
+                20% { opacity: 0.3; }
+                80% { opacity: 0.3; }
+                100% {
+                transform: translateY(-100px) rotate(360deg) scale(1.2);
+                opacity: 0;
+                }
+                }
+                /* Emergency Escape Portal */
+                .escape-portal {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid var(--escape-glow);
+                border-radius: 12px;
+                padding: 12px;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .escape-key {
+                background: var(--escape-glow);
+                color: black;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 14px;
+                }
+                .escape-text {
+                color: white;
+                font-size: 12px;
+                }
+                .header {
+                text-align: center;
+                padding: 50px 20px;
+                position: relative;
+                }
+                h1 {
+                font-size: 4em;
+                font-weight: 300;
+                letter-spacing: 0.15em;
+                background: linear-gradient(135deg, var(--gold), var(--emerald), var(--copper));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 20px;
+                filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.4));
+                }
+                .tagline {
+                font-size: 1.1em;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--amber);
+                margin-bottom: 30px;
+                opacity: 0.9;
+                }
+                .hermetic-seal {
+                display: inline-flex;
+                align-items: center;
+                gap: 20px;
+                background: rgba(77, 44, 23, 0.8);
+                padding: 20px 40px;
+                border-radius: 50px;
+                border: 3px solid var(--gold);
+                backdrop-filter: blur(15px);
+                box-shadow: var(--shadow-deep);
+                animation: sealPulse 8s ease-in-out infinite;
+                }
+                @keyframes sealPulse {
+                0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+                50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+                }
+                .main {
+                max-width: 1500px;
+                margin: 0 auto;
+                padding: 0 20px 40px;
+                display: grid;
+                grid-template-columns: 380px 1fr 380px;
+                gap: 35px;
+                }
+                /* Side Panels */
+                .side-panel {
+                background: linear-gradient(135deg, rgba(77, 44, 23, 0.9), rgba(45, 24, 16, 0.95));
+                border-radius: var(--radius);
+                padding: 30px;
+                box-shadow: var(--shadow-deep);
+                backdrop-filter: blur(15px);
+                border: 2px solid var(--copper);
+                height: fit-content;
+                position: relative;
+                overflow: hidden;
+                }
+                .side-panel::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: conic-gradient(from 0deg, transparent, var(--gold), transparent);
+                animation: panelRotate 30s linear infinite;
+                opacity: 0.1;
+                z-index: -1;
+                }
+                @keyframes panelRotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+                }
+                .section {
+                margin-bottom: 30px;
+                padding-bottom: 25px;
+                border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+                position: relative;
+                z-index: 2;
+                }
+                .section:last-child {
+                border: none;
+                margin-bottom: 0;
+                }
+                .section-title {
+                font-size: 1.4em;
+                font-weight: 400;
+                margin-bottom: 20px;
+                color: var(--gold);
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                }
+                .input-group {
+                margin-bottom: 20px;
+                }
+                .input-label {
+                display: block;
+                font-size: 0.95em;
+                color: var(--amber);
+                margin-bottom: 10px;
+                letter-spacing: 0.05em;
+                }
+                .text-input, .text-area, .select-input {
+                width: 100%;
+                padding: 16px 20px;
+                border: 2px solid rgba(212, 165, 116, 0.4);
+                border-radius: 15px;
+                background: rgba(26, 14, 10, 0.8);
+                font-family: inherit;
+                font-size: 0.95em;
+                color: var(--crystal);
+                transition: all 0.3s ease;
+                }
+                .text-input:focus, .text-area:focus, .select-input:focus {
+                outline: none;
+                border-color: var(--gold);
+                background: rgba(26, 14, 10, 0.95);
+                box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+                }
+                .text-area {
+                min-height: 100px;
+                resize: vertical;
+                line-height: 1.6;
+                }
+                /* Center Panel: Geomantic Matrix */
+                .geomantic-panel {
+                background: linear-gradient(135deg, rgba(77, 44, 23, 0.9), rgba(45, 24, 16, 0.95));
+                border-radius: var(--radius);
+                padding: 35px;
+                box-shadow: var(--shadow-deep);
+                backdrop-filter: blur(15px);
+                border: 2px solid var(--copper);
+                min-height: 800px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                }
+                .geomantic-panel::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background:
+                radial-gradient(circle at 20% 30%, rgba(80, 200, 120, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+                z-index: -1;
+                }
+                .casting-circle {
+                width: 450px;
+                height: 450px;
+                position: relative;
+                border: 3px solid var(--gold);
+                border-radius: 50%;
+                margin: 20px 0;
+                background: radial-gradient(circle, rgba(255, 215, 0, 0.05), transparent 70%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: visible;
+                }
+                .inner-circle {
+                width: 350px;
+                height: 350px;
+                border: 2px solid var(--emerald);
+                border-radius: 50%;
+                position: absolute;
+                animation: slowRotate 60s linear infinite;
+                }
+                .geometric-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                }
+                .geo-figure {
+                width: 60px;
+                height: 80px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: rgba(26, 14, 10, 0.8);
+                border: 2px solid var(--copper);
+                border-radius: 12px;
+                cursor: pointer;
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+                }
+                .geo-figure::before {
+                content: "";
+                position: absolute;
+                top: -100%;
+                left: -100%;
+                width: 300%;
+                height: 300%;
+                background: conic-gradient(from 0deg, transparent, var(--gold), transparent);
+                animation: figureGlow 8s linear infinite;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                }
+                .geo-figure:hover::before {
+                opacity: 0.3;
+                }
+                @keyframes figureGlow {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+                }
+                .geo-figure:hover {
+                transform: translateY(-5px) scale(1.05);
+                border-color: var(--gold);
+                box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+                }
+                .geo-figure.cast {
+                background: var(--gold);
+                color: var(--earth-deep);
+                border-color: var(--emerald);
+                animation: figurePulse 2s ease-in-out infinite;
+                }
+                @keyframes figurePulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                }
+                .figure-dots {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                margin-bottom: 8px;
+                }
+                .dot-row {
+                display: flex;
+                gap: 6px;
+                }
+                .dot {
+                width: 8px;
+                height: 8px;
+                background: var(--copper);
+                border-radius: 50%;
+                transition: all 0.3s ease;
+                }
+                .geo-figure:hover .dot {
+                background: var(--gold);
+                box-shadow: 0 0 10px var(--gold);
+                }
+                .figure-name {
+                font-size: 0.7em;
+                text-align: center;
+                color: var(--amber);
+                font-weight: 500;
+                z-index: 2;
+                position: relative;
+                }
+                .houses-ring {
+                position: absolute;
+                width: 380px;
+                height: 380px;
+                border: 1px solid rgba(212, 165, 116, 0.3);
+                border-radius: 50%;
+                }
+                .house-marker {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background: var(--amber);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.8em;
+                color: var(--earth-deep);
+                font-weight: 600;
+                }
+                .reading-result {
+                background: rgba(80, 200, 120, 0.1);
+                border-radius: 20px;
+                padding: 30px;
+                margin: 25px 0;
+                border-left: 5px solid var(--emerald);
+                width: 100%;
+                display: none;
+                text-align: left;
+                }
+                .reading-result.active {
+                display: block;
+                animation: resultEmerge 1s ease-out;
+                }
+                @keyframes resultEmerge {
+                from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+                }
+                to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                }
+                }
+                .result-title {
+                font-size: 1.3em;
+                color: var(--emerald);
+                margin-bottom: 15px;
+                font-weight: 500;
+                }
+                .result-text {
+                line-height: 1.7;
+                color: var(--crystal);
+                margin-bottom: 20px;
+                }
+                .interpretation-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 15px;
+                margin-top: 20px;
+                }
+                .interpretation-card {
+                background: rgba(26, 14, 10, 0.6);
+                border-radius: 12px;
+                padding: 15px;
+                border: 1px solid var(--copper);
+                text-align: center;
+                }
+                .card-figure {
+                font-size: 1.2em;
+                margin-bottom: 8px;
+                color: var(--gold);
+                }
+                .card-meaning {
+                font-size: 0.85em;
+                color: var(--amber);
+                line-height: 1.4;
+                }
+                .buttons {
+                display: flex;
+                gap: 18px;
+                justify-content: center;
+                margin-top: auto;
+                padding-top: 25px;
+                }
+                .btn {
+                padding: 16px 28px;
+                border: none;
+                border-radius: 15px;
+                font-family: inherit;
+                font-size: 0.95em;
+                font-weight: 500;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                }
+                .btn::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                transition: all 0.6s ease;
+                transform: translate(-50%, -50%);
+                }
+                .btn:hover::before {
+                width: 300px;
+                height: 300px;
+                }
+                .btn-primary {
+                background: linear-gradient(135deg, var(--gold), var(--emerald));
+                color: white;
+                box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+                z-index: 1;
+                }
+                .btn-primary:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+                }
+                .btn-secondary {
+                background: rgba(77, 44, 23, 0.8);
+                color: var(--crystal);
+                border: 2px solid var(--copper);
+                }
+                .btn-secondary:hover {
+                background: rgba(77, 44, 23, 0.95);
+                border-color: var(--gold);
+                transform: translateY(-2px);
+                }
+                @keyframes slowRotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+                }
+                @media (max-width: 1300px) {
+                .main {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                }
+                .casting-circle {
+                width: 350px;
+                height: 350px;
+                }
+                .geometric-grid {
+                width: 240px;
+                height: 240px;
+                }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="geometric-field" id="geometricField">
+            </div>
+            <!-- Emergency Escape Portal -->
+            <div class="escape-portal">
+                <div class="escape-key">ESC</div>
+                    <div class="escape-text">Safety Exit</div>
+                    </div>
+                    <div class="header">
+                        <h1>🔮 Geomantic Engine</h1>
+                            <p class="tagline">Sacred Earth Wisdom & Geometric Divination</p>
+                                <div class="hermetic-seal">
+                                    <span style="font-size: 1.8em;">🜃</span>
+                                        <span>As Above, So Below</span>
+                                            <span style="font-size: 1.8em;">🜂</span>
+                                            </div>
+                                        </div>
+                                        <div class="main">
+                                            <!-- Left Panel: Question & Context -->
+                                            <div class="side-panel">
+                                                <div class="section">
+                                                    <div class="section-title">
+                                                        🌍 Sacred Inquiry
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <label class="input-label" for="divination-question">Your Question</label>
+                                                            <textarea
+                                                                id="divination-question"
+                                                                class="text-area"
+                                                                placeholder="Ask the earth for guidance on your path, decisions, or life situation..."
+                                                                maxlength="500"
+                                                                >
+                                                            </textarea>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label class="input-label" for="question-type">Question Category</label>
+                                                                <select id="question-type" class="select-input">
+                                                                    <option value="life-path">Life Path & Purpose</option>
+                                                                        <option value="relationships">Relationships & Love</option>
+                                                                            <option value="career">Career & Calling</option>
+                                                                                <option value="spiritual">Spiritual Development</option>
+                                                                                    <option value="health">Health & Vitality</option>
+                                                                                        <option value="prosperity">Prosperity & Resources</option>
+                                                                                            <option value="timing">Timing & Opportunities</option>
+                                                                                                <option value="obstacles">Obstacles & Challenges</option>
+                                                                                                    <option value="general">General Guidance</option>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                                <div class="input-group">
+                                                                                                    <label class="input-label" for="current-situation">Current Situation</label>
+                                                                                                        <textarea
+                                                                                                            id="current-situation"
+                                                                                                            class="text-area"
+                                                                                                            placeholder="Describe your current circumstances and what's happening in your life..."
+                                                                                                            maxlength="400"
+                                                                                                            >
+                                                                                                        </textarea>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="section">
+                                                                                                    <div class="section-title">
+                                                                                                        🏛️ Sacred Context
+                                                                                                    </div>
+                                                                                                    <div class="input-group">
+                                                                                                        <label class="input-label" for="time-frame">Time Frame</label>
+                                                                                                            <select id="time-frame" class="select-input">
+                                                                                                                <option value="immediate">Next few days</option>
+                                                                                                                    <option value="short">Next few weeks</option>
+                                                                                                                        <option value="medium">Next few months</option>
+                                                                                                                            <option value="long">Next year</option>
+                                                                                                                                <option value="eternal">Timeless wisdom</option>
+                                                                                                                                </select>
+                                                                                                                            </div>
+                                                                                                                            <div class="input-group">
+                                                                                                                                <label class="input-label" for="reading-depth">Reading Depth</label>
+                                                                                                                                    <select id="reading-depth" class="select-input">
+                                                                                                                                        <option value="simple">Simple Guidance</option>
+                                                                                                                                            <option value="comprehensive">Full Analysis</option>
+                                                                                                                                                <option value="hermetic">Hermetic Interpretation</option>
+                                                                                                                                                    <option value="elemental">Elemental Wisdom</option>
+                                                                                                                                                        <option value="houses">12 Houses Reading</option>
+                                                                                                                                                        </select>
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="input-group">
+                                                                                                                                                        <label class="input-label" for="earth-connection">Earth Connection</label>
+                                                                                                                                                            <select id="earth-connection" class="select-input">
+                                                                                                                                                                <option value="urban">Urban Environment</option>
+                                                                                                                                                                    <option value="suburban">Suburban Setting</option>
+                                                                                                                                                                        <option value="rural">Rural/Country</option>
+                                                                                                                                                                            <option value="nature">Deep Nature</option>
+                                                                                                                                                                                <option value="mountains">Mountains</option>
+                                                                                                                                                                                    <option value="coast">Ocean/Coast</option>
+                                                                                                                                                                                        <option value="desert">Desert</option>
+                                                                                                                                                                                        </select>
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                </div>
+                                                                                                                                                                            </div>
+                                                                                                                                                                            <!-- Center Panel: Geomantic Matrix -->
+                                                                                                                                                                            <div class="geomantic-panel">
+                                                                                                                                                                                <div class="casting-circle" id="castingCircle">
+                                                                                                                                                                                    <div class="inner-circle">
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                    <div class="houses-ring">
+                                                                                                                                                                                        <!-- 12 astrological house markers -->
+                                                                                                                                                                                        <div class="house-marker" style="top: 0; left: 50%; transform: translateX(-50%);">1</div>
+                                                                                                                                                                                            <div class="house-marker" style="top: 15%; right: 15%;">2</div>
+                                                                                                                                                                                                <div class="house-marker" style="top: 35%; right: 0; transform: translateY(-50%);">3</div>
+                                                                                                                                                                                                    <div class="house-marker" style="bottom: 35%; right: 15%;">4</div>
+                                                                                                                                                                                                        <div class="house-marker" style="bottom: 15%; right: 15%;">5</div>
+                                                                                                                                                                                                            <div class="house-marker" style="bottom: 0; left: 50%; transform: translateX(-50%);">6</div>
+                                                                                                                                                                                                                <div class="house-marker" style="bottom: 15%; left: 15%;">7</div>
+                                                                                                                                                                                                                    <div class="house-marker" style="bottom: 35%; left: 15%;">8</div>
+                                                                                                                                                                                                                        <div class="house-marker" style="top: 35%; left: 0; transform: translateY(-50%);">9</div>
+                                                                                                                                                                                                                            <div class="house-marker" style="top: 15%; left: 15%;">10</div>
+                                                                                                                                                                                                                                <div class="house-marker" style="top: 15%; left: 15%;">11</div>
+                                                                                                                                                                                                                                    <div class="house-marker" style="top: 0; left: 35%;">12</div>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <div class="geometric-grid" id="geometricGrid">
+                                                                                                                                                                                                                                        <!-- 16 Geomantic figures will be populated by JavaScript -->
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div class="reading-result" id="readingResult">
+                                                                                                                                                                                                                                    <div class="result-title" id="resultTitle">Earth's Wisdom</div>
+                                                                                                                                                                                                                                        <div class="result-text" id="resultText">
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div class="interpretation-grid" id="interpretationGrid">
+                                                                                                                                                                                                                                            <!-- Populated by JavaScript -->
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <div class="buttons">
+                                                                                                                                                                                                                                        <button class="btn btn-secondary" onclick="clearReading()">Clear</button>
+                                                                                                                                                                                                                                            <button class="btn btn-primary" onclick="castGeomancy()">Cast the Earth</button>
+                                                                                                                                                                                                                                                <button class="btn btn-secondary" onclick="exportReading()">Save Reading</button>
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                            <!-- Right Panel: Geomantic Wisdom -->
+                                                                                                                                                                                                                                            <div class="side-panel">
+                                                                                                                                                                                                                                                <div class="section">
+                                                                                                                                                                                                                                                    <div class="section-title">
+                                                                                                                                                                                                                                                        🏛️ Geomantic Figures
+                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                    <div style="font-size: 0.85em; line-height: 1.5; color: var(--amber);">
+                                                                                                                                                                                                                                                        <div style="margin-bottom: 8px; padding: 8px; background: rgba(212, 165, 116, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                                            <strong>Via (The Way):</strong> Movement, journey, progress
+                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                            <div style="margin-bottom: 8px; padding: 8px; background: rgba(212, 165, 116, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                                                <strong>Populus (The People):</strong> Community, gathering, social
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                <div style="margin-bottom: 8px; padding: 8px; background: rgba(212, 165, 116, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                                                    <strong>Fortuna Major:</strong> Great fortune, success, help
+                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                    <div style="margin-bottom: 8px; padding: 8px; background: rgba(212, 165, 116, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                                                        <strong>Acquisitio:</strong> Gain, profit, obtaining goals
+                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                        <div style="margin-bottom: 8px; padding: 8px; background: rgba(212, 165, 116, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                                                            <strong>Laetitia:</strong> Joy, happiness, emotional fulfillment
+                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                    <div class="section">
+                                                                                                                                                                                                                                                                        <div class="section-title">
+                                                                                                                                                                                                                                                                            🌟 Hermetic Principles
+                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                        <div style="font-size: 0.9em; line-height: 1.6; color: var(--crystal);">
+                                                                                                                                                                                                                                                                            <p style="margin-bottom: 12px;">
+                                                                                                                                                                                                                                                                                <strong>As Above, So Below:</strong> The patterns in earth reflect cosmic harmony.
+                                                                                                                                                                                                                                                                                </p>
+                                                                                                                                                                                                                                                                                <p style="margin-bottom: 12px;">
+                                                                                                                                                                                                                                                                                    <strong>The Four Elements:</strong> Fire, Water, Air, Earth create all manifestation.
+                                                                                                                                                                                                                                                                                    </p>
+                                                                                                                                                                                                                                                                                    <p style="margin-bottom: 12px;">
+                                                                                                                                                                                                                                                                                        <strong>Sacred Geometry:</strong> Divine patterns reveal universal truths.
+                                                                                                                                                                                                                                                                                        </p>
+                                                                                                                                                                                                                                                                                        <p>
+                                                                                                                                                                                                                                                                                            <strong>Earth Wisdom:</strong> The physical realm holds spiritual keys.
+                                                                                                                                                                                                                                                                                            </p>
+                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                    <div class="section">
+                                                                                                                                                                                                                                                                                        <div class="section-title">
+                                                                                                                                                                                                                                                                                            🔮 Reading Types
+                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                        <div style="font-size: 0.85em; color: var(--amber);">
+                                                                                                                                                                                                                                                                                            <div style="margin-bottom: 6px;">• <strong>Shield Chart:</strong> Past, present, future</div>
+                                                                                                                                                                                                                                                                                                <div style="margin-bottom: 6px;">• <strong>House System:</strong> 12 life areas</div>
+                                                                                                                                                                                                                                                                                                    <div style="margin-bottom: 6px;">• <strong>Elemental:</strong> Fire, Water, Air, Earth</div>
+                                                                                                                                                                                                                                                                                                        <div style="margin-bottom: 6px;">• <strong>Binary:</strong> Yes/No with nuance</div>
+                                                                                                                                                                                                                                                                                                            <div style="margin-bottom: 6px;">• <strong>Court of Stars:</strong> Soul guidance</div>
+                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                        <div class="section">
+                                                                                                                                                                                                                                                                                                            <div class="section-title">
+                                                                                                                                                                                                                                                                                                                ⚡ Active Elements
+                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                            <div style="font-size: 0.85em; color: var(--amber);">
+                                                                                                                                                                                                                                                                                                                <div style="margin-bottom: 8px; padding: 6px; background: rgba(233, 126, 34, 0.1); border-radius: 6px;">
+                                                                                                                                                                                                                                                                                                                    🔥 <strong>Fire:</strong> Active, creative, passionate
+                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                    <div style="margin-bottom: 8px; padding: 6px; background: rgba(52, 152, 219, 0.1); border-radius: 6px;">
+                                                                                                                                                                                                                                                                                                                        🌊 <strong>Water:</strong> Flowing, emotional, intuitive
+                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                        <div style="margin-bottom: 8px; padding: 6px; background: rgba(241, 196, 15, 0.1); border-radius: 6px;">
+                                                                                                                                                                                                                                                                                                                            💨 <strong>Air:</strong> Mental, communicative, swift
+                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                            <div style="margin-bottom: 8px; padding: 6px; background: rgba(80, 200, 120, 0.1); border-radius: 6px;">
+                                                                                                                                                                                                                                                                                                                                🌱 <strong>Earth:</strong> Stable, practical, enduring
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                <script>
+                                                                                                                                                                                                                                                                                                                    const geomanticFigures = [
+                                                                                                                                                                                                                                                                                                                    { name: 'Via', dots: [[1], [2], [1], [2]], meaning: 'The Way - Movement and Change', element: 'water' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Populus', dots: [[2], [2], [2], [2]], meaning: 'The People - Community and Gathering', element: 'water' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Fortuna Major', dots: [[2], [1], [1], [1]], meaning: 'Greater Fortune - Success and Help', element: 'fire' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Fortuna Minor', dots: [[1], [1], [1], [2]], meaning: 'Lesser Fortune - Inner Success', element: 'fire' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Acquisitio', dots: [[1], [2], [2], [1]], meaning: 'Gain - Obtaining Goals', element: 'fire' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Amissio', dots: [[2], [1], [1], [2]], meaning: 'Loss - Release and Letting Go', element: 'fire' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Laetitia', dots: [[1], [2], [1], [1]], meaning: 'Joy - Happiness and Fulfillment', element: 'fire' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Tristitia', dots: [[2], [1], [2], [2]], meaning: 'Sadness - Sorrow and Contemplation', element: 'earth' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Puella', dots: [[1], [1], [2], [1]], meaning: 'The Girl - Beauty and Harmony', element: 'water' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Puer', dots: [[2], [2], [1], [2]], meaning: 'The Boy - Energy and Rashness', element: 'fire' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Albus', dots: [[1], [1], [2], [2]], meaning: 'White - Wisdom and Peace', element: 'air' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Rubeus', dots: [[2], [2], [1], [1]], meaning: 'Red - Passion and Vice', element: 'fire' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Carcer', dots: [[2], [1], [2], [1]], meaning: 'Prison - Restriction and Binding', element: 'earth' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Conjunctio', dots: [[1], [2], [1], [2]], meaning: 'Union - Coming Together', element: 'earth' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Caput Draconis', dots: [[1], [1], [1], [1]], meaning: "Dragon's Head - Beginning and Entrance", element: 'earth' },
+                                                                                                                                                                                                                                                                                                                    { name: 'Cauda Draconis', dots: [[2], [2], [2], [1]], meaning: "Dragon's Tail - Ending and Exit", element: 'earth' }
+                                                                                                                                                                                                                                                                                                                    ];
+                                                                                                                                                                                                                                                                                                                    let castFigures = [];
+                                                                                                                                                                                                                                                                                                                    // Create floating geometric patterns
+                                                                                                                                                                                                                                                                                                                    function createGeometricField() {
+                                                                                                                                                                                                                                                                                                                    const container = document.getElementById('geometricField');
+                                                                                                                                                                                                                                                                                                                    const patterns = ['circle', 'triangle', 'hexagon'];
+                                                                                                                                                                                                                                                                                                                    for (let i = 0; i < 15; i++) {
+                                                                                                                                                                                                                                                                                                                        const pattern = document.createElement('div');
+                                                                                                                                                                                                                                                                                                                        pattern.className = `geo-pattern ${patterns[Math.floor(Math.random() * patterns.length)]}`;
+                                                                                                                                                                                                                                                                                                                        pattern.style.left = Math.random() * 100 + '%';
+                                                                                                                                                                                                                                                                                                                        pattern.style.animationDelay = Math.random() * 20 + 's';
+                                                                                                                                                                                                                                                                                                                        pattern.style.animationDuration = (15 + Math.random() * 10) + 's';
+                                                                                                                                                                                                                                                                                                                        container.appendChild(pattern);
+                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                        // Initialize geometric grid
+                                                                                                                                                                                                                                                                                                                        function initializeGeomancyGrid() {
+                                                                                                                                                                                                                                                                                                                        const grid = document.getElementById('geometricGrid');
+                                                                                                                                                                                                                                                                                                                        grid.innerHTML = '';
+                                                                                                                                                                                                                                                                                                                        // Create 16 figure positions
+                                                                                                                                                                                                                                                                                                                        for (let i = 0; i < 16; i++) {
+                                                                                                                                                                                                                                                                                                                            const figure = document.createElement('div');
+                                                                                                                                                                                                                                                                                                                            figure.className = 'geo-figure';
+                                                                                                                                                                                                                                                                                                                            figure.innerHTML = `
+                                                                                                                                                                                                                                                                                                                            <div class="figure-dots">
+                                                                                                                                                                                                                                                                                                                                <div class="dot-row">
+                                                                                                                                                                                                                                                                                                                                    <div class="dot">
+                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                <div class="dot-row">
+                                                                                                                                                                                                                                                                                                                                    <div class="dot">
+                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                    <div class="dot">
+                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                <div class="dot-row">
+                                                                                                                                                                                                                                                                                                                                    <div class="dot">
+                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                <div class="dot-row">
+                                                                                                                                                                                                                                                                                                                                    <div class="dot">
+                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                    <div class="dot">
+                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                            <div class="figure-name">Ready</div>
+                                                                                                                                                                                                                                                                                                                                `;
+                                                                                                                                                                                                                                                                                                                                grid.appendChild(figure);
+                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                function castGeomancy() {
+                                                                                                                                                                                                                                                                                                                                const question = document.getElementById('divination-question').value.trim();
+                                                                                                                                                                                                                                                                                                                                const questionType = document.getElementById('question-type').value;
+                                                                                                                                                                                                                                                                                                                                const situation = document.getElementById('current-situation').value.trim();
+                                                                                                                                                                                                                                                                                                                                const timeFrame = document.getElementById('time-frame').value;
+                                                                                                                                                                                                                                                                                                                                const depth = document.getElementById('reading-depth').value;
+                                                                                                                                                                                                                                                                                                                                if (!question) {
+                                                                                                                                                                                                                                                                                                                                alert('Please enter your question before casting the earth.');
+                                                                                                                                                                                                                                                                                                                                return;
+                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                // Animate the casting process
+                                                                                                                                                                                                                                                                                                                                animateCasting();
+                                                                                                                                                                                                                                                                                                                                // Generate reading after animation
+                                                                                                                                                                                                                                                                                                                                setTimeout(() => {
+                                                                                                                                                                                                                                                                                                                                generateReading(question, questionType, situation, timeFrame, depth);
+                                                                                                                                                                                                                                                                                                                                showReading();
+                                                                                                                                                                                                                                                                                                                                }, 3000);
+                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                function animateCasting() {
+                                                                                                                                                                                                                                                                                                                                const circle = document.getElementById('castingCircle');
+                                                                                                                                                                                                                                                                                                                                circle.style.animation = 'none';
+                                                                                                                                                                                                                                                                                                                                circle.style.transform = 'scale(1.1)';
+                                                                                                                                                                                                                                                                                                                                circle.style.transition = 'transform 3s ease-in-out';
+                                                                                                                                                                                                                                                                                                                                // Cast 4 primary figures
+                                                                                                                                                                                                                                                                                                                                const figures = document.querySelectorAll('.geo-figure');
+                                                                                                                                                                                                                                                                                                                                castFigures = [];
+                                                                                                                                                                                                                                                                                                                                for (let i = 0; i < 4; i++) {
+                                                                                                                                                                                                                                                                                                                                    setTimeout(() => {
+                                                                                                                                                                                                                                                                                                                                    const randomFigure = geomanticFigures[Math.floor(Math.random() * geomanticFigures.length)];
+                                                                                                                                                                                                                                                                                                                                    castFigures.push(randomFigure);
+                                                                                                                                                                                                                                                                                                                                    const figureElement = figures[i];
+                                                                                                                                                                                                                                                                                                                                    updateFigureDisplay(figureElement, randomFigure);
+                                                                                                                                                                                                                                                                                                                                    figureElement.classList.add('cast');
+                                                                                                                                                                                                                                                                                                                                    }, i * 500);
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    setTimeout(() => {
+                                                                                                                                                                                                                                                                                                                                    circle.style.transform = 'scale(1)';
+                                                                                                                                                                                                                                                                                                                                    }, 2000);
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    function updateFigureDisplay(element, figure) {
+                                                                                                                                                                                                                                                                                                                                    const dots = element.querySelectorAll('.dot-row');
+                                                                                                                                                                                                                                                                                                                                    const name = element.querySelector('.figure-name');
+                                                                                                                                                                                                                                                                                                                                    figure.dots.forEach((row, index) => {
+                                                                                                                                                                                                                                                                                                                                    const dotRow = dots[index];
+                                                                                                                                                                                                                                                                                                                                    dotRow.innerHTML = '';
+                                                                                                                                                                                                                                                                                                                                    for (let i = 0; i < row[0]; i++) {
+                                                                                                                                                                                                                                                                                                                                        const dot = document.createElement('div');
+                                                                                                                                                                                                                                                                                                                                        dot.className = 'dot';
+                                                                                                                                                                                                                                                                                                                                        dotRow.appendChild(dot);
+                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                        });
+                                                                                                                                                                                                                                                                                                                                        name.textContent = figure.name;
+                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                        function generateReading(question, questionType, situation, timeFrame, depth) {
+                                                                                                                                                                                                                                                                                                                                        const interpretation = createInterpretation(castFigures, questionType, timeFrame);
+                                                                                                                                                                                                                                                                                                                                        const title = getReadingTitle(depth, questionType);
+                                                                                                                                                                                                                                                                                                                                        document.getElementById('resultTitle').textContent = title;
+                                                                                                                                                                                                                                                                                                                                        document.getElementById('resultText').textContent = interpretation;
+                                                                                                                                                                                                                                                                                                                                        // Create interpretation cards
+                                                                                                                                                                                                                                                                                                                                        const grid = document.getElementById('interpretationGrid');
+                                                                                                                                                                                                                                                                                                                                        grid.innerHTML = castFigures.map((figure, index) => `
+                                                                                                                                                                                                                                                                                                                                        <div class="interpretation-card">
+                                                                                                                                                                                                                                                                                                                                            <div class="card-figure">${getFigureIcon(figure.element)}</div>
+                                                                                                                                                                                                                                                                                                                                                <div class="card-meaning">${figure.meaning}</div>
+                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                `).join('');
+                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                function createInterpretation(figures, questionType, timeFrame) {
+                                                                                                                                                                                                                                                                                                                                                if (figures.length === 0) return "Cast the earth to receive guidance.";
+                                                                                                                                                                                                                                                                                                                                                const base = "The earth speaks through sacred geometry, revealing: ";
+                                                                                                                                                                                                                                                                                                                                                const primaryFigure = figures[0];
+                                                                                                                                                                                                                                                                                                                                                const elements = figures.map(f => f.element);
+                                                                                                                                                                                                                                                                                                                                                const dominantElement = getDominantElement(elements);
+                                                                                                                                                                                                                                                                                                                                                const interpretations = {
+                                                                                                                                                                                                                                                                                                                                                'life-path': `Your path is illuminated by ${primaryFigure.name}, suggesting that ${primaryFigure.meaning.toLowerCase()}. `,
+                                                                                                                                                                                                                                                                                                                                                'relationships': `In matters of the heart, ${primaryFigure.name} reveals that ${primaryFigure.meaning.toLowerCase()}. `,
+                                                                                                                                                                                                                                                                                                                                                'career': `Your professional calling resonates with ${primaryFigure.name}, indicating ${primaryFigure.meaning.toLowerCase()}. `,
+                                                                                                                                                                                                                                                                                                                                                'spiritual': `Your spiritual journey is guided by ${primaryFigure.name}, showing ${primaryFigure.meaning.toLowerCase()}. `,
+                                                                                                                                                                                                                                                                                                                                                'general': `The earth's wisdom flows through ${primaryFigure.name}, revealing ${primaryFigure.meaning.toLowerCase()}. `
+                                                                                                                                                                                                                                                                                                                                                };
+                                                                                                                                                                                                                                                                                                                                                const elementalGuidance = {
+                                                                                                                                                                                                                                                                                                                                                'fire': "The fire element dominates, calling for action, creativity, and passionate engagement with life.",
+                                                                                                                                                                                                                                                                                                                                                'water': "The water element flows strongly, encouraging emotional wisdom, intuition, and going with the flow.",
+                                                                                                                                                                                                                                                                                                                                                'air': "The air element prevails, supporting mental clarity, communication, and new perspectives.",
+                                                                                                                                                                                                                                                                                                                                                'earth': "The earth element grounds you, emphasizing practical steps, patience, and material manifestation."
+                                                                                                                                                                                                                                                                                                                                                };
+                                                                                                                                                                                                                                                                                                                                                return base +
+                                                                                                                                                                                                                                                                                                                                                (interpretations[questionType] || interpretations['general']) +
+                                                                                                                                                                                                                                                                                                                                                (elementalGuidance[dominantElement] || "");
+                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                function getDominantElement(elements) {
+                                                                                                                                                                                                                                                                                                                                                const counts = {};
+                                                                                                                                                                                                                                                                                                                                                elements.forEach(el => counts[el] = (counts[el] || 0) + 1);
+                                                                                                                                                                                                                                                                                                                                                return Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
+                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                function getFigureIcon(element) {
+                                                                                                                                                                                                                                                                                                                                                const icons = {
+                                                                                                                                                                                                                                                                                                                                                fire: '🔥', water: '🌊', air: '💨', earth: '🌱'
+                                                                                                                                                                                                                                                                                                                                                };
+                                                                                                                                                                                                                                                                                                                                                return icons[element] || '⭐';
+                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                function getReadingTitle(depth, questionType) {
+                                                                                                                                                                                                                                                                                                                                                const titles = {
+                                                                                                                                                                                                                                                                                                                                                'simple': '🌍 Earth\'s Simple Wisdom',
+                                                                                                                                                                                                                                                                                                                                                'comprehensive': '🏛️ Full Geomantic Analysis',
+                                                                                                                                                                                                                                                                                                                                                'hermetic': '🔮 Hermetic Earth Teaching',
+                                                                                                                                                                                                                                                                                                                                                'elemental': '⚡ Elemental Earth Guidance',
+                                                                                                                                                                                                                                                                                                                                                'houses': '🏛️ Twelve Houses Reading'
+                                                                                                                                                                                                                                                                                                                                                };
+                                                                                                                                                                                                                                                                                                                                                return titles[depth] || '🌍 Sacred Earth Reading';
+                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                function showReading() {
+                                                                                                                                                                                                                                                                                                                                                const result = document.getElementById('readingResult');
+                                                                                                                                                                                                                                                                                                                                                result.classList.add('active');
+                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                function clearReading() {
+                                                                                                                                                                                                                                                                                                                                                document.getElementById('divination-question').value = '';
+                                                                                                                                                                                                                                                                                                                                                document.getElementById('current-situation').value = '';
+                                                                                                                                                                                                                                                                                                                                                // Reset all figures
+                                                                                                                                                                                                                                                                                                                                                const figures = document.querySelectorAll('.geo-figure');
+                                                                                                                                                                                                                                                                                                                                                figures.forEach(figure => {
+                                                                                                                                                                                                                                                                                                                                                figure.classList.remove('cast');
+                                                                                                                                                                                                                                                                                                                                                const name = figure.querySelector('.figure-name');
+                                                                                                                                                                                                                                                                                                                                                name.textContent = 'Ready';
+                                                                                                                                                                                                                                                                                                                                                // Reset dots to default pattern
+                                                                                                                                                                                                                                                                                                                                                const dots = figure.querySelectorAll('.dot-row');
+                                                                                                                                                                                                                                                                                                                                                dots.forEach((row, index) => {
+                                                                                                                                                                                                                                                                                                                                                row.innerHTML = '';
+                                                                                                                                                                                                                                                                                                                                                const dotCount = [1, 2, 1, 2][index];
+                                                                                                                                                                                                                                                                                                                                                for (let i = 0; i < dotCount; i++) {
+                                                                                                                                                                                                                                                                                                                                                    const dot = document.createElement('div');
+                                                                                                                                                                                                                                                                                                                                                    dot.className = 'dot';
+                                                                                                                                                                                                                                                                                                                                                    row.appendChild(dot);
+                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                                                    castFigures = [];
+                                                                                                                                                                                                                                                                                                                                                    // Hide result
+                                                                                                                                                                                                                                                                                                                                                    const result = document.getElementById('readingResult');
+                                                                                                                                                                                                                                                                                                                                                    result.classList.remove('active');
+                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                    function exportReading() {
+                                                                                                                                                                                                                                                                                                                                                    const question = document.getElementById('divination-question').value.trim();
+                                                                                                                                                                                                                                                                                                                                                    if (!question || castFigures.length === 0) {
+                                                                                                                                                                                                                                                                                                                                                    alert('Please cast a reading first.');
+                                                                                                                                                                                                                                                                                                                                                    return;
+                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                    alert('Geomantic reading saved to your earth wisdom collection! 🔮');
+                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                    // Emergency escape
+                                                                                                                                                                                                                                                                                                                                                    document.addEventListener('keydown', function(e) {
+                                                                                                                                                                                                                                                                                                                                                    if (e.key === 'Escape') {
+                                                                                                                                                                                                                                                                                                                                                    clearReading();
+                                                                                                                                                                                                                                                                                                                                                    window.parent.postMessage({ action: 'escape', tool: 'geomantic-engine' }, '*');
+                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                                                    // Initialize
+                                                                                                                                                                                                                                                                                                                                                    createGeometricField();
+                                                                                                                                                                                                                                                                                                                                                    initializeGeomancyGrid();
+                                                                                                                                                                                                                                                                                                                                                    // Announce tool ready
+                                                                                                                                                                                                                                                                                                                                                    window.addEventListener('load', function() {
+                                                                                                                                                                                                                                                                                                                                                    window.parent.postMessage({
+                                                                                                                                                                                                                                                                                                                                                    action: 'tool-ready',
+                                                                                                                                                                                                                                                                                                                                                    tool: 'geomantic-engine',
+                                                                                                                                                                                                                                                                                                                                                    archetype: 'magician',
+                                                                                                                                                                                                                                                                                                                                                    capabilities: ['earth-divination', 'geometric-wisdom', 'hermetic-interpretation']
+                                                                                                                                                                                                                                                                                                                                                    }, '*');
+                                                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                                                </script>
+                                                                                                                                                                                                                                                                                                                                            </body>
+                                                                                                                                                                                                                                                                                                                                        </html>

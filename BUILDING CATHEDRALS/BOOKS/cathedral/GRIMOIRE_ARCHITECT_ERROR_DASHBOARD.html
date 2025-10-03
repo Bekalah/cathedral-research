@@ -1,53 +1,57 @@
+<!DOCTYPE html>
 <!-- Inner Grimoire Architect Error Dashboard -->
 <html>
-<head>
-  <title>Cathedral Error Dashboard</title>
-  <style>
-    body { background: #1a1a2e; color: #F8F5EF; font-family: 'Times New Roman', serif; }
-    h1 { color: #7A33FF; text-align: center; }
-    .dashboard { max-width: 900px; margin: 2rem auto; background: #222; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px #7A33FF44; }
-    .error-type { color: #C8A44D; font-size: 1.2rem; margin-top: 1.5rem; }
-    .error-list { margin-left: 2rem; }
-    .prevention { background: #7A33FF22; border-radius: 10px; padding: 1rem; margin-top: 2rem; }
-    .extensions { color: #2E8B57; font-weight: bold; }
-    .map-link { color: #C8A44D; text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <h1>Cathedral Error Dashboard</h1>
-  <div class="dashboard">
-    <div class="error-type">TypeScript Syntax in JS Files</div>
-    <ul class="error-list">
-      <li>Type annotations, property initializers, and signatures must only be used in <code>.ts</code> files.</li>
-      <li>Fix: Move TypeScript code to <code>.ts</code> or rewrite as valid JS.</li>
-    </ul>
-    <div class="error-type">Property/Type Errors in TypeScript</div>
-    <ul class="error-list">
-      <li>Type definitions must match actual object structure.</li>
-      <li>Fix: Update interfaces/types to match data.</li>
-    </ul>
-    <div class="error-type">Syntax Errors in HTML Embedded Scripts</div>
-    <ul class="error-list">
-      <li>Check for missing semicolons, brackets, and correct function/class structure.</li>
-    </ul>
-    <div class="error-type">General JS Syntax Issues</div>
-    <ul class="error-list">
-      <li>Misplaced brackets, missing semicolons, or incorrect function/class structure.</li>
-    </ul>
-    <div class="prevention">
-      <strong>Error Prevention System:</strong>
-      <ul>
-        <li>Use <span class="extensions">ESLint</span> and <span class="extensions">Prettier</span> (auto-fix on save).</li>
-        <li>Enable VS Code extensions: auto-rename-tag, bracket-pair-colorizer, Prettier, code-spell-checker.</li>
-        <li>Enforce correct file extensions: <code>.ts</code> for TypeScript, <code>.js</code> for JavaScript.</li>
-        <li>Add type-checking and linting to CI.</li>
-        <li>Document best practices in the <span class="map-link">Grimoire Architect Build Map</span>.</li>
-      </ul>
-    </div>
-    <div class="prevention">
-      <strong>Visual Build Map:</strong>
-      <a class="map-link" href="./GRIMOIRE_ARCHITECT_BUILD_MAP.svg" target="_blank">View Da Vinci-style Cathedral Build Map</a>
-    </div>
-  </div>
-</body>
-</html>
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cathedral Error Dashboard</title>
+            <style>
+                body { background: #1a1a2e; color: #F8F5EF; font-family: 'Times New Roman', serif; }
+                h1 { color: #7A33FF; text-align: center; }
+                .dashboard { max-width: 900px; margin: 2rem auto; background: #222; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px #7A33FF44; }
+                .error-type { color: #C8A44D; font-size: 1.2rem; margin-top: 1.5rem; }
+                .error-list { margin-left: 2rem; }
+                .prevention { background: #7A33FF22; border-radius: 10px; padding: 1rem; margin-top: 2rem; }
+                .extensions { color: #2E8B57; font-weight: bold; }
+                .map-link { color: #C8A44D; text-decoration: underline; }
+            </style>
+        </head>
+        <body>
+            <h1>Cathedral Error Dashboard</h1>
+                <div class="dashboard">
+                    <div class="error-type">TypeScript Syntax in JS Files</div>
+                        <ul class="error-list">
+                            <li>Type annotations, property initializers, and signatures must only be used in <code>.ts</code> files.</li>
+                                <li>Fix: Move TypeScript code to <code>.ts</code> or rewrite as valid JS.</li>
+                                </ul>
+                                <div class="error-type">Property/Type Errors in TypeScript</div>
+                                    <ul class="error-list">
+                                        <li>Type definitions must match actual object structure.</li>
+                                            <li>Fix: Update interfaces/types to match data.</li>
+                                            </ul>
+                                            <div class="error-type">Syntax Errors in HTML Embedded Scripts</div>
+                                                <ul class="error-list">
+                                                    <li>Check for missing semicolons, brackets, and correct function/class structure.</li>
+                                                    </ul>
+                                                    <div class="error-type">General JS Syntax Issues</div>
+                                                        <ul class="error-list">
+                                                            <li>Misplaced brackets, missing semicolons, or incorrect function/class structure.</li>
+                                                            </ul>
+                                                            <div class="prevention">
+                                                                <strong>Error Prevention System:</strong>
+                                                                    <ul>
+                                                                        <li>Use <span class="extensions">ESLint</span> and <span class="extensions">Prettier</span> (auto-fix on save).</li>
+                                                                            <li>Enable VS Code extensions: auto-rename-tag, bracket-pair-colorizer, Prettier, code-spell-checker.</li>
+                                                                                <li>Enforce correct file extensions: <code>.ts</code> for TypeScript, <code>.js</code> for JavaScript.</li>
+                                                                                    <li>Add type-checking and linting to CI.</li>
+                                                                                        <li>Document best practices in the <span class="map-link">Grimoire Architect Build Map</span>.</li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="prevention">
+                                                                                        <strong>Visual Build Map:</strong>
+                                                                                            <a class="map-link" href="./GRIMOIRE_ARCHITECT_BUILD_MAP.svg" target="_blank">View Da Vinci-style Cathedral Build Map</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </body>
+                                                                                </html>

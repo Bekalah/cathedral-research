@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" data-nd-safe="true" data-tool="harmony-engine" data-archetype="temperance">
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>⚖️ Harmony Engine — Sacred Balance & Elemental Fusion</title>
+            <meta name="description" content="Advanced harmonic balance interface for integrating opposing forces and finding sacred equilibrium. ND-safe design.">
+            <style>
+                :root {
+                --dawn: #fef5e7; --rose: #f4e4d6; --gold: #e6b800; --amber: #d4a574;
+                --sage: #9fb69f; --sky: #87ceeb; --lavender: #b19cd9; --pearl: #f8f8ff;
+                --deep: #2c3e50; --mist: #7f8c8d; --earth: #8b7355; --water: #5dade2;
+                --fire: #e67e22; --air: #f7dc6f; --spirit: #af7ac5; --escape-glow: #ffff00;
+                --radius: 20px; --shadow: 0 10px 30px rgba(44, 62, 80, 0.15);
+                }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body {
+                background: linear-gradient(135deg, var(--dawn) 0%, var(--rose) 25%, var(--pearl) 75%, var(--sky) 100%);
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--deep);
+                min-height: 100vh;
+                overflow-x: hidden;
+                position: relative;
+                }
+                /* Flowing harmony particles */
+                .harmony-field {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+                }
+                .harmony-particle {
+                position: absolute;
+                width: 3px;
+                height: 3px;
+                background: var(--gold);
+                border-radius: 50%;
+                animation: harmonicFlow 15s infinite linear;
+                opacity: 0.6;
+                }
+                @keyframes harmonicFlow {
+                0% {
+                transform: translateX(-20px) translateY(100vh) scale(0.5);
+                opacity: 0;
+                }
+                50% {
+                opacity: 0.8;
+                transform: scale(1);
+                }
+                100% {
+                transform: translateX(20px) translateY(-20px) scale(0.5);
+                opacity: 0;
+                }
+                }
+                /* Emergency Escape Portal */
+                .escape-portal {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid var(--escape-glow);
+                border-radius: 12px;
+                padding: 12px;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .escape-key {
+                background: var(--escape-glow);
+                color: black;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 14px;
+                }
+                .escape-text {
+                color: white;
+                font-size: 12px;
+                }
+                .header {
+                text-align: center;
+                padding: 40px 20px;
+                position: relative;
+                }
+                h1 {
+                font-size: 3.8em;
+                font-weight: 300;
+                letter-spacing: 0.1em;
+                background: linear-gradient(135deg, var(--gold), var(--lavender), var(--sky));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 16px;
+                filter: drop-shadow(0 0 15px rgba(230, 184, 0, 0.3));
+                }
+                .tagline {
+                font-size: 1em;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: var(--mist);
+                margin-bottom: 25px;
+                }
+                .temperance-symbol {
+                display: inline-flex;
+                align-items: center;
+                gap: 20px;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 15px 30px;
+                border-radius: 50px;
+                border: 2px solid var(--gold);
+                backdrop-filter: blur(10px);
+                box-shadow: var(--shadow);
+                }
+                .vessel {
+                font-size: 1.5em;
+                animation: gentlePour 4s ease-in-out infinite;
+                }
+                @keyframes gentlePour {
+                0%, 100% { transform: rotate(-5deg); }
+                50% { transform: rotate(5deg); }
+                }
+                .main {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 20px 40px;
+                display: grid;
+                grid-template-columns: 350px 1fr 350px;
+                gap: 30px;
+                }
+                /* Side Panels */
+                .side-panel {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 248, 255, 0.8));
+                border-radius: var(--radius);
+                padding: 25px;
+                box-shadow: var(--shadow);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(230, 184, 0, 0.2);
+                height: fit-content;
+                }
+                .section {
+                margin-bottom: 25px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(127, 140, 141, 0.15);
+                }
+                .section:last-child {
+                border: none;
+                margin-bottom: 0;
+                }
+                .section-title {
+                font-size: 1.3em;
+                font-weight: 400;
+                margin-bottom: 18px;
+                color: var(--deep);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .input-group {
+                margin-bottom: 18px;
+                }
+                .input-label {
+                display: block;
+                font-size: 0.9em;
+                color: var(--mist);
+                margin-bottom: 8px;
+                letter-spacing: 0.05em;
+                }
+                .text-input, .text-area, .select-input {
+                width: 100%;
+                padding: 14px 18px;
+                border: 2px solid rgba(127, 140, 141, 0.2);
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.7);
+                font-family: inherit;
+                font-size: 0.9em;
+                color: var(--deep);
+                transition: all 0.3s ease;
+                }
+                .text-input:focus, .text-area:focus, .select-input:focus {
+                outline: none;
+                border-color: var(--gold);
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 0 0 3px rgba(230, 184, 0, 0.1);
+                }
+                .text-area {
+                min-height: 80px;
+                resize: vertical;
+                line-height: 1.5;
+                }
+                .element-selector {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin-top: 10px;
+                }
+                .element-option {
+                padding: 12px;
+                background: rgba(255, 255, 255, 0.6);
+                border: 2px solid transparent;
+                border-radius: 10px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-size: 0.85em;
+                }
+                .element-option:hover {
+                background: rgba(230, 184, 0, 0.1);
+                border-color: var(--gold);
+                }
+                .element-option.selected {
+                background: var(--gold);
+                color: white;
+                border-color: var(--amber);
+                box-shadow: 0 0 10px rgba(230, 184, 0, 0.3);
+                }
+                /* Center Panel: Balance Interface */
+                .balance-panel {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 255, 0.9));
+                border-radius: var(--radius);
+                padding: 30px;
+                box-shadow: var(--shadow);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(230, 184, 0, 0.2);
+                min-height: 700px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                }
+                .balance-scales {
+                width: 400px;
+                height: 300px;
+                position: relative;
+                margin: 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                }
+                .scales-base {
+                width: 100px;
+                height: 20px;
+                background: linear-gradient(135deg, var(--gold), var(--amber));
+                border-radius: 10px;
+                position: absolute;
+                bottom: 0;
+                z-index: 2;
+                }
+                .scales-arm {
+                width: 300px;
+                height: 8px;
+                background: linear-gradient(90deg, var(--gold), var(--amber));
+                border-radius: 4px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                animation: balanceFloat 6s ease-in-out infinite;
+                transform-origin: center;
+                }
+                @keyframes balanceFloat {
+                0%, 100% { transform: translateY(-50%) rotate(-1deg); }
+                50% { transform: translateY(-50%) rotate(1deg); }
+                }
+                .scale-pan {
+                width: 80px;
+                height: 80px;
+                border: 3px solid var(--gold);
+                border-radius: 50%;
+                position: absolute;
+                top: 60px;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(230, 184, 0, 0.1));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8em;
+                animation: panFloat 4s ease-in-out infinite;
+                }
+                .scale-pan.left {
+                left: 20px;
+                animation-delay: -2s;
+                }
+                .scale-pan.right {
+                right: 20px;
+                }
+                @keyframes panFloat {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-5px); }
+                }
+                .harmony-gauge {
+                width: 300px;
+                height: 40px;
+                background: rgba(127, 140, 141, 0.2);
+                border-radius: 20px;
+                margin: 30px 0;
+                position: relative;
+                overflow: hidden;
+                }
+                .gauge-fill {
+                height: 100%;
+                background: linear-gradient(90deg, var(--fire), var(--gold), var(--spirit));
+                border-radius: 20px;
+                width: 50%;
+                transition: all 0.8s ease;
+                animation: harmonyPulse 3s ease-in-out infinite;
+                }
+                @keyframes harmonyPulse {
+                0%, 100% { box-shadow: 0 0 10px rgba(230, 184, 0, 0.3); }
+                50% { box-shadow: 0 0 20px rgba(230, 184, 0, 0.6); }
+                }
+                .gauge-label {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 0.9em;
+                font-weight: 500;
+                color: var(--deep);
+                }
+                .synthesis-result {
+                background: rgba(175, 122, 197, 0.1);
+                border-radius: 15px;
+                padding: 25px;
+                margin: 20px 0;
+                border-left: 4px solid var(--spirit);
+                width: 100%;
+                display: none;
+                text-align: left;
+                }
+                .synthesis-result.active {
+                display: block;
+                animation: fadeInHarmony 0.8s ease-out;
+                }
+                @keyframes fadeInHarmony {
+                from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+                }
+                to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                }
+                }
+                .result-title {
+                font-size: 1.2em;
+                color: var(--spirit);
+                margin-bottom: 12px;
+                font-weight: 500;
+                }
+                .result-text {
+                line-height: 1.6;
+                color: var(--deep);
+                margin-bottom: 15px;
+                }
+                .integration-steps {
+                background: rgba(255, 255, 255, 0.6);
+                border-radius: 10px;
+                padding: 15px;
+                margin-top: 15px;
+                }
+                .integration-title {
+                font-size: 1em;
+                color: var(--deep);
+                margin-bottom: 10px;
+                font-weight: 500;
+                }
+                .integration-step {
+                font-size: 0.9em;
+                color: var(--mist);
+                margin-bottom: 6px;
+                padding-left: 15px;
+                position: relative;
+                }
+                .integration-step::before {
+                content: "•";
+                color: var(--gold);
+                position: absolute;
+                left: 0;
+                }
+                .buttons {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-top: auto;
+                padding-top: 20px;
+                }
+                .btn {
+                padding: 14px 24px;
+                border: none;
+                border-radius: 12px;
+                font-family: inherit;
+                font-size: 0.9em;
+                font-weight: 500;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                }
+                .btn-primary {
+                background: linear-gradient(135deg, var(--gold), var(--spirit));
+                color: white;
+                box-shadow: 0 6px 20px rgba(230, 184, 0, 0.3);
+                }
+                .btn-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(230, 184, 0, 0.4);
+                }
+                .btn-secondary {
+                background: rgba(255, 255, 255, 0.8);
+                color: var(--deep);
+                border: 1px solid rgba(127, 140, 141, 0.3);
+                }
+                .btn-secondary:hover {
+                background: rgba(255, 255, 255, 0.95);
+                transform: translateY(-1px);
+                }
+                @media (max-width: 1200px) {
+                .main {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                }
+                .balance-scales {
+                width: 300px;
+                height: 250px;
+                }
+                .scales-arm {
+                width: 240px;
+                }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="harmony-field" id="harmonyField">
+            </div>
+            <!-- Emergency Escape Portal -->
+            <div class="escape-portal">
+                <div class="escape-key">ESC</div>
+                    <div class="escape-text">Safety Exit</div>
+                    </div>
+                    <div class="header">
+                        <h1>⚖️ Harmony Engine</h1>
+                            <p class="tagline">Sacred Balance & Elemental Fusion</p>
+                                <div class="temperance-symbol">
+                                    <div class="vessel">🏺</div>
+                                        <span>Flowing Between Worlds</span>
+                                            <div class="vessel">🏺</div>
+                                            </div>
+                                        </div>
+                                        <div class="main">
+                                            <!-- Left Panel: Opposing Forces -->
+                                            <div class="side-panel">
+                                                <div class="section">
+                                                    <div class="section-title">
+                                                        ⚡ Opposing Forces
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <label class="input-label" for="force-one">First Force/Quality</label>
+                                                            <textarea
+                                                                id="force-one"
+                                                                class="text-area"
+                                                                placeholder="Describe the first aspect that needs balancing (e.g., logic, ambition, control)..."
+                                                                maxlength="300"
+                                                                >
+                                                            </textarea>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label class="input-label">Force One Element</label>
+                                                                <div class="element-selector">
+                                                                    <div class="element-option" data-element="fire" data-force="one">🔥 Fire</div>
+                                                                        <div class="element-option" data-element="earth" data-force="one">🌱 Earth</div>
+                                                                            <div class="element-option" data-element="air" data-force="one">💨 Air</div>
+                                                                                <div class="element-option" data-element="water" data-force="one">🌊 Water</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="input-group">
+                                                                                <label class="input-label" for="force-two">Second Force/Quality</label>
+                                                                                    <textarea
+                                                                                        id="force-two"
+                                                                                        class="text-area"
+                                                                                        placeholder="Describe the opposing aspect (e.g., intuition, relaxation, flow)..."
+                                                                                        maxlength="300"
+                                                                                        >
+                                                                                    </textarea>
+                                                                                </div>
+                                                                                <div class="input-group">
+                                                                                    <label class="input-label">Force Two Element</label>
+                                                                                        <div class="element-selector">
+                                                                                            <div class="element-option" data-element="fire" data-force="two">🔥 Fire</div>
+                                                                                                <div class="element-option" data-element="earth" data-force="two">🌱 Earth</div>
+                                                                                                    <div class="element-option" data-element="air" data-force="two">💨 Air</div>
+                                                                                                        <div class="element-option" data-element="water" data-force="two">🌊 Water</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="section">
+                                                                                                    <div class="section-title">
+                                                                                                        🎯 Balance Context
+                                                                                                    </div>
+                                                                                                    <div class="input-group">
+                                                                                                        <label class="input-label" for="life-area">Life Area</label>
+                                                                                                            <select id="life-area" class="select-input">
+                                                                                                                <option value="work-life">Work-Life Balance</option>
+                                                                                                                    <option value="relationships">Relationship Dynamics</option>
+                                                                                                                        <option value="creativity">Creative Expression</option>
+                                                                                                                            <option value="spiritual">Spiritual Practice</option>
+                                                                                                                                <option value="health">Health & Wellness</option>
+                                                                                                                                    <option value="decision">Decision Making</option>
+                                                                                                                                        <option value="emotional">Emotional Regulation</option>
+                                                                                                                                            <option value="other">Other Area</option>
+                                                                                                                                            </select>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="input-group">
+                                                                                                                                            <label class="input-label" for="current-imbalance">Current Imbalance</label>
+                                                                                                                                                <textarea
+                                                                                                                                                    id="current-imbalance"
+                                                                                                                                                    class="text-area"
+                                                                                                                                                    placeholder="How is this imbalance showing up in your life?"
+                                                                                                                                                    maxlength="400"
+                                                                                                                                                    >
+                                                                                                                                                </textarea>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                    <!-- Center Panel: Balance Interface -->
+                                                                                                                                    <div class="balance-panel">
+                                                                                                                                        <div class="balance-scales" id="balanceScales">
+                                                                                                                                            <div class="scales-base">
+                                                                                                                                            </div>
+                                                                                                                                            <div class="scales-arm" id="scalesArm">
+                                                                                                                                            </div>
+                                                                                                                                            <div class="scale-pan left" id="leftPan">⚡</div>
+                                                                                                                                                <div class="scale-pan right" id="rightPan">🌊</div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="harmony-gauge" id="harmonyGauge">
+                                                                                                                                                    <div class="gauge-fill" id="gaugeFill">
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="gauge-label">50% Balanced</div>
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="synthesis-result" id="synthesisResult">
+                                                                                                                                                        <div class="result-title" id="resultTitle">Harmonic Synthesis</div>
+                                                                                                                                                            <div class="result-text" id="resultText">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="integration-steps">
+                                                                                                                                                                <div class="integration-title">Integration Practice</div>
+                                                                                                                                                                    <div id="integrationSteps">
+                                                                                                                                                                        <!-- Populated by JavaScript -->
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="buttons">
+                                                                                                                                                                <button class="btn btn-secondary" onclick="clearBalance()">Clear</button>
+                                                                                                                                                                    <button class="btn btn-primary" onclick="synthesizeBalance()">Create Harmony</button>
+                                                                                                                                                                        <button class="btn btn-secondary" onclick="exportSynthesis()">Save Balance</button>
+                                                                                                                                                                        </div>
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <!-- Right Panel: Guidance -->
+                                                                                                                                                                    <div class="side-panel">
+                                                                                                                                                                        <div class="section">
+                                                                                                                                                                            <div class="section-title">
+                                                                                                                                                                                🌟 Temperance Wisdom
+                                                                                                                                                                            </div>
+                                                                                                                                                                            <div style="font-size: 0.9em; line-height: 1.6; color: var(--mist);">
+                                                                                                                                                                                <p style="margin-bottom: 12px;">
+                                                                                                                                                                                    Temperance teaches that opposing forces are not enemies to be conquered,
+                                                                                                                                                                                    but partners in a sacred dance of creation.
+                                                                                                                                                                                </p>
+                                                                                                                                                                                <p style="margin-bottom: 12px;">
+                                                                                                                                                                                    True balance is not static equilibrium, but dynamic flow -
+                                                                                                                                                                                    like a river that knows when to rush and when to pool.
+                                                                                                                                                                                </p>
+                                                                                                                                                                                <p>
+                                                                                                                                                                                    The art of temperance lies in finding the middle path that
+                                                                                                                                                                                    honors both extremes while transcending them.
+                                                                                                                                                                                </p>
+                                                                                                                                                                            </div>
+                                                                                                                                                                        </div>
+                                                                                                                                                                        <div class="section">
+                                                                                                                                                                            <div class="section-title">
+                                                                                                                                                                                🔄 Elemental Dynamics
+                                                                                                                                                                            </div>
+                                                                                                                                                                            <div style="font-size: 0.85em; color: var(--mist);">
+                                                                                                                                                                                <div style="margin-bottom: 8px; padding: 8px; background: rgba(233, 126, 34, 0.1); border-radius: 6px;">
+                                                                                                                                                                                    <strong>🔥 Fire:</strong> Action, passion, will, transformation
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                    <div style="margin-bottom: 8px; padding: 8px; background: rgba(135, 206, 235, 0.1); border-radius: 6px;">
+                                                                                                                                                                                        <strong>🌊 Water:</strong> Emotion, intuition, flow, receptivity
+                                                                                                                                                                                        </div>
+                                                                                                                                                                                        <div style="margin-bottom: 8px; padding: 8px; background: rgba(247, 220, 111, 0.1); border-radius: 6px;">
+                                                                                                                                                                                            <strong>💨 Air:</strong> Thought, communication, movement, clarity
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                            <div style="margin-bottom: 8px; padding: 8px; background: rgba(139, 115, 85, 0.1); border-radius: 6px;">
+                                                                                                                                                                                                <strong>🌱 Earth:</strong> Stability, grounding, material, persistence
+                                                                                                                                                                                                </div>
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                        </div>
+                                                                                                                                                                                        <div class="section">
+                                                                                                                                                                                            <div class="section-title">
+                                                                                                                                                                                                ⚗️ Synthesis Principles
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                            <div style="font-size: 0.85em; color: var(--mist);">
+                                                                                                                                                                                                <div style="margin-bottom: 8px;">• Honor both forces equally</div>
+                                                                                                                                                                                                    <div style="margin-bottom: 8px;">• Find the sacred middle path</div>
+                                                                                                                                                                                                        <div style="margin-bottom: 8px;">• Allow natural rhythms to emerge</div>
+                                                                                                                                                                                                            <div style="margin-bottom: 8px;">• Embrace dynamic equilibrium</div>
+                                                                                                                                                                                                                <div style="margin-bottom: 8px;">• Practice conscious moderation</div>
+                                                                                                                                                                                                                    <div style="margin-bottom: 8px;">• Seek integration, not elimination</div>
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                <div class="section">
+                                                                                                                                                                                                                    <div class="section-title">
+                                                                                                                                                                                                                        🎭 Common Polarities
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                    <div style="font-size: 0.8em; color: var(--mist);">
+                                                                                                                                                                                                                        <div style="margin-bottom: 6px;">Logic ⚖️ Intuition</div>
+                                                                                                                                                                                                                            <div style="margin-bottom: 6px;">Action ⚖️ Reflection</div>
+                                                                                                                                                                                                                                <div style="margin-bottom: 6px;">Structure ⚖️ Freedom</div>
+                                                                                                                                                                                                                                    <div style="margin-bottom: 6px;">Giving ⚖️ Receiving</div>
+                                                                                                                                                                                                                                        <div style="margin-bottom: 6px;">Solitude ⚖️ Connection</div>
+                                                                                                                                                                                                                                            <div style="margin-bottom: 6px;">Planning ⚖️ Spontaneity</div>
+                                                                                                                                                                                                                                                <div style="margin-bottom: 6px;">Confidence ⚖️ Humility</div>
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <script>
+                                                                                                                                                                                                                                        let selectedElements = { one: null, two: null };
+                                                                                                                                                                                                                                        // Create flowing harmony particles
+                                                                                                                                                                                                                                        function createHarmonyField() {
+                                                                                                                                                                                                                                        const container = document.getElementById('harmonyField');
+                                                                                                                                                                                                                                        for (let i = 0; i < 25; i++) {
+                                                                                                                                                                                                                                            const particle = document.createElement('div');
+                                                                                                                                                                                                                                            particle.className = 'harmony-particle';
+                                                                                                                                                                                                                                            particle.style.left = Math.random() * 100 + '%';
+                                                                                                                                                                                                                                            particle.style.animationDelay = Math.random() * 15 + 's';
+                                                                                                                                                                                                                                            particle.style.animationDuration = (12 + Math.random() * 6) + 's';
+                                                                                                                                                                                                                                            container.appendChild(particle);
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            // Element selection
+                                                                                                                                                                                                                                            document.querySelectorAll('.element-option').forEach(option => {
+                                                                                                                                                                                                                                            option.addEventListener('click', function() {
+                                                                                                                                                                                                                                            const force = this.dataset.force;
+                                                                                                                                                                                                                                            const element = this.dataset.element;
+                                                                                                                                                                                                                                            // Remove previous selection for this force
+                                                                                                                                                                                                                                            document.querySelectorAll(`[data-force="${force}"]`).forEach(opt =>
+                                                                                                                                                                                                                                            opt.classList.remove('selected'));
+                                                                                                                                                                                                                                            // Select this element
+                                                                                                                                                                                                                                            this.classList.add('selected');
+                                                                                                                                                                                                                                            selectedElements[force] = element;
+                                                                                                                                                                                                                                            // Update scale pans
+                                                                                                                                                                                                                                            updateScalePans();
+                                                                                                                                                                                                                                            });
+                                                                                                                                                                                                                                            });
+                                                                                                                                                                                                                                            function updateScalePans() {
+                                                                                                                                                                                                                                            const leftPan = document.getElementById('leftPan');
+                                                                                                                                                                                                                                            const rightPan = document.getElementById('rightPan');
+                                                                                                                                                                                                                                            const elementIcons = {
+                                                                                                                                                                                                                                            fire: '🔥', water: '🌊', air: '💨', earth: '🌱'
+                                                                                                                                                                                                                                            };
+                                                                                                                                                                                                                                            if (selectedElements.one) {
+                                                                                                                                                                                                                                            leftPan.textContent = elementIcons[selectedElements.one];
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            if (selectedElements.two) {
+                                                                                                                                                                                                                                            rightPan.textContent = elementIcons[selectedElements.two];
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            function synthesizeBalance() {
+                                                                                                                                                                                                                                            const forceOne = document.getElementById('force-one').value.trim();
+                                                                                                                                                                                                                                            const forceTwo = document.getElementById('force-two').value.trim();
+                                                                                                                                                                                                                                            const lifeArea = document.getElementById('life-area').value;
+                                                                                                                                                                                                                                            const imbalance = document.getElementById('current-imbalance').value.trim();
+                                                                                                                                                                                                                                            if (!forceOne || !forceTwo) {
+                                                                                                                                                                                                                                            alert('Please describe both opposing forces before creating harmony.');
+                                                                                                                                                                                                                                            return;
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            // Animate the synthesis process
+                                                                                                                                                                                                                                            animateBalanceCreation();
+                                                                                                                                                                                                                                            // Generate synthesis after animation
+                                                                                                                                                                                                                                            setTimeout(() => {
+                                                                                                                                                                                                                                            generateSynthesis(forceOne, forceTwo, lifeArea, imbalance);
+                                                                                                                                                                                                                                            showSynthesis();
+                                                                                                                                                                                                                                            }, 2000);
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            function animateBalanceCreation() {
+                                                                                                                                                                                                                                            const scalesArm = document.getElementById('scalesArm');
+                                                                                                                                                                                                                                            const gaugeFill = document.getElementById('gaugeFill');
+                                                                                                                                                                                                                                            // Animate scales balancing
+                                                                                                                                                                                                                                            scalesArm.style.animation = 'none';
+                                                                                                                                                                                                                                            scalesArm.style.transform = 'translateY(-50%) rotate(0deg)';
+                                                                                                                                                                                                                                            scalesArm.style.transition = 'transform 2s ease-in-out';
+                                                                                                                                                                                                                                            // Animate gauge filling to center
+                                                                                                                                                                                                                                            gaugeFill.style.width = '50%';
+                                                                                                                                                                                                                                            // Update gauge label
+                                                                                                                                                                                                                                            setTimeout(() => {
+                                                                                                                                                                                                                                            document.querySelector('.gauge-label').textContent = 'Creating Harmony...';
+                                                                                                                                                                                                                                            }, 1000);
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            function generateSynthesis(forceOne, forceTwo, lifeArea, imbalance) {
+                                                                                                                                                                                                                                            const synthesis = createSynthesisText(forceOne, forceTwo, lifeArea);
+                                                                                                                                                                                                                                            const steps = generateIntegrationSteps(lifeArea, selectedElements);
+                                                                                                                                                                                                                                            document.getElementById('resultText').textContent = synthesis;
+                                                                                                                                                                                                                                            const stepsContainer = document.getElementById('integrationSteps');
+                                                                                                                                                                                                                                            stepsContainer.innerHTML = steps.map(step =>
+                                                                                                                                                                                                                                            `<div class="integration-step">${step}</div>`
+                                                                                                                                                                                                                                                ).join('');
+                                                                                                                                                                                                                                                // Update gauge label
+                                                                                                                                                                                                                                                document.querySelector('.gauge-label').textContent = 'Harmony Achieved';
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                function createSynthesisText(forceOne, forceTwo, lifeArea) {
+                                                                                                                                                                                                                                                const base = "Your harmony synthesis reveals that ";
+                                                                                                                                                                                                                                                const areaGuidance = {
+                                                                                                                                                                                                                                                'work-life': "professional effectiveness and personal well-being can dance together when you honor both focused productivity and restorative rest.",
+                                                                                                                                                                                                                                                'relationships': "connection and independence strengthen each other when you give love freely while maintaining your authentic self.",
+                                                                                                                                                                                                                                                'creativity': "structure and spontaneity are creative partners - discipline provides the container for inspiration to flow.",
+                                                                                                                                                                                                                                                'spiritual': "devotion and questioning deepen each other, creating a faith that is both committed and ever-evolving.",
+                                                                                                                                                                                                                                                'health': "effort and ease create sustainable wellness when you balance active care with gentle acceptance.",
+                                                                                                                                                                                                                                                'decision': "logic and intuition work together to create wise choices that honor both practical needs and inner knowing.",
+                                                                                                                                                                                                                                                'emotional': "feeling and thinking create emotional wisdom when you allow emotions their truth while engaging thoughtful response.",
+                                                                                                                                                                                                                                                'other': "these seemingly opposite forces are actually complementary aspects of a greater wholeness."
+                                                                                                                                                                                                                                                };
+                                                                                                                                                                                                                                                const integration = "The key is to flow consciously between these states, recognizing that each has its season and purpose. " +
+                                                                                                                                                                                                                                                "Like Temperance pouring between vessels, you can learn to be a bridge between worlds, " +
+                                                                                                                                                                                                                                                "allowing each force to inform and enrich the other.";
+                                                                                                                                                                                                                                                return base + (areaGuidance[lifeArea] || areaGuidance['other']) + " " + integration;
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                function generateIntegrationSteps(lifeArea, elements) {
+                                                                                                                                                                                                                                                const baseSteps = [
+                                                                                                                                                                                                                                                "Begin each day by acknowledging both forces within you",
+                                                                                                                                                                                                                                                "Notice when you're over-identifying with one side",
+                                                                                                                                                                                                                                                "Practice conscious transitions between states",
+                                                                                                                                                                                                                                                "Create rituals that honor both aspects"
+                                                                                                                                                                                                                                                ];
+                                                                                                                                                                                                                                                const areaSpecific = {
+                                                                                                                                                                                                                                                'work-life': [
+                                                                                                                                                                                                                                                "Set clear boundaries between work and personal time",
+                                                                                                                                                                                                                                                "Practice presence in whatever mode you're in",
+                                                                                                                                                                                                                                                "Create transition rituals between work and rest"
+                                                                                                                                                                                                                                                ],
+                                                                                                                                                                                                                                                'relationships': [
+                                                                                                                                                                                                                                                "Express needs clearly while listening deeply",
+                                                                                                                                                                                                                                                "Take solo time to maintain your center",
+                                                                                                                                                                                                                                                "Practice giving and receiving in equal measure"
+                                                                                                                                                                                                                                                ],
+                                                                                                                                                                                                                                                'creativity': [
+                                                                                                                                                                                                                                                "Schedule both structured work time and free play",
+                                                                                                                                                                                                                                                "Let ideas marinate before forcing them into form",
+                                                                                                                                                                                                                                                "Honor both inspiration and revision phases"
+                                                                                                                                                                                                                                                ]
+                                                                                                                                                                                                                                                };
+                                                                                                                                                                                                                                                const specific = areaSpecific[lifeArea] || [
+                                                                                                                                                                                                                                                "Create daily practices that integrate both forces",
+                                                                                                                                                                                                                                                "Seek the middle way in challenging situations",
+                                                                                                                                                                                                                                                "Remember that balance is a dynamic, ongoing process"
+                                                                                                                                                                                                                                                ];
+                                                                                                                                                                                                                                                return [...baseSteps, ...specific];
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                function showSynthesis() {
+                                                                                                                                                                                                                                                const result = document.getElementById('synthesisResult');
+                                                                                                                                                                                                                                                result.classList.add('active');
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                function clearBalance() {
+                                                                                                                                                                                                                                                document.getElementById('force-one').value = '';
+                                                                                                                                                                                                                                                document.getElementById('force-two').value = '';
+                                                                                                                                                                                                                                                document.getElementById('current-imbalance').value = '';
+                                                                                                                                                                                                                                                // Clear element selections
+                                                                                                                                                                                                                                                document.querySelectorAll('.element-option').forEach(opt =>
+                                                                                                                                                                                                                                                opt.classList.remove('selected'));
+                                                                                                                                                                                                                                                selectedElements = { one: null, two: null };
+                                                                                                                                                                                                                                                // Reset scale pans
+                                                                                                                                                                                                                                                document.getElementById('leftPan').textContent = '⚡';
+                                                                                                                                                                                                                                                document.getElementById('rightPan').textContent = '🌊';
+                                                                                                                                                                                                                                                // Reset gauge
+                                                                                                                                                                                                                                                const gaugeFill = document.getElementById('gaugeFill');
+                                                                                                                                                                                                                                                gaugeFill.style.width = '50%';
+                                                                                                                                                                                                                                                document.querySelector('.gauge-label').textContent = '50% Balanced';
+                                                                                                                                                                                                                                                // Reset scales animation
+                                                                                                                                                                                                                                                const scalesArm = document.getElementById('scalesArm');
+                                                                                                                                                                                                                                                scalesArm.style.animation = 'balanceFloat 6s ease-in-out infinite';
+                                                                                                                                                                                                                                                scalesArm.style.transition = 'none';
+                                                                                                                                                                                                                                                // Hide result
+                                                                                                                                                                                                                                                const result = document.getElementById('synthesisResult');
+                                                                                                                                                                                                                                                result.classList.remove('active');
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                function exportSynthesis() {
+                                                                                                                                                                                                                                                const forceOne = document.getElementById('force-one').value.trim();
+                                                                                                                                                                                                                                                if (!forceOne) {
+                                                                                                                                                                                                                                                alert('Please create a harmony synthesis first.');
+                                                                                                                                                                                                                                                return;
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                alert('Harmony synthesis saved to your balance collection! ⚖️');
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                // Emergency escape
+                                                                                                                                                                                                                                                document.addEventListener('keydown', function(e) {
+                                                                                                                                                                                                                                                if (e.key === 'Escape') {
+                                                                                                                                                                                                                                                clearBalance();
+                                                                                                                                                                                                                                                window.parent.postMessage({ action: 'escape', tool: 'harmony-engine' }, '*');
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                });
+                                                                                                                                                                                                                                                // Initialize
+                                                                                                                                                                                                                                                createHarmonyField();
+                                                                                                                                                                                                                                                // Announce tool ready
+                                                                                                                                                                                                                                                window.addEventListener('load', function() {
+                                                                                                                                                                                                                                                window.parent.postMessage({
+                                                                                                                                                                                                                                                action: 'tool-ready',
+                                                                                                                                                                                                                                                tool: 'harmony-engine',
+                                                                                                                                                                                                                                                archetype: 'temperance',
+                                                                                                                                                                                                                                                capabilities: ['force-balancing', 'elemental-synthesis', 'harmony-creation']
+                                                                                                                                                                                                                                                }, '*');
+                                                                                                                                                                                                                                                });
+                                                                                                                                                                                                                                            </script>
+                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                    </html>

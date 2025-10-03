@@ -1,0 +1,846 @@
+{
+  "cathedral_codex_144": {
+    "version": "3.0",
+    "description": "Complete resource mapping for all 144 Codex nodes with real tools and free resources",
+    "standards": "ND-safe, trauma-aware, high-end artistic quality",
+    
+    "major_arcana": {
+      "0_fool": {
+        "name": "The Fool - White Rabbit Portal",
+        "element": "Air",
+        "tools": [
+          {
+            "name": "Chaos Math Explorer",
+            "type": "interactive",
+            "url": "https://mathworld.wolfram.com/StrangeAttractor.html",
+            "description": "Explore chaotic systems and strange attractors",
+            "local_tool": "/research/chaos-explorer.html"
+          },
+          {
+            "name": "Random Walk Generator",
+            "type": "generative",
+            "url": "https://en.wikipedia.org/wiki/Random_walk",
+            "description": "Generate beautiful random walk patterns",
+            "local_tool": "/research/random-walk-art.html"
+          },
+          {
+            "name": "Rabbit Hole Navigator",
+            "type": "portal",
+            "description": "Deep dive exploration system",
+            "local_tool": "/research/rabbit-hole-portal.html"
+          }
+        ],
+        "resources": [
+          "Free chaos theory visualizers",
+          "Open source random number generators",
+          "Creative Commons white rabbit imagery",
+          "Public domain Alice in Wonderland texts"
+        ],
+        "applications": ["Breakthrough thinking", "Creative leaps", "Paradigm shifts"],
+        "frequency": "Variable chaos harmonics",
+        "color": "#ffffff rainbow-shift",
+        "sacred_geometry": "Infinite spiral"
+      },
+      
+      "1_magician": {
+        "name": "The Magician - Manifestation Engine",
+        "element": "Fire + Air",
+        "tools": [
+          {
+            "name": "Code Generator AI",
+            "type": "creative",
+            "url": "https://github.com/features/copilot",
+            "description": "AI-assisted code manifestation",
+            "local_tool": "/research/manifestation-engine.html"
+          },
+          {
+            "name": "Sacred Geometry Builder",
+            "type": "geometric",
+            "url": "https://www.sacred-geometry.com",
+            "description": "Build with divine proportions",
+            "local_tool": "/research/sacred-builder.html"
+          },
+          {
+            "name": "Alchemical Transmuter",
+            "type": "transformation",
+            "description": "Transform ideas into reality",
+            "local_tool": "/research/alchemy-transmuter.html"
+          }
+        ],
+        "resources": [
+          "Free CAD software (FreeCAD, Blender)",
+          "Open source 3D printing models",
+          "Creative Commons alchemy symbols",
+          "Public domain hermetic texts"
+        ],
+        "applications": ["Creation", "Innovation", "Implementation"],
+        "frequency": "440 Hz (A note) + harmonics",
+        "color": "#ff6b35",
+        "sacred_geometry": "Hexagram (as above, so below)"
+      },
+
+      "2_high_priestess": {
+        "name": "The High Priestess - Intuitive Oracle",
+        "element": "Water",
+        "tools": [
+          {
+            "name": "Dream Journal AI",
+            "type": "reflective",
+            "description": "AI-enhanced dream analysis and pattern recognition",
+            "local_tool": "/research/dream-oracle.html"
+          },
+          {
+            "name": "Tarot Card Generator",
+            "type": "divination",
+            "url": "https://en.wikipedia.org/wiki/Tarot",
+            "description": "Generate and interpret tarot spreads",
+            "local_tool": "/research/tarot-generator.html"
+          },
+          {
+            "name": "Meditation Guidance System",
+            "type": "contemplative",
+            "description": "Guided meditation with binaural beats",
+            "local_tool": "/research/meditation-oracle.html"
+          }
+        ],
+        "resources": [
+          "Free meditation apps (Insight Timer)",
+          "Open source tarot card designs",
+          "Creative Commons spiritual imagery",
+          "Public domain mystical texts"
+        ],
+        "applications": ["Intuition", "Wisdom", "Hidden knowledge"],
+        "frequency": "432 Hz (sacred frequency)",
+        "color": "#4a90e2",
+        "sacred_geometry": "Vesica Piscis"
+      },
+
+      "3_empress": {
+        "name": "The Empress - Creative Abundance",
+        "element": "Earth",
+        "tools": [
+          {
+            "name": "Generative Art Studio",
+            "type": "creative",
+            "url": "https://p5js.org",
+            "description": "Create infinite generative art",
+            "local_tool": "/research/generative-studio.html"
+          },
+          {
+            "name": "Garden Planner",
+            "type": "growth",
+            "url": "https://www.gardentags.com",
+            "description": "Plan and track garden growth",
+            "local_tool": "/research/garden-planner.html"
+          },
+          {
+            "name": "Abundance Tracker",
+            "type": "manifestation",
+            "description": "Track creative and material abundance",
+            "local_tool": "/research/abundance-tracker.html"
+          }
+        ],
+        "resources": [
+          "Free art software (GIMP, Krita)",
+          "Open source botanical databases",
+          "Creative Commons nature photography",
+          "Public domain botanical illustrations"
+        ],
+        "applications": ["Creativity", "Growth", "Nurturing"],
+        "frequency": "528 Hz (love frequency)",
+        "color": "#2ecc71",
+        "sacred_geometry": "Golden spiral"
+      },
+
+      "4_emperor": {
+        "name": "The Emperor - System Architecture",
+        "element": "Fire",
+        "tools": [
+          {
+            "name": "System Design Canvas",
+            "type": "architectural",
+            "url": "https://www.draw.io",
+            "description": "Design robust system architectures",
+            "local_tool": "/research/system-architect.html"
+          },
+          {
+            "name": "Resource Manager",
+            "type": "management",
+            "description": "Manage projects and resources efficiently",
+            "local_tool": "/research/resource-manager.html"
+          },
+          {
+            "name": "Authority Builder",
+            "type": "leadership",
+            "description": "Build leadership and authority skills",
+            "local_tool": "/research/authority-builder.html"
+          }
+        ],
+        "resources": [
+          "Free project management (Trello, Asana)",
+          "Open source diagramming tools",
+          "Creative Commons leadership resources",
+          "Public domain organizational texts"
+        ],
+        "applications": ["Leadership", "Structure", "Authority"],
+        "frequency": "256 Hz (leadership frequency)",
+        "color": "#e74c3c",
+        "sacred_geometry": "Square (stability)"
+      },
+
+      "5_hierophant": {
+        "name": "The Hierophant - Knowledge Keeper",
+        "element": "Earth",
+        "tools": [
+          {
+            "name": "Learning Path Generator",
+            "type": "educational",
+            "url": "https://www.khanacademy.org",
+            "description": "Generate personalized learning paths",
+            "local_tool": "/research/learning-paths.html"
+          },
+          {
+            "name": "Wisdom Archive",
+            "type": "repository",
+            "description": "Store and organize knowledge",
+            "local_tool": "/research/wisdom-archive.html"
+          },
+          {
+            "name": "Teaching Assistant AI",
+            "type": "educational",
+            "description": "AI-powered teaching and mentorship",
+            "local_tool": "/research/teaching-ai.html"
+          }
+        ],
+        "resources": [
+          "Free online courses (Coursera, edX)",
+          "Open source educational content",
+          "Creative Commons educational resources",
+          "Public domain classic texts"
+        ],
+        "applications": ["Teaching", "Learning", "Tradition"],
+        "frequency": "396 Hz (liberating guilt and fear)",
+        "color": "#9b59b6",
+        "sacred_geometry": "Pentagon (divine knowledge)"
+      },
+
+      "6_lovers": {
+        "name": "The Lovers - Harmonic Resonance",
+        "element": "Air",
+        "tools": [
+          {
+            "name": "Relationship Mapper",
+            "type": "social",
+            "description": "Map and understand relationships",
+            "local_tool": "/research/relationship-mapper.html"
+          },
+          {
+            "name": "Harmony Generator",
+            "type": "musical",
+            "url": "https://www.musictheory.net",
+            "description": "Generate musical harmonies",
+            "local_tool": "/research/harmony-generator.html"
+          },
+          {
+            "name": "Choice Architecture",
+            "type": "decision",
+            "description": "Navigate complex choices",
+            "local_tool": "/research/choice-architect.html"
+          }
+        ],
+        "resources": [
+          "Free music software (Audacity, LMMS)",
+          "Open source social network analysis",
+          "Creative Commons relationship guidance",
+          "Public domain love poetry"
+        ],
+        "applications": ["Relationships", "Choices", "Harmony"],
+        "frequency": "639 Hz (connecting relationships)",
+        "color": "#ff69b4",
+        "sacred_geometry": "Hexagon (harmony)"
+      },
+
+      "7_chariot": {
+        "name": "The Chariot - Momentum Engine",
+        "element": "Water",
+        "tools": [
+          {
+            "name": "Goal Tracker Pro",
+            "type": "achievement",
+            "description": "Track and achieve ambitious goals",
+            "local_tool": "/research/goal-tracker.html"
+          },
+          {
+            "name": "Velocity Calculator",
+            "type": "physics",
+            "url": "https://www.physicsclassroom.com",
+            "description": "Calculate momentum and velocity",
+            "local_tool": "/research/velocity-calc.html"
+          },
+          {
+            "name": "Direction Finder",
+            "type": "navigation",
+            "description": "Find optimal paths forward",
+            "local_tool": "/research/direction-finder.html"
+          }
+        ],
+        "resources": [
+          "Free habit tracking apps",
+          "Open source physics simulations",
+          "Creative Commons motivational content",
+          "Public domain success literature"
+        ],
+        "applications": ["Progress", "Determination", "Victory"],
+        "frequency": "741 Hz (solving problems)",
+        "color": "#3498db",
+        "sacred_geometry": "Arrow (direction)"
+      },
+
+      "8_strength": {
+        "name": "Strength - Inner Power Core",
+        "element": "Fire",
+        "tools": [
+          {
+            "name": "Resilience Builder",
+            "type": "psychological",
+            "description": "Build mental and emotional strength",
+            "local_tool": "/research/resilience-builder.html"
+          },
+          {
+            "name": "Energy Management",
+            "type": "wellness",
+            "description": "Manage and optimize personal energy",
+            "local_tool": "/research/energy-manager.html"
+          },
+          {
+            "name": "Courage Cultivator",
+            "type": "empowerment",
+            "description": "Develop courage and confidence",
+            "local_tool": "/research/courage-cultivator.html"
+          }
+        ],
+        "resources": [
+          "Free fitness apps (Nike Training)",
+          "Open source meditation guides",
+          "Creative Commons strength imagery",
+          "Public domain philosophy on strength"
+        ],
+        "applications": ["Inner strength", "Courage", "Perseverance"],
+        "frequency": "852 Hz (returning to spiritual order)",
+        "color": "#f39c12",
+        "sacred_geometry": "Infinity symbol"
+      },
+
+      "9_hermit": {
+        "name": "The Hermit - Solitude Sanctuary",
+        "element": "Earth",
+        "tools": [
+          {
+            "name": "Reflection Journal",
+            "type": "contemplative",
+            "description": "Deep personal reflection and insight",
+            "local_tool": "/research/reflection-journal.html"
+          },
+          {
+            "name": "Solo Learning Lab",
+            "type": "educational",
+            "description": "Self-directed learning environment",
+            "local_tool": "/research/solo-learning.html"
+          },
+          {
+            "name": "Inner Light Navigator",
+            "type": "spiritual",
+            "description": "Navigate inner spiritual landscape",
+            "local_tool": "/research/inner-light.html"
+          }
+        ],
+        "resources": [
+          "Free journaling apps",
+          "Open source mindfulness resources",
+          "Creative Commons contemplative art",
+          "Public domain spiritual texts"
+        ],
+        "applications": ["Self-discovery", "Wisdom", "Guidance"],
+        "frequency": "963 Hz (pineal gland activation)",
+        "color": "#95a5a6",
+        "sacred_geometry": "Triangle (ascending)"
+      },
+
+      "10_wheel_of_fortune": {
+        "name": "Wheel of Fortune - Cyclic Patterns",
+        "element": "Fire",
+        "tools": [
+          {
+            "name": "Pattern Recognition AI",
+            "type": "analytical",
+            "description": "Identify patterns and cycles",
+            "local_tool": "/research/pattern-recognizer.html"
+          },
+          {
+            "name": "Cycle Tracker",
+            "type": "temporal",
+            "description": "Track life and business cycles",
+            "local_tool": "/research/cycle-tracker.html"
+          },
+          {
+            "name": "Fortune Simulator",
+            "type": "probability",
+            "description": "Simulate probability and chance",
+            "local_tool": "/research/fortune-simulator.html"
+          }
+        ],
+        "resources": [
+          "Free statistical software (R, Python)",
+          "Open source pattern analysis",
+          "Creative Commons fortune imagery",
+          "Public domain probability texts"
+        ],
+        "applications": ["Cycles", "Fate", "Change"],
+        "frequency": "174 Hz (pain relief)",
+        "color": "#9b59b6",
+        "sacred_geometry": "Circle (eternal cycle)"
+      },
+
+      "11_justice": {
+        "name": "Justice - Balance Algorithms",
+        "element": "Air",
+        "tools": [
+          {
+            "name": "Ethical Decision Engine",
+            "type": "ethical",
+            "description": "Make balanced ethical decisions",
+            "local_tool": "/research/ethical-engine.html"
+          },
+          {
+            "name": "Fairness Calculator",
+            "type": "mathematical",
+            "description": "Calculate fair distributions",
+            "local_tool": "/research/fairness-calc.html"
+          },
+          {
+            "name": "Truth Analyzer",
+            "type": "analytical",
+            "description": "Analyze claims for truth and bias",
+            "local_tool": "/research/truth-analyzer.html"
+          }
+        ],
+        "resources": [
+          "Free legal databases",
+          "Open source ethics frameworks",
+          "Creative Commons justice imagery",
+          "Public domain legal texts"
+        ],
+        "applications": ["Balance", "Fairness", "Truth"],
+        "frequency": "285 Hz (healing tissues)",
+        "color": "#1abc9c",
+        "sacred_geometry": "Scales (balance)"
+      },
+
+      "12_hanged_man": {
+        "name": "The Hanged Man - Perspective Shifter",
+        "element": "Water",
+        "tools": [
+          {
+            "name": "Perspective Rotator",
+            "type": "cognitive",
+            "description": "Shift perspectives and viewpoints",
+            "local_tool": "/research/perspective-rotator.html"
+          },
+          {
+            "name": "Pause & Reflect Engine",
+            "type": "contemplative",
+            "description": "Create meaningful pauses",
+            "local_tool": "/research/pause-reflect.html"
+          },
+          {
+            "name": "Surrender Simulator",
+            "type": "spiritual",
+            "description": "Practice letting go",
+            "local_tool": "/research/surrender-sim.html"
+          }
+        ],
+        "resources": [
+          "Free mindfulness apps",
+          "Open source philosophy resources",
+          "Creative Commons reflection imagery",
+          "Public domain wisdom literature"
+        ],
+        "applications": ["Surrender", "New perspectives", "Sacrifice"],
+        "frequency": "417 Hz (facilitating change)",
+        "color": "#8e44ad",
+        "sacred_geometry": "Inverted triangle"
+      },
+
+      "13_death": {
+        "name": "Death - Transformation Engine",
+        "element": "Water",
+        "tools": [
+          {
+            "name": "Transformation Catalyst",
+            "type": "change",
+            "description": "Facilitate profound transformation",
+            "local_tool": "/research/transformation-catalyst.html"
+          },
+          {
+            "name": "End & Begin Tracker",
+            "type": "lifecycle",
+            "description": "Track endings and new beginnings",
+            "local_tool": "/research/end-begin.html"
+          },
+          {
+            "name": "Phoenix Simulator",
+            "type": "rebirth",
+            "description": "Simulate rebirth from ashes",
+            "local_tool": "/research/phoenix-sim.html"
+          }
+        ],
+        "resources": [
+          "Free transition support resources",
+          "Open source change management",
+          "Creative Commons transformation art",
+          "Public domain rebirth literature"
+        ],
+        "applications": ["Endings", "Transformation", "Rebirth"],
+        "frequency": "Silence (the void)",
+        "color": "#2c3e50",
+        "sacred_geometry": "Ouroboros (death/rebirth)"
+      },
+
+      "14_temperance": {
+        "name": "Temperance - Harmony Mixer",
+        "element": "Fire + Water",
+        "tools": [
+          {
+            "name": "Element Mixer",
+            "type": "alchemical",
+            "description": "Mix opposing elements harmoniously",
+            "local_tool": "/research/element-mixer.html"
+          },
+          {
+            "name": "Balance Beam Calculator",
+            "type": "equilibrium",
+            "description": "Find perfect balance points",
+            "local_tool": "/research/balance-beam.html"
+          },
+          {
+            "name": "Patience Builder",
+            "type": "virtue",
+            "description": "Develop patience and moderation",
+            "local_tool": "/research/patience-builder.html"
+          }
+        ],
+        "resources": [
+          "Free meditation timers",
+          "Open source chemistry simulators",
+          "Creative Commons alchemy imagery",
+          "Public domain virtue literature"
+        ],
+        "applications": ["Moderation", "Patience", "Healing"],
+        "frequency": "111 Hz (cellular regeneration)",
+        "color": "#16a085",
+        "sacred_geometry": "Equilibrium symbol"
+      },
+
+      "15_devil": {
+        "name": "The Devil - Shadow Integration",
+        "element": "Earth",
+        "tools": [
+          {
+            "name": "Shadow Work Journal",
+            "type": "psychological",
+            "description": "Integrate rejected aspects of self",
+            "local_tool": "/research/shadow-work.html"
+          },
+          {
+            "name": "Addiction Recovery Tracker",
+            "type": "recovery",
+            "description": "Track recovery from dependencies",
+            "local_tool": "/research/recovery-tracker.html"
+          },
+          {
+            "name": "Temptation Analyzer",
+            "type": "psychological",
+            "description": "Understand and overcome temptations",
+            "local_tool": "/research/temptation-analyzer.html"
+          }
+        ],
+        "resources": [
+          "Free recovery apps (SMART Recovery)",
+          "Open source psychology resources",
+          "Creative Commons shadow imagery",
+          "Public domain psychology texts"
+        ],
+        "applications": ["Shadow work", "Liberation", "Truth"],
+        "frequency": "40 Hz (gamma waves)",
+        "color": "#c0392b",
+        "sacred_geometry": "Inverted pentagram"
+      },
+
+      "16_tower": {
+        "name": "The Tower - Breakthrough Engine",
+        "element": "Fire",
+        "tools": [
+          {
+            "name": "Breakthrough Catalyst",
+            "type": "revolutionary",
+            "description": "Catalyze sudden breakthroughs",
+            "local_tool": "/research/breakthrough-catalyst.html"
+          },
+          {
+            "name": "Structure Analyzer",
+            "type": "analytical",
+            "description": "Identify weak structures",
+            "local_tool": "/research/structure-analyzer.html"
+          },
+          {
+            "name": "Crisis Navigator",
+            "type": "emergency",
+            "description": "Navigate crisis and upheaval",
+            "local_tool": "/research/crisis-navigator.html"
+          }
+        ],
+        "resources": [
+          "Free crisis support hotlines",
+          "Open source disaster planning",
+          "Creative Commons lightning imagery",
+          "Public domain crisis literature"
+        ],
+        "applications": ["Sudden change", "Revelation", "Liberation"],
+        "frequency": "10000 Hz (high frequency clearing)",
+        "color": "#f1c40f",
+        "sacred_geometry": "Lightning bolt"
+      },
+
+      "17_star": {
+        "name": "The Star - Hope Generator",
+        "element": "Air",
+        "tools": [
+          {
+            "name": "Hope Amplifier",
+            "type": "inspirational",
+            "description": "Amplify hope and inspiration",
+            "local_tool": "/research/hope-amplifier.html"
+          },
+          {
+            "name": "Wish Tracker",
+            "type": "manifestation",
+            "description": "Track wishes and dreams",
+            "local_tool": "/research/wish-tracker.html"
+          },
+          {
+            "name": "Starlight Meditation",
+            "type": "contemplative",
+            "description": "Connect with cosmic guidance",
+            "local_tool": "/research/starlight-meditation.html"
+          }
+        ],
+        "resources": [
+          "Free astronomy apps (Star Walk)",
+          "Open source planetarium software",
+          "Creative Commons star imagery",
+          "Public domain inspirational texts"
+        ],
+        "applications": ["Hope", "Inspiration", "Guidance"],
+        "frequency": "7.83 Hz (Schumann resonance)",
+        "color": "#3498db",
+        "sacred_geometry": "Heptagram (seven-pointed star)"
+      },
+
+      "18_moon": {
+        "name": "The Moon - Intuitive Cycles",
+        "element": "Water",
+        "tools": [
+          {
+            "name": "Lunar Calendar",
+            "type": "temporal",
+            "description": "Track lunar cycles and phases",
+            "local_tool": "/research/lunar-calendar.html"
+          },
+          {
+            "name": "Dream Decoder",
+            "type": "subconscious",
+            "description": "Decode dreams and symbols",
+            "local_tool": "/research/dream-decoder.html"
+          },
+          {
+            "name": "Illusion Detector",
+            "type": "perceptual",
+            "description": "Detect illusions and deceptions",
+            "local_tool": "/research/illusion-detector.html"
+          }
+        ],
+        "resources": [
+          "Free lunar phase apps",
+          "Open source dream research",
+          "Creative Commons moon imagery",
+          "Public domain mythology texts"
+        ],
+        "applications": ["Intuition", "Dreams", "Cycles"],
+        "frequency": "210.42 Hz (synodic moon)",
+        "color": "#95a5a6",
+        "sacred_geometry": "Crescent"
+      },
+
+      "19_sun": {
+        "name": "The Sun - Illumination Engine",
+        "element": "Fire",
+        "tools": [
+          {
+            "name": "Enlightenment Tracker",
+            "type": "spiritual",
+            "description": "Track spiritual enlightenment",
+            "local_tool": "/research/enlightenment-tracker.html"
+          },
+          {
+            "name": "Joy Generator",
+            "type": "emotional",
+            "description": "Generate and maintain joy",
+            "local_tool": "/research/joy-generator.html"
+          },
+          {
+            "name": "Success Amplifier",
+            "type": "achievement",
+            "description": "Amplify success and achievement",
+            "local_tool": "/research/success-amplifier.html"
+          }
+        ],
+        "resources": [
+          "Free vitamin D trackers",
+          "Open source solar data",
+          "Creative Commons sun imagery",
+          "Public domain success literature"
+        ],
+        "applications": ["Joy", "Success", "Enlightenment"],
+        "frequency": "126.22 Hz (solar frequency)",
+        "color": "#f39c12",
+        "sacred_geometry": "Solar cross"
+      },
+
+      "20_judgement": {
+        "name": "Judgement - Evaluation Engine",
+        "element": "Fire",
+        "tools": [
+          {
+            "name": "Self-Assessment Tool",
+            "type": "evaluative",
+            "description": "Honest self-evaluation",
+            "local_tool": "/research/self-assessment.html"
+          },
+          {
+            "name": "Life Review Engine",
+            "type": "retrospective",
+            "description": "Review and evaluate life patterns",
+            "local_tool": "/research/life-review.html"
+          },
+          {
+            "name": "Rebirth Planner",
+            "type": "renewal",
+            "description": "Plan for renewal and rebirth",
+            "local_tool": "/research/rebirth-planner.html"
+          }
+        ],
+        "resources": [
+          "Free self-assessment tools",
+          "Open source evaluation frameworks",
+          "Creative Commons angel imagery",
+          "Public domain religious texts"
+        ],
+        "applications": ["Judgement", "Renewal", "Calling"],
+        "frequency": "999 Hz (higher consciousness)",
+        "color": "#e67e22",
+        "sacred_geometry": "Triangle (divine judgement)"
+      },
+
+      "21_world": {
+        "name": "The World - Completion Matrix",
+        "element": "Earth",
+        "tools": [
+          {
+            "name": "Achievement Synthesizer",
+            "type": "completion",
+            "description": "Synthesize all achievements",
+            "local_tool": "/research/achievement-synthesizer.html"
+          },
+          {
+            "name": "Mastery Tracker",
+            "type": "skill",
+            "description": "Track mastery across domains",
+            "local_tool": "/research/mastery-tracker.html"
+          },
+          {
+            "name": "Integration Engine",
+            "type": "holistic",
+            "description": "Integrate all learning and experience",
+            "local_tool": "/research/integration-engine.html"
+          }
+        ],
+        "resources": [
+          "Free portfolio platforms",
+          "Open source achievement systems",
+          "Creative Commons world imagery",
+          "Public domain completion literature"
+        ],
+        "applications": ["Completion", "Fulfillment", "Cosmic consciousness"],
+        "frequency": "1111 Hz (manifestation frequency)",
+        "color": "#2980b9",
+        "sacred_geometry": "Mandala (wholeness)"
+      }
+    },
+
+    "minor_arcana_categories": {
+      "wands_fire": {
+        "nodes": "22-43",
+        "element": "Fire",
+        "theme": "Creativity and Passion",
+        "tools": ["Creative studios", "Passion projects", "Energy management"],
+        "resources": ["Art software", "Music tools", "Writing platforms"]
+      },
+      "cups_water": {
+        "nodes": "44-65", 
+        "element": "Water",
+        "theme": "Emotions and Relationships",
+        "tools": ["Emotion trackers", "Relationship tools", "Healing resources"],
+        "resources": ["Therapy apps", "Community platforms", "Healing music"]
+      },
+      "swords_air": {
+        "nodes": "66-87",
+        "element": "Air",
+        "theme": "Intellect and Communication", 
+        "tools": ["Learning platforms", "Communication tools", "Analysis software"],
+        "resources": ["Educational content", "Writing tools", "Research databases"]
+      },
+      "pentacles_earth": {
+        "nodes": "88-109",
+        "element": "Earth",
+        "theme": "Material and Practical",
+        "tools": ["Financial tools", "Project management", "Skill building"],
+        "resources": ["Career platforms", "Skill courses", "Business tools"]
+      },
+      "expanded_nodes": {
+        "nodes": "110-143",
+        "theme": "Quantum Consciousness Extension",
+        "tools": ["Consciousness tools", "Quantum simulations", "Reality creation"],
+        "resources": ["Meditation apps", "Physics simulations", "Reality tools"]
+      }
+    },
+
+    "integration_systems": {
+      "cathedral_os": {
+        "description": "Operating system that connects all nodes",
+        "file": "/research/cathedral-os.html"
+      },
+      "node_router": {
+        "description": "Smart routing between nodes based on need",
+        "file": "/research/node-router.html"
+      },
+      "resource_manager": {
+        "description": "Manages all tools and resources",
+        "file": "/research/resource-manager.html"
+      },
+      "progress_tracker": {
+        "description": "Tracks progress across all 144 nodes",
+        "file": "/research/progress-tracker.html"
+      }
+    }
+  }
+}

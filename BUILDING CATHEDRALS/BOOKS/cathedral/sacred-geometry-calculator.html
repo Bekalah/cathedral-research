@@ -1,605 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacred Geometry Calculator - Timeless Design Proportions</title>
-    <style>
-        :root {
-            /* Sacred Color Ratios */
-            --phi: 1.618;
-            --golden-light: #FFD700;
-            --sacred-blue: #1E3A8A;
-            --earth-brown: #8B4513;
-            --mystic-purple: #6B46C1;
-            --nature-green: #059669;
-            --crystal-white: #F8FAFC;
-            --shadow-depth: #1F2937;
-            
-            /* Golden Ratio Spacing */
-            --space-1: calc(1rem * var(--phi));
-            --space-2: calc(var(--space-1) * var(--phi));
-            --space-3: calc(var(--space-2) * var(--phi));
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, 
-                var(--crystal-white) 0%, 
-                #E5E7EB 23.6%, 
-                #D1D5DB 38.2%, 
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sacred Geometry Calculator - Timeless Design Proportions</title>
+            <style>
+                :root {
+                /* Sacred Color Ratios */
+                --phi: 1.618;
+                --golden-light: #FFD700;
+                --sacred-blue: #1E3A8A;
+                --earth-brown: #8B4513;
+                --mystic-purple: #6B46C1;
+                --nature-green: #059669;
+                --crystal-white: #F8FAFC;
+                --shadow-depth: #1F2937;
+                /* Golden Ratio Spacing */
+                --space-1: calc(1rem * var(--phi));
+                --space-2: calc(var(--space-1) * var(--phi));
+                --space-3: calc(var(--space-2) * var(--phi));
+                }
+                * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                }
+                body {
+                font-family: 'Georgia', serif;
+                background: linear-gradient(135deg,
+                var(--crystal-white) 0%,
+                #E5E7EB 23.6%,
+                #D1D5DB 38.2%,
                 #9CA3AF 61.8%);
-            color: var(--shadow-depth);
-            min-height: 100vh;
-            padding: var(--space-1);
-        }
-
-        .sacred-container {
-            max-width: calc(1200px / var(--phi));
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: calc(var(--space-1) / var(--phi));
-            box-shadow: 0 calc(var(--space-1) / 2) var(--space-2) rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .sacred-header {
-            background: linear-gradient(135deg, var(--sacred-blue), var(--mystic-purple));
-            color: var(--crystal-white);
-            text-align: center;
-            padding: var(--space-2);
-        }
-
-        .sacred-title {
-            font-size: calc(2rem * var(--phi));
-            margin-bottom: var(--space-1);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .sacred-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-style: italic;
-        }
-
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-2);
-            padding: var(--space-2);
-        }
-
-        .calculator-section {
-            background: var(--crystal-white);
-            border: 2px solid var(--golden-light);
-            border-radius: var(--space-1);
-            padding: var(--space-1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: var(--sacred-blue);
-            margin-bottom: var(--space-1);
-            text-align: center;
-            border-bottom: 2px solid var(--golden-light);
-            padding-bottom: calc(var(--space-1) / 2);
-        }
-
-        .input-group {
-            margin-bottom: var(--space-1);
-        }
-
-        .input-label {
-            display: block;
-            margin-bottom: calc(var(--space-1) / 3);
-            color: var(--earth-brown);
-            font-weight: bold;
-        }
-
-        .sacred-input {
-            width: 100%;
-            padding: calc(var(--space-1) / 2);
-            border: 2px solid var(--nature-green);
-            border-radius: calc(var(--space-1) / 3);
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            transition: all 0.3s ease;
-        }
-
-        .sacred-input:focus {
-            outline: none;
-            border-color: var(--mystic-purple);
-            box-shadow: 0 0 10px rgba(107, 70, 193, 0.3);
-        }
-
-        .calculate-btn {
-            width: 100%;
-            padding: var(--space-1);
-            background: linear-gradient(135deg, var(--nature-green), var(--golden-light));
-            color: white;
-            border: none;
-            border-radius: calc(var(--space-1) / 2);
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: var(--space-1);
-        }
-
-        .calculate-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .results-display {
-            background: linear-gradient(135deg, var(--mystic-purple), var(--sacred-blue));
-            color: var(--crystal-white);
-            padding: var(--space-1);
-            border-radius: calc(var(--space-1) / 2);
-            margin-top: var(--space-1);
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-family: 'Courier New', monospace;
-        }
-
-        .golden-ratio-display {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--golden-light);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin: var(--space-1) 0;
-        }
-
-        .mandala-preview {
-            grid-column: 1 / -1;
-            background: var(--crystal-white);
-            border: 3px solid var(--golden-light);
-            border-radius: var(--space-1);
-            padding: var(--space-2);
-            text-align: center;
-        }
-
-        .mandala-canvas {
-            width: 100%;
-            max-width: 400px;
-            height: 400px;
-            border: 2px solid var(--sacred-blue);
-            border-radius: 50%;
-            margin: var(--space-1) auto;
-            background: radial-gradient(circle, var(--crystal-white), #E5E7EB);
-        }
-
-        .proportion-guide {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-1);
-            margin-top: var(--space-1);
-        }
-
-        .proportion-card {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid var(--golden-light);
-            border-radius: calc(var(--space-1) / 2);
-            padding: var(--space-1);
-            text-align: center;
-        }
-
-        .proportion-title {
-            font-weight: bold;
-            color: var(--sacred-blue);
-            margin-bottom: calc(var(--space-1) / 2);
-        }
-
-        .proportion-value {
-            font-size: 1.2rem;
-            color: var(--earth-brown);
-            font-family: 'Courier New', monospace;
-        }
-
-        @media (max-width: 768px) {
-            .calculator-grid {
+                color: var(--shadow-depth);
+                min-height: 100vh;
+                padding: var(--space-1);
+                }
+                .sacred-container {
+                max-width: calc(1200px / var(--phi));
+                margin: 0 auto;
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: calc(var(--space-1) / var(--phi));
+                box-shadow: 0 calc(var(--space-1) / 2) var(--space-2) rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                }
+                .sacred-header {
+                background: linear-gradient(135deg, var(--sacred-blue), var(--mystic-purple));
+                color: var(--crystal-white);
+                text-align: center;
+                padding: var(--space-2);
+                }
+                .sacred-title {
+                font-size: calc(2rem * var(--phi));
+                margin-bottom: var(--space-1);
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                }
+                .sacred-subtitle {
+                font-size: 1.2rem;
+                opacity: 0.9;
+                font-style: italic;
+                }
+                .calculator-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-2);
+                padding: var(--space-2);
+                }
+                .calculator-section {
+                background: var(--crystal-white);
+                border: 2px solid var(--golden-light);
+                border-radius: var(--space-1);
+                padding: var(--space-1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+                .section-title {
+                font-size: 1.5rem;
+                color: var(--sacred-blue);
+                margin-bottom: var(--space-1);
+                text-align: center;
+                border-bottom: 2px solid var(--golden-light);
+                padding-bottom: calc(var(--space-1) / 2);
+                }
+                .input-group {
+                margin-bottom: var(--space-1);
+                }
+                .input-label {
+                display: block;
+                margin-bottom: calc(var(--space-1) / 3);
+                color: var(--earth-brown);
+                font-weight: bold;
+                }
+                .sacred-input {
+                width: 100%;
+                padding: calc(var(--space-1) / 2);
+                border: 2px solid var(--nature-green);
+                border-radius: calc(var(--space-1) / 3);
+                font-size: 1rem;
+                background: rgba(255, 255, 255, 0.9);
+                transition: all 0.3s ease;
+                }
+                .sacred-input:focus {
+                outline: none;
+                border-color: var(--mystic-purple);
+                box-shadow: 0 0 10px rgba(107, 70, 193, 0.3);
+                }
+                .calculate-btn {
+                width: 100%;
+                padding: var(--space-1);
+                background: linear-gradient(135deg, var(--nature-green), var(--golden-light));
+                color: white;
+                border: none;
+                border-radius: calc(var(--space-1) / 2);
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: var(--space-1);
+                }
+                .calculate-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                }
+                .results-display {
+                background: linear-gradient(135deg, var(--mystic-purple), var(--sacred-blue));
+                color: var(--crystal-white);
+                padding: var(--space-1);
+                border-radius: calc(var(--space-1) / 2);
+                margin-top: var(--space-1);
+                min-height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-family: 'Courier New', monospace;
+                }
+                .golden-ratio-display {
+                font-size: 3rem;
+                font-weight: bold;
+                color: var(--golden-light);
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                margin: var(--space-1) 0;
+                }
+                .mandala-preview {
+                grid-column: 1 / -1;
+                background: var(--crystal-white);
+                border: 3px solid var(--golden-light);
+                border-radius: var(--space-1);
+                padding: var(--space-2);
+                text-align: center;
+                }
+                .mandala-canvas {
+                width: 100%;
+                max-width: 400px;
+                height: 400px;
+                border: 2px solid var(--sacred-blue);
+                border-radius: 50%;
+                margin: var(--space-1) auto;
+                background: radial-gradient(circle, var(--crystal-white), #E5E7EB);
+                }
+                .proportion-guide {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: var(--space-1);
+                margin-top: var(--space-1);
+                }
+                .proportion-card {
+                background: rgba(255, 215, 0, 0.1);
+                border: 1px solid var(--golden-light);
+                border-radius: calc(var(--space-1) / 2);
+                padding: var(--space-1);
+                text-align: center;
+                }
+                .proportion-title {
+                font-weight: bold;
+                color: var(--sacred-blue);
+                margin-bottom: calc(var(--space-1) / 2);
+                }
+                .proportion-value {
+                font-size: 1.2rem;
+                color: var(--earth-brown);
+                font-family: 'Courier New', monospace;
+                }
+                @media (max-width: 768px) {
+                .calculator-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .sacred-title {
+                }
+                .sacred-title {
                 font-size: 2rem;
-            }
-        }
-
-        /* Sacred Geometry Animations */
-        @keyframes sacred-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .sacred-symbol {
-            animation: sacred-pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes golden-glow {
-            0%, 100% { box-shadow: 0 0 10px var(--golden-light); }
-            50% { box-shadow: 0 0 20px var(--golden-light), 0 0 30px var(--golden-light); }
-        }
-
-        .golden-active {
-            animation: golden-glow 2s ease-in-out infinite;
-        }
-    </style>
-</head>
-<body>
-    <div class="sacred-container">
-        <div class="sacred-header">
-            <h1 class="sacred-title sacred-symbol">🔮 Sacred Geometry Calculator</h1>
-            <p class="sacred-subtitle">Timeless Proportions for Mind, Body & Soul</p>
-            <div class="golden-ratio-display">φ = 1.618033988...</div>
-        </div>
-
-        <div class="calculator-grid">
-            <!-- Golden Ratio Calculator -->
-            <div class="calculator-section">
-                <h2 class="section-title">🏛️ Golden Ratio Calculator</h2>
-                
-                <div class="input-group">
-                    <label class="input-label">Enter any dimension:</label>
-                    <input type="number" class="sacred-input" id="goldenInput" placeholder="e.g., 100">
-                </div>
-                
-                <button class="calculate-btn" onclick="calculateGoldenRatio()">
-                    ✨ Calculate Sacred Proportions
-                </button>
-                
-                <div class="results-display" id="goldenResults">
-                    Enter a dimension to see its golden ratio proportions
-                </div>
-            </div>
-
-            <!-- Mandala Calculator -->
-            <div class="calculator-section">
-                <h2 class="section-title">🕸️ Mandala Calculator</h2>
-                
-                <div class="input-group">
-                    <label class="input-label">Circle radius:</label>
-                    <input type="number" class="sacred-input" id="mandalaRadius" placeholder="e.g., 200">
-                </div>
-                
-                <div class="input-group">
-                    <label class="input-label">Number of divisions:</label>
-                    <input type="number" class="sacred-input" id="mandalaDivisions" placeholder="e.g., 8" min="3" max="144">
-                </div>
-                
-                <button class="calculate-btn" onclick="calculateMandala()">
-                    🌸 Generate Mandala Grid
-                </button>
-                
-                <div class="results-display" id="mandalaResults">
-                    Enter parameters to generate sacred geometry
-                </div>
-            </div>
-
-            <!-- Cathedral Proportions -->
-            <div class="calculator-section">
-                <h2 class="section-title">⛪ Cathedral Proportions</h2>
-                
-                <div class="input-group">
-                    <label class="input-label">Base width:</label>
-                    <input type="number" class="sacred-input" id="cathedralWidth" placeholder="e.g., 300">
-                </div>
-                
-                <button class="calculate-btn" onclick="calculateCathedral()">
-                    🏗️ Calculate Sacred Architecture
-                </button>
-                
-                <div class="results-display" id="cathedralResults">
-                    Classical architectural proportions await
-                </div>
-            </div>
-
-            <!-- Consciousness Mapping -->
-            <div class="calculator-section">
-                <h2 class="section-title">🧠 Consciousness Mapper</h2>
-                
-                <div class="input-group">
-                    <label class="input-label">Focus level (1-100):</label>
-                    <input type="range" class="sacred-input" id="focusLevel" min="1" max="100" value="50">
-                    <span id="focusValue">50</span>
-                </div>
-                
-                <div class="input-group">
-                    <label class="input-label">Creative flow (1-100):</label>
-                    <input type="range" class="sacred-input" id="flowLevel" min="1" max="100" value="50">
-                    <span id="flowValue">50</span>
-                </div>
-                
-                <button class="calculate-btn" onclick="mapConsciousness()">
-                    ✨ Map Consciousness State
-                </button>
-                
-                <div class="results-display" id="consciousnessResults">
-                    Your consciousness geometry awaits mapping
-                </div>
-            </div>
-
-            <!-- Live Mandala Preview -->
-            <div class="mandala-preview">
-                <h2 class="section-title">🌟 Live Sacred Geometry</h2>
-                <canvas class="mandala-canvas" id="mandalaCanvas"></canvas>
-                
-                <div class="proportion-guide">
-                    <div class="proportion-card">
-                        <div class="proportion-title">Golden Angle</div>
-                        <div class="proportion-value">137.5°</div>
-                    </div>
-                    <div class="proportion-card">
-                        <div class="proportion-title">Sacred Root</div>
-                        <div class="proportion-value">√5 = 2.236</div>
-                    </div>
-                    <div class="proportion-card">
-                        <div class="proportion-title">Phi Ratio</div>
-                        <div class="proportion-value">1:1.618</div>
-                    </div>
-                    <div class="proportion-card">
-                        <div class="proportion-title">Fibonacci</div>
-                        <div class="proportion-value">1,1,2,3,5,8,13...</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Sacred Mathematics Constants
-        const PHI = (1 + Math.sqrt(5)) / 2; // Golden Ratio
-        const GOLDEN_ANGLE = 137.507764; // Golden Angle in degrees
-        const SACRED_ROOT = Math.sqrt(5);
-
-        // Initialize canvas
-        const canvas = document.getElementById('mandalaCanvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = 400;
-        canvas.height = 400;
-
-        // Update range displays
-        document.getElementById('focusLevel').addEventListener('input', function() {
-            document.getElementById('focusValue').textContent = this.value;
-            drawLiveMandala();
-        });
-
-        document.getElementById('flowLevel').addEventListener('input', function() {
-            document.getElementById('flowValue').textContent = this.value;
-            drawLiveMandala();
-        });
-
-        function calculateGoldenRatio() {
-            const input = parseFloat(document.getElementById('goldenInput').value);
-            if (!input || input <= 0) {
-                document.getElementById('goldenResults').innerHTML = 'Please enter a positive number';
-                return;
-            }
-
-            const larger = input * PHI;
-            const smaller = input / PHI;
-            const fibonacci = generateFibonacci(8);
-
-            document.getElementById('goldenResults').innerHTML = `
-                <div style="font-size: 1.1rem; margin-bottom: 1rem;">
-                    <strong>Golden Proportions for ${input}:</strong>
-                </div>
-                <div>Larger section: <strong>${larger.toFixed(3)}</strong></div>
-                <div>Smaller section: <strong>${smaller.toFixed(3)}</strong></div>
-                <div>Ratio: <strong>1:${PHI.toFixed(6)}</strong></div>
-                <div style="margin-top: 1rem;">
-                    <strong>Fibonacci sequence:</strong><br>
-                    ${fibonacci.join(', ')}
-                </div>
-            `;
-        }
-
-        function calculateMandala() {
-            const radius = parseFloat(document.getElementById('mandalaRadius').value);
-            const divisions = parseInt(document.getElementById('mandalaDivisions').value);
-            
-            if (!radius || !divisions || radius <= 0 || divisions < 3) {
-                document.getElementById('mandalaResults').innerHTML = 'Please enter valid radius and divisions (3+)';
-                return;
-            }
-
-            const anglePerDivision = 360 / divisions;
-            const circumference = 2 * Math.PI * radius;
-            const segmentLength = circumference / divisions;
-
-            document.getElementById('mandalaResults').innerHTML = `
-                <div style="font-size: 1.1rem; margin-bottom: 1rem;">
-                    <strong>Mandala Sacred Geometry:</strong>
-                </div>
-                <div>Radius: <strong>${radius}</strong></div>
-                <div>Divisions: <strong>${divisions}</strong></div>
-                <div>Angle per division: <strong>${anglePerDivision.toFixed(2)}°</strong></div>
-                <div>Segment arc length: <strong>${segmentLength.toFixed(2)}</strong></div>
-                <div>Golden ratio circles: <strong>${(radius / PHI).toFixed(2)}</strong></div>
-            `;
-
-            drawMandala(radius, divisions);
-        }
-
-        function calculateCathedral() {
-            const width = parseFloat(document.getElementById('cathedralWidth').value);
-            if (!width || width <= 0) {
-                document.getElementById('cathedralResults').innerHTML = 'Please enter a positive width';
-                return;
-            }
-
-            // Classical cathedral proportions
-            const height = width * PHI; // Golden ratio height
-            const naveWidth = width / 3; // Rule of thirds
-            const transeptWidth = width * (2/3);
-            const apseRadius = width / 6;
-            const towerHeight = height * PHI; // Double golden ratio
-
-            document.getElementById('cathedralResults').innerHTML = `
-                <div style="font-size: 1.1rem; margin-bottom: 1rem;">
-                    <strong>Sacred Cathedral Proportions:</strong>
-                </div>
-                <div>Total height: <strong>${height.toFixed(1)}</strong></div>
-                <div>Nave width: <strong>${naveWidth.toFixed(1)}</strong></div>
-                <div>Transept width: <strong>${transeptWidth.toFixed(1)}</strong></div>
-                <div>Apse radius: <strong>${apseRadius.toFixed(1)}</strong></div>
-                <div>Tower height: <strong>${towerHeight.toFixed(1)}</strong></div>
-                <div style="margin-top: 1rem; font-style: italic;">
-                    Based on classical Gothic proportions
-                </div>
-            `;
-        }
-
-        function mapConsciousness() {
-            const focus = parseInt(document.getElementById('focusLevel').value);
-            const flow = parseInt(document.getElementById('flowLevel').value);
-            
-            const harmonic = (focus + flow) / 2;
-            const geometry = focus * flow / 100; // Consciousness geometry factor
-            const sacredRatio = (focus / flow).toFixed(3);
-
-            let consciousnessState = '';
-            if (harmonic > 80) consciousnessState = 'Transcendent Flow State';
-            else if (harmonic > 60) consciousnessState = 'Harmonious Awareness';
-            else if (harmonic > 40) consciousnessState = 'Balanced Presence';
-            else consciousnessState = 'Seeking Balance';
-
-            document.getElementById('consciousnessResults').innerHTML = `
-                <div style="font-size: 1.1rem; margin-bottom: 1rem;">
-                    <strong>Consciousness Geometry:</strong>
-                </div>
-                <div>State: <strong>${consciousnessState}</strong></div>
-                <div>Harmonic average: <strong>${harmonic.toFixed(1)}</strong></div>
-                <div>Geometry factor: <strong>${geometry.toFixed(2)}</strong></div>
-                <div>Focus:Flow ratio: <strong>${sacredRatio}</strong></div>
-                <div style="margin-top: 1rem; font-style: italic;">
-                    Sacred patterns emerging from consciousness
-                </div>
-            `;
-
-            drawConsciousnessMandala(focus, flow);
-        }
-
-        function generateFibonacci(count) {
-            const fib = [1, 1];
-            for (let i = 2; i < count; i++) {
-                fib[i] = fib[i-1] + fib[i-2];
-            }
-            return fib;
-        }
-
-        function drawMandala(radius, divisions) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-            const scaledRadius = Math.min(radius, 180);
-
-            // Outer circle
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, scaledRadius, 0, 2 * Math.PI);
-            ctx.strokeStyle = '#1E3A8A';
-            ctx.lineWidth = 2;
-            ctx.stroke();
-
-            // Division lines
-            ctx.strokeStyle = '#FFD700';
-            ctx.lineWidth = 1;
-            for (let i = 0; i < divisions; i++) {
-                const angle = (i * 2 * Math.PI) / divisions;
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(
-                    centerX + scaledRadius * Math.cos(angle),
-                    centerY + scaledRadius * Math.sin(angle)
-                );
-                ctx.stroke();
-            }
-
-            // Golden ratio circles
-            ctx.strokeStyle = '#6B46C1';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, scaledRadius / PHI, 0, 2 * Math.PI);
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, scaledRadius / (PHI * PHI), 0, 2 * Math.PI);
-            ctx.stroke();
-        }
-
-        function drawLiveMandala() {
-            const focus = parseInt(document.getElementById('focusLevel').value);
-            const flow = parseInt(document.getElementById('flowLevel').value);
-            
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-            
-            // Dynamic geometry based on consciousness
-            const divisions = Math.floor((focus + flow) / 8) + 3;
-            const radius = (focus + flow) * 1.5;
-            const scaledRadius = Math.min(radius, 180);
-
-            // Consciousness-colored outer circle
-            const hue = (focus + flow) * 1.8;
-            ctx.strokeStyle = `hsl(${hue}, 70%, 50%)`;
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, scaledRadius, 0, 2 * Math.PI);
-            ctx.stroke();
-
-            // Flow patterns
-            ctx.strokeStyle = `hsl(${hue + 60}, 60%, 60%)`;
-            ctx.lineWidth = 1;
-            for (let i = 0; i < divisions; i++) {
-                const angle = (i * 2 * Math.PI) / divisions;
-                const innerRadius = scaledRadius * (flow / 100);
-                
-                ctx.beginPath();
-                ctx.moveTo(
-                    centerX + innerRadius * Math.cos(angle),
-                    centerY + innerRadius * Math.sin(angle)
-                );
-                ctx.lineTo(
-                    centerX + scaledRadius * Math.cos(angle),
-                    centerY + scaledRadius * Math.sin(angle)
-                );
-                ctx.stroke();
-            }
-
-            // Focus center
-            ctx.fillStyle = `hsl(${hue}, 80%, 70%)`;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, focus / 5, 0, 2 * Math.PI);
-            ctx.fill();
-        }
-
-        function drawConsciousnessMandala(focus, flow) {
-            drawLiveMandala(); // Use the live mandala for consciousness visualization
-        }
-
-        // Initialize with default mandala
-        drawLiveMandala();
-
-        // Auto-update live mandala every 3 seconds
-        setInterval(() => {
-            drawLiveMandala();
-        }, 3000);
-
-        console.log('🔮 Sacred Geometry Calculator initialized');
-        console.log('🏛️ Golden ratio tools ready for timeless design');
-        console.log('🕸️ Mandala generators active');
-        console.log('⛪ Cathedral proportion calculators online');
-    </script>
-</body>
-</html>
+                }
+                }
+                /* Sacred Geometry Animations */
+                @keyframes sacred-pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                }
+                .sacred-symbol {
+                animation: sacred-pulse 3s ease-in-out infinite;
+                }
+                @keyframes golden-glow {
+                0%, 100% { box-shadow: 0 0 10px var(--golden-light); }
+                50% { box-shadow: 0 0 20px var(--golden-light), 0 0 30px var(--golden-light); }
+                }
+                .golden-active {
+                animation: golden-glow 2s ease-in-out infinite;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="sacred-container">
+                <div class="sacred-header">
+                    <h1 class="sacred-title sacred-symbol">🔮 Sacred Geometry Calculator</h1>
+                        <p class="sacred-subtitle">Timeless Proportions for Mind, Body & Soul</p>
+                            <div class="golden-ratio-display">φ = 1.618033988...</div>
+                            </div>
+                            <div class="calculator-grid">
+                                <!-- Golden Ratio Calculator -->
+                                <div class="calculator-section">
+                                    <h2 class="section-title">🏛️ Golden Ratio Calculator</h2>
+                                        <div class="input-group">
+                                            <label class="input-label">Enter any dimension:</label>
+                                                <input type="number" class="sacred-input" id="goldenInput" placeholder="e.g., 100">
+                                            </div>
+                                            <button class="calculate-btn" onclick="calculateGoldenRatio()">
+                                                ✨ Calculate Sacred Proportions
+                                            </button>
+                                            <div class="results-display" id="goldenResults">
+                                                Enter a dimension to see its golden ratio proportions
+                                            </div>
+                                        </div>
+                                        <!-- Mandala Calculator -->
+                                        <div class="calculator-section">
+                                            <h2 class="section-title">🕸️ Mandala Calculator</h2>
+                                                <div class="input-group">
+                                                    <label class="input-label">Circle radius:</label>
+                                                        <input type="number" class="sacred-input" id="mandalaRadius" placeholder="e.g., 200">
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <label class="input-label">Number of divisions:</label>
+                                                            <input type="number" class="sacred-input" id="mandalaDivisions" placeholder="e.g., 8" min="3" max="144">
+                                                        </div>
+                                                        <button class="calculate-btn" onclick="calculateMandala()">
+                                                            🌸 Generate Mandala Grid
+                                                        </button>
+                                                        <div class="results-display" id="mandalaResults">
+                                                            Enter parameters to generate sacred geometry
+                                                        </div>
+                                                    </div>
+                                                    <!-- Cathedral Proportions -->
+                                                    <div class="calculator-section">
+                                                        <h2 class="section-title">⛪ Cathedral Proportions</h2>
+                                                            <div class="input-group">
+                                                                <label class="input-label">Base width:</label>
+                                                                    <input type="number" class="sacred-input" id="cathedralWidth" placeholder="e.g., 300">
+                                                                </div>
+                                                                <button class="calculate-btn" onclick="calculateCathedral()">
+                                                                    🏗️ Calculate Sacred Architecture
+                                                                </button>
+                                                                <div class="results-display" id="cathedralResults">
+                                                                    Classical architectural proportions await
+                                                                </div>
+                                                            </div>
+                                                            <!-- Consciousness Mapping -->
+                                                            <div class="calculator-section">
+                                                                <h2 class="section-title">🧠 Consciousness Mapper</h2>
+                                                                    <div class="input-group">
+                                                                        <label class="input-label">Focus level (1-100):</label>
+                                                                            <input type="range" class="sacred-input" id="focusLevel" min="1" max="100" value="50">
+                                                                            <span id="focusValue">50</span>
+                                                                            </div>
+                                                                            <div class="input-group">
+                                                                                <label class="input-label">Creative flow (1-100):</label>
+                                                                                    <input type="range" class="sacred-input" id="flowLevel" min="1" max="100" value="50">
+                                                                                    <span id="flowValue">50</span>
+                                                                                    </div>
+                                                                                    <button class="calculate-btn" onclick="mapConsciousness()">
+                                                                                        ✨ Map Consciousness State
+                                                                                    </button>
+                                                                                    <div class="results-display" id="consciousnessResults">
+                                                                                        Your consciousness geometry awaits mapping
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Live Mandala Preview -->
+                                                                                <div class="mandala-preview">
+                                                                                    <h2 class="section-title">🌟 Live Sacred Geometry</h2>
+                                                                                        <canvas class="mandala-canvas" id="mandalaCanvas">
+                                                                                        </canvas>
+                                                                                        <div class="proportion-guide">
+                                                                                            <div class="proportion-card">
+                                                                                                <div class="proportion-title">Golden Angle</div>
+                                                                                                    <div class="proportion-value">137.5°</div>
+                                                                                                    </div>
+                                                                                                    <div class="proportion-card">
+                                                                                                        <div class="proportion-title">Sacred Root</div>
+                                                                                                            <div class="proportion-value">√5 = 2.236</div>
+                                                                                                            </div>
+                                                                                                            <div class="proportion-card">
+                                                                                                                <div class="proportion-title">Phi Ratio</div>
+                                                                                                                    <div class="proportion-value">1:1.618</div>
+                                                                                                                    </div>
+                                                                                                                    <div class="proportion-card">
+                                                                                                                        <div class="proportion-title">Fibonacci</div>
+                                                                                                                            <div class="proportion-value">1,1,2,3,5,8,13...</div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <script>
+                                                                                                                // Sacred Mathematics Constants
+                                                                                                                const PHI = (1 + Math.sqrt(5)) / 2; // Golden Ratio
+                                                                                                                const GOLDEN_ANGLE = 137.507764; // Golden Angle in degrees
+                                                                                                                const SACRED_ROOT = Math.sqrt(5);
+                                                                                                                // Initialize canvas
+                                                                                                                const canvas = document.getElementById('mandalaCanvas');
+                                                                                                                const ctx = canvas.getContext('2d');
+                                                                                                                canvas.width = 400;
+                                                                                                                canvas.height = 400;
+                                                                                                                // Update range displays
+                                                                                                                document.getElementById('focusLevel').addEventListener('input', function() {
+                                                                                                                document.getElementById('focusValue').textContent = this.value;
+                                                                                                                drawLiveMandala();
+                                                                                                                });
+                                                                                                                document.getElementById('flowLevel').addEventListener('input', function() {
+                                                                                                                document.getElementById('flowValue').textContent = this.value;
+                                                                                                                drawLiveMandala();
+                                                                                                                });
+                                                                                                                function calculateGoldenRatio() {
+                                                                                                                const input = parseFloat(document.getElementById('goldenInput').value);
+                                                                                                                if (!input || input <= 0) {
+                                                                                                                    document.getElementById('goldenResults').innerHTML = 'Please enter a positive number';
+                                                                                                                    return;
+                                                                                                                    }
+                                                                                                                    const larger = input * PHI;
+                                                                                                                    const smaller = input / PHI;
+                                                                                                                    const fibonacci = generateFibonacci(8);
+                                                                                                                    document.getElementById('goldenResults').innerHTML = `
+                                                                                                                    <div style="font-size: 1.1rem; margin-bottom: 1rem;">
+                                                                                                                        <strong>Golden Proportions for ${input}:</strong>
+                                                                                                                        </div>
+                                                                                                                        <div>Larger section: <strong>${larger.toFixed(3)}</strong>
+                                                                                                                        </div>
+                                                                                                                        <div>Smaller section: <strong>${smaller.toFixed(3)}</strong>
+                                                                                                                        </div>
+                                                                                                                        <div>Ratio: <strong>1:${PHI.toFixed(6)}</strong>
+                                                                                                                        </div>
+                                                                                                                        <div style="margin-top: 1rem;">
+                                                                                                                            <strong>Fibonacci sequence:</strong>
+                                                                                                                                <br>
+                                                                                                                                ${fibonacci.join(', ')}
+                                                                                                                            </div>
+                                                                                                                            `;
+                                                                                                                            }
+                                                                                                                            function calculateMandala() {
+                                                                                                                            const radius = parseFloat(document.getElementById('mandalaRadius').value);
+                                                                                                                            const divisions = parseInt(document.getElementById('mandalaDivisions').value);
+                                                                                                                            if (!radius || !divisions || radius <= 0 || divisions < 3) {
+                                                                                                                                document.getElementById('mandalaResults').innerHTML = 'Please enter valid radius and divisions (3+)';
+                                                                                                                                return;
+                                                                                                                                }
+                                                                                                                                const anglePerDivision = 360 / divisions;
+                                                                                                                                const circumference = 2 * Math.PI * radius;
+                                                                                                                                const segmentLength = circumference / divisions;
+                                                                                                                                document.getElementById('mandalaResults').innerHTML = `
+                                                                                                                                <div style="font-size: 1.1rem; margin-bottom: 1rem;">
+                                                                                                                                    <strong>Mandala Sacred Geometry:</strong>
+                                                                                                                                    </div>
+                                                                                                                                    <div>Radius: <strong>${radius}</strong>
+                                                                                                                                    </div>
+                                                                                                                                    <div>Divisions: <strong>${divisions}</strong>
+                                                                                                                                    </div>
+                                                                                                                                    <div>Angle per division: <strong>${anglePerDivision.toFixed(2)}°</strong>
+                                                                                                                                    </div>
+                                                                                                                                    <div>Segment arc length: <strong>${segmentLength.toFixed(2)}</strong>
+                                                                                                                                    </div>
+                                                                                                                                    <div>Golden ratio circles: <strong>${(radius / PHI).toFixed(2)}</strong>
+                                                                                                                                    </div>
+                                                                                                                                    `;
+                                                                                                                                    drawMandala(radius, divisions);
+                                                                                                                                    }
+                                                                                                                                    function calculateCathedral() {
+                                                                                                                                    const width = parseFloat(document.getElementById('cathedralWidth').value);
+                                                                                                                                    if (!width || width <= 0) {
+                                                                                                                                        document.getElementById('cathedralResults').innerHTML = 'Please enter a positive width';
+                                                                                                                                        return;
+                                                                                                                                        }
+                                                                                                                                        // Classical cathedral proportions
+                                                                                                                                        const height = width * PHI; // Golden ratio height
+                                                                                                                                        const naveWidth = width / 3; // Rule of thirds
+                                                                                                                                        const transeptWidth = width * (2/3);
+                                                                                                                                        const apseRadius = width / 6;
+                                                                                                                                        const towerHeight = height * PHI; // Double golden ratio
+                                                                                                                                        document.getElementById('cathedralResults').innerHTML = `
+                                                                                                                                        <div style="font-size: 1.1rem; margin-bottom: 1rem;">
+                                                                                                                                            <strong>Sacred Cathedral Proportions:</strong>
+                                                                                                                                            </div>
+                                                                                                                                            <div>Total height: <strong>${height.toFixed(1)}</strong>
+                                                                                                                                            </div>
+                                                                                                                                            <div>Nave width: <strong>${naveWidth.toFixed(1)}</strong>
+                                                                                                                                            </div>
+                                                                                                                                            <div>Transept width: <strong>${transeptWidth.toFixed(1)}</strong>
+                                                                                                                                            </div>
+                                                                                                                                            <div>Apse radius: <strong>${apseRadius.toFixed(1)}</strong>
+                                                                                                                                            </div>
+                                                                                                                                            <div>Tower height: <strong>${towerHeight.toFixed(1)}</strong>
+                                                                                                                                            </div>
+                                                                                                                                            <div style="margin-top: 1rem; font-style: italic;">
+                                                                                                                                                Based on classical Gothic proportions
+                                                                                                                                            </div>
+                                                                                                                                            `;
+                                                                                                                                            }
+                                                                                                                                            function mapConsciousness() {
+                                                                                                                                            const focus = parseInt(document.getElementById('focusLevel').value);
+                                                                                                                                            const flow = parseInt(document.getElementById('flowLevel').value);
+                                                                                                                                            const harmonic = (focus + flow) / 2;
+                                                                                                                                            const geometry = focus * flow / 100; // Consciousness geometry factor
+                                                                                                                                            const sacredRatio = (focus / flow).toFixed(3);
+                                                                                                                                            let consciousnessState = '';
+                                                                                                                                            if (harmonic > 80) consciousnessState = 'Transcendent Flow State';
+                                                                                                                                            else if (harmonic > 60) consciousnessState = 'Harmonious Awareness';
+                                                                                                                                            else if (harmonic > 40) consciousnessState = 'Balanced Presence';
+                                                                                                                                            else consciousnessState = 'Seeking Balance';
+                                                                                                                                            document.getElementById('consciousnessResults').innerHTML = `
+                                                                                                                                            <div style="font-size: 1.1rem; margin-bottom: 1rem;">
+                                                                                                                                                <strong>Consciousness Geometry:</strong>
+                                                                                                                                                </div>
+                                                                                                                                                <div>State: <strong>${consciousnessState}</strong>
+                                                                                                                                                </div>
+                                                                                                                                                <div>Harmonic average: <strong>${harmonic.toFixed(1)}</strong>
+                                                                                                                                                </div>
+                                                                                                                                                <div>Geometry factor: <strong>${geometry.toFixed(2)}</strong>
+                                                                                                                                                </div>
+                                                                                                                                                <div>Focus:Flow ratio: <strong>${sacredRatio}</strong>
+                                                                                                                                                </div>
+                                                                                                                                                <div style="margin-top: 1rem; font-style: italic;">
+                                                                                                                                                    Sacred patterns emerging from consciousness
+                                                                                                                                                </div>
+                                                                                                                                                `;
+                                                                                                                                                drawConsciousnessMandala(focus, flow);
+                                                                                                                                                }
+                                                                                                                                                function generateFibonacci(count) {
+                                                                                                                                                const fib = [1, 1];
+                                                                                                                                                for (let i = 2; i < count; i++) {
+                                                                                                                                                    fib[i] = fib[i-1] + fib[i-2];
+                                                                                                                                                    }
+                                                                                                                                                    return fib;
+                                                                                                                                                    }
+                                                                                                                                                    function drawMandala(radius, divisions) {
+                                                                                                                                                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                                                                                                                                    const centerX = canvas.width / 2;
+                                                                                                                                                    const centerY = canvas.height / 2;
+                                                                                                                                                    const scaledRadius = Math.min(radius, 180);
+                                                                                                                                                    // Outer circle
+                                                                                                                                                    ctx.beginPath();
+                                                                                                                                                    ctx.arc(centerX, centerY, scaledRadius, 0, 2 * Math.PI);
+                                                                                                                                                    ctx.strokeStyle = '#1E3A8A';
+                                                                                                                                                    ctx.lineWidth = 2;
+                                                                                                                                                    ctx.stroke();
+                                                                                                                                                    // Division lines
+                                                                                                                                                    ctx.strokeStyle = '#FFD700';
+                                                                                                                                                    ctx.lineWidth = 1;
+                                                                                                                                                    for (let i = 0; i < divisions; i++) {
+                                                                                                                                                        const angle = (i * 2 * Math.PI) / divisions;
+                                                                                                                                                        ctx.beginPath();
+                                                                                                                                                        ctx.moveTo(centerX, centerY);
+                                                                                                                                                        ctx.lineTo(
+                                                                                                                                                        centerX + scaledRadius * Math.cos(angle),
+                                                                                                                                                        centerY + scaledRadius * Math.sin(angle)
+                                                                                                                                                        );
+                                                                                                                                                        ctx.stroke();
+                                                                                                                                                        }
+                                                                                                                                                        // Golden ratio circles
+                                                                                                                                                        ctx.strokeStyle = '#6B46C1';
+                                                                                                                                                        ctx.lineWidth = 1;
+                                                                                                                                                        ctx.beginPath();
+                                                                                                                                                        ctx.arc(centerX, centerY, scaledRadius / PHI, 0, 2 * Math.PI);
+                                                                                                                                                        ctx.stroke();
+                                                                                                                                                        ctx.beginPath();
+                                                                                                                                                        ctx.arc(centerX, centerY, scaledRadius / (PHI * PHI), 0, 2 * Math.PI);
+                                                                                                                                                        ctx.stroke();
+                                                                                                                                                        }
+                                                                                                                                                        function drawLiveMandala() {
+                                                                                                                                                        const focus = parseInt(document.getElementById('focusLevel').value);
+                                                                                                                                                        const flow = parseInt(document.getElementById('flowLevel').value);
+                                                                                                                                                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                                                                                                                                        const centerX = canvas.width / 2;
+                                                                                                                                                        const centerY = canvas.height / 2;
+                                                                                                                                                        // Dynamic geometry based on consciousness
+                                                                                                                                                        const divisions = Math.floor((focus + flow) / 8) + 3;
+                                                                                                                                                        const radius = (focus + flow) * 1.5;
+                                                                                                                                                        const scaledRadius = Math.min(radius, 180);
+                                                                                                                                                        // Consciousness-colored outer circle
+                                                                                                                                                        const hue = (focus + flow) * 1.8;
+                                                                                                                                                        ctx.strokeStyle = `hsl(${hue}, 70%, 50%)`;
+                                                                                                                                                        ctx.lineWidth = 3;
+                                                                                                                                                        ctx.beginPath();
+                                                                                                                                                        ctx.arc(centerX, centerY, scaledRadius, 0, 2 * Math.PI);
+                                                                                                                                                        ctx.stroke();
+                                                                                                                                                        // Flow patterns
+                                                                                                                                                        ctx.strokeStyle = `hsl(${hue + 60}, 60%, 60%)`;
+                                                                                                                                                        ctx.lineWidth = 1;
+                                                                                                                                                        for (let i = 0; i < divisions; i++) {
+                                                                                                                                                            const angle = (i * 2 * Math.PI) / divisions;
+                                                                                                                                                            const innerRadius = scaledRadius * (flow / 100);
+                                                                                                                                                            ctx.beginPath();
+                                                                                                                                                            ctx.moveTo(
+                                                                                                                                                            centerX + innerRadius * Math.cos(angle),
+                                                                                                                                                            centerY + innerRadius * Math.sin(angle)
+                                                                                                                                                            );
+                                                                                                                                                            ctx.lineTo(
+                                                                                                                                                            centerX + scaledRadius * Math.cos(angle),
+                                                                                                                                                            centerY + scaledRadius * Math.sin(angle)
+                                                                                                                                                            );
+                                                                                                                                                            ctx.stroke();
+                                                                                                                                                            }
+                                                                                                                                                            // Focus center
+                                                                                                                                                            ctx.fillStyle = `hsl(${hue}, 80%, 70%)`;
+                                                                                                                                                            ctx.beginPath();
+                                                                                                                                                            ctx.arc(centerX, centerY, focus / 5, 0, 2 * Math.PI);
+                                                                                                                                                            ctx.fill();
+                                                                                                                                                            }
+                                                                                                                                                            function drawConsciousnessMandala(focus, flow) {
+                                                                                                                                                            drawLiveMandala(); // Use the live mandala for consciousness visualization
+                                                                                                                                                            }
+                                                                                                                                                            // Initialize with default mandala
+                                                                                                                                                            drawLiveMandala();
+                                                                                                                                                            // Auto-update live mandala every 3 seconds
+                                                                                                                                                            setInterval(() => {
+                                                                                                                                                            drawLiveMandala();
+                                                                                                                                                            }, 3000);
+                                                                                                                                                            console.log('🔮 Sacred Geometry Calculator initialized');
+                                                                                                                                                            console.log('🏛️ Golden ratio tools ready for timeless design');
+                                                                                                                                                            console.log('🕸️ Mandala generators active');
+                                                                                                                                                            console.log('⛪ Cathedral proportion calculators online');
+                                                                                                                                                        </script>
+                                                                                                                                                    </body>
+                                                                                                                                                </html>
