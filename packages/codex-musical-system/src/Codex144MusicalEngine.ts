@@ -5,9 +5,9 @@
  */
 
 import * as Tone from 'tone'
-import { strudel, Pattern, mini } from 'strudel'
 import { EventEmitter } from 'events'
 
+// Core configuration interfaces
 export interface Codex144Config {
   goldenRatio: number
   fibonacciSequence: number[]
@@ -17,6 +17,90 @@ export interface Codex144Config {
   fractalDepth: number
   liverArcanaConnection: boolean
   chapterBookIntegration: boolean
+}
+
+export interface ModulationConfig {
+  type: 'sine' | 'square' | 'triangle' | 'sawtooth'
+  frequency: number
+  depth: number
+  enabled: boolean
+}
+
+export interface RecursionConfig {
+  depth: number
+  ratio: number
+  feedback: number
+  iteration: number
+}
+
+export interface VisualizationConfig {
+  enabled: boolean
+  type: 'waveform' | 'spectrum' | 'fractal'
+  resolution: number
+  colorScheme: string
+}
+
+export interface SymbolicMapping {
+  symbols: string[]
+  meanings: string[]
+  musicalCorrespondences: number[]
+  elementalAssociations: string[]
+}
+
+export interface ConsciousnessState {
+  awareness: number
+  creativity: number
+  intuition: number
+  logic: number
+}
+
+export interface ResearchCapabilities {
+  analysis: number
+  synthesis: number
+  pattern_recognition: number
+  hypothesis_generation: number
+}
+
+export interface ArtCreationCapabilities {
+  visual: number
+  musical: number
+  literary: number
+  performance: number
+}
+
+export interface SoundGenerationCapabilities {
+  synthesis: number
+  sampling: number
+  effects_processing: number
+  spatial_audio: number
+}
+
+export interface SymbolManipulationCapabilities {
+  encoding: number
+  decoding: number
+  transformation: number
+  generation: number
+}
+
+export interface BookChapter {
+  number: number
+  title: string
+  arcanaConnections: number[]
+  musicalThemes: string[]
+  researchCapabilities: ResearchCapabilities
+  artCreationTools: ArtCreationCapabilities
+}
+
+export interface FractalAudioProcessor {
+  depth: number
+  process: (input: number[]) => number[]
+  getVisualization: () => any
+}
+
+export interface StableConnectionManager {
+  isConnected: () => boolean
+  reconnect: () => Promise<void>
+  monitor: () => void
 }
 
 export interface ArcanaMusicalProfile {

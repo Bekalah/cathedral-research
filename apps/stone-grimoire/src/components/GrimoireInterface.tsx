@@ -1,6 +1,17 @@
 import React from 'react';
 
-const GrimoireInterface = ({ synthesis, activeRealm }) => {
+interface SynthesisResult {
+  type: string;
+  pattern?: string;
+  [key: string]: any;
+}
+
+interface GrimoireInterfaceProps {
+  synthesis?: SynthesisResult | null;
+  activeRealm?: string;
+}
+
+const GrimoireInterface: React.FC<GrimoireInterfaceProps> = ({ synthesis, activeRealm }) => {
   if (!synthesis) {
     return (
       <div className="grimoire-interface">

@@ -1,7 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
-const PerformanceMonitor = ({ isVisible = false, position = 'bottom-left' }) => {
-  const [metrics, setMetrics] = useState({
+interface PerformanceMetrics {
+  fps: number;
+  memory: number;
+  drawCalls: number;
+  triangles: number;
+  frameTime: number;
+}
+
+interface PerformanceMonitorProps {
+  isVisible?: boolean;
+  position?: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ isVisible = false, position = 'bottom-left' }) => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics>({
     fps: 0,
     memory: 0,
     drawCalls: 0,
