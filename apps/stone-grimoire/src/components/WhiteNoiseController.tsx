@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
-import { Codex144MusicalEngine } from '@cathedral/codex-musical-system'
+import { Codex144MusicalEngine } from '../../../../packages/codex-musical-system/src/Codex144MusicalEngine'
 import './WhiteNoiseController.css'
 
 interface WhiteNoiseControllerProps {

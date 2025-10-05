@@ -8,6 +8,8 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei';
 import { mysticalCrossReference } from '../../../src/services/mystical-cross-reference.js';
 import './styles.css';
+import CymaticDemo from '../../../../packages/labs/CymaticDemo';
+import { CodexEngine } from '../../../../packages/codex-engine';
 
 function App() {
   // Core application state
@@ -88,6 +90,11 @@ function App() {
       analyzeFractal(selectedResearch);
     }
   }, [selectedResearch, generationMode]);
+
+  // Example: log Codex info for creative research
+  useEffect(() => {
+    console.log('Codex:', CodexEngine);
+  }, []);
 
   const initializeFractalResearch = async () => {
     try {
@@ -536,6 +543,11 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <CymaticDemo />
+      <div style={{marginTop:24, color:'#888'}}>
+        <strong>Codex Research:</strong> {CodexEngine.description}
+      </div>
     </div>
   );
 }
@@ -634,32 +646,32 @@ const MysticalEnergyField = ({ complexity }) => {
 // Tab content components
 const OverviewTab = ({ profile }) => (
   <div className="overview-tab">
-    <div className="fractal-header">
-      <h3>{profile.name}</h3>
-      <div className="fractal-badges">
-        <span className="badge type">{profile.type}</span>
-        <span className="badge complexity" style={{ backgroundColor: getComplexityColor(profile.complexity) }}>
-          Complexity: {profile.complexity}/10
-        </span>
-        <span className="badge beauty">Beauty: {Math.round(profile.beauty * 100)}%</span>
+    <div>
+      <div className="fractal-header">
+        <h3>{profile.name}</h3>
+        <div className="fractal-badges">
+          <span className="badge type">{profile.type}</span>
+          <span className="badge complexity" style={{ backgroundColor: getComplexityColor(profile.complexity) }}>
+            Complexity: {profile.complexity}/10
+          </span>
+          <span className="badge beauty">Beauty: {Math.round(profile.beauty * 100)}%</span>
+        </div>
       </div>
-    </div>
-
-    <div className="fractal-description">
-      <p>{getFractalDescription(profile.id)}</p>
-    </div>
-
-    <div className="aesthetic-analysis">
-      <h4>🎨 Aesthetic Properties</h4>
-      <div className="aesthetic-grid">
-        <div className="aesthetic-item">
-          <strong>Symmetry:</strong> {profile.aesthetic?.symmetry}
-        </div>
-        <div className="aesthetic-item">
-          <strong>Patterns:</strong> {profile.aesthetic?.patterns?.join(', ')}
-        </div>
-        <div className="aesthetic-item">
-          <strong>Colors:</strong> {profile.aesthetic?.colors?.join(', ')}
+      <div className="fractal-description">
+        <p>{getFractalDescription(profile.id)}</p>
+      </div>
+      <div className="aesthetic-analysis">
+        <h4>🎨 Aesthetic Properties</h4>
+        <div className="aesthetic-grid">
+          <div className="aesthetic-item">
+            <strong>Symmetry:</strong> {profile.aesthetic?.symmetry}
+          </div>
+          <div className="aesthetic-item">
+            <strong>Patterns:</strong> {profile.aesthetic?.patterns?.join(', ')}
+          </div>
+          <div className="aesthetic-item">
+            <strong>Colors:</strong> {profile.aesthetic?.colors?.join(', ')}
+          </div>
         </div>
       </div>
     </div>
@@ -668,43 +680,43 @@ const OverviewTab = ({ profile }) => (
 
 const MathematicalTab = ({ profile }) => (
   <div className="mathematical-tab">
-    <h4>🧮 Mathematical Analysis</h4>
-
-    <div className="math-properties">
-      <div className="math-item">
-        <strong>Formula:</strong>
-        <code className="formula">{profile.mathematical?.formula}</code>
-      </div>
-      <div className="math-item">
-        <strong>Iterations:</strong> {profile.mathematical?.iterations}
-      </div>
-      <div className="math-item">
-        <strong>Convergence:</strong> {profile.mathematical?.convergence}
-      </div>
-      <div className="math-item">
-        <strong>Escape Radius:</strong> {profile.mathematical?.escapeRadius}
-      </div>
-    </div>
-
-    <div className="complexity-analysis">
-      <h5>📊 Complexity Metrics</h5>
-      <div className="complexity-visualization">
-        <div className="complexity-factor">
-          <span>Mathematical Depth</span>
-          <div className="factor-bar">
-            <div className="factor-fill math" style={{ width: `${profile.complexity * 10}%` }} />
-          </div>
+    <div>
+      <h4>🧮 Mathematical Analysis</h4>
+      <div className="math-properties">
+        <div className="math-item">
+          <strong>Formula:</strong>
+          <code className="formula">{profile.mathematical?.formula}</code>
         </div>
-        <div className="complexity-factor">
-          <span>Visual Beauty</span>
-          <div className="factor-bar">
-            <div className="factor-fill beauty" style={{ width: `${profile.beauty * 100}%` }} />
-          </div>
+        <div className="math-item">
+          <strong>Iterations:</strong> {profile.mathematical?.iterations}
         </div>
-        <div className="complexity-factor">
-          <span>Research Value</span>
-          <div className="factor-bar">
-            <div className="factor-fill research" style={{ width: `${(profile.complexity * profile.beauty) * 100}%` }} />
+        <div className="math-item">
+          <strong>Convergence:</strong> {profile.mathematical?.convergence}
+        </div>
+        <div className="math-item">
+          <strong>Escape Radius:</strong> {profile.mathematical?.escapeRadius}
+        </div>
+      </div>
+      <div className="complexity-analysis">
+        <h5>📊 Complexity Metrics</h5>
+        <div className="complexity-visualization">
+          <div className="complexity-factor">
+            <span>Mathematical Depth</span>
+            <div className="factor-bar">
+              <div className="factor-fill math" style={{ width: `${profile.complexity * 10}%` }} />
+            </div>
+          </div>
+          <div className="complexity-factor">
+            <span>Visual Beauty</span>
+            <div className="factor-bar">
+              <div className="factor-fill beauty" style={{ width: `${profile.beauty * 100}%` }} />
+            </div>
+          </div>
+          <div className="complexity-factor">
+            <span>Research Value</span>
+            <div className="factor-bar">
+              <div className="factor-fill research" style={{ width: `${(profile.complexity * profile.beauty) * 100}%` }} />
+            </div>
           </div>
         </div>
       </div>
@@ -714,62 +726,62 @@ const MathematicalTab = ({ profile }) => (
 
 const MysticalTab = ({ analysis }) => (
   <div className="mystical-tab">
-    <h4>🔮 Mystical Analysis</h4>
-
-    {analysis && (
-      <div className="mystical-properties">
-        <div className="mystical-item">
-          <strong>Primary Element:</strong> {analysis.primaryElement}
-        </div>
-        <div className="mystical-item">
-          <strong>Frequency Resonance:</strong> {analysis.frequencyResonance}Hz
-        </div>
-        <div className="mystical-item">
-          <strong>Consciousness Alignment:</strong> {Math.round(analysis.consciousnessAlignment * 100)}%
-        </div>
-        <div className="mystical-item">
-          <strong>Research Potential:</strong> {Math.round(analysis.researchPotential * 100)}%
-        </div>
-
-        <div className="mystical-correspondences">
-          <h5>🔗 Mystical Correspondences</h5>
-          <div className="correspondences-list">
-            {analysis.mysticalProperties?.map((prop, index) => (
-              <span key={index} className="correspondence-tag">{prop}</span>
-            ))}
+    <div>
+      <h4>🔮 Mystical Analysis</h4>
+      {analysis && (
+        <div className="mystical-properties">
+          <div className="mystical-item">
+            <strong>Primary Element:</strong> {analysis.primaryElement}
+          </div>
+          <div className="mystical-item">
+            <strong>Frequency Resonance:</strong> {analysis.frequencyResonance}Hz
+          </div>
+          <div className="mystical-item">
+            <strong>Consciousness Alignment:</strong> {Math.round(analysis.consciousnessAlignment * 100)}%
+          </div>
+          <div className="mystical-item">
+            <strong>Research Potential:</strong> {Math.round(analysis.researchPotential * 100)}%
+          </div>
+          <div className="mystical-correspondences">
+            <h5>🔗 Mystical Correspondences</h5>
+            <div className="correspondences-list">
+              {analysis.mysticalProperties?.map((prop, index) => (
+                <span key={index} className="correspondence-tag">{prop}</span>
+              ))}
+            </div>
+          </div>
+          <div className="tarot-connections">
+            <h5>🃏 Tarot Connections</h5>
+            <div className="tarot-list">
+              {analysis.tarotCorrespondences?.map((tarot, index) => (
+                <span key={index} className="tarot-tag">{tarot}</span>
+              ))}
+            </div>
           </div>
         </div>
-
-        <div className="tarot-connections">
-          <h5>🃏 Tarot Connections</h5>
-          <div className="tarot-list">
-            {analysis.tarotCorrespondences?.map((tarot, index) => (
-              <span key={index} className="tarot-tag">{tarot}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    )}
+      )}
+    </div>
   </div>
 );
 
 const FindingsTab = ({ findings }) => (
   <div className="findings-tab">
-    <h4>📊 Research Findings</h4>
-
-    <div className="findings-list">
-      {findings?.map((finding) => (
-        <div key={finding.id} className="finding-item">
-          <div className="finding-header">
-            <span className="finding-title">{finding.title}</span>
-            <span className="finding-significance" style={{ color: getComplexityColor(Math.floor(finding.significance * 10)) }}>
-              {Math.round(finding.significance * 100)}% significance
-            </span>
+    <div>
+      <h4>📊 Research Findings</h4>
+      <div className="findings-list">
+        {findings?.map((finding) => (
+          <div key={finding.id} className="finding-item">
+            <div className="finding-header">
+              <span className="finding-title">{finding.title}</span>
+              <span className="finding-significance" style={{ color: getComplexityColor(Math.floor(finding.significance * 10)) }}>
+                {Math.round(finding.significance * 100)}% significance
+              </span>
+            </div>
+            <div className="finding-content">{finding.finding}</div>
+            <div className="finding-category">{finding.category}</div>
           </div>
-          <div className="finding-content">{finding.finding}</div>
-          <div className="finding-category">{finding.category}</div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 );

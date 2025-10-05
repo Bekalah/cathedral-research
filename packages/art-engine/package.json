@@ -20,8 +20,8 @@
     "konva": "^9.3.6",
     "d3": "^7.8.5",
     "pixi.js": "^7.4.0",
-    "@cathedral/three-engine": "workspace:*",
-    "@cathedral/synthesis-engine": "workspace:*"
+  "@cathedral/three-engine": "^2.0.0",
+  "@cathedral/synthesis-engine": "^2.0.0"
   },
   "devDependencies": {
     "rollup": "^4.9.6",

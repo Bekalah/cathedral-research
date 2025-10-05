@@ -1,4 +1,4 @@
-name: 🏛️ Cathedral Research - Deploy to GitHub Pages
+name: 🏛️ Cathedral - Deploy to GitHub Pages
 
 on:
   push:
