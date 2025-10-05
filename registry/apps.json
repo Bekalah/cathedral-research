@@ -161,6 +161,39 @@
       "lastUpdated": "2025-10-05T00:00:00Z",
       "maintainers": ["Rebecca Lemke"],
       "license": "MIT"
+    },
+    {
+      "id": "lego-build-studio",
+      "name": "🧱 LEGO Build Studio",
+      "description": "3D archetype and symbol building studio for professional creatives - LEGO-style construction with sacred geometry",
+      "version": "1.0.0",
+      "status": "active",
+      "port": 3006,
+      "path": "/packages/lego-build-studio",
+      "main": "src/index.tsx",
+      "build": "dist",
+      "features": [
+        "3D Archetype Building",
+        "Sacred Geometry Blocks",
+        "Energy Flow Visualization",
+        "LEGO-style Connections",
+        "Real-time Manifestation",
+        "Professional Creative Tools",
+        "Open World Thinking",
+        "Symbol Studio Integration"
+      ],
+      "technologies": ["React", "TypeScript", "Three.js", "Sacred Geometry Engine", "WebGL"],
+      "category": "creation",
+      "tags": ["3d", "archetypes", "symbols", "lego", "sacred-geometry", "creative", "professional"],
+      "repository": "https://github.com/Bekalah/cathedral-research",
+      "documentation": "/docs/packages/lego-build-studio.md",
+      "deployment": {
+        "production": "https://bekalah.github.io/cathedral-research/lego-studio",
+        "staging": "https://cathedral-research-staging.pages.dev/lego-studio"
+      },
+      "lastUpdated": "2025-10-05T19:43:00Z",
+      "maintainers": ["Rebecca Lemke"],
+      "license": "MIT"
     }
   ],
   "packages": [
@@ -198,24 +231,26 @@
   "services": {
     "development": {
       "hub": "http://localhost:3000",
-      "cathedral": "http://localhost:3001", 
+      "cathedral": "http://localhost:3001",
       "grimoire": "http://localhost:3002",
       "mystery": "http://localhost:3003",
       "circuitum": "http://localhost:3004",
-      "lab": "http://localhost:3005"
+      "lab": "http://localhost:3005",
+      "lego-studio": "http://localhost:3006"
     },
     "production": {
       "hub": "https://bekalah.github.io/cathedral-research",
       "cathedral": "https://bekalah.github.io/cathedral-research/cathedral",
-      "grimoire": "https://bekalah.github.io/cathedral-research/grimoire", 
+      "grimoire": "https://bekalah.github.io/cathedral-research/grimoire",
       "mystery": "https://bekalah.github.io/cathedral-research/mystery",
       "circuitum": "https://bekalah.github.io/cathedral-research/circuitum99",
-      "lab": "https://bekalah.github.io/cathedral-research/lab"
+      "lab": "https://bekalah.github.io/cathedral-research/lab",
+      "lego-studio": "https://bekalah.github.io/cathedral-research/lego-studio"
     }
   },
   "metadata": {
     "categories": ["visualization", "creation", "interactive", "engineering", "research"],
-    "totalApps": 5,
+    "totalApps": 6,
     "totalPackages": 3,
     "monorepoStructure": "apps-packages",
     "buildSystem": "vite",

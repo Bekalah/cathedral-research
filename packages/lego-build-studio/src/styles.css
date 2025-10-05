@@ -1,0 +1,172 @@
+/* LEGO Build Studio Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #111827;
+  color: #f9fafb;
+  overflow: hidden;
+}
+
+#lego-build-studio-root {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Canvas styles */
+canvas {
+  display: block;
+  outline: none;
+}
+
+/* UI Panel styles */
+.lego-build-studio .bg-gray-800 {
+  background-color: #1f2937;
+}
+
+.lego-build-studio .bg-gray-700\/50 {
+  background-color: rgba(55, 65, 81, 0.5);
+}
+
+.lego-build-studio .bg-gray-700\/70 {
+  background-color: rgba(55, 65, 81, 0.7);
+}
+
+.lego-build-studio .bg-purple-900\/20 {
+  background-color: rgba(88, 28, 135, 0.2);
+}
+
+.lego-build-studio .bg-purple-900\/30 {
+  background-color: rgba(88, 28, 135, 0.3);
+}
+
+.lego-build-studio .bg-black\/70 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lego-build-studio .border-purple-400 {
+  border-color: #c084fc;
+}
+
+.lego-build-studio .border-purple-500 {
+  border-color: #a855f7;
+}
+
+.lego-build-studio .border-purple-600 {
+  border-color: #9333ea;
+}
+
+.lego-build-studio .border-gray-600 {
+  border-color: #4b5563;
+}
+
+.lego-build-studio .text-purple-300 {
+  color: #c084fc;
+}
+
+.lego-build-studio .text-purple-400 {
+  color: #a855f7;
+}
+
+.lego-build-studio .text-purple-200 {
+  color: #ddd6fe;
+}
+
+.lego-build-studio .text-gray-300 {
+  color: #d1d5db;
+}
+
+.lego-build-studio .text-gray-400 {
+  color: #9ca3af;
+}
+
+.lego-build-studio .text-green-400 {
+  color: #4ade80;
+}
+
+.lego-build-studio .text-blue-400 {
+  color: #60a5fa;
+}
+
+.lego-build-studio .text-yellow-400 {
+  color: #fbbf24;
+}
+
+.lego-build-studio .text-red-400 {
+  color: #f87171;
+}
+
+/* Hover effects */
+.lego-build-studio button:hover {
+  transition: all 0.2s ease;
+}
+
+.lego-build-studio .hover\:bg-gray-700\/70:hover {
+  background-color: rgba(55, 65, 81, 0.7);
+}
+
+.lego-build-studio .hover\:text-purple-300:hover {
+  color: #c084fc;
+}
+
+.lego-build-studio .hover\:text-green-300:hover {
+  color: #4ade80;
+}
+
+.lego-build-studio .hover\:text-blue-300:hover {
+  color: #60a5fa;
+}
+
+/* Animation classes */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lego-build-studio {
+    flex-direction: column;
+  }
+
+  .lego-build-studio > div:first-child {
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+  }
+}
