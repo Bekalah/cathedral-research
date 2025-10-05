@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@cathedral/*": ["../../packages/*/src", "../../packages/*"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "*.ts",
+    "*.tsx",
+    "*.js",
+    "*.jsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

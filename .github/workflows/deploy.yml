@@ -17,8 +17,39 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Protect Check Job
+  protect-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: 🔧 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+
+    - name: 🛡️ Run Cathedral Protect Check
+      run: |
+        echo "🏛️ Running Cathedral Research Protect Check..."
+        ./devops/protect-check.sh
+
+    - name: 📋 Upload Protect Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: protect-check-report
+        path: |
+          devops/PROTECT_FILES_LIST.md
+          registry/apps.json
+        retention-days: 30
+
   # Build Job
   build:
+    needs: protect-check
     runs-on: ubuntu-latest
     
     strategy:
@@ -42,6 +73,11 @@ jobs:
         if [ -f package.json ]; then
           npm ci || npm install
         fi
+
+    - name: 🛡️ Run Protect Check
+      run: |
+        echo "🛡️ Running DevOps protect check..."
+        node devops/protect-check.js
 
     - name: 🔍 Validate HTML Files
       run: |
@@ -258,7 +294,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, protect-check]
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
     
     steps:
@@ -275,7 +311,7 @@ jobs:
   # Security Audit Job
   security:
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, protect-check]
     
     steps:
     - name: 📥 Checkout Repository

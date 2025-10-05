@@ -1,0 +1,50 @@
+# Cathedral Research - Protected Files List
+# These files are critical to the monorepo integrity and should be protected from accidental changes
+
+# Core configuration files
+package.json
+tsconfig.json
+.gitignore
+.gitattributes
+README.md
+
+# Build and CI/CD configuration
+.github/workflows/*.yml
+.github/workflows/*.yaml
+vite.config.js
+webpack.config.js
+jest.config.js
+
+# Registry and metadata
+registry/apps.json
+registry/packages.json
+registry/manifest.json
+
+# DevOps and security
+devops/protect-check.js
+devops/PROTECT_FILES_LIST.txt
+.github/CODEOWNERS
+
+# Package manifests
+apps/*/package.json
+packages/*/package.json
+
+# TypeScript configurations
+apps/*/tsconfig.json
+packages/*/tsconfig.json
+
+# Environment and secrets (if they exist)
+.env
+.env.local
+.env.production
+secrets.json
+
+# Documentation structure
+docs/README.md
+docs/ARCHITECTURE.md
+docs/DEPLOYMENT.md
+
+# License and legal
+LICENSE
+COPYRIGHT.txt
+SECURITY.md
