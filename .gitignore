@@ -1,1 +1,19 @@
-node_modules
+node_modules/
+*.log
+.DS_Store
+dist/
+.env
+.env.local
+
+# Dependencies
+**/node_modules/
+**/.pnpm/
+**/package-lock.json
+**/pnpm-lock.yaml
+
+# Large files (over 50MB)
+**/CATHEDRAL_SCROLL_FULL.html
+**/*.html.large
+**/exports/large/
+**/bin/workerd
+**/*workerd*

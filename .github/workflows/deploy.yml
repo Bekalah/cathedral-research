@@ -81,20 +81,47 @@ jobs:
         
         # Create build directory structure
         mkdir -p dist
-        mkdir -p dist/BUILDING\ CATHEDRALS
+        mkdir -p dist/apps
+        mkdir -p dist/packages
         mkdir -p dist/research
         mkdir -p dist/tools
         mkdir -p dist/assets
         
-        # Copy main files
-        cp -r "BUILDING CATHEDRALS"/* "dist/BUILDING CATHEDRALS/" 2>/dev/null || true
-        cp -r research/* dist/research/ 2>/dev/null || true
-        cp -r cathedral-docs/* dist/ 2>/dev/null || true
+        # Copy main public files
+        cp -r public/* dist/ 2>/dev/null || true
         
-        # Copy tools if they exist
-        if [ -d "BUILDING CATHEDRALS/tools" ]; then
-          cp -r "BUILDING CATHEDRALS/tools"/* dist/tools/ 2>/dev/null || true
-        fi
+        # Copy research files
+        cp -r research/* dist/research/ 2>/dev/null || true
+        
+        # Copy app files (static content)
+        for app in apps/*/; do
+          if [ -d "$app" ]; then
+            app_name=$(basename "$app")
+            mkdir -p "dist/apps/$app_name"
+            # Copy static files if they exist
+            if [ -d "$app/public" ]; then
+              cp -r "$app/public"/* "dist/apps/$app_name/" 2>/dev/null || true
+            fi
+            if [ -d "$app/dist" ]; then
+              cp -r "$app/dist"/* "dist/apps/$app_name/" 2>/dev/null || true
+            fi
+          fi
+        done
+        
+        # Copy package assets if they exist
+        for pkg in packages/*/; do
+          if [ -d "$pkg" ]; then
+            pkg_name=$(basename "$pkg")
+            mkdir -p "dist/packages/$pkg_name"
+            # Copy static files if they exist
+            if [ -d "$pkg/public" ]; then
+              cp -r "$pkg/public"/* "dist/packages/$pkg_name/" 2>/dev/null || true
+            fi
+            if [ -d "$pkg/dist" ]; then
+              cp -r "$pkg/dist"/* "dist/packages/$pkg_name/" 2>/dev/null || true
+            fi
+          fi
+        done
         
         # Create index.html if it doesn't exist
         if [ ! -f dist/index.html ]; then
