@@ -1,7 +1,0 @@
-name: Core Export (Local Stub)
-on: { workflow_dispatch: {} }
-jobs:
-  stub:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Core export CI disabled locally. Restore full workflow from archive to enable."
