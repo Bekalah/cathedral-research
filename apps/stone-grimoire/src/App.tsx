@@ -8,13 +8,12 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei'
 import { Codex144MusicalEngine } from '@cathedral/codex-musical-system'
 import GrimoireInterface from './components/GrimoireInterface'
-import WhiteNoiseController from './components/WhiteNoiseController'
-import EnhancedSynthesisControls from './components/EnhancedSynthesisControls'
-import FractalVisualization from './components/FractalVisualization'
-import ChapterNavigator from './components/ChapterNavigator'
-import ArcanaResearchPanel from './components/ArcanaResearchPanel'
-import ConnectionMonitor from './components/ConnectionMonitor'
-import LiveArchetypeInterface from './components/LiveArchetypeInterface'
+import EnhancedSynthesisControls from './components/EnhancedSynthesisControls.tsx'
+import FractalVisualization from './components/FractalVisualization.tsx'
+import ChapterNavigator from './components/ChapterNavigator.tsx'
+import ArcanaResearchPanel from './components/ArcanaResearchPanel.tsx'
+import ConnectionMonitor from './components/ConnectionMonitor.tsx'
+import LiveArchetypeInterface from './components/LiveArchetypeInterface.tsx'
 import PerformanceMonitor from './components/PerformanceMonitor'
 import './App.css'
 
@@ -153,7 +152,8 @@ function App() {
         }
 
         // Initialize the musical engine
-        const engine = new Codex144MusicalEngine(codexConfig)
+  const engine = new Codex144MusicalEngine(codexConfig)
+  await engine.start()
         
         // Set up enhanced event listeners
         engine.on('connectionLost', handleConnectionLoss)

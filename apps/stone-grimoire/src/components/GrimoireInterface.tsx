@@ -59,7 +59,7 @@ const GrimoireInterface: React.FC<GrimoireInterfaceProps> = ({ synthesis, active
         <div className="elements-section">
           <h3>🎨 Creative Elements</h3>
           <div className="elements-grid">
-            {synthesis.elements.map((element, index) => (
+            {synthesis.elements.map((element: any, index: number) => (
               <div key={index} className="element-card">
                 <div className="element-type">{element.type}</div>
                 <div className="element-form">{element.form}</div>
@@ -74,10 +74,10 @@ const GrimoireInterface: React.FC<GrimoireInterfaceProps> = ({ synthesis, active
         <div className="numerology-section">
           <h3>🔢 Sacred Numerology</h3>
           <div className="numerology-grid">
-            {Object.entries(synthesis.numerology).map(([number, meaning]) => (
+            {Object.entries(synthesis.numerology).map(([number, meaning]: [string, unknown]) => (
               <div key={number} className="number-card">
                 <div className="number">{number}</div>
-                <div className="meaning">{meaning}</div>
+                <div className="meaning">{String(meaning)}</div>
               </div>
             ))}
           </div>
@@ -88,7 +88,7 @@ const GrimoireInterface: React.FC<GrimoireInterfaceProps> = ({ synthesis, active
         <div className="colors-section">
           <h3>🎨 Sacred Colors</h3>
           <div className="color-palette">
-            {synthesis.colors.map((color, index) => (
+            {synthesis.colors.map((color: any, index: number) => (
               <div
                 key={index}
                 className="color-swatch"

@@ -27,9 +27,9 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ isVisible = fal
   useEffect(() => {
     if (!isVisible) return;
 
-    let frameCount = 0;
-    let lastTime = performance.now();
-    let animationId;
+  let frameCount = 0;
+  let lastTime = performance.now();
+  let animationId: number | undefined;
 
     const updateMetrics = () => {
       const now = performance.now();
@@ -40,8 +40,8 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ isVisible = fal
         const fps = Math.round((frameCount * 1000) / (now - lastTime));
 
         // Get memory usage if available
-        const memory = performance.memory ?
-          Math.round(performance.memory.usedJSHeapSize / 1048576) : 0;
+        const pm = (performance as unknown as { memory?: { usedJSHeapSize: number } }).memory;
+        const memory = pm ? Math.round(pm.usedJSHeapSize / 1048576) : 0;
 
         setMetrics(prev => ({
           ...prev,
@@ -60,7 +60,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ isVisible = fal
     updateMetrics();
 
     return () => {
-      if (animationId) {
+      if (animationId !== undefined) {
         cancelAnimationFrame(animationId);
       }
     };

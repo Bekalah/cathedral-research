@@ -28,13 +28,14 @@ export default defineConfig({
     }
   },
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@cathedral': path.resolve(__dirname, '../'),
-      '@packages': path.resolve(__dirname, '../packages'),
-      '@effects': path.resolve(__dirname, '../effects'),
-      '@assets': path.resolve(__dirname, '../assets')
-    }
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, './src') },
+      // Map @cathedral/<pkg> to local packages source for dev
+      { find: /^@cathedral\/(.*)$/, replacement: path.resolve(__dirname, '../../packages/$1/src') },
+      { find: '@packages', replacement: path.resolve(__dirname, '../../packages') },
+      { find: '@effects', replacement: path.resolve(__dirname, '../../effects') },
+      { find: '@assets', replacement: path.resolve(__dirname, '../../assets') }
+    ]
   },
   optimizeDeps: {
     include: [

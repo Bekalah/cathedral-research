@@ -16,6 +16,9 @@
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    // Exclude complex engine and controller not used by this app build
+    "../../packages/codex-musical-system/src/Codex144MusicalEngine.ts",
+    "src/components/WhiteNoiseController.tsx"
   ]
 }
