@@ -1,0 +1,25 @@
+{
+  "merge_strategy": "append",
+  "schema_version": "1.0.0",
+  "palettes": [
+    { "id": "obsidian-mandala", "lab": ["lab(6% -2 -6)", "lab(70% 15 35)"], "notes":"Obsidian + molten gold", "stage": "Nigredo" },
+    { "id": "kunz-harmonograph", "lab": ["lab(85% -6 -12)","lab(40% 8 -6)"], "notes":"Kunz vector + teal gold", "stage": "Rubedo" },
+    { "id": "afklint-automatic", "lab": ["lab(78% -10 20)"], "notes":"Automatic color fields", "stage": "Albedo" },
+    { "id": "grey-anatomical", "lab": ["lab(72% 4 -8)"], "notes":"Luminous anatomy accents", "stage": "Citrinitas" },
+    { "id": "vienna-academy", "lab": ["lab(40% 2 -1)"], "notes":"Warm oil tones", "stage": "Citrinitas" },
+    { "id": "giger-mechorganic", "lab": ["lab(8% -4 -2)", "lab(50% 0 -3)"], "notes":"Biomech metallics", "stage": "Nigredo" },
+    { "id": "folk-tapestry", "lab": ["lab(45% -8 6)"], "notes":"Tapestry yarns", "stage": "Rubedo" },
+    { "id": "nihonga-ink", "lab": ["lab(85% -4 -8)", "lab(75% 16 30)"], "notes":"Sumi ink + gold", "stage": "Albedo" },
+    { "id": "synthwave-arcana", "lab": ["lab(62% 35 -20)"], "notes":"Neon magenta teal", "stage": "Citrinitas" },
+    { "id": "embroidered-sigil", "lab": ["lab(58% -2 2)"], "notes":"Thread closeup", "stage": "Rubedo" },
+    { "id": "living-mandala", "lab": ["lab(90% -5 -2)", "lab(65% 12 8)"], "notes":"Animated mandala gradients", "stage": "Void" },
+    { "id": "black-madonna-void", "lab": ["lab(12% -1 -6)", "lab(55% -4 -2)"], "notes":"Black Madonna palette", "stage": "Nigredo" }
+  ],
+  "element_associations": {
+    "Fire": ["synthwave-arcana", "giger-mechorganic", "obsidian-mandala"],
+    "Water": ["afklint-automatic", "grey-anatomical", "kunz-harmonograph"],
+    "Air": ["nihonga-ink", "vienna-academy"],
+    "Earth": ["folk-tapestry", "embroidered-sigil", "vienna-academy"],
+    "Aether": ["living-mandala", "black-madonna-void"]
+  }
+}

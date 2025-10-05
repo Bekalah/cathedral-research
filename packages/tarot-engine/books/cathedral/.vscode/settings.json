@@ -1,0 +1,268 @@
+{
+  // ✦ CATHEDRAL OF CIRCUITS SACRED DEVELOPMENT ENVIRONMENT ✦
+  
+  // Core Editor Sacred Configuration
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.fontFamily": "'Atkinson Hyperlegible', 'JetBrains Mono', 'Source Code Pro', monospace",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 26,
+  "editor.smoothScrolling": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": true,
+  "editor.minimap.scale": 2,
+  "editor.renderLineHighlight": "gutter",
+  "editor.renderWhitespace": "boundary",
+  
+  // Sacred Geometry Proportions
+  "editor.rulers": [61, 99, 144], // Fibonacci sequence markers
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 99,
+  "workbench.editor.wrapTabs": true,
+  
+  // Custom CSS Integration
+  "vscode_custom_css.imports": [
+    "file:///Users/rebeccalemke/Library/Mobile Documents/com~apple~CloudDocs/BOOKS/cathedral/.vscode/codex-sacred.css"
+  ],
+  "vscode_custom_css.policy": true,
+  
+  // Cathedral Color Customizations
+  "workbench.colorCustomizations": {
+    "editor.background": "#f8f4e9",
+    "sideBar.background": "#fdfbf5", 
+    "statusBar.background": "#d4af37",
+    "statusBar.foreground": "#3a352f",
+    "editor.foreground": "#3a352f",
+    "terminal.foreground": "#3a352f",
+    "terminal.background": "#f8f4e9",
+    "activityBar.background": "#fdfbf5",
+    "activityBar.foreground": "#3a352f",
+    "titleBar.activeBackground": "#d4af37",
+    "titleBar.activeForeground": "#3a352f",
+    "panel.background": "#fdfbf5",
+    "panel.border": "#d4af37",
+    "editor.selectionBackground": "#d4af3740",
+    "editor.lineHighlightBackground": "#d4af3720",
+    "editorCursor.foreground": "#5d8aa8",
+    "editorWhitespace.foreground": "#d4af3730"
+  },
+  
+  // Sacred File Icon Associations
+  "material-icon-theme.files.associations": {
+    "MA*.json": "lightning",
+    "WANDS_*.json": "flame",
+    "CUPS_*.json": "heart", 
+    "SWORDS_*.json": "sword",
+    "PENTACLES_*.json": "diamond",
+    "codex.config.json": "crystal",
+    "wellness.md": "tree",
+    "cosmogenesis*.js": "gear",
+    "circuitum99*.html": "game",
+    "sacred-geometry*.html": "diamond",
+    "*.node.json": "star"
+  },
+  
+  // JSON Schema Validation for Sacred Nodes
+  "json.schemas": [
+    {
+      "fileMatch": ["/REGISTRY/**/*.json", "**/*MA*.json", "**/*WANDS*.json", "**/*CUPS*.json", "**/*SWORDS*.json", "**/*PENTACLES*.json"],
+      "url": "./codex.schema.json"
+    }
+  ],
+  
+  // Peacock Workspace Color Management
+  "peacock.affectActivityBar": true,
+  "peacock.affectStatusBar": true,
+  "peacock.affectTitleBar": true,
+  "peacock.affectTabActiveBorder": true,
+  "peacock.favoriteColors": [
+    {
+      "name": "Cathedral Gold",
+      "value": "#d4af37"
+    },
+    {
+      "name": "Sacred Parchment", 
+      "value": "#f8f4e9"
+    },
+    {
+      "name": "Healing Blue",
+      "value": "#5d8aa8"
+    },
+    {
+      "name": "Living Green",
+      "value": "#6b8e23"
+    },
+    {
+      "name": "Visionary Purple",
+      "value": "#6A5ACD"
+    },
+    {
+      "name": "Innovation Orange",
+      "value": "#FF8C00"
+    },
+    {
+      "name": "Creative Fusion",
+      "value": "#DA70D6"
+    }
+  ],
+  
+  // Hive Mind Creative Intelligence Configuration
+  "cathedral.hive_mind": {
+    "active_visionaries": ["hypatia", "leonardo", "tesla", "curie", "frida", "jobs"],
+    "creativity_mode": "genius_fusion",
+    "innovation_amplification": true,
+    "cross_pollination": true,
+    "breakthrough_thinking": true
+  },
+  
+  // Code Time Sacred Metrics
+  "code-time.showStatusBarMetrics": true,
+  "code-time.showCodeTimeInEditorTitleBar": true,
+  "code-time.statusBarIconEnabled": true,
+  
+  // Rainbow Brackets for Sacred JSON Structure
+  "rainbow-brackets.showBracketsInGutter": true,
+  "rainbow-brackets.showBracketsInRuler": true,
+  "bracketPairColorizer.colorMode": "Consecutive",
+  "bracketPairColorizer.forceUniqueOpeningColor": true,
+  "bracketPairColorizer.forceIterationColorCycle": true,
+  
+  // Sacred File Associations
+  "files.associations": {
+    "*.node.json": "json",
+    "codex.*.json": "json",
+    "*MA*.json": "json",
+    "*WANDS*.json": "json", 
+    "*CUPS*.json": "json",
+    "*SWORDS*.json": "json",
+    "*PENTACLES*.json": "json",
+    "wellness.md": "markdown",
+    "*.sacred.css": "css",
+    "cosmogenesis*.js": "javascript",
+    "circuitum99*.js": "javascript"
+  },
+  
+  // Sacred Sounds Configuration
+  "vscode-sounds.volume": 0.3,
+  "vscode-sounds.sounds": {
+    "save": "bell",
+    "error": "gong"
+  },
+  
+  // Auto-formatting for Sacred Code
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": false,
+  
+  // Sacred Development Server
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.CustomBrowser": "default",
+  "liveServer.settings.port": 8080,
+  
+  // Python Sacred Scripting
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.analysis.typeCheckingMode": "basic",
+  
+  // Spell Checking for Sacred Texts
+  "cSpell.words": [
+    "Hypatia",
+    "Alexandria",
+    "Leonardo", 
+    "Vinci",
+    "Tesla",
+    "Edison",
+    "Curie",
+    "Artemisia",
+    "Gentileschi",
+    "Frida",
+    "Kahlo",
+    "Sappho",
+    "Erinna",
+    "Hildegard",
+    "Bingen",
+    "Turing",
+    "Lovelace",
+    "Johnson",
+    "Katherine",
+    "Basquiat",
+    "Angelou",
+    "Baldwin",
+    "Lorde",
+    "Audre",
+    "Codex",
+    "Abyssiae",
+    "Cosmogenesis",
+    "Circuitum",
+    "arcana",
+    "chakra",
+    "visionary",
+    "hive",
+    "genius",
+    "innovation",
+    "creativity",
+    "fusion",
+    "breakthrough"
+  ],
+  
+  // Terminal Sacred Environment
+  "terminal.integrated.fontFamily": "'Atkinson Hyperlegible', 'JetBrains Mono', monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.4,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  
+  // Git Sacred Workflow
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  
+  // Zen Mode for Deep Sacred Work
+  "zenMode.fullScreen": false,
+  "zenMode.hideActivityBar": true,
+  "zenMode.hideStatusBar": false,
+  "zenMode.hideTabs": true,
+  "zenMode.centerLayout": true,
+  "zenMode.restore": true,
+  
+  // Sacred Search Configuration
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/archive": true,
+    "**/deprecated-names": true
+  },
+  
+  // Sacred Workspace Trust
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.banner": "never",
+  
+  // Sacred Performance Optimizations
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true
+  },
+  
+  // Sacred Accessibility
+  "accessibility.signals.lineHasError": {
+    "sound": "on"
+  },
+  "accessibility.signals.lineHasWarning": {
+    "sound": "on"  
+  },
+  "workbench.reduceMotion": "auto",
+  "editor.accessibilitySupport": "auto",
+  
+  // Sacred Development Hints
+  "editor.inlayHints.enabled": "on",
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterNames.enabled": "all"
+}

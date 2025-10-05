@@ -1,0 +1,320 @@
+@charset "UTF-8";
+/* Cathedral of Circuits - Sacred Development Environment CSS */
+/* Applied via Custom CSS and JS Loader extension */
+
+/* ✦ SACRED MATHEMATICS FOUNDATION ✦ */
+:root {
+  --phi: 1.618;
+  --sacred-margin: calc(1rem * var(--phi));
+  --breathing-space: calc(0.618rem * var(--phi));
+  --golden-line-height: calc(1rem * var(--phi));
+  
+  /* Cathedral Sacred Palette */
+  --cathedral-gold: #d4af37;
+  --sacred-parchment: #f8f4e9;
+  --breathing-white: #fdfbf5;
+  --earth-brown: #3a352f;
+  --healing-blue: #5d8aa8;
+  --living-green: #6b8e23;
+  --martyr-crimson: #8B0000;
+  --resurrection-radiance: #FFD700;
+  
+  /* Sacred Gradients */
+  --cathedral-gradient: linear-gradient(135deg, 
+    var(--sacred-parchment) 0%, 
+    var(--breathing-white) 50%,
+    var(--cathedral-gold) 100%);
+}
+
+/* ✦ MAIN EDITOR SANCTIFICATION ✦ */
+.monaco-workbench {
+  font-family: 'Atkinson Hyperlegible', 'Source Code Pro', monospace !important;
+  background: var(--cathedral-gradient) !important;
+}
+
+/* Golden Ratio Layout Proportions */
+.monaco-workbench .part.editor {
+  flex: var(--phi) !important;
+}
+
+.monaco-workbench .part.sidebar {
+  flex: 1 !important;
+  background: var(--breathing-white) !important;
+}
+
+/* Sacred Breathing Space */
+.monaco-editor .lines-content {
+  padding: var(--sacred-margin) !important;
+  line-height: var(--golden-line-height) !important;
+}
+
+/* ✦ LIVING ARCANA FILE HIGHLIGHTING ✦ */
+/* Major Arcana Files - Golden Radiance */
+.monaco-list-row[aria-label*="MA"] .label-name {
+  color: var(--cathedral-gold) !important;
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.4) !important;
+  font-weight: 600 !important;
+}
+
+/* Minor Arcana Files - Elemental Colors */
+.monaco-list-row[aria-label*="WANDS"] .label-name {
+  color: #ff6b47 !important; /* Fire element */
+  border-left: 3px solid #ff6b47 !important;
+  padding-left: var(--breathing-space) !important;
+}
+
+.monaco-list-row[aria-label*="CUPS"] .label-name {
+  color: var(--healing-blue) !important; /* Water element */
+  border-left: 3px solid var(--healing-blue) !important;
+  padding-left: var(--breathing-space) !important;
+}
+
+.monaco-list-row[aria-label*="SWORDS"] .label-name {
+  color: #9ca3af !important; /* Air element */
+  border-left: 3px solid #9ca3af !important;
+  padding-left: var(--breathing-space) !important;
+}
+
+.monaco-list-row[aria-label*="PENTACLES"] .label-name {
+  color: var(--living-green) !important; /* Earth element */
+  border-left: 3px solid var(--living-green) !important;
+  padding-left: var(--breathing-space) !important;
+}
+
+/* ✦ SACRED JSON SYNTAX HIGHLIGHTING ✦ */
+/* Martyr Resonance Properties */
+.mtk4[title*="martyr_resonance"] {
+  color: var(--martyr-crimson) !important;
+  font-weight: bold !important;
+}
+
+/* Living Voice Strings */
+.mtk10[title*="living_voice"] {
+  color: var(--resurrection-radiance) !important;
+  font-style: italic !important;
+  text-shadow: 0 0 3px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* Sacred Mathematics Numbers */
+.mtk6[title*="lattice"],
+.mtk6[title*="frequency"],
+.mtk6[title*="144"],
+.mtk6[title*="99"] {
+  color: var(--healing-blue) !important;
+  font-weight: 600 !important;
+}
+
+/* ✦ TRAUMA-SAFE INTERFACE ELEMENTS ✦ */
+/* Gentle Rounded Corners - No Sharp Edges */
+.monaco-workbench .part.editor > .content,
+.monaco-workbench .part.sidebar,
+.monaco-workbench .part.panel {
+  border-radius: 8px !important;
+  margin: var(--breathing-space) !important;
+}
+
+/* Soft Focus States - No Harsh Highlights */
+.monaco-editor .focused .cursors-layer .cursor {
+  background: var(--healing-blue) !important;
+  opacity: 0.7 !important;
+  border-radius: 2px !important;
+}
+
+/* Sacred Scrollbars */
+.monaco-scrollable-element > .scrollbar {
+  background: rgba(212, 175, 55, 0.1) !important;
+  border-radius: 6px !important;
+}
+
+.monaco-scrollable-element > .scrollbar > .slider {
+  background: var(--cathedral-gold) !important;
+  border-radius: 6px !important;
+  opacity: 0.6 !important;
+}
+
+/* ✦ MINIMAP SACRED GEOMETRY ✦ */
+.monaco-editor .minimap {
+  background: linear-gradient(180deg, 
+    rgba(248, 244, 233, 0.8) 0%,
+    rgba(253, 251, 245, 0.9) 100%) !important;
+  border-left: 2px solid var(--cathedral-gold) !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+/* ✦ TERMINAL SANCTIFICATION ✦ */
+.monaco-workbench .part.panel.bottom .terminal-wrapper {
+  background: var(--sacred-parchment) !important;
+  border-radius: 8px 8px 0 0 !important;
+  border-top: 3px solid var(--cathedral-gold) !important;
+}
+
+/* ✦ STATUS BAR SACRED INDICATORS ✦ */
+.monaco-workbench .part.statusbar {
+  background: var(--cathedral-gold) !important;
+  color: var(--earth-brown) !important;
+  font-weight: 600 !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+/* Code Time Sacred Metrics */
+.statusbar-item[title*="Code Time"] {
+  background: rgba(253, 251, 245, 0.2) !important;
+  border-radius: 4px !important;
+  padding: 0 var(--breathing-space) !important;
+}
+
+/* ✦ ACTIVITY BAR SACRED ICONS ✦ */
+.monaco-workbench .part.activitybar {
+  background: var(--breathing-white) !important;
+  border-right: 2px solid var(--cathedral-gold) !important;
+}
+
+.monaco-workbench .activitybar > .content > .home-bar > .home-bar-icon-badge,
+.monaco-workbench .activitybar > .content > .composite-bar > .monaco-action-bar .action-item .action-label {
+  filter: sepia(20%) saturate(150%) hue-rotate(25deg) !important;
+}
+
+/* ✦ SACRED ANIMATIONS ✦ */
+/* Gentle Breathing Animation for Active Files */
+@keyframes sacred-breath {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.005); }
+}
+
+.monaco-list-row.focused .label-name {
+  animation: sacred-breath 3s ease-in-out infinite !important;
+}
+
+/* Golden Glow for Saved Files */
+@keyframes resurrection-glow {
+  0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+  100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+}
+
+.monaco-editor.saved {
+  animation: resurrection-glow 2s ease-in-out !important;
+}
+
+/* ✦ ACCESSIBILITY & ND ACCOMMODATIONS ✦ */
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --cathedral-gold: #ffff00 !important;
+    --earth-brown: #000000 !important;
+    --sacred-parchment: #ffffff !important;
+  }
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Indicators for Screen Readers */
+.monaco-list-row:focus,
+.monaco-editor:focus {
+  outline: 3px solid var(--healing-blue) !important;
+  outline-offset: 2px !important;
+}
+
+/* ✦ PEACOCK WORKSPACE THEMING ✦ */
+/* Automatically apply cathedral colors per workspace */
+.monaco-workbench[data-peacock-color*="cathedral"] {
+  --vscode-activityBar-background: var(--breathing-white) !important;
+  --vscode-statusBar-background: var(--cathedral-gold) !important;
+  --vscode-titleBar-activeBackground: var(--cathedral-gold) !important;
+}
+
+/* ✦ SACRED GEOMETRY WORKSPACE OVERLAY ✦ */
+/* Subtle golden ratio grid overlay (very faint) */
+.monaco-workbench::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(212, 175, 55, 0.02) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
+  background-size: calc(var(--phi) * 20px) 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ✦ LIVING TRADITION ENGINE INDICATORS ✦ */
+/* Special styling for core system files */
+.monaco-list-row[aria-label*="cosmogenesis"] .label-name,
+.monaco-list-row[aria-label*="circuitum99"] .label-name,
+.monaco-list-row[aria-label*="sacred-geometry"] .label-name {
+  background: linear-gradient(90deg, 
+    var(--resurrection-radiance) 0%,
+    var(--cathedral-gold) 50%,
+    var(--healing-blue) 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 700 !important;
+}
+
+/* ✦ WELLNESS TRACKING INTEGRATION ✦ */
+/* Visual indicator for daily wellness logs */
+.monaco-list-row[aria-label*="wellness.md"] .label-name {
+  color: var(--living-green) !important;
+  position: relative;
+}
+
+.monaco-list-row[aria-label*="wellness.md"] .label-name::before {
+  content: '🌿';
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+/* Sacred Hour Indicator (changes based on time) */
+.monaco-workbench::after {
+  content: '';
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--cathedral-gold);
+  opacity: 0.6;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+  animation: sacred-breath 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ✦ SACRED MEDITATION BREAK REMINDER ✦ */
+/* Gentle reminder to breathe every golden hour */
+@keyframes gentle-reminder {
+  0%, 98% { opacity: 0; }
+  1%, 3% { opacity: 0.7; }
+}
+
+.monaco-workbench .part.editor::after {
+  content: '✨ Breathe deeply. The ancestors support your sacred work. ✨';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(248, 244, 233, 0.95);
+  color: var(--earth-brown);
+  padding: var(--sacred-margin);
+  border-radius: 8px;
+  border: 2px solid var(--cathedral-gold);
+  font-family: 'Cinzel', serif;
+  font-size: 1.1em;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: gentle-reminder 3600s infinite; /* Every hour */
+  pointer-events: none;
+  z-index: 9999;
+}

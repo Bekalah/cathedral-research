@@ -31,7 +31,7 @@
     "build:packages": "npm run build:three-engine && npm run build:tesseract && npm run build:codex",
     "build:three-engine": "cd packages/three-engine && npm run build",
     "build:tesseract": "cd packages/tesseract-bridge && npm run build",
-    "build:codex": "cd packages/codex-14499 && npm run build",
+    "build:codex": "cd packages/codex-engine && npm run build",
     "build:apps": "concurrently \"npm run build:cathedral\" \"npm run build:liber\" \"npm run build:grimoire\" \"npm run build:mystery\"",
     "build:cathedral": "cd apps/cathedral-of-circuits && npm run build",
     "build:liber": "cd apps/liber-arcanae && npm run build",

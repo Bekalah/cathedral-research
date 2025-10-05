@@ -1,0 +1,16 @@
+{
+  "name": "@cathedral/tarot-engine",
+  "version": "1.0.0",
+  "description": "Tarot data and logic engine with Major and Minor Arcana",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "keywords": ["tarot", "arcana", "spirituality", "psychology"]
+}

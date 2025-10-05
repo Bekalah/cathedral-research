@@ -1,0 +1,46 @@
+{
+  "merge_strategy": "append",
+  "schema_version": "1.0.0",
+  "stages": [
+    { 
+      "id": "Nigredo", 
+      "color_token": "obsidian-abyss", 
+      "lab_color": "lab(6% -2 -6)",
+      "effects": ["ShadowTrial", "EgoDeath"], 
+      "synthesizer_stations": ["station-01-obsidian", "station-06-giger"],
+      "cathedral_zones": ["foundation-crypt", "abyss-mirror"],
+      "schema_version": "1.0.0", 
+      "source_refs": ["Atwood: Suggestive Inquiry"] 
+    },
+    { 
+      "id": "Albedo", 
+      "color_token": "lunar-pearl", 
+      "lab_color": "lab(85% -6 -12)",
+      "effects": ["Purify", "DreamRite"], 
+      "synthesizer_stations": ["station-08-nihonga", "station-03-afklint"],
+      "cathedral_zones": ["lunar-sanctum", "purification-chamber"],
+      "schema_version": "1.0.0", 
+      "source_refs": ["Rosarium Philosophorum"] 
+    },
+    { 
+      "id": "Citrinitas", 
+      "color_token": "solar-amber", 
+      "lab_color": "lab(78% -10 20)",
+      "effects": ["Illumine", "Vigil"], 
+      "synthesizer_stations": ["station-05-vienna", "station-09-synthwave"],
+      "cathedral_zones": ["solar-dome", "illumination-spire"],
+      "schema_version": "1.0.0", 
+      "source_refs": ["Case: Tarot"] 
+    },
+    { 
+      "id": "Rubedo", 
+      "color_token": "royal-carmine", 
+      "lab_color": "lab(40% 2 -1)",
+      "effects": ["Union", "GreatSeal"], 
+      "synthesizer_stations": ["station-10-mandala", "station-02-kunz"],
+      "cathedral_zones": ["rose-choir", "unity-sanctum"],
+      "schema_version": "1.0.0", 
+      "source_refs": ["Fulcanelli"] 
+    }
+  ]
+}

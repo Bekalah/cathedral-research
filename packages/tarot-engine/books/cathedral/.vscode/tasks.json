@@ -1,0 +1,83 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Invoke Sacred Node",
+      "type": "shell",
+      "command": "python -m cosmogenesis.engine --node ${input:nodeId} --ritual debug",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Generate Sacred Art",
+      "type": "shell", 
+      "command": "node sacred-visual-synthesis-engine.js --node ${input:nodeId}",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Validate All Nodes",
+      "type": "shell",
+      "command": "pnpm validate",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Launch Cathedral Platform",
+      "type": "shell",
+      "command": "open cathedral-of-circuits-main-platform.html",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start CYOA Engine",
+      "type": "shell",
+      "command": "open circuitum99-immersive-reality.html",
+      "group": "build", 
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Sacred Development Server",
+      "type": "shell",
+      "command": "node server.js",
+      "group": "build",
+      "isBackground": true,
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "nodeId",
+      "description": "Node ID to invoke (e.g., MA00, WANDS_05, CUPS_05)",
+      "default": "WANDS_05",
+      "type": "promptString"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@cathedral/synthesis-engine",
+  "version": "2.0.0",
+  "description": "AI-powered synthesis engine for creative and mystical experiences",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "three": "^0.169.0",
+    "@cathedral/three-engine": "workspace:*"
+  },
+  "devDependencies": {
+    "rollup": "^4.9.6",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "typescript": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0"
+  }
+}

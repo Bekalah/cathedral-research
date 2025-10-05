@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cathedral of Circuits - Unified Mystical Schema",
+  "description": "Complete schema for all mystical correspondences, tarot, astrology, crystals, angels, demons, and sacred geometry",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "lastUpdated": { "type": "string", "format": "date-time" },
+        "author": { "type": "string" },
+        "source": { "type": "string" }
+      },
+      "required": ["version", "lastUpdated", "author"]
+    },
+    "tarot": {
+      "type": "object",
+      "properties": {
+        "majorArcana": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/tarotCard"
+          }
+        },
+        "minorArcana": {
+          "type": "object",
+          "properties": {
+            "wands": { "type": "array", "items": { "$ref": "#/$defs/tarotCard" } },
+            "cups": { "type": "array", "items": { "$ref": "#/$defs/tarotCard" } },
+            "swords": { "type": "array", "items": { "$ref": "#/$defs/tarotCard" } },
+            "pentacles": { "type": "array", "items": { "$ref": "#/$defs/tarotCard" } }
+          }
+        }
+      }
+    },
+    "astrology": {
+      "type": "object",
+      "properties": {
+        "zodiac": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sign": { "type": "string" },
+              "element": { "type": "string", "enum": ["fire", "earth", "air", "water"] },
+              "modality": { "type": "string", "enum": ["cardinal", "fixed", "mutable"] },
+              "ruler": { "type": "string" },
+              "exaltation": { "type": "string" },
+              "fall": { "type": "string" },
+              "detriment": { "type": "string" },
+              "degrees": { "type": "string" }
+            }
+          }
+        },
+        "planets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "symbol": { "type": "string" },
+              "element": { "type": "string" },
+              "day": { "type": "string" },
+              "hour": { "type": "string" },
+              "metal": { "type": "string" },
+              "color": { "type": "string" },
+              "chakra": { "type": "string" },
+              "frequency": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "crystals": {
+      "type": "object",
+      "properties": {
+        "minerals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "chemicalFormula": { "type": "string" },
+              "crystalSystem": { "type": "string" },
+              "hardness": { "type": "number" },
+              "color": { "type": "string" },
+              "chakra": { "type": "string" },
+              "element": { "type": "string" },
+              "planetaryRuler": { "type": "string" },
+              "zodiac": { "type": "array", "items": { "type": "string" } },
+              "frequency": { "type": "number" },
+              "opticalProperties": {
+                "type": "object",
+                "properties": {
+                  "refractiveIndex": { "type": "number" },
+                  "birefringence": { "type": "number" },
+                  "pleochroism": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "angels": {
+      "type": "object",
+      "properties": {
+        "shemAngels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "rank": { "type": "string" },
+              "choir": { "type": "string" },
+              "planetaryRuler": { "type": "string" },
+              "element": { "type": "string" },
+              "direction": { "type": "string" },
+              "time": { "type": "string" },
+              "psalm": { "type": "string" },
+              "powers": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "archangels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "direction": { "type": "string" },
+              "element": { "type": "string" },
+              "planet": { "type": "string" },
+              "color": { "type": "string" },
+              "day": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "demons": {
+      "type": "object",
+      "properties": {
+        "goetia": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rank": { "type": "number" },
+              "name": { "type": "string" },
+              "title": { "type": "string" },
+              "element": { "type": "string" },
+              "direction": { "type": "string" },
+              "planet": { "type": "string" },
+              "metal": { "type": "string" },
+              "color": { "type": "string" },
+              "incense": { "type": "string" },
+              "powers": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "rays": {
+      "type": "object",
+      "properties": {
+        "sevenRays": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": { "type": "number" },
+              "name": { "type": "string" },
+              "color": { "type": "string" },
+              "frequency": { "type": "number" },
+              "chakra": { "type": "string" },
+              "quality": { "type": "string" },
+              "archangel": { "type": "string" },
+              "crystal": { "type": "string" },
+              "day": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "sacredGeometry": {
+      "type": "object",
+      "properties": {
+        "platonicSolids": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "faces": { "type": "number" },
+              "vertices": { "type": "number" },
+              "edges": { "type": "number" },
+              "element": { "type": "string" },
+              "chakra": { "type": "string" },
+              "frequency": { "type": "number" }
+            }
+          }
+        },
+        "metatronCube": {
+          "type": "object",
+          "properties": {
+            "circles": { "type": "number" },
+            "lines": { "type": "number" },
+            "points": { "type": "number" },
+            "geometry": { "type": "string" }
+          }
+        }
+      }
+    },
+    "frequencies": {
+      "type": "object",
+      "properties": {
+        "solfeggio": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "frequency": { "type": "number" },
+              "name": { "type": "string" },
+              "purpose": { "type": "string" },
+              "chakra": { "type": "string" },
+              "color": { "type": "string" }
+            }
+          }
+        },
+        "planetary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "planet": { "type": "string" },
+              "frequency": { "type": "number" },
+              "color": { "type": "string" },
+              "day": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["metadata", "tarot", "astrology", "crystals", "angels", "demons", "rays", "sacredGeometry", "frequencies"],
+  "$defs": {
+    "tarotCard": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "number": { "type": "number" },
+        "suit": { "type": "string" },
+        "element": { "type": "string" },
+        "astrology": {
+          "type": "object",
+          "properties": {
+            "zodiac": { "type": "string" },
+            "planet": { "type": "string" },
+            "decans": { "type": "string" }
+          }
+        },
+        "hebrew": {
+          "type": "object",
+          "properties": {
+            "letter": { "type": "string" },
+            "value": { "type": "number" },
+            "meaning": { "type": "string" }
+          }
+        },
+        "ray": {
+          "type": "object",
+          "properties": {
+            "number": { "type": "number" },
+            "color": { "type": "string" },
+            "frequency": { "type": "number" }
+          }
+        },
+        "angel": { "type": "string" },
+        "demon": { "type": "string" },
+        "crystal": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "formula": { "type": "string" },
+            "frequency": { "type": "number" }
+          }
+        },
+        "tara": { "type": "string" },
+        "psyche": {
+          "type": "object",
+          "properties": {
+            "wetiko": { "type": "string" },
+            " IFS": { "type": "string" },
+            "trauma": { "type": "string" },
+            "medicine": { "type": "string" }
+          }
+        },
+        "artifacts": { "type": "array", "items": { "type": "string" } },
+        "visuals": { "type": "array", "items": { "type": "string" } },
+        "audio": { "type": "array", "items": { "type": "string" } },
+        "apps": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["id", "name", "number", "suit", "element"]
+    }
+  }
+}

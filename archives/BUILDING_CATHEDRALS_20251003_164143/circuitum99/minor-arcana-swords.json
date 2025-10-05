@@ -1,0 +1,672 @@
+[
+  {
+    "id": "ace-swords",
+    "tarot": "Ace of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 1,
+    "astrology": "Libra, Aquarius, Gemini",
+    "chakra": "Throat",
+    "crystal": "Clear Quartz",
+    "tara": "White Tara",
+    "color": "#ffffff",
+    "majorArcana": false,
+    "realPerson": "The Sword of Truth - represents mental clarity, truth, justice, and the power of clear thought and communication.",
+    "characterDetails": {
+      "background": "The embodiment of intellectual clarity and truthful communication, cutting through deception and illusion with the sword of discernment.",
+      "personality": "Clear-minded, truthful, just, communicative, analytical, principled",
+      "motivations": "To seek truth, to communicate clearly, to establish justice, to cut through deception",
+      "flaws": "Can be overly critical, harsh, or struggle with emotional sensitivity",
+      "virtues": "Clarity, truthfulness, justice, communication, discernment"
+    },
+    "visualDescription": "A hand emerging from clouds holding an upright sword crowned with a golden crown, with rays of light emanating from the tip. The background shows mountains and clear sky, representing mental clarity and divine truth.",
+    "spells": [
+      {
+        "name": "Sword of Truth",
+        "type": "revelation",
+        "description": "Cut through deception and reveal hidden truths",
+        "effect": "Provides clarity and discernment in confusing situations",
+        "wisdom": "The truth may be sharp, but it cuts through the chains of deception"
+      },
+      {
+        "name": "Clear Communication",
+        "type": "expression",
+        "description": "Express thoughts and ideas with perfect clarity",
+        "effect": "Enhances communication skills and mental articulation",
+        "wisdom": "Clear thought expressed clearly changes the world"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Clarity of Mind",
+        "teaching": "A clear mind cuts through confusion like a sword through fog. Cultivate mental clarity and truth will reveal itself.",
+        "meditation": "Focus your mind like a laser beam. What truths become clear when mental chatter ceases?"
+      },
+      {
+        "title": "The Power of Truth",
+        "teaching": "Truth is the sharpest sword - it cuts through all deception and illusion. Speak your truth with courage and compassion.",
+        "meditation": "What truth have you been avoiding? What would courage look like in expressing it?"
+      }
+    ],
+    "story": {
+      "title": "The Blade of Clarity",
+      "chapter": "Swords 1",
+      "content": "You feel a sudden clarity as a sword appears in your hand, its blade etched with ancient symbols of truth. Rays of light emanate from its tip, cutting through confusion and deception. 'The mind's sword,' a clear voice says, 'cuts through all illusion to reveal the heart of truth.'",
+      "choices": [
+        {
+          "text": "Use mental clarity to cut through confusion and deception",
+          "consequence": "Gain discernment, see through lies and self-deception",
+          "nextChapter": "Swords 2"
+        },
+        {
+          "text": "Study the sword to understand the nature of truth",
+          "consequence": "Deepen understanding of justice and mental clarity",
+          "nextChapter": "Swords 3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "two-swords",
+    "tarot": "Two of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 2,
+    "astrology": "Moon in Libra",
+    "chakra": "Third Eye",
+    "crystal": "Sodalite",
+    "tara": "Blue Tara",
+    "color": "#4682b4",
+    "majorArcana": false,
+    "realPerson": "The Blind Justice - represents difficult choices, indecision, and the need for balanced judgment in conflicting situations.",
+    "characterDetails": {
+      "background": "The impartial judge who weighs all sides equally, even when the truth is difficult to discern or the choice painful to make.",
+      "personality": "Balanced, impartial, thoughtful, diplomatic, sometimes indecisive, fair",
+      "motivations": "To make fair decisions, to maintain balance, to seek truth impartially",
+      "flaws": "Can be overly passive, avoidant of conflict, or struggle with making difficult choices",
+      "virtues": "Fairness, balance, diplomacy, thoughtfulness, justice"
+    },
+    "visualDescription": "A blindfolded figure sitting calmly, holding two crossed swords in perfect balance. The background shows a tranquil sea under moonlight, representing the need for impartial judgment.",
+    "spells": [
+      {
+        "name": "Balanced Judgment",
+        "type": "decision",
+        "description": "Make fair and balanced decisions in difficult situations",
+        "effect": "Provides clarity and impartiality when facing tough choices",
+        "wisdom": "True justice requires seeing beyond personal bias and attachment"
+      },
+      {
+        "name": "Peaceful Resolution",
+        "type": "diplomacy",
+        "description": "Find diplomatic solutions to conflicts",
+        "effect": "Helps resolve disputes through understanding and compromise",
+        "wisdom": "The greatest victories are won through understanding, not through force"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Blindfolded Justice",
+        "teaching": "True justice requires setting aside personal bias. Sometimes you must blind yourself to see clearly.",
+        "meditation": "What personal biases cloud your judgment? What would clarity look like without them?"
+      },
+      {
+        "title": "The Difficult Choice",
+        "teaching": "Not all choices are easy, but all choices matter. Make decisions with the awareness that they shape your destiny.",
+        "meditation": "What difficult choice are you facing? What guidance does your inner wisdom offer?"
+      }
+    ],
+    "story": {
+      "title": "The Scales of Decision",
+      "chapter": "Swords 2",
+      "content": "You find yourself at a crossroads where two paths seem equally valid yet mutually exclusive. A blindfolded figure appears, holding two swords crossed in perfect balance. 'Justice requires,' the figure says calmly, 'that you set aside your personal desires to see the truth clearly.'",
+      "choices": [
+        {
+          "text": "Make a difficult but necessary decision with impartiality",
+          "consequence": "Gain wisdom through tough choices, find inner peace",
+          "nextChapter": "Swords 4"
+        },
+        {
+          "text": "Seek diplomatic solutions to conflicting needs",
+          "consequence": "Learn negotiation skills, find win-win solutions",
+          "nextChapter": "Swords 5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "three-swords",
+    "tarot": "Three of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 3,
+    "astrology": "Saturn in Libra",
+    "chakra": "Heart",
+    "crystal": "Rose Quartz",
+    "tara": "Pink Tara",
+    "color": "#ff69b4",
+    "majorArcana": false,
+    "realPerson": "The Broken Heart - represents heartbreak, sorrow, and the painful process of emotional healing and forgiveness.",
+    "characterDetails": {
+      "background": "The wounded healer who understands that heartbreak, though painful, is often the catalyst for profound emotional and spiritual growth.",
+      "personality": "Reflective, healing, resilient, compassionate, emotionally deep, wise",
+      "motivations": "To heal emotional wounds, to learn from pain, to help others through heartbreak",
+      "flaws": "Can get stuck in grief, become bitter, or struggle to trust again",
+      "virtues": "Resilience, compassion, emotional depth, healing, wisdom"
+    },
+    "visualDescription": "A heart pierced by three swords, with rain falling in the background. Represents the pain of heartbreak and the process of emotional healing.",
+    "spells": [
+      {
+        "name": "Healing Heartbreak",
+        "type": "restoration",
+        "description": "Transform the pain of heartbreak into sources of strength and wisdom",
+        "effect": "Facilitates emotional healing after loss, betrayal, or disappointment",
+        "wisdom": "The heart that breaks open often becomes the heart that loves more deeply"
+      },
+      {
+        "name": "Forgiveness Blade",
+        "type": "healing",
+        "description": "Cut through resentment and find forgiveness",
+        "effect": "Helps release anger and resentment toward those who have caused pain",
+        "wisdom": "Forgiveness is not forgetting - it is choosing to release the poison of resentment"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Gift of Sorrow",
+        "teaching": "Sorrow carves deep channels in the soul, creating space for greater love and compassion to flow.",
+        "meditation": "Reflect on heartbreak that led to growth. What wisdom emerged from the pain?"
+      },
+      {
+        "title": "The Healing Heart",
+        "teaching": "Your heart was made to love deeply. The pain of loss is the price of this capacity - honor both equally.",
+        "meditation": "What has your heart learned through sorrow? How has pain deepened your capacity for love?"
+      }
+    ],
+    "story": {
+      "title": "The Rain of Tears",
+      "chapter": "Swords 3",
+      "content": "You stand in a gentle rain, feeling the pain of a heart pierced by three swords representing different aspects of sorrow. Despite the pain, you sense that this wounding is creating space for deeper healing. 'The pierced heart,' a compassionate voice says, 'bleeds to make room for greater love.'",
+      "choices": [
+        {
+          "text": "Allow yourself to feel and process the pain of heartbreak",
+          "consequence": "Experience catharsis, begin the healing process",
+          "nextChapter": "Swords 6"
+        },
+        {
+          "text": "Seek understanding of why this pain was necessary for growth",
+          "consequence": "Find meaning in suffering, deepen emotional wisdom",
+          "nextChapter": "Swords 7"
+        }
+      ]
+    }
+  },
+  {
+    "id": "four-swords",
+    "tarot": "Four of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 4,
+    "astrology": "Jupiter in Libra",
+    "chakra": "Crown",
+    "crystal": "Amethyst",
+    "tara": "Purple Tara",
+    "color": "#800080",
+    "majorArcana": false,
+    "realPerson": "The Resting Mind - represents rest, recuperation, and the need for mental retreat and spiritual contemplation.",
+    "characterDetails": {
+      "background": "The wise soul who understands that periods of rest and retreat are necessary for mental and spiritual health and growth.",
+      "personality": "Contemplative, peaceful, patient, inwardly focused, spiritually aware",
+      "motivations": "To find inner peace, to heal mental exhaustion, to gain spiritual perspective",
+      "flaws": "Can be overly withdrawn, avoidant of necessary action, or struggle with re-engagement",
+      "virtues": "Peace, contemplation, patience, spiritual awareness, wisdom"
+    },
+    "visualDescription": "A figure lying in peaceful repose on a stone slab, with three swords hanging above and one beneath, representing a period of rest and mental recuperation.",
+    "spells": [
+      {
+        "name": "Mental Rest",
+        "type": "restoration",
+        "description": "Find deep mental peace and spiritual rest",
+        "effect": "Provides relief from mental exhaustion and overthinking",
+        "wisdom": "The mind, like the body, needs periods of rest to function at its best"
+      },
+      {
+        "name": "Contemplative Peace",
+        "type": "meditation",
+        "description": "Enter deep states of spiritual contemplation and inner peace",
+        "effect": "Facilitates meditation and spiritual insight during rest periods",
+        "wisdom": "In the silence of rest, the soul speaks its deepest truths"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Necessity of Rest",
+        "teaching": "Rest is not laziness - it is the necessary pause that allows for integration, healing, and renewed energy.",
+        "meditation": "What in your life needs rest? How can you honor your need for mental and spiritual renewal?"
+      },
+      {
+        "title": "The Contemplative Mind",
+        "teaching": "In periods of rest, the soul integrates experiences and gains deeper wisdom. Honor the need for contemplative pause.",
+        "meditation": "Sit in silence and listen to what your soul needs. What wisdom emerges in the quiet?"
+      }
+    ],
+    "story": {
+      "title": "The Sanctuary of Rest",
+      "chapter": "Swords 4",
+      "content": "You enter a peaceful sanctuary where a figure rests calmly on a stone slab, three swords hanging safely above, one beneath for protection. The atmosphere invites deep rest and contemplation. 'The weary mind,' a gentle voice says, 'finds renewal in sacred rest and contemplation.'",
+      "choices": [
+        {
+          "text": "Take time for mental rest and spiritual contemplation",
+          "consequence": "Find inner peace, gain spiritual perspective",
+          "nextChapter": "Swords 8"
+        },
+        {
+          "text": "Use rest as a time for mental healing and integration",
+          "consequence": "Heal mental exhaustion, integrate life experiences",
+          "nextChapter": "Swords 9"
+        }
+      ]
+    }
+  },
+  {
+    "id": "five-swords",
+    "tarot": "Five of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 5,
+    "astrology": "Venus in Aquarius",
+    "chakra": "Throat",
+    "crystal": "Blue Lace Agate",
+    "tara": "Blue Tara",
+    "color": "#add8e6",
+    "majorArcana": false,
+    "realPerson": "The Victorious Mind - represents conflict, defeat, and the painful realization that some victories cost more than they are worth.",
+    "characterDetails": {
+      "background": "The intellectual warrior who has won the battle but lost something precious in the process, learning the true cost of conflict.",
+      "personality": "Competitive, strategic, sometimes ruthless, intellectually sharp, driven",
+      "motivations": "To win arguments, to prove intellectual superiority, to achieve mental dominance",
+      "flaws": "Can be arrogant, cruel, or create unnecessary conflicts",
+      "virtues": "Intelligence, strategy, courage, determination, mental sharpness"
+    },
+    "visualDescription": "A figure holding three swords while two others walk away defeated, with a smug expression. Represents the hollow victory that comes at too high a cost.",
+    "spells": [
+      {
+        "name": "Strategic Victory",
+        "type": "conflict",
+        "description": "Win conflicts through superior strategy and intellect",
+        "effect": "Provides mental clarity and strategic thinking in competitive situations",
+        "wisdom": "The greatest victory is the one that benefits all parties involved"
+      },
+      {
+        "name": "Conflict Wisdom",
+        "type": "understanding",
+        "description": "Learn from the true cost of intellectual conflicts",
+        "effect": "Helps understand when to fight and when to seek harmony",
+        "wisdom": "Some victories leave you more defeated than any loss ever could"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Cost of Victory",
+        "teaching": "Some victories cost more than they are worth. Learn to choose your battles with wisdom and compassion.",
+        "meditation": "Reflect on conflicts you've 'won.' What was the true cost? What did you learn about victory?"
+      },
+      {
+        "title": "The Hollow Triumph",
+        "teaching": "A victory that diminishes others ultimately diminishes yourself. True success lifts everyone involved.",
+        "meditation": "What 'victories' in your life left you feeling empty? What would true success look like?"
+      }
+    ],
+    "story": {
+      "title": "The Battlefield of Ideas",
+      "chapter": "Swords 5",
+      "content": "You stand on a battlefield of ideas where words have become weapons and intellect has become armor. A figure holds three swords triumphantly while others walk away defeated. 'Some victories,' a thoughtful voice says, 'leave the victor more defeated than the vanquished.'",
+      "choices": [
+        {
+          "text": "Learn when to engage in intellectual conflict and when to seek harmony",
+          "consequence": "Develop wisdom in conflict, learn strategic engagement",
+          "nextChapter": "Swords 10"
+        },
+        {
+          "text": "Seek understanding of the true cost of mental victories",
+          "consequence": "Gain perspective on success, learn compassion in conflict",
+          "nextChapter": "Swords 11"
+        }
+      ]
+    }
+  },
+  {
+    "id": "six-swords",
+    "tarot": "Six of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 6,
+    "astrology": "Mercury in Aquarius",
+    "chakra": "Third Eye",
+    "crystal": "Lapis Lazuli",
+    "tara": "Indigo Tara",
+    "color": "#4b0082",
+    "majorArcana": false,
+    "realPerson": "The Journeying Mind - represents transition, moving on from difficulties, and the mental journey toward calmer waters.",
+    "characterDetails": {
+      "background": "The traveler who understands that sometimes the wisest action is to leave behind what no longer serves and journey toward mental peace.",
+      "personality": "Adaptable, resilient, forward-thinking, mentally agile, transitional",
+      "motivations": "To move toward better circumstances, to leave behind mental burdens, to seek peace",
+      "flaws": "Can be escapist, avoidant of necessary confrontation, or struggle with commitment",
+      "virtues": "Adaptability, resilience, mental agility, peace-seeking, wisdom"
+    },
+    "visualDescription": "A figure ferries a boat across water toward calmer shores, with six swords standing upright in the boat. Represents the mental journey from troubled waters to peace.",
+    "spells": [
+      {
+        "name": "Peaceful Transition",
+        "type": "journey",
+        "description": "Navigate life transitions with mental clarity and peace",
+        "effect": "Provides guidance and stability during times of change and transition",
+        "wisdom": "The journey toward peace often requires leaving behind familiar storms"
+      },
+      {
+        "name": "Mental Healing",
+        "type": "restoration",
+        "description": "Heal mental wounds and find peace after difficulty",
+        "effect": "Facilitates recovery from mental exhaustion and emotional turmoil",
+        "wisdom": "The mind, like the body, heals most effectively when given time and gentle care"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Journey to Peace",
+        "teaching": "Sometimes the bravest act is to recognize when it's time to move on toward calmer waters.",
+        "meditation": "What in your life no longer serves your mental peace? What would courage look like in leaving it behind?"
+      },
+      {
+        "title": "The Healing Transition",
+        "teaching": "Transitions are opportunities for mental renewal. The journey itself becomes the healing process.",
+        "meditation": "What transition are you currently navigating? How can you find peace in the journey itself?"
+      }
+    ],
+    "story": {
+      "title": "The Ferry to Peace",
+      "chapter": "Swords 6",
+      "content": "You board a ferry carrying six swords that represent different aspects of mental burdens and past conflicts. The water is choppy at first but grows calmer as you journey toward distant, peaceful shores. 'The mind seeks peace,' a guiding voice says, 'sometimes you must journey to find it.'",
+      "choices": [
+        {
+          "text": "Journey toward mental peace and leave behind old conflicts",
+          "consequence": "Find inner peace, heal mental wounds",
+          "nextChapter": "Swords 12"
+        },
+        {
+          "text": "Use transition as an opportunity for mental renewal",
+          "consequence": "Transform during change, emerge stronger",
+          "nextChapter": "Swords 13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "seven-swords",
+    "tarot": "Seven of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 7,
+    "astrology": "Moon in Aquarius",
+    "chakra": "Crown",
+    "crystal": "Labradorite",
+    "tara": "Indigo Tara",
+    "color": "#483d8b",
+    "majorArcana": false,
+    "realPerson": "The Strategic Mind - represents strategy, cunning, and the need for careful planning and sometimes necessary deception.",
+    "characterDetails": {
+      "background": "The clever strategist who understands that not all battles can be won through direct confrontation, and that wisdom sometimes requires subtlety.",
+      "personality": "Strategic, clever, subtle, sometimes deceptive, mentally agile, resourceful",
+      "motivations": "To achieve goals through clever means, to protect what matters, to outwit opposition",
+      "flaws": "Can be manipulative, dishonest, or create unnecessary complexity",
+      "virtues": "Intelligence, strategy, resourcefulness, cleverness, mental agility"
+    },
+    "visualDescription": "A figure sneaking away with five swords while two remain standing, looking back cautiously. Represents strategic retreat and the need for clever planning.",
+    "spells": [
+      {
+        "name": "Strategic Planning",
+        "type": "strategy",
+        "description": "Plan complex strategies with mental clarity and foresight",
+        "effect": "Provides strategic thinking and helps anticipate consequences",
+        "wisdom": "The greatest victories are often won through clever planning, not brute force"
+      },
+      {
+        "name": "Subtle Action",
+        "type": "influence",
+        "description": "Achieve goals through subtle means and clever strategy",
+        "effect": "Helps accomplish objectives without direct confrontation",
+        "wisdom": "Sometimes the most effective action is the one that appears to be no action at all"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Art of Strategy",
+        "teaching": "True intelligence understands that not all problems require direct confrontation. Sometimes the clever path is the wise path.",
+        "meditation": "What challenges in your life might benefit from a more strategic approach? What would cleverness look like?"
+      },
+      {
+        "title": "The Ethics of Cunning",
+        "teaching": "Cleverness without ethics becomes manipulation. Use your mental gifts in service of the greater good.",
+        "meditation": "How do you use your intelligence? Does it serve others as well as yourself?"
+      }
+    ],
+    "story": {
+      "title": "The Camp of Strategy",
+      "chapter": "Swords 7",
+      "content": "You find yourself in an enemy camp under cover of darkness, carefully selecting which swords (representing different strategies) to take with you. Two remain behind as you slip away. 'Not all battles,' a clever voice whispers, 'need to be fought on the enemy's terms.'",
+      "choices": [
+        {
+          "text": "Use strategic thinking to navigate complex challenges",
+          "consequence": "Develop clever solutions, achieve goals through wisdom",
+          "nextChapter": "Swords 14"
+        },
+        {
+          "text": "Learn when retreat is the wisest form of engagement",
+          "consequence": "Develop strategic patience, learn timing",
+          "nextChapter": "Swords 15"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eight-swords",
+    "tarot": "Eight of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 8,
+    "astrology": "Jupiter in Gemini",
+    "chakra": "Root",
+    "crystal": "Black Tourmaline",
+    "tara": "Black Tara",
+    "color": "#2f4f4f",
+    "majorArcana": false,
+    "realPerson": "The Bound Mind - represents self-imposed limitations, feeling trapped by circumstances or mental patterns.",
+    "characterDetails": {
+      "background": "The soul who feels trapped by circumstances or mental patterns, learning that many limitations exist only in the mind.",
+      "personality": "Anxious, restricted, self-doubting, sometimes victimized, inwardly focused",
+      "motivations": "To break free from limitations, to overcome fear, to find mental freedom",
+      "flaws": "Can be self-defeating, overly fearful, or struggle with taking responsibility",
+      "virtues": "Self-awareness, growth potential, resilience, courage"
+    },
+    "visualDescription": "A bound figure standing in a circle of eight swords, blindfolded and seemingly trapped. Represents the feeling of being restricted by circumstances or mental patterns.",
+    "spells": [
+      {
+        "name": "Freedom from Fear",
+        "type": "liberation",
+        "description": "Break free from self-imposed mental limitations",
+        "effect": "Helps recognize and overcome mental patterns that create unnecessary restrictions",
+        "wisdom": "Most prisons exist only in the mind - the door is often unlocked"
+      },
+      {
+        "name": "Self-Liberation",
+        "type": "empowerment",
+        "description": "Take responsibility for your own freedom and growth",
+        "effect": "Provides courage to step beyond self-imposed limitations",
+        "wisdom": "You are only as trapped as you believe yourself to be"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Illusion of Bondage",
+        "teaching": "Many limitations exist only in your perception. The ropes that bind you are often self-created.",
+        "meditation": "What limitations in your life are self-imposed? What would freedom look like?"
+      },
+      {
+        "title": "The Power of Perspective",
+        "teaching": "When you change your perspective, the prison becomes a doorway. Look at your challenges from a different angle.",
+        "meditation": "What situation in your life feels restrictive? How might it look from a different perspective?"
+      }
+    ],
+    "story": {
+      "title": "The Circle of Swords",
+      "chapter": "Swords 8",
+      "content": "You find yourself in a circle of eight swords, bound and blindfolded, feeling completely trapped. Yet as you explore, you realize the bonds are loose and the swords form a pattern that could be a doorway. 'The greatest prison,' a liberating voice says, 'is the one we build for ourselves.'",
+      "choices": [
+        {
+          "text": "Recognize and break free from self-imposed limitations",
+          "consequence": "Find personal freedom, overcome mental restrictions",
+          "nextChapter": "Swords 16"
+        },
+        {
+          "text": "Take responsibility for your own liberation",
+          "consequence": "Develop self-empowerment, find inner strength",
+          "nextChapter": "Swords 17"
+        }
+      ]
+    }
+  },
+  {
+    "id": "nine-swords",
+    "tarot": "Nine of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 9,
+    "astrology": "Mars in Gemini",
+    "chakra": "Sacral",
+    "crystal": "Smoky Quartz",
+    "tara": "Brown Tara",
+    "color": "#8b4513",
+    "majorArcana": false,
+    "realPerson": "The Anxious Mind - represents anxiety, worry, and the mental suffering that comes from overthinking and fear.",
+    "characterDetails": {
+      "background": "The sensitive soul who experiences the depths of mental anguish and anxiety, learning that worry is often more painful than reality.",
+      "personality": "Sensitive, anxious, imaginative, sometimes paranoid, deeply feeling",
+      "motivations": "To find peace of mind, to overcome fear, to understand mental suffering",
+      "flaws": "Can be overly anxious, create problems through worry, or struggle with trust",
+      "virtues": "Sensitivity, imagination, emotional depth, self-awareness"
+    },
+    "visualDescription": "A figure sitting up in bed with nine swords hanging on the wall, hands covering face in despair. Represents the mental anguish of anxiety and overthinking.",
+    "spells": [
+      {
+        "name": "Peace of Mind",
+        "type": "calming",
+        "description": "Find relief from anxiety and mental torment",
+        "effect": "Calms the mind and provides perspective on worries and fears",
+        "wisdom": "Most of what you fear never comes to pass - worry is suffering in advance"
+      },
+      {
+        "name": "Fear Transformation",
+        "type": "healing",
+        "description": "Transform fear and anxiety into sources of strength",
+        "effect": "Helps understand and work with anxiety rather than against it",
+        "wisdom": "Your fears, when understood, become your greatest teachers"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Nature of Worry",
+        "teaching": "Worry is like a rocking chair - it gives you something to do but never gets you anywhere. Learn to distinguish between concern and anxiety.",
+        "meditation": "What are you currently worrying about? How much of this worry serves your growth?"
+      },
+      {
+        "title": "The Gift of Sensitivity",
+        "teaching": "Your sensitivity is a gift, not a curse. Learn to use it as a source of wisdom rather than suffering.",
+        "meditation": "How has your sensitivity helped you understand yourself and others more deeply?"
+      }
+    ],
+    "story": {
+      "title": "The Night of Worry",
+      "chapter": "Swords 9",
+      "content": "You wake in the dark night, mind racing with fears and worries that seem overwhelming. Nine swords hang on the wall like threats, and despair feels like your only companion. 'The worried mind,' a compassionate voice says, 'suffers more than reality ever could.'",
+      "choices": [
+        {
+          "text": "Find relief from anxiety and mental torment",
+          "consequence": "Learn anxiety management, find inner peace",
+          "nextChapter": "Swords 18"
+        },
+        {
+          "text": "Transform fear into understanding and growth",
+          "consequence": "Develop emotional intelligence, use sensitivity as strength",
+          "nextChapter": "Swords 19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ten-swords",
+    "tarot": "Ten of Swords",
+    "suit": "swords",
+    "element": "Air",
+    "number": 10,
+    "astrology": "Sun in Gemini",
+    "chakra": "Solar Plexus",
+    "crystal": "Citrine",
+    "tara": "Gold Tara",
+    "color": "#ffd700",
+    "majorArcana": false,
+    "realPerson": "The Phoenix Mind - represents painful endings, rock bottom, and the realization that the only way forward is up.",
+    "characterDetails": {
+      "background": "The soul who has reached the darkest hour before dawn, learning that sometimes total destruction is necessary for complete renewal.",
+      "personality": "Resilient, transformative, wise, sometimes dramatic, growth-oriented",
+      "motivations": "To rise from ashes, to transform pain into wisdom, to help others through crisis",
+      "flaws": "Can be overly dramatic, resistant to gradual change, or struggle with subtlety",
+      "virtues": "Resilience, transformation, wisdom, courage, renewal"
+    },
+    "visualDescription": "A figure lying face down with ten swords in their back, representing a painful ending or rock bottom. The sky shows the first light of dawn, suggesting hope after despair.",
+    "spells": [
+      {
+        "name": "Phoenix Rising",
+        "type": "renewal",
+        "description": "Rise renewed from the ashes of destruction",
+        "effect": "Facilitates complete transformation after crisis or loss",
+        "wisdom": "The darkest hour precedes the dawn - trust the process of renewal"
+      },
+      {
+        "name": "Crisis Wisdom",
+        "type": "transformation",
+        "description": "Transform crisis into opportunity for profound growth",
+        "effect": "Helps find meaning and growth in even the most difficult circumstances",
+        "wisdom": "What seems like an ending is often the necessary death before rebirth"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Necessity of Crisis",
+        "teaching": "Crisis, though painful, often brings the gifts we most need for growth. The soul grows most in times of challenge.",
+        "meditation": "Reflect on a crisis that led to unexpected growth. What gifts emerged from the difficulty?"
+      },
+      {
+        "title": "The Dawn After Darkness",
+        "teaching": "No night is so dark that it can prevent the dawn. Trust that even in your darkest hour, light is returning.",
+        "meditation": "What darkness in your life might be the precursor to a new dawn? What renewal awaits?"
+      }
+    ],
+    "story": {
+      "title": "The Field of Surrender",
+      "chapter": "Swords 10",
+      "content": "You lie in a field as dawn breaks, ten swords representing different aspects of defeat and surrender. Despite the pain, you feel the first rays of hope as the sun rises. 'The greatest darkness,' a hopeful voice says, 'precedes the most beautiful dawn.'",
+      "choices": [
+        {
+          "text": "Surrender to the process of transformation and renewal",
+          "consequence": "Experience profound rebirth, emerge stronger",
+          "nextChapter": "Swords 20"
+        },
+        {
+          "text": "Find meaning and growth in even the most difficult circumstances",
+          "consequence": "Develop wisdom, help others through similar crises",
+          "nextChapter": "Swords 21"
+        }
+      ]
+    }
+  }
+]

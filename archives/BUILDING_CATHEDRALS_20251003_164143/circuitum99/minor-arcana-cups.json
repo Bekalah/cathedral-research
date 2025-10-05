@@ -1,0 +1,672 @@
+[
+  {
+    "id": "ace-cups",
+    "tarot": "Ace of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 1,
+    "astrology": "Cancer, Scorpio, Pisces",
+    "chakra": "Heart",
+    "crystal": "Rose Quartz",
+    "tara": "Pink Tara",
+    "color": "#ff69b4",
+    "majorArcana": false,
+    "realPerson": "The Divine Chalice - represents pure emotional potential, new relationships, and the initial flow of love and compassion.",
+    "characterDetails": {
+      "background": "The sacred vessel of emotional wisdom, containing the pure essence of love, compassion, and spiritual nourishment.",
+      "personality": "Loving, compassionate, intuitive, emotionally open, nurturing, spiritually receptive",
+      "motivations": "To foster emotional connections, to heal hearts, to facilitate spiritual love",
+      "flaws": "Can be overly emotional, naive about others' intentions, or struggle with boundaries",
+      "virtues": "Compassion, love, intuition, emotional intelligence, spiritual receptivity"
+    },
+    "visualDescription": "A golden chalice overflowing with crystal-clear water, with five streams flowing into a tranquil pool. A white dove descends from above, and the background shows a peaceful landscape with mountains and water, representing emotional abundance and spiritual love.",
+    "spells": [
+      {
+        "name": "Overflowing Love",
+        "type": "emotion",
+        "description": "Open the heart to abundant love and compassion",
+        "effect": "Facilitates emotional healing and the flow of divine love",
+        "wisdom": "Love flows most freely when given without expectation of return"
+      },
+      {
+        "name": "Emotional Clarity",
+        "type": "intuition",
+        "description": "Gain clear insight into emotional situations and relationships",
+        "effect": "Provides emotional intelligence and understanding of feelings",
+        "wisdom": "Clear emotional vision comes from a heart aligned with divine love"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Chalice of Love",
+        "teaching": "Your heart is a sacred vessel designed to overflow with divine love. Keep it pure and let love flow through you.",
+        "meditation": "Visualize your heart as a golden chalice. What emotions fill it? What overflows when it's full?"
+      },
+      {
+        "title": "Emotional Wisdom",
+        "teaching": "Emotions are messengers from the soul. Listen to their wisdom and let them guide you toward greater love and understanding.",
+        "meditation": "Sit with your emotions without judgment. What messages do they carry for your spiritual growth?"
+      }
+    ],
+    "story": {
+      "title": "The Overflowing Chalice",
+      "chapter": "Cups 1",
+      "content": "You discover a golden chalice that overflows with the purest water you've ever seen. Five streams flow from it into a tranquil pool, and you feel your heart opening to receive divine love. 'The cup of the heart,' a gentle voice says, 'was made to overflow with love and compassion.'",
+      "choices": [
+        {
+          "text": "Open your heart to receive divine love and compassion",
+          "consequence": "Experience emotional healing, unlock loving relationships",
+          "nextChapter": "Cups 2"
+        },
+        {
+          "text": "Study the chalice to understand its emotional wisdom",
+          "consequence": "Gain emotional intelligence, understand feelings more deeply",
+          "nextChapter": "Cups 3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "two-cups",
+    "tarot": "Two of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 2,
+    "astrology": "Venus in Cancer",
+    "chakra": "Sacral",
+    "crystal": "Moonstone",
+    "tara": "Blue Tara",
+    "color": "#4682b4",
+    "majorArcana": false,
+    "realPerson": "The Soulmate Mirror - represents sacred partnership, emotional connection, and the recognition of the divine in another.",
+    "characterDetails": {
+      "background": "The sacred mirror that reflects the divine in another soul, representing the alchemical marriage of hearts and spirits.",
+      "personality": "Devoted, intuitive, harmonious, deeply connected, spiritually aware, loving",
+      "motivations": "To create sacred partnerships, to mirror divine love, to foster spiritual connection",
+      "flaws": "Can be overly dependent, idealistic, or struggle with independence",
+      "virtues": "Devotion, intuition, harmony, spiritual connection, love"
+    },
+    "visualDescription": "Two figures exchange golden chalices in a sacred ritual of union. A caduceus of a lion and eagle (representing balanced power) floats above them, with a peaceful landscape in the background.",
+    "spells": [
+      {
+        "name": "Sacred Partnership",
+        "type": "relationship",
+        "description": "Create deep, meaningful soul connections",
+        "effect": "Facilitates the recognition of kindred spirits and soul mates",
+        "wisdom": "The greatest love stories are written by souls who recognize the divine in each other"
+      },
+      {
+        "name": "Emotional Harmony",
+        "type": "balance",
+        "description": "Balance emotions and create harmony in relationships",
+        "effect": "Helps resolve emotional conflicts and create understanding",
+        "wisdom": "True harmony comes from two souls dancing in recognition of each other's divinity"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Mirror of Love",
+        "teaching": "Your beloved is a mirror showing you aspects of your own soul. Love them completely and you love yourself.",
+        "meditation": "Look into the eyes of someone you love. What aspects of your own soul do you see reflected there?"
+      },
+      {
+        "title": "Sacred Union",
+        "teaching": "True partnership is not possession, but recognition. Two souls choose to walk together in mutual growth and love.",
+        "meditation": "Reflect on your most sacred relationships. How do they help you grow toward your highest self?"
+      }
+    ],
+    "story": {
+      "title": "The Ritual of Union",
+      "chapter": "Cups 2",
+      "content": "You witness a sacred ritual where two figures exchange golden chalices in perfect harmony. A lion and eagle dance above them, representing the balance of power and spirit. 'Sacred partnership,' a voice explains, 'is the recognition of the divine in another soul.'",
+      "choices": [
+        {
+          "text": "Seek a sacred partnership based on spiritual connection",
+          "consequence": "Find soul-level relationships, experience divine love",
+          "nextChapter": "Cups 4"
+        },
+        {
+          "text": "Learn to recognize the divine in all your relationships",
+          "consequence": "Deepen existing relationships, find spiritual meaning in all connections",
+          "nextChapter": "Cups 5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "three-cups",
+    "tarot": "Three of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 3,
+    "astrology": "Mercury in Cancer",
+    "chakra": "Solar Plexus",
+    "crystal": "Chrysoprase",
+    "tara": "Green Tara",
+    "color": "#228b22",
+    "majorArcana": false,
+    "realPerson": "The Joyful Community - represents celebration, friendship, and the joy that comes from shared emotional experiences and community.",
+    "characterDetails": {
+      "background": "The embodiment of communal joy and celebration, the friend who creates emotional warmth and shared happiness.",
+      "personality": "Joyful, sociable, celebratory, emotionally generous, community-oriented, warm",
+      "motivations": "To create joy, to foster friendship, to celebrate life's blessings",
+      "flaws": "Can be overly focused on social approval or avoid deeper emotional work",
+      "virtues": "Joy, friendship, celebration, emotional generosity, community"
+    },
+    "visualDescription": "Three figures dance and celebrate together, each holding a golden chalice raised in toast. The scene is filled with abundance - fruits, flowers, and joyful energy representing the celebration of life's blessings.",
+    "spells": [
+      {
+        "name": "Celebration of Life",
+        "type": "joy",
+        "description": "Find joy and celebration in all of life's experiences",
+        "effect": "Transforms ordinary moments into celebrations of gratitude and joy",
+        "wisdom": "Joy shared is joy multiplied - the heart expands when love flows through community"
+      },
+      {
+        "name": "Friendship Blessing",
+        "type": "connection",
+        "description": "Strengthen bonds of friendship and community",
+        "effect": "Deepens emotional connections and creates lasting friendships",
+        "wisdom": "True friendship is a soul connection that transcends time and circumstance"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Joy of Connection",
+        "teaching": "We are designed for connection. The heart finds its greatest joy in loving and being loved in community.",
+        "meditation": "Reflect on friendships that bring you joy. How do they help you become more fully yourself?"
+      },
+      {
+        "title": "Sacred Celebration",
+        "teaching": "Every moment of life deserves celebration. The grateful heart finds blessings in both joy and sorrow.",
+        "meditation": "What blessings in your life deserve celebration? How can you share this joy with others?"
+      }
+    ],
+    "story": {
+      "title": "The Dance of Joy",
+      "chapter": "Cups 3",
+      "content": "You join a circle of three friends dancing in celebration, each holding a chalice filled with the nectar of joy. The air shimmers with laughter and love as fruits and flowers seem to multiply around you. 'Joy is multiplied,' a voice laughs, 'when shared with those we love.'",
+      "choices": [
+        {
+          "text": "Celebrate life with friends and loved ones",
+          "consequence": "Experience communal joy, strengthen social bonds",
+          "nextChapter": "Cups 6"
+        },
+        {
+          "text": "Create your own celebration of personal achievements",
+          "consequence": "Find individual joy, learn to celebrate yourself",
+          "nextChapter": "Cups 7"
+        }
+      ]
+    }
+  },
+  {
+    "id": "four-cups",
+    "tarot": "Four of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 4,
+    "astrology": "Moon in Cancer",
+    "chakra": "Heart",
+    "crystal": "Celestite",
+    "tara": "Blue Tara",
+    "color": "#87ceeb",
+    "majorArcana": false,
+    "realPerson": "The Contemplative Soul - represents introspection, meditation, and the search for deeper emotional and spiritual fulfillment.",
+    "characterDetails": {
+      "background": "The inward-seeking soul who understands that true fulfillment comes from within, not from external achievements or relationships.",
+      "personality": "Contemplative, introspective, meditative, emotionally deep, spiritually aware",
+      "motivations": "To find inner peace, to understand emotions deeply, to seek spiritual fulfillment",
+      "flaws": "Can be withdrawn, depressed, or miss opportunities due to introspection",
+      "virtues": "Depth, introspection, emotional wisdom, spiritual awareness, peace"
+    },
+    "visualDescription": "A figure sitting in meditation under a tree, contemplating three chalices while a fourth is offered from a cloud. Represents the search for deeper meaning beyond material or superficial emotional satisfaction.",
+    "spells": [
+      {
+        "name": "Inner Contemplation",
+        "type": "meditation",
+        "description": "Find peace and wisdom through inner reflection",
+        "effect": "Facilitates deep meditation and emotional processing",
+        "wisdom": "The deepest waters of the soul are found in quiet contemplation"
+      },
+      {
+        "name": "Emotional Depth",
+        "type": "understanding",
+        "description": "Understand the deeper currents of emotional experience",
+        "effect": "Provides insight into complex emotional situations and relationships",
+        "wisdom": "True emotional wisdom comes from exploring the depths, not just the surface"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Inner Well",
+        "teaching": "Within you is a well of infinite emotional wisdom. Learn to draw from its depths rather than seeking fulfillment outside yourself.",
+        "meditation": "Sit in silence and listen to the wisdom of your own heart. What truths await in the quiet?"
+      },
+      {
+        "title": "Sacred Dissatisfaction",
+        "teaching": "Divine discontent is the soul's way of calling you toward deeper fulfillment. Listen to its wisdom.",
+        "meditation": "What in your life feels unfulfilling? What deeper calling might this dissatisfaction be revealing?"
+      }
+    ],
+    "story": {
+      "title": "The Meditation Garden",
+      "chapter": "Cups 4",
+      "content": "You sit in a peaceful garden under a tree, contemplating three chalices that represent different aspects of emotional fulfillment. A fourth chalice appears from the clouds, offering something new. 'True fulfillment,' a quiet voice says, 'comes from within, not from external achievements.'",
+      "choices": [
+        {
+          "text": "Seek deeper emotional and spiritual fulfillment",
+          "consequence": "Find inner peace, discover true emotional wisdom",
+          "nextChapter": "Cups 8"
+        },
+        {
+          "text": "Learn to appreciate the blessings already present in your life",
+          "consequence": "Develop gratitude, find contentment in the present",
+          "nextChapter": "Cups 9"
+        }
+      ]
+    }
+  },
+  {
+    "id": "five-cups",
+    "tarot": "Five of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 5,
+    "astrology": "Mars in Scorpio",
+    "chakra": "Throat",
+    "crystal": "Apache Tear",
+    "tara": "Black Tara",
+    "color": "#2f4f4f",
+    "majorArcana": false,
+    "realPerson": "The Grieving Heart - represents loss, disappointment, and the process of emotional healing and forgiveness.",
+    "characterDetails": {
+      "background": "The wounded healer who understands that loss and disappointment are necessary teachers on the path to emotional maturity.",
+      "personality": "Reflective, healing, resilient, emotionally deep, compassionate toward suffering",
+      "motivations": "To heal emotional wounds, to learn from loss, to help others through grief",
+      "flaws": "Can get stuck in grief, become bitter, or struggle to move forward",
+      "virtues": "Resilience, compassion, emotional depth, healing, wisdom"
+    },
+    "visualDescription": "A figure in black robes stands before three spilled chalices, grieving their loss, while two upright chalices remain behind them. Represents the focus on loss rather than the blessings that remain.",
+    "spells": [
+      {
+        "name": "Healing Grief",
+        "type": "restoration",
+        "description": "Transform grief and loss into sources of strength and wisdom",
+        "effect": "Facilitates the healing process after emotional loss or disappointment",
+        "wisdom": "Grief is the price we pay for love - honor both equally"
+      },
+      {
+        "name": "Forgiveness Blessing",
+        "type": "healing",
+        "description": "Find forgiveness for self and others after emotional pain",
+        "effect": "Helps release resentment and find peace after betrayal or loss",
+        "wisdom": "Forgiveness is not forgetting - it is choosing to release the poison of resentment"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Gift of Loss",
+        "teaching": "Loss clears space for something new. The chalices that spill make room for those yet to be filled.",
+        "meditation": "Reflect on losses in your life. What new growth or understanding emerged from those empty spaces?"
+      },
+      {
+        "title": "Emotional Resilience",
+        "teaching": "The heart that breaks open often becomes the heart that loves more deeply. Your wounds become sources of compassion.",
+        "meditation": "How have your deepest wounds become sources of strength and compassion for others?"
+      }
+    ],
+    "story": {
+      "title": "The Bridge of Tears",
+      "chapter": "Cups 5",
+      "content": "You stand before a bridge of tears, where three chalices have spilled their contents while two remain upright. A figure in dark robes weeps for what was lost. 'Grief is a bridge,' a compassionate voice says, 'between what was and what will be.'",
+      "choices": [
+        {
+          "text": "Allow yourself to grieve and process emotional pain",
+          "consequence": "Experience catharsis, find healing through expression",
+          "nextChapter": "Cups 10"
+        },
+        {
+          "text": "Focus on the blessings that remain despite the loss",
+          "consequence": "Develop gratitude, find strength in what endures",
+          "nextChapter": "Cups 11"
+        }
+      ]
+    }
+  },
+  {
+    "id": "six-cups",
+    "tarot": "Six of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 6,
+    "astrology": "Sun in Scorpio",
+    "chakra": "Third Eye",
+    "crystal": "Nostalgic",
+    "tara": "White Tara",
+    "color": "#f5deb3",
+    "majorArcana": false,
+    "realPerson": "The Nostalgic Healer - represents innocence, nostalgia, and the healing power of returning to childlike wonder and emotional simplicity.",
+    "characterDetails": {
+      "background": "The eternal child who remembers the innocence of the heart and uses nostalgia as a bridge to emotional healing.",
+      "personality": "Nostalgic, innocent, playful, emotionally generous, healing, childlike",
+      "motivations": "To heal through innocence, to remember joy, to return to emotional simplicity",
+      "flaws": "Can be naive, overly nostalgic, or avoid present responsibilities",
+      "virtues": "Innocence, joy, healing, generosity, playfulness"
+    },
+    "visualDescription": "Two children in old-fashioned clothing exchange golden chalices filled with flowers, representing innocence, nostalgia, and the simple joy of giving and receiving love.",
+    "spells": [
+      {
+        "name": "Childlike Wonder",
+        "type": "healing",
+        "description": "Return to innocence and see the world with fresh eyes",
+        "effect": "Heals cynicism and restores childlike joy and wonder",
+        "wisdom": "The child sees the world as it truly is - magical and full of wonder"
+      },
+      {
+        "name": "Nostalgic Healing",
+        "type": "restoration",
+        "description": "Use memories of joy to heal present emotional wounds",
+        "effect": "Transforms painful memories into sources of comfort and wisdom",
+        "wisdom": "The past contains treasures of joy that can heal the present"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Innocent Heart",
+        "teaching": "Children see the world without the veils of judgment and cynicism. Return to this innocence and rediscover magic.",
+        "meditation": "Remember what it felt like to be a child filled with wonder. How can you see the world with those eyes again?"
+      },
+      {
+        "title": "Sacred Memory",
+        "teaching": "Your memories of joy are treasures that can heal present pain. Use nostalgia as a bridge to emotional wholeness.",
+        "meditation": "Recall a memory of pure joy from your childhood. Let that feeling fill your present moment."
+      }
+    ],
+    "story": {
+      "title": "The Garden of Childhood",
+      "chapter": "Cups 6",
+      "content": "You wander into a garden that feels like childhood memories come to life. Two children in old-fashioned clothes play with golden chalices filled with flowers, their laughter pure and innocent. 'The child within,' a gentle voice says, 'remembers the magic that adults forget.'",
+      "choices": [
+        {
+          "text": "Reconnect with your inner child and innocent joy",
+          "consequence": "Heal inner wounds, rediscover childlike wonder",
+          "nextChapter": "Cups 12"
+        },
+        {
+          "text": "Use memories of joy to heal present emotional pain",
+          "consequence": "Transform nostalgia into healing, find comfort in memories",
+          "nextChapter": "Cups 13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "seven-cups",
+    "tarot": "Seven of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 7,
+    "astrology": "Venus in Scorpio",
+    "chakra": "Crown",
+    "crystal": "Labradorite",
+    "tara": "Indigo Tara",
+    "color": "#4b0082",
+    "majorArcana": false,
+    "realPerson": "The Visionary Dreamer - represents imagination, fantasy, and the challenge of discerning between illusion and true vision.",
+    "characterDetails": {
+      "background": "The dreamer who walks between worlds of fantasy and reality, learning to discern true vision from mere illusion.",
+      "personality": "Imaginative, visionary, dreamy, creative, sometimes scattered, intuitive",
+      "motivations": "To explore inner worlds, to manifest dreams, to bridge fantasy and reality",
+      "flaws": "Can be unrealistic, escapist, or struggle with practical matters",
+      "virtues": "Imagination, vision, creativity, intuition, dream manifestation"
+    },
+    "visualDescription": "A figure stands before seven chalices floating on clouds, each containing different visions - a castle, jewels, a laurel wreath, a dragon, a veiled figure, a snake, and a person. Represents the challenge of choosing between various illusions and opportunities.",
+    "spells": [
+      {
+        "name": "Visionary Discernment",
+        "type": "clarity",
+        "description": "Discern between true vision and mere fantasy",
+        "effect": "Provides clarity to distinguish real opportunities from illusions",
+        "wisdom": "Not all that glitters is gold, but not all that is gold needs to glitter"
+      },
+      {
+        "name": "Dream Manifestation",
+        "type": "creation",
+        "description": "Transform inner visions into reality",
+        "effect": "Helps ground imaginative ideas into practical manifestation",
+        "wisdom": "The greatest dreams are those grounded in the soil of reality"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Power of Imagination",
+        "teaching": "Your imagination is a gateway to infinite possibilities. Learn to discern which visions are meant to become reality.",
+        "meditation": "Explore your inner visions. Which feel like true callings, and which are pleasant fantasies?"
+      },
+      {
+        "title": "Sacred Discernment",
+        "teaching": "Not every opportunity that appears is meant for you. Learn to recognize the call of your soul amid the noise of options.",
+        "meditation": "What opportunities currently call to you? Which feel aligned with your deepest purpose?"
+      }
+    ],
+    "story": {
+      "title": "The Cloud of Visions",
+      "chapter": "Cups 7",
+      "content": "You float among clouds where seven chalices offer different visions of possible futures. Each contains a different dream - some beautiful, some terrifying, some mundane. 'Discernment is required,' a dreamy voice says, 'to choose which visions to manifest into reality.'",
+      "choices": [
+        {
+          "text": "Develop discernment to choose the right opportunities",
+          "consequence": "Learn to recognize true callings, avoid distractions",
+          "nextChapter": "Cups 14"
+        },
+        {
+          "text": "Explore your imagination and inner visions",
+          "consequence": "Develop creativity, discover hidden potentials",
+          "nextChapter": "Cups 15"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eight-cups",
+    "tarot": "Eight of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 8,
+    "astrology": "Saturn in Pisces",
+    "chakra": "Root",
+    "crystal": "Smoky Quartz",
+    "tara": "Brown Tara",
+    "color": "#8b4513",
+    "majorArcana": false,
+    "realPerson": "The Soul Seeker - represents the courage to walk away from emotional situations that no longer serve spiritual growth.",
+    "characterDetails": {
+      "background": "The spiritual seeker who understands that sometimes the greatest courage is in walking away from what no longer serves the soul's growth.",
+      "personality": "Courageous, introspective, spiritually motivated, detached, wise, seeking",
+      "motivations": "To seek deeper fulfillment, to follow spiritual calling, to grow beyond limitations",
+      "flaws": "Can be escapist, abandon good situations, or struggle with commitment",
+      "virtues": "Courage, wisdom, spiritual focus, growth orientation, discernment"
+    },
+    "visualDescription": "A figure walks away under moonlight, leaving behind eight arranged chalices. The moon illuminates a path toward mountains, representing the call to seek deeper spiritual fulfillment.",
+    "spells": [
+      {
+        "name": "Courageous Departure",
+        "type": "liberation",
+        "description": "Find the courage to leave situations that no longer serve growth",
+        "effect": "Provides strength and clarity to walk away from stagnant or toxic situations",
+        "wisdom": "Sometimes the most loving act is to set yourself free"
+      },
+      {
+        "name": "Spiritual Seeking",
+        "type": "quest",
+        "description": "Follow the call toward deeper spiritual fulfillment",
+        "effect": "Guides the soul toward situations and people that support spiritual growth",
+        "wisdom": "The soul knows when it's time to move on - listen to its quiet wisdom"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Courage to Leave",
+        "teaching": "True growth sometimes requires leaving behind what is comfortable but no longer serves your highest good.",
+        "meditation": "What in your life no longer serves your growth? What would courage look like in this situation?"
+      },
+      {
+        "title": "Sacred Transition",
+        "teaching": "Every ending creates space for new beginnings. Trust that what awaits is more aligned with your soul's purpose.",
+        "meditation": "Visualize walking away from what no longer serves you. What new path opens before you?"
+      }
+    ],
+    "story": {
+      "title": "The Moonlit Path",
+      "chapter": "Cups 8",
+      "content": "You stand under moonlight, looking at eight chalices arranged in a pleasing pattern. Despite their beauty, you feel called to walk away toward distant mountains. 'The soul's calling,' a quiet voice says, 'sometimes requires leaving behind what is good for what is essential.'",
+      "choices": [
+        {
+          "text": "Follow your soul's calling toward deeper fulfillment",
+          "consequence": "Find spiritual purpose, discover true calling",
+          "nextChapter": "Cups 16"
+        },
+        {
+          "text": "Learn to discern when it's time to move on",
+          "consequence": "Develop wisdom, avoid stagnation",
+          "nextChapter": "Cups 17"
+        }
+      ]
+    }
+  },
+  {
+    "id": "nine-cups",
+    "tarot": "Nine of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 9,
+    "astrology": "Jupiter in Pisces",
+    "chakra": "Sacral",
+    "crystal": "Blue Lace Agate",
+    "tara": "Blue Tara",
+    "color": "#add8e6",
+    "majorArcana": false,
+    "realPerson": "The Wish Fulfiller - represents emotional satisfaction, the granting of wishes, and the joy of dreams coming true.",
+    "characterDetails": {
+      "background": "The benevolent granter of wishes who understands that true fulfillment comes from alignment with the heart's deepest desires.",
+      "personality": "Generous, jovial, emotionally fulfilled, benevolent, celebratory, warm",
+      "motivations": "To fulfill wishes, to create joy, to celebrate emotional fulfillment",
+      "flaws": "Can be overly indulgent, smug, or take blessings for granted",
+      "virtues": "Generosity, joy, fulfillment, benevolence, gratitude"
+    },
+    "visualDescription": "A figure sits contentedly before nine golden chalices arranged in a pleasing pattern, radiating satisfaction and emotional fulfillment. The scene suggests the granting of wishes and the joy of dreams realized.",
+    "spells": [
+      {
+        "name": "Wish Fulfillment",
+        "type": "manifestation",
+        "description": "Manifest heartfelt desires and dreams",
+        "effect": "Helps align energy with desires to facilitate manifestation",
+        "wisdom": "The universe grants the wishes that align with your highest good"
+      },
+      {
+        "name": "Gratitude Blessing",
+        "type": "appreciation",
+        "description": "Deepen appreciation for blessings and fulfillment",
+        "effect": "Amplifies joy and satisfaction with what has been achieved",
+        "wisdom": "Gratitude is the alchemy that turns ordinary moments into blessings"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Satisfied Heart",
+        "teaching": "True fulfillment comes not from getting what you want, but from wanting what you have with gratitude.",
+        "meditation": "Reflect on your blessings with genuine gratitude. How does this change your experience of them?"
+      },
+      {
+        "title": "Sacred Wishes",
+        "teaching": "Your deepest wishes are prayers from your soul. Trust that they will be fulfilled in the perfect way and time.",
+        "meditation": "What does your heart truly desire? How can you align your energy with this sacred wish?"
+      }
+    ],
+    "story": {
+      "title": "The Banquet of Wishes",
+      "chapter": "Cups 9",
+      "content": "You sit at a banquet table surrounded by nine golden chalices filled with the nectar of fulfillment. A figure radiates contentment and joy, having achieved their heart's desires. 'Wishes granted,' a satisfied voice says, 'create the space for even greater dreams to be born.'",
+      "choices": [
+        {
+          "text": "Celebrate your achievements and feel deep satisfaction",
+          "consequence": "Experience fulfillment, develop gratitude",
+          "nextChapter": "Cups 18"
+        },
+        {
+          "text": "Use your fulfillment as inspiration for even greater dreams",
+          "consequence": "Set higher goals, expand your vision",
+          "nextChapter": "Cups 19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ten-cups",
+    "tarot": "Ten of Cups",
+    "suit": "cups",
+    "element": "Water",
+    "number": 10,
+    "astrology": "Mars in Pisces",
+    "chakra": "Solar Plexus",
+    "crystal": "Angelite",
+    "tara": "White Tara",
+    "color": "#f0f8ff",
+    "majorArcana": false,
+    "realPerson": "The Family Soul - represents ultimate emotional fulfillment, harmonious relationships, and the joy of spiritual and emotional completion.",
+    "characterDetails": {
+      "background": "The embodiment of emotional and spiritual harmony, the soul who has achieved peace and fulfillment in all relationships.",
+      "personality": "Harmonious, loving, fulfilled, spiritually aware, family-oriented, joyful",
+      "motivations": "To create harmony, to foster love, to achieve spiritual completion",
+      "flaws": "Can be overly idealistic, avoid necessary conflicts, or deny real problems",
+      "virtues": "Harmony, love, fulfillment, spirituality, joy"
+    },
+    "visualDescription": "A happy family stands together under a rainbow, with ten golden chalices arranged in a pattern of completion. Represents ultimate emotional fulfillment and spiritual harmony.",
+    "spells": [
+      {
+        "name": "Harmonious Union",
+        "type": "relationship",
+        "description": "Create deep harmony in all relationships",
+        "effect": "Facilitates understanding and love between people",
+        "wisdom": "True harmony comes from each person being free to be their authentic self"
+      },
+      {
+        "name": "Spiritual Fulfillment",
+        "type": "completion",
+        "description": "Achieve deep spiritual and emotional satisfaction",
+        "effect": "Guides toward experiences that bring lasting fulfillment",
+        "wisdom": "The greatest fulfillment comes from being aligned with your soul's purpose"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Rainbow of Harmony",
+        "teaching": "Like a rainbow after rain, harmony often follows periods of challenge. Trust that peace will come.",
+        "meditation": "Visualize a rainbow of harmony in your relationships. What colors represent different people in your life?"
+      },
+      {
+        "title": "Sacred Completion",
+        "teaching": "Emotional fulfillment is not a destination, but a journey of continual growth in love and understanding.",
+        "meditation": "Reflect on your emotional journey. What growth has led to your current level of fulfillment?"
+      }
+    ],
+    "story": {
+      "title": "The Rainbow of Fulfillment",
+      "chapter": "Cups 10",
+      "content": "You stand with a loving family under a beautiful rainbow, surrounded by ten golden chalices that represent complete emotional fulfillment. The air shimmers with harmony and joy. 'True fulfillment,' a loving voice says, 'comes from loving and being loved in spiritual harmony.'",
+      "choices": [
+        {
+          "text": "Create harmony in your family and relationships",
+          "consequence": "Experience deep connection, find emotional peace",
+          "nextChapter": "Cups 20"
+        },
+        {
+          "text": "Seek spiritual fulfillment and soul-level satisfaction",
+          "consequence": "Find deeper purpose, achieve spiritual harmony",
+          "nextChapter": "Cups 21"
+        }
+      ]
+    }
+  }
+]

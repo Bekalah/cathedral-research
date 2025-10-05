@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-09-29T22:18:00.108Z",
+  "problems_analyzed": 3,
+  "solutions_generated": 3,
+  "confidence_average": 0.85,
+  "solutions": [
+    {
+      "problem_id": "missing_template_temptation-labyrinth",
+      "solution_type": "create_file",
+      "confidence": 0.85,
+      "safety_notes": [
+        "Generated template follows ND-safe protocols",
+        "Includes calm_mode defaults",
+        "Respects synthesizer safety protocols"
+      ],
+      "nd_considerations": [
+        "Intensity reduction factors included",
+        "Break points defined for user comfort",
+        "Emergency exit strategies provided"
+      ]
+    },
+    {
+      "problem_id": "missing_template_tears-to-talisman",
+      "solution_type": "create_file",
+      "confidence": 0.85,
+      "safety_notes": [
+        "Generated template follows ND-safe protocols",
+        "Includes calm_mode defaults",
+        "Respects synthesizer safety protocols"
+      ],
+      "nd_considerations": [
+        "Intensity reduction factors included",
+        "Break points defined for user comfort",
+        "Emergency exit strategies provided"
+      ]
+    },
+    {
+      "problem_id": "missing_template_reality-engineering",
+      "solution_type": "create_file",
+      "confidence": 0.85,
+      "safety_notes": [
+        "Generated template follows ND-safe protocols",
+        "Includes calm_mode defaults",
+        "Respects synthesizer safety protocols"
+      ],
+      "nd_considerations": [
+        "Intensity reduction factors included",
+        "Break points defined for user comfort",
+        "Emergency exit strategies provided"
+      ]
+    }
+  ]
+}

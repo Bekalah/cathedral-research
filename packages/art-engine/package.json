@@ -1,0 +1,53 @@
+{
+  "name": "@cathedral/art-engine",
+  "version": "2.0.0",
+  "description": "Advanced 2D graphics and artistic rendering engine for mystical and esoteric visualizations",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write src"
+  },
+  "dependencies": {
+    "three": "^0.169.0",
+    "@types/three": "^0.169.0",
+    "fabric": "^5.3.0",
+    "konva": "^9.3.6",
+    "d3": "^7.8.5",
+    "pixi.js": "^7.4.0",
+    "@cathedral/three-engine": "workspace:*",
+    "@cathedral/synthesis-engine": "workspace:*"
+  },
+  "devDependencies": {
+    "rollup": "^4.9.6",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "typescript": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.11"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "keywords": [
+    "2d-graphics",
+    "canvas",
+    "svg",
+    "artistic-rendering",
+    "mystical-visualization",
+    "esoteric-art",
+    "sacred-geometry",
+    "fractal-art",
+    "mandala-generator"
+  ]
+}

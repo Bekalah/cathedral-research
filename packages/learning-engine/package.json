@@ -1,0 +1,58 @@
+{
+  "name": "@cathedral/learning-engine",
+  "version": "2.0.0",
+  "description": "Advanced AI learning system for mystical and psychological content with trauma-aware adaptive algorithms",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write src"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.169.0",
+    "@types/three": "^0.169.0",
+    "d3": "^7.8.5",
+    "ml-matrix": "^6.11.0",
+    "brain.js": "^2.0.0-beta.19",
+    "synaptic": "^1.1.0",
+    "natural": "^6.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/d3": "^7.4.3",
+    "@types/natural": "^5.1.5",
+    "rollup": "^4.9.6",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "typescript": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "jest": "^29.7.0",
+    "@testing-library/react": "^13.4.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "keywords": [
+    "ai",
+    "machine-learning",
+    "neural-networks",
+    "psychology",
+    "mysticism",
+    "trauma-aware",
+    "adaptive-learning",
+    "consciousness",
+    "pattern-recognition",
+    "spiritual-ai"
+  ]
+}

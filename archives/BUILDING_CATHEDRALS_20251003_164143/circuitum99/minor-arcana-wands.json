@@ -1,0 +1,936 @@
+ou c[
+  {
+    "id": "ace-wands",
+    "tarot": "Ace of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 1,
+    "astrology": "Aries, Leo, Sagittarius",
+    "chakra": "Root",
+    "crystal": "Carnelian",
+    "tara": "Red Tara",
+    "color": "#ff4500",
+    "majorArcana": false,
+    "realPerson": "The Divine Spark - represents pure creative potential, new beginnings, and the initial impulse toward manifestation.",
+    "characterDetails": {
+      "background": "The primal spark of creation, the first impulse toward manifestation and creative expression.",
+      "personality": "Energetic, enthusiastic, pioneering, bold, innovative, full of potential",
+      "motivations": "To initiate new creative projects, to spark inspiration, to begin the journey of manifestation",
+      "flaws": "Can be impulsive, scattered, or fail to follow through",
+      "virtues": "Creativity, courage, inspiration, initiative, potential"
+    },
+    "visualDescription": "A hand emerging from a cloud holding a wand that blooms with fresh green leaves and sprouts. The background shows a fertile landscape with mountains in the distance, representing untapped potential and new beginnings.",
+    "spells": [
+      {
+        "name": "Creative Spark",
+        "type": "inspiration",
+        "description": "Ignite creative potential and new ideas",
+        "effect": "Provides sudden bursts of inspiration and creative insight",
+        "wisdom": "Every great creation begins with a single spark of inspiration"
+      },
+      {
+        "name": "Initiative Boost",
+        "type": "motivation",
+        "description": "Find the courage to begin new ventures",
+        "effect": "Overcomes inertia and provides momentum for new beginnings",
+        "wisdom": "The journey of a thousand miles begins with a single step"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Creative Impulse",
+        "teaching": "Within you burns the same creative fire that animates all of existence. Trust this impulse and let it guide your actions.",
+        "meditation": "Feel the creative spark within you. What wants to be born through your actions?"
+      },
+      {
+        "title": "Sacred Beginnings",
+        "teaching": "Every ending contains a new beginning. The seeds of tomorrow are planted in today's courageous actions.",
+        "meditation": "Reflect on new beginnings in your life. What creative potential emerged from those moments?"
+      }
+    ],
+    "story": {
+      "title": "The Spark of Creation",
+      "chapter": "Wands 1",
+      "content": "You feel a sudden surge of energy as a wand appears in your hand, warm and pulsing with life. Fresh leaves sprout from its tip, and you sense infinite creative potential waiting to be unleashed. 'The power to create,' a voice whispers, 'begins with this single spark.'",
+      "choices": [
+        {
+          "text": "Embrace the creative fire and begin a new project",
+          "consequence": "Unlock creative potential, gain inspiration for new ventures",
+          "nextChapter": "Wands 2"
+        },
+        {
+          "text": "Study the wand carefully to understand its power",
+          "consequence": "Gain deeper understanding of creative energy, unlock analytical insight",
+          "nextChapter": "Wands 3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "two-wands",
+    "tarot": "Two of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 2,
+    "astrology": "Mars in Aries",
+    "chakra": "Sacral",
+    "crystal": "Red Jasper",
+    "tara": "Orange Tara",
+    "color": "#ff6347",
+    "majorArcana": false,
+    "realPerson": "The Bold Pioneer - represents courage, planning, and the vision to see beyond current limitations.",
+    "characterDetails": {
+      "background": "The courageous soul who stands at the edge of the known world, planning bold ventures into uncharted territory.",
+      "personality": "Ambitious, visionary, courageous, strategic, forward-thinking, bold",
+      "motivations": "To expand horizons, to plan great works, to lead others toward growth",
+      "flaws": "Can be domineering, restless, or overly focused on future plans",
+      "virtues": "Vision, courage, leadership, planning, ambition"
+    },
+    "visualDescription": "A figure standing between two wands, looking out over a vast landscape with mountains and water. They wear traveling clothes and hold a globe, representing world-spanning vision and ambition.",
+    "spells": [
+      {
+        "name": "World Vision",
+        "type": "planning",
+        "description": "See the bigger picture and plan for expansive growth",
+        "effect": "Provides strategic vision and helps plan large-scale projects",
+        "wisdom": "True vision sees not just where you are, but where you could be"
+      },
+      {
+        "name": "Bold Expansion",
+        "type": "growth",
+        "description": "Expand influence and reach into new territories",
+        "effect": "Facilitates growth and expansion in personal and professional life",
+        "wisdom": "Growth happens at the edge of your comfort zone"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Courage to Expand",
+        "teaching": "Your potential extends far beyond your current horizons. Have the courage to plan for greatness.",
+        "meditation": "Visualize your life expanded beyond current limitations. What bold visions emerge?"
+      },
+      {
+        "title": "Strategic Vision",
+        "teaching": "Great works require both vision and planning. See the destination clearly, then map the path to reach it.",
+        "meditation": "What great vision calls to you? What steps would take you toward its realization?"
+      }
+    ],
+    "story": {
+      "title": "The Edge of the World",
+      "chapter": "Wands 2",
+      "content": "You stand at the boundary between the known and the unknown, holding two wands that represent the power to shape your destiny. The world stretches out before you, filled with possibility. 'The horizon calls,' a voice says, 'will you answer?'",
+      "choices": [
+        {
+          "text": "Plan an ambitious expansion of your current projects",
+          "consequence": "Gain strategic planning skills, unlock ambitious growth",
+          "nextChapter": "Wands 4"
+        },
+        {
+          "text": "Seek partnership for your bold visions",
+          "consequence": "Learn collaboration skills, find allies for expansion",
+          "nextChapter": "Wands 5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "three-wands",
+    "tarot": "Three of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 3,
+    "astrology": "Sun in Aries",
+    "chakra": "Solar Plexus",
+    "crystal": "Tiger's Eye",
+    "tara": "Gold Tara",
+    "color": "#ff8c00",
+    "majorArcana": false,
+    "realPerson": "The Visionary Leader - represents expanded vision, leadership, and the ability to inspire others toward shared goals.",
+    "characterDetails": {
+      "background": "The natural leader who has expanded their vision beyond personal concerns to include the greater good and collective growth.",
+      "personality": "Visionary, inspiring, charismatic, confident, expansive, leadership-oriented",
+      "motivations": "To lead others toward shared vision, to expand influence, to create positive change",
+      "flaws": "Can be arrogant, overly optimistic, or neglectful of details",
+      "virtues": "Leadership, vision, inspiration, confidence, expansion"
+    },
+    "visualDescription": "A figure standing on a hilltop with three wands planted firmly in the ground, looking out over ships on the horizon representing expanding influence and successful ventures.",
+    "spells": [
+      {
+        "name": "Inspiring Vision",
+        "type": "leadership",
+        "description": "Inspire others toward shared goals and collective success",
+        "effect": "Enhances leadership abilities and helps rally others to your cause",
+        "wisdom": "True leadership inspires others to discover their own greatness"
+      },
+      {
+        "name": "Expansive Growth",
+        "type": "manifestation",
+        "description": "Expand influence and create opportunities for growth",
+        "effect": "Facilitates expansion in business, relationships, and personal development",
+        "wisdom": "Growth is not just about getting bigger, but about becoming more"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Power of Vision",
+        "teaching": "A compelling vision can move mountains and inspire multitudes. What vision burns brightly enough to guide others?",
+        "meditation": "What vision do you hold that could inspire others? How can you communicate it more effectively?"
+      },
+      {
+        "title": "Expansive Leadership",
+        "teaching": "Great leaders expand the horizons of those they lead. Your growth becomes the catalyst for collective evolution.",
+        "meditation": "Reflect on leaders who expanded your vision. How can you offer the same gift to others?"
+      }
+    ],
+    "story": {
+      "title": "The Hill of Expanded Vision",
+      "chapter": "Wands 3",
+      "content": "You climb a hill where three wands stand as sentinels, each representing a different aspect of your expanding influence. From this height, you see ships returning with treasure, symbolizing the fruition of bold plans. 'Leadership calls,' a voice says, 'will you expand your vision to include others?'",
+      "choices": [
+        {
+          "text": "Take on a leadership role and inspire others",
+          "consequence": "Develop leadership skills, gain followers and influence",
+          "nextChapter": "Wands 6"
+        },
+        {
+          "text": "Focus on expanding your personal creative projects",
+          "consequence": "Deepen personal creativity, achieve individual mastery",
+          "nextChapter": "Wands 7"
+        }
+      ]
+    }
+  },
+  {
+    "id": "four-wands",
+    "tarot": "Four of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 4,
+    "astrology": "Venus in Aries",
+    "chakra": "Heart",
+    "crystal": "Rose Quartz",
+    "tara": "Pink Tara",
+    "color": "#ff69b4",
+    "majorArcana": false,
+    "realPerson": "The Community Builder - represents celebration, harmony, and the joy of shared achievement and community.",
+    "characterDetails": {
+      "background": "The joyful builder of community and celebrator of life's milestones. Creator of harmony and shared happiness.",
+      "personality": "Joyful, harmonious, celebratory, community-oriented, grateful, inclusive",
+      "motivations": "To create harmony, to celebrate achievements, to build loving community",
+      "flaws": "Can be overly focused on appearances or avoid necessary conflicts",
+      "virtues": "Joy, harmony, celebration, community, gratitude"
+    },
+    "visualDescription": "A festive scene with four wands forming a canopy decorated with flowers and fruits, with people celebrating underneath. Represents harmony, celebration, and the joy of community and shared success.",
+    "spells": [
+      {
+        "name": "Celebration Harmony",
+        "type": "community",
+        "description": "Create harmony and joy in group settings",
+        "effect": "Facilitates positive group dynamics and collective celebration",
+        "wisdom": "True celebration arises from gratitude for shared achievements"
+      },
+      {
+        "name": "Milestone Blessing",
+        "type": "achievement",
+        "description": "Mark and honor important life transitions and achievements",
+        "effect": "Helps recognize and celebrate meaningful milestones and transitions",
+        "wisdom": "Every ending deserves celebration, for it marks the completion of one chapter"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Joy of Community",
+        "teaching": "We are stronger together than we ever could be alone. Celebrate the bonds that unite us in shared purpose.",
+        "meditation": "Reflect on communities that have supported you. How can you contribute to collective joy?"
+      },
+      {
+        "title": "Sacred Celebration",
+        "teaching": "Life's milestones are sacred markers on our journey. Honor them with gratitude and share the joy with others.",
+        "meditation": "What achievements in your life deserve celebration? How can you share this joy with others?"
+      }
+    ],
+    "story": {
+      "title": "The Festival of Four Wands",
+      "chapter": "Wands 4",
+      "content": "You enter a joyous festival where four wands form a sacred canopy adorned with flowers and ripening fruits. People dance and celebrate beneath, their faces glowing with shared happiness. 'Community celebrates,' a voice says warmly, 'when individual achievements become collective joy.'",
+      "choices": [
+        {
+          "text": "Join the celebration and strengthen community bonds",
+          "consequence": "Build stronger relationships, experience collective joy",
+          "nextChapter": "Wands 8"
+        },
+        {
+          "text": "Create your own celebration for personal achievements",
+          "consequence": "Honor personal milestones, find individual joy",
+          "nextChapter": "Wands 9"
+        }
+      ]
+    }
+  },
+  {
+    "id": "five-wands",
+    "tarot": "Five of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 5,
+    "astrology": "Saturn in Leo",
+    "chakra": "Throat",
+    "crystal": "Blue Lace Agate",
+    "tara": "Blue Tara",
+    "color": "#4682b4",
+    "majorArcana": false,
+    "realPerson": "The Competitive Spirit - represents healthy competition, the drive to excel, and the growth that comes through challenge.",
+    "characterDetails": {
+      "background": "The spirited competitor who understands that challenges bring out our best and that constructive conflict leads to growth.",
+      "personality": "Competitive, energetic, driven, resilient, growth-oriented, spirited",
+      "motivations": "To excel through challenge, to grow through competition, to test personal limits",
+      "flaws": "Can be overly competitive, argumentative, or create unnecessary conflict",
+      "virtues": "Drive, resilience, growth mindset, courage, determination"
+    },
+    "visualDescription": "Five figures engaged in a friendly but intense competition, each holding a wand and testing their skills against each other. Represents the constructive conflict that leads to growth and excellence.",
+    "spells": [
+      {
+        "name": "Competitive Growth",
+        "type": "challenge",
+        "description": "Transform competition into opportunities for growth",
+        "effect": "Helps channel competitive energy into personal development",
+        "wisdom": "Competition ceases to be competition when you realize you're competing against your own potential"
+      },
+      {
+        "name": "Conflict Resolution",
+        "type": "harmony",
+        "description": "Transform conflict into cooperation and mutual growth",
+        "effect": "Helps resolve conflicts constructively and find win-win solutions",
+        "wisdom": "The greatest victories come from turning competitors into collaborators"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Gift of Challenge",
+        "teaching": "Challenges are gifts that force us to grow. Embrace them as opportunities to discover your true capabilities.",
+        "meditation": "Reflect on a challenge that helped you grow. What strengths did it reveal in you?"
+      },
+      {
+        "title": "Constructive Conflict",
+        "teaching": "Not all conflict is destructive. When handled with respect, disagreement becomes the forge of excellence.",
+        "meditation": "Think of a constructive disagreement. How did it lead to better outcomes for everyone involved?"
+      }
+    ],
+    "story": {
+      "title": "The Arena of Growth",
+      "chapter": "Wands 5",
+      "content": "You enter an arena where five competitors test their skills in a display of focused energy and mutual respect. The air crackles with competitive spirit, but also with the joy of shared challenge. 'Growth happens,' a voice declares, 'when we push each other toward excellence.'",
+      "choices": [
+        {
+          "text": "Engage constructively with challenging people or situations",
+          "consequence": "Learn to thrive on challenge, develop resilience",
+          "nextChapter": "Wands 10"
+        },
+        {
+          "text": "Seek to understand the growth potential in conflict",
+          "consequence": "Learn conflict resolution, find harmony in challenge",
+          "nextChapter": "Wands 11"
+        }
+      ]
+    }
+  },
+  {
+    "id": "six-wands",
+    "tarot": "Six of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 6,
+    "astrology": "Jupiter in Leo",
+    "chakra": "Third Eye",
+    "crystal": "Citrine",
+    "tara": "Gold Tara",
+    "color": "#ffd700",
+    "majorArcana": false,
+    "realPerson": "The Triumphant Hero - represents victory, recognition, and the sweet taste of success after struggle.",
+    "characterDetails": {
+      "background": "The victorious hero returning from battle, crowned with laurels of achievement and public recognition.",
+      "personality": "Confident, proud, charismatic, generous, leadership-oriented, celebratory",
+      "motivations": "To achieve victory, to lead others to success, to celebrate shared achievements",
+      "flaws": "Can become arrogant, overly focused on external recognition, or neglectful of the process",
+      "virtues": "Leadership, confidence, generosity, inspiration, achievement"
+    },
+    "visualDescription": "A figure riding a white horse through cheering crowds, holding a wand crowned with laurel wreath. Represents victory, recognition, and the joy of shared success.",
+    "spells": [
+      {
+        "name": "Victory March",
+        "type": "triumph",
+        "description": "Lead others to victory and shared success",
+        "effect": "Inspires confidence and rallies others toward collective achievement",
+        "wisdom": "True victory is measured not by what you achieve, but by who you become"
+      },
+      {
+        "name": "Recognition Blessing",
+        "type": "honor",
+        "description": "Attract recognition and appreciation for your efforts",
+        "effect": "Helps others see and value your contributions and achievements",
+        "wisdom": "The greatest recognition comes from being true to your authentic self"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Taste of Victory",
+        "teaching": "Victory is sweetest when shared. The leader who lifts others finds the greatest fulfillment in collective success.",
+        "meditation": "Reflect on a victory you shared with others. How did it feel different from individual achievement?"
+      },
+      {
+        "title": "Humble Triumph",
+        "teaching": "True confidence needs no external validation. The greatest leaders inspire through authentic being, not through show.",
+        "meditation": "What achievements in your life brought you quiet satisfaction? How can you celebrate them humbly?"
+      }
+    ],
+    "story": {
+      "title": "The Parade of Triumph",
+      "chapter": "Wands 6",
+      "content": "You ride through streets lined with cheering supporters, a wand crowned with victory laurels in your hand. The air fills with celebration as people recognize your achievements. 'Victory calls,' a voice says, 'not just for the individual, but for all who contributed to the journey.'",
+      "choices": [
+        {
+          "text": "Share your success and inspire others to achieve",
+          "consequence": "Become a leader and mentor, gain recognition and influence",
+          "nextChapter": "Wands 12"
+        },
+        {
+          "text": "Use your success as a platform for greater service",
+          "consequence": "Learn servant leadership, create lasting positive impact",
+          "nextChapter": "Wands 13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "seven-wands",
+    "tarot": "Seven of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 7,
+    "astrology": "Mars in Leo",
+    "chakra": "Crown",
+    "crystal": "Garnet",
+    "tara": "Red Tara",
+    "color": "#dc143c",
+    "majorArcana": false,
+    "realPerson": "The Courageous Defender - represents standing your ground, defending your position, and maintaining courage under pressure.",
+    "characterDetails": {
+      "background": "The brave defender who stands on higher ground, protecting what has been earned through courage and determination.",
+      "personality": "Courageous, determined, defensive, resilient, principled, steadfast",
+      "motivations": "To protect what matters, to stand up for principles, to defend the vulnerable",
+      "flaws": "Can be overly defensive, stubborn, or create unnecessary conflicts",
+      "virtues": "Courage, determination, protection, resilience, principles"
+    },
+    "visualDescription": "A figure standing on a hill, holding a wand defensively while six other wands attack from below. Represents the courage to defend your position and maintain your ground.",
+    "spells": [
+      {
+        "name": "Defensive Courage",
+        "type": "protection",
+        "description": "Stand firm against opposition and defend your position",
+        "effect": "Provides courage and strength to maintain your ground under pressure",
+        "wisdom": "Sometimes the bravest act is to simply stand your ground"
+      },
+      {
+        "name": "Principled Stand",
+        "type": "integrity",
+        "description": "Maintain integrity and principles in the face of opposition",
+        "effect": "Helps stay true to values when challenged or pressured",
+        "wisdom": "Your principles are your true defense - no attack can breach them"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Courage to Stand",
+        "teaching": "True courage is not found in attack, but in the willingness to stand alone when necessary for what is right.",
+        "meditation": "Reflect on times when you stood your ground. What principles were you defending?"
+      },
+      {
+        "title": "Defensive Wisdom",
+        "teaching": "Not all battles need to be fought. Choose your ground carefully and defend only what truly matters.",
+        "meditation": "What in your life is worth defending? What can you release without losing your integrity?"
+      }
+    ],
+    "story": {
+      "title": "The Hill of Courage",
+      "chapter": "Wands 7",
+      "content": "You find yourself on a hill, wand in hand, as challengers approach from below. The ground beneath you feels solid, representing the foundation of your principles and achievements. 'Some battles choose you,' a voice says, 'stand firm in what you know to be true.'",
+      "choices": [
+        {
+          "text": "Defend your principles and position with courage",
+          "consequence": "Develop inner strength, learn to stand your ground",
+          "nextChapter": "Wands 14"
+        },
+        {
+          "text": "Seek diplomatic solutions while maintaining integrity",
+          "consequence": "Learn negotiation skills, find win-win solutions",
+          "nextChapter": "Wands 15"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eight-wands",
+    "tarot": "Eight of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 8,
+    "astrology": "Mercury in Sagittarius",
+    "chakra": "Root",
+    "crystal": "Clear Quartz",
+    "tara": "White Tara",
+    "color": "#ffffff",
+    "majorArcana": false,
+    "realPerson": "The Swift Messenger - represents rapid progress, quick communication, and the acceleration of plans toward manifestation.",
+    "characterDetails": {
+      "background": "The swift messenger who carries ideas and opportunities at lightning speed, accelerating the manifestation of creative projects.",
+      "personality": "Fast-moving, communicative, opportunistic, adaptable, forward-momentum",
+      "motivations": "To accelerate progress, to communicate ideas quickly, to seize opportunities",
+      "flaws": "Can be hasty, scattered, or fail to consider consequences",
+      "virtues": "Speed, communication, adaptability, opportunity, momentum"
+    },
+    "visualDescription": "Eight wands flying through the air like arrows toward a target, representing swift movement, rapid progress, and quick manifestation of intentions.",
+    "spells": [
+      {
+        "name": "Swift Manifestation",
+        "type": "acceleration",
+        "description": "Accelerate the progress of projects and intentions",
+        "effect": "Speeds up processes and brings opportunities to fruition quickly",
+        "wisdom": "When the timing is right, the universe conspires to help you"
+      },
+      {
+        "name": "Rapid Communication",
+        "type": "connection",
+        "description": "Facilitate quick and clear communication of ideas",
+        "effect": "Helps ideas travel quickly and find the right people",
+        "wisdom": "The right message to the right person at the right time can change everything"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Power of Timing",
+        "teaching": "When the student is ready, the teacher appears. Trust that opportunities arrive at the perfect moment.",
+        "meditation": "Reflect on opportunities that came at just the right time. What patterns of timing do you notice?"
+      },
+      {
+        "title": "Swift Action",
+        "teaching": "Sometimes the difference between success and failure is the courage to act quickly when opportunity presents itself.",
+        "meditation": "Think of a time when quick action led to success. How can you cultivate this readiness?"
+      }
+    ],
+    "story": {
+      "title": "The Flight of Opportunity",
+      "chapter": "Wands 8",
+      "content": "You watch as eight wands streak through the sky like shooting stars, each carrying the potential of swift manifestation. The air hums with acceleration and possibility. 'When the time is right,' a voice says, 'the universe moves at incredible speed to support your intentions.'",
+      "choices": [
+        {
+          "text": "Seize emerging opportunities with swift action",
+          "consequence": "Develop quick reflexes, capitalize on timing",
+          "nextChapter": "Wands 16"
+        },
+        {
+          "text": "Prepare yourself for rapid acceleration and change",
+          "consequence": "Learn adaptability, prepare for swift manifestation",
+          "nextChapter": "Wands 17"
+        }
+      ]
+    }
+  },
+  {
+    "id": "nine-wands",
+    "tarot": "Nine of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 9,
+    "astrology": "Moon in Sagittarius",
+    "chakra": "Sacral",
+    "crystal": "Moonstone",
+    "tara": "White Tara",
+    "color": "#f5f5dc",
+    "majorArcana": false,
+    "realPerson": "The Resilient Warrior - represents inner strength, resilience, and the wisdom gained through perseverance and challenge.",
+    "characterDetails": {
+      "background": "The battle-tested warrior who has learned that true strength comes from within, and that wisdom is forged in the fire of challenge.",
+      "personality": "Resilient, wise, cautious, experienced, inwardly strong, protective",
+      "motivations": "To protect what has been earned, to share hard-won wisdom, to guide others through challenges",
+      "flaws": "Can be overly cautious, defensive, or struggle with trust after hardship",
+      "virtues": "Resilience, wisdom, protection, experience, inner strength"
+    },
+    "visualDescription": "A wounded but determined figure standing guard with a wand, eight other wands forming a defensive barrier behind them. Represents the strength that comes from experience and the wisdom to protect what matters.",
+    "spells": [
+      {
+        "name": "Resilient Defense",
+        "type": "protection",
+        "description": "Draw on inner reserves of strength for protection",
+        "effect": "Provides deep inner strength and resilience during challenging times",
+        "wisdom": "Your wounds become your wisdom when you learn from them"
+      },
+      {
+        "name": "Hard-Won Wisdom",
+        "type": "insight",
+        "description": "Access the wisdom gained through difficult experiences",
+        "effect": "Transforms painful experiences into sources of guidance and insight",
+        "wisdom": "The deepest wisdom comes from walking through the fire and emerging transformed"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Strength Within",
+        "teaching": "Your greatest strength is not in your muscles, but in your ability to keep going when everything tells you to stop.",
+        "meditation": "Reflect on challenges you've overcome. What inner strength did they reveal?"
+      },
+      {
+        "title": "Wisdom from Wounds",
+        "teaching": "Every wound carries a teaching. The scars you bear are the roadmap of your soul's journey toward wisdom.",
+        "meditation": "What have your deepest wounds taught you? How have they become sources of strength?"
+      }
+    ],
+    "story": {
+      "title": "The Wall of Resilience",
+      "chapter": "Wands 9",
+      "content": "You stand before a barrier of eight wands, the ninth in your hand as you guard against approaching challenges. Your body bears the marks of past battles, but your eyes shine with hard-won wisdom. 'The strongest steel,' a voice says, 'is forged in the hottest fire.'",
+      "choices": [
+        {
+          "text": "Draw on your inner resilience to face current challenges",
+          "consequence": "Access deep inner strength, overcome current obstacles",
+          "nextChapter": "Wands 18"
+        },
+        {
+          "text": "Share your hard-won wisdom with others facing similar challenges",
+          "consequence": "Become a mentor, help others through their struggles",
+          "nextChapter": "Wands 19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ten-wands",
+    "tarot": "Ten of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "number": 10,
+    "astrology": "Saturn in Sagittarius",
+    "chakra": "Solar Plexus",
+    "crystal": "Amber",
+    "tara": "Orange Tara",
+    "color": "#ff8c00",
+    "majorArcana": false,
+    "realPerson": "The Burdened Creator - represents the responsibility that comes with success, and the need to manage the weight of creative projects and leadership.",
+    "characterDetails": {
+      "background": "The successful creator who carries the weight of many projects and responsibilities, learning the importance of delegation and boundaries.",
+      "personality": "Responsible, hard-working, dedicated, somewhat burdened, leadership-oriented",
+      "motivations": "To complete important work, to lead effectively, to make a meaningful contribution",
+      "flaws": "Can take on too much, struggle with delegation, or burn out from overwork",
+      "virtues": "Responsibility, dedication, leadership, perseverance, contribution"
+    },
+    "visualDescription": "A figure carrying a heavy burden of ten wands, head bowed under the weight but still moving forward with determination. Represents the responsibility and occasional burden of creative success and leadership.",
+    "spells": [
+      {
+        "name": "Responsible Leadership",
+        "type": "management",
+        "description": "Manage multiple responsibilities and lead effectively",
+        "effect": "Helps organize and delegate responsibilities for maximum effectiveness",
+        "wisdom": "True leadership knows when to carry the burden and when to share the load"
+      },
+      {
+        "name": "Completion Focus",
+        "type": "perseverance",
+        "description": "Find the strength to complete important projects",
+        "effect": "Provides endurance and focus for seeing projects through to completion",
+        "wisdom": "The final steps of any journey are often the most challenging, but also the most rewarding"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Weight of Success",
+        "teaching": "With success comes responsibility. Learn to carry the weight gracefully and know when to share the burden.",
+        "meditation": "What responsibilities have you taken on? Which can you delegate, and which must you carry?"
+      },
+      {
+        "title": "Sustainable Leadership",
+        "teaching": "You cannot pour from an empty cup. The wise leader knows when to rest and recharge for continued service.",
+        "meditation": "How do you recharge when leadership responsibilities become heavy? What sustains you?"
+      }
+    ],
+    "story": {
+      "title": "The Burden of Creation",
+      "chapter": "Wands 10",
+      "content": "You carry a heavy bundle of wands, each representing a project, responsibility, or person who depends on you. The weight bends you forward, but you continue moving toward your destination. 'Great work requires great effort,' a voice says, 'but remember to share the load when the burden becomes too heavy.'",
+      "choices": [
+        {
+          "text": "Learn to delegate and share leadership responsibilities",
+          "consequence": "Develop management skills, avoid burnout",
+          "nextChapter": "Wands 20"
+        },
+        {
+          "text": "Focus on completing your most important projects",
+          "consequence": "Achieve mastery in key areas, find fulfillment in completion",
+          "nextChapter": "Wands 21"
+        }
+      ]
+    }
+  },
+  {
+    "id": "page-wands",
+    "tarot": "Page of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "astrology": "Fire signs",
+    "chakra": "Root",
+    "crystal": "Sunstone",
+    "tara": "Red Tara",
+    "color": "#ff4500",
+    "majorArcana": false,
+    "realPerson": "The Enthusiastic Student - represents youthful energy, curiosity, and the excitement of learning and new experiences.",
+    "characterDetails": {
+      "background": "The eager student of life, full of enthusiasm and ready to explore new territories of experience and learning.",
+      "personality": "Enthusiastic, curious, energetic, optimistic, adventurous, eager to learn",
+      "motivations": "To explore, to learn, to experience, to grow through new adventures",
+      "flaws": "Can be naive, impulsive, or lack follow-through",
+      "virtues": "Enthusiasm, curiosity, energy, optimism, adventure"
+    },
+    "visualDescription": "A young page standing in a desert landscape, holding a wand that sprouts fresh green leaves. They wear bright clothing and have an eager, excited expression, representing youthful enthusiasm and the promise of new beginnings.",
+    "spells": [
+      {
+        "name": "Enthusiastic Exploration",
+        "type": "adventure",
+        "description": "Approach new experiences with excitement and curiosity",
+        "effect": "Transforms fear of the unknown into excitement for discovery",
+        "wisdom": "Every expert was once a beginner - embrace the joy of learning"
+      },
+      {
+        "name": "Youthful Energy",
+        "type": "vitality",
+        "description": "Tap into fresh energy and new perspectives",
+        "effect": "Renews energy and provides fresh eyes for stale situations",
+        "wisdom": "The world is always new when seen through eyes of wonder"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Joy of Beginning",
+        "teaching": "Every master was once a beginner. Embrace the enthusiasm of the student and let curiosity guide your learning.",
+        "meditation": "Remember what it feels like to be excited about learning something new. How can you recapture that joy?"
+      },
+      {
+        "title": "Sacred Curiosity",
+        "teaching": "Curiosity is the spark of wisdom. Ask questions, explore freely, and let your enthusiasm lead you to unexpected treasures.",
+        "meditation": "What questions make your heart come alive? Follow them with the enthusiasm of a child."
+      }
+    ],
+    "story": {
+      "title": "The Desert of Discovery",
+      "chapter": "Page of Wands",
+      "content": "You stand in a vast desert holding a wand that miraculously sprouts green leaves despite the arid conditions. A young page approaches with bright eyes and boundless enthusiasm. 'The world is full of wonders waiting to be discovered,' they say excitedly, 'what adventure shall we begin?'",
+      "choices": [
+        {
+          "text": "Embrace new learning opportunities with enthusiasm",
+          "consequence": "Become an eager student, unlock rapid learning",
+          "nextChapter": "Knight of Wands"
+        },
+        {
+          "text": "Channel youthful energy into creative exploration",
+          "consequence": "Discover new creative outlets, find joy in experimentation",
+          "nextChapter": "Queen of Wands"
+        }
+      ]
+    }
+  },
+  {
+    "id": "knight-wands",
+    "tarot": "Knight of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "astrology": "Fire signs",
+    "chakra": "Sacral",
+    "crystal": "Fire Agate",
+    "tara": "Orange Tara",
+    "color": "#ff6347",
+    "majorArcana": false,
+    "realPerson": "The Bold Adventurer - represents courage, action, and the willingness to charge forward into new experiences and challenges.",
+    "characterDetails": {
+      "background": "The fearless adventurer who charges into new territories with courage and enthusiasm, ready to conquer challenges.",
+      "personality": "Bold, courageous, adventurous, charismatic, impulsive, action-oriented",
+      "motivations": "To explore new territories, to face challenges head-on, to live life fully",
+      "flaws": "Can be reckless, impatient, or fail to consider consequences",
+      "virtues": "Courage, adventure, charisma, action, boldness"
+    },
+    "visualDescription": "A knight in armor charging forward on horseback, holding a wand like a lance. The horse is fiery and energetic, and the knight's face shows determination and excitement for the adventure ahead.",
+    "spells": [
+      {
+        "name": "Bold Charge",
+        "type": "action",
+        "description": "Take courageous action toward goals and challenges",
+        "effect": "Provides courage and momentum for tackling difficult situations",
+        "wisdom": "Fortune favors the bold, but wisdom guides the courageous"
+      },
+      {
+        "name": "Adventure Spirit",
+        "type": "exploration",
+        "description": "Embrace the unknown with enthusiasm and courage",
+        "effect": "Transforms fear of uncertainty into excitement for discovery",
+        "wisdom": "The greatest adventures begin where your comfort zone ends"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Courage to Act",
+        "teaching": "Courage is not the absence of fear, but the willingness to act despite it. The bold heart finds its greatest strength in motion.",
+        "meditation": "What action have you been avoiding due to fear? What would courage look like in this situation?"
+      },
+      {
+        "title": "Sacred Adventure",
+        "teaching": "Life itself is the greatest adventure. Approach each day with the excitement of an explorer discovering new lands.",
+        "meditation": "What 'adventure' awaits you today? How can you approach it with the spirit of bold exploration?"
+      }
+    ],
+    "story": {
+      "title": "The Charge of Courage",
+      "chapter": "Knight of Wands",
+      "content": "You mount a fiery steed and charge toward the horizon, wand held high like a banner of courage. The wind whips past as you gallop toward adventure and challenge. 'The bold heart,' a voice calls, 'finds victory not in safety, but in the courage to charge forward.'",
+      "choices": [
+        {
+          "text": "Charge boldly into new challenges and opportunities",
+          "consequence": "Develop courage, seize opportunities with bold action",
+          "nextChapter": "King of Wands"
+        },
+        {
+          "text": "Use adventurous energy to explore creative possibilities",
+          "consequence": "Discover new creative paths, find joy in bold experimentation",
+          "nextChapter": "Queen of Wands"
+        }
+      ]
+    }
+  },
+  {
+    "id": "queen-wands",
+    "tarot": "Queen of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "astrology": "Aries",
+    "chakra": "Solar Plexus",
+    "crystal": "Citrine",
+    "tara": "Gold Tara",
+    "color": "#ffd700",
+    "majorArcana": false,
+    "realPerson": "The Creative Leader - represents confident creativity, charismatic leadership, and the ability to inspire others through authentic self-expression.",
+    "characterDetails": {
+      "background": "The confident creator who leads through authentic self-expression and inspires others to find their own creative fire.",
+      "personality": "Confident, creative, charismatic, warm, inspiring, self-assured",
+      "motivations": "To create beauty, to inspire others, to lead with authentic power",
+      "flaws": "Can be overly dramatic, demanding, or struggle with vulnerability",
+      "virtues": "Creativity, confidence, inspiration, leadership, authenticity"
+    },
+    "visualDescription": "A confident queen sitting on a throne decorated with lions and sunflowers, holding a wand that blooms with life. She wears a crown of flames and golden robes, radiating warmth and creative power.",
+    "spells": [
+      {
+        "name": "Creative Confidence",
+        "type": "inspiration",
+        "description": "Express creativity with bold confidence and authenticity",
+        "effect": "Boosts creative self-expression and helps overcome creative blocks",
+        "wisdom": "Your unique creative fire is needed in the world - express it boldly"
+      },
+      {
+        "name": "Inspiring Leadership",
+        "type": "influence",
+        "description": "Lead and inspire others through authentic self-expression",
+        "effect": "Helps others see their own potential and creative power",
+        "wisdom": "The most inspiring leaders are those who are most authentically themselves"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Fire Within",
+        "teaching": "You carry a unique creative fire within you. Express it boldly and watch it inspire others to find their own light.",
+        "meditation": "Feel the creative fire within you. What wants to be expressed through your unique voice?"
+      },
+      {
+        "title": "Authentic Power",
+        "teaching": "True power comes from authentic self-expression. The courage to be yourself inspires others to do the same.",
+        "meditation": "Where in your life do you hide your true self? What would authentic expression look like?"
+      }
+    ],
+    "story": {
+      "title": "The Throne of Creative Fire",
+      "chapter": "Queen of Wands",
+      "content": "You approach a throne surrounded by sunflowers that turn toward the warm, confident figure seated there. She holds a wand that pulses with creative energy, her presence radiating authentic power and inspiration. 'The creative fire,' she says warmly, 'burns brightest when expressed with bold authenticity.'",
+      "choices": [
+        {
+          "text": "Express your authentic creative power and inspire others",
+          "consequence": "Become a creative leader, inspire others to find their voice",
+          "nextChapter": "King of Wands"
+        },
+        {
+          "text": "Use creative confidence to overcome personal challenges",
+          "consequence": "Develop self-assurance, express your true self",
+          "nextChapter": "Knight of Wands"
+        }
+      ]
+    }
+  },
+  {
+    "id": "king-wands",
+    "tarot": "King of Wands",
+    "suit": "wands",
+    "element": "Fire",
+    "astrology": "Leo",
+    "chakra": "Crown",
+    "crystal": "Pyrite",
+    "tara": "Gold Tara",
+    "color": "#daa520",
+    "majorArcana": false,
+    "realPerson": "The Visionary Ruler - represents masterful leadership, creative vision, and the ability to inspire others toward shared goals.",
+    "characterDetails": {
+      "background": "The masterful leader who has integrated creative fire with wise leadership, inspiring others through vision and example.",
+      "personality": "Visionary, charismatic, confident, inspiring, honorable, leadership-oriented",
+      "motivations": "To lead with vision, to inspire greatness, to create positive change",
+      "flaws": "Can be overly dramatic, authoritarian, or neglectful of details",
+      "virtues": "Vision, leadership, inspiration, honor, creativity"
+    },
+    "visualDescription": "A regal king sitting on a throne adorned with lions and salamanders (symbols of fire). He holds a blooming wand and wears a crown and robes of gold and orange, radiating confident authority and creative power.",
+    "spells": [
+      {
+        "name": "Visionary Leadership",
+        "type": "inspiration",
+        "description": "Lead others toward shared vision and collective success",
+        "effect": "Inspires and unites people toward common goals and aspirations",
+        "wisdom": "The greatest leaders don't just manage people - they inspire them to become their best selves"
+      },
+      {
+        "name": "Creative Mastery",
+        "type": "manifestation",
+        "description": "Master the creative process and bring visions to reality",
+        "effect": "Facilitates the manifestation of creative projects and visionary goals",
+        "wisdom": "Mastery is not about controlling the creative process, but about surrendering to its flow"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Visionary Path",
+        "teaching": "Great leaders see not just what is, but what could be. Share your vision and watch others help make it reality.",
+        "meditation": "What vision do you hold for the world? How can you lead others toward its realization?"
+      },
+      {
+        "title": "Honorable Power",
+        "teaching": "True power serves the greater good. The honorable leader uses their influence to lift others toward their potential.",
+        "meditation": "How do you use your personal power? Does it serve others as well as yourself?"
+      }
+    ],
+    "story": {
+      "title": "The Court of Visionary Fire",
+      "chapter": "King of Wands",
+      "content": "You enter a court where creativity and leadership flow together in perfect harmony. A regal figure sits on a throne of living flame, their presence inspiring all who enter. 'Vision without action,' they say with quiet authority, 'is merely a dream. Action without vision is merely activity.'",
+      "choices": [
+        {
+          "text": "Take on visionary leadership and inspire collective action",
+          "consequence": "Become a transformative leader, create lasting change",
+          "nextChapter": "Complete Wands"
+        },
+        {
+          "text": "Master the integration of creativity and practical leadership",
+          "consequence": "Achieve mastery in creative leadership, find fulfillment in service",
+          "nextChapter": "Complete Wands"
+        }
+      ]
+    }
+  }
+]

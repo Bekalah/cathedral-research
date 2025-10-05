@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "language": "hi",
+    "language_name": "हिन्दी",
+    "file": "alchemy.json",
+    "status": "placeholder",
+    "completion": "0%",
+    "translator_notes": "This file contains placeholder translations for हिन्दी. Please translate all values while keeping keys unchanged.",
+    "cultural_notes": "Consider cultural sensitivity and spiritual appropriateness for हिन्दी speakers.",
+    "rtl": false
+  },
+  "principles": {
+    "solve_coagula": "[TRANSLATE:hi] Solve et Coagula",
+    "as_above_so_below": "[TRANSLATE:hi] As Above, So Below",
+    "seven_principles": "[TRANSLATE:hi] Seven Hermetic Principles",
+    "principle_mentalism": "[TRANSLATE:hi] The Principle of Mentalism",
+    "principle_correspondence": "[TRANSLATE:hi] The Principle of Correspondence",
+    "principle_vibration": "[TRANSLATE:hi] The Principle of Vibration",
+    "principle_polarity": "[TRANSLATE:hi] The Principle of Polarity",
+    "principle_rhythm": "[TRANSLATE:hi] The Principle of Rhythm",
+    "principle_cause_effect": "[TRANSLATE:hi] The Principle of Cause and Effect",
+    "principle_gender": "[TRANSLATE:hi] The Principle of Gender"
+  },
+  "operations": {
+    "calcination": "[TRANSLATE:hi] Calcination",
+    "dissolution": "[TRANSLATE:hi] Dissolution",
+    "separation": "[TRANSLATE:hi] Separation",
+    "conjunction": "[TRANSLATE:hi] Conjunction",
+    "fermentation": "[TRANSLATE:hi] Fermentation",
+    "distillation": "[TRANSLATE:hi] Distillation",
+    "coagulation": "[TRANSLATE:hi] Coagulation",
+    "sublimation": "[TRANSLATE:hi] Sublimation",
+    "putrefaction": "[TRANSLATE:hi] Putrefaction",
+    "mortification": "[TRANSLATE:hi] Mortification",
+    "multiplication": "[TRANSLATE:hi] Multiplication",
+    "projection": "[TRANSLATE:hi] Projection"
+  },
+  "substances": {
+    "prima_materia": "[TRANSLATE:hi] Prima Materia",
+    "philosophers_stone": "[TRANSLATE:hi] Philosopher's Stone",
+    "elixir_life": "[TRANSLATE:hi] Elixir of Life",
+    "universal_solvent": "[TRANSLATE:hi] Universal Solvent",
+    "quintessence": "[TRANSLATE:hi] Quintessence",
+    "azoth": "[TRANSLATE:hi] Azoth",
+    "alkahest": "[TRANSLATE:hi] Alkahest",
+    "red_stone": "[TRANSLATE:hi] Red Stone",
+    "white_stone": "[TRANSLATE:hi] White Stone",
+    "green_lion": "[TRANSLATE:hi] Green Lion"
+  },
+  "metals": {
+    "gold": "[TRANSLATE:hi] Gold ☉",
+    "silver": "[TRANSLATE:hi] Silver ☽",
+    "mercury": "[TRANSLATE:hi] Mercury ☿",
+    "copper": "[TRANSLATE:hi] Copper ♀",
+    "iron": "[TRANSLATE:hi] Iron ♂",
+    "tin": "[TRANSLATE:hi] Tin ♃",
+    "lead": "[TRANSLATE:hi] Lead ♄",
+    "antimony": "[TRANSLATE:hi] Antimony ♁",
+    "arsenic": "[TRANSLATE:hi] Arsenic",
+    "bismuth": "[TRANSLATE:hi] Bismuth"
+  },
+  "planetary_correspondences": {
+    "sun_gold": "[TRANSLATE:hi] Sun - Gold - Solar Consciousness",
+    "moon_silver": "[TRANSLATE:hi] Moon - Silver - Lunar Intuition",
+    "mercury_quicksilver": "[TRANSLATE:hi] Mercury - Quicksilver - Communication",
+    "venus_copper": "[TRANSLATE:hi] Venus - Copper - Love and Beauty",
+    "mars_iron": "[TRANSLATE:hi] Mars - Iron - Action and Will",
+    "jupiter_tin": "[TRANSLATE:hi] Jupiter - Tin - Expansion and Wisdom",
+    "saturn_lead": "[TRANSLATE:hi] Saturn - Lead - Structure and Limitation"
+  },
+  "vessels": {
+    "athanor": "[TRANSLATE:hi] Athanor",
+    "alembic": "[TRANSLATE:hi] Alembic",
+    "retort": "[TRANSLATE:hi] Retort",
+    "pelican": "[TRANSLATE:hi] Pelican",
+    "crucible": "[TRANSLATE:hi] Crucible",
+    "hermetic_seal": "[TRANSLATE:hi] Hermetic Seal",
+    "philosophers_egg": "[TRANSLATE:hi] Philosopher's Egg",
+    "bain_marie": "[TRANSLATE:hi] Bain-Marie",
+    "matras": "[TRANSLATE:hi] Matras",
+    "receiver": "[TRANSLATE:hi] Receiver"
+  },
+  "colors": {
+    "nigredo": "[TRANSLATE:hi] Nigredo - Black Phase",
+    "albedo": "[TRANSLATE:hi] Albedo - White Phase",
+    "citrinitas": "[TRANSLATE:hi] Citrinitas - Yellow Phase",
+    "rubedo": "[TRANSLATE:hi] Rubedo - Red Phase",
+    "melanosis": "[TRANSLATE:hi] Melanosis - Blackening",
+    "leukosis": "[TRANSLATE:hi] Leukosis - Whitening",
+    "xanthosis": "[TRANSLATE:hi] Xanthosis - Yellowing",
+    "iosis": "[TRANSLATE:hi] Iosis - Reddening"
+  },
+  "psychological": {
+    "inner_alchemy": "[TRANSLATE:hi] Inner Alchemy",
+    "psychic_transformation": "[TRANSLATE:hi] Psychic Transformation",
+    "individuation": "[TRANSLATE:hi] Individuation Process",
+    "shadow_integration": "[TRANSLATE:hi] Shadow Integration",
+    "anima_animus": "[TRANSLATE:hi] Anima/Animus Work",
+    "coniunctio": "[TRANSLATE:hi] Coniunctio - Sacred Marriage",
+    "opus_contra_naturam": "[TRANSLATE:hi] Opus Contra Naturam",
+    "death_rebirth": "[TRANSLATE:hi] Death and Rebirth Cycle"
+  },
+  "laboratory": {
+    "laboratory": "[TRANSLATE:hi] Alchemical Laboratory",
+    "workspace": "[TRANSLATE:hi] Sacred Workspace",
+    "apparatus": "[TRANSLATE:hi] Apparatus",
+    "experiment": "[TRANSLATE:hi] Experiment",
+    "formula": "[TRANSLATE:hi] Formula",
+    "recipe": "[TRANSLATE:hi] Recipe",
+    "procedure": "[TRANSLATE:hi] Procedure",
+    "observation": "[TRANSLATE:hi] Observation",
+    "record": "[TRANSLATE:hi] Laboratory Record",
+    "journal": "[TRANSLATE:hi] Alchemical Journal"
+  },
+  "symbols": {
+    "ouroboros": "[TRANSLATE:hi] Ouroboros ⊕",
+    "hermaphrodite": "[TRANSLATE:hi] Hermaphrodite ⚥",
+    "caduceus": "[TRANSLATE:hi] Caduceus ☤",
+    "hexagram": "[TRANSLATE:hi] Hexagram ✡",
+    "pentagram": "[TRANSLATE:hi] Pentagram ⛤",
+    "ankh": "[TRANSLATE:hi] Ankh ☥",
+    "tau_cross": "[TRANSLATE:hi] Tau Cross ⲧ",
+    "rose_cross": "[TRANSLATE:hi] Rose Cross ♦",
+    "squared_circle": "[TRANSLATE:hi] Squared Circle ⊕"
+  },
+  "elements_alchemical": {
+    "fire": "[TRANSLATE:hi] Fire 🔥 - Hot and Dry",
+    "air": "[TRANSLATE:hi] Air 💨 - Hot and Moist",
+    "water": "[TRANSLATE:hi] Water 🌊 - Cold and Moist",
+    "earth": "[TRANSLATE:hi] Earth 🌍 - Cold and Dry",
+    "sulfur": "[TRANSLATE:hi] Sulfur 🜍 - Soul Principle",
+    "mercury": "[TRANSLATE:hi] Mercury ☿ - Spirit Principle",
+    "salt": "[TRANSLATE:hi] Salt 🜔 - Body Principle"
+  },
+  "processes": {
+    "heating": "[TRANSLATE:hi] Heating",
+    "cooling": "[TRANSLATE:hi] Cooling",
+    "mixing": "[TRANSLATE:hi] Mixing",
+    "filtering": "[TRANSLATE:hi] Filtering",
+    "crystallizing": "[TRANSLATE:hi] Crystallizing",
+    "evaporating": "[TRANSLATE:hi] Evaporating",
+    "condensing": "[TRANSLATE:hi] Condensing",
+    "precipitating": "[TRANSLATE:hi] Precipitating",
+    "oxidizing": "[TRANSLATE:hi] Oxidizing",
+    "reducing": "[TRANSLATE:hi] Reducing"
+  },
+  "magnum_opus": {
+    "great_work": "[TRANSLATE:hi] The Great Work - Magnum Opus",
+    "minor_opus": "[TRANSLATE:hi] Minor Opus - Personal Transformation",
+    "major_opus": "[TRANSLATE:hi] Major Opus - Universal Transformation",
+    "first_matter": "[TRANSLATE:hi] First Matter - Chaos to Order",
+    "last_matter": "[TRANSLATE:hi] Last Matter - Perfected Being",
+    "philosophical_child": "[TRANSLATE:hi] Philosophical Child",
+    "rebis": "[TRANSLATE:hi] Rebis - Divine Hermaphrodite",
+    "lapis_philosophorum": "[TRANSLATE:hi] Lapis Philosophorum"
+  }
+}

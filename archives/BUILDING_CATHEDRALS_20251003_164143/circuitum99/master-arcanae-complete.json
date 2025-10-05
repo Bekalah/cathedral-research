@@ -1,0 +1,1652 @@
+[
+  {
+    "id": "fool",
+    "tarot": "The Fool",
+    "archetype": "Rebecca Respawn — Weaver",
+    "node": "Aleph",
+    "ray": 7,
+    "hz": 963,
+    "role": "Respawn Gate",
+    "element": "Air",
+    "angel": "Vehuiah",
+    "demon": "Bael",
+    "artifact": "Spiral Key",
+    "crystal": "Clear Quartz",
+    "tara": "White Tara",
+    "psyche": "self-doubt→curiosity",
+    "pathwork": "tutorial_trial_abyss_birth",
+    "tools": ["manifestation_engine", "respawn_portal", "spiral_navigator"],
+    "color": "#ffffff",
+    "majorArcana": true,
+    "number": 0,
+    "realPerson": "The Innocent Wanderer - represents new beginnings, innocence, and the journey of self-discovery. Based on the archetypal 'fool' who embarks on the hero's journey.",
+    "characterDetails": {
+      "background": "Born in a timeless realm between worlds, the Fool carries the spiral key that unlocks infinite possibilities. They appear as a young wanderer with boundless curiosity and no preconceptions about reality.",
+      "personality": "Innocent, trusting, open-hearted, endlessly curious, willing to take leaps of faith, sees magic in the ordinary",
+      "motivations": "To experience everything, to learn through direct experience, to find authentic self-expression",
+      "flaws": "Can be naive, impulsive, or scattered in their approach to life",
+      "virtues": "Pure intentions, adaptability, fearlessness, beginner's mind"
+    },
+    "visualDescription": "A young androgynous figure with bright, curious eyes, wearing patchwork clothes of many colors, carrying a small satchel and a white rose. They walk toward a cliff edge with a small dog companion, representing the leap of faith into the unknown. Their hair is wild and unkempt, symbolizing freedom from societal constraints.",
+    "spells": [
+      {
+        "name": "Leap of Faith",
+        "type": "divination",
+        "description": "See clearly when taking risks and making new beginnings",
+        "effect": "Reveals hidden opportunities and provides courage for new ventures",
+        "wisdom": "Sometimes you must walk off the cliff and grow wings on the way down"
+      },
+      {
+        "name": "Beginner's Mind",
+        "type": "transformation",
+        "description": "Approach any situation with fresh eyes and no preconceptions",
+        "effect": "Dissolves limiting beliefs and opens new perspectives",
+        "wisdom": "In the beginner's mind there are many possibilities, in the expert's mind there are few"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Journey Begins",
+        "teaching": "Every journey begins with a single step, but sometimes that step is off a cliff. Trust in the process of becoming.",
+        "meditation": "Visualize yourself as the Fool, standing at the edge of everything you know. What would you take with you into the unknown?"
+      },
+      {
+        "title": "Sacred Innocence",
+        "teaching": "The innocence of the beginner contains all possibilities. Protect this innocence as you would a sacred flame.",
+        "meditation": "Remember a time when you approached life with wonder and curiosity. How can you reclaim that state?"
+      }
+    ],
+    "story": {
+      "title": "The Wanderer's Beginning",
+      "chapter": 1,
+      "content": "You find yourself at a crossroads with no memory of how you arrived. A spiral key appears in your hand, warm to the touch. As you turn it, you feel reality shift around you. The path ahead is uncertain, but you feel an inexplicable pull toward the unknown. Your journey through the 33 realms begins here, at the threshold between what was and what could be.",
+      "choices": [
+        {
+          "text": "Follow the white rabbit into the unknown",
+          "consequence": "Begin the hero's journey, unlock beginner's luck",
+          "nextChapter": 2
+        },
+        {
+          "text": "Study the spiral key more carefully",
+          "consequence": "Gain deeper understanding of sacred geometry, unlock analytical abilities",
+          "nextChapter": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "magician",
+    "tarot": "The Magician",
+    "archetype": "Agrippa — Synthesizer",
+    "node": "Beth",
+    "ray": 3,
+    "hz": 396,
+    "role": "Planetary Alchemist",
+    "element": "All",
+    "angel": "Haniel",
+    "demon": "Asmodai",
+    "artifact": "Planetary Orrery",
+    "crystal": "Mercury",
+    "tara": "Yellow Tara",
+    "psyche": "fragmentation→coherence",
+    "pathwork": "elemental_riddle_planetary_timing",
+    "tools": ["planetary_engine", "elemental_synthesizer", "orrery_navigator"],
+    "color": "#ffd700",
+    "majorArcana": true,
+    "number": 1,
+    "realPerson": "Cornelius Agrippa - Renaissance magus, philosopher, and author of 'Three Books of Occult Philosophy'. Master synthesizer of Hermetic wisdom, planetary magic, and elemental forces.",
+    "characterDetails": {
+      "background": "A scholar who has mastered the hidden correspondences between all things. Keeper of the planetary orrery that maps the dance of celestial forces.",
+      "personality": "Focused, disciplined, intellectually brilliant, sees patterns everywhere, masterful communicator",
+      "motivations": "To understand and teach the fundamental unity underlying all creation, to manifest potential into reality",
+      "flaws": "Can be overly analytical, manipulative, or detached from human emotions",
+      "virtues": "Mental clarity, skillful action, ability to manifest intentions, wisdom"
+    },
+    "visualDescription": "A tall, imposing figure in Renaissance scholar's robes adorned with planetary symbols. Holds a planetary orrery in one hand and a wand in the other. Their eyes are sharp and knowing, hair streaked with silver. Above their head floats the symbol of infinity, representing the endless flow of manifestation.",
+    "spells": [
+      {
+        "name": "As Above, So Below",
+        "type": "manifestation",
+        "description": "Align personal will with universal forces to manifest intentions",
+        "effect": "Amplifies personal power and manifestation abilities through celestial alignment",
+        "wisdom": "The microcosm reflects the macrocosm - your will shapes reality when aligned with universal law"
+      },
+      {
+        "name": "Elemental Synthesis",
+        "type": "alchemy",
+        "description": "Combine and transform elemental forces for specific purposes",
+        "effect": "Allows combination of elemental energies in new and powerful ways",
+        "wisdom": "All creation emerges from the marriage of elements - learn their sacred dance"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Power of Will",
+        "teaching": "Conscious will, when aligned with universal law, becomes the most powerful force in creation. You are the magician of your own destiny.",
+        "meditation": "Visualize yourself as the Magician, tools of power arrayed before you. What do you choose to manifest?"
+      },
+      {
+        "title": "Sacred Correspondence",
+        "teaching": "Everything in creation is connected through hidden correspondences. Learn to read the language of symbols and you command reality itself.",
+        "meditation": "Trace the connections between seemingly unrelated things in your life. What patterns emerge?"
+      }
+    ],
+    "story": {
+      "title": "The Alchemist's Laboratory",
+      "chapter": 2,
+      "content": "You enter a vast laboratory filled with bubbling alembics, astronomical instruments, and shelves of ancient grimoires. The air shimmers with elemental energies. A figure in scholarly robes approaches, their eyes gleaming with the fire of knowledge. 'You seek to understand the fundamental forces of creation,' they say. 'But do you have the discipline to master them?'",
+      "choices": [
+        {
+          "text": "Accept the challenge and begin studying the elemental correspondences",
+          "consequence": "Gain elemental mastery, unlock alchemical abilities",
+          "nextChapter": 4
+        },
+        {
+          "text": "Ask about the planetary orrery and celestial timing",
+          "consequence": "Learn celestial magic, unlock astrological wisdom",
+          "nextChapter": 5
+        }
+      ]
+    }
+  },
+  {
+    "id": "high-priestess",
+    "tarot": "The High Priestess",
+    "archetype": "Dion Fortune — Protector",
+    "node": "Gimel",
+    "ray": 2,
+    "hz": 852,
+    "role": "Psychic Shield",
+    "element": "Water",
+    "angel": "Gabriel",
+    "demon": "Naamah",
+    "artifact": "Moon Veil",
+    "crystal": "Moonstone",
+    "tara": "Green Tara",
+    "psyche": "psychic fear→purity",
+    "pathwork": "dream_veil_psychic_hygiene_task",
+    "tools": ["dream_oracle", "psychic_shield", "veil_navigator"],
+    "color": "#4169e1",
+    "majorArcana": true,
+    "number": 2,
+    "realPerson": "Dion Fortune - British occultist, author of 'The Mystical Qabalah' and founder of the Society of the Inner Light. Master of psychic protection and lunar mysteries.",
+    "characterDetails": {
+      "background": "Guardian of the lunar mysteries and keeper of the veil between worlds. Trained in the ancient arts of psychic protection and dream work.",
+      "personality": "Mysterious, intuitive, compassionate, deeply empathetic, protective of the vulnerable",
+      "motivations": "To protect the sacred mysteries, to guide souls through psychic darkness, to maintain psychic hygiene",
+      "flaws": "Can be secretive, withdrawn, or overly protective",
+      "virtues": "Deep intuition, psychic sensitivity, healing abilities, wisdom"
+    },
+    "visualDescription": "A serene woman in flowing lunar-silver robes, wearing a crown of stars and crescent moons. She sits between two pillars (black and white), holding a scroll of ancient wisdom. Her eyes are deep pools of midnight blue, reflecting the phases of the moon. A veil of stars surrounds her, representing the mysteries she guards.",
+    "spells": [
+      {
+        "name": "Veil of Protection",
+        "type": "protection",
+        "description": "Create psychic shields and protective barriers",
+        "effect": "Creates impenetrable barriers against psychic attacks and negative energies",
+        "wisdom": "The greatest protection comes from understanding the nature of that which you fear"
+      },
+      {
+        "name": "Dream Oracle",
+        "type": "divination",
+        "description": "Access wisdom through dreams and lunar consciousness",
+        "effect": "Enhances dream recall and interpretation, provides lunar guidance",
+        "wisdom": "The moon reveals what the sun illuminates - both are necessary for true vision"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Lunar Path",
+        "teaching": "The moon teaches us about cycles, intuition, and the hidden aspects of ourselves. Walk the lunar path with reverence and wisdom.",
+        "meditation": "Under the moonlight, contemplate the hidden aspects of your psyche. What mysteries does the moon reveal?"
+      },
+      {
+        "title": "Psychic Hygiene",
+        "teaching": "Just as you cleanse your body, so must you cleanse your psychic space. Energy hygiene is essential for spiritual health.",
+        "meditation": "Visualize creating protective boundaries around your energy field. What do you allow in, and what do you keep out?"
+      }
+    ],
+    "story": {
+      "title": "The Temple of Lunar Mysteries",
+      "chapter": 3,
+      "content": "You find yourself in a temple of white marble, illuminated by moonlight filtering through stained glass windows depicting lunar phases. A figure in silver robes approaches, carrying an ancient scroll. 'The mysteries of the moon are not for the unprepared mind,' she says softly. 'But I sense you have the sensitivity required to learn these sacred arts.'",
+      "choices": [
+        {
+          "text": "Ask to learn the arts of psychic protection and boundary setting",
+          "consequence": "Master psychic self-defense, unlock protective magic",
+          "nextChapter": 6
+        },
+        {
+          "text": "Request initiation into the lunar mysteries and dream work",
+          "consequence": "Learn dream interpretation and lunar consciousness",
+          "nextChapter": 7
+        }
+      ]
+    }
+  },
+  {
+    "id": "empress",
+    "tarot": "The Empress",
+    "archetype": "Mother Earth — Nurturer",
+    "node": "Daleth",
+    "ray": 9,
+    "hz": 417,
+    "role": "Fertility Goddess",
+    "element": "Earth",
+    "angel": "Auriel",
+    "demon": "Astaroth",
+    "artifact": "Cornucopia",
+    "crystal": "Emerald",
+    "tara": "Green Tara",
+    "psyche": "barrenness→abundance",
+    "pathwork": "garden_cultivation_empathy_trial",
+    "tools": ["abundance_engine", "nurturing_matrix", "growth_accelerator"],
+    "color": "#228b22",
+    "majorArcana": true,
+    "number": 3,
+    "realPerson": "Mother Earth archetype - represents fertility, creativity, and nurturing. Based on ancient earth goddesses like Demeter, Gaia, and various indigenous earth mother figures.",
+    "characterDetails": {
+      "background": "The embodiment of earth's fertile power, guardian of all growing things, mother of manifestation and creativity.",
+      "personality": "Nurturing, creative, sensual, abundant, protective, deeply connected to natural cycles",
+      "motivations": "To foster growth in all beings, to teach the sacredness of creation, to protect the natural world",
+      "flaws": "Can be overly protective, possessive, or resistant to change",
+      "virtues": "Creativity, nurturing, abundance, connection to nature, fertility"
+    },
+    "visualDescription": "A voluptuous woman surrounded by lush vegetation and flowing water, wearing a crown of flowers and grains. She sits on a throne of living wood, holding a shield bearing the symbol of Venus. Her presence radiates warmth and fertility, with cascading hair the color of ripening wheat.",
+    "spells": [
+      {
+        "name": "Abundant Harvest",
+        "type": "creation",
+        "description": "Amplify creativity and manifestation in any area of life",
+        "effect": "Increases productivity, creativity, and brings opportunities to fruition",
+        "wisdom": "True abundance flows from alignment with natural cycles of growth and harvest"
+      },
+      {
+        "name": "Nurturing Embrace",
+        "type": "healing",
+        "description": "Provide deep healing and emotional support",
+        "effect": "Heals emotional wounds and provides comfort during times of need",
+        "wisdom": "The greatest healing comes from being truly seen and accepted"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "Sacred Creativity",
+        "teaching": "All creation emerges from the divine feminine. Honor the creative force within you and watch abundance flow.",
+        "meditation": "Connect with the earth beneath you. Feel the creative energy of the planet flowing through your roots."
+      },
+      {
+        "title": "Cycles of Abundance",
+        "teaching": "Life moves in cycles of planting, growth, harvest, and rest. Honor each phase equally.",
+        "meditation": "Reflect on the cycles in your own life. Where are you in the current season?"
+      }
+    ],
+    "story": {
+      "title": "The Garden of Abundance",
+      "chapter": 4,
+      "content": "You wander into a lush garden where every plant grows in perfect harmony. Fruits hang heavy on branches, flowers bloom in impossible colors, and a sense of deep peace pervades the air. A figure emerges from the greenery, her presence radiating maternal warmth and creative power. 'All creation begins in the fertile soil of being,' she says with a knowing smile.",
+      "choices": [
+        {
+          "text": "Ask to learn the secrets of manifestation and creative flow",
+          "consequence": "Unlock creative potential, learn to manifest desires",
+          "nextChapter": 8
+        },
+        {
+          "text": "Seek healing for emotional wounds and blocked creativity",
+          "consequence": "Experience deep emotional healing, release creative blocks",
+          "nextChapter": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "emperor",
+    "tarot": "The Emperor",
+    "archetype": "Marcus Aurelius — Sovereign",
+    "node": "Heh",
+    "ray": 1,
+    "hz": 639,
+    "role": "Divine King",
+    "element": "Fire",
+    "angel": "Michael",
+    "demon": "Belphegor",
+    "artifact": "Crown of Authority",
+    "crystal": "Ruby",
+    "tara": "Red Tara",
+    "psyche": "chaos→order",
+    "pathwork": "authority_trial_structure_quest",
+    "tools": ["command_matrix", "structure_engine", "authority_aura"],
+    "color": "#dc143c",
+    "majorArcana": true,
+    "number": 4,
+    "realPerson": "Marcus Aurelius - Roman Emperor and Stoic philosopher, author of 'Meditations'. Represents disciplined leadership, wisdom in power, and the responsible use of authority.",
+    "characterDetails": {
+      "background": "A philosopher-king who understands that true authority comes from wisdom and service, not mere power.",
+      "personality": "Disciplined, wise, protective, strategic, paternal, deeply responsible",
+      "motivations": "To create order from chaos, to protect the vulnerable, to lead with wisdom and justice",
+      "flaws": "Can be rigid, overly controlling, or disconnected from emotions",
+      "virtues": "Leadership, wisdom, protection, justice, strategic thinking"
+    },
+    "visualDescription": "A regal figure in armor adorned with sacred symbols, wearing a crown of gold and rubies. He sits on a throne of stone, holding a scepter of authority and an orb of dominion. His eyes reflect both the fire of command and the wisdom of experience, with a beard streaked with the silver of hard-won knowledge.",
+    "spells": [
+      {
+        "name": "Command Presence",
+        "type": "leadership",
+        "description": "Exert natural authority and leadership in any situation",
+        "effect": "Inspires respect and cooperation from others, creates order from chaos",
+        "wisdom": "True authority flows from wisdom and service, not from the assertion of power"
+      },
+      {
+        "name": "Strategic Vision",
+        "type": "divination",
+        "description": "See the larger patterns and plan for long-term success",
+        "effect": "Provides clarity on complex situations and reveals optimal paths forward",
+        "wisdom": "The wise leader sees not just the battle, but the entire war"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Burden of Power",
+        "teaching": "With great power comes great responsibility. The wise leader serves those they lead, not the other way around.",
+        "meditation": "Contemplate the leaders in your life. What qualities make a leader worthy of following?"
+      },
+      {
+        "title": "Order from Chaos",
+        "teaching": "Structure provides the container for creativity to flourish. Learn to build strong foundations for your dreams.",
+        "meditation": "Examine the structures in your life. Which support your growth, and which need to be rebuilt?"
+      }
+    ],
+    "story": {
+      "title": "The Hall of Authority",
+      "chapter": 5,
+      "content": "You enter a grand hall where every stone speaks of ancient authority and hard-won wisdom. Tapestries depicting great battles and wise judgments adorn the walls. A figure in imperial robes approaches, his presence commanding respect through wisdom rather than force. 'Authority is not taken,' he says, 'it is earned through service and wisdom.'",
+      "choices": [
+        {
+          "text": "Seek guidance on leadership and taking command of your life",
+          "consequence": "Learn leadership skills, gain confidence in authority",
+          "nextChapter": 10
+        },
+        {
+          "text": "Ask about creating structure and order in chaotic times",
+          "consequence": "Learn organizational skills, find stability in uncertainty",
+          "nextChapter": 11
+        }
+      ]
+    }
+  },
+  {
+    "id": "hierophant",
+    "tarot": "The Hierophant",
+    "archetype": "Eliphas Lévi — Teacher",
+    "node": "Vav",
+    "ray": 8,
+    "hz": 528,
+    "role": "Sacred Tradition",
+    "element": "Earth",
+    "angel": "Raphael",
+    "demon": "Focalor",
+    "artifact": "Keys of Mystery",
+    "crystal": "Topaz",
+    "tara": "Gold Tara",
+    "psyche": "dogma→wisdom",
+    "pathwork": "tradition_trial_initiation_rite",
+    "tools": ["wisdom_engine", "tradition_matrix", "initiation_chamber"],
+    "color": "#daa520",
+    "majorArcana": true,
+    "number": 5,
+    "realPerson": "Eliphas Lévi - French occultist and author of 'Dogme et Rituel de la Haute Magie'. The quintessential teacher of Western esoteric traditions, master of ceremonial magic and spiritual instruction.",
+    "characterDetails": {
+      "background": "The eternal teacher who has preserved and transmitted sacred knowledge through countless generations. Guardian of spiritual traditions and initiator of worthy souls.",
+      "personality": "Wise, patient, traditional, deeply knowledgeable, spiritually authoritative, compassionate teacher",
+      "motivations": "To preserve sacred knowledge, to guide spiritual seekers, to maintain the integrity of mystical traditions",
+      "flaws": "Can be rigid in adherence to tradition, resistant to innovation, or overly formal",
+      "virtues": "Wisdom, patience, spiritual authority, teaching ability, compassion"
+    },
+    "visualDescription": "A dignified figure in ceremonial robes adorned with sacred symbols and mystical insignia. They hold the keys of mystery in one hand and a book of ancient wisdom in the other. Their presence radiates quiet authority and spiritual depth, with eyes that have seen through many veils of illusion.",
+    "spells": [
+      {
+        "name": "Sacred Tradition",
+        "type": "teaching",
+        "description": "Access ancient wisdom and traditional knowledge",
+        "effect": "Provides access to time-tested spiritual practices and ancient teachings",
+        "wisdom": "True wisdom is not invented, it is remembered from the collective soul of humanity"
+      },
+      {
+        "name": "Initiation Rite",
+        "type": "transformation",
+        "description": "Guide others through spiritual initiation and transformation",
+        "effect": "Facilitates deep spiritual growth and transformation in self and others",
+        "wisdom": "Initiation is not about gaining power, but about surrendering the illusion of separation"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Eternal Tradition",
+        "teaching": "Spiritual truth is eternal, though its forms may change. Honor the tradition while remaining open to the eternal truth it serves.",
+        "meditation": "Reflect on the teachers who have shaped your spiritual journey. What eternal truths did they reveal?"
+      },
+      {
+        "title": "The Inner Temple",
+        "teaching": "The true temple exists within the heart. External forms are merely reflections of inner spiritual reality.",
+        "meditation": "Visualize the temple within your own heart. What sacred teachings does it contain?"
+      }
+    ],
+    "story": {
+      "title": "The Temple of Eternal Wisdom",
+      "chapter": 6,
+      "content": "You enter a temple that seems to exist outside of time itself. Ancient scrolls line the walls, and the air is filled with the scent of incense and aged wisdom. A figure in flowing robes approaches, their voice carrying the weight of centuries of spiritual instruction. 'The mysteries are not mine to give,' they say, 'but yours to discover through dedicated practice and sincere seeking.'",
+      "choices": [
+        {
+          "text": "Ask for guidance in spiritual practice and disciplined study",
+          "consequence": "Learn structured spiritual practices, gain discipline and focus",
+          "nextChapter": 12
+        },
+        {
+          "text": "Seek understanding of the relationship between tradition and innovation",
+          "consequence": "Learn to balance ancient wisdom with modern insight",
+          "nextChapter": 13
+        }
+      ]
+    }
+  },
+  {
+    "id": "lovers",
+    "tarot": "The Lovers",
+    "archetype": "Rumi & Shams — Beloved",
+    "node": "Zayin",
+    "ray": 4,
+    "hz": 741,
+    "role": "Sacred Union",
+    "element": "Air",
+    "angel": "Haniel",
+    "demon": "Sitri",
+    "artifact": "Heart Chalice",
+    "crystal": "Rose Quartz",
+    "tara": "Pink Tara",
+    "psyche": "separation→union",
+    "pathwork": "relationship_trial_choice_quest",
+    "tools": ["union_engine", "relationship_matrix", "love_alchemy"],
+    "color": "#ff69b4",
+    "majorArcana": true,
+    "number": 6,
+    "realPerson": "Rumi & Shams - The archetypal beloved relationship representing the mystical union of souls. Based on the profound love between the Persian poet Rumi and his spiritual teacher Shams of Tabriz.",
+    "characterDetails": {
+      "background": "The embodiment of sacred love and spiritual partnership. Two souls who have found perfect union through divine love and mutual spiritual growth.",
+      "personality": "Passionate, devoted, spiritually attuned, deeply connected, expressive of divine love",
+      "motivations": "To experience and teach the transformative power of sacred love, to guide others toward soulful relationships",
+      "flaws": "Can be overly idealistic about love, or struggle with the intensity of deep emotional connection",
+      "virtues": "Love, devotion, spiritual passion, emotional intelligence, union"
+    },
+    "visualDescription": "Two figures in an eternal embrace, surrounded by roses and flowing water. One wears flowing robes of deep crimson, the other of pure white, representing the union of passion and purity. Their eyes meet in perfect understanding, and between them glows a heart-shaped chalice filled with liquid light.",
+    "spells": [
+      {
+        "name": "Sacred Union",
+        "type": "relationship",
+        "description": "Create deep, meaningful connections with others",
+        "effect": "Facilitates soulful relationships and helps others find their spiritual partners",
+        "wisdom": "True love is not possession, but recognition of the divine in another"
+      },
+      {
+        "name": "Heart Opening",
+        "type": "healing",
+        "description": "Heal emotional wounds and open the heart to love",
+        "effect": "Dissolves barriers to love and emotional intimacy",
+        "wisdom": "The heart that loves is eternally young, no matter how many seasons it has weathered"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Path of Love",
+        "teaching": "Love is the greatest teacher. Through love, we learn our deepest lessons and experience our highest truths.",
+        "meditation": "Contemplate the loves in your life. What have they taught you about yourself and the divine?"
+      },
+      {
+        "title": "Sacred Relationship",
+        "teaching": "Every relationship is a mirror showing us aspects of ourselves. Choose relationships that reflect your highest self.",
+        "meditation": "Examine your relationships as sacred mirrors. What do they reveal about your soul's journey?"
+      }
+    ],
+    "story": {
+      "title": "The Garden of Divine Love",
+      "chapter": 7,
+      "content": "You find yourself in a garden where every flower seems to pulse with love and every breeze carries whispers of devotion. Two figures dance together in perfect harmony, their movements expressing a love that transcends the physical realm. 'Love is the bridge between heaven and earth,' they say in unison, 'the force that unites all dualities in divine harmony.'",
+      "choices": [
+        {
+          "text": "Ask to learn about sacred relationship and soulful partnership",
+          "consequence": "Understand the spiritual dimensions of love and relationship",
+          "nextChapter": 14
+        },
+        {
+          "text": "Seek healing for heartbreak and emotional wounds",
+          "consequence": "Experience deep emotional healing, learn to love again",
+          "nextChapter": 15
+        }
+      ]
+    }
+  },
+  {
+    "id": "chariot",
+    "tarot": "The Chariot",
+    "archetype": "Napoleon — Conqueror",
+    "node": "Cheth",
+    "ray": 6,
+    "hz": 417,
+    "role": "Victory Through Will",
+    "element": "Water",
+    "angel": "Gabriel",
+    "demon": "Allocen",
+    "artifact": "Chariot of Triumph",
+    "crystal": "Diamond",
+    "tara": "Diamond Tara",
+    "psyche": "conflict→victory",
+    "pathwork": "battle_trial_willpower_quest",
+    "tools": ["victory_engine", "willpower_matrix", "triumph_chariot"],
+    "color": "#c0c0c0",
+    "majorArcana": true,
+    "number": 7,
+    "realPerson": "Napoleon Bonaparte - Military genius and strategic master. Represents focused will, determination, and the ability to direct opposing forces toward victory.",
+    "characterDetails": {
+      "background": "A master strategist who has learned to harness opposing forces and direct them toward victory. Commander of the chariot that represents the focused application of will.",
+      "personality": "Determined, focused, strategic, confident, disciplined, masterful in crisis",
+      "motivations": "To achieve victory through focused will and strategic action, to teach others the power of determination",
+      "flaws": "Can be overly aggressive, ruthless, or single-minded to the point of obsession",
+      "virtues": "Determination, focus, strategic thinking, leadership, willpower"
+    },
+    "visualDescription": "A armored warrior in a magnificent chariot pulled by two sphinxes (one black, one white) representing opposing forces in harmony. They hold a wand of focused intention, wearing armor that gleams like starlight. Their eyes burn with the fire of unshakeable determination and strategic brilliance.",
+    "spells": [
+      {
+        "name": "Triumphant Will",
+        "type": "victory",
+        "description": "Focus personal will toward achieving difficult goals",
+        "effect": "Provides unshakeable determination and strategic clarity for overcoming obstacles",
+        "wisdom": "Victory belongs to those who maintain their focus when others lose theirs"
+      },
+      {
+        "name": "Strategic Harmony",
+        "type": "balance",
+        "description": "Balance opposing forces and create victory from conflict",
+        "effect": "Helps resolve conflicts and turn opposition into cooperation",
+        "wisdom": "The greatest victories are won not through force, but through strategic harmony"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Power of Focus",
+        "teaching": "A scattered mind achieves nothing. Focus your will like a laser, and you can accomplish the impossible.",
+        "meditation": "Identify your most important goal. What opposing forces within you need to be harnessed for victory?"
+      },
+      {
+        "title": "Strategic Action",
+        "teaching": "True victory comes from understanding the battlefield completely. Know yourself, know your opponent, and act decisively.",
+        "meditation": "Analyze a current challenge in your life. What strategy would lead to victory?"
+      }
+    ],
+    "story": {
+      "title": "The Battlefield of Will",
+      "chapter": 8,
+      "content": "You find yourself on a vast battlefield where the forces of order and chaos clash in eternal struggle. A magnificent chariot approaches, pulled by two mighty sphinxes representing opposing forces in perfect balance. The warrior within radiates unshakeable determination. 'Victory is not given,' they declare, 'it is seized through focused will and strategic action.'",
+      "choices": [
+        {
+          "text": "Seek training in focused willpower and determination",
+          "consequence": "Develop unshakeable focus and determination",
+          "nextChapter": 16
+        },
+        {
+          "text": "Ask about strategy and turning conflict into victory",
+          "consequence": "Learn strategic thinking and conflict resolution",
+          "nextChapter": 17
+        }
+      ]
+    }
+  },
+  {
+    "id": "strength",
+    "tarot": "Strength",
+    "archetype": "Gandhi — Peaceful Warrior",
+    "node": "Teth",
+    "ray": 5,
+    "hz": 528,
+    "role": "Gentle Power",
+    "element": "Fire",
+    "angel": "Michael",
+    "demon": "Amdusias",
+    "artifact": "Lion's Heart",
+    "crystal": "Citrine",
+    "tara": "Orange Tara",
+    "psyche": "force→gentle power",
+    "pathwork": "gentleness_trial_courage_quest",
+    "tools": ["gentle_power_engine", "courage_matrix", "compassion_force"],
+    "color": "#ffd700",
+    "majorArcana": true,
+    "number": 8,
+    "realPerson": "Mahatma Gandhi - Indian spiritual leader and pioneer of nonviolent resistance. Represents the power of gentle strength, inner courage, and moral authority over physical force.",
+    "characterDetails": {
+      "background": "A spiritual warrior who discovered that true strength comes not from force, but from inner courage and gentle persistence. Master of moral authority and peaceful resistance.",
+      "personality": "Gentle, courageous, persistent, spiritually centered, morally unshakeable, compassionate",
+      "motivations": "To demonstrate the power of nonviolence, to teach inner strength, to liberate through love",
+      "flaws": "Can seem passive to those who don't understand inner power, may struggle with necessary confrontation",
+      "virtues": "Inner strength, courage, compassion, moral authority, gentleness"
+    },
+    "visualDescription": "A serene figure in simple white robes, gently closing the jaws of a lion with bare hands. The lion represents raw power tamed through inner strength and compassion. Their eyes radiate quiet confidence and spiritual power, with a gentle smile that speaks of infinite patience and unshakeable courage.",
+    "spells": [
+      {
+        "name": "Gentle Strength",
+        "type": "transformation",
+        "description": "Transform force into gentle power and moral authority",
+        "effect": "Converts aggressive energy into compassionate strength and inner power",
+        "wisdom": "The strong are not those who never fall, but those who get up again with even greater gentleness"
+      },
+      {
+        "name": "Lion's Heart",
+        "type": "courage",
+        "description": "Find courage in the face of fear and adversity",
+        "effect": "Provides inner courage and moral strength during challenging times",
+        "wisdom": "Courage is not the absence of fear, but the recognition that something is more important than fear"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Power of Gentleness",
+        "teaching": "True strength is gentle. The oak tree bends in the storm while the rigid branch breaks. Learn the power of flexible strength.",
+        "meditation": "Recall a time when gentleness proved more powerful than force. How can you apply this in your current challenges?"
+      },
+      {
+        "title": "Inner Courage",
+        "teaching": "Courage is not found in the absence of fear, but in the presence of love. What you love determines your capacity for courage.",
+        "meditation": "What do you love enough to face your fears for? Let that love be your source of courage."
+      }
+    ],
+    "story": {
+      "title": "The Garden of Inner Strength",
+      "chapter": 9,
+      "content": "You enter a peaceful garden where a powerful lion rests calmly beside a gentle figure in white robes. The air is filled with quiet power and serene confidence. 'Strength is not measured by the force you can exert,' the figure says softly, 'but by the gentleness with which you can tame the wild forces within and without.'",
+      "choices": [
+        {
+          "text": "Seek to understand the nature of true inner strength",
+          "consequence": "Develop inner power and gentle authority",
+          "nextChapter": 18
+        },
+        {
+          "text": "Ask about finding courage in the face of overwhelming odds",
+          "consequence": "Learn moral courage and peaceful resistance",
+          "nextChapter": 19
+        }
+      ]
+    }
+  },
+  {
+    "id": "hermit",
+    "tarot": "The Hermit",
+    "archetype": "Siddhartha Gautama — Seeker",
+    "node": "Yod",
+    "ray": 9,
+    "hz": 417,
+    "role": "Inner Light",
+    "element": "Earth",
+    "angel": "Auriel",
+    "demon": "Cimeries",
+    "artifact": "Lamp of Wisdom",
+    "crystal": "Amethyst",
+    "tara": "Purple Tara",
+    "psyche": "isolation→illumination",
+    "pathwork": "solitude_trial_enlightenment_quest",
+    "tools": ["wisdom_lamp", "solitude_engine", "illumination_matrix"],
+    "color": "#800080",
+    "majorArcana": true,
+    "number": 9,
+    "realPerson": "Siddhartha Gautama (Buddha) - The Enlightened One who sought truth through inner contemplation and meditation. Represents the archetypal spiritual seeker who finds wisdom through solitude and inner reflection.",
+    "characterDetails": {
+      "background": "The eternal seeker who has journeyed through the dark night of the soul to find the inner light. Guide for those walking the solitary path of spiritual discovery.",
+      "personality": "Contemplative, wise, patient, inwardly focused, spiritually radiant, gentle teacher",
+      "motivations": "To guide others toward inner wisdom, to illuminate the path of self-discovery, to share the light of enlightenment",
+      "flaws": "Can be overly withdrawn, disconnected from worldly concerns, or seem aloof",
+      "virtues": "Inner wisdom, spiritual insight, patience, guidance, enlightenment"
+    },
+    "visualDescription": "A solitary figure on a mountain peak, holding a lantern that illuminates the darkness. They wear simple robes of deep purple, carrying a staff carved with sacred symbols. Their face radiates inner peace and wisdom, eyes reflecting the infinite depths of spiritual understanding and compassion for all beings.",
+    "spells": [
+      {
+        "name": "Inner Light",
+        "type": "illumination",
+        "description": "Find guidance and wisdom through inner contemplation",
+        "effect": "Provides clarity and insight during times of confusion or darkness",
+        "wisdom": "The answers you seek are not outside you, but within the quiet sanctuary of your own soul"
+      },
+      {
+        "name": "Solitude's Gift",
+        "type": "transformation",
+        "description": "Transform loneliness into spiritual growth and self-discovery",
+        "effect": "Converts periods of isolation into opportunities for profound inner growth",
+        "wisdom": "In solitude, we discover that our aloneness is actually our wholeness"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Inner Journey",
+        "teaching": "The greatest journey is not across vast distances, but into the depths of your own soul. There you will find treasures beyond measure.",
+        "meditation": "Sit in silence and journey inward. What wisdom awaits in the sanctuary of your own heart?"
+      },
+      {
+        "title": "The Light Within",
+        "teaching": "You carry your own light. Sometimes you must retreat from the world to let it shine more brightly.",
+        "meditation": "Visualize the light within you growing brighter. How does this inner light guide your path?"
+      }
+    ],
+    "story": {
+      "title": "The Mountain of Inner Wisdom",
+      "chapter": 10,
+      "content": "You climb a mountain path as night falls, feeling utterly alone in the darkness. Suddenly, you see a figure on the peak holding a lantern that casts a warm, welcoming light. 'The path of wisdom often requires walking alone,' the figure says, 'but you are never truly alone when you carry the light of inner wisdom.'",
+      "choices": [
+        {
+          "text": "Ask for guidance on the solitary spiritual path",
+          "consequence": "Learn the art of spiritual solitude and inner guidance",
+          "nextChapter": 20
+        },
+        {
+          "text": "Seek the light of inner wisdom to illuminate your darkness",
+          "consequence": "Find inner clarity and spiritual insight",
+          "nextChapter": 21
+        }
+      ]
+    }
+  },
+  {
+    "id": "wheel-of-fortune",
+    "tarot": "Wheel of Fortune",
+    "archetype": "Heraclitus — Flux Master",
+    "node": "Kaph",
+    "ray": 10,
+    "hz": 639,
+    "role": "Cyclic Change",
+    "element": "Fire",
+    "angel": "Metatron",
+    "demon": "Belial",
+    "artifact": "Wheel of Destiny",
+    "crystal": "Opal",
+    "tara": "Opal Tara",
+    "psyche": "resistance→acceptance",
+    "pathwork": "change_trial_adaptation_quest",
+    "tools": ["fortune_engine", "cycle_matrix", "destiny_wheel"],
+    "color": "#ff6347",
+    "majorArcana": true,
+    "number": 10,
+    "realPerson": "Heraclitus - Greek philosopher who taught that 'everything flows' and 'you cannot step in the same river twice'. Master of understanding constant change and cyclic patterns in existence.",
+    "characterDetails": {
+      "background": "The eternal witness of change, who understands that all things move in cycles and that resistance to change is the source of suffering.",
+      "personality": "Philosophical, accepting, adaptable, sees patterns in chaos, teaches through paradox",
+      "motivations": "To help others understand the nature of change, to teach acceptance of life's cycles, to reveal hidden patterns",
+      "flaws": "Can seem fatalistic, overly detached, or difficult to understand",
+      "virtues": "Adaptability, wisdom, pattern recognition, acceptance, philosophical insight"
+    },
+    "visualDescription": "A figure surrounded by a great wheel divided into sections representing life's cycles. They wear robes patterned with swirling designs, holding a book of changes. Their eyes reflect both the sadness of impermanence and the joy of eternal flow, with an enigmatic smile that speaks of profound understanding.",
+    "spells": [
+      {
+        "name": "Cyclic Wisdom",
+        "type": "divination",
+        "description": "Understand the patterns and cycles in any situation",
+        "effect": "Reveals the underlying patterns and cycles influencing current circumstances",
+        "wisdom": "Life moves in spirals, not circles. You return to similar places, but at higher levels of understanding"
+      },
+      {
+        "name": "Graceful Adaptation",
+        "type": "transformation",
+        "description": "Flow gracefully with life's changes rather than resisting them",
+        "effect": "Helps adapt to change with grace and find opportunity in transition",
+        "wisdom": "The wise person embraces change, for it is the only constant in the universe"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Eternal Flow",
+        "teaching": "Everything flows - your life, your relationships, your circumstances. Resistance creates suffering; acceptance brings peace.",
+        "meditation": "Observe the flow of change in your life. Where are you resisting what wants to change?"
+      },
+      {
+        "title": "Cyclic Return",
+        "teaching": "You never step in the same river twice, yet the river remains. Learn to honor both change and continuity.",
+        "meditation": "Reflect on how you have changed while remaining essentially yourself. What patterns persist through transformation?"
+      }
+    ],
+    "story": {
+      "title": "The Turning Wheel",
+      "chapter": 11,
+      "content": "You find yourself at the center of a great wheel that turns with inexorable force. Each spoke represents a different phase of life, and you feel yourself moving through cycles of fortune and challenge. A figure appears at the hub, unmoved by the turning wheel. 'Change is the only constant,' they say, 'learn to dance with it rather than fight against it.'",
+      "choices": [
+        {
+          "text": "Ask to understand the cycles and patterns in your life",
+          "consequence": "Gain insight into life's patterns and timing",
+          "nextChapter": 22
+        },
+        {
+          "text": "Seek guidance on adapting gracefully to change",
+          "consequence": "Learn to flow with life's changes",
+          "nextChapter": 23
+        }
+      ]
+    }
+  },
+  {
+    "id": "justice",
+    "tarot": "Justice",
+    "archetype": "Ma'at — Balance Keeper",
+    "node": "Lamed",
+    "ray": 1,
+    "hz": 639,
+    "role": "Divine Balance",
+    "element": "Air",
+    "angel": "Zuriel",
+    "demon": "Allocen",
+    "artifact": "Scales of Truth",
+    "crystal": "Sapphire",
+    "tara": "Blue Tara",
+    "psyche": "imbalance→harmony",
+    "pathwork": "truth_trial_balance_quest",
+    "tools": ["justice_engine", "balance_matrix", "truth_scales"],
+    "color": "#4169e1",
+    "majorArcana": true,
+    "number": 11,
+    "realPerson": "Ma'at - Ancient Egyptian goddess of truth, justice, and cosmic balance. Represents the principle that every action has consequences and that truth must be balanced with mercy.",
+    "characterDetails": {
+      "background": "The eternal guardian of cosmic balance and divine justice. Keeper of the scales that weigh souls and actions with perfect impartiality.",
+      "personality": "Impartial, wise, discerning, fair, deeply principled, sees through deception",
+      "motivations": "To maintain cosmic balance, to teach the consequences of actions, to guide souls toward truth",
+      "flaws": "Can seem cold or detached, may struggle with mercy when justice demands accountability",
+      "virtues": "Wisdom, fairness, discernment, integrity, balance"
+    },
+    "visualDescription": "A dignified figure in flowing robes of deep blue, holding perfectly balanced scales in one hand and a sword of truth in the other. They sit in perfect posture, wearing a crown of stars that represents celestial order. Their eyes are clear and penetrating, seeing through all illusion to the heart of truth.",
+    "spells": [
+      {
+        "name": "Scales of Justice",
+        "type": "divination",
+        "description": "See the true consequences and balance of any action or decision",
+        "effect": "Reveals the hidden costs and benefits of choices, shows the path of balance",
+        "wisdom": "Every action creates ripples through the fabric of existence - choose with awareness"
+      },
+      {
+        "name": "Truth Seeker",
+        "type": "revelation",
+        "description": "Cut through deception and illusion to reveal hidden truths",
+        "effect": "Dispels lies and self-deception, reveals what has been concealed",
+        "wisdom": "The truth may hurt, but it also heals and sets you free"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Law of Balance",
+        "teaching": "For every action, there is an equal and opposite reaction. The universe seeks balance - work with this principle, not against it.",
+        "meditation": "Examine your life for areas of imbalance. What action would restore harmony?"
+      },
+      {
+        "title": "Merciful Justice",
+        "teaching": "True justice includes mercy. The sword of truth must be balanced by the scales of compassion.",
+        "meditation": "Reflect on a time when you needed to balance justice with mercy. What did you learn?"
+      }
+    ],
+    "story": {
+      "title": "The Hall of Perfect Balance",
+      "chapter": 12,
+      "content": "You enter a hall where perfect symmetry reigns. Every object has its perfect counterpart, every shadow its light. A figure sits in the center, holding scales that never tip, their eyes seeing both sides of every question. 'Justice is not blind,' they say, 'but sees with perfect clarity the balance of all things.'",
+      "choices": [
+        {
+          "text": "Ask about finding balance in your own life and decisions",
+          "consequence": "Learn to weigh choices with wisdom and clarity",
+          "nextChapter": 24
+        },
+        {
+          "text": "Seek understanding of truth, deception, and self-honesty",
+          "consequence": "Learn discernment and the nature of truth",
+          "nextChapter": 25
+        }
+      ]
+    }
+  },
+  {
+    "id": "hanged-man",
+    "tarot": "The Hanged Man",
+    "archetype": "Odin — Sacrifice Wisdom",
+    "node": "Mem",
+    "ray": 4,
+    "hz": 741,
+    "role": "Willing Sacrifice",
+    "element": "Water",
+    "angel": "Gabriel",
+    "demon": "Agares",
+    "artifact": "Rope of Surrender",
+    "crystal": "Aquamarine",
+    "tara": "Blue Tara",
+    "psyche": "resistance→surrender",
+    "pathwork": "surrender_trial_perspective_shift",
+    "tools": ["surrender_engine", "sacrifice_matrix", "wisdom_tree"],
+    "color": "#4682b4",
+    "majorArcana": true,
+    "number": 12,
+    "realPerson": "Odin - Norse Allfather who sacrificed an eye for wisdom and hung from Yggdrasil for nine days to gain the runes. Represents the power of voluntary sacrifice and the wisdom gained through surrender.",
+    "characterDetails": {
+      "background": "The Allfather who understands that true wisdom often requires sacrifice. Master of runes, poetry, and the hidden knowledge gained through surrender.",
+      "personality": "Wise, enigmatic, sacrificial, sees from unusual perspectives, deeply knowledgeable",
+      "motivations": "To gain wisdom through sacrifice, to teach the power of surrender, to share hidden knowledge",
+      "flaws": "Can be manipulative in pursuit of wisdom, may seem cold or distant",
+      "virtues": "Wisdom, courage, perspective, sacrifice, insight"
+    },
+    "visualDescription": "A figure hanging upside down from a tree (like Odin from Yggdrasil), but with a serene and enlightened expression. One eye is covered, representing the sacrifice for wisdom. They hold a chalice of mead (poetic inspiration) and wear ravens as companions. Their inverted position represents seeing the world from a new perspective.",
+    "spells": [
+      {
+        "name": "Sacred Sacrifice",
+        "type": "transformation",
+        "description": "Transform loss or surrender into wisdom and growth",
+        "effect": "Converts apparent defeats into spiritual victories and sources of wisdom",
+        "wisdom": "Sometimes you must lose everything to discover what truly matters"
+      },
+      {
+        "name": "Inverted Vision",
+        "type": "divination",
+        "description": "See situations from completely new and unconventional perspectives",
+        "effect": "Reveals hidden truths and alternative solutions that others cannot see",
+        "wisdom": "When you change the way you look at things, the things you look at change"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Gift of Surrender",
+        "teaching": "True surrender is not giving up, but giving over to a higher wisdom. In letting go, we often receive something greater.",
+        "meditation": "What are you clinging to that may be ready to be released? What wisdom might come from surrender?"
+      },
+      {
+        "title": "The Rune of Wisdom",
+        "teaching": "Great wisdom often comes at great cost. The sacrifices we make for truth become the foundation of our spiritual authority.",
+        "meditation": "Reflect on the sacrifices that have led to your greatest growth. What wisdom did they reveal?"
+      }
+    ],
+    "story": {
+      "title": "The Tree of Surrendered Wisdom",
+      "chapter": 13,
+      "content": "You find yourself in a sacred grove where a mighty tree grows. A figure hangs peacefully from one of its branches, their inverted position giving them a unique view of the world. Ravens circle overhead, carrying messages between worlds. 'To gain wisdom,' the figure says calmly, 'you must sometimes surrender your usual way of seeing.'",
+      "choices": [
+        {
+          "text": "Ask about the power of surrender and letting go",
+          "consequence": "Learn to release control and find wisdom in surrender",
+          "nextChapter": 26
+        },
+        {
+          "text": "Seek understanding of sacrifice and its role in spiritual growth",
+          "consequence": "Learn the transformative power of voluntary sacrifice",
+          "nextChapter": 27
+        }
+      ]
+    }
+  },
+  {
+    "id": "death",
+    "tarot": "Death",
+    "archetype": "Kali — Transformer",
+    "node": "Nun",
+    "ray": 13,
+    "hz": 852,
+    "role": "Radical Change",
+    "element": "Scorpio",
+    "angel": "Azrael",
+    "demon": "Bifrons",
+    "artifact": "Scythe of Transformation",
+    "crystal": "Black Obsidian",
+    "tara": "Black Tara",
+    "psyche": "stagnation→rebirth",
+    "pathwork": "death_trial_renewal_quest",
+    "tools": ["transformation_engine", "renewal_matrix", "phoenix_egg"],
+    "color": "#2f4f4f",
+    "majorArcana": true,
+    "number": 13,
+    "realPerson": "Kali - Hindu goddess of destruction and transformation. Represents the necessary death of old forms to make way for new life and spiritual rebirth.",
+    "characterDetails": {
+      "background": "The fierce goddess of transformation who destroys what no longer serves so that new life may emerge. Guardian of the cycle of death and rebirth.",
+      "personality": "Fierce, compassionate, transformative, intense, loving in her destruction",
+      "motivations": "To clear away what no longer serves, to facilitate transformation, to teach impermanence",
+      "flaws": "Can be terrifying to those unprepared for change, may seem destructive without apparent purpose",
+      "virtues": "Courage, transformation, renewal, fierce compassion, wisdom"
+    },
+    "visualDescription": "A powerful feminine figure with blue-black skin, wearing a necklace of skulls and a skirt of severed arms, dancing on the body of ignorance. She has four arms: two holding weapons of destruction, two offering blessings. Her tongue protrudes in ecstasy, and her eyes burn with the fire of transformation. Despite her fierce appearance, her expression shows maternal love.",
+    "spells": [
+      {
+        "name": "Radical Transformation",
+        "type": "destruction",
+        "description": "Destroy what no longer serves to make way for the new",
+        "effect": "Clears away outdated patterns, beliefs, and situations that hinder growth",
+        "wisdom": "Sometimes things must die for something new and beautiful to be born"
+      },
+      {
+        "name": "Phoenix Rebirth",
+        "type": "renewal",
+        "description": "Rise renewed from the ashes of transformation",
+        "effect": "Facilitates complete renewal and rebirth after periods of loss or change",
+        "wisdom": "Every ending contains the seed of a new beginning"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Dance of Destruction",
+        "teaching": "Destruction is not evil - it is the necessary precursor to creation. What seems like death is often the doorway to rebirth.",
+        "meditation": "What in your life needs to die so that something new can be born? Are you ready to release it?"
+      },
+      {
+        "title": "Fierce Grace",
+        "teaching": "True compassion sometimes requires fierce action. The mother who loves her children will destroy threats to their growth.",
+        "meditation": "Reflect on the fierce compassion in your life. Where has tough love led to growth?"
+      }
+    ],
+    "story": {
+      "title": "The Cremation Ground",
+      "chapter": 14,
+      "content": "You wander into what appears to be a cremation ground, but the atmosphere pulses with life and renewal. A powerful figure dances with fierce abandon, her movements both terrifying and beautiful. 'I dance on the corpses of your illusions,' she says with a fierce smile, 'so that you may be reborn in truth.'",
+      "choices": [
+        {
+          "text": "Ask about releasing what no longer serves your growth",
+          "consequence": "Learn to identify and release outdated patterns",
+          "nextChapter": 28
+        },
+        {
+          "text": "Seek understanding of transformation and rebirth",
+          "consequence": "Learn to embrace change and find renewal",
+          "nextChapter": 29
+        }
+      ]
+    }
+  },
+  {
+    "id": "temperance",
+    "tarot": "Temperance",
+    "archetype": "Hermes — Alchemist",
+    "node": "Samekh",
+    "ray": 6,
+    "hz": 417,
+    "role": "Sacred Alchemy",
+    "element": "Fire",
+    "angel": "Michael",
+    "demon": "Valefor",
+    "artifact": "Chalice of Balance",
+    "crystal": "Amethyst",
+    "tara": "Purple Tara",
+    "psyche": "extremes→moderation",
+    "pathwork": "alchemy_trial_harmony_quest",
+    "tools": ["alchemy_engine", "harmony_matrix", "balance_chalice"],
+    "color": "#9370db",
+    "majorArcana": true,
+    "number": 14,
+    "realPerson": "Hermes Trismegistus - Legendary founder of Hermeticism, master alchemist and sage. Represents the perfect balance of all elements and the alchemical process of spiritual transformation.",
+    "characterDetails": {
+      "background": "The thrice-greatest sage who mastered the art of alchemy - the transformation of base matter into spiritual gold. Teacher of the middle way and sacred balance.",
+      "personality": "Balanced, wise, transformative, patient, sees the unity in opposites",
+      "motivations": "To teach the art of spiritual alchemy, to guide the transformation of consciousness, to reveal hidden unity",
+      "flaws": "Can seem overly moderate or indecisive, may avoid necessary confrontation",
+      "virtues": "Balance, wisdom, transformation, patience, harmony"
+    },
+    "visualDescription": "An androgynous figure pouring liquid from one chalice to another, representing the alchemical process of transformation. They stand with one foot on land and one in water, showing perfect balance. They wear robes that shift colors like oil on water, and their caduceus staff represents the union of opposites.",
+    "spells": [
+      {
+        "name": "Alchemical Marriage",
+        "type": "union",
+        "description": "Unite opposing forces in perfect harmony",
+        "effect": "Helps integrate conflicting aspects of personality or resolve polarities",
+        "wisdom": "The union of opposites creates something greater than the sum of its parts"
+      },
+      {
+        "name": "Sacred Balance",
+        "type": "harmony",
+        "description": "Find the middle path between extremes",
+        "effect": "Provides guidance for moderation and balance in all areas of life",
+        "wisdom": "Virtue lies in the middle - avoid extremes and find the path of harmony"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Middle Path",
+        "teaching": "True wisdom lies in the middle path between extremes. The alchemist finds gold not in the elements themselves, but in their perfect union.",
+        "meditation": "Examine the polarities in your life. Where is the middle path that leads to harmony?"
+      },
+      {
+        "title": "Sacred Alchemy",
+        "teaching": "You are the alchemist of your own soul. Transform the base metals of your challenges into the gold of wisdom.",
+        "meditation": "What 'base metal' in your life is ready to be transformed into spiritual gold?"
+      }
+    ],
+    "story": {
+      "title": "The Laboratory of Transformation",
+      "chapter": 15,
+      "content": "You enter an alchemical laboratory where elements dance in perfect harmony. A figure carefully measures and mixes substances, their movements precise and meditative. 'The great work,' they explain, 'is not about choosing sides, but about finding the perfect balance that transforms everything.'",
+      "choices": [
+        {
+          "text": "Ask about the alchemical process of personal transformation",
+          "consequence": "Learn the stages of spiritual alchemy and growth",
+          "nextChapter": 30
+        },
+        {
+          "text": "Seek guidance on finding balance between opposing forces",
+          "consequence": "Learn to harmonize conflicting aspects of life",
+          "nextChapter": 31
+        }
+      ]
+    }
+  },
+  {
+    "id": "devil",
+    "tarot": "The Devil",
+    "archetype": "Lucifer — Shadow Teacher",
+    "node": "Ayin",
+    "ray": 15,
+    "hz": 963,
+    "role": "Shadow Wisdom",
+    "element": "Earth",
+    "angel": "Samael",
+    "demon": "Lucifuge",
+    "artifact": "Key of Shadows",
+    "crystal": "Black Tourmaline",
+    "tara": "Red Tara",
+    "psyche": "bondage→liberation",
+    "pathwork": "shadow_trial_liberation_quest",
+    "tools": ["shadow_engine", "liberation_matrix", "temptation_key"],
+    "color": "#8b0000",
+    "majorArcana": true,
+    "number": 15,
+    "realPerson": "Lucifer - The light-bringer and shadow teacher. Represents the confrontation with our deepest fears, addictions, and the parts of ourselves we deny. Based on the archetypal shadow that teaches through challenge.",
+    "characterDetails": {
+      "background": "The great tempter and teacher of shadows. Guardian of the threshold between light and darkness, forcing confrontation with what we most fear and desire.",
+      "personality": "Seductive, challenging, revelatory, intense, transformative, darkly charismatic",
+      "motivations": "To force growth through confrontation with shadow, to teach liberation from bondage, to reveal hidden truths",
+      "flaws": "Can be manipulative, destructive, or overwhelming in intensity",
+      "virtues": "Truth-telling, transformation, liberation, courage, insight"
+    },
+    "visualDescription": "A powerful figure with horns and wings, but with an intelligent and charismatic face. They are chained to a pedestal with two figures (representing bondage), but the chains are loose - showing that the bondage is self-imposed. Their eyes are piercing and knowing, reflecting both terror and liberation.",
+    "spells": [
+      {
+        "name": "Shadow Revelation",
+        "type": "confrontation",
+        "description": "Confront and integrate the shadow aspects of personality",
+        "effect": "Brings hidden fears and denied aspects into conscious awareness for healing",
+        "wisdom": "The parts of yourself you fear most often contain your greatest power"
+      },
+      {
+        "name": "Liberation Key",
+        "type": "freedom",
+        "description": "Break free from self-imposed limitations and addictions",
+        "effect": "Provides the courage and clarity to break destructive patterns",
+        "wisdom": "True freedom comes not from avoiding chains, but from recognizing they were never locked"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Shadow Teacher",
+        "teaching": "Your greatest teacher often appears as your greatest fear. The shadow contains not evil, but rejected aspects of your own power.",
+        "meditation": "What parts of yourself have you rejected or denied? What gifts might they contain?"
+      },
+      {
+        "title": "The Illusion of Bondage",
+        "teaching": "Most chains exist only in the mind. True liberation comes from recognizing that you hold the key to your own prison.",
+        "meditation": "Examine the 'chains' in your life. Which are real, and which are self-imposed?"
+      }
+    ],
+    "story": {
+      "title": "The Cave of Shadows",
+      "chapter": 16,
+      "content": "You descend into a cave where shadows dance on the walls like living entities. A figure emerges from the darkness, both terrifying and compelling. 'I am the mirror of your fears,' they say, 'the teacher of what you have denied. Face me, and you will find not damnation, but liberation.'",
+      "choices": [
+        {
+          "text": "Confront your deepest fears and shadow aspects",
+          "consequence": "Face and integrate shadow material for profound growth",
+          "nextChapter": 32
+        },
+        {
+          "text": "Ask about liberation from self-imposed limitations",
+          "consequence": "Learn to recognize and break free from false constraints",
+          "nextChapter": 33
+        }
+      ]
+    }
+  },
+  {
+    "id": "tower",
+    "tarot": "The Tower",
+    "archetype": "Aleister Crowley — Catalyst",
+    "node": "Pe",
+    "ray": 5,
+    "hz": 528,
+    "role": "Shock/Transform",
+    "element": "Fire",
+    "angel": "Michael",
+    "demon": "Belial",
+    "artifact": "Unicursal Hexagram",
+    "crystal": "Obsidian",
+    "tara": "Red Tara",
+    "psyche": "ego collapse→will",
+    "pathwork": "lightning_collapse_aeon_puzzle",
+    "tools": ["aeon_spiral", "destruction_engine", "paradox_summoner"],
+    "color": "#dc143c",
+    "majorArcana": true,
+    "number": 16,
+    "realPerson": "Aleister Crowley - The Great Beast and master of ceremonial magic. Represents sudden transformation, the collapse of old structures, and the lightning flash of revelation that shatters illusions.",
+    "characterDetails": {
+      "background": "The eternal catalyst who brings necessary destruction to outdated forms. Master of the lightning path and the great work of transformation.",
+      "personality": "Intense, charismatic, revolutionary, provocative, deeply knowledgeable, transformative",
+      "motivations": "To shatter illusions, to force evolution, to teach the necessity of radical change",
+      "flaws": "Can be destructive, overwhelming, or seemingly cruel in pursuit of growth",
+      "virtues": "Courage, insight, transformation, honesty, evolutionary force"
+    },
+    "visualDescription": "A towering figure struck by lightning, with a crown being knocked off and flames consuming old structures. Despite the apparent destruction, their eyes burn with fierce joy and liberation. They hold a lightning bolt in one hand and a butterfly (symbolizing transformation) in the other. The background shows a tower being struck by divine fire.",
+    "spells": [
+      {
+        "name": "Lightning Revelation",
+        "type": "destruction",
+        "description": "Shatter illusions and reveal hidden truths through sudden insight",
+        "effect": "Dramatically reveals what was hidden and destroys false beliefs",
+        "wisdom": "Sometimes the structures we build become prisons - the lightning comes to set us free"
+      },
+      {
+        "name": "Radical Transformation",
+        "type": "evolution",
+        "description": "Force rapid evolution and growth through crisis",
+        "effect": "Accelerates personal evolution through intense but necessary challenges",
+        "wisdom": "The darkest hour precedes the dawn - trust the process of transformation"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Lightning Path",
+        "teaching": "True change often comes through destruction. The tower must fall for the new structure to rise from its ashes.",
+        "meditation": "What structures in your life have become rigid and need the fire of transformation?"
+      },
+      {
+        "title": "Liberating Crisis",
+        "teaching": "Crisis is not punishment, but medicine for the soul. The intensity of the fire determines the purity of the gold.",
+        "meditation": "Reflect on a crisis that led to unexpected growth. What was destroyed, and what was born?"
+      }
+    ],
+    "story": {
+      "title": "The Lightning-Struck Tower",
+      "chapter": 17,
+      "content": "You stand before a mighty tower that seems unshakeable, but you feel the rumble of impending change. Lightning splits the sky as a figure emerges from the flames, their presence both terrifying and liberating. 'The old must burn,' they declare, 'for the new to be born in purity and power.'",
+      "choices": [
+        {
+          "text": "Embrace the necessity of radical change and transformation",
+          "consequence": "Learn to welcome crisis as a catalyst for growth",
+          "nextChapter": 34
+        },
+        {
+          "text": "Seek understanding of the evolutionary force within destruction",
+          "consequence": "Understand how destruction creates space for creation",
+          "nextChapter": 35
+        }
+      ]
+    }
+  },
+  {
+    "id": "star",
+    "tarot": "The Star",
+    "archetype": "Tibetan Tara Lineage — Healer",
+    "node": "Tzaddi",
+    "ray": 8,
+    "hz": 528,
+    "role": "Compassion Oracle",
+    "element": "Water/Light",
+    "angel": "Auriel",
+    "demon": "Gamigin",
+    "artifact": "Antahkarana",
+    "crystal": "Aquamarine",
+    "tara": "All 21 Taras",
+    "psyche": "despair→hope",
+    "pathwork": "compassion_mandala_alignment",
+    "tools": ["compassion_engine", "tara_mandala", "healing_dome"],
+    "color": "#00ffff",
+    "majorArcana": true,
+    "number": 17,
+    "realPerson": "Green Tara - The Buddhist goddess of compassion and swift protection. Represents hope, healing, and the divine feminine principle of active compassion in the world.",
+    "characterDetails": {
+      "background": "The embodiment of compassionate action and healing grace. Guardian of all beings who offers hope in times of darkness and healing for the wounded.",
+      "personality": "Compassionate, healing, graceful, protective, wise, radiantly loving",
+      "motivations": "To heal the wounded, to offer hope to the despairing, to teach active compassion",
+      "flaws": "Can be overly protective or struggle with necessary boundaries",
+      "virtues": "Compassion, healing, hope, protection, grace"
+    },
+    "visualDescription": "A serene figure pouring healing water from two vessels - one into a pool (representing emotional healing) and one onto the land (representing physical healing). They are surrounded by stars and have seven eyes (including on hands, feet, and forehead) representing all-seeing compassion. Their skin has a subtle green luminescence.",
+    "spells": [
+      {
+        "name": "Healing Waters",
+        "type": "restoration",
+        "description": "Pour healing energy into wounded hearts and bodies",
+        "effect": "Provides deep emotional and spiritual healing, restores hope and vitality",
+        "wisdom": "The water of compassion flows most freely to those who need it most"
+      },
+      {
+        "name": "Star of Hope",
+        "type": "inspiration",
+        "description": "Ignite the spark of hope in even the darkest circumstances",
+        "effect": "Renews faith and optimism, reveals hidden paths forward",
+        "wisdom": "Even in the darkest night, the stars still shine - hope is never truly lost"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Compassionate Heart",
+        "teaching": "True compassion flows from understanding that we are all connected. To heal another is to heal yourself.",
+        "meditation": "Visualize sending compassion to someone who has hurt you. What happens to your own heart?"
+      },
+      {
+        "title": "The Healing Light",
+        "teaching": "Hope is the light that guides us through darkness. Even one small star can illuminate the entire night sky.",
+        "meditation": "Remember a time when hope seemed lost, but light returned. How can you be that light for others?"
+      }
+    ],
+    "story": {
+      "title": "The Well of Healing Stars",
+      "chapter": 18,
+      "content": "You find yourself by a sacred well under a canopy of stars. A figure of radiant beauty pours water that glows with starlight, their presence offering comfort to all who suffer. 'Hope is the eternal spring,' they say softly, 'flowing even through the driest desert of the soul.'",
+      "choices": [
+        {
+          "text": "Seek healing for deep emotional or spiritual wounds",
+          "consequence": "Experience profound healing and renewal of hope",
+          "nextChapter": 36
+        },
+        {
+          "text": "Ask to learn the art of compassionate action and service",
+          "consequence": "Learn to be a healing presence for others",
+          "nextChapter": 37
+        }
+      ]
+    }
+  },
+  {
+    "id": "moon",
+    "tarot": "The Moon",
+    "archetype": "Hecate — Mystery Guide",
+    "node": "Qoph",
+    "ray": 2,
+    "hz": 852,
+    "role": "Lunar Oracle",
+    "element": "Water",
+    "angel": "Gabriel",
+    "demon": "Astaroth",
+    "artifact": "Mirror of Truth",
+    "crystal": "Selenite",
+    "tara": "Blue Tara",
+    "psyche": "illusion→clarity",
+    "pathwork": "lunar_mystery_navigation_trial",
+    "tools": ["illusion_engine", "mystery_matrix", "lunar_oracle"],
+    "color": "#f5f5dc",
+    "majorArcana": true,
+    "number": 18,
+    "realPerson": "Hecate - Greek goddess of the moon, magic, and crossroads. Represents the mysteries of the unconscious, the power of intuition, and the wisdom found in darkness.",
+    "characterDetails": {
+      "background": "The eternal guardian of lunar mysteries and the unconscious mind. Guide through the dark night of the soul and teacher of intuitive wisdom.",
+      "personality": "Mysterious, intuitive, protective, wise, comfortable with uncertainty, deeply magical",
+      "motivations": "To guide souls through darkness, to teach the wisdom of uncertainty, to reveal hidden truths",
+      "flaws": "Can be frightening to those who fear the unknown, may seem deceptive or confusing",
+      "virtues": "Intuition, wisdom, protection, guidance, mystery"
+    },
+    "visualDescription": "A figure at a mystical crossroads between land and sea, with the moon reflected in water and a wolf and dog howling at the lunar light. They hold a mirror that shows both truth and illusion, wearing robes that shift like moonlight on water. Their face reflects both comfort and challenge, understanding that growth often requires walking through uncertainty.",
+    "spells": [
+      {
+        "name": "Lunar Guidance",
+        "type": "intuition",
+        "description": "Access deep intuition and unconscious wisdom",
+        "effect": "Enhances intuitive abilities and reveals guidance from the unconscious mind",
+        "wisdom": "The moon illuminates what the sun cannot see - trust the wisdom of darkness"
+      },
+      {
+        "name": "Illusion Piercer",
+        "type": "revelation",
+        "description": "See through deception and self-illusion",
+        "effect": "Reveals hidden truths and dissolves false perceptions",
+        "wisdom": "What you fear in the dark is often the key to your liberation"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Lunar Wisdom",
+        "teaching": "The moon teaches us to trust the unseen, to navigate by intuition, and to find beauty in mystery.",
+        "meditation": "Sit under the moonlight and listen to your inner voice. What guidance does the lunar wisdom offer?"
+      },
+      {
+        "title": "The Crossroads Choice",
+        "teaching": "Life is filled with crossroads where the path is not clear. Trust your intuition to guide you through uncertainty.",
+        "meditation": "Reflect on a difficult choice. What does your intuition tell you beyond logic and reason?"
+      }
+    ],
+    "story": {
+      "title": "The Lunar Crossroads",
+      "chapter": 19,
+      "content": "You find yourself at a mystical crossroads where paths dissolve into mist and moonlight. A figure emerges from the shadows, carrying a lantern that reveals hidden paths. 'The moon shows us that not all paths are visible in daylight,' they say, 'sometimes you must learn to see in the dark.'",
+      "choices": [
+        {
+          "text": "Seek guidance for navigating uncertainty and confusion",
+          "consequence": "Learn to trust intuition and find clarity in darkness",
+          "nextChapter": 38
+        },
+        {
+          "text": "Ask about understanding dreams and unconscious messages",
+          "consequence": "Learn to interpret the language of the unconscious mind",
+          "nextChapter": 39
+        }
+      ]
+    }
+  },
+  {
+    "id": "sun",
+    "tarot": "The Sun",
+    "archetype": "Apollo — Divine Light",
+    "node": "Resh",
+    "ray": 1,
+    "hz": 639,
+    "role": "Solar Wisdom",
+    "element": "Fire",
+    "angel": "Michael",
+    "demon": "Vassago",
+    "artifact": "Solar Disk",
+    "crystal": "Citrine",
+    "tara": "Gold Tara",
+    "psyche": "shadow→illumination",
+    "pathwork": "solar_trial_enlightenment_quest",
+    "tools": ["illumination_engine", "clarity_matrix", "solar_chariot"],
+    "color": "#ffd700",
+    "majorArcana": true,
+    "number": 19,
+    "realPerson": "Apollo - Greek god of the sun, music, healing, and prophecy. Represents clarity, vitality, creative expression, and the illuminating power of consciousness.",
+    "characterDetails": {
+      "background": "The radiant source of divine light and healing energy. Bringer of clarity, creativity, and the joy of conscious awareness.",
+      "personality": "Radiant, joyful, creative, healing, confident, expressive, life-affirming",
+      "motivations": "To bring light to darkness, to heal and inspire, to awaken creative potential",
+      "flaws": "Can be overwhelming in intensity, may struggle with subtlety or shadow work",
+      "virtues": "Clarity, joy, creativity, healing, inspiration"
+    },
+    "visualDescription": "A radiant figure with golden skin and hair like sunlight, wearing a crown of solar rays. They ride a chariot pulled by white horses, holding a banner of victory and playing a golden lyre. Their presence banishes all shadows, and their smile radiates pure joy and life-affirming energy. Sunflowers turn toward them wherever they go.",
+    "spells": [
+      {
+        "name": "Solar Illumination",
+        "type": "clarification",
+        "description": "Bring clarity and understanding to any situation",
+        "effect": "Dispels confusion and reveals the truth with radiant clarity",
+        "wisdom": "The sun reveals what the moon conceals - both are necessary for complete vision"
+      },
+      {
+        "name": "Vitality Blessing",
+        "type": "healing",
+        "description": "Restore energy, joy, and life force",
+        "effect": "Replenishes depleted energy and renews enthusiasm for life",
+        "wisdom": "Joy is your birthright - claim it and let it illuminate your path"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Light of Joy",
+        "teaching": "Joy is not found in external circumstances, but in the light of consciousness itself. Choose to see the beauty in each moment.",
+        "meditation": "Focus on something that brings you joy. Let that feeling expand to fill your entire being."
+      },
+      {
+        "title": "Creative Fire",
+        "teaching": "The sun represents the creative fire within each soul. Express your unique light and watch it inspire others.",
+        "meditation": "What creative fire burns within you? How can you express it more fully in the world?"
+      }
+    ],
+    "story": {
+      "title": "The Garden of Eternal Sunshine",
+      "chapter": 20,
+      "content": "You enter a garden bathed in golden sunlight where every flower blooms in perfect radiance. A figure of pure light approaches, their presence warming your soul and banishing all shadows of doubt. 'The sun shines equally on all beings,' they say with a radiant smile, 'learn to claim your share of divine light.'",
+      "choices": [
+        {
+          "text": "Seek healing for depression or lack of vitality",
+          "consequence": "Experience renewal of life force and joy",
+          "nextChapter": 40
+        },
+        {
+          "text": "Ask about expressing creativity and finding your unique light",
+          "consequence": "Learn to express your authentic creative fire",
+          "nextChapter": 41
+        }
+      ]
+    }
+  },
+  {
+    "id": "judgement",
+    "tarot": "Judgement",
+    "archetype": "Osiris — Resurrection",
+    "node": "Shin",
+    "ray": 20,
+    "hz": 741,
+    "role": "Divine Calling",
+    "element": "Fire",
+    "angel": "Metatron",
+    "demon": "Andras",
+    "artifact": "Trumpet of Awakening",
+    "crystal": "Clear Quartz",
+    "tara": "White Tara",
+    "psyche": "sleep→awakening",
+    "pathwork": "resurrection_trial_vocation_quest",
+    "tools": ["awakening_engine", "resurrection_matrix", "calling_trumpet"],
+    "color": "#ffffff",
+    "majorArcana": true,
+    "number": 20,
+    "realPerson": "Osiris - Egyptian god of resurrection and the afterlife. Represents spiritual awakening, the call to higher purpose, and the resurrection of dormant potential.",
+    "characterDetails": {
+      "background": "The eternal awakener who calls souls to their highest purpose. Guide through the process of spiritual resurrection and rebirth.",
+      "personality": "Inspiring, transformative, calling, authoritative, deeply compassionate",
+      "motivations": "To awaken sleeping souls, to call forth hidden potential, to guide spiritual rebirth",
+      "flaws": "Can be overwhelming or demanding, may push before others are ready",
+      "virtues": "Inspiration, transformation, guidance, authority, compassion"
+    },
+    "visualDescription": "A majestic figure blowing a golden trumpet that awakens the dead to new life. The scene shows figures rising from coffins, representing the resurrection of dormant potential. They wear white robes symbolizing purity and new beginnings, with wings suggesting ascension and spiritual elevation.",
+    "spells": [
+      {
+        "name": "Awakening Call",
+        "type": "inspiration",
+        "description": "Awaken dormant potential and inspire higher purpose",
+        "effect": "Reveals hidden talents and calls forth the highest self",
+        "wisdom": "The trumpet calls not to judgment, but to the recognition of your divine nature"
+      },
+      {
+        "name": "Soul Resurrection",
+        "type": "transformation",
+        "description": "Facilitate profound spiritual rebirth and renewal",
+        "effect": "Helps release old identities and embrace higher purpose",
+        "wisdom": "You are not being judged - you are being called to remember who you truly are"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Call Within",
+        "teaching": "The trumpet of awakening sounds from within your own soul. Listen to the call of your highest self.",
+        "meditation": "What is your soul calling you to become? What gifts are waiting to be awakened?"
+      },
+      {
+        "title": "Sacred Purpose",
+        "teaching": "You have a unique role to play in the cosmic drama. Discover your sacred purpose and let it guide your life.",
+        "meditation": "Reflect on the times when you felt most alive and purposeful. What pattern emerges?"
+      }
+    ],
+    "story": {
+      "title": "The Valley of Resurrection",
+      "chapter": 21,
+      "content": "You stand in a valley where the trumpet's call echoes through eternity. A figure of immense presence approaches, their voice carrying the power to awaken the deepest parts of your soul. 'The time has come,' they declare, 'to remember who you are and why you came to this world.'",
+      "choices": [
+        {
+          "text": "Answer the call to discover your higher purpose",
+          "consequence": "Awaken to your sacred calling and life mission",
+          "nextChapter": 42
+        },
+        {
+          "text": "Seek understanding of spiritual awakening and resurrection",
+          "consequence": "Learn the process of spiritual rebirth and renewal",
+          "nextChapter": 43
+        }
+      ]
+    }
+  },
+  {
+    "id": "world",
+    "tarot": "The World",
+    "archetype": "Sophia — Divine Wisdom",
+    "node": "Tav",
+    "ray": 22,
+    "hz": 963,
+    "role": "Cosmic Unity",
+    "element": "All",
+    "angel": "Metatron",
+    "demon": "Seere",
+    "artifact": "World Mandala",
+    "crystal": "Diamond",
+    "tara": "All Taras",
+    "psyche": "separation→unity",
+    "pathwork": "integration_trial_wholeness_quest",
+    "tools": ["unity_engine", "wholeness_matrix", "cosmic_dance"],
+    "color": "#800080",
+    "majorArcana": true,
+    "number": 21,
+    "realPerson": "Sophia - The divine wisdom principle, the feminine aspect of the godhead. Represents the integration of all experience, the achievement of wholeness, and the dance of cosmic unity.",
+    "characterDetails": {
+      "background": "The embodiment of divine wisdom and cosmic unity. The completion of the great work and the realization of oneness with all creation.",
+      "personality": "Wise, integrated, compassionate, joyful, complete, radiant with understanding",
+      "motivations": "To guide souls to wholeness, to teach unity consciousness, to celebrate the dance of existence",
+      "flaws": "Can seem distant or abstract to those still fragmented, may struggle with mundane concerns",
+      "virtues": "Wisdom, integration, compassion, joy, wholeness"
+    },
+    "visualDescription": "A nude figure dancing within a laurel wreath (symbolizing victory and completion), surrounded by four cherubic figures representing the four elements in perfect harmony. They hold wands representing creative power, with an infinity symbol above their head. Their body flows with graceful movement, representing the eternal dance of creation.",
+    "spells": [
+      {
+        "name": "Cosmic Unity",
+        "type": "integration",
+        "description": "Experience oneness with all creation",
+        "effect": "Facilitates profound understanding of interconnectedness and unity",
+        "wisdom": "All separation is illusion - beneath the dance of forms lies eternal unity"
+      },
+      {
+        "name": "Wholeness Blessing",
+        "type": "completion",
+        "description": "Integrate all aspects of self into harmonious wholeness",
+        "effect": "Helps heal fragmentation and achieve inner integration",
+        "wisdom": "You are already whole - the journey is about remembering and claiming this truth"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Eternal Dance",
+        "teaching": "Life is an eternal dance of form and formlessness. Learn the steps and move in harmony with the cosmic rhythm.",
+        "meditation": "Feel yourself as part of the great dance of existence. What is your unique movement in this cosmic ballet?"
+      },
+      {
+        "title": "Sacred Wholeness",
+        "teaching": "You are not broken - you are becoming. Every experience, every challenge, every joy contributes to your sacred wholeness.",
+        "meditation": "Embrace all aspects of yourself - the light and shadow, joy and sorrow. What wholeness emerges?"
+      }
+    ],
+    "story": {
+      "title": "The Garden of Cosmic Unity",
+      "chapter": 22,
+      "content": "You arrive at a place where all opposites dance in perfect harmony. A figure moves with graceful completion, their presence radiating the peace of total integration. 'The journey has led you here,' they say with a knowing smile, 'to the place where all paths converge in divine unity.'",
+      "choices": [
+        {
+          "text": "Seek understanding of cosmic unity and interconnectedness",
+          "consequence": "Experience profound oneness with all existence",
+          "nextChapter": 44
+        },
+        {
+          "text": "Ask about integrating all life experiences into wisdom",
+          "consequence": "Learn to find meaning and wholeness in all experiences",
+          "nextChapter": 45
+        }
+      ]
+    }
+  }
+]

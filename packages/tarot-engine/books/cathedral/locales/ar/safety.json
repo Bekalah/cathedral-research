@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "language": "ar",
+    "language_name": "العربية",
+    "file": "safety.json",
+    "status": "placeholder",
+    "completion": "0%",
+    "translator_notes": "This file contains placeholder translations for العربية. Please translate all values while keeping keys unchanged.",
+    "cultural_notes": "Consider cultural sensitivity and spiritual appropriateness for العربية speakers.",
+    "rtl": true
+  },
+  "emergency": {
+    "pause_button": "[TRANSLATE:ar] EMERGENCY PAUSE",
+    "pause_activated": "[TRANSLATE:ar] Emergency pause activated. You are completely safe.",
+    "pause_message": "[TRANSLATE:ar] Take a deep breath. You are in control. You can leave at any time.",
+    "pause_instructions": "[TRANSLATE:ar] Press Space to continue when ready, or Escape to safely exit.",
+    "exit_available": "[TRANSLATE:ar] Safe exit is always available",
+    "you_are_safe": "[TRANSLATE:ar] You are safe here",
+    "breathe_reminder": "[TRANSLATE:ar] Remember to breathe deeply",
+    "ground_yourself": "[TRANSLATE:ar] Feel your feet on the ground"
+  },
+  "trauma_informed": {
+    "consent_required": "[TRANSLATE:ar] All interactions require your explicit consent",
+    "boundaries_respected": "[TRANSLATE:ar] Your boundaries are completely respected",
+    "safe_container": "[TRANSLATE:ar] This is a safe, contained space for exploration",
+    "professional_support": "[TRANSLATE:ar] Professional therapeutic support is recommended",
+    "not_therapy": "[TRANSLATE:ar] This is not therapy, but trauma-informed spiritual practice",
+    "trigger_warning": "[TRANSLATE:ar] Content may include spiritual themes and archetypal material",
+    "pace_yourself": "[TRANSLATE:ar] Go at your own pace - there is no rush",
+    "self_compassion": "[TRANSLATE:ar] Please practice self-compassion and self-care",
+    "integration_time": "[TRANSLATE:ar] Allow time for integration of experiences",
+    "community_support": "[TRANSLATE:ar] Supportive community resources are available"
+  },
+  "consent": {
+    "explicit_required": "[TRANSLATE:ar] Explicit consent is required for all activities",
+    "can_withdraw": "[TRANSLATE:ar] You can withdraw consent at any time",
+    "informed_choice": "[TRANSLATE:ar] You have the right to make informed choices",
+    "no_pressure": "[TRANSLATE:ar] There is no pressure to participate in anything",
+    "your_autonomy": "[TRANSLATE:ar] Your autonomy and agency are paramount",
+    "ask_questions": "[TRANSLATE:ar] Please ask questions if anything is unclear",
+    "comfort_level": "[TRANSLATE:ar] Only engage at your comfort level",
+    "respect_limits": "[TRANSLATE:ar] Your limits and boundaries will be respected"
+  },
+  "grounding": {
+    "breathing_space": "[TRANSLATE:ar] Take space to breathe if needed",
+    "grounding_techniques": "[TRANSLATE:ar] Grounding techniques are available",
+    "feel_your_body": "[TRANSLATE:ar] Notice your body and physical sensations",
+    "present_moment": "[TRANSLATE:ar] You are safe in this present moment",
+    "solid_ground": "[TRANSLATE:ar] Feel the solid ground beneath you",
+    "supportive_space": "[TRANSLATE:ar] This is a supportive, contained space",
+    "gentle_awareness": "[TRANSLATE:ar] Bring gentle awareness to your experience",
+    "self_regulation": "[TRANSLATE:ar] Use your self-regulation skills as needed"
+  },
+  "cptsd_adaptations": {
+    "hypervigilance_support": "[TRANSLATE:ar] Hypervigilance is understood and accommodated",
+    "emotional_regulation": "[TRANSLATE:ar] Emotional regulation support is available",
+    "dissociation_awareness": "[TRANSLATE:ar] Dissociation experiences are normalized",
+    "flashback_protocol": "[TRANSLATE:ar] Flashback support protocols are in place",
+    "attachment_safety": "[TRANSLATE:ar] Secure attachment patterns are modeled",
+    "shame_resilience": "[TRANSLATE:ar] Shame-resilient environment maintained",
+    "inner_critic_work": "[TRANSLATE:ar] Inner critic compassion practices available",
+    "parts_work_safe": "[TRANSLATE:ar] Internal parts work is done safely"
+  },
+  "neurodivergent_safety": {
+    "sensory_accommodations": "[TRANSLATE:ar] Full sensory accommodations provided",
+    "processing_time": "[TRANSLATE:ar] Extended processing time is completely normal",
+    "stimming_welcome": "[TRANSLATE:ar] Stimming and self-regulation movements are welcome",
+    "overwhelm_prevention": "[TRANSLATE:ar] Overwhelm prevention measures are active",
+    "executive_function": "[TRANSLATE:ar] Executive function supports are available",
+    "communication_styles": "[TRANSLATE:ar] All communication styles are respected",
+    "masking_unnecessary": "[TRANSLATE:ar] Masking is unnecessary - be authentically yourself",
+    "neurodivergent_celebration": "[TRANSLATE:ar] Neurodivergent ways of being are celebrated"
+  },
+  "crisis_resources": {
+    "crisis_text": "[TRANSLATE:ar] Crisis Text Line: Text HOME to 741741",
+    "suicide_prevention": "[TRANSLATE:ar] 988 Suicide & Crisis Lifeline",
+    "domestic_violence": "[TRANSLATE:ar] National Domestic Violence Hotline: 1-800-799-7233",
+    "rainn_hotline": "[TRANSLATE:ar] RAINN Sexual Assault Hotline: 1-800-656-4673",
+    "lgbtq_support": "[TRANSLATE:ar] Trevor Project: 1-866-488-7386",
+    "crisis_disclaimer": "[TRANSLATE:ar] In case of emergency, please contact local emergency services",
+    "professional_help": "[TRANSLATE:ar] Please seek professional help for mental health concerns",
+    "not_replacement": "[TRANSLATE:ar] This platform does not replace professional therapeutic care"
+  },
+  "warnings": {
+    "spiritual_content": "[TRANSLATE:ar] Contains spiritual and archetypal content",
+    "deep_work": "[TRANSLATE:ar] Involves deep psychological and spiritual exploration",
+    "transformation": "[TRANSLATE:ar] May catalyze personal transformation processes",
+    "integration_needed": "[TRANSLATE:ar] Integration time and support recommended",
+    "not_for_crisis": "[TRANSLATE:ar] Not appropriate during acute mental health crises",
+    "professional_guidance": "[TRANSLATE:ar] Professional therapeutic guidance recommended",
+    "community_support": "[TRANSLATE:ar] Engage with supportive community members"
+  }
+}

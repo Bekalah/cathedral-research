@@ -1,0 +1,16 @@
+{
+  "name": "@cathedral/codex-engine",
+  "version": "1.0.0",
+  "description": "Documentation and knowledge base engine",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "rollup -c --watch",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "keywords": ["documentation", "knowledge", "codex", "research"]
+}

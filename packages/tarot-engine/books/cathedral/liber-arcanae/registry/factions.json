@@ -1,0 +1,50 @@
+{
+  "merge_strategy": "append",
+  "schema_version": "1.0.0",
+  "factions": [
+    {
+      "id": "order-of-cups",
+      "name": "Order of Cups",
+      "element": "Water",
+      "virtues": ["Compassion", "Dream", "Chaos Magic"],
+      "conflicts_with": ["order-of-swords"],
+      "cathedral_zones": ["rose-choir", "lunar-sanctum", "dream-laboratory"],
+      "synthesizer_labs": ["station-03-afklint", "station-08-nihonga"],
+      "schema_version": "1.0.0",
+      "source_refs": ["Fortune: Mystical Qabalah", "Kuan Yin liturgy"]
+    },
+    {
+      "id": "order-of-swords",
+      "name": "Order of Swords",
+      "element": "Air",
+      "virtues": ["Clarity", "Law", "Word"],
+      "conflicts_with": ["order-of-cups"],
+      "cathedral_zones": ["crystal-spire", "library-sanctum", "logic-engine"],
+      "synthesizer_labs": ["station-08-nihonga", "station-05-vienna"],
+      "schema_version": "1.0.0",
+      "source_refs": ["Dee: Enochian", "Thelema: Liber AL"]
+    },
+    {
+      "id": "order-of-wands",
+      "name": "Order of Wands",
+      "element": "Fire",
+      "virtues": ["Passion", "Creation", "Will"],
+      "conflicts_with": ["order-of-pentacles"],
+      "cathedral_zones": ["forge-atrium", "solar-dome", "creation-engine"],
+      "synthesizer_labs": ["station-09-synthwave", "station-06-giger"],
+      "schema_version": "1.0.0",
+      "source_refs": ["Agrippa: De Occulta", "Solar rites"]
+    },
+    {
+      "id": "order-of-pentacles",
+      "name": "Order of Pentacles",
+      "element": "Earth",
+      "virtues": ["Stability", "Manifestation", "Abundance"],
+      "conflicts_with": ["order-of-wands"],
+      "cathedral_zones": ["foundation-crypt", "earth-sanctum", "material-laboratory"],
+      "synthesizer_labs": ["station-01-obsidian", "station-07-folk"],
+      "schema_version": "1.0.0",
+      "source_refs": ["Practical Kabbalah", "Earth mysteries"]
+    }
+  ]
+}

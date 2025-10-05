@@ -1,0 +1,672 @@
+[
+  {
+    "id": "ace-pentacles",
+    "tarot": "Ace of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 1,
+    "astrology": "Taurus, Virgo, Capricorn",
+    "chakra": "Root",
+    "crystal": "Jade",
+    "tara": "Green Tara",
+    "color": "#228b22",
+    "majorArcana": false,
+    "realPerson": "The Material Seed - represents new material opportunities, financial beginnings, and the initial spark of manifestation in the physical world.",
+    "characterDetails": {
+      "background": "The embodiment of material potential and the seed of abundance, representing the beginning of all physical manifestation and material success.",
+      "personality": "Grounded, practical, abundant, prosperous, materialistic, security-oriented",
+      "motivations": "To create material security, to manifest abundance, to build lasting foundations",
+      "flaws": "Can be overly materialistic, greedy, or resistant to change",
+      "virtues": "Practicality, abundance, security, manifestation, groundedness"
+    },
+    "visualDescription": "A hand emerging from clouds holding a golden pentacle with a star symbol, surrounded by blooming lilies and roses. The background shows a fertile garden with a path leading to mountains, representing material opportunity and grounded manifestation.",
+    "spells": [
+      {
+        "name": "Material Seed",
+        "type": "manifestation",
+        "description": "Plant the seeds of material success and abundance",
+        "effect": "Initiates new opportunities for financial and material growth",
+        "wisdom": "All great achievements begin with a single seed of intention"
+      },
+      {
+        "name": "Grounded Foundation",
+        "type": "stability",
+        "description": "Build strong foundations for material security",
+        "effect": "Provides stability and security in material matters",
+        "wisdom": "The tallest trees have the deepest roots"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Seed of Abundance",
+        "teaching": "Every great fortune begins with a single seed of intention. Plant your dreams in fertile soil and watch them grow.",
+        "meditation": "Visualize a seed of golden light in your heart. What material dreams do you wish to manifest?"
+      },
+      {
+        "title": "Material Wisdom",
+        "teaching": "True abundance flows from alignment with natural laws. Work with the earth, not against it, and prosperity will follow.",
+        "meditation": "Connect with the earth beneath you. Feel the abundance of the planet flowing through your roots."
+      }
+    ],
+    "story": {
+      "title": "The Garden of Golden Seeds",
+      "chapter": "Pentacles 1",
+      "content": "You discover a garden where golden pentacles grow like flowers, each representing a seed of material potential. A hand emerges from the clouds offering you the first pentacle. 'Material abundance,' a grounded voice says, 'begins with a single seed of intention.'",
+      "choices": [
+        {
+          "text": "Plant seeds of material success and abundance",
+          "consequence": "Initiate new financial opportunities, build material security",
+          "nextChapter": "Pentacles 2"
+        },
+        {
+          "text": "Study the pentacle to understand material manifestation",
+          "consequence": "Gain practical wisdom, understand material laws",
+          "nextChapter": "Pentacles 3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "two-pentacles",
+    "tarot": "Two of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 2,
+    "astrology": "Jupiter in Capricorn",
+    "chakra": "Sacral",
+    "crystal": "Tiger's Eye",
+    "tara": "Gold Tara",
+    "color": "#daa520",
+    "majorArcana": false,
+    "realPerson": "The Balanced Manager - represents juggling responsibilities, adaptability, and finding balance in material matters.",
+    "characterDetails": {
+      "background": "The skilled juggler who maintains balance while managing multiple material responsibilities and opportunities.",
+      "personality": "Adaptable, organized, balanced, practical, multi-tasking, grounded",
+      "motivations": "To maintain balance, to manage resources effectively, to adapt to change",
+      "flaws": "Can be scattered, overly busy, or neglect deeper needs",
+      "virtues": "Adaptability, organization, balance, practicality, resourcefulness"
+    },
+    "visualDescription": "A figure dancing while juggling two pentacles connected by an infinity symbol, representing the balance between different material aspects and the flow of resources.",
+    "spells": [
+      {
+        "name": "Balanced Resources",
+        "type": "management",
+        "description": "Maintain balance while managing multiple material responsibilities",
+        "effect": "Helps juggle different aspects of life and work effectively",
+        "wisdom": "Balance is not about doing everything - it's about doing the right things at the right time"
+      },
+      {
+        "name": "Adaptable Flow",
+        "type": "flexibility",
+        "description": "Adapt to changing material circumstances with grace",
+        "effect": "Provides flexibility and adaptability in material matters",
+        "wisdom": "The tree that bends in the wind survives the storm"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Dance of Balance",
+        "teaching": "Life is a dance of balancing multiple responsibilities. Learn to flow with the rhythm rather than fight against it.",
+        "meditation": "Visualize yourself juggling different aspects of your life. What would graceful balance look like?"
+      },
+      {
+        "title": "Resource Harmony",
+        "teaching": "All resources are interconnected. When you balance one area, you create harmony in all areas.",
+        "meditation": "Examine the different 'pentacles' in your life. How can you bring them into greater harmony?"
+      }
+    ],
+    "story": {
+      "title": "The Juggler's Dance",
+      "chapter": "Pentacles 2",
+      "content": "You find yourself in a bustling marketplace where a figure dances gracefully while juggling two pentacles connected by an infinity symbol. The rhythm of commerce flows around you. 'Balance in motion,' a rhythmic voice says, 'is the key to material harmony.'",
+      "choices": [
+        {
+          "text": "Learn to balance multiple material responsibilities",
+          "consequence": "Develop organization skills, manage resources effectively",
+          "nextChapter": "Pentacles 4"
+        },
+        {
+          "text": "Adapt gracefully to changing material circumstances",
+          "consequence": "Build flexibility, thrive in changing conditions",
+          "nextChapter": "Pentacles 5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "three-pentacles",
+    "tarot": "Three of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 3,
+    "astrology": "Mars in Capricorn",
+    "chakra": "Solar Plexus",
+    "crystal": "Citrine",
+    "tara": "Gold Tara",
+    "color": "#ffd700",
+    "majorArcana": false,
+    "realPerson": "The Master Craftsperson - represents skill development, collaboration, and the creation of lasting material works.",
+    "characterDetails": {
+      "background": "The skilled artisan who collaborates with others to create works of lasting value and material significance.",
+      "personality": "Skilled, collaborative, detail-oriented, quality-focused, team-oriented",
+      "motivations": "To create quality work, to collaborate effectively, to build lasting value",
+      "flaws": "Can be perfectionistic, overly critical, or struggle with delegation",
+      "virtues": "Skill, collaboration, quality, craftsmanship, teamwork"
+    },
+    "visualDescription": "Three figures working together on a cathedral-like structure, each contributing their unique skills. An architect, a craftsperson, and a patron collaborate in perfect harmony.",
+    "spells": [
+      {
+        "name": "Collaborative Creation",
+        "type": "teamwork",
+        "description": "Work effectively with others to create something greater",
+        "effect": "Enhances collaboration and team dynamics for shared success",
+        "wisdom": "The whole is greater than the sum of its parts when hearts and hands work together"
+      },
+      {
+        "name": "Skill Mastery",
+        "type": "development",
+        "description": "Develop and refine practical skills and abilities",
+        "effect": "Accelerates learning and mastery of practical crafts and skills",
+        "wisdom": "True mastery comes from the marriage of knowledge and practice"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Power of Collaboration",
+        "teaching": "Great works are rarely created alone. Learn to value and integrate the skills of others in your creative process.",
+        "meditation": "Reflect on people whose skills complement yours. How can you create something greater together?"
+      },
+      {
+        "title": "Craftsmanship Wisdom",
+        "teaching": "Quality work requires patience, attention to detail, and a willingness to learn from mistakes.",
+        "meditation": "What craft or skill are you developing? How can you approach it with greater patience and care?"
+      }
+    ],
+    "story": {
+      "title": "The Workshop of Creation",
+      "chapter": "Pentacles 3",
+      "content": "You enter a workshop where three master craftspersons collaborate on a magnificent structure. Each brings unique skills - design, execution, and vision. 'Great works,' a skilled voice says, 'require the harmony of many hands and hearts.'",
+      "choices": [
+        {
+          "text": "Collaborate with others to create something meaningful",
+          "consequence": "Build teamwork skills, create lasting value",
+          "nextChapter": "Pentacles 6"
+        },
+        {
+          "text": "Focus on developing your individual skills and craftsmanship",
+          "consequence": "Achieve mastery, become a respected expert",
+          "nextChapter": "Pentacles 7"
+        }
+      ]
+    }
+  },
+  {
+    "id": "four-pentacles",
+    "tarot": "Four of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 4,
+    "astrology": "Sun in Capricorn",
+    "chakra": "Root",
+    "crystal": "Pyrite",
+    "tara": "Gold Tara",
+    "color": "#daa520",
+    "majorArcana": false,
+    "realPerson": "The Security Builder - represents material security, conservation, and the wise management of resources.",
+    "characterDetails": {
+      "background": "The prudent guardian who understands the importance of material security and the wisdom of conservation.",
+      "personality": "Secure, conservative, practical, possessive, grounded, responsible",
+      "motivations": "To build security, to conserve resources, to create stability",
+      "flaws": "Can be overly possessive, miserly, or resistant to necessary risk",
+      "virtues": "Security, practicality, responsibility, conservation, stability"
+    },
+    "visualDescription": "A figure sitting securely on a throne, holding one pentacle close to their chest while two more are at their feet and one crowns their head, representing material security and possession.",
+    "spells": [
+      {
+        "name": "Material Security",
+        "type": "protection",
+        "description": "Build and maintain material security and stability",
+        "effect": "Provides protection for material assets and financial security",
+        "wisdom": "True security comes not from hoarding, but from wise management and generous sharing"
+      },
+      {
+        "name": "Resource Conservation",
+        "type": "wisdom",
+        "description": "Use resources wisely and avoid waste",
+        "effect": "Helps make practical decisions about resource allocation",
+        "wisdom": "The wise steward knows when to hold and when to release"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Foundation of Security",
+        "teaching": "Material security provides the foundation for spiritual and creative pursuits. Build wisely but don't let security become a prison.",
+        "meditation": "What does security mean to you? How can you build it without becoming attached to it?"
+      },
+      {
+        "title": "Wise Stewardship",
+        "teaching": "All resources are temporary gifts. Learn to use them wisely while they are in your care.",
+        "meditation": "Reflect on your relationship with material possessions. What do you truly need versus what you desire?"
+      }
+    ],
+    "story": {
+      "title": "The Vault of Security",
+      "chapter": "Pentacles 4",
+      "content": "You enter a secure vault where a figure sits surrounded by pentacles representing different forms of material security. One is held close, two are at their feet, and one crowns their head. 'Security,' a measured voice says, 'is the foundation from which true freedom grows.'",
+      "choices": [
+        {
+          "text": "Build material security and financial stability",
+          "consequence": "Create solid foundations, achieve financial peace",
+          "nextChapter": "Pentacles 8"
+        },
+        {
+          "text": "Learn to balance security with generosity and risk",
+          "consequence": "Develop wisdom in resource management",
+          "nextChapter": "Pentacles 9"
+        }
+      ]
+    }
+  },
+  {
+    "id": "five-pentacles",
+    "tarot": "Five of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 5,
+    "astrology": "Mercury in Taurus",
+    "chakra": "Heart",
+    "crystal": "Rose Quartz",
+    "tara": "Pink Tara",
+    "color": "#ff69b4",
+    "majorArcana": false,
+    "realPerson": "The Hardship Survivor - represents material hardship, loss, and the process of rebuilding after financial or material difficulties.",
+    "characterDetails": {
+      "background": "The resilient soul who has experienced material loss and hardship, learning the deeper lessons of true value and spiritual wealth.",
+      "personality": "Resilient, humble, compassionate, spiritually aware, growth-oriented",
+      "motivations": "To rebuild after loss, to find meaning in hardship, to help others in need",
+      "flaws": "Can be overly focused on loss, struggle with trust, or become bitter",
+      "virtues": "Resilience, compassion, spiritual depth, wisdom, generosity"
+    },
+    "visualDescription": "Two figures walk through snow past a illuminated church window, one on crutches, both poorly dressed, representing material hardship and spiritual seeking.",
+    "spells": [
+      {
+        "name": "Rebuilding Strength",
+        "type": "restoration",
+        "description": "Rebuild material foundations after loss or hardship",
+        "effect": "Provides strength and resources for recovery and rebuilding",
+        "wisdom": "What is lost in the material can be gained in the spiritual"
+      },
+      {
+        "name": "Compassionate Aid",
+        "type": "healing",
+        "description": "Find help and support during times of material need",
+        "effect": "Attracts assistance and support from unexpected sources",
+        "wisdom": "The greatest wealth is found in the connections we build with others"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Gift of Loss",
+        "teaching": "Material loss clears space for spiritual growth. What seems like hardship often brings the greatest blessings.",
+        "meditation": "Reflect on material losses in your life. What spiritual or emotional growth emerged from those experiences?"
+      },
+      {
+        "title": "True Wealth",
+        "teaching": "Material wealth is temporary, but the wealth of the spirit is eternal. Learn to value what truly matters.",
+        "meditation": "What forms of wealth in your life are truly lasting? How can you cultivate spiritual abundance?"
+      }
+    ],
+    "story": {
+      "title": "The Storm of Loss",
+      "chapter": "Pentacles 5",
+      "content": "You walk through a harsh winter landscape, feeling the bite of material hardship. Two figures pass by a warmly lit church, one struggling with injury, both seeking shelter. 'Hardship,' a compassionate voice says, 'often leads to the greatest spiritual discoveries.'",
+      "choices": [
+        {
+          "text": "Seek help and support during material difficulties",
+          "consequence": "Find community support, rebuild with assistance",
+          "nextChapter": "Pentacles 10"
+        },
+        {
+          "text": "Learn the spiritual lessons of material hardship",
+          "consequence": "Find meaning in loss, develop spiritual wealth",
+          "nextChapter": "Pentacles 11"
+        }
+      ]
+    }
+  },
+  {
+    "id": "six-pentacles",
+    "tarot": "Six of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 6,
+    "astrology": "Moon in Taurus",
+    "chakra": "Heart",
+    "crystal": "Green Aventurine",
+    "tara": "Green Tara",
+    "color": "#228b22",
+    "majorArcana": false,
+    "realPerson": "The Generous Benefactor - represents generosity, sharing, and the flow of resources between those who have and those in need.",
+    "characterDetails": {
+      "background": "The wise steward who understands that true abundance comes from sharing and that generosity creates a flow of prosperity.",
+      "personality": "Generous, compassionate, balanced, fair, community-oriented, wise",
+      "motivations": "To share resources, to help others, to create community abundance",
+      "flaws": "Can be overly generous, taken advantage of, or neglect personal needs",
+      "virtues": "Generosity, compassion, fairness, community, wisdom"
+    },
+    "visualDescription": "A wealthy figure on a platform shares pentacles with two kneeling figures, representing the balanced flow of resources and the importance of generous sharing.",
+    "spells": [
+      {
+        "name": "Generous Flow",
+        "type": "abundance",
+        "description": "Create a generous flow of resources and opportunities",
+        "effect": "Attracts abundance through generous sharing and community support",
+        "wisdom": "The more you give, the more flows back to you from unexpected sources"
+      },
+      {
+        "name": "Balanced Exchange",
+        "type": "harmony",
+        "description": "Create fair and balanced exchanges of resources",
+        "effect": "Helps establish fair relationships in business and personal matters",
+        "wisdom": "True generosity creates a flow that benefits both giver and receiver"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Flow of Generosity",
+        "teaching": "Generosity creates a flow of abundance. When you give freely, you open channels for receiving in unexpected ways.",
+        "meditation": "Reflect on acts of generosity in your life. How has giving created flow and abundance for you?"
+      },
+      {
+        "title": "Sacred Exchange",
+        "teaching": "All relationships involve exchange. Learn to give and receive with gratitude and wisdom.",
+        "meditation": "What can you share generously today? How does giving change your relationship with abundance?"
+      }
+    ],
+    "story": {
+      "title": "The Scales of Generosity",
+      "chapter": "Pentacles 6",
+      "content": "You witness a beautiful exchange where a figure on a platform shares pentacles with those below, creating a balanced flow of resources. The act of giving seems to create abundance for all involved. 'True wealth,' a generous voice says, 'flows through generous hearts.'",
+      "choices": [
+        {
+          "text": "Practice generous sharing and community support",
+          "consequence": "Create abundance, build community connections",
+          "nextChapter": "Pentacles 12"
+        },
+        {
+          "text": "Learn to receive as well as give in the flow of abundance",
+          "consequence": "Balance giving and receiving, create sustainable flow",
+          "nextChapter": "Pentacles 13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "seven-pentacles",
+    "tarot": "Seven of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 7,
+    "astrology": "Saturn in Taurus",
+    "chakra": "Root",
+    "crystal": "Garnet",
+    "tara": "Red Tara",
+    "color": "#8b0000",
+    "majorArcana": false,
+    "realPerson": "The Patient Gardener - represents patience, long-term planning, and the wisdom of waiting for the right time to harvest.",
+    "characterDetails": {
+      "background": "The wise farmer who understands that great achievements require patience, planning, and the willingness to wait for the perfect moment.",
+      "personality": "Patient, planning, contemplative, long-term thinking, grounded, wise",
+      "motivations": "To plan for the future, to wait for the right timing, to build lasting success",
+      "flaws": "Can be overly cautious, miss opportunities, or struggle with impatience",
+      "virtues": "Patience, planning, wisdom, foresight, perseverance"
+    },
+    "visualDescription": "A figure leans on a staff contemplating a bush bearing seven pentacles, representing the patient waiting for investments to mature and the contemplation of long-term results.",
+    "spells": [
+      {
+        "name": "Patient Growth",
+        "type": "planning",
+        "description": "Plan for long-term success with patience and wisdom",
+        "effect": "Provides foresight and patience for long-term projects",
+        "wisdom": "The greatest achievements require the patience to let things develop in their own time"
+      },
+      {
+        "name": "Investment Wisdom",
+        "type": "foresight",
+        "description": "Make wise long-term investments of time and resources",
+        "effect": "Helps identify opportunities that will bear fruit in the future",
+        "wisdom": "Plant seeds today whose shade you may never sit under"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Patience of the Gardener",
+        "teaching": "Nature teaches us that growth happens in its own time. Learn to plant seeds and trust the process of development.",
+        "meditation": "What seeds have you planted in your life? How can you trust their natural timing for growth?"
+      },
+      {
+        "title": "Long-term Vision",
+        "teaching": "True success is built over time. Focus on the foundation that will support lasting achievement.",
+        "meditation": "What long-term goals are you working toward? How can you maintain patience during the growth process?"
+      }
+    ],
+    "story": {
+      "title": "The Garden of Patience",
+      "chapter": "Pentacles 7",
+      "content": "You enter a garden where a figure leans contemplatively on a staff, watching over seven pentacles growing on a single bush. The air is filled with the quiet wisdom of patience. 'Great things,' a patient voice says, 'require time to reach their full potential.'",
+      "choices": [
+        {
+          "text": "Develop patience for long-term goals and investments",
+          "consequence": "Build foresight, achieve lasting success",
+          "nextChapter": "Pentacles 14"
+        },
+        {
+          "text": "Learn to trust the timing of your material growth",
+          "consequence": "Find peace in patience, avoid forced growth",
+          "nextChapter": "Pentacles 15"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eight-pentacles",
+    "tarot": "Eight of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 8,
+    "astrology": "Sun in Virgo",
+    "chakra": "Sacral",
+    "crystal": "Citrine",
+    "tara": "Gold Tara",
+    "color": "#ffd700",
+    "majorArcana": false,
+    "realPerson": "The Dedicated Apprentice - represents skill development, craftsmanship, and the commitment to mastering a trade or skill.",
+    "characterDetails": {
+      "background": "The dedicated learner who finds joy and fulfillment in the process of skill development and craftsmanship.",
+      "personality": "Dedicated, focused, patient, detail-oriented, committed, skilled",
+      "motivations": "To master skills, to create quality work, to find fulfillment in craftsmanship",
+      "flaws": "Can be perfectionistic, overly focused, or neglect other areas of life",
+      "virtues": "Dedication, skill, patience, quality, craftsmanship"
+    },
+    "visualDescription": "A craftsperson working diligently at a bench, creating eight pentacles with focused attention to detail, representing the joy of skilled work and dedication to craft.",
+    "spells": [
+      {
+        "name": "Skill Development",
+        "type": "mastery",
+        "description": "Accelerate learning and mastery of practical skills",
+        "effect": "Enhances ability to learn and master new skills and crafts",
+        "wisdom": "True mastery comes from loving the process, not just achieving the result"
+      },
+      {
+        "name": "Quality Focus",
+        "type": "craftsmanship",
+        "description": "Create work of exceptional quality and attention to detail",
+        "effect": "Enhances focus and attention to detail in all endeavors",
+        "wisdom": "Quality is not an act - it is a habit developed through dedicated practice"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Joy of Craft",
+        "teaching": "True fulfillment comes from loving what you do. When you find joy in the process, mastery follows naturally.",
+        "meditation": "What activities bring you joy through the process itself? How can you cultivate more of this in your life?"
+      },
+      {
+        "title": "Dedicated Practice",
+        "teaching": "Every master was once a beginner. Dedication to practice transforms potential into skill.",
+        "meditation": "What skill are you developing? How can you approach your practice with greater love and dedication?"
+      }
+    ],
+    "story": {
+      "title": "The Workshop of Mastery",
+      "chapter": "Pentacles 8",
+      "content": "You enter a workshop where a craftsperson works with focused dedication, creating pentacles with loving attention to detail. The atmosphere is one of peaceful concentration and joyful creation. 'Mastery,' a dedicated voice says, 'comes from loving the process of creation.'",
+      "choices": [
+        {
+          "text": "Dedicate yourself to mastering a skill or craft",
+          "consequence": "Achieve expertise, find fulfillment in skill development",
+          "nextChapter": "Pentacles 16"
+        },
+        {
+          "text": "Find joy in the process of creation and work",
+          "consequence": "Experience flow, discover passion in daily work",
+          "nextChapter": "Pentacles 17"
+        }
+      ]
+    }
+  },
+  {
+    "id": "nine-pentacles",
+    "tarot": "Nine of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 9,
+    "astrology": "Venus in Virgo",
+    "chakra": "Solar Plexus",
+    "crystal": "Emerald",
+    "tara": "Green Tara",
+    "color": "#228b22",
+    "majorArcana": false,
+    "realPerson": "The Independent Achiever - represents material success, independence, and the enjoyment of the fruits of one's labor.",
+    "characterDetails": {
+      "background": "The self-made individual who has achieved material success through their own efforts and now enjoys the rewards of disciplined work.",
+      "personality": "Independent, refined, successful, self-assured, cultured, disciplined",
+      "motivations": "To enjoy success, to maintain independence, to appreciate quality",
+      "flaws": "Can be overly self-reliant, isolated, or struggle with vulnerability",
+      "virtues": "Independence, discipline, refinement, success, self-assurance"
+    },
+    "visualDescription": "A refined figure in a luxurious garden, wearing elegant clothing, with a bird on their hand and pentacles arranged around them, representing material success and refined enjoyment.",
+    "spells": [
+      {
+        "name": "Independent Success",
+        "type": "achievement",
+        "description": "Achieve material success through your own efforts",
+        "effect": "Provides the discipline and focus needed for independent achievement",
+        "wisdom": "True success is built on the foundation of self-discipline and personal effort"
+      },
+      {
+        "name": "Refined Enjoyment",
+        "type": "appreciation",
+        "description": "Appreciate and enjoy the material success you have earned",
+        "effect": "Enhances ability to enjoy the fruits of your labor with gratitude",
+        "wisdom": "The greatest luxury is the freedom to enjoy what you have created"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Freedom of Independence",
+        "teaching": "True independence is built on the foundation of self-sufficiency. When you can stand alone, you can choose your connections freely.",
+        "meditation": "What forms of independence have you achieved? How do they give you freedom in your choices?"
+      },
+      {
+        "title": "Grateful Enjoyment",
+        "teaching": "Success is sweeter when you remember the effort it required. Enjoy your achievements with gratitude for the journey.",
+        "meditation": "Reflect on your achievements. How can you enjoy them more fully while remembering the growth they required?"
+      }
+    ],
+    "story": {
+      "title": "The Garden of Achievement",
+      "chapter": "Pentacles 9",
+      "content": "You wander through a luxurious garden where a refined figure enjoys the fruits of their labor. A bird sings on their hand, and pentacles arranged around them represent different forms of abundance. 'True success,' a cultured voice says, 'allows you to enjoy the beauty of what you have created.'",
+      "choices": [
+        {
+          "text": "Build independent success and material security",
+          "consequence": "Achieve self-sufficiency, enjoy the fruits of your labor",
+          "nextChapter": "Pentacles 18"
+        },
+        {
+          "text": "Learn to appreciate and enjoy your achievements",
+          "consequence": "Find gratitude, experience true enjoyment of success",
+          "nextChapter": "Pentacles 19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ten-pentacles",
+    "tarot": "Ten of Pentacles",
+    "suit": "pentacles",
+    "element": "Earth",
+    "number": 10,
+    "astrology": "Mercury in Virgo",
+    "chakra": "Crown",
+    "crystal": "Diamond",
+    "tara": "White Tara",
+    "color": "#ffffff",
+    "majorArcana": false,
+    "realPerson": "The Legacy Builder - represents lasting success, family legacy, and the creation of something that endures beyond one's lifetime.",
+    "characterDetails": {
+      "background": "The wise elder who has built a legacy of material and spiritual wealth that will benefit future generations.",
+      "personality": "Wise, generous, family-oriented, legacy-focused, successful, grounded",
+      "motivations": "To build lasting value, to create family wealth, to establish traditions",
+      "flaws": "Can be overly focused on material legacy, neglect spiritual matters, or be controlling",
+      "virtues": "Wisdom, generosity, legacy, family, stability"
+    },
+    "visualDescription": "A family scene with an elder, adults, and children, with ten pentacles arranged in a pattern representing family wealth and legacy, with a castle and archway in the background.",
+    "spells": [
+      {
+        "name": "Legacy Building",
+        "type": "creation",
+        "description": "Create something that will endure and benefit future generations",
+        "effect": "Provides wisdom and resources for building lasting value",
+        "wisdom": "The greatest gift you can give is a foundation for others to build upon"
+      },
+      {
+        "name": "Family Harmony",
+        "type": "relationship",
+        "description": "Create harmony and prosperity within family and community",
+        "effect": "Helps establish strong family bonds and shared prosperity",
+        "wisdom": "True wealth is measured by the love and harmony you create with others"
+      }
+    ],
+    "wisdom": [
+      {
+        "title": "The Gift of Legacy",
+        "teaching": "What you build today becomes the foundation for tomorrow. Create with the awareness that others will build upon your work.",
+        "meditation": "What legacy do you wish to leave? How can you build something that serves future generations?"
+      },
+      {
+        "title": "Family Wealth",
+        "teaching": "The greatest wealth is found in loving relationships. Material success means little without loved ones to share it with.",
+        "meditation": "Reflect on your family and community relationships. How can you build greater harmony and shared prosperity?"
+      }
+    ],
+    "story": {
+      "title": "The Hall of Legacy",
+      "chapter": "Pentacles 10",
+      "content": "You enter a grand hall where multiple generations gather in prosperity and harmony. An elder shares wisdom with the young, and ten pentacles represent the material and spiritual wealth of the family line. 'True legacy,' a wise voice says, 'is built on love, wisdom, and shared prosperity.'",
+      "choices": [
+        {
+          "text": "Build a legacy that benefits future generations",
+          "consequence": "Create lasting value, establish family prosperity",
+          "nextChapter": "Pentacles 20"
+        },
+        {
+          "text": "Focus on creating harmony in family and community",
+          "consequence": "Build strong relationships, create shared abundance",
+          "nextChapter": "Pentacles 21"
+        }
+      ]
+    }
+  }
+]
