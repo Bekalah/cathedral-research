@@ -8,7 +8,7 @@ console.log('🔧 Fixing JavaScript method syntax in HTML file...');
 
 try {
     // Read the file
-    let content = fs.readFileSync(htmlFile, 'utf8');
+    const content = fs.readFileSync(htmlFile, 'utf8');
     
     // Pattern to match method endings followed by new method declarations
     // This matches cases like:

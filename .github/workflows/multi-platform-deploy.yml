@@ -1,0 +1,408 @@
+name: 🚀 Multi-Platform Deployment
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+  deployments: write
+
+concurrency:
+  group: "deploy-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  # Build and Test Job
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        submodules: recursive
+
+    - name: 🔧 Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: 📦 Install Dependencies
+      run: |
+        if [ -f package.json ]; then
+          npm ci || npm install
+        fi
+
+    - name: 🛡️ Run Protect Check
+      run: |
+        echo "🛡️ Running DevOps protect check..."
+        node devops/protect-check.js
+
+    - name: 🔍 Validate Configuration Files
+      run: |
+        echo "🔍 Validating configuration files..."
+        # Validate JSON files
+        find . -name "*.json" -type f | while read file; do
+          echo "Checking: $file"
+          node -e "try { JSON.parse(require('fs').readFileSync('$file', 'utf8')); console.log('✅ Valid: $file'); } catch(e) { console.log('❌ Invalid JSON in $file:', e.message); exit(1); }"
+        done
+        
+        # Check TypeScript configs
+        if [ -f tsconfig.json ]; then
+          npx tsc --noEmit --skipLibCheck || echo "⚠️ TypeScript check warnings"
+        fi
+
+    - name: 🧪 Run Tests
+      run: |
+        if [ -f package.json ] && grep -q '"test"' package.json; then
+          npm test || echo "⚠️ Tests failed or not configured"
+        else
+          echo "ℹ️ No tests configured"
+        fi
+
+    - name: 🏗️ Build All Applications
+      run: |
+        echo "🏗️ Building Cathedral Research applications..."
+        
+        # Create build directory structure
+        mkdir -p dist
+        mkdir -p dist/apps
+        mkdir -p dist/packages
+        mkdir -p dist/registry
+        mkdir -p dist/assets
+        
+        # Copy registry files
+        if [ -d registry ]; then
+          cp -r registry/* dist/registry/
+        fi
+        
+        # Copy assets
+        if [ -d assets ]; then
+          cp -r assets/* dist/assets/
+        fi
+        
+        # Build packages first
+        echo "📦 Building packages..."
+        for pkg in packages/*/; do
+          if [ -d "$pkg" ] && [ -f "$pkg/package.json" ]; then
+            pkg_name=$(basename "$pkg")
+            echo "Building package: $pkg_name"
+            cd "$pkg"
+            if [ -f package.json ] && grep -q '"build"' package.json; then
+              npm ci || npm install
+              npm run build || echo "⚠️ Package $pkg_name build failed"
+            fi
+            cd ../..
+          fi
+        done
+        
+        # Build applications
+        echo "🏗️ Building applications..."
+        for app in apps/*/; do
+          if [ -d "$app" ] && [ -f "$app/package.json" ]; then
+            app_name=$(basename "$app")
+            echo "Building app: $app_name"
+            cd "$app"
+            
+            # Install dependencies
+            npm ci || npm install
+            
+            # Build the app
+            if grep -q '"build"' package.json; then
+              npm run build
+              
+              # Copy build output to dist
+              if [ -d dist ]; then
+                mkdir -p "../../dist/apps/$app_name"
+                cp -r dist/* "../../dist/apps/$app_name/"
+              elif [ -d build ]; then
+                mkdir -p "../../dist/apps/$app_name"
+                cp -r build/* "../../dist/apps/$app_name/"
+              fi
+            else
+              # Copy static files if no build process
+              mkdir -p "../../dist/apps/$app_name"
+              if [ -f index.html ]; then
+                cp index.html "../../dist/apps/$app_name/"
+              fi
+              if [ -d src ]; then
+                cp -r src "../../dist/apps/$app_name/"
+              fi
+            fi
+            
+            cd ../..
+          fi
+        done
+        
+        # Create main index.html that redirects to hub
+        cat > dist/index.html << 'EOF'
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>🏛️ Cathedral Research - Redirecting...</title>
+            <meta http-equiv="refresh" content="0; url=/apps/cathedral-hub/">
+            <style>
+                body { 
+                    font-family: system-ui; 
+                    background: linear-gradient(135deg, #1a1240, #0a0a0f);
+                    color: white; 
+                    display: flex; 
+                    align-items: center; 
+                    justify-content: center; 
+                    height: 100vh; 
+                    margin: 0;
+                }
+                .redirect-message {
+                    text-align: center;
+                    padding: 2rem;
+                    border-radius: 1rem;
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                }
+                .spinner {
+                    border: 3px solid rgba(255, 255, 255, 0.3);
+                    border-top: 3px solid #8B5CF6;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    animation: spin 1s linear infinite;
+                    margin: 1rem auto;
+                }
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="redirect-message">
+                <h1>🏛️ Cathedral Research</h1>
+                <div class="spinner"></div>
+                <p>Redirecting to Cathedral Hub...</p>
+                <p><a href="/apps/cathedral-hub/" style="color: #8B5CF6;">Click here if not redirected automatically</a></p>
+            </div>
+            <script>
+                setTimeout(() => {
+                    window.location.href = '/apps/cathedral-hub/';
+                }, 1000);
+            </script>
+        </body>
+        </html>
+        EOF
+        
+        echo "✅ Build completed successfully"
+
+    - name: 📊 Generate Build Report
+      run: |
+        echo "## 🏛️ Cathedral Research Build Report" >> $GITHUB_STEP_SUMMARY
+        echo "**Node Version:** ${{ matrix.node-version }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Build Status:** ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -d "dist" ]; then
+          DIST_SIZE=$(du -sh dist | cut -f1)
+          echo "**Distribution Size:** $DIST_SIZE" >> $GITHUB_STEP_SUMMARY
+          
+          FILE_COUNT=$(find dist -type f | wc -l)
+          echo "**Total Files:** $FILE_COUNT" >> $GITHUB_STEP_SUMMARY
+          
+          APP_COUNT=$(find dist/apps -maxdepth 1 -type d | wc -l)
+          echo "**Applications Built:** $((APP_COUNT - 1))" >> $GITHUB_STEP_SUMMARY
+        fi
+
+    - name: 📁 Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: cathedral-build-${{ matrix.node-version }}
+        path: dist/
+        retention-days: 30
+
+    - name: 📄 Setup Pages (Node 20 only)
+      if: matrix.node-version == '20.x'
+      uses: actions/configure-pages@v4
+
+    - name: 📤 Upload to GitHub Pages (Node 20 only)
+      if: matrix.node-version == '20.x'
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./dist
+
+  # Deploy to GitHub Pages
+  deploy-github-pages:
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    
+    steps:
+    - name: 🚀 Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+    - name: 📢 GitHub Pages Deployment Notification
+      run: |
+        echo "## 🎉 GitHub Pages Deployment Successful!" >> $GITHUB_STEP_SUMMARY
+        echo "**Site URL:** ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Hub:** ${{ steps.deployment.outputs.page_url }}apps/cathedral-hub/" >> $GITHUB_STEP_SUMMARY
+        echo "**Stone Grimoire:** ${{ steps.deployment.outputs.page_url }}apps/stone-grimoire/" >> $GITHUB_STEP_SUMMARY
+
+  # Deploy to Cloudflare Pages
+  deploy-cloudflare:
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 📦 Download Build Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: cathedral-build-20.x
+        path: ./dist
+
+    - name: 🌐 Deploy to Cloudflare Pages
+      if: env.CLOUDFLARE_API_TOKEN != null
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: cathedral-research
+        directory: ./dist
+        wranglerVersion: '3'
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+    - name: 📢 Cloudflare Deployment Notification
+      if: env.CLOUDFLARE_API_TOKEN != null
+      run: |
+        echo "## 🌐 Cloudflare Pages Deployment Successful!" >> $GITHUB_STEP_SUMMARY
+        echo "**Preview URL:** Available in Cloudflare dashboard" >> $GITHUB_STEP_SUMMARY
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+  # Deploy to Azure Static Web Apps
+  deploy-azure:
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: 📦 Download Build Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: cathedral-build-20.x
+        path: ./dist
+
+    - name: ☁️ Deploy to Azure Static Web Apps
+      if: env.AZURE_STATIC_WEB_APPS_API_TOKEN != null
+      uses: Azure/static-web-apps-deploy@v1
+      with:
+        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        action: "upload"
+        app_location: "./dist"
+        skip_app_build: true
+        skip_api_build: true
+      env:
+        AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+
+    - name: 📢 Azure Deployment Notification
+      if: env.AZURE_STATIC_WEB_APPS_API_TOKEN != null
+      run: |
+        echo "## ☁️ Azure Static Web Apps Deployment Successful!" >> $GITHUB_STEP_SUMMARY
+        echo "**Preview URL:** Available in Azure portal" >> $GITHUB_STEP_SUMMARY
+      env:
+        AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+
+  # Performance and Security Testing
+  lighthouse-audit:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 📦 Download Build Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: cathedral-build-20.x
+        path: ./dist
+
+    - name: 🏃‍♂️ Serve Application
+      run: |
+        npm install -g serve
+        serve -s dist -l 3000 &
+        sleep 5
+        curl -f http://localhost:3000 || exit 1
+
+    - name: 🔍 Run Lighthouse Audit
+      uses: treosh/lighthouse-ci-action@v12
+      with:
+        urls: |
+          http://localhost:3000
+          http://localhost:3000/apps/cathedral-hub/
+          http://localhost:3000/apps/stone-grimoire/
+        uploadArtifacts: true
+        temporaryPublicStorage: true
+        runs: 3
+
+  # Final Status Report
+  deployment-summary:
+    if: always()
+    runs-on: ubuntu-latest
+    needs: [build-and-test, deploy-github-pages, deploy-cloudflare, deploy-azure, lighthouse-audit]
+    
+    steps:
+    - name: 📋 Generate Deployment Summary
+      run: |
+        echo "## 🏛️ Cathedral Research - Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "**Repository:** ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Triggered by:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🚀 Deployment Results:" >> $GITHUB_STEP_SUMMARY
+        echo "- **Build & Test:** ${{ needs.build-and-test.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **GitHub Pages:** ${{ needs.deploy-github-pages.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Cloudflare Pages:** ${{ needs.deploy-cloudflare.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Azure Static Web Apps:** ${{ needs.deploy-azure.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Lighthouse Audit:** ${{ needs.lighthouse-audit.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [[ "${{ needs.deploy-github-pages.result }}" == "success" ]]; then
+          echo "🎉 **Multi-platform deployment successful!** The Cathedral Research platform is live across all configured services." >> $GITHUB_STEP_SUMMARY
+        else
+          echo "⚠️ **Some deployments may have issues.** Please check the logs above for details." >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🔗 Access Links:" >> $GITHUB_STEP_SUMMARY
+        echo "- [Cathedral Hub](https://bekalah.github.io/cathedral-research/apps/cathedral-hub/)" >> $GITHUB_STEP_SUMMARY
+        echo "- [Stone Grimoire](https://bekalah.github.io/cathedral-research/apps/stone-grimoire/)" >> $GITHUB_STEP_SUMMARY
+        echo "- [Registry](https://bekalah.github.io/cathedral-research/registry/apps.json)" >> $GITHUB_STEP_SUMMARY

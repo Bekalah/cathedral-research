@@ -54,7 +54,7 @@ class CircuitumCYOAEngine {
     }
     
     drawCard(suit = null, rank = null) {
-        let availableCards = this.unlockedCards.filter(cardId => {
+        const availableCards = this.unlockedCards.filter(cardId => {
             if (suit) return cardId.startsWith(suit);
             return true;
         });
@@ -589,7 +589,7 @@ class CircuitumCYOAEngine {
     
     getCardById(cardId) {
         // Enhanced card lookup for new structure
-        for (let suitName of ['WANDS', 'CUPS', 'SWORDS', 'PENTACLES']) {
+        for (const suitName of ['WANDS', 'CUPS', 'SWORDS', 'PENTACLES']) {
             const suit = this.minorArcana[suitName];
             if (suit && suit.cards && suit.cards[cardId]) {
                 return {...suit.cards[cardId], id: cardId, suit: suitName};
@@ -609,7 +609,7 @@ class CircuitumCYOAEngine {
         // Search both major and minor arcana
         const allCards = {...this.majorArcana, ...this.minorArcana.suits};
         
-        for (let suit of Object.values(allCards)) {
+        for (const suit of Object.values(allCards)) {
             if (suit.cards && suit.cards[cardId]) {
                 return suit.cards[cardId];
             }

@@ -6,7 +6,7 @@ const htmlFile = '/Users/rebeccalemke/Library/Mobile Documents/com~apple~CloudDo
 console.log('🔧 Comprehensively fixing ALL JavaScript method syntax errors...');
 
 try {
-    let content = fs.readFileSync(htmlFile, 'utf8');
+    const content = fs.readFileSync(htmlFile, 'utf8');
     
     // Split into lines for easier processing
     const lines = content.split('\n');

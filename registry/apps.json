@@ -1,6 +1,7 @@
 {
-  "version": "2.0.0",
-  "lastUpdated": "2025-10-05T00:00:00Z",
+  "version": "2.1.0-cathedral",
+  "last_updated": "2025-10-05T12:00:00Z",
+  "cathedral_release": "Cathedral Hub Integration",
   "registry": {
     "description": "Cathedral Research monorepo application registry",
     "maintainer": "Rebecca Lemke <rebecca@bekalah.com>",

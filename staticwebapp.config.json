@@ -1,0 +1,101 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "rewrite": "/apps/cathedral-hub/index.html"
+    },
+    {
+      "route": "/hub",
+      "rewrite": "/apps/cathedral-hub/index.html"
+    },
+    {
+      "route": "/hub/*",
+      "rewrite": "/apps/cathedral-hub/index.html"
+    },
+    {
+      "route": "/cathedral",
+      "rewrite": "/apps/cathedral-of-circuits/index.html"
+    },
+    {
+      "route": "/cathedral/*",
+      "rewrite": "/apps/cathedral-of-circuits/index.html"
+    },
+    {
+      "route": "/grimoire",
+      "rewrite": "/apps/stone-grimoire/index.html"
+    },
+    {
+      "route": "/grimoire/*",
+      "rewrite": "/apps/stone-grimoire/index.html"
+    },
+    {
+      "route": "/mystery",
+      "rewrite": "/apps/magical-mystery-house/index.html"
+    },
+    {
+      "route": "/mystery/*",
+      "rewrite": "/apps/magical-mystery-house/index.html"
+    },
+    {
+      "route": "/lab",
+      "rewrite": "/apps/arcanae-lab/index.html"
+    },
+    {
+      "route": "/lab/*",
+      "rewrite": "/apps/arcanae-lab/index.html"
+    },
+    {
+      "route": "/circuitum",
+      "rewrite": "/apps/circuitum99/index.html"
+    },
+    {
+      "route": "/circuitum/*",
+      "rewrite": "/apps/circuitum99/index.html"
+    },
+    {
+      "route": "/studio",
+      "rewrite": "/apps/synth-art-studio/index.html"
+    },
+    {
+      "route": "/studio/*",
+      "rewrite": "/apps/synth-art-studio/index.html"
+    },
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/registry/*",
+      "headers": {
+        "Cache-Control": "public, max-age=300"
+      }
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/apps/cathedral-hub/index.html",
+    "exclude": [
+      "/api/*",
+      "/registry/*",
+      "*.{css,scss,sass,js,ts,tsx,jsx,json,png,jpg,jpeg,gif,svg,ico,woff,woff2,ttf,eot,map}"
+    ]
+  },
+  "globalHeaders": {
+    "Cache-Control": "public, max-age=31536000, immutable",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-XSS-Protection": "1; mode=block"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".js": "application/javascript",
+    ".css": "text/css",
+    ".html": "text/html",
+    ".svg": "image/svg+xml"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/apps/cathedral-hub/index.html",
+      "statusCode": 200
+    }
+  }
+}

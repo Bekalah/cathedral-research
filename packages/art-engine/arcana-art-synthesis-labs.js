@@ -1383,7 +1383,7 @@ class ArcanaArtSynthesisLabs {
 
   // 🎚️ Control methods
   setArtParameter(parameter, value) {
-    if (this.artParameters.hasOwnProperty(parameter)) {
+    if (Object.prototype.hasOwnProperty.call(this.artParameters, parameter)) {
       this.artParameters[parameter] = value;
 
       // Apply parameter changes

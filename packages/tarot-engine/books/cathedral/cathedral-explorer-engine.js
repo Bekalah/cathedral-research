@@ -168,8 +168,8 @@ class CathedralOpenWorldEngine {
         const cathedralSpace = document.getElementById('cathedralSpace');
         const world = document.getElementById('cathedralWorld');
         
-        let isMoving = false;
-        let lastMousePosition = { x: 0, y: 0 };
+        const isMoving = false;
+        const lastMousePosition = { x: 0, y: 0 };
 
         // Mouse movement navigation
         document.addEventListener('mousemove', (e) => {

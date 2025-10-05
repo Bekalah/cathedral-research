@@ -1,0 +1,90 @@
+name = "cathedral-research"
+compatibility_date = "2024-10-01"
+pages_build_output_dir = "dist"
+
+[build]
+command = "npm run build"
+destination = "dist"
+
+[env.production]
+vars = { NODE_ENV = "production", VITE_ENVIRONMENT = "production" }
+
+[env.preview]
+vars = { NODE_ENV = "staging", VITE_ENVIRONMENT = "preview" }
+
+[[redirects]]
+from = "/"
+to = "/apps/cathedral-hub/index.html"
+status = 200
+
+[[redirects]]
+from = "/hub"
+to = "/apps/cathedral-hub/index.html"
+status = 200
+
+[[redirects]]
+from = "/cathedral"
+to = "/apps/cathedral-of-circuits/index.html"
+status = 200
+
+[[redirects]]
+from = "/grimoire"
+to = "/apps/stone-grimoire/index.html"
+status = 200
+
+[[redirects]]
+from = "/mystery"
+to = "/apps/magical-mystery-house/index.html"
+status = 200
+
+[[redirects]]
+from = "/lab"
+to = "/apps/arcanae-lab/index.html"
+status = 200
+
+[[redirects]]
+from = "/circuitum"
+to = "/apps/circuitum99/index.html"
+status = 200
+
+[[redirects]]
+from = "/studio"
+to = "/apps/synth-art-studio/index.html"
+status = 200
+
+# API routes (if needed)
+[[redirects]]
+from = "/api/*"
+to = "/api/:splat"
+status = 200
+
+# Registry routes
+[[redirects]]
+from = "/registry/*"
+to = "/registry/:splat"
+status = 200
+
+# Fallback for SPA routing
+[[redirects]]
+from = "/*"
+to = "/apps/cathedral-hub/index.html"
+status = 200
+
+[headers]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+
+[headers]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[headers]
+for = "/registry/*"
+[headers.values]
+Cache-Control = "public, max-age=300"
+Content-Type = "application/json"

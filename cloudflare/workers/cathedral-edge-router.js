@@ -69,7 +69,7 @@ async function handleAzureAPI(request, env, path) {
         const modifiedResponse = new Response(response.body, response);
         const headers = corsHeaders();
         
-        for (let [key, value] of response.headers.entries()) {
+        for (const [key, value] of response.headers.entries()) {
             if (!headers.has(key)) {
                 headers.set(key, value);
             }

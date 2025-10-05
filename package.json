@@ -1,6 +1,6 @@
 {
   "name": "cathedral-research-monorepo",
-  "version": "2.0.0",
+  "version": "2.1.0-cathedral",
   "description": "🏛️ Cathedral Research - Unified monorepo for mystical computing, AI-enhanced esoteric systems, and consciousness exploration",
   "type": "module",
   "private": true,
@@ -175,13 +175,22 @@
     "monorepo"
   ],
   "cathedral": {
-    "version": "2.0.0",
+    "version": "2.1.0-cathedral",
+    "codename": "Cathedral Hub Integration",
+    "release_date": "2025-10-05",
+    "major_features": [
+      "Cathedral Hub central navigation portal",
+      "Complete DevOps protect system",
+      "Multi-platform deployment pipeline",
+      "Enhanced TypeScript configuration",
+      "Comprehensive app registry system"
+    ],
     "systems": {
       "core": ["three-engine", "codex-14499", "tesseract-bridge"],
-      "applications": ["cathedral-of-circuits", "liber-arcanae", "stone-grimoire", "magical-mystery-house"],
-      "games": ["liber-arcanae-game"],
-      "tools": ["octagram-tools"],
-      "services": ["synthesis-engine", "art-engine", "holographic-interface"]
+      "applications": ["cathedral-hub", "cathedral-of-circuits", "stone-grimoire", "arcanae-lab", "magical-mystery-house"],
+      "packages": ["audio-engine", "art-engine", "codex-engine", "synthesis-engine"],
+      "tools": ["protect-check", "deployment-scripts"],
+      "infrastructure": ["registry", "devops", "workflows"]
     },
     "features": {
       "trauma-aware-design": true,
