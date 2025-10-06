@@ -1,16 +1,16 @@
 {
-  "name": "cathedral-research-monorepo",
-  "version": "2.1.0-cathedral",
-  "description": "🏛️ Cathedral Research - Unified monorepo for mystical computing, AI-enhanced esoteric systems, and consciousness exploration",
+  "name": "cathedral",
+  "version": "3.0.0-unified",
+  "description": "🏛️ Cathedral - The unified monorepo for mystical computing, AI-enhanced esoteric systems, and consciousness exploration",
   "type": "module",
   "private": true,
   "author": "Rebecca Lemke <rebecca@bekalah.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bekalah/cathedral-research.git"
+    "url": "https://github.com/Bekalah/cathedral.git"
   },
-  "homepage": "https://bekalah.github.io/cathedral-research",
+  "homepage": "https://bekalah.github.io/cathedral",
   "workspaces": [
     "apps/*",
     "packages/*",
