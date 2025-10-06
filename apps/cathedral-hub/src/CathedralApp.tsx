@@ -3,9 +3,20 @@ import Code14499Interface from './components/Code14499Interface';
 import './App.css';
 
 /**
- * Cathedral Hub - Main application integrating all systems
- * Features the Code 144:99 Angel Tech RPG experience
+ * 🏛️ CATHEDRAL HUB - Main Application
+ * 
+ * The central portal for the unified Cathedral of Consciousness system
+ * Integrating all sacred chambers, healing frequencies, and mystical experiences
  */
+
+import * as React from 'react'
+import CathedralUnifiedSystem from './CathedralUnifiedSystem'
+
+const CathedralApp: React.FC = () => {
+  return <CathedralUnifiedSystem />
+}
+
+export default CathedralApp
 function App() {
   const [activeMode, setActiveMode] = useState<'landing' | 'consciousness'>('landing');
 
@@ -289,7 +300,5 @@ function App() {
         }
       `}</style>
     </div>
-  );
+  )
 }
-
-export default App;
