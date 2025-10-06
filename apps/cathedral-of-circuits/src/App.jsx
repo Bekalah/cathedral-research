@@ -7,7 +7,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei';
 import './styles.css';
-import { CodexEngine } from '../../../../packages/codex-engine';
 
 function App() {
   // Core application state
@@ -92,9 +91,9 @@ function App() {
     }
   }, [selectedResearch, generationMode]);
 
-  // Example: log Codex info for creative research
+  // Example: log initialization info for creative research
   useEffect(() => {
-    console.log('Codex:', CodexEngine);
+    console.log('Cathedral of Circuits initializing...');
   }, []);
 
   const initializeFractalResearch = async () => {
@@ -316,40 +315,6 @@ function App() {
 
   const generateCircuitMap = () => {
     console.log('Generating circuit map...');
-    // Circuit map generation logic
-  };
-
-  // Missing utility functions
-  const getComplexityColor = (complexity) => {
-    const colors = ['#1a1a2e', '#16213e', '#0f3460', '#0e4b99', '#2e8b57', '#8b7355', '#cd853f', '#daa520', '#ffd700', '#ff6347'];
-    return colors[Math.min(complexity, colors.length - 1)] || colors[0];
-  };
-
-  const getFractalDescription = (id) => {
-    const descriptions = {
-      'mandelbrot': 'Classic Mandelbrot set with infinite complexity',
-      'julia': 'Julia set variations with mystical properties',
-      'sierpinski': 'Sierpinski triangle - ancient sacred geometry',
-      'dragon': 'Dragon curve - serpentine mystical patterns'
-    };
-    return descriptions[id] || 'Mystical fractal patterns await discovery';
-  };
-
-  const exportResearchData = () => {
-    const data = {
-      fractalProfile,
-      researchFindings,
-      mysticalAnalysis,
-      timestamp: new Date().toISOString()
-    };
-    console.log('Exporting research data:', data);
-    // Export logic here
-  };
-
-  const generateCircuitMap = () => {
-    console.log('Generating circuit map...');
-    // Circuit map generation logic
-  };
     return {
       nodes: Math.floor(Math.random() * 100) + 50,
       connections: Math.floor(Math.random() * 200) + 100,
@@ -384,19 +349,6 @@ function App() {
         category: 'technology'
       }
     ];
-  };
-
-  const handleResearchSelection = (researchType) => {
-    setSelectedResearch(researchType);
-    setShowDetails(true);
-  };
-
-  const getComplexityColor = (level) => {
-    const colors = {
-      1: '#2ecc71', 2: '#27ae60', 3: '#3498db', 4: '#9b59b6', 5: '#e74c3c',
-      6: '#e67e22', 7: '#f39c12', 8: '#f1c40f', 9: '#e8e8e8', 10: '#ffffff'
-    };
-    return colors[level] || '#95a5a6';
   };
 
   return (
@@ -627,7 +579,7 @@ function App() {
 
       <CymaticDemo />
       <div style={{marginTop:24, color:'#888'}}>
-        <strong>Codex Research:</strong> {CodexEngine.description}
+        <strong>Cathedral Research:</strong> Fractal Art & Research Engine • Game of Thrones meets Thierry Mugler
       </div>
     </div>
   );
@@ -867,5 +819,24 @@ const _FindingsTab = ({ findings }) => (
     </div>
   </div>
 );
+
+// Helper functions for components
+const getComplexityColor = (level) => {
+  const colors = {
+    1: '#2ecc71', 2: '#27ae60', 3: '#3498db', 4: '#9b59b6', 5: '#e74c3c',
+    6: '#e67e22', 7: '#f39c12', 8: '#f1c40f', 9: '#e8e8e8', 10: '#ffffff'
+  };
+  return colors[level] || '#95a5a6';
+};
+
+const getFractalDescription = (id) => {
+  const descriptions = {
+    'mandelbrot': 'Classic Mandelbrot set with infinite complexity',
+    'julia': 'Julia set variations with mystical properties',
+    'sierpinski': 'Sierpinski triangle - ancient sacred geometry',
+    'dragon': 'Dragon curve - serpentine mystical patterns'
+  };
+  return descriptions[id] || 'Mystical fractal patterns await discovery';
+};
 
 export default App;
