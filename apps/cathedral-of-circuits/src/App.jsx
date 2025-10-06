@@ -1,5 +1,7 @@
 /**
- * Cathedral of Circuits - Fractal Art & Research Engine
+ import { useState, useEffect, useRef } from 'react';
+// import { Canvas, useFrame } from '@react-three/fiber';
+// import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei';athedral of Circuits - Fractal Art & Research Engine
  * Game of Thrones meets Thierry Mugler in a dramatic mystical experience
  */
 
@@ -292,7 +294,7 @@ function App() {
     return colors[level] || '#95a5a6';
   };
 
-  const getFractalDescription = (id) => {
+  const _getFractalDescription = (id) => {
     const descriptions = {
       'mandelbrot': 'Classic Mandelbrot set with infinite complexity',
       'julia': 'Julia set variations with mystical properties',

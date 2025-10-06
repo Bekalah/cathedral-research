@@ -10,6 +10,16 @@ export interface EngineConfig {
   depth?: boolean;
   shadowMap?: boolean;
   toneMappingExposure?: number;
+  
+  // Camera configuration
+  fov?: number;
+  near?: number;
+  far?: number;
+  cameraPosition?: {
+    x: number;
+    y: number;
+    z: number;
+  };
 }
 
 export interface SacredGeometryProperties {

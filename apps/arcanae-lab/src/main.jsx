@@ -1,6 +1,5 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
+import ArcanaeLabApp from './App.jsx';
 
 // Wait for fonts to load
 document.fonts.ready.then(() => {
@@ -21,4 +20,4 @@ document.fonts.ready.then(() => {
 // Mount the React app
 const container = document.getElementById('app');
 const root = createRoot(container);
-root.render(<App />);
+root.render(<ArcanaeLabApp />);

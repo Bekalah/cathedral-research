@@ -3,15 +3,15 @@
  * Alexander McQueen meets Sacred Geometry in a couture mystical experience
  */
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei';
+import { useState, useEffect, useRef } from 'react';
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei';
 import { mysticalCrossReference } from '../../../src/services/mystical-cross-reference.js';
 import './styles.css';
 
 function App() {
   // Core application state
-  const [activeCard, setActiveCard] = useState(null);
+  const [_activeCard, _setActiveCard] = useState(null);
   const [selectedArchetype, setSelectedArchetype] = useState('the-fool');
   const [researchMode, setResearchMode] = useState('exploration');
   const [visualizationMode, setVisualizationMode] = useState('archetype');
@@ -25,13 +25,68 @@ function App() {
   const [harmonicAnalysis, setHarmonicAnalysis] = useState(null);
 
   // UI state
-  const [showDetails, setShowDetails] = useState(false);
+  const [_showDetails, setShowDetails] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
-  const [filterElement, setFilterElement] = useState('all');
+  const [_filterElement, _setFilterElement] = useState('all');
+  const [activeRealm, setActiveRealm] = useState('hermetic');
 
-  // Refs for 3D scene management
-  const sceneRef = useRef();
-  const cameraRef = useRef();
+  // Refs for 3D scene management (currently unused but prepared for Three.js integration)
+  const _sceneRef = useRef();
+  const _cameraRef = useRef();
+
+  // Action handlers
+  const exportResearchData = () => {
+    const researchData = {
+      profile: archetypeProfile,
+      analysis: harmonicAnalysis,
+      crossReference: mysticalCrossReference,
+      timestamp: new Date().toISOString()
+    };
+    
+    const dataStr = JSON.stringify(researchData, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `cathedral-research-${Date.now()}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  const generateSymbolFusion = () => {
+    // Advanced symbol fusion logic for future Three.js integration
+    console.log('Generating symbol fusion...', { archetypeProfile, harmonicAnalysis });
+    setShowDetails(prev => !prev);
+  };
+
+  // Utility functions for visual elements
+  const getElementIcon = (element) => {
+    const icons = {
+      'fire': '🔥',
+      'water': '🌊', 
+      'air': '💨',
+      'earth': '🌍',
+      'aether': '✨',
+      'spirit': '👁️'
+    };
+    return icons[element?.toLowerCase()] || '⚪';
+  };
+
+  const getRayColor = (rayNumber) => {
+    const rayColors = {
+      1: '#ff4444', // Will/Power - Red
+      2: '#4444ff', // Love/Wisdom - Blue  
+      3: '#ffff44', // Active Intelligence - Yellow
+      4: '#44ff44', // Harmony/Beauty - Green
+      5: '#ff8844', // Concrete Knowledge - Orange
+      6: '#ff44ff', // Devotion/Idealism - Magenta
+      7: '#8844ff'  // Ceremonial Order - Violet
+    };
+    return rayColors[rayNumber] || '#888888';
+  };
 
   // Enhanced realm configurations with high fantasy couture aesthetic
   const coutureRealms = [
@@ -187,7 +242,7 @@ function App() {
     return analysis;
   };
 
-  const getHarmonicPurpose = (harmonic, element) => {
+  const getHarmonicPurpose = (harmonic, _element) => {
     const purposes = {
       1: 'Foundation and grounding',
       2: 'Balance and harmony',
@@ -322,7 +377,7 @@ function App() {
             </div>
 
             <div className="archetype-grid">
-              {mysticalCrossReference.data?.tarot?.majorArcana?.map((card, index) => (
+              {mysticalCrossReference.data?.tarot?.majorArcana?.map((card, _index) => (
                 <div
                   key={card.id}
                   className={`archetype-card ${selectedArchetype === card.id ? 'selected' : ''}`}
