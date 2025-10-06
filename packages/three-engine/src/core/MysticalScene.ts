@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { EventEmitter } from 'events';
 import { CathedralLighting } from './CathedralLighting';
 import { MysticalMaterials } from './MysticalMaterials';
 import { EsotericPostProcessing } from './EsotericPostProcessing';
@@ -12,6 +11,48 @@ import {
   RenderCallback,
   EngineEventMap
 } from '../types/EngineTypes';
+
+// Browser-compatible EventEmitter implementation
+class BrowserEventEmitter {
+  private listeners: Map<string, Function[]> = new Map();
+
+  on(event: string, listener: Function): this {
+    if (!this.listeners.has(event)) {
+      this.listeners.set(event, []);
+    }
+    this.listeners.get(event)!.push(listener);
+    return this;
+  }
+
+  emit(event: string, ...args: any[]): boolean {
+    const eventListeners = this.listeners.get(event);
+    if (eventListeners) {
+      eventListeners.forEach(listener => listener(...args));
+      return true;
+    }
+    return false;
+  }
+
+  off(event: string, listener: Function): this {
+    const eventListeners = this.listeners.get(event);
+    if (eventListeners) {
+      const index = eventListeners.indexOf(listener);
+      if (index > -1) {
+        eventListeners.splice(index, 1);
+      }
+    }
+    return this;
+  }
+
+  removeAllListeners(event?: string): this {
+    if (event) {
+      this.listeners.delete(event);
+    } else {
+      this.listeners.clear();
+    }
+    return this;
+  }
+}
 
 // Import Azure client for AI integration
 // Note: Using dynamic import to avoid module resolution issues in build
