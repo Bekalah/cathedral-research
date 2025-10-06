@@ -67,7 +67,7 @@ import('../../../../src/services/azure-client.js').then(module => {
  * MysticalScene - Advanced Three.js scene with esoteric rendering capabilities
  * Provides a sophisticated foundation for mystical and sacred geometry visualizations
  */
-export class MysticalScene extends EventEmitter {
+export class MysticalScene extends BrowserEventEmitter {
   public scene: THREE.Scene;
   public camera: THREE.PerspectiveCamera;
   public renderer: THREE.WebGLRenderer;
