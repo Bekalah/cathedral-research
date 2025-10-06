@@ -16,7 +16,7 @@ import {
 // Import Azure client for AI integration
 // Note: Using dynamic import to avoid module resolution issues in build
 let azureClient: any = null;
-import('../../../src/services/azure-client.js').then(module => {
+import('../../../../src/services/azure-client.js').then(module => {
   azureClient = module.azureClient;
 }).catch(err => {
   console.warn('Azure client not available:', err);
