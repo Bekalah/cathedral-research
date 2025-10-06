@@ -1,0 +1,31 @@
+packages:
+  # Apps
+  - 'apps/*'
+  
+  # Packages
+  - 'packages/*'
+  
+  # Games
+  - 'games/*'
+  
+  # Tools
+  - 'tools/*'
+  
+  # Research tools
+  - 'research-tools/*'
+  
+  # Creative engines
+  - 'creative-engines/*'
+  
+  # Game engines
+  - 'game-engines/*'
+  
+  # Physics engines
+  - 'physics-engines/*'
+  
+  # Visualization engines
+  - 'visualization-engines/*'
+  
+  # Nested packages in tarot-engine
+  - 'packages/tarot-engine/books/cathedral/packages/*'
+  - 'packages/tarot-engine/books/cathedral/apps/*'
