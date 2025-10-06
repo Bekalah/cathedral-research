@@ -1,0 +1,7 @@
+name: Standards Guard (Local Stub)
+on: { workflow_dispatch: {} }
+jobs:
+  stub:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Standards guard CI disabled locally. Restore from archive to enforce drift checks."

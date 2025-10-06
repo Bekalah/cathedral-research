@@ -1,0 +1,142 @@
+name: 🏛️ Deploy Cathedral to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+          
+      - name: 💾 Get pnpm store directory
+        id: get_store_path
+        shell: bash
+        run: |
+          echo "store_path=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+          
+      - name: 🔄 Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.get_store_path.outputs.store_path }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+          
+      - name: 📚 Install dependencies
+        run: |
+          pnpm install --frozen-lockfile || pnpm install
+        
+      - name: 🏗️ Build Cathedral system
+        run: |
+          echo "🏗️ Building Cathedral deployment..."
+          mkdir -p _site
+          
+          # Copy main HTML files and assets
+          cp index.html _site/ 2>/dev/null || echo "No index.html found"
+          cp -r *.html _site/ 2>/dev/null || echo "No HTML files to copy"
+          cp -r *.css _site/ 2>/dev/null || echo "No CSS files to copy"  
+          cp -r *.js _site/ 2>/dev/null || echo "No JS files to copy"
+          
+          # Copy packages data
+          if [ -d "packages/data" ]; then
+            mkdir -p _site/packages
+            cp -r packages/data _site/packages/
+          fi
+          
+          # Try building web app if it exists
+          if [ -d "apps/web" ]; then
+            echo "🌐 Building web app..."
+            cd apps/web
+            npm install || pnpm install || echo "No package.json in apps/web"
+            npm run build || pnpm run build || echo "No build script found"
+            if [ -d "dist" ]; then
+              cp -r dist/* ../../_site/
+            fi
+            cd ../..
+          fi
+          
+          # Ensure we have an index file
+          if [ ! -f "_site/index.html" ]; then
+            echo "� Creating fallback index.html..."
+            cat > _site/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>🏛️ Cathedral of Circuits</title>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                  body { 
+                      font-family: Georgia, serif; 
+                      background: #0B0B0B; 
+                      color: #F8F5EF; 
+                      text-align: center; 
+                      padding: 2rem; 
+                  }
+                  h1 { color: #7A33FF; }
+                  .nav { margin: 2rem 0; }
+                  .nav a { 
+                      color: #4ECDC4; 
+                      text-decoration: none; 
+                      margin: 0 1rem; 
+                      padding: 0.5rem 1rem;
+                      border: 1px solid #7A33FF;
+                      border-radius: 8px;
+                  }
+                  .nav a:hover { background: #7A33FF; }
+              </style>
+          </head>
+          <body>
+              <h1>🏛️ Cathedral of Circuits</h1>
+              <p>Sacred Technology Platform - Trinity Architecture</p>
+              <div class="nav">
+                  <a href="circuitum99-alpha-et-omega.html">📚 Book Game</a>
+                  <a href="packages/data/">📊 Codex Data</a>
+                  <a href="https://github.com/Bekalah/cathedral">🔗 Repository</a>
+              </div>
+              <p>🛡️ Trauma-informed consciousness navigation</p>
+          </body>
+          </html>
+          EOF
+          fi
+          
+          echo "📁 Deployment directory contents:"
+          find _site -type f | head -20
+        
+      - name: 🌐 Setup GitHub Pages
+        uses: actions/configure-pages@v4
+        
+      - name: 📤 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_site'
+          
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -3,11 +3,11 @@
  * Aesthetic: Iris van Herpen meets Hilma af Klint meets Interactive RPG
  */
 
-import { useState, useEffect, useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment } from '@react-three/drei';
-import { WaterDragon } from '../../packages/labs/src/elements/visuals/WaterDragon';
-import { FireDragon } from '../../packages/labs/src/elements/visuals/FireDragon';
+import { useState, useRef } from 'react';
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls, Environment } from '@react-three/drei';
+// import { WaterDragon } from '../../packages/labs/src/elements/visuals/WaterDragon';
+// import { FireDragon } from '../../packages/labs/src/elements/visuals/FireDragon';
 import { ELEMENTS, fuseElements } from '../../packages/labs/src/elements/ElementalCore';
 import './CYOAEngine.css';
 

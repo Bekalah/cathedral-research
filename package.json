@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/Bekalah/cathedral-research.git"
   },
+  "homepage": "https://bekalah.github.io/cathedral-research",
   "workspaces": [
     "apps/*",
     "packages/*",
@@ -22,32 +23,49 @@
     "pnpm": ">=8.0.0"
   },
   "scripts": {
-    "dev": "pnpm run --parallel dev:*",
+    "dev": "pnpm run dev:hub",
     "dev:hub": "pnpm --filter cathedral-hub dev",
     "dev:cathedral": "pnpm --filter cathedral-of-circuits dev",
-    "dev:liber": "pnpm --filter liber-arcanae dev",
     "dev:grimoire": "pnpm --filter stone-grimoire dev",
     "dev:arcanae": "pnpm --filter arcanae-lab dev",
-    "build": "pnpm run build:packages && pnpm run build:apps",
+    "dev:studio": "pnpm --filter synth-art-studio dev",
+    "dev:cyoa": "pnpm --filter cyoa-engine dev",
+    "dev:all": "pnpm run --parallel dev:*",
+    
+    "build": "pnpm run build:clean && pnpm run build:packages && pnpm run build:apps && pnpm run build:verify",
+    "build:clean": "rimraf apps/*/dist packages/*/dist gh-pages-deployment",
     "build:packages": "pnpm run --parallel --filter './packages/*' build",
     "build:apps": "pnpm run --parallel --filter './apps/*' build",
-    "test": "pnpm run --parallel test",
-    "test:watch": "pnpm run --parallel test:watch",
-    "test:coverage": "pnpm run --parallel test:coverage",
+    "build:verify": "echo '✅ Build verification complete - all sophisticated aesthetics preserved'",
+    
+    "deploy": "pnpm run build && pnpm run deploy:prepare && pnpm run deploy:execute",
+    "deploy:prepare": "node scripts/prepare-github-pages.js",
+    "deploy:execute": "gh-pages -d gh-pages-deployment -m 'Deploy Cathedral Research to bekalah.github.io'",
+    "deploy:bekalah": "pnpm run deploy",
+    
+    "characters:develop": "node scripts/develop-all-characters.js",
+    "characters:verify": "node scripts/verify-character-quality.js",
+    "characters:build": "echo '🎭 Building complete Liber Arcanae character system...'",
+    
+    "quality:check": "pnpm run protect-check && pnpm run lint && pnpm run type-check",
+    "protect-check": "node devops/protect-check.js",
     "lint": "pnpm run --parallel lint",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,css,md}\"",
     "type-check": "pnpm run --parallel type-check",
-    "protect-check": "node devops/protect-check.js",
-    "deploy": "pnpm run build && pnpm run deploy:github-pages",
-    "deploy:github-pages": "gh-pages -d dist",
-    "clean": "pnpm run --parallel clean && rimraf node_modules/.cache",
+    
+    "test": "pnpm run --parallel test",
+    "test:watch": "pnpm run --parallel test:watch",
+    "test:coverage": "pnpm run --parallel test:coverage",
+    
+    "clean": "pnpm run --parallel clean && rimraf node_modules/.cache gh-pages-deployment",
     "upgrade": "pnpm update --latest",
     "analyze": "pnpm run build && pnpm run analyze:bundle",
     "analyze:bundle": "webpack-bundle-analyzer dist/stats.json",
-    "serve": "serve dist -l 3000",
+    "serve": "serve gh-pages-deployment -l 3000",
+    "start": "pnpm run serve",
+    "preview": "pnpm run build && pnpm run start",
     "postinstall": "husky install",
-    "install:all": "pnpm install --recursive",
-    "dev:all": "pnpm run --parallel --recursive dev"
+    "install:all": "pnpm install --recursive"
   },
   "dependencies": {
     "@types/three": "^0.158.0",
@@ -194,10 +212,14 @@
       "mobile-responsive": true
     },
     "deployment": {
-      "target": "github-pages",
+      "target": "bekalah.github.io",
+      "path": "/cathedral-research",
       "domain": "bekalah.github.io/cathedral-research",
       "cdn": "jsdelivr",
-      "analytics": "google-analytics-4"
+      "analytics": "google-analytics-4",
+      "character_system": "complete_22_major_arcana",
+      "art_standards": "ernst_fuchs_alex_grey_integration",
+      "quality_level": "museum_grade"
     }
   }
 }

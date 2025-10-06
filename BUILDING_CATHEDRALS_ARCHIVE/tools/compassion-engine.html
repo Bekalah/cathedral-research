@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" data-nd-safe="true" data-tool="compassion-engine" data-archetype="star">
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🌟 Compassion Engine — Tara's Infinite Love</title>
+            <meta name="description" content="Advanced compassion cultivation interface for healing, forgiveness, and universal love. ND-safe design with gentle interactions.">
+            <style>
+                :root {
+                --cosmic-void: #0a0a0f; --deep-indigo: #1a1240; --mystic-purple: #2d1b4d; --ethereal: #4a356b;
+                --silver-light: #c9c9d6; --star-gold: #f4d03f; --tara-green: #52c41a; --compassion-pink: #ff69b4;
+                --love-rose: #ff1493; --healing-blue: #87ceeb; --wisdom-violet: #9370db; --infinity-white: #f0f8ff;
+                --escape-glow: #ffff00; --radius: 28px; --shadow-cosmic: 0 25px 70px rgba(10, 10, 15, 0.7);
+                }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body {
+                background: radial-gradient(ellipse at center, var(--mystic-purple) 0%, var(--deep-indigo) 50%, var(--cosmic-void) 100%);
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--silver-light);
+                min-height: 100vh;
+                overflow-x: hidden;
+                position: relative;
+                }
+                /* Floating compassion particles */
+                .compassion-field {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+                }
+                .love-particle {
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: var(--compassion-pink);
+                border-radius: 50%;
+                animation: floatLove 20s infinite ease-in-out;
+                opacity: 0.6;
+                }
+                @keyframes floatLove {
+                0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+                }
+                25% {
+                opacity: 0.8;
+                transform: scale(1);
+                }
+                50% {
+                transform: translateX(20px) scale(1.2);
+                }
+                75% {
+                transform: translateX(-20px) scale(1);
+                }
+                100% {
+                transform: translateY(-100px) scale(0.3);
+                opacity: 0;
+                }
+                }
+                /* Emergency Escape Portal */
+                .escape-portal {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid var(--escape-glow);
+                border-radius: 12px;
+                padding: 12px;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .escape-key {
+                background: var(--escape-glow);
+                color: black;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 14px;
+                }
+                .escape-text {
+                color: white;
+                font-size: 12px;
+                }
+                .header {
+                text-align: center;
+                padding: 60px 20px;
+                position: relative;
+                }
+                h1 {
+                font-size: 4.2em;
+                font-weight: 300;
+                letter-spacing: 0.2em;
+                background: linear-gradient(135deg, var(--star-gold), var(--compassion-pink), var(--tara-green));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 20px;
+                filter: drop-shadow(0 0 30px rgba(244, 208, 63, 0.5));
+                }
+                .tagline {
+                font-size: 1.2em;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                color: var(--silver-light);
+                margin-bottom: 35px;
+                opacity: 0.9;
+                }
+                .tara-symbol {
+                display: inline-flex;
+                align-items: center;
+                gap: 25px;
+                background: rgba(74, 53, 107, 0.8);
+                padding: 25px 50px;
+                border-radius: 50px;
+                border: 3px solid var(--tara-green);
+                backdrop-filter: blur(20px);
+                box-shadow: var(--shadow-cosmic);
+                animation: taraGlow 15s ease-in-out infinite;
+                }
+                @keyframes taraGlow {
+                0%, 100% { box-shadow: var(--shadow-cosmic), 0 0 30px rgba(82, 196, 26, 0.3); }
+                50% { box-shadow: var(--shadow-cosmic), 0 0 50px rgba(255, 105, 180, 0.4); }
+                }
+                .lotus {
+                font-size: 2em;
+                animation: lotusBloom 12s ease-in-out infinite;
+                }
+                @keyframes lotusBloom {
+                0%, 100% { transform: scale(1) rotate(0deg); }
+                50% { transform: scale(1.1) rotate(5deg); }
+                }
+                .main {
+                max-width: 1600px;
+                margin: 0 auto;
+                padding: 0 20px 40px;
+                display: grid;
+                grid-template-columns: 400px 1fr 400px;
+                gap: 40px;
+                }
+                /* Side Panels */
+                .side-panel {
+                background: linear-gradient(135deg, rgba(74, 53, 107, 0.9), rgba(45, 27, 77, 0.95));
+                border-radius: var(--radius);
+                padding: 35px;
+                box-shadow: var(--shadow-cosmic);
+                backdrop-filter: blur(20px);
+                border: 2px solid var(--tara-green);
+                height: fit-content;
+                position: relative;
+                overflow: hidden;
+                }
+                .side-panel::before {
+                content: "";
+                position: absolute;
+                top: -100%;
+                left: -100%;
+                width: 300%;
+                height: 300%;
+                background: radial-gradient(circle, var(--compassion-pink), transparent, var(--tara-green), transparent);
+                animation: panelAura 50s linear infinite;
+                opacity: 0.08;
+                z-index: -1;
+                }
+                @keyframes panelAura {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+                }
+                .section {
+                margin-bottom: 30px;
+                padding-bottom: 25px;
+                border-bottom: 1px solid rgba(201, 201, 214, 0.2);
+                position: relative;
+                z-index: 2;
+                }
+                .section:last-child {
+                border: none;
+                margin-bottom: 0;
+                }
+                .section-title {
+                font-size: 1.5em;
+                font-weight: 400;
+                margin-bottom: 20px;
+                color: var(--star-gold);
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                }
+                .input-group {
+                margin-bottom: 22px;
+                }
+                .input-label {
+                display: block;
+                font-size: 1em;
+                color: var(--silver-light);
+                margin-bottom: 10px;
+                letter-spacing: 0.05em;
+                }
+                .text-input, .text-area, .select-input {
+                width: 100%;
+                padding: 18px 22px;
+                border: 2px solid rgba(201, 201, 214, 0.3);
+                border-radius: 18px;
+                background: rgba(10, 10, 15, 0.8);
+                font-family: inherit;
+                font-size: 1em;
+                color: var(--infinity-white);
+                transition: all 0.4s ease;
+                }
+                .text-input:focus, .text-area:focus, .select-input:focus {
+                outline: none;
+                border-color: var(--tara-green);
+                background: rgba(10, 10, 15, 0.95);
+                box-shadow: 0 0 0 3px rgba(82, 196, 26, 0.15);
+                }
+                .text-area {
+                min-height: 120px;
+                resize: vertical;
+                line-height: 1.7;
+                }
+                .compassion-slider {
+                width: 100%;
+                height: 8px;
+                border-radius: 4px;
+                background: linear-gradient(90deg, var(--love-rose), var(--compassion-pink), var(--tara-green));
+                outline: none;
+                margin: 15px 0;
+                }
+                /* Center Panel: Compassion Engine */
+                .engine-panel {
+                background: linear-gradient(135deg, rgba(74, 53, 107, 0.9), rgba(45, 27, 77, 0.95));
+                border-radius: var(--radius);
+                padding: 40px;
+                box-shadow: var(--shadow-cosmic);
+                backdrop-filter: blur(20px);
+                border: 2px solid var(--tara-green);
+                min-height: 900px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                }
+                .engine-panel::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background:
+                radial-gradient(circle at 30% 30%, rgba(244, 208, 63, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 105, 180, 0.05) 0%, transparent 50%);
+                z-index: -1;
+                }
+                .compassion-mandala {
+                width: 450px;
+                height: 450px;
+                position: relative;
+                margin: 30px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                }
+                .mandala-ring {
+                position: absolute;
+                border: 2px solid rgba(244, 208, 63, 0.4);
+                border-radius: 50%;
+                animation: ringRotate 60s linear infinite;
+                }
+                .mandala-ring:nth-child(1) {
+                width: 80px; height: 80px;
+                animation-duration: 15s;
+                border-color: var(--love-rose);
+                }
+                .mandala-ring:nth-child(2) {
+                width: 140px; height: 140px;
+                animation-duration: 25s;
+                border-color: var(--compassion-pink);
+                }
+                .mandala-ring:nth-child(3) {
+                width: 200px; height: 200px;
+                animation-duration: 35s;
+                border-color: var(--star-gold);
+                }
+                .mandala-ring:nth-child(4) {
+                width: 260px; height: 260px;
+                animation-duration: 45s;
+                border-color: var(--tara-green);
+                }
+                .mandala-ring:nth-child(5) {
+                width: 320px; height: 320px;
+                animation-duration: 55s;
+                border-color: var(--healing-blue);
+                }
+                .mandala-ring:nth-child(6) {
+                width: 380px; height: 380px;
+                animation-duration: 65s;
+                border-color: var(--wisdom-violet);
+                }
+                .mandala-ring:nth-child(7) {
+                width: 440px; height: 440px;
+                animation-duration: 75s;
+                border-color: var(--infinity-white);
+                }
+                @keyframes ringRotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+                }
+                .tara-center {
+                width: 60px;
+                height: 60px;
+                background: radial-gradient(circle, var(--tara-green), var(--compassion-pink));
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2em;
+                color: white;
+                z-index: 10;
+                animation: centerCompassion 10s ease-in-out infinite;
+                box-shadow: 0 0 40px rgba(82, 196, 26, 0.6);
+                }
+                @keyframes centerCompassion {
+                0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 40px rgba(82, 196, 26, 0.6);
+                }
+                50% {
+                transform: scale(1.15);
+                box-shadow: 0 0 60px rgba(255, 105, 180, 0.8);
+                }
+                }
+                .compassion-petals {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                }
+                .petal {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: var(--compassion-pink);
+                border-radius: 50% 0 50% 0;
+                transform-origin: center;
+                cursor: pointer;
+                transition: all 0.4s ease;
+                animation: petalGlow 8s ease-in-out infinite;
+                }
+                .petal:hover {
+                transform: scale(1.4);
+                background: var(--love-rose);
+                box-shadow: 0 0 20px var(--love-rose);
+                }
+                @keyframes petalGlow {
+                0%, 100% { opacity: 0.7; }
+                50% { opacity: 1; }
+                }
+                .compassion-flow {
+                background: rgba(255, 105, 180, 0.1);
+                border-radius: 20px;
+                padding: 30px;
+                margin: 25px 0;
+                border-left: 5px solid var(--compassion-pink);
+                width: 100%;
+                display: none;
+                text-align: left;
+                }
+                .compassion-flow.active {
+                display: block;
+                animation: flowReveal 1.2s ease-out;
+                }
+                @keyframes flowReveal {
+                from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+                }
+                to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                }
+                }
+                .flow-title {
+                font-size: 1.4em;
+                color: var(--compassion-pink);
+                margin-bottom: 15px;
+                font-weight: 500;
+                }
+                .flow-text {
+                line-height: 1.8;
+                color: var(--infinity-white);
+                margin-bottom: 20px;
+                }
+                .loving-kindness {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin: 20px 0;
+                padding: 20px;
+                background: rgba(82, 196, 26, 0.1);
+                border-radius: 15px;
+                border: 1px solid var(--tara-green);
+                }
+                .kindness-sphere {
+                text-align: center;
+                padding: 15px;
+                background: rgba(10, 10, 15, 0.5);
+                border-radius: 12px;
+                cursor: pointer;
+                transition: all 0.4s ease;
+                }
+                .kindness-sphere:hover {
+                transform: translateY(-5px);
+                background: rgba(10, 10, 15, 0.8);
+                box-shadow: 0 10px 30px rgba(82, 196, 26, 0.2);
+                }
+                .sphere-icon {
+                font-size: 2em;
+                margin-bottom: 10px;
+                animation: sphereFloat 6s ease-in-out infinite;
+                }
+                .kindness-sphere:nth-child(1) .sphere-icon { animation-delay: 0s; }
+                .kindness-sphere:nth-child(2) .sphere-icon { animation-delay: 1.5s; }
+                .kindness-sphere:nth-child(3) .sphere-icon { animation-delay: 3s; }
+                .kindness-sphere:nth-child(4) .sphere-icon { animation-delay: 4.5s; }
+                @keyframes sphereFloat {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-8px); }
+                }
+                .sphere-label {
+                font-size: 0.9em;
+                color: var(--silver-light);
+                font-weight: 500;
+                }
+                .healing-waves {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-top: 20px;
+                width: 100%;
+                }
+                .wave-card {
+                background: rgba(10, 10, 15, 0.6);
+                border-radius: 15px;
+                padding: 18px;
+                border: 1px solid var(--healing-blue);
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.4s ease;
+                }
+                .wave-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--star-gold);
+                box-shadow: 0 10px 30px rgba(244, 208, 63, 0.2);
+                }
+                .wave-icon {
+                font-size: 1.8em;
+                margin-bottom: 10px;
+                color: var(--healing-blue);
+                }
+                .wave-title {
+                font-size: 1em;
+                color: var(--star-gold);
+                margin-bottom: 8px;
+                font-weight: 500;
+                }
+                .wave-desc {
+                font-size: 0.85em;
+                color: var(--silver-light);
+                line-height: 1.4;
+                }
+                .buttons {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin-top: auto;
+                padding-top: 30px;
+                }
+                .btn {
+                padding: 18px 32px;
+                border: none;
+                border-radius: 18px;
+                font-family: inherit;
+                font-size: 1em;
+                font-weight: 500;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+                }
+                .btn::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                transition: all 0.8s ease;
+                transform: translate(-50%, -50%);
+                }
+                .btn:hover::before {
+                width: 400px;
+                height: 400px;
+                }
+                .btn-primary {
+                background: linear-gradient(135deg, var(--tara-green), var(--compassion-pink));
+                color: white;
+                box-shadow: 0 10px 30px rgba(82, 196, 26, 0.3);
+                z-index: 1;
+                }
+                .btn-primary:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 15px 40px rgba(82, 196, 26, 0.4);
+                }
+                .btn-secondary {
+                background: rgba(74, 53, 107, 0.8);
+                color: var(--silver-light);
+                border: 2px solid var(--healing-blue);
+                }
+                .btn-secondary:hover {
+                background: rgba(74, 53, 107, 0.95);
+                border-color: var(--star-gold);
+                transform: translateY(-2px);
+                }
+                @media (max-width: 1400px) {
+                .main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                }
+                .compassion-mandala {
+                width: 350px;
+                height: 350px;
+                }
+                .mandala-ring:nth-child(7) { width: 340px; height: 340px; }
+                .mandala-ring:nth-child(6) { width: 280px; height: 280px; }
+                .mandala-ring:nth-child(5) { width: 220px; height: 220px; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="compassion-field" id="compassionField">
+            </div>
+            <!-- Emergency Escape Portal -->
+            <div class="escape-portal">
+                <div class="escape-key">ESC</div>
+                    <div class="escape-text">Safe Haven</div>
+                    </div>
+                    <div class="header">
+                        <h1>🌟 Compassion Engine</h1>
+                            <p class="tagline">Tara's Infinite Love</p>
+                                <div class="tara-symbol">
+                                    <div class="lotus">🪷</div>
+                                        <span>Mother of All Compassion</span>
+                                            <div class="lotus">🪷</div>
+                                            </div>
+                                        </div>
+                                        <div class="main">
+                                            <!-- Left Panel: Heart Opening -->
+                                            <div class="side-panel">
+                                                <div class="section">
+                                                    <div class="section-title">
+                                                        💖 Heart Opening
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <label class="input-label" for="heart-intention">Your Heart's Intention</label>
+                                                            <textarea
+                                                                id="heart-intention"
+                                                                class="text-area"
+                                                                placeholder="Share what your heart wants to heal, forgive, or open to..."
+                                                                maxlength="500"
+                                                                >
+                                                            </textarea>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label class="input-label" for="healing-focus">Healing Focus</label>
+                                                                <select id="healing-focus" class="select-input">
+                                                                    <option value="self-forgiveness">Self-Forgiveness</option>
+                                                                        <option value="forgive-others">Forgive Others</option>
+                                                                            <option value="heal-relationships">Heal Relationships</option>
+                                                                                <option value="inner-child">Inner Child Healing</option>
+                                                                                    <option value="trauma-healing">Trauma Healing</option>
+                                                                                        <option value="grief-healing">Grief & Loss</option>
+                                                                                            <option value="fear-healing">Fear & Anxiety</option>
+                                                                                                <option value="love-expansion">Love Expansion</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                            <div class="input-group">
+                                                                                                <label class="input-label" for="healing-story">Your Healing Story</label>
+                                                                                                    <textarea
+                                                                                                        id="healing-story"
+                                                                                                        class="text-area"
+                                                                                                        placeholder="Share your journey or what needs gentle healing..."
+                                                                                                        maxlength="600"
+                                                                                                        >
+                                                                                                    </textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="section">
+                                                                                                <div class="section-title">
+                                                                                                    🌿 Gentle Calibration
+                                                                                                </div>
+                                                                                                <div class="input-group">
+                                                                                                    <label class="input-label" for="emotional-safety">Emotional Safety Level</label>
+                                                                                                        <input type="range" id="emotional-safety" class="compassion-slider" min="0" max="100" value="70">
+                                                                                                        <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: var(--silver-light);">
+                                                                                                            <span>Fragile</span>
+                                                                                                                <span>Gentle</span>
+                                                                                                                    <span>Strong</span>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="input-group">
+                                                                                                                    <label class="input-label" for="healing-pace">Healing Pace</label>
+                                                                                                                        <select id="healing-pace" class="select-input">
+                                                                                                                            <option value="very-gentle">Very gentle, slow and safe</option>
+                                                                                                                                <option value="gentle">Gentle and steady</option>
+                                                                                                                                    <option value="moderate">Moderate, I can handle some intensity</option>
+                                                                                                                                        <option value="deep">Deep healing, I'm ready for transformation</option>
+                                                                                                                                        </select>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="input-group">
+                                                                                                                                        <label class="input-label" for="support-system">Support System</label>
+                                                                                                                                            <select id="support-system" class="select-input">
+                                                                                                                                                <option value="self-guided">Self-guided healing</option>
+                                                                                                                                                    <option value="friends-family">Friends & family support</option>
+                                                                                                                                                        <option value="therapy">Professional therapy</option>
+                                                                                                                                                            <option value="spiritual-community">Spiritual community</option>
+                                                                                                                                                                <option value="mixed">Multiple support sources</option>
+                                                                                                                                                                </select>
+                                                                                                                                                            </div>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                    <!-- Center Panel: Compassion Engine -->
+                                                                                                                                                    <div class="engine-panel">
+                                                                                                                                                        <div class="compassion-mandala" id="compassionMandala">
+                                                                                                                                                            <div class="mandala-ring">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="mandala-ring">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="mandala-ring">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="mandala-ring">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="mandala-ring">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="mandala-ring">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="mandala-ring">
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="compassion-petals" id="compassionPetals">
+                                                                                                                                                                <!-- Populated by JavaScript -->
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="tara-center" id="taraCenter">💚</div>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="loving-kindness" id="lovingKindness">
+                                                                                                                                                                <div class="kindness-sphere" onclick="sendLovingKindness('self')">
+                                                                                                                                                                    <div class="sphere-icon">🤗</div>
+                                                                                                                                                                        <div class="sphere-label">To Self</div>
+                                                                                                                                                                        </div>
+                                                                                                                                                                        <div class="kindness-sphere" onclick="sendLovingKindness('loved-ones')">
+                                                                                                                                                                            <div class="sphere-icon">👨‍👩‍👧‍👦</div>
+                                                                                                                                                                                <div class="sphere-label">To Loved Ones</div>
+                                                                                                                                                                                </div>
+                                                                                                                                                                                <div class="kindness-sphere" onclick="sendLovingKindness('neutral')">
+                                                                                                                                                                                    <div class="sphere-icon">🌍</div>
+                                                                                                                                                                                        <div class="sphere-label">To Neutral Ones</div>
+                                                                                                                                                                                        </div>
+                                                                                                                                                                                        <div class="kindness-sphere" onclick="sendLovingKindness('difficult')">
+                                                                                                                                                                                            <div class="sphere-icon">🕊️</div>
+                                                                                                                                                                                                <div class="sphere-label">To Difficult Ones</div>
+                                                                                                                                                                                                </div>
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                            <div class="compassion-flow" id="compassionFlow">
+                                                                                                                                                                                                <div class="flow-title" id="flowTitle">Compassion Flowing</div>
+                                                                                                                                                                                                    <div class="flow-text" id="flowText">
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                    <div class="healing-waves" id="healingWaves">
+                                                                                                                                                                                                        <!-- Populated by JavaScript -->
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                </div>
+                                                                                                                                                                                                <div class="buttons">
+                                                                                                                                                                                                    <button class="btn btn-secondary" onclick="clearCompassion()">Reset</button>
+                                                                                                                                                                                                        <button class="btn btn-primary" onclick="activateCompassion()">Open Heart</button>
+                                                                                                                                                                                                            <button class="btn btn-secondary" onclick="exportHealing()">Save Healing</button>
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                        <!-- Right Panel: Tara's Guidance -->
+                                                                                                                                                                                                        <div class="side-panel">
+                                                                                                                                                                                                            <div class="section">
+                                                                                                                                                                                                                <div class="section-title">
+                                                                                                                                                                                                                    🪷 Tara's Wisdom
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                <div style="font-size: 0.9em; line-height: 1.6; color: var(--silver-light);">
+                                                                                                                                                                                                                    <p style="margin-bottom: 15px;">
+                                                                                                                                                                                                                        <strong>Green Tara:</strong> Swift compassion for immediate relief from suffering,
+                                                                                                                                                                                                                            protection, and healing of fears and anxieties.
+                                                                                                                                                                                                                        </p>
+                                                                                                                                                                                                                        <p style="margin-bottom: 15px;">
+                                                                                                                                                                                                                            <strong>White Tara:</strong> Long-life practices, deep healing,
+                                                                                                                                                                                                                                nurturing care, and maternal protection.
+                                                                                                                                                                                                                            </p>
+                                                                                                                                                                                                                            <p style="margin-bottom: 15px;">
+                                                                                                                                                                                                                                <strong>Red Tara:</strong> Passionate compassion for magnetizing love,
+                                                                                                                                                                                                                                    healing relationships, and attracting abundance.
+                                                                                                                                                                                                                                </p>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                        <div class="section">
+                                                                                                                                                                                                                            <div class="section-title">
+                                                                                                                                                                                                                                💚 Compassion Practices
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div style="font-size: 0.85em; color: var(--silver-light);">
+                                                                                                                                                                                                                                <div style="margin-bottom: 12px; padding: 10px; background: rgba(244, 208, 63, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                    <strong>🫶 Loving-Kindness:</strong> May you be happy, peaceful, and free from suffering
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <div style="margin-bottom: 12px; padding: 10px; background: rgba(82, 196, 26, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                        <strong>🤝 Compassion:</strong> Actively working to relieve suffering in yourself and others
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div style="margin-bottom: 12px; padding: 10px; background: rgba(255, 105, 180, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                            <strong>😊 Empathetic Joy:</strong> Rejoicing in the happiness and success of others
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                            <div style="margin-bottom: 12px; padding: 10px; background: rgba(135, 206, 235, 0.1); border-radius: 8px;">
+                                                                                                                                                                                                                                                <strong>⚖️ Equanimity:</strong> Balanced love that doesn't attach or discriminate
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div class="section">
+                                                                                                                                                                                                                                            <div class="section-title">
+                                                                                                                                                                                                                                                🌟 21 Taras
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                            <div style="font-size: 0.8em; color: var(--silver-light);">
+                                                                                                                                                                                                                                                <div style="margin-bottom: 8px;">• <strong>Tara the Swift:</strong> Immediate help and protection</div>
+                                                                                                                                                                                                                                                    <div style="margin-bottom: 8px;">• <strong>Tara the Peaceful:</strong> Calming anger and conflict</div>
+                                                                                                                                                                                                                                                        <div style="margin-bottom: 8px;">• <strong>Tara the Nurturing:</strong> Healing inner child wounds</div>
+                                                                                                                                                                                                                                                            <div style="margin-bottom: 8px;">• <strong>Tara the Fearless:</strong> Conquering fear and anxiety</div>
+                                                                                                                                                                                                                                                                <div style="margin-bottom: 8px;">• <strong>Tara the Liberating:</strong> Freedom from mental bondage</div>
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                            <div class="section">
+                                                                                                                                                                                                                                                                <div class="section-title">
+                                                                                                                                                                                                                                                                    💖 Heart Healing Affirmations
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                <div style="font-size: 0.85em; color: var(--silver-light);">
+                                                                                                                                                                                                                                                                    <div style="margin-bottom: 10px; padding: 8px; background: rgba(74, 53, 107, 0.3); border-radius: 6px;">
+                                                                                                                                                                                                                                                                        <strong>"I am worthy of love and compassion"</strong>
+                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                        <div style="margin-bottom: 10px; padding: 8px; background: rgba(74, 53, 107, 0.3); border-radius: 6px;">
+                                                                                                                                                                                                                                                                            <strong>"My heart is safe to open and heal"</strong>
+                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                            <div style="margin-bottom: 10px; padding: 8px; background: rgba(74, 53, 107, 0.3); border-radius: 6px;">
+                                                                                                                                                                                                                                                                                <strong>"I forgive myself and others with grace"</strong>
+                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                        <div class="section">
+                                                                                                                                                                                                                                                                            <div class="section-title">
+                                                                                                                                                                                                                                                                                🌿 Gentle Healing Steps
+                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                            <div style="font-size: 0.8em; color: var(--silver-light);">
+                                                                                                                                                                                                                                                                                <div style="margin-bottom: 6px;">• Start with self-compassion</div>
+                                                                                                                                                                                                                                                                                    <div style="margin-bottom: 6px;">• Breathe into your heart space</div>
+                                                                                                                                                                                                                                                                                        <div style="margin-bottom: 6px;">• Send love to your inner child</div>
+                                                                                                                                                                                                                                                                                            <div style="margin-bottom: 6px;">• Practice forgiveness gradually</div>
+                                                                                                                                                                                                                                                                                                <div style="margin-bottom: 6px;">• Trust your healing timeline</div>
+                                                                                                                                                                                                                                                                                                    <div style="margin-bottom: 6px;">• Seek support when needed</div>
+                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                <div class="section">
+                                                                                                                                                                                                                                                                                                    <div class="section-title">
+                                                                                                                                                                                                                                                                                                        🎵 Healing Mantras
+                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                    <div style="font-size: 0.8em; color: var(--silver-light);">
+                                                                                                                                                                                                                                                                                                        <div style="margin-bottom: 8px;">
+                                                                                                                                                                                                                                                                                                            <strong>OM TARE TUTTARE TURE SOHA</strong>
+                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                            <div style="margin-bottom: 8px;">
+                                                                                                                                                                                                                                                                                                                <em>Swift liberation from suffering</em>
+                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                <div style="margin-bottom: 8px;">
+                                                                                                                                                                                                                                                                                                                    <strong>GATE GATE PĀRAGATE PĀRASAṂGATE BODHI SVĀHĀ</strong>
+                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                    <div style="margin-bottom: 8px;">
+                                                                                                                                                                                                                                                                                                                        <em>Gone beyond to perfect wisdom</em>
+                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                        <script>
+                                                                                                                                                                                                                                                                                                            // Create floating love particles
+                                                                                                                                                                                                                                                                                                            function createCompassionField() {
+                                                                                                                                                                                                                                                                                                            const container = document.getElementById('compassionField');
+                                                                                                                                                                                                                                                                                                            for (let i = 0; i < 25; i++) {
+                                                                                                                                                                                                                                                                                                                const particle = document.createElement('div');
+                                                                                                                                                                                                                                                                                                                particle.className = 'love-particle';
+                                                                                                                                                                                                                                                                                                                particle.style.left = Math.random() * 100 + '%';
+                                                                                                                                                                                                                                                                                                                particle.style.animationDelay = Math.random() * 20 + 's';
+                                                                                                                                                                                                                                                                                                                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                                                                                                                                                                                                                                                                                                                // Random colors for variety
+                                                                                                                                                                                                                                                                                                                const colors = ['var(--compassion-pink)', 'var(--tara-green)', 'var(--star-gold)', 'var(--love-rose)'];
+                                                                                                                                                                                                                                                                                                                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                                                                                                                                                                                                                                                                                                                container.appendChild(particle);
+                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                // Initialize compassion petals
+                                                                                                                                                                                                                                                                                                                function initializeCompassionPetals() {
+                                                                                                                                                                                                                                                                                                                const container = document.getElementById('compassionPetals');
+                                                                                                                                                                                                                                                                                                                const petalCount = 8; // 8 directions of compassion
+                                                                                                                                                                                                                                                                                                                for (let i = 0; i < petalCount; i++) {
+                                                                                                                                                                                                                                                                                                                    const angle = (i * 360 / petalCount) * Math.PI / 180;
+                                                                                                                                                                                                                                                                                                                    const radius = 160; // Distance from center
+                                                                                                                                                                                                                                                                                                                    const petal = document.createElement('div');
+                                                                                                                                                                                                                                                                                                                    petal.className = 'petal';
+                                                                                                                                                                                                                                                                                                                    petal.style.left = `calc(50% + ${Math.cos(angle) * radius}px - 10px)`;
+                                                                                                                                                                                                                                                                                                                    petal.style.top = `calc(50% + ${Math.sin(angle) * radius}px - 10px)`;
+                                                                                                                                                                                                                                                                                                                    petal.style.transform = `rotate(${i * 45}deg)`;
+                                                                                                                                                                                                                                                                                                                    petal.style.animationDelay = (i * 1) + 's';
+                                                                                                                                                                                                                                                                                                                    petal.addEventListener('click', () => activateCompassionDirection(i));
+                                                                                                                                                                                                                                                                                                                    container.appendChild(petal);
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    function activateCompassionDirection(direction) {
+                                                                                                                                                                                                                                                                                                                    const directions = [
+                                                                                                                                                                                                                                                                                                                    "North: Wisdom Compassion",
+                                                                                                                                                                                                                                                                                                                    "Northeast: Fearless Compassion",
+                                                                                                                                                                                                                                                                                                                    "East: Awakening Compassion",
+                                                                                                                                                                                                                                                                                                                    "Southeast: Gentle Compassion",
+                                                                                                                                                                                                                                                                                                                    "South: Healing Compassion",
+                                                                                                                                                                                                                                                                                                                    "Southwest: Nurturing Compassion",
+                                                                                                                                                                                                                                                                                                                    "West: Peaceful Compassion",
+                                                                                                                                                                                                                                                                                                                    "Northwest: Protective Compassion"
+                                                                                                                                                                                                                                                                                                                    ];
+                                                                                                                                                                                                                                                                                                                    // Gentle notification - no alert, just visual feedback
+                                                                                                                                                                                                                                                                                                                    const taraCenter = document.getElementById('taraCenter');
+                                                                                                                                                                                                                                                                                                                    taraCenter.textContent = '💖';
+                                                                                                                                                                                                                                                                                                                    setTimeout(() => {
+                                                                                                                                                                                                                                                                                                                    taraCenter.textContent = '💚';
+                                                                                                                                                                                                                                                                                                                    }, 2000);
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    function sendLovingKindness(target) {
+                                                                                                                                                                                                                                                                                                                    const messages = {
+                                                                                                                                                                                                                                                                                                                    'self': "May I be happy. May I be peaceful. May I be free from suffering. May I be filled with loving-kindness.",
+                                                                                                                                                                                                                                                                                                                    'loved-ones': "May my loved ones be happy. May they be peaceful. May they be free from suffering. May they be filled with love.",
+                                                                                                                                                                                                                                                                                                                    'neutral': "May all neutral beings be happy. May they find peace. May they be free from suffering.",
+                                                                                                                                                                                                                                                                                                                    'difficult': "May those who challenge me be happy. May they find peace. May their suffering be healed with compassion."
+                                                                                                                                                                                                                                                                                                                    };
+                                                                                                                                                                                                                                                                                                                    // Show loving-kindness message gently
+                                                                                                                                                                                                                                                                                                                    showGentleMessage(messages[target]);
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    function showGentleMessage(message) {
+                                                                                                                                                                                                                                                                                                                    // Create gentle overlay message
+                                                                                                                                                                                                                                                                                                                    const overlay = document.createElement('div');
+                                                                                                                                                                                                                                                                                                                    overlay.style.cssText = `
+                                                                                                                                                                                                                                                                                                                    position: fixed;
+                                                                                                                                                                                                                                                                                                                    top: 50%;
+                                                                                                                                                                                                                                                                                                                    left: 50%;
+                                                                                                                                                                                                                                                                                                                    transform: translate(-50%, -50%);
+                                                                                                                                                                                                                                                                                                                    background: rgba(74, 53, 107, 0.95);
+                                                                                                                                                                                                                                                                                                                    color: var(--infinity-white);
+                                                                                                                                                                                                                                                                                                                    padding: 30px;
+                                                                                                                                                                                                                                                                                                                    border-radius: 20px;
+                                                                                                                                                                                                                                                                                                                    border: 2px solid var(--tara-green);
+                                                                                                                                                                                                                                                                                                                    z-index: 1000;
+                                                                                                                                                                                                                                                                                                                    max-width: 400px;
+                                                                                                                                                                                                                                                                                                                    text-align: center;
+                                                                                                                                                                                                                                                                                                                    font-size: 1.1em;
+                                                                                                                                                                                                                                                                                                                    line-height: 1.6;
+                                                                                                                                                                                                                                                                                                                    backdrop-filter: blur(10px);
+                                                                                                                                                                                                                                                                                                                    animation: gentleReveal 0.8s ease-out;
+                                                                                                                                                                                                                                                                                                                    `;
+                                                                                                                                                                                                                                                                                                                    overlay.textContent = message;
+                                                                                                                                                                                                                                                                                                                    document.body.appendChild(overlay);
+                                                                                                                                                                                                                                                                                                                    // Remove after 4 seconds
+                                                                                                                                                                                                                                                                                                                    setTimeout(() => {
+                                                                                                                                                                                                                                                                                                                    overlay.style.animation = 'gentleFade 0.8s ease-out forwards';
+                                                                                                                                                                                                                                                                                                                    setTimeout(() => {
+                                                                                                                                                                                                                                                                                                                    document.body.removeChild(overlay);
+                                                                                                                                                                                                                                                                                                                    }, 800);
+                                                                                                                                                                                                                                                                                                                    }, 4000);
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    function activateCompassion() {
+                                                                                                                                                                                                                                                                                                                    const intention = document.getElementById('heart-intention').value.trim();
+                                                                                                                                                                                                                                                                                                                    const focus = document.getElementById('healing-focus').value;
+                                                                                                                                                                                                                                                                                                                    const story = document.getElementById('healing-story').value.trim();
+                                                                                                                                                                                                                                                                                                                    const safety = document.getElementById('emotional-safety').value;
+                                                                                                                                                                                                                                                                                                                    const pace = document.getElementById('healing-pace').value;
+                                                                                                                                                                                                                                                                                                                    const support = document.getElementById('support-system').value;
+                                                                                                                                                                                                                                                                                                                    if (!intention) {
+                                                                                                                                                                                                                                                                                                                    showGentleMessage('Please share your heart\'s intention before opening to compassion. 💚');
+                                                                                                                                                                                                                                                                                                                    return;
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    // Animate the compassion activation
+                                                                                                                                                                                                                                                                                                                    animateCompassionActivation();
+                                                                                                                                                                                                                                                                                                                    // Generate healing analysis after animation
+                                                                                                                                                                                                                                                                                                                    setTimeout(() => {
+                                                                                                                                                                                                                                                                                                                    generateHealingAnalysis(intention, focus, story, safety, pace, support);
+                                                                                                                                                                                                                                                                                                                    showCompassionFlow();
+                                                                                                                                                                                                                                                                                                                    }, 3000);
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    function animateCompassionActivation() {
+                                                                                                                                                                                                                                                                                                                    const mandala = document.getElementById('compassionMandala');
+                                                                                                                                                                                                                                                                                                                    const center = document.getElementById('taraCenter');
+                                                                                                                                                                                                                                                                                                                    // Accelerate all ring rotations
+                                                                                                                                                                                                                                                                                                                    const rings = mandala.querySelectorAll('.mandala-ring');
+                                                                                                                                                                                                                                                                                                                    rings.forEach((ring, index) => {
+                                                                                                                                                                                                                                                                                                                    ring.style.animationDuration = (2 + index * 0.3) + 's';
+                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                    // Transform the center
+                                                                                                                                                                                                                                                                                                                    center.style.animation = 'centerCompassion 1.5s ease-in-out infinite';
+                                                                                                                                                                                                                                                                                                                    center.textContent = '🌟';
+                                                                                                                                                                                                                                                                                                                    // Reset after activation
+                                                                                                                                                                                                                                                                                                                    setTimeout(() => {
+                                                                                                                                                                                                                                                                                                                    rings.forEach((ring, index) => {
+                                                                                                                                                                                                                                                                                                                    ring.style.animationDuration = (15 + index * 10) + 's';
+                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                    center.textContent = '💚';
+                                                                                                                                                                                                                                                                                                                    center.style.animation = 'centerCompassion 10s ease-in-out infinite';
+                                                                                                                                                                                                                                                                                                                    }, 2800);
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    function generateHealingAnalysis(intention, focus, story, safety, pace, support) {
+                                                                                                                                                                                                                                                                                                                    const analysis = createHealingAnalysis(focus, safety, pace);
+                                                                                                                                                                                                                                                                                                                    const waves = generateHealingWaves(focus, pace);
+                                                                                                                                                                                                                                                                                                                    const title = getHealingTitle(focus);
+                                                                                                                                                                                                                                                                                                                    document.getElementById('flowTitle').textContent = title;
+                                                                                                                                                                                                                                                                                                                    document.getElementById('flowText').textContent = analysis;
+                                                                                                                                                                                                                                                                                                                    // Create healing waves
+                                                                                                                                                                                                                                                                                                                    const wavesContainer = document.getElementById('healingWaves');
+                                                                                                                                                                                                                                                                                                                    wavesContainer.innerHTML = waves.map(wave => `
+                                                                                                                                                                                                                                                                                                                    <div class="wave-card">
+                                                                                                                                                                                                                                                                                                                        <div class="wave-icon">${wave.icon}</div>
+                                                                                                                                                                                                                                                                                                                            <div class="wave-title">${wave.title}</div>
+                                                                                                                                                                                                                                                                                                                                <div class="wave-desc">${wave.desc}</div>
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                `).join('');
+                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                function createHealingAnalysis(focus, safety, pace) {
+                                                                                                                                                                                                                                                                                                                                const base = "Tara's infinite compassion surrounds you with ";
+                                                                                                                                                                                                                                                                                                                                const focusAnalysis = {
+                                                                                                                                                                                                                                                                                                                                'self-forgiveness': "gentle self-forgiveness. You are worthy of your own compassion and love. Release the burden of self-judgment.",
+                                                                                                                                                                                                                                                                                                                                'forgive-others': "the strength to forgive others. Forgiveness is a gift you give yourself - it doesn't excuse their actions, but frees your heart.",
+                                                                                                                                                                                                                                                                                                                                'heal-relationships': "healing energy for your relationships. Love seeks to understand, heal, and restore connection where possible.",
+                                                                                                                                                                                                                                                                                                                                'inner-child': "tender care for your inner child. Your younger self deserves love, protection, and healing for all they experienced.",
+                                                                                                                                                                                                                                                                                                                                'trauma-healing': "safe space for trauma healing. Your nervous system is learning to trust again, one gentle breath at a time.",
+                                                                                                                                                                                                                                                                                                                                'grief-healing': "comfort in your grief journey. Loss is love with nowhere to go - honor your feelings and take all the time you need.",
+                                                                                                                                                                                                                                                                                                                                'fear-healing': "courage to face your fears with love. Fear often protects something precious - approach it with compassion.",
+                                                                                                                                                                                                                                                                                                                                'love-expansion': "unlimited love expansion. Your heart has infinite capacity - trust its wisdom to guide you."
+                                                                                                                                                                                                                                                                                                                                };
+                                                                                                                                                                                                                                                                                                                                const safetyGuidance = getSafetyGuidance(safety);
+                                                                                                                                                                                                                                                                                                                                const paceWisdom = getPaceWisdom(pace);
+                                                                                                                                                                                                                                                                                                                                return base +
+                                                                                                                                                                                                                                                                                                                                (focusAnalysis[focus] || focusAnalysis['self-forgiveness']) +
+                                                                                                                                                                                                                                                                                                                                safetyGuidance +
+                                                                                                                                                                                                                                                                                                                                paceWisdom;
+                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                function getSafetyGuidance(safety) {
+                                                                                                                                                                                                                                                                                                                                const value = parseInt(safety);
+                                                                                                                                                                                                                                                                                                                                if (value < 40) {
+                                                                                                                                                                                                                                                                                                                                    return " Your tender heart is held in the safest of spaces. Go slowly and be extra gentle with yourself.";
+                                                                                                                                                                                                                                                                                                                                    } else if (value > 70) {
+                                                                                                                                                                                                                                                                                                                                    return " Your strong heart is ready for deeper healing. Trust your resilience while honoring your sensitivity.";
+                                                                                                                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                                                                                                                    return " Your heart knows its own pace. Trust the gentle unfolding of your healing journey.";
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    function getPaceWisdom(pace) {
+                                                                                                                                                                                                                                                                                                                                    const paceWisdom = {
+                                                                                                                                                                                                                                                                                                                                    'very-gentle': " Take all the time you need - healing happens in its own perfect timing.",
+                                                                                                                                                                                                                                                                                                                                    'gentle': " Gentle and steady creates lasting transformation. Honor your process.",
+                                                                                                                                                                                                                                                                                                                                    'moderate': " You have the strength for this healing journey. Balance courage with self-care.",
+                                                                                                                                                                                                                                                                                                                                    'deep': " Your readiness for deep healing is honored. Transform at the pace that serves your highest good."
+                                                                                                                                                                                                                                                                                                                                    };
+                                                                                                                                                                                                                                                                                                                                    return paceWisdom[pace] || paceWisdom['gentle'];
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    function generateHealingWaves(focus, pace) {
+                                                                                                                                                                                                                                                                                                                                    let waves = [
+                                                                                                                                                                                                                                                                                                                                    { icon: '💚', title: 'Self-Love', desc: 'Unconditional acceptance' },
+                                                                                                                                                                                                                                                                                                                                    { icon: '🕊️', title: 'Peace', desc: 'Inner calm and serenity' },
+                                                                                                                                                                                                                                                                                                                                    { icon: '✨', title: 'Healing', desc: 'Gentle restoration' }
+                                                                                                                                                                                                                                                                                                                                    ];
+                                                                                                                                                                                                                                                                                                                                    // Customize based on focus
+                                                                                                                                                                                                                                                                                                                                    if (focus === 'inner-child') {
+                                                                                                                                                                                                                                                                                                                                    waves = [
+                                                                                                                                                                                                                                                                                                                                    { icon: '🧸', title: 'Safety', desc: 'You are protected now' },
+                                                                                                                                                                                                                                                                                                                                    { icon: '🎈', title: 'Play', desc: 'Joy and innocence restored' },
+                                                                                                                                                                                                                                                                                                                                    { icon: '🤗', title: 'Nurturing', desc: 'Loving care given' }
+                                                                                                                                                                                                                                                                                                                                    ];
+                                                                                                                                                                                                                                                                                                                                    } else if (focus === 'trauma-healing') {
+                                                                                                                                                                                                                                                                                                                                    waves = [
+                                                                                                                                                                                                                                                                                                                                    { icon: '🛡️', title: 'Safety', desc: 'You are safe now' },
+                                                                                                                                                                                                                                                                                                                                    { icon: '🌱', title: 'Growth', desc: 'Healing from roots up' },
+                                                                                                                                                                                                                                                                                                                                    { icon: '🌈', title: 'Hope', desc: 'Light after darkness' }
+                                                                                                                                                                                                                                                                                                                                    ];
+                                                                                                                                                                                                                                                                                                                                    } else if (focus === 'grief-healing') {
+                                                                                                                                                                                                                                                                                                                                    waves = [
+                                                                                                                                                                                                                                                                                                                                    { icon: '💧', title: 'Tears', desc: 'Cleansing and release' },
+                                                                                                                                                                                                                                                                                                                                    { icon: '🕯️', title: 'Memory', desc: 'Love never dies' },
+                                                                                                                                                                                                                                                                                                                                    { icon: '🌅', title: 'Dawn', desc: 'New day coming' }
+                                                                                                                                                                                                                                                                                                                                    ];
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    return waves;
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    function getHealingTitle(focus) {
+                                                                                                                                                                                                                                                                                                                                    const titles = {
+                                                                                                                                                                                                                                                                                                                                    'self-forgiveness': '🤗 Self-Forgiveness Flow',
+                                                                                                                                                                                                                                                                                                                                    'forgive-others': '🕊️ Forgiveness Liberation',
+                                                                                                                                                                                                                                                                                                                                    'heal-relationships': '💕 Relationship Healing',
+                                                                                                                                                                                                                                                                                                                                    'inner-child': '🧸 Inner Child Healing',
+                                                                                                                                                                                                                                                                                                                                    'trauma-healing': '🛡️ Trauma Recovery',
+                                                                                                                                                                                                                                                                                                                                    'grief-healing': '💧 Grief Comfort',
+                                                                                                                                                                                                                                                                                                                                    'fear-healing': '🌟 Fear Transformation',
+                                                                                                                                                                                                                                                                                                                                    'love-expansion': '💖 Love Expansion'
+                                                                                                                                                                                                                                                                                                                                    };
+                                                                                                                                                                                                                                                                                                                                    return titles[focus] || '💚 Compassion Flowing';
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    function showCompassionFlow() {
+                                                                                                                                                                                                                                                                                                                                    const flow = document.getElementById('compassionFlow');
+                                                                                                                                                                                                                                                                                                                                    flow.classList.add('active');
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    function clearCompassion() {
+                                                                                                                                                                                                                                                                                                                                    document.getElementById('heart-intention').value = '';
+                                                                                                                                                                                                                                                                                                                                    document.getElementById('healing-story').value = '';
+                                                                                                                                                                                                                                                                                                                                    document.getElementById('emotional-safety').value = '70';
+                                                                                                                                                                                                                                                                                                                                    // Hide analysis
+                                                                                                                                                                                                                                                                                                                                    const flow = document.getElementById('compassionFlow');
+                                                                                                                                                                                                                                                                                                                                    flow.classList.remove('active');
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    function exportHealing() {
+                                                                                                                                                                                                                                                                                                                                    const intention = document.getElementById('heart-intention').value.trim();
+                                                                                                                                                                                                                                                                                                                                    if (!intention) {
+                                                                                                                                                                                                                                                                                                                                    showGentleMessage('Please open your heart first by sharing your intention. 💚');
+                                                                                                                                                                                                                                                                                                                                    return;
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    showGentleMessage('Your healing journey has been saved to your heart\'s memory. 🌟');
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    // Emergency escape - extra gentle for trauma-aware design
+                                                                                                                                                                                                                                                                                                                                    document.addEventListener('keydown', function(e) {
+                                                                                                                                                                                                                                                                                                                                    if (e.key === 'Escape') {
+                                                                                                                                                                                                                                                                                                                                    clearCompassion();
+                                                                                                                                                                                                                                                                                                                                    showGentleMessage('You are safe. Take a deep breath. You are loved. 💚');
+                                                                                                                                                                                                                                                                                                                                    window.parent.postMessage({ action: 'escape', tool: 'compassion-engine' }, '*');
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                                    // Add gentle CSS animations
+                                                                                                                                                                                                                                                                                                                                    const style = document.createElement('style');
+                                                                                                                                                                                                                                                                                                                                    style.textContent = `
+                                                                                                                                                                                                                                                                                                                                    @keyframes gentleReveal {
+                                                                                                                                                                                                                                                                                                                                    from {
+                                                                                                                                                                                                                                                                                                                                    opacity: 0;
+                                                                                                                                                                                                                                                                                                                                    transform: translate(-50%, -50%) scale(0.9);
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    to {
+                                                                                                                                                                                                                                                                                                                                    opacity: 1;
+                                                                                                                                                                                                                                                                                                                                    transform: translate(-50%, -50%) scale(1);
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    @keyframes gentleFade {
+                                                                                                                                                                                                                                                                                                                                    to {
+                                                                                                                                                                                                                                                                                                                                    opacity: 0;
+                                                                                                                                                                                                                                                                                                                                    transform: translate(-50%, -50%) scale(0.9);
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    `;
+                                                                                                                                                                                                                                                                                                                                    document.head.appendChild(style);
+                                                                                                                                                                                                                                                                                                                                    // Initialize
+                                                                                                                                                                                                                                                                                                                                    createCompassionField();
+                                                                                                                                                                                                                                                                                                                                    initializeCompassionPetals();
+                                                                                                                                                                                                                                                                                                                                    // Announce tool ready
+                                                                                                                                                                                                                                                                                                                                    window.addEventListener('load', function() {
+                                                                                                                                                                                                                                                                                                                                    window.parent.postMessage({
+                                                                                                                                                                                                                                                                                                                                    action: 'tool-ready',
+                                                                                                                                                                                                                                                                                                                                    tool: 'compassion-engine',
+                                                                                                                                                                                                                                                                                                                                    archetype: 'star',
+                                                                                                                                                                                                                                                                                                                                    capabilities: ['trauma-aware', 'heart-healing', 'loving-kindness', 'gentle-guidance']
+                                                                                                                                                                                                                                                                                                                                    }, '*');
+                                                                                                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                                                                                                                </script>
+                                                                                                                                                                                                                                                                                                                            </body>
+                                                                                                                                                                                                                                                                                                                        </html>

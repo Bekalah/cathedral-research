@@ -1,0 +1,150 @@
+{
+  "merge_strategy": "append",
+  "schema_version": "1.0.0",
+  "styles": [
+    {
+      "id":"obsidian-mandala",
+      "name":"Obsidian Mandala",
+      "palette":"obsidian-mandala",
+      "shader_seed":"geom_seed:obsidian-001",
+      "texture":"gold-leaf-stone",
+      "music": {"mode":"aeolian","bpm":54,"solfeggio":396},
+      "synthesizer_station": "station-01-obsidian",
+      "stage": "Nigredo",
+      "element": "Water",
+      "notes":"Nigredo grounding / Malkuth"
+    },
+    {
+      "id":"kunz-harmonograph",
+      "name":"Kunz Harmonograph",
+      "palette":"kunz-harmonograph",
+      "shader_seed":"kunz-grid-048",
+      "texture":"vector-ink",
+      "music":{"mode":"lydian","bpm":60,"solfeggio":528},
+      "synthesizer_station": "station-02-kunz",
+      "stage": "Rubedo",
+      "element": "Air",
+      "notes":"Pendulum geometry"
+    },
+    {
+      "id":"afklint-automatic",
+      "name":"AfKlint Automatic",
+      "palette":"afklint-automatic",
+      "shader_seed":"afklint-automatic-12",
+      "texture":"watercolor-wet",
+      "music":{"mode":"mixolydian","bpm":72,"solfeggio":639},
+      "synthesizer_station": "station-03-afklint",
+      "stage": "Albedo",
+      "element": "Water",
+      "notes":"Automatic color field"
+    },
+    {
+      "id":"grey-anatomical",
+      "name":"Grey Anatomical",
+      "palette":"grey-anatomical",
+      "shader_seed":"grey-trans-007",
+      "texture":"subdermal-micro",
+      "music":{"mode":"phrygian","bpm":68,"solfeggio":741},
+      "synthesizer_station": "station-04-grey",
+      "stage": "Citrinitas",
+      "element": "Fire",
+      "notes":"Luminous anatomical overlay"
+    },
+    {
+      "id":"vienna-academy",
+      "name":"Vienna Academy",
+      "palette":"vienna-academy",
+      "shader_seed":"oil-stroke-002",
+      "texture":"canvas-varnish",
+      "music":{"mode":"minor-major","bpm":64,"solfeggio":528},
+      "synthesizer_station": "station-05-vienna",
+      "stage": "Citrinitas",
+      "element": "Air",
+      "notes":"Classical oil painting finish"
+    },
+    {
+      "id":"giger-mechorganic",
+      "name":"Giger Mechorganic",
+      "palette":"giger-mechorganic",
+      "shader_seed":"giger-mesh-66",
+      "texture":"ribbed-metal",
+      "music":{"mode":"phrygian-dominant","bpm":48,"solfeggio":285},
+      "synthesizer_station": "station-06-giger",
+      "stage": "Nigredo",
+      "element": "Earth",
+      "notes":"Biomechanical, industrial"
+    },
+    {
+      "id":"folk-tapestry",
+      "name":"Folk Tapestry",
+      "palette":"folk-tapestry",
+      "shader_seed":"embroidery-14",
+      "texture":"handwoven",
+      "music":{"mode":"dorian","bpm":70,"solfeggio":528},
+      "synthesizer_station": "station-07-folk",
+      "stage": "Rubedo",
+      "element": "Earth",
+      "notes":"Zidaryen-style folk weave"
+    },
+    {
+      "id":"nihonga-ink",
+      "name":"Nihonga Ink",
+      "palette":"nihonga-ink",
+      "shader_seed":"nihonga-ink-03",
+      "texture":"paper-fiber",
+      "music":{"mode":"pentatonic","bpm":56,"solfeggio":417},
+      "synthesizer_station": "station-08-nihonga",
+      "stage": "Albedo",
+      "element": "Air",
+      "notes":"Sumi brush + gold leaf"
+    },
+    {
+      "id":"synthwave-arcana",
+      "name":"Synthwave Arcana",
+      "palette":"synthwave-arcana",
+      "shader_seed":"neon-fresnel-09",
+      "texture":"holographic",
+      "music":{"mode":"synth-minor","bpm":92,"solfeggio":417},
+      "synthesizer_station": "station-09-synthwave",
+      "stage": "Citrinitas",
+      "element": "Fire",
+      "notes":"High-fashion neon futurism"
+    },
+    {
+      "id":"embroidered-sigil",
+      "name":"Embroidered Sigil",
+      "palette":"embroidered-sigil",
+      "shader_seed":"tapestry-close-01",
+      "texture":"velvet-bullion",
+      "music":{"mode":"chant","bpm":60,"solfeggio":528},
+      "synthesizer_station": "station-07-folk",
+      "stage": "Rubedo",
+      "element": "Earth",
+      "notes":"Macro embroidery detail"
+    },
+    {
+      "id":"living-mandala",
+      "name":"Living Mandala",
+      "palette":"living-mandala",
+      "shader_seed":"mandala-gen-v2",
+      "texture":"vector-glow",
+      "music":{"mode":"drone","bpm":60,"solfeggio_sequence":[396,528,741]},
+      "synthesizer_station": "station-10-mandala",
+      "stage": "Void",
+      "element": "Aether",
+      "notes":"Animated parametric mandala"
+    },
+    {
+      "id":"black-madonna-void",
+      "name":"Black Madonna Void",
+      "palette":"black-madonna-void",
+      "shader_seed":"madonna-mirror-08",
+      "texture":"altar-worn",
+      "music":{"mode":"chant-drone","bpm":48,"solfeggio":174},
+      "synthesizer_station": "station-01-obsidian",
+      "stage": "Nigredo",
+      "element": "Water",
+      "notes":"Ann Abyss / sacred grief mirror"
+    }
+  ]
+}

@@ -6,8 +6,8 @@
  */
 
 import { useState, useEffect, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { } from '@react-three/drei';
 import './styles.css';
 
 function App() {

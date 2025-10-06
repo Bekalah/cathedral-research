@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" data-nd-safe="true" data-tool="planetary-engine" data-archetype="tower">
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🌍 Planetary Engine — Cosmic Timing & Celestial Harmonics</title>
+            <meta name="description" content="Advanced planetary timing interface for aligning intentions with cosmic cycles. ND-safe, trauma-informed design.">
+            <style>
+                :root {
+                --night: #1a1625; --deep-purple: #2d1b3d; --cosmic: #4a3456; --star: #7a6a85;
+                --silver: #b8b2c1; --gold: #d4af37; --electric: #6366f1; --fire: #ff6b35;
+                --earth: #8b4513; --air: #87ceeb; --water: #4682b4; --spirit: #dda0dd;
+                --escape-glow: #ffff00; --radius: 16px; --shadow: 0 8px 32px rgba(26, 22, 37, 0.3);
+                }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body {
+                background: radial-gradient(ellipse at center, var(--deep-purple) 0%, var(--night) 70%);
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--silver);
+                min-height: 100vh;
+                overflow-x: hidden;
+                position: relative;
+                }
+                /* Animated starfield background */
+                .starfield {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image:
+                radial-gradient(2px 2px at 20px 30px, var(--star), transparent),
+                radial-gradient(2px 2px at 40px 70px, var(--silver), transparent),
+                radial-gradient(1px 1px at 90px 40px, var(--gold), transparent),
+                radial-gradient(1px 1px at 130px 80px, var(--star), transparent);
+                background-repeat: repeat;
+                background-size: 200px 100px;
+                animation: starMove 120s linear infinite;
+                z-index: -1;
+                opacity: 0.6;
+                }
+                @keyframes starMove {
+                from { transform: translateY(0px); }
+                to { transform: translateY(-100px); }
+                }
+                /* Emergency Escape Portal */
+                .escape-portal {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid var(--escape-glow);
+                border-radius: 12px;
+                padding: 12px;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .escape-key {
+                background: var(--escape-glow);
+                color: black;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 14px;
+                }
+                .escape-text {
+                color: white;
+                font-size: 12px;
+                }
+                .header {
+                text-align: center;
+                padding: 40px 20px;
+                position: relative;
+                }
+                h1 {
+                font-size: 3.5em;
+                font-weight: 300;
+                letter-spacing: 0.1em;
+                background: linear-gradient(135deg, var(--gold), var(--electric), var(--spirit));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 16px;
+                filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+                }
+                .tagline {
+                font-size: 0.9em;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                color: var(--star);
+                margin-bottom: 20px;
+                }
+                .main {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 20px 40px;
+                display: grid;
+                grid-template-columns: 1fr 500px 1fr;
+                gap: 30px;
+                }
+                /* Central Orrery */
+                .orrery-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                }
+                .planetary-orrery {
+                width: 450px;
+                height: 450px;
+                position: relative;
+                background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent 70%);
+                border-radius: 50%;
+                border: 2px solid var(--gold);
+                margin-bottom: 30px;
+                overflow: visible;
+                }
+                .sun {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 40px;
+                height: 40px;
+                background: radial-gradient(circle, var(--gold), var(--fire));
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 30px var(--gold);
+                z-index: 10;
+                }
+                .orbital-path {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border: 1px solid rgba(184, 178, 193, 0.3);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                }
+                .mercury-orbit { width: 80px; height: 80px; }
+                .venus-orbit { width: 110px; height: 110px; }
+                .earth-orbit { width: 140px; height: 140px; }
+                .mars-orbit { width: 180px; height: 180px; }
+                .jupiter-orbit { width: 240px; height: 240px; }
+                .saturn-orbit { width: 300px; height: 300px; }
+                .planet {
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                transform-origin: center;
+                }
+                .mercury {
+                background: #8c7853;
+                animation: orbit-mercury 8s linear infinite;
+                top: -6px; left: 50%; margin-left: -6px;
+                }
+                .venus {
+                background: #ffc649;
+                animation: orbit-venus 12s linear infinite;
+                top: -6px; left: 50%; margin-left: -6px;
+                }
+                .earth {
+                background: #6b93d6;
+                animation: orbit-earth 16s linear infinite;
+                top: -6px; left: 50%; margin-left: -6px;
+                }
+                .mars {
+                background: #c1440e;
+                animation: orbit-mars 24s linear infinite;
+                top: -6px; left: 50%; margin-left: -6px;
+                }
+                .jupiter {
+                background: #d8ca9d;
+                width: 16px; height: 16px; margin-left: -8px; top: -8px;
+                animation: orbit-jupiter 40s linear infinite;
+                }
+                .saturn {
+                background: #fab27b;
+                width: 14px; height: 14px; margin-left: -7px; top: -7px;
+                animation: orbit-saturn 60s linear infinite;
+                }
+                @keyframes orbit-mercury { from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(40px) rotate(-360deg); } }
+                @keyframes orbit-venus { from { transform: rotate(0deg) translateX(55px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(55px) rotate(-360deg); } }
+                @keyframes orbit-earth { from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(70px) rotate(-360deg); } }
+                @keyframes orbit-mars { from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(90px) rotate(-360deg); } }
+                @keyframes orbit-jupiter { from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(120px) rotate(-360deg); } }
+                @keyframes orbit-saturn { from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(150px) rotate(-360deg); } }
+                /* Side Panels */
+                .side-panel {
+                background: linear-gradient(135deg, rgba(45, 27, 61, 0.8), rgba(26, 22, 37, 0.9));
+                border-radius: var(--radius);
+                padding: 24px;
+                box-shadow: var(--shadow);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(122, 106, 133, 0.2);
+                }
+                .section {
+                margin-bottom: 24px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(122, 106, 133, 0.2);
+                }
+                .section:last-child {
+                border: none;
+                margin-bottom: 0;
+                }
+                .section-title {
+                font-size: 1.3em;
+                font-weight: 400;
+                margin-bottom: 16px;
+                color: var(--gold);
+                }
+                .planet-card {
+                background: rgba(74, 52, 86, 0.4);
+                border-radius: 12px;
+                padding: 16px;
+                margin-bottom: 12px;
+                border: 1px solid rgba(122, 106, 133, 0.3);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                }
+                .planet-card:hover {
+                background: rgba(74, 52, 86, 0.6);
+                border-color: var(--gold);
+                transform: translateY(-2px);
+                }
+                .planet-card.active {
+                background: rgba(212, 175, 55, 0.2);
+                border-color: var(--gold);
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+                }
+                .planet-header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 8px;
+                }
+                .planet-symbol {
+                font-size: 1.5em;
+                width: 30px;
+                text-align: center;
+                }
+                .planet-name {
+                font-size: 1.1em;
+                font-weight: 500;
+                color: var(--silver);
+                }
+                .planet-details {
+                font-size: 0.85em;
+                color: var(--star);
+                line-height: 1.4;
+                }
+                .timing-info {
+                background: rgba(99, 102, 241, 0.1);
+                border-radius: 8px;
+                padding: 12px;
+                margin-bottom: 12px;
+                border-left: 3px solid var(--electric);
+                }
+                .timing-label {
+                font-size: 0.8em;
+                color: var(--star);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 4px;
+                }
+                .timing-value {
+                font-size: 1em;
+                color: var(--silver);
+                font-weight: 500;
+                }
+                .aspect-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 8px;
+                margin-top: 12px;
+                }
+                .aspect {
+                background: rgba(122, 106, 133, 0.2);
+                border-radius: 6px;
+                padding: 8px;
+                text-align: center;
+                font-size: 0.8em;
+                border: 1px solid transparent;
+                }
+                .aspect.harmonious {
+                border-color: var(--spirit);
+                background: rgba(221, 160, 221, 0.1);
+                }
+                .aspect.challenging {
+                border-color: var(--fire);
+                background: rgba(255, 107, 53, 0.1);
+                }
+                .controls {
+                text-align: center;
+                margin-top: 20px;
+                }
+                .btn {
+                padding: 12px 20px;
+                border: none;
+                border-radius: 10px;
+                font-family: inherit;
+                font-size: 0.9em;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin: 0 8px;
+                }
+                .btn-primary {
+                background: linear-gradient(135deg, var(--gold), var(--electric));
+                color: white;
+                box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+                }
+                .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+                }
+                .btn-secondary {
+                background: rgba(74, 52, 86, 0.6);
+                color: var(--silver);
+                border: 1px solid rgba(122, 106, 133, 0.3);
+                }
+                .current-transits {
+                max-height: 300px;
+                overflow-y: auto;
+                }
+                .current-transits::-webkit-scrollbar {
+                width: 6px;
+                }
+                .current-transits::-webkit-scrollbar-track {
+                background: rgba(74, 52, 86, 0.3);
+                border-radius: 3px;
+                }
+                .current-transits::-webkit-scrollbar-thumb {
+                background: var(--gold);
+                border-radius: 3px;
+                }
+                @media (max-width: 1200px) {
+                .main {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                }
+                .planetary-orrery {
+                width: 350px;
+                height: 350px;
+                }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="starfield">
+            </div>
+            <!-- Emergency Escape Portal -->
+            <div class="escape-portal">
+                <div class="escape-key">ESC</div>
+                    <div class="escape-text">Safety Exit</div>
+                    </div>
+                    <div class="header">
+                        <h1>🌍 Planetary Engine</h1>
+                            <p class="tagline">Cosmic Timing & Celestial Harmonics</p>
+                            </div>
+                            <div class="main">
+                                <!-- Left Panel: Current Transits -->
+                                <div class="side-panel">
+                                    <div class="section">
+                                        <div class="section-title">🌟 Current Transits</div>
+                                            <div class="current-transits" id="current-transits">
+                                                <!-- Populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="section">
+                                            <div class="section-title">⏰ Planetary Hours</div>
+                                                <div id="planetary-hours">
+                                                    <!-- Populated by JavaScript -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Center Panel: Orrery -->
+                                        <div class="orrery-container">
+                                            <div class="planetary-orrery" id="orrery">
+                                                <div class="sun" title="Sol - The Life Force">
+                                                </div>
+                                                <div class="orbital-path mercury-orbit">
+                                                </div>
+                                                <div class="orbital-path venus-orbit">
+                                                </div>
+                                                <div class="orbital-path earth-orbit">
+                                                </div>
+                                                <div class="orbital-path mars-orbit">
+                                                </div>
+                                                <div class="orbital-path jupiter-orbit">
+                                                </div>
+                                                <div class="orbital-path saturn-orbit">
+                                                </div>
+                                                <div class="planet mercury" title="Mercury - Communication & Travel">
+                                                </div>
+                                                <div class="planet venus" title="Venus - Love & Beauty">
+                                                </div>
+                                                <div class="planet earth" title="Earth - Material & Physical">
+                                                </div>
+                                                <div class="planet mars" title="Mars - Action & Energy">
+                                                </div>
+                                                <div class="planet jupiter" title="Jupiter - Expansion & Wisdom">
+                                                </div>
+                                                <div class="planet saturn" title="Saturn - Structure & Discipline">
+                                                </div>
+                                            </div>
+                                            <div class="controls">
+                                                <button class="btn btn-secondary" onclick="pauseOrrery()">Pause</button>
+                                                    <button class="btn btn-primary" onclick="getCurrentAspects()">Current Aspects</button>
+                                                        <button class="btn btn-secondary" onclick="resetOrrery()">Reset</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Right Panel: Planet Details & Aspects -->
+                                                    <div class="side-panel">
+                                                        <div class="section">
+                                                            <div class="section-title">🪐 Planet Focus</div>
+                                                                <div id="planet-details">
+                                                                    <div class="planet-card active" data-planet="mercury">
+                                                                        <div class="planet-header">
+                                                                            <div class="planet-symbol">☿</div>
+                                                                                <div class="planet-name">Mercury</div>
+                                                                                </div>
+                                                                                <div class="planet-details">
+                                                                                    Communication, intellect, travel, technology. Governs learning and information exchange.
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="section">
+                                                                        <div class="section-title">🔮 Timing Guidance</div>
+                                                                            <div class="timing-info">
+                                                                                <div class="timing-label">Current Energy</div>
+                                                                                    <div class="timing-value" id="current-energy">Mercury in Gemini - Excellent for communication</div>
+                                                                                    </div>
+                                                                                    <div class="timing-info">
+                                                                                        <div class="timing-label">Best For</div>
+                                                                                            <div class="timing-value" id="best-for">Learning, writing, short travels, technology work</div>
+                                                                                            </div>
+                                                                                            <div class="timing-info">
+                                                                                                <div class="timing-label">Avoid</div>
+                                                                                                    <div class="timing-value" id="avoid">Major financial decisions, signing contracts</div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="section">
+                                                                                                    <div class="section-title">✨ Active Aspects</div>
+                                                                                                        <div class="aspect-grid" id="aspects">
+                                                                                                            <div class="aspect harmonious">☿ △ ♃</div>
+                                                                                                                <div class="aspect challenging">♀ □ ♂</div>
+                                                                                                                    <div class="aspect harmonious">☽ ⚹ ☉</div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <script>
+                                                                                                            const planets = [
+                                                                                                            {
+                                                                                                            name: 'Mercury', symbol: '☿', color: '#8c7853',
+                                                                                                            domain: 'Communication, intellect, travel, technology',
+                                                                                                            currentSign: 'Gemini',
+                                                                                                            energy: 'Quick-thinking, adaptable, communicative'
+                                                                                                            },
+                                                                                                            {
+                                                                                                            name: 'Venus', symbol: '♀', color: '#ffc649',
+                                                                                                            domain: 'Love, beauty, art, relationships, money',
+                                                                                                            currentSign: 'Libra',
+                                                                                                            energy: 'Harmonious, artistic, relationship-focused'
+                                                                                                            },
+                                                                                                            {
+                                                                                                            name: 'Mars', symbol: '♂', color: '#c1440e',
+                                                                                                            domain: 'Action, energy, courage, conflict',
+                                                                                                            currentSign: 'Aries',
+                                                                                                            energy: 'Bold, pioneering, direct action'
+                                                                                                            },
+                                                                                                            {
+                                                                                                            name: 'Jupiter', symbol: '♃', color: '#d8ca9d',
+                                                                                                            domain: 'Expansion, wisdom, philosophy, luck',
+                                                                                                            currentSign: 'Sagittarius',
+                                                                                                            energy: 'Optimistic, expansive, philosophical'
+                                                                                                            },
+                                                                                                            {
+                                                                                                            name: 'Saturn', symbol: '♄', color: '#fab27b',
+                                                                                                            domain: 'Structure, discipline, responsibility, time',
+                                                                                                            currentSign: 'Capricorn',
+                                                                                                            energy: 'Disciplined, structured, goal-oriented'
+                                                                                                            }
+                                                                                                            ];
+                                                                                                            const planetaryHours = [
+                                                                                                            'Sun', 'Venus', 'Mercury', 'Moon', 'Saturn', 'Jupiter', 'Mars'
+                                                                                                            ];
+                                                                                                            function getCurrentPlanetaryHour() {
+                                                                                                            const now = new Date();
+                                                                                                            const hour = now.getHours();
+                                                                                                            return planetaryHours[hour % 7];
+                                                                                                            }
+                                                                                                            function updateCurrentTransits() {
+                                                                                                            const transitsContainer = document.getElementById('current-transits');
+                                                                                                            const currentHour = getCurrentPlanetaryHour();
+                                                                                                            let transitsHTML = `
+                                                                                                            <div class="timing-info">
+                                                                                                                <div class="timing-label">Current Planetary Hour</div>
+                                                                                                                    <div class="timing-value">${currentHour} - ${getCurrentHourGuidance(currentHour)}</div>
+                                                                                                                    </div>
+                                                                                                                    `;
+                                                                                                                    planets.forEach(planet => {
+                                                                                                                    transitsHTML += `
+                                                                                                                    <div class="planet-card" onclick="selectPlanet('${planet.name.toLowerCase()}')">
+                                                                                                                        <div class="planet-header">
+                                                                                                                            <div class="planet-symbol">${planet.symbol}</div>
+                                                                                                                                <div class="planet-name">${planet.name} in ${planet.currentSign}</div>
+                                                                                                                                </div>
+                                                                                                                                <div class="planet-details">${planet.energy}</div>
+                                                                                                                                </div>
+                                                                                                                                `;
+                                                                                                                                });
+                                                                                                                                transitsContainer.innerHTML = transitsHTML;
+                                                                                                                                }
+                                                                                                                                function getCurrentHourGuidance(planet) {
+                                                                                                                                const guidance = {
+                                                                                                                                'Sun': 'Leadership & vitality',
+                                                                                                                                'Venus': 'Love & creativity',
+                                                                                                                                'Mercury': 'Communication & learning',
+                                                                                                                                'Moon': 'Intuition & emotion',
+                                                                                                                                'Saturn': 'Structure & discipline',
+                                                                                                                                'Jupiter': 'Expansion & wisdom',
+                                                                                                                                'Mars': 'Action & courage'
+                                                                                                                                };
+                                                                                                                                return guidance[planet] || 'Cosmic alignment';
+                                                                                                                                }
+                                                                                                                                function selectPlanet(planetName) {
+                                                                                                                                // Remove active class from all planet cards
+                                                                                                                                document.querySelectorAll('.planet-card').forEach(card => {
+                                                                                                                                card.classList.remove('active');
+                                                                                                                                });
+                                                                                                                                // Add active class to selected planet
+                                                                                                                                event.target.closest('.planet-card').classList.add('active');
+                                                                                                                                const planet = planets.find(p => p.name.toLowerCase() === planetName);
+                                                                                                                                if (planet) {
+                                                                                                                                updatePlanetDetails(planet);
+                                                                                                                                }
+                                                                                                                                }
+                                                                                                                                function updatePlanetDetails(planet) {
+                                                                                                                                document.getElementById('current-energy').textContent =
+                                                                                                                                `${planet.name} in ${planet.currentSign} - ${planet.energy}`;
+                                                                                                                                document.getElementById('best-for').textContent = getBestActivities(planet);
+                                                                                                                                document.getElementById('avoid').textContent = getAvoidActivities(planet);
+                                                                                                                                }
+                                                                                                                                function getBestActivities(planet) {
+                                                                                                                                const activities = {
+                                                                                                                                'Mercury': 'Learning, writing, communication, short travels, technology',
+                                                                                                                                'Venus': 'Art, relationships, beauty treatments, financial planning',
+                                                                                                                                'Mars': 'Physical exercise, starting projects, competitive activities',
+                                                                                                                                'Jupiter': 'Teaching, publishing, legal matters, spiritual practices',
+                                                                                                                                'Saturn': 'Organization, long-term planning, serious commitments'
+                                                                                                                                };
+                                                                                                                                return activities[planet.name] || 'Meditation and reflection';
+                                                                                                                                }
+                                                                                                                                function getAvoidActivities(planet) {
+                                                                                                                                const avoid = {
+                                                                                                                                'Mercury': 'Major decisions during Mercury retrograde periods',
+                                                                                                                                'Venus': 'Harsh confrontations, breaking up relationships',
+                                                                                                                                'Mars': 'Aggressive conflicts, rushing important decisions',
+                                                                                                                                'Jupiter': 'Overindulgence, unrealistic promises',
+                                                                                                                                'Saturn': 'Frivolous spending, avoiding responsibilities'
+                                                                                                                                };
+                                                                                                                                return avoid[planet.name] || 'Hasty decisions';
+                                                                                                                                }
+                                                                                                                                function getCurrentAspects() {
+                                                                                                                                // Simulate aspect calculation
+                                                                                                                                const aspects = ['☿ △ ♃', '♀ □ ♂', '☽ ⚹ ☉', '♄ ☍ ☽', '♃ ⚹ ♀'];
+                                                                                                                                const aspectsContainer = document.getElementById('aspects');
+                                                                                                                                aspectsContainer.innerHTML = aspects.map((aspect, index) => {
+                                                                                                                                const isHarmonious = aspect.includes('△') || aspect.includes('⚹');
+                                                                                                                                const className = isHarmonious ? 'harmonious' : 'challenging';
+                                                                                                                                return `<div class="aspect ${className}">${aspect}</div>`;
+                                                                                                                                    }).join('');
+                                                                                                                                    }
+                                                                                                                                    function pauseOrrery() {
+                                                                                                                                    const planets = document.querySelectorAll('.planet');
+                                                                                                                                    planets.forEach(planet => {
+                                                                                                                                    planet.style.animationPlayState =
+                                                                                                                                    planet.style.animationPlayState === 'paused' ? 'running' : 'paused';
+                                                                                                                                    });
+                                                                                                                                    }
+                                                                                                                                    function resetOrrery() {
+                                                                                                                                    const planets = document.querySelectorAll('.planet');
+                                                                                                                                    planets.forEach(planet => {
+                                                                                                                                    planet.style.animation = 'none';
+                                                                                                                                    planet.offsetHeight; // Trigger reflow
+                                                                                                                                    planet.style.animation = null;
+                                                                                                                                    });
+                                                                                                                                    }
+                                                                                                                                    // Emergency escape
+                                                                                                                                    document.addEventListener('keydown', function(e) {
+                                                                                                                                    if (e.key === 'Escape') {
+                                                                                                                                    window.parent.postMessage({ action: 'escape', tool: 'planetary-engine' }, '*');
+                                                                                                                                    }
+                                                                                                                                    });
+                                                                                                                                    // Initialize
+                                                                                                                                    updateCurrentTransits();
+                                                                                                                                    getCurrentAspects();
+                                                                                                                                    // Update every minute
+                                                                                                                                    setInterval(updateCurrentTransits, 60000);
+                                                                                                                                    // Announce tool ready
+                                                                                                                                    window.addEventListener('load', function() {
+                                                                                                                                    window.parent.postMessage({
+                                                                                                                                    action: 'tool-ready',
+                                                                                                                                    tool: 'planetary-engine',
+                                                                                                                                    archetype: 'tower',
+                                                                                                                                    capabilities: ['planetary-timing', 'aspect-analysis', 'cosmic-alignment']
+                                                                                                                                    }, '*');
+                                                                                                                                    });
+                                                                                                                                </script>
+                                                                                                                            </body>
+                                                                                                                        </html>

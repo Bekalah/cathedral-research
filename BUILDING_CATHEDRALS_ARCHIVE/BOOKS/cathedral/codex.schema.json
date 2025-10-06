@@ -1,0 +1,222 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Codex Abyssiae Node Schema",
+  "description": "JSON schema for all Arcana nodes in the Cathedral of Circuits system",
+  "type": "object",
+  "required": [
+    "id",
+    "title", 
+    "chakra",
+    "hexagram",
+    "archetype",
+    "lattice",
+    "martyr_resonance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(MA[0-2][0-9]|WANDS_|CUPS_|SWORDS_|PENTACLES_)(0[1-9]|1[0-4]|[1-9])$",
+      "description": "Unique identifier: MA00-MA21 for Major Arcana, SUIT_RANK for Minor"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 50,
+      "description": "Display name of the node"
+    },
+    "suit": {
+      "type": "string",
+      "enum": ["major", "wands", "cups", "swords", "pentacles"],
+      "description": "Arcana suit classification"
+    },
+    "rank": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 21,
+      "description": "Position in suit (0-21 for Major, 1-14 for Minor)"
+    },
+    "hebrew": {
+      "type": "string",
+      "description": "Hebrew letter association (Major Arcana only)"
+    },
+    "elemental_ruler": {
+      "type": "string",
+      "description": "Astrological correspondence"
+    },
+    "chakra": {
+      "type": "string",
+      "enum": ["root", "sacral", "solar_plexus", "heart", "throat", "third_eye", "crown"],
+      "description": "Primary chakra resonance"
+    },
+    "hexagram": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 64,
+      "description": "I Ching hexagram number"
+    },
+    "archetype": {
+      "type": "string",
+      "pattern": "^[a-z_]+$",
+      "description": "Archetypal identity in snake_case"
+    },
+    "visionary_anchor": {
+      "type": "string",
+      "description": "Historical or mythic figure associated with this node"
+    },
+    "martyr_resonance": {
+      "type": "boolean",
+      "description": "Whether this visionary was executed/persecuted"
+    },
+    "execution_context": {
+      "type": "string",
+      "description": "How the visionary was silenced (if martyr_resonance is true)"
+    },
+    "living_voice": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200,
+      "description": "Quote in the visionary's authentic voice"
+    },
+    "ritual_function": {
+      "type": "string",
+      "description": "Primary healing/initiatory purpose"
+    },
+    "nd_safe_healing": {
+      "type": "string",
+      "description": "Trauma-informed healing approach"
+    },
+    "choice_vectors": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["prompt", "consequence"],
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 100,
+            "description": "Choice text presented to player"
+          },
+          "consequence": {
+            "type": "object",
+            "properties": {
+              "unlock": {
+                "type": "string",
+                "description": "Next node ID to unlock"
+              },
+              "trait": {
+                "type": "string",
+                "pattern": "^[a-z_]+$",
+                "description": "Player trait gained/modified"
+              },
+              "stress": {
+                "type": "integer",
+                "minimum": -5,
+                "maximum": 5,
+                "description": "Stress level change"
+              },
+              "wisdom": {
+                "type": "integer", 
+                "minimum": -5,
+                "maximum": 5,
+                "description": "Wisdom level change"
+              },
+              "courage": {
+                "type": "integer",
+                "minimum": -5, 
+                "maximum": 5,
+                "description": "Courage level change"
+              },
+              "shadow": {
+                "type": "string",
+                "description": "Shadow node triggered by this choice"
+              }
+            }
+          }
+        }
+      }
+    },
+    "lattice": {
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {
+        "x": {
+          "type": "integer",
+          "enum": [144],
+          "description": "X-coordinate in the 144:99 sacred lattice"
+        },
+        "y": {
+          "type": "integer", 
+          "enum": [99],
+          "description": "Y-coordinate in the 144:99 sacred lattice"
+        }
+      }
+    },
+    "legacy_focus": {
+      "type": "string",
+      "description": "What the visionary contributed (replaces death_method for ND safety)"
+    },
+    "codex_node": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 144,
+      "description": "Position in the Codex 144:99 node matrix"
+    },
+    "trauma_accommodations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "content_warning",
+          "breathing_space",
+          "agency_emphasis", 
+          "gentle_transition",
+          "opt_out_available",
+          "healing_focus"
+        ]
+      },
+      "description": "PTSD-safe design features"
+    }
+  },
+  "additionalProperties": false,
+  "if": {
+    "properties": {
+      "martyr_resonance": { "const": true }
+    }
+  },
+  "then": {
+    "required": ["execution_context", "living_voice", "nd_safe_healing"]
+  },
+  "examples": [
+    {
+      "id": "WANDS_05",
+      "title": "Creative Clash",
+      "suit": "wands",
+      "rank": 5,
+      "elemental_ruler": "Mars in Leo",
+      "chakra": "solar_plexus",
+      "hexagram": 38,
+      "archetype": "heretic_artist",
+      "visionary_anchor": "Artemisia Gentileschi (1593–1656)",
+      "martyr_resonance": true,
+      "execution_context": "Public trial, forced recantation, erased from art history",
+      "living_voice": "They called my rage 'unfeminine.' But Judith's sword was in my brush.",
+      "ritual_function": "Ignites courage to defend creative truth under pressure",
+      "nd_safe_healing": "Transforms shame about anger into sacred boundary",
+      "choice_vectors": [
+        {
+          "prompt": "Paint your truth, even if they burn the canvas.",
+          "consequence": { "unlock": "WANDS_06", "trait": "unbroken_lineage", "courage": 2 }
+        },
+        {
+          "prompt": "Sign their name over yours to survive.",
+          "consequence": { "stress": 2, "shadow": "MA15", "wisdom": -1 }
+        }
+      ],
+      "lattice": { "x": 144, "y": 99 },
+      "trauma_accommodations": ["agency_emphasis", "healing_focus"]
+    }
+  ]
+}

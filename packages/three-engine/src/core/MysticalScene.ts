@@ -403,17 +403,15 @@ export class MysticalScene extends BrowserEventEmitter {
    * Generate scene description for AI analysis
    */
   private getSceneDescription(): string {
-    const objects = [];
+    const objects: string[] = [];
     this.scene.traverse((object) => {
       if (object.userData.mystical) {
         objects.push(object.type || 'Object3D');
       }
     });
-
+    
     return `Mystical Three.js scene containing: ${objects.join(', ')}`;
-  }
-
-  /**
+  }  /**
    * Count objects in scene
    */
   private getObjectCount(): number {
@@ -426,12 +424,13 @@ export class MysticalScene extends BrowserEventEmitter {
    * Get mystical elements in scene
    */
   private getMysticalElements(): string[] {
-    const elements = [];
+    const elements: string[] = [];
     this.scene.traverse((object) => {
       if (object.userData.sacredGeometry) elements.push('sacred-geometry');
       if (object.userData.aura) elements.push('aura');
-      if (object.userData.resonance) elements.push('resonance');
+      if (object.userData.chakra) elements.push('chakra');
     });
+    
     return [...new Set(elements)];
   }
 

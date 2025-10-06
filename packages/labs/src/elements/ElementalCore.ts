@@ -307,5 +307,5 @@ export function createElementalMaterial(element: ElementalSignature): THREE.Mate
 }
 
 // Export utilities for Three.js integration
-export { blendColors, createElementalMaterial };
+export { blendColors };
 export default ELEMENTS;

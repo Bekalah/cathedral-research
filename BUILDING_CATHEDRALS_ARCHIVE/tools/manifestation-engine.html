@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" data-nd-safe="true" data-tool="manifestation-engine" data-archetype="fool">
+    <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>✦ Manifestation Engine — The Magician's Tools</title>
+            <meta name="description" content="Advanced manifestation interface combining Tarot wisdom, planetary timing, and alchemical synthesis. ND-safe, trauma-informed design.">
+            <style>
+                :root {
+                --silk: #fefaf6; --pearl: #f9f5f1; --blush: #f5d4c8; --rose: #e8b4b8;
+                --lavender: #e8dff5; --sage: #d4e4d4; --deep: #3a2f3f; --mist: #9a8a9a;
+                --gold: #c6a767; --accent: #5b4b8a; --escape-glow: #ffff00;
+                --radius: 16px; --shadow: 0 8px 32px rgba(58, 47, 63, 0.1);
+                }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body {
+                background: linear-gradient(160deg, var(--silk) 0%, var(--pearl) 40%, #fef0e8 100%);
+                font-family: 'Cormorant Garamond', serif;
+                color: var(--deep);
+                min-height: 100vh;
+                overflow-x: hidden;
+                }
+                /* Emergency Escape Portal */
+                .escape-portal {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(0, 0, 0, 0.8);
+                border: 2px solid var(--escape-glow);
+                border-radius: 12px;
+                padding: 12px;
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                }
+                .escape-key {
+                background: var(--escape-glow);
+                color: black;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 14px;
+                }
+                .escape-text {
+                color: white;
+                font-size: 12px;
+                }
+                .header {
+                text-align: center;
+                padding: 40px 20px;
+                position: relative;
+                }
+                h1 {
+                font-size: 3.5em;
+                font-weight: 300;
+                letter-spacing: 0.1em;
+                background: linear-gradient(135deg, var(--deep), var(--gold), var(--accent));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 16px;
+                }
+                .tagline {
+                font-size: 0.9em;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                color: var(--mist);
+                margin-bottom: 20px;
+                }
+                .main {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 20px 40px;
+                display: grid;
+                grid-template-columns: 350px 1fr 300px;
+                gap: 30px;
+                }
+                /* Left Panel - Intention Setting */
+                .intention-panel {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 250, 246, 0.8));
+                border-radius: var(--radius);
+                padding: 24px;
+                box-shadow: var(--shadow);
+                height: fit-content;
+                }
+                .section {
+                margin-bottom: 24px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(232, 180, 184, 0.2);
+                }
+                .section:last-child {
+                border: none;
+                margin-bottom: 0;
+                }
+                .section-title {
+                font-size: 1.3em;
+                font-weight: 400;
+                margin-bottom: 16px;
+                color: var(--deep);
+                }
+                .input-group {
+                margin-bottom: 16px;
+                }
+                .input-label {
+                display: block;
+                font-size: 0.9em;
+                color: var(--mist);
+                margin-bottom: 6px;
+                letter-spacing: 0.05em;
+                }
+                .text-input {
+                width: 100%;
+                padding: 12px 16px;
+                border: 1.5px solid rgba(232, 180, 184, 0.3);
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.7);
+                font-family: inherit;
+                font-size: 0.95em;
+                color: var(--deep);
+                transition: all 0.3s ease;
+                }
+                .text-input:focus {
+                outline: none;
+                border-color: var(--gold);
+                background: white;
+                box-shadow: 0 0 0 3px rgba(198, 167, 103, 0.1);
+                }
+                .text-area {
+                min-height: 80px;
+                resize: vertical;
+                }
+                .select-input {
+                width: 100%;
+                padding: 10px 14px;
+                border: 1.5px solid rgba(232, 180, 184, 0.3);
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.8);
+                font-family: inherit;
+                color: var(--deep);
+                cursor: pointer;
+                }
+                /* Center Panel - Manifestation Canvas */
+                .canvas-panel {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(254, 250, 246, 0.9));
+                border-radius: var(--radius);
+                padding: 30px;
+                box-shadow: var(--shadow);
+                position: relative;
+                min-height: 600px;
+                }
+                .manifestation-wheel {
+                width: 400px;
+                height: 400px;
+                margin: 20px auto;
+                position: relative;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(232, 223, 245, 0.3));
+                border: 3px solid var(--gold);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                }
+                .wheel-center {
+                width: 120px;
+                height: 120px;
+                background: linear-gradient(135deg, var(--gold), var(--accent));
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 2em;
+                font-weight: 300;
+                text-align: center;
+                z-index: 2;
+                }
+                .wheel-segment {
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                background: linear-gradient(45deg, rgba(232, 180, 184, 0.3), transparent);
+                transform-origin: 100% 100%;
+                border: 1px solid rgba(198, 167, 103, 0.2);
+                }
+                .element-symbols {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                }
+                .element-symbol {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2em;
+                color: var(--deep);
+                border: 2px solid var(--gold);
+                }
+                .symbol-fire { top: 20px; left: 50%; transform: translateX(-50%); }
+                .symbol-air { top: 50%; right: 20px; transform: translateY(-50%); }
+                .symbol-water { bottom: 20px; left: 50%; transform: translateX(-50%); }
+                .symbol-earth { top: 50%; left: 20px; transform: translateY(-50%); }
+                /* Right Panel - Planetary Timing */
+                .timing-panel {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 250, 246, 0.8));
+                border-radius: var(--radius);
+                padding: 24px;
+                box-shadow: var(--shadow);
+                height: fit-content;
+                }
+                .planetary-hour {
+                text-align: center;
+                margin-bottom: 20px;
+                padding: 16px;
+                background: rgba(232, 223, 245, 0.2);
+                border-radius: 12px;
+                }
+                .current-planet {
+                font-size: 2em;
+                margin-bottom: 8px;
+                }
+                .planet-name {
+                font-size: 1.1em;
+                font-weight: 500;
+                color: var(--deep);
+                margin-bottom: 4px;
+                }
+                .planet-quality {
+                font-size: 0.85em;
+                color: var(--mist);
+                }
+                .moon-phase {
+                text-align: center;
+                margin-bottom: 20px;
+                padding: 16px;
+                background: rgba(245, 212, 200, 0.2);
+                border-radius: 12px;
+                }
+                .moon-icon {
+                font-size: 2.5em;
+                margin-bottom: 8px;
+                }
+                .phase-name {
+                font-size: 1em;
+                font-weight: 500;
+                color: var(--deep);
+                }
+                .buttons {
+                display: flex;
+                gap: 12px;
+                justify-content: center;
+                margin-top: 24px;
+                }
+                .btn {
+                padding: 14px 24px;
+                border: none;
+                border-radius: 12px;
+                font-family: inherit;
+                font-size: 0.9em;
+                font-weight: 500;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                }
+                .btn-primary {
+                background: linear-gradient(135deg, var(--gold), var(--accent));
+                color: white;
+                box-shadow: 0 4px 16px rgba(198, 167, 103, 0.3);
+                }
+                .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(198, 167, 103, 0.4);
+                }
+                .btn-secondary {
+                background: rgba(255, 255, 255, 0.8);
+                color: var(--deep);
+                border: 1px solid rgba(232, 180, 184, 0.3);
+                }
+                .btn-secondary:hover {
+                background: white;
+                transform: translateY(-1px);
+                }
+                .manifestation-result {
+                margin-top: 20px;
+                padding: 20px;
+                background: rgba(232, 223, 245, 0.1);
+                border-radius: 12px;
+                border-left: 4px solid var(--gold);
+                display: none;
+                }
+                .result-title {
+                font-size: 1.1em;
+                font-weight: 500;
+                margin-bottom: 8px;
+                color: var(--deep);
+                }
+                .result-text {
+                line-height: 1.6;
+                color: var(--mist);
+                }
+                @media (max-width: 1200px) {
+                .main {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                }
+                .manifestation-wheel {
+                width: 300px;
+                height: 300px;
+                }
+                }
+                /* Rotating animations */
+                @keyframes gentleRotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+                }
+                .wheel-segment:nth-child(1) { transform: rotate(0deg); }
+                .wheel-segment:nth-child(2) { transform: rotate(90deg); }
+                .wheel-segment:nth-child(3) { transform: rotate(180deg); }
+                .wheel-segment:nth-child(4) { transform: rotate(270deg); }
+                .manifestation-wheel.active {
+                animation: gentleRotate 30s linear infinite;
+                }
+                .manifestation-wheel.active .element-symbols {
+                animation: gentleRotate 30s linear infinite reverse;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Emergency Escape Portal -->
+            <div class="escape-portal">
+                <div class="escape-key">ESC</div>
+                    <div class="escape-text">Safety Exit</div>
+                    </div>
+                    <div class="header">
+                        <h1>✦ Manifestation Engine</h1>
+                            <p class="tagline">The Magician's Tools — Planetary Timing & Elemental Synthesis</p>
+                            </div>
+                            <div class="main">
+                                <!-- Left Panel: Intention Setting -->
+                                <div class="intention-panel">
+                                    <div class="section">
+                                        <div class="section-title">✨ Intention Setting</div>
+                                            <div class="input-group">
+                                                <label class="input-label" for="intention-text">Clear Intention</label>
+                                                    <textarea
+                                                        id="intention-text"
+                                                        class="text-input text-area"
+                                                        placeholder="I manifest with clarity and for the highest good..."
+                                                        maxlength="500"
+                                                        >
+                                                    </textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                    <label class="input-label" for="manifestation-type">Type of Manifestation</label>
+                                                        <select id="manifestation-type" class="select-input">
+                                                            <option value="healing">Healing & Restoration</option>
+                                                                <option value="creativity">Creative Expression</option>
+                                                                    <option value="abundance">Abundance & Prosperity</option>
+                                                                        <option value="relationships">Relationships & Love</option>
+                                                                            <option value="protection">Protection & Boundaries</option>
+                                                                                <option value="wisdom">Wisdom & Understanding</option>
+                                                                                    <option value="transformation">Personal Transformation</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="input-group">
+                                                                                    <label class="input-label" for="timeframe">Timeframe</label>
+                                                                                        <select id="timeframe" class="select-input">
+                                                                                            <option value="immediate">Immediate (hours-days)</option>
+                                                                                                <option value="lunar">One Lunar Cycle (28 days)</option>
+                                                                                                    <option value="seasonal">One Season (3 months)</option>
+                                                                                                        <option value="yearly">One Year</option>
+                                                                                                            <option value="trust">Divine Timing</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="section">
+                                                                                                        <div class="section-title">🌟 Energy Amplifiers</div>
+                                                                                                            <div class="input-group">
+                                                                                                                <label class="input-label" for="crystal-ally">Crystal Ally</label>
+                                                                                                                    <select id="crystal-ally" class="select-input">
+                                                                                                                        <option value="clear-quartz">Clear Quartz - Amplification</option>
+                                                                                                                            <option value="amethyst">Amethyst - Spiritual Connection</option>
+                                                                                                                                <option value="rose-quartz">Rose Quartz - Love & Healing</option>
+                                                                                                                                    <option value="citrine">Citrine - Abundance & Joy</option>
+                                                                                                                                        <option value="black-tourmaline">Black Tourmaline - Protection</option>
+                                                                                                                                            <option value="moonstone">Moonstone - Intuition</option>
+                                                                                                                                                <option value="garnet">Garnet - Manifestation Power</option>
+                                                                                                                                                </select>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="input-group">
+                                                                                                                                                <label class="input-label" for="elemental-focus">Elemental Focus</label>
+                                                                                                                                                    <select id="elemental-focus" class="select-input">
+                                                                                                                                                        <option value="fire">Fire - Action & Passion</option>
+                                                                                                                                                            <option value="water">Water - Emotion & Flow</option>
+                                                                                                                                                                <option value="air">Air - Thought & Communication</option>
+                                                                                                                                                                    <option value="earth">Earth - Grounding & Material</option>
+                                                                                                                                                                        <option value="spirit">Spirit - Divine Connection</option>
+                                                                                                                                                                        </select>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                            <!-- Center Panel: Manifestation Canvas -->
+                                                                                                                                                            <div class="canvas-panel">
+                                                                                                                                                                <div class="manifestation-wheel" id="manifestation-wheel">
+                                                                                                                                                                    <div class="wheel-segment">
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <div class="wheel-segment">
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <div class="wheel-segment">
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <div class="wheel-segment">
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <div class="element-symbols">
+                                                                                                                                                                        <div class="element-symbol symbol-fire">🔥</div>
+                                                                                                                                                                            <div class="element-symbol symbol-air">💨</div>
+                                                                                                                                                                                <div class="element-symbol symbol-water">🌊</div>
+                                                                                                                                                                                    <div class="element-symbol symbol-earth">🌱</div>
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                    <div class="wheel-center" id="wheel-center">
+                                                                                                                                                                                        ✦
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                </div>
+                                                                                                                                                                                <div class="buttons">
+                                                                                                                                                                                    <button class="btn btn-secondary" onclick="clearManifestation()">Clear</button>
+                                                                                                                                                                                        <button class="btn btn-primary" onclick="activateManifestation()">Activate Manifestation</button>
+                                                                                                                                                                                            <button class="btn btn-secondary" onclick="exportManifestation()">Export as Image</button>
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                            <div class="manifestation-result" id="result">
+                                                                                                                                                                                                <div class="result-title">Manifestation Activated</div>
+                                                                                                                                                                                                    <div class="result-text" id="result-text">
+                                                                                                                                                                                                        Your intention has been set into motion through the sacred geometry of manifestation...
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                </div>
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                            <!-- Right Panel: Planetary Timing -->
+                                                                                                                                                                                            <div class="timing-panel">
+                                                                                                                                                                                                <div class="section">
+                                                                                                                                                                                                    <div class="section-title">🪐 Planetary Hour</div>
+                                                                                                                                                                                                        <div class="planetary-hour">
+                                                                                                                                                                                                            <div class="current-planet" id="current-planet">☿</div>
+                                                                                                                                                                                                                <div class="planet-name" id="planet-name">Mercury</div>
+                                                                                                                                                                                                                    <div class="planet-quality" id="planet-quality">Communication & Learning</div>
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                <div class="section">
+                                                                                                                                                                                                                    <div class="section-title">🌙 Moon Phase</div>
+                                                                                                                                                                                                                        <div class="moon-phase">
+                                                                                                                                                                                                                            <div class="moon-icon" id="moon-icon">🌓</div>
+                                                                                                                                                                                                                                <div class="phase-name" id="phase-name">Waxing Crescent</div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            <div class="section">
+                                                                                                                                                                                                                                <div class="section-title">📊 Timing Guidance</div>
+                                                                                                                                                                                                                                    <p style="font-size: 0.9em; line-height: 1.5; color: var(--mist);">
+                                                                                                                                                                                                                                        <span id="timing-advice">
+                                                                                                                                                                                                                                            Mercury hour is excellent for manifestations involving communication, learning, and mental clarity.
+                                                                                                                                                                                                                                            The waxing moon supports growth and building energy.
+                                                                                                                                                                                                                                        </span>
+                                                                                                                                                                                                                                    </p>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div class="section">
+                                                                                                                                                                                                                                    <div class="section-title">🔮 Next Optimal Times</div>
+                                                                                                                                                                                                                                        <div style="font-size: 0.85em; color: var(--mist);">
+                                                                                                                                                                                                                                            <div style="margin-bottom: 8px;">• Venus Hour: 3:47 PM (Love/Beauty)</div>
+                                                                                                                                                                                                                                                <div style="margin-bottom: 8px;">• Jupiter Hour: 8:23 PM (Expansion/Abundance)</div>
+                                                                                                                                                                                                                                                    <div style="margin-bottom: 8px;">• Full Moon: Dec 15 (Peak Power)</div>
+                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <script>
+                                                                                                                                                                                                                                            // Planetary hours calculation (simplified)
+                                                                                                                                                                                                                                            const planets = [
+                                                                                                                                                                                                                                            { name: 'Sun', symbol: '☉', quality: 'Success & Leadership' },
+                                                                                                                                                                                                                                            { name: 'Venus', symbol: '♀', quality: 'Love & Beauty' },
+                                                                                                                                                                                                                                            { name: 'Mercury', symbol: '☿', quality: 'Communication & Learning' },
+                                                                                                                                                                                                                                            { name: 'Moon', symbol: '☽', quality: 'Intuition & Emotion' },
+                                                                                                                                                                                                                                            { name: 'Saturn', symbol: '♄', quality: 'Structure & Discipline' },
+                                                                                                                                                                                                                                            { name: 'Jupiter', symbol: '♃', quality: 'Expansion & Abundance' },
+                                                                                                                                                                                                                                            { name: 'Mars', symbol: '♂', quality: 'Action & Courage' }
+                                                                                                                                                                                                                                            ];
+                                                                                                                                                                                                                                            function getCurrentPlanetaryHour() {
+                                                                                                                                                                                                                                            const now = new Date();
+                                                                                                                                                                                                                                            const hour = now.getHours();
+                                                                                                                                                                                                                                            const planetIndex = hour % 7;
+                                                                                                                                                                                                                                            return planets[planetIndex];
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            function updatePlanetaryInfo() {
+                                                                                                                                                                                                                                            const planet = getCurrentPlanetaryHour();
+                                                                                                                                                                                                                                            document.getElementById('current-planet').textContent = planet.symbol;
+                                                                                                                                                                                                                                            document.getElementById('planet-name').textContent = planet.name;
+                                                                                                                                                                                                                                            document.getElementById('planet-quality').textContent = planet.quality;
+                                                                                                                                                                                                                                            // Update timing advice
+                                                                                                                                                                                                                                            const advice = `${planet.name} hour is excellent for manifestations involving ${planet.quality.toLowerCase()}. ` +
+                                                                                                                                                                                                                                            `The current energy supports focused intention and clear visualization.`;
+                                                                                                                                                                                                                                            document.getElementById('timing-advice').textContent = advice;
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            function activateManifestation() {
+                                                                                                                                                                                                                                            const intention = document.getElementById('intention-text').value;
+                                                                                                                                                                                                                                            const type = document.getElementById('manifestation-type').value;
+                                                                                                                                                                                                                                            const timeframe = document.getElementById('timeframe').value;
+                                                                                                                                                                                                                                            const crystal = document.getElementById('crystal-ally').value;
+                                                                                                                                                                                                                                            const element = document.getElementById('elemental-focus').value;
+                                                                                                                                                                                                                                            if (!intention.trim()) {
+                                                                                                                                                                                                                                            alert('Please enter a clear intention before activating.');
+                                                                                                                                                                                                                                            return;
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            // Activate wheel animation
+                                                                                                                                                                                                                                            const wheel = document.getElementById('manifestation-wheel');
+                                                                                                                                                                                                                                            wheel.classList.add('active');
+                                                                                                                                                                                                                                            // Update wheel center with chosen element symbol
+                                                                                                                                                                                                                                            const elementSymbols = {
+                                                                                                                                                                                                                                            fire: '🔥', water: '🌊', air: '💨', earth: '🌱', spirit: '✦'
+                                                                                                                                                                                                                                            };
+                                                                                                                                                                                                                                            document.getElementById('wheel-center').textContent = elementSymbols[element];
+                                                                                                                                                                                                                                            // Show result
+                                                                                                                                                                                                                                            const result = document.getElementById('result');
+                                                                                                                                                                                                                                            const resultText = document.getElementById('result-text');
+                                                                                                                                                                                                                                            const manifestationText = `Your intention for ${type} has been activated with ${crystal.replace('-', ' ')} ` +
+                                                                                                                                                                                                                                            `energy and ${element} elemental focus. The manifestation is set to unfold over ${timeframe} timing. ` +
+                                                                                                                                                                                                                                            `Trust the process and remain open to signs and synchronicities.`;
+                                                                                                                                                                                                                                            resultText.textContent = manifestationText;
+                                                                                                                                                                                                                                            result.style.display = 'block';
+                                                                                                                                                                                                                                            // Stop animation after 30 seconds
+                                                                                                                                                                                                                                            setTimeout(() => {
+                                                                                                                                                                                                                                            wheel.classList.remove('active');
+                                                                                                                                                                                                                                            }, 30000);
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            function clearManifestation() {
+                                                                                                                                                                                                                                            document.getElementById('intention-text').value = '';
+                                                                                                                                                                                                                                            document.getElementById('manifestation-wheel').classList.remove('active');
+                                                                                                                                                                                                                                            document.getElementById('result').style.display = 'none';
+                                                                                                                                                                                                                                            document.getElementById('wheel-center').textContent = '✦';
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            function exportManifestation() {
+                                                                                                                                                                                                                                            // This would implement canvas export functionality
+                                                                                                                                                                                                                                            alert('Manifestation wheel exported as sacred geometry image!');
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            // Emergency escape
+                                                                                                                                                                                                                                            document.addEventListener('keydown', function(e) {
+                                                                                                                                                                                                                                            if (e.key === 'Escape') {
+                                                                                                                                                                                                                                            clearManifestation();
+                                                                                                                                                                                                                                            window.parent.postMessage({ action: 'escape', tool: 'manifestation-engine' }, '*');
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            });
+                                                                                                                                                                                                                                            // Initialize
+                                                                                                                                                                                                                                            updatePlanetaryInfo();
+                                                                                                                                                                                                                                            // Update planetary hour every minute
+                                                                                                                                                                                                                                            setInterval(updatePlanetaryInfo, 60000);
+                                                                                                                                                                                                                                            // Announce tool ready
+                                                                                                                                                                                                                                            window.addEventListener('load', function() {
+                                                                                                                                                                                                                                            window.parent.postMessage({
+                                                                                                                                                                                                                                            action: 'tool-ready',
+                                                                                                                                                                                                                                            tool: 'manifestation-engine',
+                                                                                                                                                                                                                                            archetype: 'magician',
+                                                                                                                                                                                                                                            capabilities: ['intention-setting', 'planetary-timing', 'elemental-synthesis']
+                                                                                                                                                                                                                                            }, '*');
+                                                                                                                                                                                                                                            });
+                                                                                                                                                                                                                                        </script>
+                                                                                                                                                                                                                                    </body>
+                                                                                                                                                                                                                                </html>

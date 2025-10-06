@@ -6,6 +6,8 @@ import { OrbitControls, Environment } from '@react-three/drei'
 import AppRegistry from './components/AppRegistry'
 import SystemStatus from './components/SystemStatus'
 import NavigationPortal from './components/NavigationPortal'
+import CharacterPortal from './components/CharacterPortal'
+import { SoundArtArchetypeExperience } from '../../../shared/sound-archetypes/SoundArtArchetypeExperience.jsx'
 import './App.css'
 
 interface AppManifest {
@@ -24,6 +26,8 @@ function App() {
   const [apps, setApps] = useState<AppManifest[]>([])
   const [selectedApp, setSelectedApp] = useState<string | null>(null)
   const [systemHealth, setSystemHealth] = useState<'excellent' | 'good' | 'warning' | 'critical'>('good')
+  const [activeView, setActiveView] = useState<'portal' | 'characters' | 'registry' | 'soundart'>('portal')
+  const [activeCharacter, setActiveCharacter] = useState<any>(null)
 
   useEffect(() => {
     loadAppRegistry()
@@ -119,6 +123,11 @@ function App() {
     }, 10000) // Check every 10 seconds
   }
 
+  const handleCharacterSelect = (characterData: any) => {
+    setActiveCharacter(characterData);
+    console.log(`🎭 Character activated:`, characterData.character.archetype.name);
+  };
+
   const handleAppLaunch = (appId: string) => {
     const app = apps.find(a => a.id === appId)
     if (app && app.status === 'active') {
@@ -143,53 +152,141 @@ function App() {
             <p className="hub-subtitle">
               Central Portal for Mystical Computing & Consciousness Exploration
             </p>
+            
+            {/* Navigation tabs */}
+            <div className="view-tabs">
+              <button 
+                className={`tab ${activeView === 'portal' ? 'active' : ''}`}
+                onClick={() => setActiveView('portal')}
+              >
+                🏛️ Portal
+              </button>
+              <button 
+                className={`tab ${activeView === 'characters' ? 'active' : ''}`}
+                onClick={() => setActiveView('characters')}
+              >
+                🃏 Characters
+              </button>
+              <button 
+                className={`tab ${activeView === 'soundart' ? 'active' : ''}`}
+                onClick={() => setActiveView('soundart')}
+              >
+                🎵 Sound Art
+              </button>
+              <button 
+                className={`tab ${activeView === 'registry' ? 'active' : ''}`}
+                onClick={() => setActiveView('registry')}
+              >
+                📋 Registry
+              </button>
+            </div>
           </div>
           
           <SystemStatus health={systemHealth} />
+          
+          {/* Active character indicator */}
+          {activeCharacter && (
+            <div className="active-character-indicator">
+              🎭 {activeCharacter.character.archetype.name} Active
+            </div>
+          )}
         </header>
 
         <main className="hub-main">
-          <div className="main-grid">
-            <section className="navigation-section">
-              <NavigationPortal
-                apps={apps}
-                selectedApp={selectedApp}
-                onAppSelect={setSelectedApp}
-                onAppLaunch={handleAppLaunch}
-              />
-            </section>
-
-            <section className="visualization-section">
-              <div className="portal-canvas">
-                <Canvas>
-                  <Environment preset="night" />
-                  <ambientLight intensity={0.3} />
-                  <pointLight position={[10, 10, 10]} intensity={0.8} />
-                  
-                  {/* Sacred geometry portal visualization */}
-                  <mesh rotation={[0, 0, 0]}>
-                    <torusKnotGeometry args={[1, 0.3, 100, 16]} />
-                    <meshStandardMaterial color="#8B5CF6" wireframe />
-                  </mesh>
-                  
-                  <OrbitControls 
-                    enablePan={false} 
-                    enableZoom={true} 
-                    enableRotate={true}
-                    autoRotate
-                    autoRotateSpeed={0.5}
+          <AnimatePresence mode="wait">
+            {activeView === 'portal' && (
+              <motion.div
+                key="portal"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="main-grid"
+              >
+                <section className="navigation-section">
+                  <NavigationPortal
+                    apps={apps}
+                    selectedApp={selectedApp}
+                    onAppSelect={setSelectedApp}
+                    onAppLaunch={handleAppLaunch}
                   />
-                </Canvas>
-              </div>
-            </section>
+                </section>
 
-            <section className="registry-section">
-              <AppRegistry
-                apps={apps}
-                onRefresh={loadAppRegistry}
-              />
-            </section>
-          </div>
+                <section className="visualization-section">
+                  <div className="portal-canvas">
+                    <Canvas>
+                      <Environment preset="night" />
+                      <ambientLight intensity={0.3} />
+                      <pointLight position={[10, 10, 10]} intensity={0.8} />
+                      
+                      {/* Sacred geometry portal visualization */}
+                      <mesh rotation={[0, 0, 0]}>
+                        <torusKnotGeometry args={[1, 0.3, 100, 16]} />
+                        <meshStandardMaterial color="#8B5CF6" wireframe />
+                      </mesh>
+                      
+                      <OrbitControls 
+                        enablePan={false} 
+                        enableZoom={true} 
+                        enableRotate={true}
+                        autoRotate
+                        autoRotateSpeed={0.5}
+                      />
+                    </Canvas>
+                  </div>
+                </section>
+
+                <section className="registry-section">
+                  <AppRegistry
+                    apps={apps}
+                    onRefresh={loadAppRegistry}
+                  />
+                </section>
+              </motion.div>
+            )}
+
+            {activeView === 'characters' && (
+              <motion.div
+                key="characters"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="characters-view"
+              >
+                <CharacterPortal
+                  onCharacterSelect={handleCharacterSelect}
+                  selectedApp={selectedApp || 'cathedral-hub'}
+                />
+              </motion.div>
+            )}
+
+            {activeView === 'soundart' && (
+              <motion.div
+                key="soundart"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="soundart-view"
+                style={{ height: '90vh', width: '100%' }}
+              >
+                <SoundArtArchetypeExperience />
+              </motion.div>
+            )}
+
+            {activeView === 'registry' && (
+              <motion.div
+                key="registry"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="registry-view"
+              >
+                <AppRegistry
+                  apps={apps}
+                  onRefresh={loadAppRegistry}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </main>
 
         <footer className="hub-footer">
@@ -197,7 +294,7 @@ function App() {
             <div className="system-info">
               <h4>🏛️ Cathedral Research Platform</h4>
               <p>
-                Unified monorepo architecture • {apps.length} applications • 
+                Unified monorepo architecture • {apps.length} applications • 22 Liber Arcanae characters •
                 System health: <span className={`health-${systemHealth}`}>{systemHealth}</span>
               </p>
             </div>
@@ -206,6 +303,8 @@ function App() {
               <Link to="/docs" className="footer-link">📚 Documentation</Link>
               <Link to="/registry" className="footer-link">📋 Registry</Link>
               <Link to="/monitoring" className="footer-link">📊 Monitoring</Link>
+              <Link to="/characters" className="footer-link">🃏 Characters</Link>
+              <Link to="/soundart" className="footer-link">🎵 Sound Art</Link>
               <a href="https://github.com/Bekalah/cathedral-research" target="_blank" rel="noopener noreferrer" className="footer-link">
                 🔗 GitHub
               </a>

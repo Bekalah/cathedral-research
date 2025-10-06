@@ -2,17 +2,15 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "allowJs": true,
     "paths": {
       "@cathedral/*": ["../../packages/*/src", "../../packages/*"],
       "@/*": ["src/*"]
     }
   },
   "include": [
-    "src/**/*",
-    "*.ts",
-    "*.tsx",
-    "*.js",
-    "*.jsx"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",

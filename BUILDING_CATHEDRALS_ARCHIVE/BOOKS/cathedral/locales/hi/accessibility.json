@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "language": "hi",
+    "language_name": "हिन्दी",
+    "file": "accessibility.json",
+    "status": "placeholder",
+    "completion": "0%",
+    "translator_notes": "This file contains placeholder translations for हिन्दी. Please translate all values while keeping keys unchanged.",
+    "cultural_notes": "Consider cultural sensitivity and spiritual appropriateness for हिन्दी speakers.",
+    "rtl": false
+  },
+  "features": {
+    "emergency_pause": {
+      "name": "[TRANSLATE:hi] Emergency Pause",
+      "description": "[TRANSLATE:hi] Instantly pause all activity with spacebar or emergency button",
+      "instructions": "[TRANSLATE:hi] Press spacebar or click the emergency button to pause everything immediately",
+      "shortcut": "[TRANSLATE:hi] Spacebar"
+    },
+    "calm_mode": {
+      "name": "[TRANSLATE:hi] Calm Mode",
+      "description": "[TRANSLATE:hi] Reduces visual and auditory stimulation for a calmer experience",
+      "instructions": "[TRANSLATE:hi] Enable to reduce animations, sounds, and visual complexity",
+      "benefits": "[TRANSLATE:hi] Helps prevent overwhelm and supports focus"
+    },
+    "focus_mode": {
+      "name": "[TRANSLATE:hi] Focus Mode",
+      "description": "[TRANSLATE:hi] Minimizes distractions and highlights essential elements",
+      "instructions": "[TRANSLATE:hi] Activates simplified interface with clear focus indicators",
+      "benefits": "[TRANSLATE:hi] Supports concentration and reduces cognitive load"
+    },
+    "high_contrast": {
+      "name": "[TRANSLATE:hi] High Contrast",
+      "description": "[TRANSLATE:hi] Increases color contrast for better visibility",
+      "instructions": "[TRANSLATE:hi] Enables high contrast color scheme for text and interface elements",
+      "benefits": "[TRANSLATE:hi] Improves readability for vision differences"
+    },
+    "large_text": {
+      "name": "[TRANSLATE:hi] Large Text",
+      "description": "[TRANSLATE:hi] Increases text size throughout the interface",
+      "instructions": "[TRANSLATE:hi] Makes all text larger and more readable",
+      "benefits": "[TRANSLATE:hi] Supports vision differences and reading difficulties"
+    },
+    "reduce_motion": {
+      "name": "[TRANSLATE:hi] Reduce Motion",
+      "description": "[TRANSLATE:hi] Minimizes or eliminates animations and movement",
+      "instructions": "[TRANSLATE:hi] Reduces motion-based effects that may cause discomfort",
+      "benefits": "[TRANSLATE:hi] Prevents motion sensitivity and vestibular issues"
+    },
+    "screen_reader": {
+      "name": "[TRANSLATE:hi] Screen Reader Support",
+      "description": "[TRANSLATE:hi] Optimized for screen reading technology",
+      "instructions": "[TRANSLATE:hi] Enhanced semantic markup and aria labels for screen readers",
+      "benefits": "[TRANSLATE:hi] Full access for blind and visually impaired users"
+    },
+    "keyboard_navigation": {
+      "name": "[TRANSLATE:hi] Keyboard Navigation",
+      "description": "[TRANSLATE:hi] Complete keyboard-only navigation support",
+      "instructions": "[TRANSLATE:hi] Tab, arrow keys, enter, and escape provide full navigation",
+      "benefits": "[TRANSLATE:hi] Access for users who cannot use pointing devices"
+    }
+  },
+  "settings": {
+    "title": "[TRANSLATE:hi] Accessibility Settings",
+    "description": "[TRANSLATE:hi] Customize your experience for optimal accessibility",
+    "save_preferences": "[TRANSLATE:hi] Save Accessibility Preferences",
+    "reset_defaults": "[TRANSLATE:hi] Reset to Defaults",
+    "export_settings": "[TRANSLATE:hi] Export Settings",
+    "import_settings": "[TRANSLATE:hi] Import Settings"
+  },
+  "keyboard_shortcuts": {
+    "title": "[TRANSLATE:hi] Keyboard Shortcuts",
+    "emergency_pause": "[TRANSLATE:hi] Spacebar - Emergency Pause",
+    "safe_exit": "[TRANSLATE:hi] Escape - Safe Exit",
+    "main_menu": "[TRANSLATE:hi] Alt+M - Main Menu",
+    "settings": "[TRANSLATE:hi] Alt+S - Settings",
+    "help": "[TRANSLATE:hi] F1 - Help",
+    "search": "[TRANSLATE:hi] Ctrl+F - Search",
+    "zoom_in": "[TRANSLATE:hi] Ctrl++ - Zoom In",
+    "zoom_out": "[TRANSLATE:hi] Ctrl+- - Zoom Out",
+    "reset_zoom": "[TRANSLATE:hi] Ctrl+0 - Reset Zoom",
+    "next_section": "[TRANSLATE:hi] Tab - Next Section",
+    "previous_section": "[TRANSLATE:hi] Shift+Tab - Previous Section"
+  },
+  "screen_reader": {
+    "headings": "[TRANSLATE:hi] Navigate by headings for quick access to sections",
+    "landmarks": "[TRANSLATE:hi] Use landmarks to jump to main areas",
+    "skip_links": "[TRANSLATE:hi] Skip links available to bypass navigation",
+    "alt_text": "[TRANSLATE:hi] All images include descriptive alternative text",
+    "form_labels": "[TRANSLATE:hi] All form controls have clear labels",
+    "status_updates": "[TRANSLATE:hi] Live regions announce important status changes",
+    "error_messages": "[TRANSLATE:hi] Clear error messages and correction guidance provided"
+  },
+  "motor_accessibility": {
+    "large_targets": "[TRANSLATE:hi] All interactive elements meet minimum touch target sizes",
+    "sticky_keys": "[TRANSLATE:hi] Sticky keys and modifier key support",
+    "dwell_time": "[TRANSLATE:hi] Adjustable dwell time for hover-based interactions",
+    "drag_alternatives": "[TRANSLATE:hi] Alternative methods provided for drag operations",
+    "timeout_extensions": "[TRANSLATE:hi] Session timeouts can be extended or disabled"
+  },
+  "cognitive_accessibility": {
+    "clear_language": "[TRANSLATE:hi] Simple, clear language used throughout",
+    "consistent_navigation": "[TRANSLATE:hi] Navigation patterns remain consistent",
+    "error_prevention": "[TRANSLATE:hi] Design prevents common user errors",
+    "help_available": "[TRANSLATE:hi] Context-sensitive help always available",
+    "progress_indicators": "[TRANSLATE:hi] Clear progress indicators for multi-step processes",
+    "memory_support": "[TRANSLATE:hi] Important information is persistent and retrievable"
+  },
+  "sensory_accessibility": {
+    "audio_alternatives": "[TRANSLATE:hi] Visual alternatives provided for all audio content",
+    "visual_alternatives": "[TRANSLATE:hi] Audio alternatives provided for visual content",
+    "captions": "[TRANSLATE:hi] Captions available for all video content",
+    "audio_descriptions": "[TRANSLATE:hi] Audio descriptions for visual-only content",
+    "volume_control": "[TRANSLATE:hi] Independent volume controls for different audio types",
+    "frequency_adjustment": "[TRANSLATE:hi] Audio frequency adjustment options"
+  },
+  "customization": {
+    "color_themes": "[TRANSLATE:hi] Multiple color themes including high contrast options",
+    "font_options": "[TRANSLATE:hi] Font family and size customization",
+    "spacing_control": "[TRANSLATE:hi] Adjustable spacing between interface elements",
+    "animation_control": "[TRANSLATE:hi] Granular control over animations and transitions",
+    "sound_control": "[TRANSLATE:hi] Individual sound effect volume controls",
+    "layout_options": "[TRANSLATE:hi] Alternative layout options for different needs"
+  },
+  "assistive_technology": {
+    "screen_readers": "[TRANSLATE:hi] Compatible with JAWS, NVDA, VoiceOver, and TalkBack",
+    "voice_control": "[TRANSLATE:hi] Dragon NaturallySpeaking and voice control support",
+    "switch_access": "[TRANSLATE:hi] Switch navigation and scanning support",
+    "eye_tracking": "[TRANSLATE:hi] Eye tracking device compatibility",
+    "alternative_keyboards": "[TRANSLATE:hi] Support for alternative keyboard layouts and devices"
+  }
+}

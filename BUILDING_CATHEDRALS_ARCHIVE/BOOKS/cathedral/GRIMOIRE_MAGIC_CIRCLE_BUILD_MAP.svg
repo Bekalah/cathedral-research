@@ -1,0 +1,51 @@
+<!-- Crowley-style Magic Circle Cathedral Build Map for Rebecca Respawn's Diaries -->
+<svg width="900" height="900" viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg" style="background:#18141c">
+  <style>
+    .core { font-family: 'Times New Roman', serif; font-size: 32px; fill: #C8A44D; text-anchor: middle; }
+    .module { font-family: 'Times New Roman', serif; font-size: 22px; fill: #7A33FF; text-anchor: middle; }
+    .glyph { font-family: 'Cursive', serif; font-size: 40px; fill: #B39CFF; opacity: 0.7; }
+    .ring { stroke: #7A33FF; stroke-width: 6; fill: none; }
+    .line { stroke: #C8A44D; stroke-width: 3; }
+    .label { font-family: 'Times New Roman', serif; font-size: 18px; fill: #F8F5EF; text-anchor: middle; }
+  </style>
+  <!-- Outer Magic Circle -->
+  <circle cx="450" cy="450" r="400" class="ring" />
+  <circle cx="450" cy="450" r="320" class="ring" />
+  <circle cx="450" cy="450" r="220" class="ring" />
+  <circle cx="450" cy="450" r="120" class="ring" />
+  <!-- Arcane Glyphs -->
+  <text x="450" y="70" class="glyph">✶</text>
+  <text x="830" y="450" class="glyph">☉</text>
+  <text x="450" y="830" class="glyph">✵</text>
+  <text x="70" y="450" class="glyph">☽</text>
+  <text x="170" y="170" class="glyph">♄</text>
+  <text x="730" y="170" class="glyph">♃</text>
+  <text x="730" y="730" class="glyph">♁</text>
+  <text x="170" y="730" class="glyph">♆</text>
+  <!-- Central Cathedral Core -->
+  <circle cx="450" cy="450" r="60" fill="#C8A44D" stroke="#7A33FF" stroke-width="6" />
+  <text x="450" y="455" class="core">Cathedral Core</text>
+  <!-- Module Nodes -->
+  <circle cx="450" cy="150" r="40" fill="#7A33FF" stroke="#C8A44D" stroke-width="4" />
+  <text x="450" y="155" class="module">Cosmogenesis</text>
+  <circle cx="750" cy="450" r="40" fill="#7A33FF" stroke="#C8A44D" stroke-width="4" />
+  <text x="750" y="455" class="module">Circuitum99</text>
+  <circle cx="450" cy="750" r="40" fill="#7A33FF" stroke="#C8A44D" stroke-width="4" />
+  <text x="450" y="755" class="module">Stone-Grimoire</text>
+  <circle cx="150" cy="450" r="40" fill="#7A33FF" stroke="#C8A44D" stroke-width="4" />
+  <text x="150" y="455" class="module">Magical Mystery House</text>
+  <circle cx="700" cy="200" r="30" fill="#B39CFF" stroke="#C8A44D" stroke-width="3" />
+  <text x="700" y="205" class="label">Tesseract Bridge</text>
+  <!-- Connection Lines -->
+  <line x1="450" y1="450" x2="450" y2="150" class="line" />
+  <line x1="450" y1="450" x2="750" y2="450" class="line" />
+  <line x1="450" y1="450" x2="450" y2="750" class="line" />
+  <line x1="450" y1="450" x2="150" y2="450" class="line" />
+  <line x1="450" y1="450" x2="700" y2="200" class="line" />
+  <!-- Respawn Gate -->
+  <ellipse cx="450" cy="870" rx="80" ry="30" fill="#B39CFF" stroke="#7A33FF" stroke-width="3" />
+  <text x="450" y="880" class="label">Violet Fire Respawn Gate</text>
+  <!-- Da Vinci/Crowley-style notes -->
+  <text x="450" y="60" class="label">“Circle of Living Systems”</text>
+  <text x="450" y="895" class="label">Rebecca Respawn’s Build Diaries</text>
+</svg>

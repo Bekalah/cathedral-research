@@ -2,6 +2,8 @@
  * Core type definitions for the Three.js engine
  */
 
+import * as THREE from 'three';
+
 export interface EngineConfig {
   antialias?: boolean;
   alpha?: boolean;

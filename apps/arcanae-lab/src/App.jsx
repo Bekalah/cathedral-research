@@ -9,6 +9,32 @@ import { useState, useEffect, useRef } from 'react';
 import { mysticalCrossReference } from '../../../src/services/mystical-cross-reference.js';
 import './styles.css';
 
+// Utility functions available to all components
+const getElementIcon = (element) => {
+  const icons = {
+    'fire': '🔥',
+    'water': '🌊', 
+    'air': '💨',
+    'earth': '🌍',
+    'aether': '✨',
+    'spirit': '👁️'
+  };
+  return icons[element?.toLowerCase()] || '⚪';
+};
+
+const getRayColor = (rayNumber) => {
+  const rayColors = {
+    1: '#ff4444', // Will/Power - Red
+    2: '#4444ff', // Love/Wisdom - Blue
+    3: '#44ff44', // Active Intelligence - Green
+    4: '#ffff44', // Harmony/Beauty - Yellow
+    5: '#ff8844', // Concrete Knowledge - Orange
+    6: '#ff44ff', // Devotion/Idealism - Magenta
+    7: '#8844ff'  // Ceremonial Order - Violet
+  };
+  return rayColors[rayNumber] || '#888888';
+};
+
 function App() {
   // Core application state
   const [_activeCard, _setActiveCard] = useState(null);
@@ -298,29 +324,6 @@ function App() {
     setShowDetails(true);
   };
 
-  const getElementIcon = (element) => {
-    const icons = {
-      fire: '🔥',
-      earth: '🌍',
-      air: '💨',
-      water: '💧'
-    };
-    return icons[element] || '✨';
-  };
-
-  const getRayColor = (rayNumber) => {
-    const colors = {
-      1: '#e74c3c',
-      2: '#9b59b6',
-      3: '#2ecc71',
-      4: '#f39c12',
-      5: '#3498db',
-      6: '#e67e22',
-      7: '#8e44ad'
-    };
-    return colors[rayNumber] || '#95a5a6';
-  };
-
   return (
     <div className="arcanae-lab-app">
       <header className="couture-header">
@@ -550,7 +553,7 @@ function App() {
 }
 
 // Helper component for archetype visualization
-const ArchetypeVisualization = ({ data, mode, isAnalyzing }) => {
+const _ArchetypeVisualization = ({ data, mode, _isAnalyzing }) => {
   const groupRef = useRef();
 
   if (!data) return null;
@@ -611,7 +614,7 @@ const ArchetypeVisualization = ({ data, mode, isAnalyzing }) => {
 };
 
 // Helper component for harmonic field visualization
-const HarmonicFieldVisualization = ({ analysis }) => {
+const _HarmonicFieldVisualization = ({ analysis }) => {
   return (
     <group>
       {analysis?.harmonicSeries?.map((harmonic, index) => {
@@ -637,7 +640,7 @@ const HarmonicFieldVisualization = ({ analysis }) => {
 };
 
 // Tab content components
-const OverviewTab = ({ profile }) => (
+const _OverviewTab = ({ profile }) => (
   <div className="overview-tab">
     <div className="archetype-header">
       <h3>{profile.card?.name}</h3>
@@ -685,7 +688,7 @@ const OverviewTab = ({ profile }) => (
   </div>
 );
 
-const HarmonicTab = ({ analysis }) => (
+const _HarmonicTab = ({ analysis }) => (
   <div className="harmonic-tab">
     <h4>🎼 Harmonic Analysis</h4>
 
@@ -724,7 +727,7 @@ const HarmonicTab = ({ analysis }) => (
   </div>
 );
 
-const RelationshipsTab = ({ related }) => (
+const _RelationshipsTab = ({ related }) => (
   <div className="relationships-tab">
     <h4>🔗 Archetype Relationships</h4>
 
@@ -745,7 +748,7 @@ const RelationshipsTab = ({ related }) => (
   </div>
 );
 
-const InsightsTab = ({ insights }) => (
+const _InsightsTab = ({ insights }) => (
   <div className="insights-tab">
     <h4>💡 Mystical Insights</h4>
 

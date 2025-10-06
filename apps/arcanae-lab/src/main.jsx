@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { createRoot } from 'react-dom/client';
-import ArcanaeLabApp from './App.jsx';
+import App from './App.jsx'; // Used in JSX below
 
 // Wait for fonts to load
 document.fonts.ready.then(() => {
@@ -20,4 +21,4 @@ document.fonts.ready.then(() => {
 // Mount the React app
 const container = document.getElementById('app');
 const root = createRoot(container);
-root.render(<ArcanaeLabApp />);
+root.render(<App />);
