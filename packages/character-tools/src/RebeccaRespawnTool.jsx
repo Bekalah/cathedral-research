@@ -1,10 +1,14 @@
 /**
- * REBECCA RESPAWN - The Fool Character Tool Implementation
- * Pure Potential & Beginner's Mind for Fearless Creative Exploration
+ * 🎭 Rebecca Respawn Character Tool
+ * Advanced 3D character development tool with Ernst Fuchs hyperrealistic style
+ * Part of the Cathedral Research character development system
  */
 
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
+// eslint-disable-next-line no-unused-vars
+import { Canvas, useFrame } from '@react-three/fiber';
+// eslint-disable-next-line no-unused-vars
 import { OrbitControls, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -143,7 +147,7 @@ class BeginnersMindMode {
 }
 
 // Three.js visualization of Rebecca's energy field
-const RebeccaEnergyField = ({ intensity = 1.0 }) => {
+const _RebeccaEnergyField = ({ intensity = 1.0 }) => {
   const groupRef = useRef();
   const particlesRef = useRef();
   

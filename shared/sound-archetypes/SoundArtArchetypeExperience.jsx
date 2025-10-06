@@ -7,7 +7,9 @@
  */
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { Canvas, useFrame } from '@react-three/fiber';
+// eslint-disable-next-line no-unused-vars
 import { Html, Sphere, Box, Torus } from '@react-three/drei';
 
 // Import your existing systems
@@ -206,7 +208,8 @@ export const SoundArtArchetypeExperience = () => {
  * 🎛️ SOUND CONTROL INTERFACE
  * Beautiful, Porter Robinson-inspired control interface
  */
-function SoundControlInterface({
+// Utility Components (available for future use)
+function _SoundControlInterface({
   archetypes,
   selectedArchetype,
   onSelectArchetype,
@@ -365,7 +368,7 @@ function SoundControlInterface({
  * 🌈 SOUND VISUALIZER
  * Real-time 3D visualization of the sound universe
  */
-function SoundVisualizer({ universe, character, emotionalIntensity, visualMode }) {
+function _SoundVisualizer({ universe, character, emotionalIntensity, visualMode }) {
   const meshRef = useRef();
   
   // Animation loop
@@ -447,7 +450,7 @@ function SoundVisualizer({ universe, character, emotionalIntensity, visualMode }
  * 🎯 INTERACTION SPHERE
  * Invisible sphere that captures user interaction
  */
-function InteractionSphere({ onInteraction }) {
+function _InteractionSphere({ onInteraction }) {
   const meshRef = useRef();
   const [isHovered, setIsHovered] = useState(false);
   
@@ -491,7 +494,7 @@ function InteractionSphere({ onInteraction }) {
  * 📊 SOUND ANALYSIS DISPLAY
  * Real-time display of sound system status
  */
-function SoundAnalysisDisplay({ universe, character, emotionalIntensity }) {
+function _SoundAnalysisDisplay({ universe, character, emotionalIntensity }) {
   const [audioData, setAudioData] = useState({
     activeLayers: 0,
     currentSection: 'beginning',

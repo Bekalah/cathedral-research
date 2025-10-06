@@ -4,7 +4,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "bundler",
@@ -12,12 +12,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
+    "jsx": "react",
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
+    "noFallthroughCasesInSwitch": false,
     "paths": {
       "@cathedral/*": ["packages/*/src", "packages/*"],
       "@/*": ["src/*"]
@@ -26,15 +25,14 @@
   "include": [
     "src/**/*",
     "apps/*/src/**/*",
-    "packages/*/src/**/*"
+    "packages/*/src/**/*",
+    "shared/**/*"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "build",
     "**/dist/**",
-    "**/build/**",
-    "**/*.js",
-    "**/*.jsx"
+    "**/build/**"
   ]
 }

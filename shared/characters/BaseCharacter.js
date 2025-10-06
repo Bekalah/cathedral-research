@@ -5,6 +5,7 @@
  * 3D sculpting tool integration and trauma-safe protocols
  */
 
+// eslint-disable-next-line no-unused-vars
 import { LIBER_ARCANAE, CrystalPhysics, SolfeggioFrequencies, SacredGeometry } from './registry.js';
 
 /**
@@ -538,7 +539,7 @@ class SculptingInterface {
   }
 
   // Interface methods would be implemented here for actual 3D sculpting
-  createForm(parameters) {
+  createForm(_parameters) {
     console.log(`🎭 ${this.character.name} is creating a new form...`);
     // 3D creation logic would go here
   }

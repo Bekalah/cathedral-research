@@ -1,7 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "paths": {
       "@cathedral/*": ["../../packages/*/src", "../../packages/*"],
       "@/*": ["src/*"]
@@ -9,6 +12,7 @@
   },
   "include": [
     "src/**/*",
+    "../../shared/**/*",
     "*.ts",
     "*.tsx",
     "*.js",

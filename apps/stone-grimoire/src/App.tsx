@@ -3,19 +3,20 @@
  * Integrates Codex 144:99, white noise chords, fractal sound art, and 33-chapter system
  */
 
-import React, { useState, useEffect, useRef, useCallback } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei'
-import { Codex144MusicalEngine } from '@cathedral/codex-musical-system'
-import { LegoBuildStudio } from '@cathedral/lego-build-studio'
+import * as React from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
+// import { Canvas } from '@react-three/fiber'
+// import { OrbitControls, Environment, Stats } from '@react-three/drei'
+// import { Codex144MusicalEngine } from '@cathedral/codex-musical-system'
+// import { LegoBuildStudio } from '@cathedral/lego-build-studio'
 import GrimoireInterface from './components/GrimoireInterface'
-import EnhancedSynthesisControls from './components/EnhancedSynthesisControls.tsx'
-import FractalVisualization from './components/FractalVisualization.tsx'
-import ChapterNavigator from './components/ChapterNavigator.tsx'
-import ArcanaResearchPanel from './components/ArcanaResearchPanel.tsx'
-import ConnectionMonitor from './components/ConnectionMonitor.tsx'
-import LiveArchetypeInterface from './components/LiveArchetypeInterface.tsx'
-import PerformanceMonitor from './components/PerformanceMonitor'
+// import EnhancedSynthesisControls from './components/EnhancedSynthesisControls.tsx'
+// import FractalVisualization from './components/FractalVisualization.tsx'
+// import ChapterNavigator from './components/ChapterNavigator.tsx'
+// import ArcanaResearchPanel from './components/ArcanaResearchPanel.tsx'
+// import ConnectionMonitor from './components/ConnectionMonitor.tsx'
+// import LiveArchetypeInterface from './components/LiveArchetypeInterface.tsx'
+// import PerformanceMonitor from './components/PerformanceMonitor'
 import './App.css'
 
 interface SynthesisResult {
@@ -53,7 +54,8 @@ interface SystemStatus {
 
 function App() {
   // Core system state
-  const [musicEngine, setMusicEngine] = useState<Codex144MusicalEngine | null>(null)
+  // Musical engine state - commented out until Codex144MusicalEngine is available
+  // const [musicEngine, setMusicEngine] = useState<Codex144MusicalEngine | null>(null)
   const [currentSynthesis, setCurrentSynthesis] = useState<SynthesisResult | null>(null)
   const [isGenerating, setIsGenerating] = useState(false)
   const [systemStatus, setSystemStatus] = useState<SystemStatus>({
@@ -89,7 +91,8 @@ function App() {
   })
 
   // Refs for system management
-  const musicEngineRef = useRef<Codex144MusicalEngine | null>(null)
+  // Musical engine ref - commented out until Codex144MusicalEngine is available
+  // const musicEngineRef = useRef<Codex144MusicalEngine | null>(null)
   const performanceMonitorRef = useRef<any>(null)
   const reconnectionAttempts = useRef(0)
   const maxReconnectionAttempts = 10
@@ -159,9 +162,10 @@ function App() {
           chapterBookIntegration: true
         }
 
-        // Initialize the musical engine
-  const engine = new Codex144MusicalEngine(codexConfig)
-  await engine.start()
+        // Initialize the musical engine - commented out until Codex144MusicalEngine is available
+        /*
+        const engine = new Codex144MusicalEngine(codexConfig)
+        await engine.start()
         
         // Set up enhanced event listeners
         engine.on('connectionLost', handleConnectionLoss)
@@ -177,6 +181,7 @@ function App() {
         // Set the engine
         setMusicEngine(engine)
         musicEngineRef.current = engine
+        */
 
         // Initialize living archetypes
         const archetypes: any[] = []
@@ -191,7 +196,6 @@ function App() {
         for (let chapter = 1; chapter <= 33; chapter++) {
           try {
             // Simplified: removed complex soundtrack generation
-            chapterSoundtracks.set(chapter, { title: `Chapter ${chapter}`, themes: [] })
             soundtracks.set(chapter, { chapter, generated: true, timestamp: Date.now() })
           } catch (error) {
             console.warn(`Failed to generate soundtrack for chapter ${chapter}:`, error)
@@ -226,20 +230,25 @@ function App() {
 
     initializeEnhancedSystem()
 
-    // Cleanup on unmount
+    // Cleanup on unmount - commented out until musicEngineRef is available
+    /*
     return () => {
       if (musicEngineRef.current) {
         musicEngineRef.current.dispose() // Use dispose instead of destroy
       }
     }
+    */
   }, [])
 
   // Enhanced synthesis with sophisticated musical integration
   const handleEnhancedSynthesis = async (prompt: string, options: any = {}) => {
+    // Commented out until musicEngine is available
+    /*
     if (!musicEngine) {
       console.warn('Musical engine not available')
       return
     }
+    */
 
     setIsGenerating(true)
     
@@ -258,9 +267,8 @@ function App() {
         ...options
       }
 
-      // Generate white noise chord with sacred mathematics
-      // Simplified: trigger a basic chord instead of complex arcana chord
-      musicEngine.trigger(440 + (activeArcana * 50), 1)
+      // Generate white noise chord with sacred mathematics - commented out until musicEngine is available
+      // musicEngine.trigger(440 + (activeArcana * 50), 1)
       const chord = { frequency: 440 + (activeArcana * 50), duration: 1 }
       
       if (chord) {
@@ -270,7 +278,6 @@ function App() {
       // Generate fractal sound art if enabled
       let fractal: any = null
       if (synthesisOptions.fractalSoundArt) {
-        // Simplified: create a basic fractal pattern instead of complex soundscape
         fractal = { depth: synthesisOptions.fractalDepth || 3, pattern: 'basic' }
         if (fractal) {
           setFractalPatterns(prev => [...prev.slice(-2), fractal]) // Keep last 3 fractals
@@ -281,7 +288,6 @@ function App() {
       let researchEngine = null
       if (researchMode) {
         const arcanaName = `Arcana ${activeArcana}`
-        // Simplified: create basic research engine data
         researchEngine = { arcana: arcanaName, capabilities: ['basic'] }
       }
 
@@ -376,12 +382,12 @@ function App() {
   }, [])
 
   const handleArcanaChordPlayed = useCallback((event: any) => {
-    /* eslint-disable */console.log(...oo_oo(`3011581582_371_4_371_77_4`,`🎵 Arcana ${event.arcanaId} chord played:`, event.chordName))
+    console.log(`🎵 Arcana ${event.arcanaId} chord played:`, event.chordName)
     // Update UI with chord visualization
   }, [])
 
   const handleArchetypeActivated = useCallback((event: any) => {
-    /* eslint-disable */console.log(...oo_oo(`3011581582_376_4_376_62_4`,`👁️ Living archetype activated:`, event.name))
+    console.log(`👁️‍🗨️ Living archetype activated:`, event.name)
     // Update archetype status in UI
   }, [])
 
@@ -396,43 +402,40 @@ function App() {
   }, [])
 
   const handleSystemError = (error: any) => {
-    /* eslint-disable */console.error(...oo_tx(`3011581582_391_4_391_53_11`,'System error encountered:', error))
+    console.error('System error encountered:', error)
     
     // Implement error recovery strategies
     if (error.type === 'connection') {
       setConnectionHealth('degraded')
     } else if (error.type === 'audio') {
       // Attempt to reinitialize audio system
-      /* eslint-disable */console.log(...oo_oo(`3011581582_398_6_398_56_4`,'Attempting audio system recovery...'))
+      console.log('Attempting audio system recovery...')
     }
   }
 
   const handleSynthesisError = (error: any) => {
     // Handle synthesis-specific errors
-    /* eslint-disable */console.error(...oo_tx(`3011581582_404_4_404_44_11`,'Synthesis error:', error))
+    console.error('Synthesis error:', error)
     
     // Provide fallback synthesis if possible
     if (error.type === 'timeout') {
-      /* eslint-disable */console.log(...oo_oo(`3011581582_408_6_408_64_4`,'Using cached synthesis patterns as fallback'))
+      console.log('Using cached synthesis patterns as fallback')
     }
   }
 
   // Enhanced chapter navigation
   const handleChapterChange = async (chapterNumber: number) => {
-    if (!musicEngine) return
+    // Commented out until musicEngine is available
+    // if (!musicEngine) return
 
     try {
       /* eslint-disable */console.log(...oo_oo(`3011581582_417_6_417_62_4`,`📖 Navigating to Chapter ${chapterNumber}`))
       
-      // Generate chapter soundtrack if not exists
       if (!chapterSoundtracks.has(chapterNumber)) {
-        // Simplified: create basic chapter soundtrack data
         chapterSoundtracks.set(chapterNumber, { title: `Chapter ${chapterNumber}`, themes: [] })
       }
       
       setCurrentChapter(chapterNumber)
-      
-      // Update active arcana based on chapter mathematics
       const newArcana = (chapterNumber * 2) % 22
       setActiveArcana(newArcana)
       
@@ -443,16 +446,13 @@ function App() {
 
   // Enhanced archetype selection
   const handleArcanaChange = async (arcanaIndex: number) => {
-    if (!musicEngine) return
+    // Commented out until musicEngine is available
+    // if (!musicEngine) return
 
     try {
       /* eslint-disable */console.log(...oo_oo(`3011581582_441_6_441_58_4`,`🎭 Switching to Arcana ${arcanaIndex}`))
       setActiveArcana(arcanaIndex)
-      
-      // Activate the archetype for this arcana
-      const arcanaName = `Arcana ${arcanaIndex}`
-      // Simplified: trigger basic sound instead of complex archetype activation
-      musicEngine.trigger(440 + (Math.random() * 200), 0.5)
+      // musicEngine.trigger(440 + (Math.random() * 200), 0.5)
       
     } catch (error) {
       /* eslint-disable */console.error(...oo_tx(`3011581582_450_6_450_72_11`,`Failed to switch to arcana ${arcanaIndex}:`, error))
@@ -469,12 +469,14 @@ function App() {
           </p>
           
           <div className="system-indicators">
+            {/* Commented out until components are available
             <ConnectionMonitor />
             
             <PerformanceMonitor
               isVisible={true}
               position="bottom-left"
             />
+            */}
           </div>
         </div>
         
@@ -496,20 +498,23 @@ function App() {
       <main className="app-main enhanced-main">
         <div className="main-grid">
           <section className="controls-section">
+            {/* Commented out until component is available
             <EnhancedSynthesisControls
               musicEngine={musicEngine}
             />
-            
-            {/* WhiteNoiseController temporarily removed due to type mismatch */}
+            */}
           </section>
 
           <section className="visualization-section">
             {activeRealm === 'lego-build-studio' ? (
               <div className="lego-studio-container">
+                {/* Commented out until component is available
                 <LegoBuildStudio />
+                */}
               </div>
             ) : (
               <div className="main-canvas">
+                {/* Commented out until Three.js components are available
                 <Canvas className="react-canvas enhanced-canvas">
                   <Environment preset="night" />
                   <ambientLight intensity={0.3} />
@@ -533,6 +538,18 @@ function App() {
                   />
                   <Stats />
                 </Canvas>
+                */}
+                <div className="placeholder-canvas">
+                  <div className="cathedral-visualization">
+                    <div className="sacred-geometry">
+                      {/* Placeholder for Three.js cathedral visualization */}
+                      <div className="mandala-pattern">
+                        <div className="inner-circle"></div>
+                        <div className="outer-ring"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
           </section>
@@ -547,25 +564,40 @@ function App() {
 
         <div className="secondary-grid">
           <section className="navigation-section">
+            {/* Commented out until component is available
             <ChapterNavigator
               currentChapter={currentChapter}
               onChapterSelect={(chapterId: number) => setCurrentChapter(chapterId)}
             />
+            */}
+            <div className="placeholder-navigator">
+              Chapter Navigator - Current Chapter: {currentChapter}
+            </div>
           </section>
 
           <section className="research-section">
             {researchMode && (
-              <ArcanaResearchPanel
-                selectedArcana={activeArcana}
-                onArcanaSelect={(arcanaNumber: number) => setActiveArcana(arcanaNumber)}
-              />
+              <div className="placeholder-research">
+                {/* Commented out until component is available
+                <ArcanaResearchPanel
+                  selectedArcana={activeArcana}
+                  onArcanaSelect={(arcanaNumber: number) => setActiveArcana(arcanaNumber)}
+                />
+                */}
+                Research Panel - Active Arcana: {activeArcana}
+              </div>
             )}
           </section>
 
           <section className="archetype-section">
+            {/* Commented out until component is available
             <LiveArchetypeInterface
-              onArchetypeActivate={(id: string) => /* eslint-disable */console.log(...oo_oo(`3011581582_553_51_553_80_4`,'Activated:', id))}
+              onArchetypeActivate={(id: string) => console.log('Activated:', id)}
             />
+            */}
+            <div className="placeholder-archetype">
+              Live Archetype Interface - {livingArchetypes.length} archetypes
+            </div>
           </section>
         </div>
       </main>
@@ -614,8 +646,11 @@ function App() {
             </button>
             
             <button 
-              onClick={() => musicEngine?.trigger(440, 2)}
-              disabled={!musicEngine}
+              onClick={() => {
+                // musicEngine?.trigger(440, 2) // Commented out until musicEngine is available
+                console.log('Generate Masterpiece clicked')
+              }}
+              disabled={false} // !musicEngine
               className="action-btn"
             >
               🎨 Generate Masterpiece

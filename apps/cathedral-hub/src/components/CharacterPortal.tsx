@@ -5,7 +5,8 @@
  * Provides access to all 22 Major Arcana sculpting tools
  */
 
-import React, { useState, useEffect } from 'react';
+import * as React from 'react'
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text, Sphere } from '@react-three/drei';

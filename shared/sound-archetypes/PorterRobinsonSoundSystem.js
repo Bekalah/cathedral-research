@@ -13,7 +13,9 @@
  */
 
 // Import existing audio systems for integration
+// eslint-disable-next-line no-unused-vars
 import { SolfeggioFrequencies } from '../shared/characters/registry.js';
+// eslint-disable-next-line no-unused-vars
 import { useAudioSynthesis } from '../packages/hooks/src/hooks/useAudioSynthesis.ts';
 
 /**
@@ -582,7 +584,7 @@ class SoundUniverse {
    * Update color palette based on audio intensity
    */
   updateColorPalette(intensity) {
-    const { primary, accent } = this.visualSystem.colors;
+    const { primary, accent: _accent } = this.visualSystem.colors;
     const colorIndex = Math.floor(intensity * (primary.length - 1));
     this.visualSystem.colors.current = primary[colorIndex];
   }
@@ -771,13 +773,13 @@ export class SoundArchetypeIntegration {
     console.log(`🔗 Connected ${soundUniverse.archetype.name} to ${character.archetype.name}`);
   }
 
-  static connectToToneJS(soundUniverse, toneJSInstance) {
+  static connectToToneJS(_soundUniverse, _toneJSInstance) {
     // Integration with your existing Tone.js systems
     // This would connect the universes to your current audio setup
     console.log(`🔗 Connected to Tone.js system`);
   }
 
-  static connectToAmbientEngine(soundUniverse, ambientEngine) {
+  static connectToAmbientEngine(_soundUniverse, _ambientEngine) {
     // Integration with your existing ambient engine
     console.log(`🔗 Connected to ambient engine`);
   }
