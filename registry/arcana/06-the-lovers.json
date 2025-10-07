@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "06-the-lovers",
+  "name": "The Lovers",
+  "major": 6,
+  "guardian": "Leonora Carrington",
+  "planet": "Gemini",
+  "element": "Air",
+  "lineage": ["Surrealist Movement", "Celtic Mythology", "Dream Exploration"],
+  "avatar": "leonora-carrington-lovers-tarot",
+  "labs": {
+    "primary": "dream_lab",
+    "texts": [
+      {
+        "title": "The House of Fear",
+        "author": "Leonora Carrington",
+        "path": "/docs/texts/carrington-house-of-fear-excerpts.md",
+        "type": "surrealist_fiction"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "fibonacci_phi",
+    "base_frequency": 341,
+    "scale_degrees": [1, 1.618, 2.618, 4.236, 6.854]
+  },
+  "daimon": {
+    "name": "Twin Flame",
+    "aspect": "sacred-union",
+    "invocation": "I harmonize opposing forces through conscious choice and deep communion."
+  },
+  "invocation": "May I choose love that transforms both self and other in sacred union.",
+  "manifest": {
+    "seed": "06-the-lovers-2025-09-24",
+    "intention": "Explore sacred relationships through dream collaboration",
+    "technique": "Shared dreaming, automatic writing, and alchemical marriage"
+  },
+  "tags": ["relationships", "choice", "sacred_union", "dream_work"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

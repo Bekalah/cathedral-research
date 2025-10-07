@@ -1,0 +1,27 @@
+{
+  "merge_strategy": "append",
+  "map": {
+  "The Fool":         { "shem_id": "shem-00-leonora-carrington",  "style": "surreal-initiate",   "lab": "visionary_lab", "mentor": "colin-wilson", "theme": "awakening through attention" },
+    "The Magician":     { "shem_id": "shem-01-john-dee",            "style": "enochian-alchemy",   "lab": "angelic_lab" },
+    "The High Priestess":{ "shem_id": "shem-02-dion-fortune",       "style": "psychic-geometry",   "lab": "moon_lab" },
+    "The Empress":      { "shem_id": "shem-03-hildegard-bingen",    "style": "sacred-illumination","lab": "flora_lab" },
+    "The Emperor":      { "shem_id": "shem-04-agrippa",             "style": "hermetic-order",     "lab": "structure_lab" },
+    "The Hierophant":   { "shem_id": "shem-05-max-ernst",           "style": "collage-sound",      "lab": "harmonics_lab" },
+    "The Lovers":       { "shem_id": "shem-06-leonora-carrington",  "style": "dream-collage",      "lab": "dream_lab" },
+    "The Chariot":      { "shem_id": "shem-07-kircher",             "style": "mechanic-movement",   "lab": "movement_lab" },
+    "Strength":         { "shem_id": "shem-08-hypatia",            "style": "philos-courage",     "lab": "solar_lab" },
+  "The Hermit":       { "shem_id": "shem-09-paul-foster-case",    "style": "inner-lamp",         "lab": "lantern_lab", "mentor": "colin-wilson", "theme": "lucid solitude" },
+    "Wheel of Fortune": { "shem_id": "shem-10-frater-achad",       "style": "kabbalistic-spiral", "lab": "rotation_lab" },
+    "Justice":          { "shem_id": "shem-11-pythagoras",         "style": "ratio-equilibrium",   "lab": "equilibrium_lab" },
+    "The Hanged Man":   { "shem_id": "shem-12-rebecca-respawn",    "style": "metanoia-art",       "lab": "respawn_lab" },
+    "Death":            { "shem_id": "shem-13-ann-abyss",         "style": "transmutation",      "lab": "chrysalis_lab" },
+    "Temperance":       { "shem_id": "shem-14-paracelsus",         "style": "alchemical-mix",     "lab": "aqua_lab" },
+    "The Devil":        { "shem_id": "shem-15-shadow-goetia",      "style": "shadow-techne",      "lab": "mirror_lab" },
+    "The Tower":        { "shem_id": "shem-16-tesla",              "style": "electro-gnosis",     "lab": "storm_lab" },
+    "The Star":         { "shem_id": "shem-17-giordano-bruno",     "style": "cosmic-harmonia",    "lab": "astral_lab" },
+    "The Moon":         { "shem_id": "shem-18-hildegard-moon",     "style": "dream-synthesis",    "lab": "lunar_lab" },
+    "The Sun":          { "shem_id": "shem-19-leonardo-vitruvius", "style": "vital-light",        "lab": "radiance_lab" },
+    "Judgement":        { "shem_id": "shem-20-ps-dionysius",      "style": "angelic-resonance",  "lab": "awakening_lab" },
+    "The World":        { "shem_id": "shem-21-cosmogenesis",       "style": "pleromic-unity",     "lab": "tesseract_lab" }
+  }
+}

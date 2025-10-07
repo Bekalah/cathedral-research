@@ -1,3 +1,16 @@
 {
+    "files.autoSave": "off",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {},
+    "editor.suggest.preview": false,
+    "editor.quickSuggestions": false,
+    "git.confirmSync": true,
+    "git.enableSmartCommit": false,
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
+    "editor.inlineSuggest.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "security.workspace.trust.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
     "liveServer.settings.port": 5501
 }

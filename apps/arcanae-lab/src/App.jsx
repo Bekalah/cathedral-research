@@ -4,10 +4,12 @@
  */
 
 import { useState, useEffect, useRef } from 'react';
-// import { Canvas } from '@react-three/fiber';
-// import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Environment, Stats, PerspectiveCamera } from '@react-three/drei';
 import { mysticalCrossReference } from '../../../src/services/mystical-cross-reference.js';
+import { LIBER_ARCANAE } from '../../../shared/characters/registry.js';
 import './styles.css';
+import RealmShell from './components/RealmShell.jsx';
 
 // Utility functions available to all components
 const getElementIcon = (element) => {
@@ -36,6 +38,7 @@ const getRayColor = (rayNumber) => {
 };
 
 function App() {
+  const [mode, setMode] = useState('portal'); // 'portal' | 'research'
   // Core application state
   const [_activeCard, _setActiveCard] = useState(null);
   const [selectedArchetype, setSelectedArchetype] = useState('the-fool');
@@ -324,6 +327,12 @@ function App() {
     setShowDetails(true);
   };
 
+  const portals = [
+    { id:'visionary_lab', label:'Visionary Atelier', hint:'Surreal collage & dreamwork', plaque:{ intention:'Explore surreal form and collage as practice.', technique:'Slow collage → reflect → record', lineage:['Leonora Carrington','Rebecca Respawn'] } },
+    { id:'harmonics_lab', label:'Harmonics Hall', hint:'Sound textures and planetary ratios', plaque:{ intention:'Listen to planetary ratios and craft texture.', technique:'Seed tone → develop partials → visualize', lineage:['John Dee','Kircher'] } },
+    { id:'tesseract_lab', label:'Tesseract Vault', hint:'World-building & export', plaque:{ intention:'Fold space, save frames, carry nodes across realms.', technique:'Compose → export → bind', lineage:['Cosmogenesis','Giordano Bruno'] } }
+  ];
+
   return (
     <div className="arcanae-lab-app">
       <header className="couture-header">
@@ -332,6 +341,11 @@ function App() {
           <p className="couture-subtitle">
             High Fantasy Archetype Research • Alexander McQueen meets Sacred Geometry
           </p>
+
+          <div style={{display:'flex', gap:10, justifyContent:'center', marginTop:8}}>
+            <button className={mode==='portal'?'active':''} onClick={()=>setMode('portal')}>Portal Hall</button>
+            <button className={mode==='research'?'active':''} onClick={()=>setMode('research')}>Research UI</button>
+          </div>
 
           <div className="realm-navigation">
             {coutureRealms.map(realm => (
@@ -352,6 +366,17 @@ function App() {
       </header>
 
       <main className="research-main">
+        {mode === 'portal' ? (
+          <div style={{display:'grid', gap:16}}>
+            <div style={{textAlign:'center'}}>
+              <h2>Portal Hall</h2>
+              <p style={{opacity:.8}}>Choose a chapel — ND-safe, calm entry. Click Enter to signal the realm; plaque explains Intention → Technique → Lineage.</p>
+            </div>
+            {portals.map(d => (
+              <RealmShell key={d.id} labId={d.id} title={d.label} plaque={d.plaque} />
+            ))}
+          </div>
+        ) : (
         <div className="research-grid">
           {/* Archetype Selection Panel */}
           <section className="archetype-panel">
@@ -380,23 +405,30 @@ function App() {
             </div>
 
             <div className="archetype-grid">
-              {mysticalCrossReference.data?.tarot?.majorArcana?.map((card, _index) => (
+              {Object.entries(LIBER_ARCANAE).map(([key, card], _index) => (
                 <div
-                  key={card.id}
-                  className={`archetype-card ${selectedArchetype === card.id ? 'selected' : ''}`}
-                  onClick={() => handleArchetypeSelection(card.id)}
+                  key={key}
+                  className={`archetype-card ${selectedArchetype === key ? 'selected' : ''}`}
+                  onClick={() => handleArchetypeSelection(key)}
                 >
                   <div className="card-header">
-                    <span className="card-number">{card.number}</span>
+                    <span className="card-number">{card.title}</span>
                     <span className="element-icon">{getElementIcon(card.element)}</span>
                   </div>
                   <div className="card-name">{card.name}</div>
                   <div className="card-element" style={{ color: getRayColor(card.ray?.number) }}>
-                    {card.element} • Ray {card.ray?.number}
+                    {card.element} {card.ray?.number ? `• Ray ${card.ray.number}` : ''}
                   </div>
                   <div className="card-entities">
                     {card.angel} ↔ {card.demon}
                   </div>
+                  {/* Visionary Art Seeds */}
+                  <div className="card-art-seeds">
+                    {card.art_seeds?.map((seed, i) => (
+                      <div key={i} className="art-seed">{seed}</div>
+                    ))}
+                  </div>
+                  {/* Future: Worker-generated art preview here */}
                 </div>
               ))}
             </div>
@@ -440,6 +472,7 @@ function App() {
                     data={researchData}
                     mode={visualizationMode}
                     isAnalyzing={isAnalyzing}
+                    artSeeds={LIBER_ARCANAE[selectedArchetype]?.art_seeds || []}
                   />
                 )}
 
@@ -447,8 +480,17 @@ function App() {
                   enablePan={true}
                   enableZoom={true}
                   enableRotate={true}
-                  maxDistance={50}
-                  minDistance={2}
+                  maxDistance={20}
+                  minDistance={3}
+                  maxPolarAngle={Math.PI * 0.8}
+                  minPolarAngle={Math.PI * 0.2}
+                  enableDamping={true}
+                  dampingFactor={0.05}
+                  rotateSpeed={0.5}
+                  zoomSpeed={0.8}
+                  panSpeed={0.5}
+                  autoRotate={false}
+                  autoRotateSpeed={0.5}
                 />
                 <Stats />
               </Canvas>
@@ -506,7 +548,7 @@ function App() {
               )}
             </div>
           </section>
-        </div>
+  </div>
 
         {/* Floating Action Panel */}
         <div className="action-panel">
@@ -532,7 +574,7 @@ function App() {
             🔮 Symbol Fusion
           </button>
         </div>
-      </main>
+  </main>
 
       <footer className="couture-footer">
         <div className="footer-content">
@@ -553,7 +595,7 @@ function App() {
 }
 
 // Helper component for archetype visualization
-const _ArchetypeVisualization = ({ data, mode, _isAnalyzing }) => {
+const ArchetypeVisualization = ({ data, mode, isAnalyzing }) => {
   const groupRef = useRef();
 
   if (!data) return null;
@@ -614,7 +656,7 @@ const _ArchetypeVisualization = ({ data, mode, _isAnalyzing }) => {
 };
 
 // Helper component for harmonic field visualization
-const _HarmonicFieldVisualization = ({ analysis }) => {
+const HarmonicFieldVisualization = ({ analysis }) => {
   return (
     <group>
       {analysis?.harmonicSeries?.map((harmonic, index) => {
@@ -640,7 +682,7 @@ const _HarmonicFieldVisualization = ({ analysis }) => {
 };
 
 // Tab content components
-const _OverviewTab = ({ profile }) => (
+const OverviewTab = ({ profile }) => (
   <div className="overview-tab">
     <div className="archetype-header">
       <h3>{profile.card?.name}</h3>
@@ -688,7 +730,7 @@ const _OverviewTab = ({ profile }) => (
   </div>
 );
 
-const _HarmonicTab = ({ analysis }) => (
+const HarmonicTab = ({ analysis }) => (
   <div className="harmonic-tab">
     <h4>🎼 Harmonic Analysis</h4>
 
@@ -727,7 +769,7 @@ const _HarmonicTab = ({ analysis }) => (
   </div>
 );
 
-const _RelationshipsTab = ({ related }) => (
+const RelationshipsTab = ({ related }) => (
   <div className="relationships-tab">
     <h4>🔗 Archetype Relationships</h4>
 
@@ -748,7 +790,7 @@ const _RelationshipsTab = ({ related }) => (
   </div>
 );
 
-const _InsightsTab = ({ insights }) => (
+const InsightsTab = ({ insights }) => (
   <div className="insights-tab">
     <h4>💡 Mystical Insights</h4>
 

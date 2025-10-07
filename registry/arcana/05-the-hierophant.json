@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "05-the-hierophant",
+  "name": "The Hierophant",
+  "major": 5,
+  "guardian": "Max Ernst",
+  "planet": "Taurus",
+  "element": "Earth",
+  "lineage": ["Dadaism", "Surrealism", "Collage Techniques"],
+  "avatar": "max-ernst-collage-master",
+  "labs": {
+    "primary": "harmonics_lab",
+    "texts": [
+      {
+        "title": "Beyond Painting",
+        "author": "Max Ernst",
+        "path": "/docs/texts/ernst-beyond-painting-excerpts.md",
+        "type": "artistic_theory"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "19tet",
+    "base_frequency": 256,
+    "scale_degrees": [1, 1.037, 1.114, 1.155, 1.237, 1.284, 1.377]
+  },
+  "daimon": {
+    "name": "Collage Oracle",
+    "aspect": "tradition-breaker",
+    "invocation": "I reveal hidden connections through systematic chance and visual juxtaposition."
+  },
+  "invocation": "May I bridge tradition and innovation through transformative art practices.",
+  "manifest": {
+    "seed": "05-the-hierophant-2025-09-24",
+    "intention": "Transmit wisdom through collage and sound experimentation",
+    "technique": "Frottage, grattage, and systematic chance operations"
+  },
+  "tags": ["tradition", "innovation", "collage_sound", "systematic_chance"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

@@ -5,6 +5,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": ".",
+  "ignoreDeprecations": "6.0",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "bundler",
@@ -24,15 +25,10 @@
   },
   "include": [
     "src/**/*",
+    "src-unified/**/*",
     "apps/*/src/**/*",
     "packages/*/src/**/*",
-    "shared/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build",
-    "**/dist/**",
-    "**/build/**"
+    "shared/**/*",
+    "tools/**/*"
   ]
 }

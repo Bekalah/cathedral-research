@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "15-the-devil",
+  "name": "The Devil",
+  "major": 15,
+  "guardian": "Shadow Goetia",
+  "planet": "Capricorn",
+  "element": "Earth",
+  "lineage": ["Goetic Tradition", "Shadow Integration", "Material Mastery"],
+  "avatar": "shadow-goetia-bound-liberation",
+  "labs": {
+    "primary": "mirror_lab",
+    "texts": [
+      {
+        "title": "The Lesser Key of Solomon",
+        "author": "Anonymous",
+        "path": "/docs/texts/lesser-key-solomon-excerpts.md",
+        "type": "goetic_grimoire"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "19tet",
+    "base_frequency": 369,
+    "scale_degrees": [1, 1.037, 1.114, 1.155, 1.237, 1.284, 1.377]
+  },
+  "daimon": {
+    "name": "Mirror Demon",
+    "aspect": "shadow-revelation",
+    "invocation": "I confront my shadows and transform bondage into conscious mastery."
+  },
+  "invocation": "May I face my chains honestly and transform them into tools of liberation.",
+  "manifest": {
+    "seed": "15-the-devil-2025-09-24",
+    "intention": "Transform shadow material through conscious acknowledgment",
+    "technique": "Shadow mirroring, goetic study, and material transmutation"
+  },
+  "tags": ["shadow_work", "material_mastery", "bondage", "liberation"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

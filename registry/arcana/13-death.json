@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "13-death",
+  "name": "Death",
+  "major": 13,
+  "guardian": "Ann Abyss",
+  "planet": "Scorpio",
+  "element": "Water",
+  "lineage": ["Shadow Work", "Transmutation Arts", "Depth Psychology"],
+  "avatar": "ann-abyss-transmutation",
+  "labs": {
+    "primary": "chrysalis_lab",
+    "texts": [
+      {
+        "title": "Descent into the Abyss",
+        "author": "Ann Abyss",
+        "path": "/docs/texts/ann-abyss-descent-excerpts.md",
+        "type": "shadow_work_guide"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "12tet",
+    "base_frequency": 256,
+    "scale_degrees": [1, 1.059, 1.189, 1.26, 1.414, 1.498, 1.682]
+  },
+  "daimon": {
+    "name": "Chrysalis Keeper",
+    "aspect": "transformative-dissolution",
+    "invocation": "I embrace necessary endings to allow authentic transformation to emerge."
+  },
+  "invocation": "May I release what no longer serves and trust the process of rebirth.",
+  "manifest": {
+    "seed": "13-death-2025-09-24",
+    "intention": "Navigate transformation through conscious shadow integration",
+    "technique": "Shadow journaling, dissolution practices, and metamorphosis work"
+  },
+  "tags": ["transformation", "endings", "shadow_work", "rebirth"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

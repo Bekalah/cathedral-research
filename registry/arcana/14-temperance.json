@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "14-temperance",
+  "name": "Temperance",
+  "major": 14,
+  "guardian": "Paracelsus",
+  "planet": "Sagittarius",
+  "element": "Fire",
+  "lineage": ["Hermetic Medicine", "Alchemical Philosophy", "Spagyric Arts"],
+  "avatar": "paracelsus-alchemical-vessels",
+  "labs": {
+    "primary": "aqua_lab",
+    "texts": [
+      {
+        "title": "Archidoxes of Magic",
+        "author": "Paracelsus",
+        "path": "/docs/texts/paracelsus-archidoxes-magic-excerpts.md",
+        "type": "alchemical_medicine"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "platonic_just",
+    "base_frequency": 528,
+    "scale_degrees": [1, 1.125, 1.25, 1.333, 1.5, 1.667, 1.875]
+  },
+  "daimon": {
+    "name": "Alchemical Mixer",
+    "aspect": "balanced-synthesis",
+    "invocation": "I blend opposing forces through patient alchemical wisdom."
+  },
+  "invocation": "May I find the perfect balance between all elements and essences.",
+  "manifest": {
+    "seed": "14-temperance-2025-09-24",
+    "intention": "Master alchemical blending through hermetic medicine",
+    "technique": "Spagyric preparation, distillation, and essence extraction"
+  },
+  "tags": ["alchemy", "balance", "medicine", "synthesis"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

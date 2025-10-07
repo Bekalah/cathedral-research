@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "09-the-hermit",
+  "name": "The Hermit",
+  "major": 9,
+  "guardian": "Paul Foster Case",
+  "planet": "Virgo",
+  "element": "Earth",
+  "lineage": ["Builders of the Adytum", "Tarot Restoration", "Practical Occultism"],
+  "avatar": "paul-foster-case-hermit",
+  "labs": {
+    "primary": "lantern_lab",
+    "texts": [
+      {
+        "title": "The Tarot: A Key to the Wisdom of the Ages",
+        "author": "Paul Foster Case",
+        "path": "/docs/texts/case-tarot-wisdom-excerpts.md",
+        "type": "tarot_instruction"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "12tet",
+    "base_frequency": 432,
+    "scale_degrees": [1, 1.059, 1.189, 1.26, 1.414, 1.498, 1.682]
+  },
+  "daimon": {
+    "name": "Inner Lamp Bearer",
+    "aspect": "solitary-wisdom",
+    "invocation": "I seek wisdom in solitude, carrying the inner light for others to follow."
+  },
+  "invocation": "May I find the light within and share it wisely with those who seek truth.",
+  "manifest": {
+    "seed": "09-the-hermit-2025-09-24",
+    "intention": "Cultivate inner wisdom through solitary practice and tarot study",
+    "technique": "Meditation, tarot contemplation, and hermetic analysis"
+  },
+  "tags": ["solitude", "inner_wisdom", "tarot_mastery", "guidance"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

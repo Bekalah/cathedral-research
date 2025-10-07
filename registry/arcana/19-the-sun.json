@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "19-the-sun",
+  "name": "The Sun",
+  "major": 19,
+  "guardian": "Leonardo da Vinci",
+  "planet": "Sun",
+  "element": "Fire",
+  "lineage": ["Renaissance Humanism", "Vitruvian Principles", "Universal Genius"],
+  "avatar": "leonardo-vitruvian-radiance",
+  "labs": {
+    "primary": "radiance_lab",
+    "texts": [
+      {
+        "title": "Codex Atlanticus",
+        "author": "Leonardo da Vinci",
+        "path": "/docs/texts/leonardo-codex-atlanticus-excerpts.md",
+        "type": "universal_studies"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "fibonacci_phi",
+    "base_frequency": 741,
+    "scale_degrees": [1, 1.618, 2.618, 4.236, 6.854]
+  },
+  "daimon": {
+    "name": "Solar Genius",
+    "aspect": "radiant-clarity",
+    "invocation": "I embody solar clarity that illuminates all knowledge and creative expression."
+  },
+  "invocation": "May I shine with clear understanding and joyful creative expression.",
+  "manifest": {
+    "seed": "19-the-sun-2025-09-24",
+    "intention": "Achieve universal mastery through Vitruvian principles and solar clarity",
+    "technique": "Universal studies, proportional analysis, and creative synthesis"
+  },
+  "tags": ["clarity", "joy", "universal_genius", "creative_mastery"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

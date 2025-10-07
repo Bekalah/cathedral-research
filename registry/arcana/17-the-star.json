@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "17-the-star",
+  "name": "The Star",
+  "major": 17,
+  "guardian": "Giordano Bruno",
+  "planet": "Aquarius",
+  "element": "Air",
+  "lineage": ["Renaissance Hermeticism", "Infinite Cosmology", "Memory Arts"],
+  "avatar": "giordano-bruno-infinite-worlds",
+  "labs": {
+    "primary": "astral_lab",
+    "texts": [
+      {
+        "title": "On the Infinite Universe and Worlds",
+        "author": "Giordano Bruno",
+        "path": "/docs/texts/bruno-infinite-universe-excerpts.md",
+        "type": "cosmic_philosophy"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "12tet",
+    "base_frequency": 528,
+    "scale_degrees": [1, 1.059, 1.189, 1.26, 1.414, 1.498, 1.682]
+  },
+  "daimon": {
+    "name": "Cosmic Navigator",
+    "aspect": "infinite-hope",
+    "invocation": "I navigate infinite possibilities with unwavering hope and cosmic vision."
+  },
+  "invocation": "May I trust the cosmic harmony that guides all beings toward their destiny.",
+  "manifest": {
+    "seed": "17-the-star-2025-09-24",
+    "intention": "Explore infinite cosmology through memory arts and stellar meditation",
+    "technique": "Memory palace construction, stellar observation, and infinite contemplation"
+  },
+  "tags": ["hope", "cosmic_vision", "infinity", "stellar_wisdom"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

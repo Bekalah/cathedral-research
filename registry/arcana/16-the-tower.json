@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "16-the-tower",
+  "name": "The Tower",
+  "major": 16,
+  "guardian": "Nikola Tesla",
+  "planet": "Mars",
+  "element": "Fire",
+  "lineage": ["Electrical Engineering", "Wireless Transmission", "Cosmic Energy"],
+  "avatar": "tesla-wireless-tower",
+  "labs": {
+    "primary": "storm_lab",
+    "texts": [
+      {
+        "title": "My Inventions",
+        "author": "Nikola Tesla",
+        "path": "/docs/texts/tesla-my-inventions-excerpts.md",
+        "type": "electrical_philosophy"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "fibonacci_phi",
+    "base_frequency": 963,
+    "scale_degrees": [1, 1.618, 2.618, 4.236, 6.854]
+  },
+  "daimon": {
+    "name": "Lightning Conductor",
+    "aspect": "sudden-illumination",
+    "invocation": "I channel cosmic electricity to shatter false structures and reveal truth."
+  },
+  "invocation": "May I welcome sudden illumination that destroys illusion and builds anew.",
+  "manifest": {
+    "seed": "16-the-tower-2025-09-24",
+    "intention": "Harness electrical gnosis for structural transformation",
+    "technique": "Electrical meditation, frequency modulation, and energy transmission"
+  },
+  "tags": ["sudden_change", "electricity", "illumination", "structural_breakdown"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

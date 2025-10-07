@@ -1,0 +1,36 @@
+[
+  {
+    "id": "node-1",
+    "name": "The Fool",
+    "type": "major",
+    "archetype": "Innocence",
+    "sound_profile": "528Hz",
+    "art_profile": "White spiral, golden ratio, open field",
+    "bridge": ["node-22", "node-2"],
+    "tags": ["beginning", "potential", "freedom"],
+    "_provenance": "Unified Cathedral Registry"
+  },
+  {
+    "id": "node-2",
+    "name": "The Magician",
+    "type": "major",
+    "archetype": "Manifestation",
+    "sound_profile": "741Hz",
+    "art_profile": "Crystal lattice, geometric hands, radiant light",
+    "bridge": ["node-1", "node-3"],
+    "tags": ["creation", "skill", "focus"],
+    "_provenance": "Unified Cathedral Registry"
+  },
+  {
+    "id": "node-22",
+    "name": "The World",
+    "type": "major",
+    "archetype": "Completion",
+    "sound_profile": "1111Hz",
+    "art_profile": "Flower of Life, cosmic mandala, full spectrum",
+    "bridge": ["node-1", "node-21"],
+    "tags": ["wholeness", "integration", "fulfillment"],
+    "_provenance": "Unified Cathedral Registry"
+  }
+  
+]

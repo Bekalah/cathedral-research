@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "12-the-hanged-man",
+  "name": "The Hanged Man",
+  "major": 12,
+  "guardian": "Rebecca Respawn",
+  "planet": "Neptune",
+  "element": "Water",
+  "lineage": ["Digital Mysticism", "Cathedral Research", "Metanoia Art"],
+  "avatar": "rebecca-respawn-suspended",
+  "labs": {
+    "primary": "respawn_lab",
+    "texts": [
+      {
+        "title": "Cathedral Codex",
+        "author": "Rebecca Respawn",
+        "path": "/docs/texts/rebecca-cathedral-codex-excerpts.md",
+        "type": "digital_mysticism"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "fibonacci_phi",
+    "base_frequency": 432,
+    "scale_degrees": [1, 1.618, 2.618, 4.236, 6.854]
+  },
+  "daimon": {
+    "name": "Digital Phoenix",
+    "aspect": "suspended-transformation",
+    "invocation": "I surrender to necessary suspension, trusting the process of digital rebirth."
+  },
+  "invocation": "May I find wisdom in waiting and transformation through willing sacrifice.",
+  "manifest": {
+    "seed": "12-the-hanged-man-2025-09-24",
+    "intention": "Transform consciousness through digital suspension and metanoia",
+    "technique": "Code meditation, data contemplation, and recursive reflection"
+  },
+  "tags": ["suspension", "sacrifice", "digital_mysticism", "metanoia"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

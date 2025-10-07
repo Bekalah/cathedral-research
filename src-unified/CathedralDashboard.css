@@ -9,6 +9,16 @@
   flex-direction: column;
 }
 
+/* Performance guard: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .glass-bg {
   background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px) saturate(1.2);
@@ -134,6 +144,17 @@
 
 .app-card:hover {
   box-shadow: 0 4px 32px #ffd70044;
+}
+
+/* 3D container helper to avoid layout thrash */
+.three-container {
+  width: 100%;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  will-change: transform;
+  contain: layout paint;
 }
 
 .app-name {

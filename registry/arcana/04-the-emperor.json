@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "04-the-emperor",
+  "name": "The Emperor",
+  "major": 4,
+  "guardian": "Heinrich Cornelius Agrippa",
+  "planet": "Aries",
+  "element": "Fire",
+  "lineage": ["Renaissance Hermeticism", "Natural Magic", "Occult Philosophy"],
+  "avatar": "agrippa-occult-philosophy",
+  "labs": {
+    "primary": "structure_lab",
+    "texts": [
+      {
+        "title": "Three Books of Occult Philosophy",
+        "author": "Heinrich Cornelius Agrippa",
+        "path": "/docs/texts/agrippa-occult-philosophy-excerpts.md",
+        "type": "hermetic_philosophy"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "12tet",
+    "base_frequency": 432,
+    "scale_degrees": [1, 1.059, 1.189, 1.26, 1.414, 1.498, 1.682]
+  },
+  "daimon": {
+    "name": "Sovereign Architect",
+    "aspect": "ordered-will",
+    "invocation": "I establish divine order through disciplined application of natural law."
+  },
+  "invocation": "May I govern my domain with wisdom, justice, and protective authority.",
+  "manifest": {
+    "seed": "04-the-emperor-2025-09-24",
+    "intention": "Build sustainable structures through hermetic principles",
+    "technique": "Systematic study, ritual design, and leadership"
+  },
+  "tags": ["authority", "structure", "natural_magic", "hermetic_order"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

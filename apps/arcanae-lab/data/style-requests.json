@@ -1,0 +1,27 @@
+{
+  "styles": [
+    {
+      "name": "High-Tech Realistic Materials",
+      "description": "Physically-based rendering (PBR) textures, ceramics, glazes, and real-world color/material simulation for digital art and 3D models. Inspired by Ruth Borgenicht ceramics and couture fantasy.",
+      "sources": ["Poly Haven", "AmbientCG", "Custom Scans", "Real Ceramics Photography"],
+      "enabled": true
+    },
+    {
+      "name": "Ceramic & Glaze Simulation",
+      "description": "Digital recreation of ceramic surfaces, glazes, and handmade textures for virtual canvases and 3D objects.",
+      "enabled": true
+    },
+    {
+      "name": "Archetypal RPG/Board Game Style",
+      "description": "Playful, modular, archetype-driven art and UI inspired by tarot, BETWIXT, and cozy board games. Tarot archetypes act as creative guides or workers, helping users generate art and experiments from real sources.",
+      "workerSystem": "Tarot archetypes as instruction/worker modules for creative experiments.",
+      "enabled": true
+    }
+  ],
+  "purpose": "Enable creative experiments and digital art when physical space is limited. Connect style requests to future arcanae-lab modules and RPG-like archetype worker systems.",
+  "integration": {
+    "futureLab": "arcanae-lab",
+    "workerSystem": "Tarot archetypes as creative guides/instructions",
+    "gameMode": "RPG, archetypal, playful, remixable"
+  }
+}

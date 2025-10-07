@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "02-the-high-priestess",
+  "name": "The High Priestess",
+  "major": 2,
+  "guardian": "Dion Fortune",
+  "planet": "Moon",
+  "element": "Water",
+  "lineage": ["Society of the Inner Light", "Avalon Mysteries", "Practical Occultism"],
+  "avatar": "dion-fortune-priestess",
+  "labs": {
+    "primary": "moon_lab",
+    "texts": [
+      {
+        "title": "The Mystical Qabalah",
+        "author": "Dion Fortune",
+        "path": "/docs/texts/fortune-mystical-qabalah-excerpts.md",
+        "type": "practical_kabbalah"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "12tet",
+    "base_frequency": 256,
+    "scale_degrees": [1, 1.059, 1.189, 1.26, 1.414, 1.498, 1.682]
+  },
+  "daimon": {
+    "name": "Lunar Oracle",
+    "aspect": "intuitive-wisdom",
+    "invocation": "I access the deep currents of psychic knowledge through receptive silence."
+  },
+  "invocation": "May I trust the inner voice that speaks in symbols and dreams.",
+  "manifest": {
+    "seed": "02-the-high-priestess-2025-09-24",
+    "intention": "Develop psychic perception through lunar cycles",
+    "technique": "Meditation, scrying, and dream work"
+  },
+  "tags": ["intuition", "lunar_mysteries", "psychic_development", "feminine_wisdom"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

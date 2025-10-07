@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "00-the-fool",
+  "name": "The Fool",
+  "major": 0,
+  "guardian": "Leonora Carrington",
+  "planet": "Uranus",
+  "element": "Air",
+  "lineage": ["Surrealist Movement", "Celtic Mythology", "Feminist Mysticism"],
+  "avatar": "leonora-carrington-self-portrait",
+  "labs": {
+    "primary": "visionary_lab",
+    "texts": [
+      {
+        "title": "The Hearing Trumpet",
+        "author": "Leonora Carrington",
+        "path": "/docs/texts/carrington-hearing-trumpet-excerpts.md",
+        "type": "surrealist_fiction"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "fibonacci_phi",
+    "base_frequency": 256,
+    "scale_degrees": [1, 1.618, 2.618, 4.236]
+  },
+  "daimon": {
+    "name": "Alchemical Child",
+    "aspect": "innocent-wisdom",
+    "invocation": "I step into unknown territories with beginner's mind and ancient knowing."
+  },
+  "invocation": "May I embrace the precipice with wonder, trusting the spiral path ahead.",
+  "manifest": {
+    "seed": "00-the-fool-2025-09-24",
+    "intention": "Initiate creative journeys through surreal perception",
+    "technique": "Dream collage and automatic drawing"
+  },
+  "tags": ["initiation", "surrealism", "feminine_wisdom", "creative_courage"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

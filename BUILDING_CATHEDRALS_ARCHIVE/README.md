@@ -96,9 +96,9 @@ This repository implements the Cathedral of Circuits system, a trauma-aware, ND-
 
 ## Maintenance
 
-- Review standards quarterly (see `docs/SYSTEM_STANDARDS_PLAN.md`).
-- Audit codebase for compliance.
 
----
 
 For more, see the full standards plan in `docs/SYSTEM_STANDARDS_PLAN.md` and ND/trauma-safe details in `docs/PROTECT.md`.
+## 🏛️ Golden Rule
+
+All creative, technical, and aesthetic work in this workspace must follow the permanent standards in [../CATHEDRAL_GOLDEN_RULE.md](../CATHEDRAL_GOLDEN_RULE.md). This file is never to be overwritten and is the master reference for all AI, coders, and contributors.

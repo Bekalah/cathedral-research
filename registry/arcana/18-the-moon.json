@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "18-the-moon",
+  "name": "The Moon",
+  "major": 18,
+  "guardian": "Hildegard Moon",
+  "planet": "Pisces",
+  "element": "Water",
+  "lineage": ["Lunar Mysticism", "Dream Synthesis", "Visionary Medicine"],
+  "avatar": "hildegard-moon-phases",
+  "labs": {
+    "primary": "lunar_lab",
+    "texts": [
+      {
+        "title": "Physica",
+        "author": "Hildegard of Bingen",
+        "path": "/docs/texts/hildegard-physica-excerpts.md",
+        "type": "visionary_medicine"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "platonic_just",
+    "base_frequency": 432,
+    "scale_degrees": [1, 1.125, 1.25, 1.333, 1.5, 1.667, 1.875]
+  },
+  "daimon": {
+    "name": "Lunar Dreamkeeper",
+    "aspect": "cyclical-intuition",
+    "invocation": "I navigate the realm of dreams and illusions with lunar wisdom."
+  },
+  "invocation": "May I trust my intuition while discerning truth from illusion.",
+  "manifest": {
+    "seed": "18-the-moon-2025-09-24",
+    "intention": "Synthesize dreams through lunar cycles and visionary medicine",
+    "technique": "Lunar tracking, dream journals, and herbal preparations"
+  },
+  "tags": ["dreams", "illusion", "lunar_cycles", "intuitive_medicine"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

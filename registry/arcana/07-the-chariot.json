@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "07-the-chariot",
+  "name": "The Chariot",
+  "major": 7,
+  "guardian": "Athanasius Kircher",
+  "planet": "Cancer",
+  "element": "Water",
+  "lineage": ["Jesuit Scholarship", "Universal Linguistics", "Mechanical Arts"],
+  "avatar": "kircher-mechanical-arts",
+  "labs": {
+    "primary": "movement_lab",
+    "texts": [
+      {
+        "title": "Musurgia Universalis",
+        "author": "Athanasius Kircher",
+        "path": "/docs/texts/kircher-musurgia-universalis-excerpts.md",
+        "type": "mechanical_harmony"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "platonic_just",
+    "base_frequency": 396,
+    "scale_degrees": [1, 1.125, 1.25, 1.333, 1.5, 1.667, 1.875]
+  },
+  "daimon": {
+    "name": "Mechanical Sphinx",
+    "aspect": "controlled-motion",
+    "invocation": "I harness opposing forces through disciplined will and mechanical precision."
+  },
+  "invocation": "May I direct my energies with focused intention toward victory and progress.",
+  "manifest": {
+    "seed": "07-the-chariot-2025-09-24",
+    "intention": "Master movement through mechanical and musical harmonies",
+    "technique": "Kinetic studies, sound engineering, and willpower training"
+  },
+  "tags": ["willpower", "movement", "mechanical_arts", "victory"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

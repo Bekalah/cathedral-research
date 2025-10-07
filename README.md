@@ -29,8 +29,9 @@ Cathedral is a sophisticated monorepo that brings together mystical traditions, 
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies
+# Install dependencies and check system health
 pnpm install
+pnpm run setup:health   # Run system health check (see below)
 
 # Build all applications
 pnpm run build
@@ -42,9 +43,25 @@ pnpm run dev
 pnpm run deploy
 ```
 
+### System Health Check & Troubleshooting
+Run `pnpm run setup:health` to verify:
+- All dependencies installed (pnpm, git, graphics)
+- VS Code protection settings active
+- Style/config loaded (`arcanae-lab/data/style-requests.json`)
+- No auto-update/auto-save issues
+
+If you encounter issues:
+- Check `.vscode/settings.json` for protection and auto-update settings
+- Run `pnpm install` and `pnpm run setup:health` again
+- See troubleshooting section below
+
 ## 🎨 Authentic Art System
 
-Cathedral implements a **museum-quality aesthetic** based on real historical visionaries:
+ Cathedral implements a **museum-quality aesthetic** based on real historical visionaries and high-tech digital materials:
+
+### High-Tech Realistic Materials
+- Physically-based rendering (PBR) textures, ceramics, glazes, and real-world color/material simulation
+- Style/config options in `arcanae-lab/data/style-requests.json` (ceramics, PBR, archetypal RPG/worker system)
 
 - **Artemisia Gentileschi** - Baroque Feminist Resistance (Circuit 4: Socio-Sexual)
 - **Emma Kunz** - Sacred Geometry Healing (Circuit 6: Neuroelectric Metaprogramming)  
@@ -72,6 +89,7 @@ Five-universe synthesis system:
 
 ## 🔧 Development
 
+pnpm run build:packages   # Build core packages
 ### Scripts
 ```bash
 pnpm run dev:hub          # Cathedral Hub development
@@ -82,6 +100,7 @@ pnpm run dev:all          # All apps in parallel
 pnpm run build:packages   # Build core packages
 pnpm run build:apps       # Build all applications
 pnpm run quality:check    # Lint, type-check, protect-check
+pnpm run setup:health     # System health check (see above)
 ```
 
 ### Character Development
@@ -104,20 +123,22 @@ pnpm run deploy:bekalah
 **✅ LIVE & COMPLETE**
 
 - All 6 applications building successfully
-- Authentic art system with historical visionaries implemented
+- Authentic art system with historical visionaries and high-tech materials (ceramics, PBR, RPG/worker system)
 - Porter Robinson-level sound art integration
 - 22 Major Arcana character system complete
 - Museum-quality aesthetic standards achieved
 - GitHub Pages deployment automated
+- System health check and protection settings active
 
 ## 🎭 Features
 
-- **Trauma-Aware Design** - Respectful, healing-focused interfaces
-- **Accessibility Compliant** - WCAG 2.1 AA standards
-- **WebGL Accelerated** - High-performance 3D graphics
-- **PWA Enabled** - Progressive web app capabilities
-- **Mobile Responsive** - Optimized for all devices
-- **Offline Capable** - Service worker implementation
+**Trauma-Aware Design** - Respectful, healing-focused interfaces
+**Accessibility Compliant** - WCAG 2.1 AA standards
+**WebGL Accelerated** - High-performance 3D graphics
+**PWA Enabled** - Progressive web app capabilities
+**Mobile Responsive** - Optimized for all devices
+**Offline Capable** - Service worker implementation
+**System Protection** - VS Code settings lock auto-update/auto-save, style/config loaded, health check script
 
 ---
 
@@ -136,3 +157,9 @@ Built with modern web technologies:
 - TypeScript 5.x
 
 Ready for creative development!
+
+---
+
+## 🏛️ Golden Rule
+
+All creative, technical, and aesthetic work in this monorepo must follow the permanent standards in [CATHEDRAL_GOLDEN_RULE.md](./CATHEDRAL_GOLDEN_RULE.md). This file is never to be overwritten and is the master reference for all AI, coders, and contributors.

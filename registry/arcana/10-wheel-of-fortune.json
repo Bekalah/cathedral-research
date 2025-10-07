@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "10-wheel-of-fortune",
+  "name": "Wheel of Fortune",
+  "major": 10,
+  "guardian": "Frater Achad",
+  "planet": "Jupiter",
+  "element": "Fire",
+  "lineage": ["A∴A∴", "Thelemic Qabalah", "Tree of Life Studies"],
+  "avatar": "frater-achad-tree-of-life",
+  "labs": {
+    "primary": "rotation_lab",
+    "texts": [
+      {
+        "title": "The Anatomy of the Body of God",
+        "author": "Frater Achad",
+        "path": "/docs/texts/achad-anatomy-body-god-excerpts.md",
+        "type": "thelemic_qabalah"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "19tet",
+    "base_frequency": 417,
+    "scale_degrees": [1, 1.037, 1.114, 1.155, 1.237, 1.284, 1.377]
+  },
+  "daimon": {
+    "name": "Kabbalistic Spinner",
+    "aspect": "cyclical-wisdom",
+    "invocation": "I align with the great cycles and find opportunity within change."
+  },
+  "invocation": "May I recognize the patterns of fortune and flow with cosmic timing.",
+  "manifest": {
+    "seed": "10-wheel-of-fortune-2025-09-24",
+    "intention": "Study cosmic cycles through kabbalistic contemplation",
+    "technique": "Tree of Life meditation, gematria, and cyclical observation"
+  },
+  "tags": ["cycles", "fortune", "kabbalah", "cosmic_timing"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

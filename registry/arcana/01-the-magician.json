@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "01-the-magician",
+  "name": "The Magician",
+  "major": 1,
+  "guardian": "John Dee",
+  "planet": "Mercury",
+  "element": "Air",
+  "lineage": ["Enochian Magic", "Elizabethan Court", "Mathematical Mysticism"],
+  "avatar": "john-dee-enochian-tablets",
+  "labs": {
+    "primary": "angelic_lab",
+    "texts": [
+      {
+        "title": "Monas Hieroglyphica",
+        "author": "John Dee",
+        "path": "/docs/texts/dee-monas-hieroglyphica-excerpts.md",
+        "type": "hermetic_mathematics"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "platonic_just",
+    "base_frequency": 264,
+    "scale_degrees": [1, 1.125, 1.25, 1.333, 1.5, 1.667, 1.875]
+  },
+  "daimon": {
+    "name": "Mercurial Scribe",
+    "aspect": "divine-communication",
+    "invocation": "I channel celestial intelligence through precise symbolic action."
+  },
+  "invocation": "May my will align with cosmic law, transforming vision into manifest reality.",
+  "manifest": {
+    "seed": "01-the-magician-2025-09-24",
+    "intention": "Bridge angelic realms through mathematical precision",
+    "technique": "Enochian calls and geometric construction"
+  },
+  "tags": ["will", "communication", "angelic_contact", "sacred_geometry"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

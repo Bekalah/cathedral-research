@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "08-strength",
+  "name": "Strength",
+  "major": 8,
+  "guardian": "Hypatia of Alexandria",
+  "planet": "Leo",
+  "element": "Fire",
+  "lineage": ["Neoplatonism", "Mathematical Philosophy", "Astronomical Studies"],
+  "avatar": "hypatia-mathematical-courage",
+  "labs": {
+    "primary": "solar_lab",
+    "texts": [
+      {
+        "title": "Commentary on Apollonius",
+        "author": "Hypatia of Alexandria",
+        "path": "/docs/texts/hypatia-apollonius-commentary-excerpts.md",
+        "type": "mathematical_philosophy"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "fibonacci_phi",
+    "base_frequency": 528,
+    "scale_degrees": [1, 1.618, 2.618, 4.236, 6.854]
+  },
+  "daimon": {
+    "name": "Philosophical Lion",
+    "aspect": "intellectual-courage",
+    "invocation": "I apply gentle persistence and rational clarity to overcome all obstacles."
+  },
+  "invocation": "May I face challenges with philosophical courage and mathematical precision.",
+  "manifest": {
+    "seed": "08-strength-2025-09-24",
+    "intention": "Develop intellectual courage through mathematical contemplation",
+    "technique": "Geometric meditation, logical analysis, and fearless inquiry"
+  },
+  "tags": ["courage", "philosophy", "mathematics", "intellectual_strength"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

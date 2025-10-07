@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "11-justice",
+  "name": "Justice",
+  "major": 11,
+  "guardian": "Pythagoras",
+  "planet": "Libra",
+  "element": "Air",
+  "lineage": ["Pythagorean School", "Musical Mathematics", "Harmonic Philosophy"],
+  "avatar": "pythagoras-cosmic-harmony",
+  "labs": {
+    "primary": "equilibrium_lab",
+    "texts": [
+      {
+        "title": "The Golden Verses",
+        "author": "Pythagoras",
+        "path": "/docs/texts/pythagoras-golden-verses-excerpts.md",
+        "type": "philosophical_ethics"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "platonic_just",
+    "base_frequency": 384,
+    "scale_degrees": [1, 1.125, 1.25, 1.333, 1.5, 1.667, 1.875]
+  },
+  "daimon": {
+    "name": "Harmonic Judge",
+    "aspect": "mathematical-balance",
+    "invocation": "I seek perfect balance through mathematical harmony and ethical precision."
+  },
+  "invocation": "May I discern truth through proportion and act with perfect justice.",
+  "manifest": {
+    "seed": "11-justice-2025-09-24",
+    "intention": "Achieve balance through mathematical and musical harmony",
+    "technique": "Ratio study, harmonic analysis, and ethical contemplation"
+  },
+  "tags": ["balance", "mathematics", "music_theory", "ethical_precision"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}

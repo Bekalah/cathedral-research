@@ -1,0 +1,45 @@
+{
+  "merge_strategy": "append",
+  "lock": true,
+  "id": "03-the-empress",
+  "name": "The Empress",
+  "major": 3,
+  "guardian": "Hildegard of Bingen",
+  "planet": "Venus",
+  "element": "Earth",
+  "lineage": ["Benedictine Mysticism", "Viriditas Tradition", "Sacred Music"],
+  "avatar": "hildegard-viriditas-vision",
+  "labs": {
+    "primary": "flora_lab",
+    "texts": [
+      {
+        "title": "Scivias",
+        "author": "Hildegard of Bingen",
+        "path": "/docs/texts/hildegard-scivias-excerpts.md",
+        "type": "visionary_theology"
+      }
+    ]
+  },
+  "default_harmonics": {
+    "tuning_id": "platonic_just",
+    "base_frequency": 288,
+    "scale_degrees": [1, 1.125, 1.25, 1.333, 1.5, 1.667, 1.875]
+  },
+  "daimon": {
+    "name": "Viriditas Spirit",
+    "aspect": "life-force-creativity",
+    "invocation": "I channel the green life force that animates all creation."
+  },
+  "invocation": "May I nurture all forms of life with sacred creativity and abundance.",
+  "manifest": {
+    "seed": "03-the-empress-2025-09-24",
+    "intention": "Cultivate sacred creativity through natural cycles",
+    "technique": "Herbal work, chant, and illuminated manuscripts"
+  },
+  "tags": ["creativity", "abundance", "nature_mysticism", "sacred_music"],
+  "_provenance": {
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "created": "2025-10-06",
+    "schema_version": "1.0"
+  }
+}
