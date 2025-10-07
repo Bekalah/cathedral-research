@@ -1,4 +1,5 @@
 {
+  "x-standards": "All routes and rewrites are protected by ND-safe, trauma-aware standards. See /CATHEDRAL_GOLDEN_RULE.md for provenance. Multi-platform: GitHub Pages, Cloudflare, Azure Static Web Apps.",
   "routes": [
     {
       "route": "/",

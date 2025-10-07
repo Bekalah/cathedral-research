@@ -52,6 +52,11 @@ from = "/studio"
 to = "/apps/synth-art-studio/index.html"
 status = 200
 
+## Standards & Provenance
+# All routes, rewrites, and deployments are protected by ND-safe, trauma-aware standards.
+# See /CATHEDRAL_GOLDEN_RULE.md for permanent provenance and standards enforcement.
+# Multi-platform: GitHub Pages, Cloudflare, Azure Static Web Apps
+#
 # API routes (if needed)
 [[redirects]]
 from = "/api/*"

@@ -95,177 +95,150 @@ interface ChamberPortalProps {
 
 const ChamberPortal: React.FC<ChamberPortalProps> = ({ chamber, index, onActivate }) => {
   const [isHovered, setIsHovered] = useState(false)
-  
-  return (
-    <motion.div
-      className="chamber-portal"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.6 }}
-      whileHover={{ scale: 1.05, rotateY: 5 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={onActivate}
-      style={{
-        background: `linear-gradient(135deg, ${chamber.color}15, ${chamber.color}25)`,
-        border: `2px solid ${chamber.color}40`,
-        borderRadius: '20px',
-        padding: '2rem',
-        cursor: 'pointer',
-        position: 'relative',
-        overflow: 'hidden',
-        backdropFilter: 'blur(20px)',
-        minHeight: '240px',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between'
-      }}
-    >
-      {/* Sacred geometry background */}
-      <div 
-        className="sacred-bg"
-        style={{
-          position: 'absolute',
-          top: '-20%',
-          right: '-20%',
-          width: '60%',
-          height: '60%',
-          opacity: isHovered ? 0.3 : 0.1,
-          transition: 'opacity 0.3s ease',
-          background: `radial-gradient(circle, ${chamber.color}30, transparent 70%)`
-        }}
-      />
-      
-      {/* Chamber content */}
-      <div style={{ position: 'relative', zIndex: 2 }}>
-        <div style={{ 
-          fontSize: '4rem', 
-          marginBottom: '1rem',
-          textShadow: `0 0 20px ${chamber.color}50`
-        }}>
-          {chamber.icon}
-        </div>
-        
-        <h3 style={{
-          color: chamber.color,
-          fontSize: '1.5rem',
-          fontWeight: '600',
-          marginBottom: '0.8rem',
-          fontFamily: 'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif'
-        }}>
-          {chamber.title}
-        </h3>
-        
-        <p style={{
-          color: CATHEDRAL_PALETTE.ink,
-          lineHeight: 1.6,
-          fontSize: '1rem',
-          marginBottom: '1rem'
-        }}>
-          {chamber.description}
-        </p>
-      </div>
-      
-      {/* Frequency display */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        position: 'relative',
-        zIndex: 2
-      }}>
-        <div style={{
-          fontSize: '0.8rem',
-          color: chamber.color,
-          opacity: 0.8
-        }}>
-          {chamber.frequency}Hz
-        </div>
-        <div style={{
-          fontSize: '0.7rem',
-          color: CATHEDRAL_PALETTE.muted,
-          textTransform: 'uppercase',
-          letterSpacing: '1px'
-        }}>
-          {chamber.sacred_geometry.replace('_', ' ')}
-        </div>
-      </div>
+  const [health, setHealth] = useState<any>(null)
 
-      {/* Hover shine effect */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ x: '-100%' }}
-            animate={{ x: '100%' }}
-            exit={{ x: '100%' }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              background: `linear-gradient(90deg, transparent, ${chamber.color}20, transparent)`,
-              pointerEvents: 'none'
-            }}
-          />
-        )}
-      </AnimatePresence>
-    </motion.div>
+  useEffect(() => {
+    fetch(`/apps/${chamber.app}/health.json`)
+      .then(res => res.ok ? res.json() : null)
+      .then(data => setHealth(data))
+      .catch(() => setHealth(null))
+  }, [chamber.app])
+
+  return (
+    <>
+      <motion.div
+        className="chamber-portal"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1, duration: 0.6 }}
+        whileHover={{ scale: 1.05, rotateY: 5 }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={onActivate}
+        style={{
+          background: `linear-gradient(135deg, ${chamber.color}15, ${chamber.color}25)`,
+          border: `2px solid ${chamber.color}40`,
+          borderRadius: '20px',
+          padding: '2rem',
+          cursor: 'pointer',
+          position: 'relative',
+          overflow: 'hidden',
+          backdropFilter: 'blur(20px)',
+          minHeight: '240px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between'
+        }}
+      >
+        {/* Sacred geometry background */}
+        <div 
+          className="sacred-bg"
+          style={{
+            position: 'absolute',
+            top: '-20%',
+            right: '-20%',
+            width: '60%',
+            height: '60%',
+            opacity: isHovered ? 0.3 : 0.1,
+            transition: 'opacity 0.3s ease',
+            background: `radial-gradient(circle, ${chamber.color}30, transparent 70%)`
+          }}
+        />
+        {/* Chamber content */}
+        <div style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{ 
+            fontSize: '4rem', 
+            marginBottom: '1rem',
+            textShadow: `0 0 20px ${chamber.color}50`
+          }}>
+            {chamber.icon}
+          </div>
+          <h3 style={{
+            color: chamber.color,
+            fontSize: '1.5rem',
+            fontWeight: '600',
+            marginBottom: '0.8rem',
+            fontFamily: 'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif'
+          }}>
+            {chamber.title}
+          </h3>
+          <p style={{
+            color: CATHEDRAL_PALETTE.ink,
+            lineHeight: 1.6,
+            fontSize: '1rem',
+            marginBottom: '1rem'
+          }}>
+            {chamber.description}
+          </p>
+          {/* Health map and standards links */}
+          <div style={{ marginBottom: '1rem' }}>
+            <a href={health?.standards || chamber.standards} target="_blank" rel="noopener" style={{ color: chamber.color, fontWeight: 600, marginRight: '1.5rem' }}>Golden Rule</a>
+            <a href={`/apps/${chamber.app}/health.json`} target="_blank" rel="noopener" style={{ color: CATHEDRAL_PALETTE.muted, fontWeight: 500 }}>Health Map</a>
+          </div>
+          {health && (
+            <div style={{ fontSize: '0.9rem', color: CATHEDRAL_PALETTE.muted }}>
+              <strong>Health:</strong> {health.status || 'OK'}<br/>
+              {health.lastChecked && <span>Last Checked: {health.lastChecked}</span>}<br/>
+              <strong>Standards:</strong> <a href={health.standards} target="_blank" rel="noopener" style={{ color: chamber.color }}>Golden Rule</a><br/>
+              <strong>Provenance:</strong> {health.provenance}<br/>
+              {health.issues && health.issues.length > 0 && (
+                <ul style={{ margin: '0.5rem 0 0 1rem', color: '#ff4444' }}>
+                  {health.issues.map((issue: string, i: number) => <li key={i}>{issue}</li>)}
+                </ul>
+              )}
+            </div>
+          )}
+        </div>
+        {/* Frequency display */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          position: 'relative',
+          zIndex: 2
+        }}>
+          <div style={{
+            fontSize: '0.8rem',
+            color: chamber.color,
+            opacity: 0.8
+          }}>
+            {chamber.frequency}Hz
+          </div>
+          <div style={{
+            fontSize: '0.7rem',
+            color: CATHEDRAL_PALETTE.muted,
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
+          }}>
+            {chamber.sacred_geometry.replace('_', ' ')}
+          </div>
+        </div>
+        {/* Hover shine effect */}
+        <AnimatePresence>
+          {isHovered && (
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: '100%' }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: `linear-gradient(90deg, transparent, ${chamber.color}20, transparent)`,
+                pointerEvents: 'none'
+              }}
+            />
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </>
   )
 }
-
-export const CathedralUnified: React.FC = () => {
-  const [selectedChamber, setSelectedChamber] = useState<string | null>(null)
-  const [currentFrequency, setCurrentFrequency] = useState(528)
-
-  const handleChamberActivate = (chamber: typeof SACRED_CHAMBERS[0]) => {
-    setSelectedChamber(chamber.id)
-    setCurrentFrequency(chamber.frequency)
-    
-    // Navigate to the app
-    const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '')
-    const appUrl = `${baseUrl}/apps/${chamber.app}/dist/index.html`
-    window.open(appUrl, '_blank')
-  }
-
-  return (
-    <div style={{
-      minHeight: '100vh',
-      background: `linear-gradient(135deg, ${CATHEDRAL_PALETTE.bg} 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, ${CATHEDRAL_PALETTE.bg} 100%)`,
-      color: CATHEDRAL_PALETTE.ink,
-      fontFamily: 'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif',
-      position: 'relative'
-    }}>
-      {/* Cosmic background */}
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: `
-          radial-gradient(circle at 20% 30%, ${CATHEDRAL_PALETTE.violet}08 0%, transparent 50%),
-          radial-gradient(circle at 80% 70%, ${CATHEDRAL_PALETTE.aqua}06 0%, transparent 50%),
-          radial-gradient(circle at 40% 80%, ${CATHEDRAL_PALETTE.gold}04 0%, transparent 50%)
-        `,
-        pointerEvents: 'none'
-      }} />
-
-      <div style={{
-        position: 'relative',
-        zIndex: 10,
-        maxWidth: '1400px',
-        margin: '0 auto',
-        padding: '2rem'
-      }}>
-        {/* Sacred Header */}
-        <motion.header
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          style={{
-            textAlign: 'center',
+// Removed duplicate and misplaced JSX fragments after ChamberPortal
+// Removed stray style object and div after ChamberPortal function
             marginBottom: '4rem',
             padding: '3rem 0'
           }}

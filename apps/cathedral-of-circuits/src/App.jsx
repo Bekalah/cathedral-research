@@ -5,10 +5,21 @@
  * Game of Thrones meets Thierry Mugler in a dramatic mystical experience
  */
 
+
 import { useState, useEffect, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { } from '@react-three/drei';
 import './styles.css';
+import { CathedralBridgeHub } from '../../../packages/cathedral-bridge-system/index.ts';
+
+// Example: Use unified system data, plans, and cross-repo instructions
+const systemPlans = CathedralBridgeHub.getState('systemPlans');
+const integrationPlan = CathedralBridgeHub.SYSTEM_INTEGRATION_PLAN;
+const goldenRule = CathedralBridgeHub.GOLDEN_RULE;
+
+// Example: Use isomorphism discovery and node monitoring
+const findIsomorphisms = CathedralBridgeHub.findIsomorphisms;
+const monitorNode = CathedralBridgeHub.monitorNode;
 
 function App() {
   // Core application state

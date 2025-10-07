@@ -18,14 +18,16 @@ Defines a lightweight adaptive layer tying Codex nodes to musical motifs for amb
 2. Run enrichment:
    ```bash
    npm run codex:enrich:music
-   ```
 3. Rebuild chat pack & site export:
+
+   ---
+
+   ## 🏛️ Golden Rule
+
+   All codex audio, motif, and music science work must follow the permanent standards in [../../CATHEDRAL_GOLDEN_RULE.md](../../CATHEDRAL_GOLDEN_RULE.md). This file is never to be overwritten and is the master reference for all AI, coders, and contributors.
+
    ```bash
-   npm run chat:pack
-   npm run export:site
-   ```
    The export now includes integrity hashes and `motif-demo.html`.
-4. (Optional) Build kernel package:
    ```bash
    npm --workspace @cathedral/sound-kernel run build
    ```

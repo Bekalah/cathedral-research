@@ -22,10 +22,11 @@
 - Tarot archetype worker system for creative experiments
 - RPG/board game style creative modes (BETWIXT, Tiny Book Store inspiration, but unique)
 
-### Real Source Fidelity
-- All 3D sculpting, coding, and synth work must be based on real, documented sources and inspirations.
-- Where any module, app, or output claims to be “inspired by” or “modeled after” a real artist, technique, or material, it must be followed to the closest possible match—replicating the real reference in detail, process, and quality.
-- This applies to all creative, technical, and aesthetic work. No exceptions.
+
+### Free Art & Open Creation
+- All art, music, and code in the Cathedral system is free, open, and original.
+- No copying or replicating real-life artists, techniques, or materials unless fully public domain or open source.
+- Creative work must be original, modular, and remixable, supporting free expression and open collaboration.
 
 ## 4. Code & Technical Preferences
 - Modern stack: Vite, React, Three.js, TypeScript, pnpm
@@ -56,6 +57,13 @@
 
 ---
 
-**This file is the Golden Rule. Never overwrite, flatten, or ignore it. All creative, technical, and aesthetic work must follow these standards.**
+
+## 8. Permanent Source Preservation
+- All real source files, code, and assets must be preserved and referenced in the monorepo.
+- Never replace, flatten, or lose real work with web snapshots, exports, or builds.
+- Every system, app, and package must use and reference the actual source files—not just deployed or generated outputs.
+- Provenance, ND-safe, and trauma-aware standards apply to all real source material.
+
+**This file is the Golden Rule. Never overwrite, flatten, ignore, or lose real source files. All creative, technical, and aesthetic work must follow these standards.**
 
 © Rebecca Susan Lemke, Cathedral Universe

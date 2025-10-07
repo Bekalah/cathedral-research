@@ -1,3 +1,6 @@
+# 🛡️ Standards & Provenance
+All deployment workflows reference ND-safe, trauma-aware standards. See [CATHEDRAL_GOLDEN_RULE.md](../CATHEDRAL_GOLDEN_RULE.md) for provenance. Multi-platform: GitHub Pages, Cloudflare, Azure Static Web Apps.
+
 # 🏛️ Cathedral Research - Version History
 
 ## Version 2.1.0-cathedral "Cathedral Hub Integration" (2025-10-05)

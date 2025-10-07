@@ -12,26 +12,21 @@ Cathedral is a sophisticated monorepo that brings together mystical traditions, 
 ## 🏗️ Architecture
 
 ### Applications
-- **🏛️ Cathedral Hub** - Central navigation portal with Porter Robinson-level sound art
-- **⚡ Cathedral of Circuits** - Main experience engine with fractal visualizations
-- **📜 Stone Grimoire** - Mystical creation tools with authentic art system
-- **🔬 Arcanae Lab** - Research workspace for consciousness exploration
-- **🎵 Synth Art Studio** - Audio-visual synthesis across 5 universes
-- **🎮 CYOA Engine** - Choose Your Own Adventure with mystical narratives
+
+## 🧩 System Integration Plan
+
+See [CATHEDRAL_SYSTEM_INTEGRATION_PLAN.md](./CATHEDRAL_SYSTEM_INTEGRATION_PLAN.md) for the unified architecture, standards, and actionable steps for all immersive systems, modular logic, and agent onboarding.
 
 ### Core Systems
-- **🎭 Liber Arcanae** - Complete 22 Major Arcana character system
-- **🎵 Sound Kernel** - Porter Robinson-inspired audio engine
-- **🎨 Art Engine** - Authentic historical visionaries (Artemisia Gentileschi, Emma Kunz, Hilma af Klint)
-- **⚡ Three Engine** - Immersive 3D cathedral visualizations
-- **🧠 Consciousness Engine** - Angel Tech 8-circuit system with real crystal formulas
 
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies and check system health
+# Run system health check first
+./scripts/system-health-check.sh
+
+# Install dependencies
 pnpm install
-pnpm run setup:health   # Run system health check (see below)
 
 # Build all applications
 pnpm run build
@@ -160,6 +155,15 @@ Ready for creative development!
 
 ---
 
+## 🏛️ System Health Check
+
+Always run `./scripts/system-health-check.sh` before any update, build, or deployment. This script verifies all apps, packages, codex modules, and standards are connected and working.
+
+---
+
 ## 🏛️ Golden Rule
 
 All creative, technical, and aesthetic work in this monorepo must follow the permanent standards in [CATHEDRAL_GOLDEN_RULE.md](./CATHEDRAL_GOLDEN_RULE.md). This file is never to be overwritten and is the master reference for all AI, coders, and contributors.
+
+## 🛡️ Standards & Provenance
+All deployments and code are protected by ND-safe, trauma-aware standards. See [CATHEDRAL_GOLDEN_RULE.md](./CATHEDRAL_GOLDEN_RULE.md) for provenance. Multi-platform: GitHub Pages, Cloudflare, Azure Static Web Apps.
