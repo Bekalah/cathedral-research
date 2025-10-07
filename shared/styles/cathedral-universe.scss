@@ -1,0 +1,802 @@
+/**
+ * 🎨 Cathedral Universe - Unified Design System
+ * 
+ * Immersive Creative Platform Style System
+ * Consolidates all style guides into one cohesive aesthetic
+ * 
+ * Aesthetic Philosophy:
+ * Ernst Fuchs' Viennese Realism + Alex Grey's Sacred Anatomy + 
+ * Iris van Herpen's Computational Couture
+ */
+
+// =============================================================================
+// UNIVERSAL COLOR SYSTEM
+// =============================================================================
+
+:root {
+  /* Vienna Deep - Core Foundation */
+  --cathedral-obsidian: #1a1a2e;
+  --cathedral-midnight: #16213e;
+  --cathedral-royal: #283593;
+  --cathedral-ancient-gold: #d4af37;
+  --cathedral-ivory: #f8f8ff;
+  --cathedral-shadow: #0a0a1a;
+  
+  /* Chakra Precision - Energy States */
+  --muladhara-crimson: #8b0000;
+  --svadhisthana-amber: #ff6600;
+  --manipura-solar: #ffd700;
+  --anahata-emerald: #00cc66;
+  --vishuddha-azure: #0066cc;
+  --ajna-indigo: #4b0082;
+  --sahasrara-violet: #9400d3;
+  
+  /* Couture Luxe - Interactive Elements */
+  --iris-ocean: #1e3a8a;
+  --mugler-architectural: #374151;
+  --mcqueen-dramatic: #dc2626;
+  --valentino-ethereal: #c084fc;
+  --westwood-punk: #ff1493;
+  
+  /* Application-Specific Palettes */
+  --circuit-electric: #00ffff;
+  --grimoire-parchment: #f4e4bc;
+  --grimoire-ink: #2c1810;
+  --arcanae-mystical: #663399;
+  --studio-neo: #ff006e;
+  --cyoa-narrative: #4a00aa;
+  
+  /* Sacred Geometry Constants */
+  --golden-ratio: 1.618033988749895;
+  --phi: 1.618033988749895;
+  --sacred-unit: calc(1rem * var(--golden-ratio));
+  
+  /* Animation Timings */
+  --transition-swift: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-elegant: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-mystical: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-transcendent: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// =============================================================================
+// SACRED TYPOGRAPHY SYSTEM
+// =============================================================================
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap');
+
+/* Typography Hierarchy */
+.cathedral-display {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 1.2;
+}
+
+.cathedral-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.3;
+}
+
+.cathedral-body {
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+  line-height: var(--golden-ratio);
+}
+
+.cathedral-mystical {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+.cathedral-tech {
+  font-family: 'Orbitron', monospace;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+/* Dynamic Text Effects */
+.text-mystical-gradient {
+  background: linear-gradient(135deg, 
+    var(--cathedral-ancient-gold), 
+    var(--sahasrara-violet),
+    var(--cathedral-ancient-gold)
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: mystical-flow 4s ease infinite;
+}
+
+.text-sacred-glow {
+  color: var(--cathedral-ancient-gold);
+  text-shadow: 
+    0 0 10px rgba(212, 175, 55, 0.6),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.text-ethereal {
+  color: var(--cathedral-ivory);
+  text-shadow: 
+    0 0 15px rgba(248, 248, 255, 0.5),
+    0 2px 4px var(--cathedral-shadow);
+}
+
+// =============================================================================
+// SACRED GEOMETRY LAYOUT SYSTEM
+// =============================================================================
+
+/* Golden Ratio Grid */
+.cathedral-grid {
+  display: grid;
+  grid-template-columns: 
+    1fr 
+    calc(1fr * var(--golden-ratio)) 
+    calc(1fr * var(--golden-ratio) * var(--golden-ratio));
+  gap: var(--sacred-unit);
+}
+
+.cathedral-flex-sacred {
+  display: flex;
+  gap: var(--sacred-unit);
+  align-items: center;
+}
+
+/* Vesica Piscis Layout */
+.vesica-piscis-container {
+  position: relative;
+  width: 100%;
+  max-width: calc(400px * var(--golden-ratio));
+  aspect-ratio: var(--golden-ratio);
+  margin: 0 auto;
+}
+
+/* Fibonacci Spiral Layout */
+.fibonacci-spiral {
+  display: grid;
+  grid-template-areas: 
+    "a b b"
+    "a c d"
+    "e c d";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: calc(var(--sacred-unit) / var(--golden-ratio));
+}
+
+// =============================================================================
+// IMMERSIVE GLASS MORPHISM SYSTEM
+// =============================================================================
+
+/* Base Glass Container */
+.cathedral-glass {
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 46, 0.95),
+    rgba(22, 33, 62, 0.90),
+    rgba(139, 0, 0, 0.05)
+  );
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(212, 175, 55, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cathedral-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: glass-shimmer 3s ease infinite;
+}
+
+/* Glass Variants */
+.cathedral-glass--ethereal {
+  background: linear-gradient(135deg, 
+    rgba(148, 0, 211, 0.15),
+    rgba(30, 58, 138, 0.10),
+    rgba(212, 175, 55, 0.05)
+  );
+  border-color: rgba(148, 0, 211, 0.4);
+}
+
+.cathedral-glass--mystical {
+  background: linear-gradient(135deg, 
+    rgba(75, 0, 130, 0.20),
+    rgba(139, 0, 0, 0.15),
+    rgba(255, 215, 0, 0.05)
+  );
+  border-color: rgba(75, 0, 130, 0.5);
+}
+
+.cathedral-glass--sacred {
+  background: linear-gradient(135deg, 
+    rgba(212, 175, 55, 0.20),
+    rgba(26, 26, 46, 0.90),
+    rgba(148, 0, 211, 0.10)
+  );
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+// =============================================================================
+// INTERACTIVE SACRED ELEMENTS
+// =============================================================================
+
+/* Cathedral Button System */
+.cathedral-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--sacred-unit) / 2) var(--sacred-unit);
+  background: linear-gradient(135deg, 
+    var(--iris-ocean), 
+    var(--cathedral-royal)
+  );
+  border: 2px solid var(--cathedral-ancient-gold);
+  border-radius: 12px;
+  color: var(--cathedral-ivory);
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-elegant);
+  position: relative;
+  overflow: hidden;
+  transform-origin: center;
+}
+
+.cathedral-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
+  transition: all var(--transition-elegant);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.cathedral-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 12px 35px rgba(212, 175, 55, 0.4),
+    0 0 25px rgba(148, 0, 211, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: var(--sahasrara-violet);
+  background: linear-gradient(135deg, 
+    var(--sahasrara-violet), 
+    var(--iris-ocean)
+  );
+}
+
+.cathedral-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cathedral-button:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all var(--transition-swift);
+}
+
+/* Button Variants */
+.cathedral-button--primary {
+  background: linear-gradient(135deg, 
+    var(--cathedral-ancient-gold), 
+    var(--manipura-solar)
+  );
+  border-color: var(--cathedral-ancient-gold);
+}
+
+.cathedral-button--secondary {
+  background: transparent;
+  border-color: var(--cathedral-ancient-gold);
+  color: var(--cathedral-ancient-gold);
+}
+
+.cathedral-button--mystical {
+  background: linear-gradient(135deg, 
+    var(--ajna-indigo), 
+    var(--sahasrara-violet)
+  );
+  border-color: var(--sahasrara-violet);
+}
+
+/* Sacred Input Fields */
+.cathedral-input {
+  background: rgba(26, 26, 46, 0.8);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  padding: calc(var(--sacred-unit) / 2);
+  color: var(--cathedral-ivory);
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  transition: all var(--transition-elegant);
+  backdrop-filter: blur(10px);
+}
+
+.cathedral-input:focus {
+  outline: none;
+  border-color: var(--cathedral-ancient-gold);
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: rgba(26, 26, 46, 0.95);
+}
+
+.cathedral-input::placeholder {
+  color: rgba(248, 248, 255, 0.5);
+  font-style: italic;
+}
+
+// =============================================================================
+// CSS ART LABORATORY
+// =============================================================================
+
+/* Fractal Art Generator */
+.css-fractal {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle at center,
+    var(--sahasrara-violet) 0%,
+    var(--ajna-indigo) 25%,
+    var(--vishuddha-azure) 50%,
+    var(--cathedral-obsidian) 100%
+  );
+  border-radius: 50%;
+  animation: fractal-spin 20s linear infinite;
+  box-shadow: 
+    0 0 100px rgba(148, 0, 211, 0.3),
+    inset 0 0 50px rgba(212, 175, 55, 0.1);
+}
+
+.css-fractal::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: conic-gradient(
+    from 45deg,
+    var(--cathedral-ancient-gold),
+    var(--muladhara-crimson),
+    var(--svadhisthana-amber),
+    var(--manipura-solar),
+    var(--anahata-emerald),
+    var(--vishuddha-azure),
+    var(--ajna-indigo),
+    var(--sahasrara-violet),
+    var(--cathedral-ancient-gold)
+  );
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: fractal-counter-spin 15s linear infinite reverse;
+}
+
+.css-fractal::after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background: var(--cathedral-obsidian);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 0 50px var(--cathedral-ancient-gold),
+    0 0 100px var(--sahasrara-violet);
+}
+
+/* Sacred Geometry Patterns */
+.vesica-piscis {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+}
+
+.vesica-piscis::before,
+.vesica-piscis::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 3px solid var(--cathedral-ancient-gold);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 30px var(--cathedral-ancient-gold),
+    inset 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.vesica-piscis::before {
+  left: -50px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+.vesica-piscis::after {
+  right: -50px;
+  background: radial-gradient(
+    circle,
+    rgba(148, 0, 211, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* Flower of Life Pattern */
+.flower-of-life {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 100px auto;
+}
+
+.flower-of-life .circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--cathedral-ancient-gold);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.05) 0%,
+    transparent 70%
+  );
+  animation: sacred-pulse 4s ease infinite;
+}
+
+.flower-of-life .circle:nth-child(1) { top: 100px; left: 100px; }
+.flower-of-life .circle:nth-child(2) { top: 50px; left: 150px; animation-delay: -0.5s; }
+.flower-of-life .circle:nth-child(3) { top: 150px; left: 150px; animation-delay: -1s; }
+.flower-of-life .circle:nth-child(4) { top: 50px; left: 50px; animation-delay: -1.5s; }
+.flower-of-life .circle:nth-child(5) { top: 150px; left: 50px; animation-delay: -2s; }
+.flower-of-life .circle:nth-child(6) { top: 0px; left: 100px; animation-delay: -2.5s; }
+.flower-of-life .circle:nth-child(7) { top: 200px; left: 100px; animation-delay: -3s; }
+
+// =============================================================================
+// IMMERSIVE NAVIGATION SYSTEM
+// =============================================================================
+
+/* Fixed Navigation */
+.cathedral-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 26, 46, 0.95) 0%,
+    rgba(26, 26, 46, 0.8) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid var(--cathedral-ancient-gold);
+  padding: 1rem 0;
+}
+
+.cathedral-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.cathedral-nav-logo {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--cathedral-ancient-gold);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.cathedral-nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cathedral-nav-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: var(--cathedral-ivory);
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  transition: all var(--transition-elegant);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.cathedral-nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--cathedral-ancient-gold),
+    var(--sahasrara-violet)
+  );
+  transition: left var(--transition-elegant);
+}
+
+.cathedral-nav-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1),
+    rgba(148, 0, 211, 0.1)
+  );
+  opacity: 0;
+  transition: opacity var(--transition-elegant);
+}
+
+.cathedral-nav-item:hover::before {
+  left: 0;
+}
+
+.cathedral-nav-item:hover::after {
+  opacity: 1;
+}
+
+.cathedral-nav-item:hover {
+  color: var(--cathedral-ancient-gold);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+}
+
+// =============================================================================
+// RESPONSIVE IMMERSIVE LAYOUT
+// =============================================================================
+
+/* Mobile-First Responsive Design */
+.cathedral-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.cathedral-section {
+  padding: calc(var(--sacred-unit) * 2) 0;
+  margin: calc(var(--sacred-unit) * 3) 0;
+}
+
+.cathedral-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding-top: 80px; /* Account for fixed nav */
+}
+
+/* Cosmic Background */
+.cathedral-cosmic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(148, 0, 211, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.04) 0%, transparent 50%),
+    linear-gradient(135deg, var(--cathedral-obsidian) 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, var(--cathedral-obsidian) 100%);
+  z-index: -1;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .cathedral-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cathedral-nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cathedral-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .css-fractal {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cathedral-container {
+    padding: 0 2rem;
+  }
+  
+  .cathedral-hero h1 {
+    font-size: 4rem;
+  }
+}
+
+// =============================================================================
+// SACRED ANIMATIONS
+// =============================================================================
+
+@keyframes mystical-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes sacred-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes fractal-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fractal-counter-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes glass-shimmer {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+@keyframes ethereal-float {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg);
+  }
+  33% { 
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% { 
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes sacred-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// =============================================================================
+// UTILITY CLASSES
+// =============================================================================
+
+/* Animation Classes */
+.animate-sacred-entrance {
+  animation: sacred-entrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-ethereal-float {
+  animation: ethereal-float 6s ease-in-out infinite;
+}
+
+.animate-sacred-pulse {
+  animation: sacred-pulse 4s ease infinite;
+}
+
+/* Spacing Utilities */
+.space-sacred { margin: var(--sacred-unit); }
+.space-sacred-x { margin-left: var(--sacred-unit); margin-right: var(--sacred-unit); }
+.space-sacred-y { margin-top: var(--sacred-unit); margin-bottom: var(--sacred-unit); }
+
+.gap-sacred { gap: var(--sacred-unit); }
+.gap-sacred-sm { gap: calc(var(--sacred-unit) / var(--golden-ratio)); }
+.gap-sacred-lg { gap: calc(var(--sacred-unit) * var(--golden-ratio)); }
+
+/* Visibility Utilities */
+.cathedral-fade-in {
+  opacity: 0;
+  animation: sacred-entrance 1s ease forwards;
+}
+
+.cathedral-blur-in {
+  filter: blur(10px);
+  opacity: 0;
+  transition: all var(--transition-mystical);
+}
+
+.cathedral-blur-in.visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Management */
+.cathedral-focus:focus {
+  outline: 3px solid var(--cathedral-ancient-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --cathedral-ancient-gold: #ffff00;
+    --cathedral-ivory: #ffffff;
+    --cathedral-obsidian: #000000;
+  }
+}

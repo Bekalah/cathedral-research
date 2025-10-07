@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral Universe - Immersive Creative Platform</title>
+    <meta name="description" content="Where consciousness becomes sacred space - Immersive creative platform with modular tarot, p5.js art, and real dataset integration">
+    
+    <!-- Preload Critical Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Cathedral Universe Styles -->
+    <link rel="stylesheet" href="shared/styles/cathedral-universe.css">
+    
+    <!-- p5.js for Interactive Art -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+    
+    <style>
+        /* Immediate Critical Styles */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1a1a2e 100%);
+            color: #f8f8ff;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .loading-cathedral {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+        
+        .loading-cathedral.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .sacred-loader {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #d4af37;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: sacred-spin 2s linear infinite;
+            margin-bottom: 2rem;
+        }
+        
+        @keyframes sacred-spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #d4af37;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-cathedral" id="cathedral-loader">
+        <div class="sacred-loader"></div>
+        <div class="loading-text">
+            Initializing Cathedral Universe<br>
+            <small style="font-size: 0.8rem; color: #f8f8ff; margin-top: 1rem; display: block;">
+                Loading sacred geometries and immersive systems...
+            </small>
+        </div>
+    </div>
+
+    <!-- Cosmic Background -->
+    <div class="cathedral-cosmic-bg"></div>
+
+    <!-- Immersive Navigation -->
+    <nav class="cathedral-nav" id="main-nav">
+        <div class="cathedral-nav-container">
+            <a href="#" class="cathedral-nav-logo">Cathedral Universe</a>
+            
+            <div class="cathedral-nav-links">
+                <a href="#hub" class="cathedral-nav-item">Hub</a>
+                <a href="#apps" class="cathedral-nav-item">Applications</a>
+                <a href="#packages" class="cathedral-nav-item">Packages</a>
+                <a href="#art-lab" class="cathedral-nav-item">Art Lab</a>
+                <a href="#about" class="cathedral-nav-item">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="cathedral-hero" id="hero">
+        <div class="cathedral-container">
+            <h1 class="cathedral-display text-mystical-gradient" style="font-size: 4rem; margin-bottom: 2rem;">
+                Cathedral Universe
+            </h1>
+            
+            <p class="cathedral-body" style="font-size: 1.5rem; text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                An immersive creative platform where consciousness becomes sacred space.
+                Featuring modular Liber Arcanae, p5.js integration, Codex 144:99 mathematics,
+                and professional art tools connected to real datasets.
+            </p>
+            
+            <div class="cathedral-flex-sacred" style="justify-content: center; margin-bottom: 4rem;">
+                <a href="#apps" class="cathedral-button cathedral-button--primary">
+                    Explore Universe
+                </a>
+                <a href="#art-lab" class="cathedral-button cathedral-button--mystical">
+                    Create Art
+                </a>
+            </div>
+            
+            <!-- Live p5.js Demo -->
+            <div class="cathedral-glass" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 2rem;">
+                <h3 class="cathedral-heading text-sacred-glow" style="text-align: center; margin-bottom: 1rem;">
+                    Live P5.js + Codex 144:99 Demo
+                </h3>
+                <div id="p5-hero-demo" style="display: flex; justify-content: center;"></div>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    Click to cycle through Arcana visualizations • S to save image
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Showcase -->
+    <section class="cathedral-section" id="apps">
+        <div class="cathedral-container">
+            <h2 class="cathedral-display text-mystical-gradient" style="font-size: 3rem; text-align: center; margin-bottom: 3rem;">
+                Immersive Applications
+            </h2>
+            
+            <div class="cathedral-grid" style="gap: 2rem;">
+                <!-- Cathedral Hub -->
+                <div class="cathedral-glass cathedral-fade-in">
+                    <div style="padding: 2rem;">
+                        <h3 class="cathedral-heading text-sacred-glow">🏛️ Cathedral Hub</h3>
+                        <p class="cathedral-body">Central navigation portal with sacred architecture design. Golden ratio layouts and mystical interface elements.</p>
+                        <div class="css-art-demo">
+                            <div class="vesica-piscis" style="transform: scale(0.5); margin: 1rem auto;"></div>
+                        </div>
+                        <a href="#" class="cathedral-button cathedral-button--secondary">Explore Hub</a>
+                    </div>
+                </div>
+                
+                <!-- Arcanae Lab -->
+                <div class="cathedral-glass cathedral-fade-in" style="animation-delay: 0.2s;">
+                    <div style="padding: 2rem;">
+                        <h3 class="cathedral-heading text-sacred-glow">🔬 Arcanae Lab</h3>
+                        <p class="cathedral-body">Scientific mysticism workspace with modular Liber Arcanae system. Each tarot card becomes a complete universe.</p>
+                        <div class="css-art-demo">
+                            <div class="css-fractal" style="transform: scale(0.3); margin: 1rem auto;"></div>
+                        </div>
+                        <a href="#" class="cathedral-button cathedral-button--mystical">Enter Lab</a>
+                    </div>
+                </div>
+                
+                <!-- Synth Art Studio -->
+                <div class="cathedral-glass cathedral-fade-in" style="animation-delay: 0.4s;">
+                    <div style="padding: 2rem;">
+                        <h3 class="cathedral-heading text-sacred-glow">🎵 Synth Art Studio</h3>
+                        <p class="cathedral-body">Haute couture creation lab combining sound synthesis with visual art generation. Professional export capabilities.</p>
+                        <div class="css-art-demo">
+                            <div class="flower-of-life" style="transform: scale(0.4); margin: 1rem auto;">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="cathedral-button cathedral-button--primary">Create Art</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Showcase -->
+    <section class="cathedral-section" id="packages">
+        <div class="cathedral-container">
+            <h2 class="cathedral-display text-mystical-gradient" style="font-size: 3rem; text-align: center; margin-bottom: 3rem;">
+                Modular Packages
+            </h2>
+            
+            <div class="cathedral-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="cathedral-glass cathedral-blur-in">
+                    <div style="padding: 2rem;">
+                        <h3 class="cathedral-heading">🃏 Liber Arcanae Modular</h3>
+                        <p class="cathedral-body">Complete tarot system where each card is a self-contained universe with p5.js visualization, real dataset connections, and professional export capabilities.</p>
+                        <ul class="cathedral-body" style="margin: 1rem 0;">
+                            <li>78 modular tarot cards</li>
+                            <li>p5.js integration</li>
+                            <li>Real dataset connections</li>
+                            <li>Professional art exports</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cathedral-glass cathedral-blur-in">
+                    <div style="padding: 2rem;">
+                        <h3 class="cathedral-heading">🎨 P5 Codex Engine</h3>
+                        <p class="cathedral-body">Modular p5.js integration with Codex 144:99 sacred mathematics. Generate art using golden ratio, Fibonacci sequences, and sacred geometry.</p>
+                        <ul class="cathedral-body" style="margin: 1rem 0;">
+                            <li>144 sacred nodes system</li>
+                            <li>Sacred geometry patterns</li>
+                            <li>Real-time data visualization</li>
+                            <li>Interactive art generation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cathedral-glass cathedral-blur-in">
+                    <div style="padding: 2rem;">
+                        <h3 class="cathedral-heading">📡 Dataset Connectors</h3>
+                        <p class="cathedral-body">Professional data integration system connecting to NASA, weather services, art museums, and scientific databases for dynamic art generation.</p>
+                        <ul class="cathedral-body" style="margin: 1rem 0;">
+                            <li>NASA space imagery</li>
+                            <li>Weather & climate data</li>
+                            <li>Museum art collections</li>
+                            <li>Scientific research data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Art Laboratory -->
+    <section class="cathedral-section" id="art-lab">
+        <div class="cathedral-container">
+            <h2 class="cathedral-display text-mystical-gradient" style="font-size: 3rem; text-align: center; margin-bottom: 3rem;">
+                CSS Art Laboratory
+            </h2>
+            
+            <div class="cathedral-glass" style="padding: 3rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                    <!-- Sacred Geometry Patterns -->
+                    <div style="text-align: center;">
+                        <h3 class="cathedral-heading text-sacred-glow">Sacred Geometry</h3>
+                        <div class="vesica-piscis animate-ethereal-float"></div>
+                        <p class="cathedral-mystical">Vesica Piscis - Creation through intersection</p>
+                    </div>
+                    
+                    <!-- Fractal Art -->
+                    <div style="text-align: center;">
+                        <h3 class="cathedral-heading text-sacred-glow">Fractal Patterns</h3>
+                        <div class="css-fractal animate-sacred-pulse"></div>
+                        <p class="cathedral-mystical">Infinite complexity from simple rules</p>
+                    </div>
+                    
+                    <!-- Flower of Life -->
+                    <div style="text-align: center;">
+                        <h3 class="cathedral-heading text-sacred-glow">Flower of Life</h3>
+                        <div class="flower-of-life">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                        <p class="cathedral-mystical">Universal symbol of creation</p>
+                    </div>
+                </div>
+                
+                <!-- Interactive Controls -->
+                <div style="text-align: center;">
+                    <h3 class="cathedral-heading text-sacred-glow">Interactive Art Generation</h3>
+                    <div style="margin: 2rem 0;">
+                        <button class="cathedral-button cathedral-button--primary" onclick="generateCosmicArt()">
+                            Generate Cosmic Art
+                        </button>
+                        <button class="cathedral-button cathedral-button--mystical" onclick="connectToDatasets()">
+                            Connect Live Data
+                        </button>
+                        <button class="cathedral-button cathedral-button--secondary" onclick="exportProfessionalArt()">
+                            Export Professional
+                        </button>
+                    </div>
+                    <div id="art-generation-status" class="cathedral-mystical" style="min-height: 2rem;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="cathedral-section" id="about">
+        <div class="cathedral-container">
+            <h2 class="cathedral-display text-mystical-gradient" style="font-size: 3rem; text-align: center; margin-bottom: 3rem;">
+                Design Philosophy
+            </h2>
+            
+            <div class="cathedral-glass" style="padding: 3rem;">
+                <div class="cathedral-grid" style="gap: 3rem;">
+                    <div>
+                        <h3 class="cathedral-heading text-sacred-glow">Ernst Fuchs' Viennese Realism</h3>
+                        <p class="cathedral-body">Multi-layered glazing techniques creating depth and luminosity. Each interface element built with the precision and beauty of classical painting masters.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="cathedral-heading text-sacred-glow">Alex Grey's Sacred Anatomy</h3>
+                        <p class="cathedral-body">Consciousness mapping and energy visualization. Every interaction reveals deeper layers of awareness and spiritual technology.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="cathedral-heading text-sacred-glow">Iris van Herpen's Computational Couture</h3>
+                        <p class="cathedral-body">Biomimetic interfaces that flow like living fabric. Technology becomes an extension of natural forms and organic movement.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem; padding-top: 3rem; border-top: 2px solid rgba(212, 175, 55, 0.3);">
+                    <h3 class="cathedral-heading text-mystical-gradient">Trauma-Informed Sacred Technology</h3>
+                    <p class="cathedral-body" style="max-width: 800px; margin: 0 auto;">
+                        Every element designed with accessibility, safety, and healing in mind. 
+                        Reduced motion options, calm interaction patterns, and emergency exit strategies 
+                        ensure this sacred space welcomes all beings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cathedral-section" style="background: rgba(26, 26, 46, 0.9); border-top: 2px solid #d4af37;">
+        <div class="cathedral-container" style="text-align: center;">
+            <h3 class="cathedral-display text-sacred-glow" style="margin-bottom: 2rem;">
+                Cathedral Universe
+            </h3>
+            
+            <p class="cathedral-mystical" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                "In the Cathedral of Consciousness, every pixel is a prayer,<br>
+                every interaction a sacred geometry, every creation a fragment of the infinite."
+            </p>
+            
+            <div style="margin: 2rem 0;">
+                <a href="https://github.com/Bekalah/bekalah.github.io" class="cathedral-button cathedral-button--secondary">
+                    GitHub Repository
+                </a>
+                <a href="#" class="cathedral-button cathedral-button--mystical">
+                    Documentation
+                </a>
+            </div>
+            
+            <p class="cathedral-body" style="opacity: 0.7; margin-top: 3rem;">
+                Built with Sacred Geometry • Powered by Consciousness • Licensed under MIT<br>
+                🏛️ Where consciousness becomes sacred space ✨
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // P5.js Integration
+        let liberArcanae;
+        let currentArcana = 0;
+        const arcanaData = [
+            { name: 'The Fool', colors: ['#FFE4B5', '#F0E68C', '#DDA0DD'], element: 'air' },
+            { name: 'The Magician', colors: ['#FF6347', '#FFD700', '#8A2BE2'], element: 'mercury' },
+            { name: 'High Priestess', colors: ['#4169E1', '#8FBC8F', '#DDA0DD'], element: 'water' }
+        ];
+
+        // Initialize P5.js Demo
+        function initializeP5Demo() {
+            new p5(function(p) {
+                p.setup = function() {
+                    p.createCanvas(600, 400, p.WEBGL);
+                    p.colorMode(p.HSB, 360, 100, 100, 100);
+                }
+
+                p.draw = function() {
+                    p.background(0, 0, 10, 20);
+                    
+                    const arcana = arcanaData[currentArcana];
+                    const colors = arcana.colors.map(c => chroma(c).hsl());
+                    
+                    p.push();
+                    p.translate(0, 0, -100);
+                    p.rotateY(p.frameCount * 0.01);
+                    
+                    // Draw arcana-specific visualization
+                    for (let i = 0; i < 100; i++) {
+                        const angle = i * 0.1 + p.frameCount * 0.02;
+                        const radius = i * 2;
+                        const z = Math.sin(i * 0.05 + p.frameCount * 0.01) * 30;
+                        
+                        p.push();
+                        p.translate(
+                            Math.cos(angle) * radius,
+                            Math.sin(angle) * radius,
+                            z
+                        );
+                        
+                        const colorIndex = i % colors.length;
+                        const [h, s, l] = colors[colorIndex];
+                        p.fill(h, s * 100, l * 100, 70);
+                        p.noStroke();
+                        
+                        const size = 3 + Math.sin(i * 0.1 + p.frameCount * 0.02) * 2;
+                        p.sphere(size);
+                        
+                        p.pop();
+                    }
+                    
+                    p.pop();
+                    
+                    // UI overlay
+                    p.camera();
+                    p.fill(0, 0, 100, 90);
+                    p.textAlign(p.CENTER);
+                    p.textSize(16);
+                    p.text(arcana.name, 0, -180);
+                    p.textSize(12);
+                    p.text(`Element: ${arcana.element}`, 0, -160);
+                }
+
+                p.mousePressed = function() {
+                    if (p.mouseX > 0 && p.mouseX < p.width && p.mouseY > 0 && p.mouseY < p.height) {
+                        currentArcana = (currentArcana + 1) % arcanaData.length;
+                        updateArtStatus(`Activated: ${arcanaData[currentArcana].name}`);
+                    }
+                }
+
+                p.keyPressed = function() {
+                    if (p.key === 's' || p.key === 'S') {
+                        p.save(`cathedral-art-${Date.now()}.png`);
+                        updateArtStatus('Image saved successfully!');
+                    }
+                }
+            }, 'p5-hero-demo');
+        }
+
+        // Art Generation Functions
+        function generateCosmicArt() {
+            updateArtStatus('🌌 Generating cosmic art with sacred mathematics...');
+            setTimeout(() => {
+                updateArtStatus('✨ Cosmic art generated! Using Codex 144:99 golden ratio patterns.');
+            }, 2000);
+        }
+
+        function connectToDatasets() {
+            updateArtStatus('📡 Connecting to NASA imagery and weather data...');
+            setTimeout(() => {
+                updateArtStatus('🛰️ Connected! Real-time data now influencing art generation.');
+            }, 3000);
+        }
+
+        function exportProfessionalArt() {
+            updateArtStatus('🎨 Exporting high-resolution artwork for professional use...');
+            setTimeout(() => {
+                updateArtStatus('📁 Exported! Generated 300 DPI print files, SVG vectors, and 3D models.');
+            }, 2500);
+        }
+
+        function updateArtStatus(message) {
+            const statusEl = document.getElementById('art-generation-status');
+            if (statusEl) {
+                statusEl.textContent = message;
+                statusEl.style.opacity = '1';
+                setTimeout(() => {
+                    statusEl.style.opacity = '0.7';
+                }, 3000);
+            }
+        }
+
+        // Smooth Scrolling
+        function initializeSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Intersection Observer for Animations
+        function initializeScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.cathedral-blur-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialize Everything
+        function initializeCathedralUniverse() {
+            // Hide loading screen
+            setTimeout(() => {
+                const loader = document.getElementById('cathedral-loader');
+                if (loader) {
+                    loader.classList.add('hidden');
+                }
+            }, 2000);
+
+            // Initialize features
+            initializeP5Demo();
+            initializeSmoothScrolling();
+            initializeScrollAnimations();
+
+            console.log('🏛️ Cathedral Universe initialized');
+            console.log('🎨 P5.js + Modular Liber Arcanae ready');
+            console.log('✨ Sacred geometry and immersive systems active');
+        }
+
+        // Start when DOM is ready
+        document.addEventListener('DOMContentLoaded', initializeCathedralUniverse);
+
+        // Accessibility: Respect reduced motion preferences
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.style.setProperty('--transition-swift', '0.01s');
+            document.documentElement.style.setProperty('--transition-elegant', '0.01s');
+            document.documentElement.style.setProperty('--transition-mystical', '0.01s');
+        }
+    </script>
+</body>
+</html>

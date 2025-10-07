@@ -54,14 +54,8 @@ class BrowserEventEmitter {
   }
 }
 
-// Import Azure client for AI integration
-// Note: Using dynamic import to avoid module resolution issues in build
-let azureClient: any = null;
-import('../../../../src/services/azure-client.js').then(module => {
-  azureClient = module.azureClient;
-}).catch(err => {
-  console.warn('Azure client not available:', err);
-});
+// Azure client integration is optional and handled externally
+// This allows the three-engine to work independently without external dependencies
 
 /**
  * MysticalScene - Advanced Three.js scene with esoteric rendering capabilities
@@ -306,97 +300,20 @@ export class MysticalScene extends BrowserEventEmitter {
 
   /**
    * Generate AI-powered mystical scene content
+   * Note: AI features require external Azure client integration
    */
   async generateAIMysticalContent(prompt: string, options: any = {}) {
-    if (!azureClient) {
-      console.warn('Azure client not available for AI content generation');
-      return null;
-    }
-
-    try {
-      console.log('🤖 Generating AI mystical scene content...');
-
-      const generationPrompt = `Generate mystical Three.js scene content for: "${prompt}"
-
-      Consider:
-      - Sacred geometry patterns and forms
-      - Mystical lighting and materials
-      - Hermetic principles and symbolism
-      - Tarot and archetypal elements
-      - Consciousness exploration themes
-      - Interactive and animated elements
-
-      Return detailed Three.js code snippets for:
-      1. Geometry creation with sacred proportions
-      2. Material definitions with mystical properties
-      3. Lighting setups with esoteric significance
-      4. Animation patterns with spiritual meaning
-      5. Post-processing effects for mystical atmosphere
-
-      Focus on creating immersive, consciousness-expanding experiences.`;
-
-      const result = await azureClient.generateCreativeContent(generationPrompt, {
-        model: 'gpt-4',
-        temperature: 0.8,
-        maxTokens: 2000,
-        creativeMode: 'technical',
-        includeTarot: true,
-        includeSacredGeometry: true
-      });
-
-      return {
-        content: result,
-        prompt,
-        aiGenerated: true,
-        mystical: true,
-        timestamp: Date.now()
-      };
-
-    } catch (error) {
-      console.error('❌ Failed to generate AI mystical content:', error);
-      return null;
-    }
+    console.warn('AI content generation not available - requires Azure client integration');
+    return null;
   }
 
   /**
    * Analyze scene objects with Azure Computer Vision
+   * Note: AI features require external Azure client integration
    */
   async analyzeSceneWithAI(imageData?: string, options: any = {}) {
-    if (!azureClient) {
-      console.warn('Azure client not available for scene analysis');
-      return null;
-    }
-
-    try {
-      console.log('👁️ Analyzing scene with Azure Computer Vision...');
-
-      const analysisData = {
-        sceneDescription: this.getSceneDescription(),
-        objectCount: this.getObjectCount(),
-        mysticalElements: this.getMysticalElements(),
-        imageData: imageData || this.captureSceneImage()
-      };
-
-      const result = await azureClient.analyzeMysticalImage(analysisData, {
-        visualFeatures: [
-          'Categories', 'Tags', 'Description', 'Faces', 'ImageType',
-          'Color', 'Adult', 'Objects', 'Brands'
-        ],
-        language: 'en',
-        includeMysticalOverlay: true
-      });
-
-      return {
-        analysis: result,
-        sceneMetrics: analysisData,
-        aiEnhanced: true,
-        timestamp: Date.now()
-      };
-
-    } catch (error) {
-      console.error('❌ Failed to analyze scene with AI:', error);
-      return null;
-    }
+    console.warn('AI scene analysis not available - requires Azure client integration');
+    return null;
   }
 
   /**
@@ -453,34 +370,11 @@ export class MysticalScene extends BrowserEventEmitter {
 
   /**
    * Apply AI-generated enhancements to scene
+   * Note: AI features require external Azure client integration
    */
   async applyAIEnhancements(enhancementType: string, options: any = {}) {
-    if (!azureClient) {
-      console.warn('Azure client not available for AI enhancements');
-      return false;
-    }
-
-    try {
-      console.log(`✨ Applying AI ${enhancementType} enhancements...`);
-
-      const enhancementPrompt = this.buildEnhancementPrompt(enhancementType, options);
-      const aiSuggestions = await azureClient.generateCreativeContent(enhancementPrompt, {
-        model: 'gpt-4',
-        temperature: 0.7,
-        maxTokens: 1500,
-        creativeMode: 'enhancement',
-        includeSacredGeometry: true
-      });
-
-      // Apply suggestions to scene
-      await this.implementAISuggestions(aiSuggestions, enhancementType);
-
-      return true;
-
-    } catch (error) {
-      console.error(`❌ Failed to apply AI ${enhancementType} enhancements:`, error);
-      return false;
-    }
+    console.warn('AI enhancements not available - requires Azure client integration');
+    return false;
   }
 
   /**
@@ -587,86 +481,20 @@ export class MysticalScene extends BrowserEventEmitter {
 
   /**
    * Batch process multiple AI enhancements
+   * Note: AI features require external Azure client integration
    */
   async batchAIEnhancements(enhancementTypes: string[], options: any = {}) {
-    if (!azureClient) {
-      console.warn('Azure client not available for batch AI enhancements');
-      return [];
-    }
-
-    try {
-      console.log(`🔮 Starting batch AI enhancements: ${enhancementTypes.join(', ')}`);
-
-      const operations = enhancementTypes.map(type => ({
-        type: 'enhancement',
-        enhancementType: type,
-        options
-      }));
-
-      const results = await azureClient.batchMysticalOperations(operations);
-
-      // Apply all enhancements
-      for (let i = 0; i < enhancementTypes.length; i++) {
-        if (results[i] && results[i].success) {
-          await this.applyAIEnhancements(enhancementTypes[i], options);
-        }
-      }
-
-      return results;
-
-    } catch (error) {
-      console.error('❌ Batch AI enhancements failed:', error);
-      return [];
-    }
+    console.warn('Batch AI enhancements not available - requires Azure client integration');
+    return [];
   }
 
   /**
    * Get AI-powered scene recommendations
+   * Note: AI features require external Azure client integration
    */
   async getSceneRecommendations(context: string = '') {
-    if (!azureClient) {
-      console.warn('Azure client not available for scene recommendations');
-      return [];
-    }
-
-    try {
-      console.log('💡 Getting AI scene recommendations...');
-
-      const prompt = `Provide mystical scene enhancement recommendations for Three.js:
-
-Current scene context: "${context || this.getSceneDescription()}"
-Current mystical elements: ${this.getMysticalElements().join(', ')}
-
-Suggest:
-1. Sacred geometry additions
-2. Mystical lighting improvements
-3. Consciousness-expanding animations
-4. Hermetic principle integrations
-5. Interactive mystical elements
-6. Spiritual technology features
-
-Focus on creating immersive, transformative experiences that blend ancient wisdom with modern 3D technology.`;
-
-      const recommendations = await azureClient.generateCreativeContent(prompt, {
-        model: 'gpt-4',
-        temperature: 0.8,
-        maxTokens: 1200,
-        creativeMode: 'recommendation',
-        includeTarot: true,
-        includeSacredGeometry: true
-      });
-
-      return {
-        recommendations,
-        context,
-        aiGenerated: true,
-        timestamp: Date.now()
-      };
-
-    } catch (error) {
-      console.error('❌ Failed to get scene recommendations:', error);
-      return [];
-    }
+    console.warn('AI scene recommendations not available - requires Azure client integration');
+    return [];
   }
 
   /**

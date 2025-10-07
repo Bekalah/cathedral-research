@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral Synthesis Laboratory - Professional Audio Art Creation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #f8f8ff;
+            font-family: 'Crimson Text', serif;
+            overflow-x: hidden;
+        }
+        
+        .synth-lab-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .synth-room {
+            background: rgba(26, 26, 46, 0.8);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .synth-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .control-group {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .slider-container {
+            margin: 0.5rem 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #d4af37, #f8f8ff);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d4af37;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .keyboard {
+            display: flex;
+            margin: 1rem 0;
+            height: 120px;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .key {
+            flex: 1;
+            background: linear-gradient(180deg, #f8f8ff, #e0e0e0);
+            border-right: 1px solid #ccc;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
+            transition: all 0.1s ease;
+            user-select: none;
+        }
+        
+        .key:hover {
+            background: linear-gradient(180deg, #e0e0e0, #d0d0d0);
+            transform: translateY(2px);
+        }
+        
+        .key.active {
+            background: linear-gradient(180deg, #d4af37, #b8941f);
+            color: #1a1a2e;
+            transform: translateY(4px);
+        }
+        
+        .black-key {
+            background: linear-gradient(180deg, #2a2a2a, #000);
+            color: #f8f8ff;
+            width: 30px;
+            height: 80px;
+            position: absolute;
+            margin-left: -15px;
+            z-index: 2;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .black-key:hover {
+            background: linear-gradient(180deg, #444, #222);
+        }
+        
+        .black-key.active {
+            background: linear-gradient(180deg, #d4af37, #b8941f);
+            color: #1a1a2e;
+        }
+        
+        .visualization {
+            width: 100%;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .button {
+            background: linear-gradient(135deg, #d4af37, #f8f8ff);
+            color: #1a1a2e;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+        
+        .effect-chain {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .effect-unit {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            padding: 1rem;
+            min-width: 150px;
+        }
+        
+        .recording-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4CAF50;
+            margin-right: 0.5rem;
+        }
+        
+        .status-indicator.recording {
+            background: #f44336;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .tarot-integration {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.3), rgba(75, 0, 130, 0.3));
+            border: 2px solid #8B4513;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .arcana-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .arcana-card {
+            background: rgba(139, 69, 19, 0.2);
+            border: 1px solid #8B4513;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .arcana-card:hover {
+            background: rgba(139, 69, 19, 0.4);
+            transform: scale(1.05);
+        }
+        
+        .arcana-card.selected {
+            background: rgba(212, 175, 55, 0.3);
+            border-color: #d4af37;
+        }
+    </style>
+</head>
+<body>
+    <div class="synth-lab-container">
+        <header style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-size: 3rem; margin: 0; background: linear-gradient(135deg, #d4af37, #f8f8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                🎹 Cathedral Synthesis Laboratory
+            </h1>
+            <p style="font-size: 1.2rem; margin: 1rem 0; opacity: 0.9;">
+                Professional Audio Art Creation • Real Synthesis Libraries • Liber Arcanae Integration
+            </p>
+            <div class="status-indicator" id="audio-status"></div>
+            <span id="status-text">Initializing audio system...</span>
+        </header>
+
+        <!-- FM Laboratory Room -->
+        <div class="synth-room" id="fm-lab">
+            <h2>🔬 FM Laboratory (DEXED-Style)</h2>
+            <p>Professional FM synthesis with 6 operators, 32 algorithms, and real-time modulation</p>
+            
+            <div class="synth-controls">
+                <div class="control-group">
+                    <h4>Operator 1</h4>
+                    <div class="slider-container">
+                        <label>Frequency Ratio</label>
+                        <input type="range" class="slider" id="op1-ratio" min="0.1" max="16" step="0.1" value="1">
+                        <span id="op1-ratio-value">1.0</span>
+                    </div>
+                    <div class="slider-container">
+                        <label>Output Level</label>
+                        <input type="range" class="slider" id="op1-level" min="0" max="100" value="80">
+                        <span id="op1-level-value">80</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h4>Operator 2</h4>
+                    <div class="slider-container">
+                        <label>Frequency Ratio</label>
+                        <input type="range" class="slider" id="op2-ratio" min="0.1" max="16" step="0.1" value="2">
+                        <span id="op2-ratio-value">2.0</span>
+                    </div>
+                    <div class="slider-container">
+                        <label>Output Level</label>
+                        <input type="range" class="slider" id="op2-level" min="0" max="100" value="60">
+                        <span id="op2-level-value">60</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h4>Algorithm & Feedback</h4>
+                    <div class="slider-container">
+                        <label>Algorithm</label>
+                        <input type="range" class="slider" id="algorithm" min="1" max="32" value="1">
+                        <span id="algorithm-value">1</span>
+                    </div>
+                    <div class="slider-container">
+                        <label>Feedback</label>
+                        <input type="range" class="slider" id="feedback" min="0" max="7" value="0">
+                        <span id="feedback-value">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="keyboard" id="fm-keyboard">
+                <!-- Piano keys will be generated by JavaScript -->
+            </div>
+            
+            <div class="effect-chain">
+                <div class="effect-unit">
+                    <h4>Reverb</h4>
+                    <input type="range" class="slider" id="reverb-wet" min="0" max="100" value="20">
+                    <span>Wet: <span id="reverb-wet-value">20%</span></span>
+                </div>
+                <div class="effect-unit">
+                    <h4>Delay</h4>
+                    <input type="range" class="slider" id="delay-time" min="0" max="1000" value="250">
+                    <span>Time: <span id="delay-time-value">250ms</span></span>
+                </div>
+                <div class="effect-unit">
+                    <h4>Chorus</h4>
+                    <input type="range" class="slider" id="chorus-rate" min="0.1" max="5" step="0.1" value="1.5">
+                    <span>Rate: <span id="chorus-rate-value">1.5Hz</span></span>
+                </div>
+            </div>
+            
+            <canvas class="visualization" id="fm-visualizer"></canvas>
+        </div>
+
+        <!-- Liber Arcanae Integration -->
+        <div class="tarot-integration" id="tarot-synth">
+            <h2>🃏 Liber Arcanae Musical Integration</h2>
+            <p>Let the wisdom of the Arcana guide your musical creation. Each card influences synthesis parameters in real-time.</p>
+            
+            <div class="arcana-selector">
+                <div class="arcana-card" data-card="fool">
+                    <h4>The Fool</h4>
+                    <p>Random modulation</p>
+                </div>
+                <div class="arcana-card" data-card="magician">
+                    <h4>The Magician</h4>
+                    <p>Harmonic control</p>
+                </div>
+                <div class="arcana-card" data-card="priestess">
+                    <h4>High Priestess</h4>
+                    <p>Spectral mysteries</p>
+                </div>
+                <div class="arcana-card" data-card="empress">
+                    <h4>The Empress</h4>
+                    <p>Lush harmonies</p>
+                </div>
+                <div class="arcana-card" data-card="emperor">
+                    <h4>The Emperor</h4>
+                    <p>Structured rhythm</p>
+                </div>
+                <div class="arcana-card" data-card="hierophant">
+                    <h4>The Hierophant</h4>
+                    <p>Sacred ratios</p>
+                </div>
+            </div>
+            
+            <button class="button" id="generate-arcana-music">Generate Arcana Music</button>
+            <button class="button" id="read-three-card">Three Card Reading & Composition</button>
+        </div>
+
+        <!-- Granular Workshop -->
+        <div class="synth-room" id="granular-workshop">
+            <h2>🌟 Granular Workshop</h2>
+            <p>Microscopic sound manipulation with real-time granular synthesis</p>
+            
+            <div class="synth-controls">
+                <div class="control-group">
+                    <h4>Grain Parameters</h4>
+                    <div class="slider-container">
+                        <label>Grain Size</label>
+                        <input type="range" class="slider" id="grain-size" min="10" max="1000" value="100">
+                        <span id="grain-size-value">100ms</span>
+                    </div>
+                    <div class="slider-container">
+                        <label>Density</label>
+                        <input type="range" class="slider" id="grain-density" min="1" max="100" value="20">
+                        <span id="grain-density-value">20</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h4>Position & Pitch</h4>
+                    <div class="slider-container">
+                        <label>Position</label>
+                        <input type="range" class="slider" id="grain-position" min="0" max="100" value="50">
+                        <span id="grain-position-value">50%</span>
+                    </div>
+                    <div class="slider-container">
+                        <label>Pitch Shift</label>
+                        <input type="range" class="slider" id="grain-pitch" min="-24" max="24" value="0">
+                        <span id="grain-pitch-value">0 semitones</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="button" id="load-sample">Load Audio Sample</button>
+            <button class="button" id="start-granular">Start Granular Processing</button>
+            <input type="file" id="sample-upload" accept="audio/*" style="display: none;">
+        </div>
+
+        <!-- Recording & Export -->
+        <div class="recording-controls">
+            <h3>🎙️ Professional Recording & Export</h3>
+            <button class="button" id="start-recording">Start Recording</button>
+            <button class="button" id="stop-recording">Stop Recording</button>
+            <button class="button" id="export-wav">Export WAV (24-bit)</button>
+            <button class="button" id="export-stems">Export Stems</button>
+            <button class="button" id="export-midi">Export MIDI</button>
+            
+            <div style="margin-left: auto;">
+                <span>Format:</span>
+                <select id="export-format">
+                    <option value="wav">WAV (24-bit/96kHz)</option>
+                    <option value="flac">FLAC (Lossless)</option>
+                    <option value="mp3">MP3 (320kbps)</option>
+                    <option value="stems">Professional Stems</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Real-time Performance Tools -->
+        <div class="synth-room" id="performance-tools">
+            <h2>🎪 Real-time Performance Mode</h2>
+            <p>Low-latency performance with MIDI support and keyboard shortcuts</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h4>Keyboard Shortcuts</h4>
+                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px;">
+                        <p><kbd>Z-M</kbd> - Play notes (C-B)</p>
+                        <p><kbd>S,D,G,H,J</kbd> - Black keys</p>
+                        <p><kbd>Q-I</kbd> - Upper octave</p>
+                        <p><kbd>Space</kbd> - Sustain pedal</p>
+                        <p><kbd>1-8</kbd> - Switch synthesis rooms</p>
+                        <p><kbd>R</kbd> - Start/stop recording</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>MIDI Status</h4>
+                    <div id="midi-status" style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px;">
+                        <p>MIDI Input: <span id="midi-input-status">Checking...</span></p>
+                        <p>Active Device: <span id="active-midi-device">None</span></p>
+                        <p>Last Note: <span id="last-midi-note">-</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="button" id="performance-mode">Enable Performance Mode</button>
+            <button class="button" id="midi-learn">MIDI Learn Mode</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="module">
+        // Cathedral Synthesis Laboratory Demo
+        let synthLab = null;
+        let isRecording = false;
+        let recordedChunks = [];
+        let mediaRecorder = null;
+
+        // Initialize the synthesis laboratory
+        async function initializeSynthLab() {
+            try {
+                document.getElementById('status-text').textContent = 'Loading synthesis engines...';
+                
+                // Simulate loading (replace with actual CathedralSynthLab import)
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Create virtual synthesis engine for demo
+                synthLab = new SynthLabDemo();
+                await synthLab.initialize();
+                
+                document.getElementById('audio-status').style.background = '#4CAF50';
+                document.getElementById('status-text').textContent = 'Synthesis Laboratory Ready';
+                
+                setupEventListeners();
+                generateKeyboard();
+                
+                console.log('🎹 Cathedral Synthesis Laboratory Demo Ready');
+                
+            } catch (error) {
+                console.error('❌ Failed to initialize:', error);
+                document.getElementById('status-text').textContent = 'Initialization failed';
+                document.getElementById('audio-status').style.background = '#f44336';
+            }
+        }
+
+        // Demo synthesis lab class
+        class SynthLabDemo {
+            constructor() {
+                this.audioContext = null;
+                this.synthRooms = new Map();
+                this.currentRoom = 'fm-lab';
+                this.isPlaying = false;
+            }
+
+            async initialize() {
+                this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Initialize demo synthesis rooms
+                this.synthRooms.set('fm-lab', new FMSynthDemo(this.audioContext));
+                this.synthRooms.set('granular-workshop', new GranularSynthDemo(this.audioContext));
+                
+                // Request MIDI access
+                await this.initializeMIDI();
+            }
+
+            async initializeMIDI() {
+                try {
+                    if (navigator.requestMIDIAccess) {
+                        const midiAccess = await navigator.requestMIDIAccess();
+                        
+                        const inputs = Array.from(midiAccess.inputs.values());
+                        if (inputs.length > 0) {
+                            document.getElementById('midi-input-status').textContent = 'Connected';
+                            document.getElementById('active-midi-device').textContent = inputs[0].name;
+                            
+                            inputs.forEach(input => {
+                                input.onmidimessage = this.handleMIDIMessage.bind(this);
+                            });
+                        } else {
+                            document.getElementById('midi-input-status').textContent = 'No devices found';
+                        }
+                    } else {
+                        document.getElementById('midi-input-status').textContent = 'Not supported';
+                    }
+                } catch (error) {
+                    document.getElementById('midi-input-status').textContent = 'Permission denied';
+                }
+            }
+
+            handleMIDIMessage(event) {
+                const [command, note, velocity] = event.data;
+                
+                if (command === 144 && velocity > 0) { // Note on
+                    const noteName = this.midiNoteToName(note);
+                    document.getElementById('last-midi-note').textContent = noteName;
+                    this.playNote(noteName, velocity / 127);
+                }
+            }
+
+            midiNoteToName(midiNote) {
+                const noteNames = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+                const octave = Math.floor(midiNote / 12) - 1;
+                const note = noteNames[midiNote % 12];
+                return note + octave;
+            }
+
+            playNote(note, velocity = 0.7) {
+                const room = this.synthRooms.get(this.currentRoom);
+                if (room) {
+                    room.playNote(note, velocity);
+                }
+            }
+
+            startRecording() {
+                // Set up MediaRecorder for the audio context
+                const dest = this.audioContext.createMediaStreamDestination();
+                mediaRecorder = new MediaRecorder(dest.stream);
+                
+                recordedChunks = [];
+                mediaRecorder.ondataavailable = (event) => {
+                    recordedChunks.push(event.data);
+                };
+                
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(recordedChunks, { type: 'audio/wav' });
+                    this.downloadRecording(blob);
+                };
+                
+                mediaRecorder.start();
+                isRecording = true;
+                
+                document.getElementById('audio-status').classList.add('recording');
+                document.getElementById('status-text').textContent = 'Recording...';
+            }
+
+            stopRecording() {
+                if (mediaRecorder && mediaRecorder.state === 'recording') {
+                    mediaRecorder.stop();
+                    isRecording = false;
+                    
+                    document.getElementById('audio-status').classList.remove('recording');
+                    document.getElementById('status-text').textContent = 'Recording stopped';
+                }
+            }
+
+            downloadRecording(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `cathedral-synth-${Date.now()}.wav`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        // Demo FM Synthesis
+        class FMSynthDemo {
+            constructor(audioContext) {
+                this.audioContext = audioContext;
+                this.activeNotes = new Map();
+            }
+
+            playNote(note, velocity) {
+                // Create simple FM synthesis
+                const frequency = this.noteToFrequency(note);
+                
+                const carrier = this.audioContext.createOscillator();
+                const modulator = this.audioContext.createOscillator();
+                const modulatorGain = this.audioContext.createGain();
+                const gain = this.audioContext.createGain();
+                
+                // FM synthesis setup
+                carrier.frequency.value = frequency;
+                modulator.frequency.value = frequency * 2; // Operator 2 ratio
+                modulatorGain.gain.value = 100; // Modulation depth
+                
+                modulator.connect(modulatorGain);
+                modulatorGain.connect(carrier.frequency);
+                carrier.connect(gain);
+                gain.connect(this.audioContext.destination);
+                
+                // Envelope
+                gain.gain.setValueAtTime(0, this.audioContext.currentTime);
+                gain.gain.linearRampToValueAtTime(velocity * 0.3, this.audioContext.currentTime + 0.01);
+                gain.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + 2);
+                
+                carrier.start();
+                modulator.start();
+                
+                // Clean up
+                setTimeout(() => {
+                    carrier.stop();
+                    modulator.stop();
+                }, 2000);
+            }
+
+            noteToFrequency(note) {
+                const notes = {
+                    'C4': 261.63, 'C#4': 277.18, 'D4': 293.66, 'D#4': 311.13,
+                    'E4': 329.63, 'F4': 349.23, 'F#4': 369.99, 'G4': 392.00,
+                    'G#4': 415.30, 'A4': 440.00, 'A#4': 466.16, 'B4': 493.88
+                };
+                return notes[note] || 440;
+            }
+        }
+
+        // Demo Granular Synthesis
+        class GranularSynthDemo {
+            constructor(audioContext) {
+                this.audioContext = audioContext;
+                this.buffer = null;
+            }
+
+            async loadSample(file) {
+                const arrayBuffer = await file.arrayBuffer();
+                this.buffer = await this.audioContext.decodeAudioData(arrayBuffer);
+            }
+
+            playNote(note, velocity) {
+                if (!this.buffer) return;
+                
+                // Simple granular playback
+                const source = this.audioContext.createBufferSource();
+                const gain = this.audioContext.createGain();
+                
+                source.buffer = this.buffer;
+                source.connect(gain);
+                gain.connect(this.audioContext.destination);
+                
+                gain.gain.setValueAtTime(velocity * 0.5, this.audioContext.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + 1);
+                
+                source.start();
+            }
+        }
+
+        // Generate piano keyboard
+        function generateKeyboard() {
+            const keyboard = document.getElementById('fm-keyboard');
+            const whiteKeys = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+            const blackKeys = ['C#', 'D#', null, 'F#', 'G#', 'A#', null];
+            
+            keyboard.innerHTML = '';
+            
+            // Create white keys
+            whiteKeys.forEach((note, index) => {
+                const key = document.createElement('div');
+                key.className = 'key';
+                key.dataset.note = note + '4';
+                key.textContent = note;
+                
+                key.addEventListener('mousedown', () => playKeyboardNote(key));
+                key.addEventListener('mouseup', () => releaseKey(key));
+                
+                keyboard.appendChild(key);
+                
+                // Add black key if needed
+                if (blackKeys[index]) {
+                    const blackKey = document.createElement('div');
+                    blackKey.className = 'key black-key';
+                    blackKey.dataset.note = blackKeys[index] + '4';
+                    blackKey.textContent = blackKeys[index];
+                    
+                    blackKey.addEventListener('mousedown', () => playKeyboardNote(blackKey));
+                    blackKey.addEventListener('mouseup', () => releaseKey(blackKey));
+                    
+                    blackKey.style.left = `${(index + 1) * (100 / whiteKeys.length)}%`;
+                    keyboard.appendChild(blackKey);
+                }
+            });
+        }
+
+        function playKeyboardNote(keyElement) {
+            const note = keyElement.dataset.note;
+            keyElement.classList.add('active');
+            
+            if (synthLab) {
+                synthLab.playNote(note, 0.7);
+            }
+        }
+
+        function releaseKey(keyElement) {
+            keyElement.classList.remove('active');
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Synthesis controls
+            document.getElementById('op1-ratio').addEventListener('input', (e) => {
+                document.getElementById('op1-ratio-value').textContent = e.target.value;
+            });
+            
+            document.getElementById('op1-level').addEventListener('input', (e) => {
+                document.getElementById('op1-level-value').textContent = e.target.value;
+            });
+            
+            // Recording controls
+            document.getElementById('start-recording').addEventListener('click', () => {
+                if (synthLab && !isRecording) {
+                    synthLab.startRecording();
+                }
+            });
+            
+            document.getElementById('stop-recording').addEventListener('click', () => {
+                if (synthLab && isRecording) {
+                    synthLab.stopRecording();
+                }
+            });
+            
+            // Tarot integration
+            document.querySelectorAll('.arcana-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    // Remove previous selection
+                    document.querySelectorAll('.arcana-card').forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    
+                    const cardType = card.dataset.card;
+                    applyArcanumInfluence(cardType);
+                });
+            });
+            
+            document.getElementById('generate-arcana-music').addEventListener('click', generateArcanumMusic);
+            
+            // Sample loading
+            document.getElementById('load-sample').addEventListener('click', () => {
+                document.getElementById('sample-upload').click();
+            });
+            
+            document.getElementById('sample-upload').addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (file && synthLab) {
+                    const granularRoom = synthLab.synthRooms.get('granular-workshop');
+                    if (granularRoom) {
+                        await granularRoom.loadSample(file);
+                        alert('Sample loaded successfully!');
+                    }
+                }
+            });
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', handleKeyboardShortcut);
+            document.addEventListener('keyup', handleKeyboardRelease);
+        }
+
+        // Keyboard shortcuts for playing
+        const keyMap = {
+            'z': 'C4', 's': 'C#4', 'x': 'D4', 'd': 'D#4', 'c': 'E4',
+            'v': 'F4', 'g': 'F#4', 'b': 'G4', 'h': 'G#4', 'n': 'A4',
+            'j': 'A#4', 'm': 'B4'
+        };
+
+        function handleKeyboardShortcut(event) {
+            const note = keyMap[event.key.toLowerCase()];
+            if (note && synthLab) {
+                synthLab.playNote(note, 0.7);
+                
+                // Visual feedback
+                const keyElement = document.querySelector(`[data-note="${note}"]`);
+                if (keyElement) {
+                    keyElement.classList.add('active');
+                }
+            }
+            
+            // Recording shortcut
+            if (event.key === 'r' || event.key === 'R') {
+                if (!isRecording) {
+                    document.getElementById('start-recording').click();
+                } else {
+                    document.getElementById('stop-recording').click();
+                }
+            }
+        }
+
+        function handleKeyboardRelease(event) {
+            const note = keyMap[event.key.toLowerCase()];
+            if (note) {
+                const keyElement = document.querySelector(`[data-note="${note}"]`);
+                if (keyElement) {
+                    keyElement.classList.remove('active');
+                }
+            }
+        }
+
+        // Arcanum influence functions
+        function applyArcanumInfluence(cardType) {
+            const influences = {
+                'fool': () => {
+                    // Random modulation
+                    document.getElementById('op1-ratio').value = Math.random() * 8 + 0.5;
+                    document.getElementById('op2-ratio').value = Math.random() * 4 + 1;
+                },
+                'magician': () => {
+                    // Perfect harmonic ratios
+                    document.getElementById('op1-ratio').value = 1;
+                    document.getElementById('op2-ratio').value = 2;
+                },
+                'priestess': () => {
+                    // Mysterious spectral settings
+                    document.getElementById('op1-ratio').value = 1.618; // Golden ratio
+                    document.getElementById('op2-ratio').value = 2.618;
+                },
+                'empress': () => {
+                    // Lush, organic settings
+                    document.getElementById('op1-ratio').value = 1;
+                    document.getElementById('op2-ratio').value = 1.5;
+                    document.getElementById('reverb-wet').value = 40;
+                },
+                'emperor': () => {
+                    // Strong, structured settings
+                    document.getElementById('op1-ratio').value = 1;
+                    document.getElementById('op2-ratio').value = 4;
+                    document.getElementById('feedback').value = 5;
+                },
+                'hierophant': () => {
+                    // Sacred mathematical ratios
+                    document.getElementById('op1-ratio').value = 1.414; // √2
+                    document.getElementById('op2-ratio').value = 1.732; // √3
+                }
+            };
+            
+            const influence = influences[cardType];
+            if (influence) {
+                influence();
+                updateAllDisplayValues();
+                console.log(`🃏 Applied ${cardType} influence to synthesis parameters`);
+            }
+        }
+
+        function updateAllDisplayValues() {
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach(slider => {
+                const valueElement = document.getElementById(slider.id + '-value');
+                if (valueElement) {
+                    valueElement.textContent = slider.value;
+                }
+            });
+        }
+
+        function generateArcanumMusic() {
+            alert('🎵 Generating Arcanum-inspired composition...\n\n' +
+                  'This feature would create a full musical piece based on the selected Tarot cards, ' +
+                  'using their symbolic meanings to influence rhythm, harmony, and melodic development.\n\n' +
+                  'Each card would control different aspects of the music:\n' +
+                  '• The Fool: Random variations and improvisation\n' +
+                  '• The Magician: Technical mastery and precise control\n' +
+                  '• High Priestess: Mysterious ambient textures\n' +
+                  '• The Empress: Rich, organic harmonies\n' +
+                  '• The Emperor: Strong rhythmic structure\n' +
+                  '• The Hierophant: Sacred mathematical ratios');
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeSynthLab);
+
+        // Export functions for testing
+        window.synthLab = synthLab;
+        window.playNote = (note) => synthLab && synthLab.playNote(note, 0.7);
+    </script>
+</body>
+</html>

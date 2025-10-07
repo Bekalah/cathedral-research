@@ -1,0 +1,213 @@
+{
+  "name": "@cathedral/synth-lab-pro",
+  "version": "1.0.0",
+  "description": "🎹 Professional Synthesis Laboratory - Comprehensive audio libraries for creating real art with synth lab rooms",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./engines/*": {
+      "types": "./dist/engines/*.d.ts",
+      "import": "./dist/engines/*.esm.js",
+      "require": "./dist/engines/*.js"
+    },
+    "./rooms/*": {
+      "types": "./dist/rooms/*.d.ts",
+      "import": "./dist/rooms/*.esm.js",
+      "require": "./dist/rooms/*.js"
+    },
+    "./libraries/*": {
+      "types": "./dist/libraries/*.d.ts",
+      "import": "./dist/libraries/*.esm.js",
+      "require": "./dist/libraries/*.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite --host --port 3001",
+    "build": "pnpm run build:clean && vite build && tsc --emitDeclarationOnly",
+    "build:clean": "rimraf dist",
+    "preview": "vite preview --port 3001",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "demo": "vite --open /demo/ --port 3001",
+    "analyze": "vite-bundle-analyzer",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "audio:test": "node scripts/test-audio-libraries.js",
+    "synth:rooms": "node scripts/generate-synth-rooms.js",
+    "export:professional": "node scripts/export-professional-audio.js"
+  },
+  "dependencies": {
+    "@cathedral/liber-arcanae-modular": "workspace:*",
+    "@cathedral/p5-codex-engine": "workspace:*",
+    
+    "tone": "^14.7.77",
+    "howler": "^2.2.4",
+    "webmidi": "^3.1.8",
+    "tonal": "^5.0.0",
+    "chroma-js": "^2.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zustand": "^4.4.6",
+    "immer": "^10.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.26",
+    "@types/react-dom": "^18.3.7",
+    "@types/three": "^0.169.0",
+    "@types/chroma-js": "^2.4.4",
+    
+    "vite": "^5.0.0",
+    "vite-plugin-wasm": "^3.2.2",
+    "vite-plugin-pwa": "^0.17.4",
+    "vite-plugin-glsl": "^1.1.2",
+    
+    "typescript": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.1.0",
+    
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^13.4.0",
+    
+    "rimraf": "^5.0.5",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "keywords": [
+    "audio-synthesis",
+    "synth-lab",
+    "professional-audio",
+    "web-audio-api",
+    "tone.js",
+    "fm-synthesis",
+    "additive-synthesis",
+    "subtractive-synthesis",
+    "granular-synthesis",
+    "spectral-synthesis",
+    "modular-synthesis",
+    "midi",
+    "real-time-audio",
+    "audio-effects",
+    "reverb",
+    "delay",
+    "chorus",
+    "distortion",
+    "filter",
+    "eq",
+    "compressor",
+    "limiter",
+    "vocoder",
+    "audio-analysis",
+    "fft",
+    "spectral-analysis",
+    "machine-learning-audio",
+    "ai-composition",
+    "procedural-music",
+    "dataset-sonification",
+    "liber-arcanae",
+    "cathedral-universe",
+    "mystical-synthesis",
+    "sacred-sound",
+    "professional-export",
+    "high-quality-audio",
+    "immersive-audio",
+    "spatial-audio",
+    "3d-audio",
+    "binaural",
+    "ambisonics"
+  ],
+  "cathedral": {
+    "module": "synth-lab-pro",
+    "type": "professional-audio-synthesis",
+    "category": "audio-generation",
+    "features": [
+      "Multiple synthesis engines",
+      "Professional audio effects",
+      "Real-time parameter control",
+      "MIDI input/output support",
+      "Audio analysis tools",
+      "Machine learning integration",
+      "Dataset sonification",
+      "Modular architecture",
+      "Professional export formats",
+      "Spatial audio support",
+      "Liber Arcanae integration",
+      "P5.js visualization",
+      "Three.js 3D audio",
+      "Performance optimization"
+    ],
+    "synth_engines": [
+      "FM synthesis (DEXED-style)",
+      "Additive synthesis",
+      "Subtractive synthesis", 
+      "Granular synthesis",
+      "Spectral synthesis",
+      "Physical modeling",
+      "Wavetable synthesis",
+      "Sample-based synthesis",
+      "Hybrid synthesis"
+    ],
+    "audio_effects": [
+      "Reverb (convolution & algorithmic)",
+      "Delay (digital & tape)",
+      "Chorus & phaser",
+      "Distortion & overdrive",
+      "Filters (LP, HP, BP, notch)",
+      "EQ (parametric & graphic)",
+      "Compressor & limiter",
+      "Vocoder",
+      "Spectral effects",
+      "Spatial processors"
+    ],
+    "export_formats": [
+      "WAV (24-bit/96kHz)",
+      "FLAC (lossless)",
+      "MP3 (320kbps)",
+      "OGG Vorbis",
+      "AIFF",
+      "CAF",
+      "MIDI files",
+      "SysEx dumps",
+      "JSON presets",
+      "Stems & multitrack",
+      "Surround formats",
+      "Binaural audio"
+    ],
+    "integration": {
+      "liber_arcanae": "Tarot-driven synthesis parameters",
+      "p5js": "Real-time visual feedback",
+      "datasets": "Data sonification",
+      "codex_144_99": "Sacred mathematics harmony",
+      "three_js": "3D spatial audio positioning",
+      "machine_learning": "AI-assisted composition",
+      "real_time": "Live performance capabilities"
+    },
+    "synth_rooms": [
+      "FM Laboratory (DX7-style)",
+      "Additive Studio", 
+      "Granular Workshop",
+      "Spectral Chamber",
+      "Modular Rack Room",
+      "Ambient Soundscape Lab",
+      "Rhythmic Synthesis Room",
+      "Experimental Audio Lab",
+      "Sacred Geometry Sound Chamber",
+      "AI Composition Studio"
+    ]
+  }
+}

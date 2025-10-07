@@ -1,0 +1,37 @@
+{
+  "name": "@cathedral/p5-codex-engine",
+  "version": "3.0.0",
+  "description": "Modular p5.js integration with Codex 144:99 sacred mathematics and real dataset connections",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@cathedral/codex-engine": "workspace:*",
+    "@cathedral/art-engine": "workspace:*",
+    "p5": "^1.7.0",
+    "chroma-js": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/p5": "^1.7.6",
+    "@types/chroma-js": "^2.4.4",
+    "vite": "^5.0.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
