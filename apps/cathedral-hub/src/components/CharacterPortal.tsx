@@ -21,6 +21,7 @@ import {
   getCharactersByApp,
   LIBER_ARCANAE 
 } from '../../../shared/characters/index.js';
+import { arcanaMajorsBundle } from '../lib/arcanaMajorsBundle';
 
 interface CharacterPortalProps {
   onCharacterSelect?: (character: any) => void;
@@ -40,25 +41,22 @@ const CharacterPortal: React.FC<CharacterPortalProps> = ({
     loadCharacters();
   }, [selectedApp]);
 
+  // Always hold the canonical bundle at the hub
   const loadCharacters = async () => {
     try {
       setLoading(true);
-      
-      // Get characters for current app
-      const appCharacters = getCharactersByApp(selectedApp);
-      
-      // Add all characters if cathedral-hub (main portal)
       if (selectedApp === 'cathedral-hub') {
-        const allKeys = getAllCharacterKeys();
-        const allCharacters = allKeys.map(key => ({
-          key,
-          character: LIBER_ARCANAE[key]
+        // Use canonical bundle for hub
+        const allCharacters = arcanaMajorsBundle.map((arcana, idx) => ({
+          key: arcana.id,
+          character: arcana
         }));
         setCharacters(allCharacters);
       } else {
+        // Fallback to app-specific character system
+        const appCharacters = getCharactersByApp(selectedApp);
         setCharacters(appCharacters);
       }
-      
       setLoading(false);
     } catch (error) {
       console.error('Failed to load characters:', error);
