@@ -1,0 +1,723 @@
+[
+  {
+    "id": "fool_rebecca_respawn",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Fool — Rebecca Respawn (fusion current)",
+    "major": "0 The Fool",
+    "guardian": "rebecca-respawn",
+    "planet": "Uranus",
+    "element": "Air",
+    "lineage": ["giordano_bruno","leonora_carrington"],
+    "avatar": "/avatars/fool-rebecca.png",
+    "labs": {
+      "sound": "cosmology_lab",
+      "vision": "spiral_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "On the Infinite Universe — Giordano Bruno (PD excerpt)", "source": "/docs/bruno_infinite_universe.txt" },
+        { "title": "Leonora Carrington — Visual Notes", "source": "/docs/carrington_notes.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "wave_half_time", "rack_id": "bass_heavy_trinity", "texture_id": "bruno_cosmic_infinite" },
+    "daimon": { "name": "Serpent of Renewal", "form": "serpent-crown", "qualities": ["renewal","gnosis"] },
+    "invocation": "Leap toward the unbounded — each step a star you didn't know you carried.",
+    "manifest": { "room": "nave", "spawn_worker": true, "seed": "fool-2025-09-24", "preset": "fool_bruno_carrington_vision" },
+    "tags": ["major","guardian","surrealism","cosmology"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/bruno_infinite_universe.txt","/docs/carrington_notes.txt"] }
+  },
+  {
+    "id": "magus_john_dee",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Magus — John Dee current",
+    "major": "I The Magus",
+    "guardian": "john-dee",
+    "planet": "Mercury",
+    "element": "Air",
+    "lineage": ["john_dee"],
+    "avatar": "/avatars/magus-dee.png",
+    "labs": {
+      "sound": "angelic_lab",
+      "vision": "astrolabe_lab",
+      "reiki": "third_eye_lab",
+      "texts": [
+        { "title": "Monas Hieroglyphica (Dee, PD)", "source": "/docs/dee_monas_hieroglyphica.txt" },
+        { "title": "Enochian selections — Dee diaries (PD)", "source": "/docs/dee_diaries_enochian_selections.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_just", "pattern_id": "trance_drive", "rack_id": "rosslyn_master", "texture_id": "dee_enochian_astral" },
+    "daimon": { "name": "Crystal Intelligencer", "form": "crystal-bird", "qualities": ["navigation","clarity"] },
+    "invocation": "Set the stone, draw the figure — let the heavens answer in lawful light.",
+    "manifest": { "room": "astrolabe", "spawn_worker": true, "seed": "magus-2025-09-24", "preset": "dee_enochian_harmonics" },
+    "tags": ["major","enochian","magus"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/dee_monas_hieroglyphica.txt","/docs/dee_diaries_enochian_selections.txt"] }
+  },
+  {
+    "id": "high_priestess_fortune_kunz",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The High Priestess — Fortune × Kunz",
+    "major": "II The High Priestess",
+    "guardian": "dion-fortune",
+    "planet": "Moon",
+    "element": "Water",
+    "lineage": ["dion_fortune","emma_kunz"],
+    "avatar": "/avatars/high-priestess.png",
+    "labs": {
+      "sound": "frequency_lab",
+      "vision": "mandala_lab",
+      "reiki": "heart_lab",
+      "texts": [
+        { "title": "Sefer Yetzirah (PD translation)", "source": "/docs/sefer_yetzirah.txt" },
+        { "title": "Emma Kunz diagrams (notes)", "source": "/docs/kunz_geometry_notes.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_just", "pattern_id": "visionary_swing", "rack_id": "frequency_oracle", "texture_id": "hildegard_symphonia" },
+    "daimon": { "name": "White Owl", "form": "owl-veil", "qualities": ["veil-sight","intuition"] },
+    "invocation": "Silence is the alphabet; intuition is how the letters sing.",
+    "manifest": { "room": "sanctum", "spawn_worker": true, "seed": "highpriestess-2025-09-24", "preset": "fortune_kunz_mandala" },
+    "tags": ["major","geometry","mystic"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/sefer_yetzirah.txt","/docs/kunz_geometry_notes.txt"] }
+  },
+  {
+    "id": "empress_emma_kunz",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Empress — Emma Kunz",
+    "major": "III The Empress",
+    "guardian": "emma_kunz",
+    "planet": "Venus",
+    "element": "Earth",
+    "lineage": ["emma_kunz"],
+    "avatar": "/avatars/empress-kunz.png",
+    "labs": {
+      "sound": "geometry_lab",
+      "vision": "drawing_lab",
+      "reiki": "heart_lab",
+      "texts": [
+        { "title": "Sacred Geometry Primer (PD)", "source": "/docs/sacred_geometry_primer.txt" },
+        { "title": "Vitruvius — De Architectura (PD selections)", "source": "/docs/vitruvius_de_architectura.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_just", "pattern_id": "wave_half_time", "rack_id": "geometry_frame", "texture_id": "visionary_bloom" },
+    "daimon": { "name": "Geometric Dove", "form": "dove-geometry", "qualities": ["healing","order","fecundity"] },
+    "invocation": "Sacred form is kindness given shape.",
+    "manifest": { "room": "garden", "spawn_worker": true, "seed": "empress-2025-09-24", "preset": "kunz_geometry_frame" },
+    "tags": ["major","geometry","healing"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/sacred_geometry_primer.txt","/docs/vitruvius_de_architectura.txt"] }
+  },
+  {
+    "id": "emperor_agrippa",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Emperor — Cornelius Agrippa",
+    "major": "IV The Emperor",
+    "guardian": "cornelius-agrippa",
+    "planet": "Mars",
+    "element": "Fire",
+    "lineage": ["cornelius_agrippa"],
+    "avatar": "/avatars/emperor-agrippa.png",
+    "labs": {
+      "sound": "forge_lab",
+      "vision": "sigil_lab",
+      "reiki": "root_lab",
+      "texts": [
+        { "title": "De Occulta Philosophia (PD)", "source": "/docs/agrippa_occult_philosophy.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "12tet", "pattern_id": "berlin_grid", "rack_id": "iron_resonator", "texture_id": "industrial_resonance" },
+    "daimon": { "name": "Black Eagle", "form": "eagle-iron", "qualities": ["structure","command"] },
+    "invocation": "Authority is the discipline of the will in service to the real.",
+    "manifest": { "room": "throne", "spawn_worker": true, "seed": "emperor-2025-09-24", "preset": "agrippa_mars_forge" },
+    "tags": ["major","structure","sigils"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/agrippa_occult_philosophy.txt"] }
+  },
+  {
+    "id": "hierophant_moonchild",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Hierophant — Moonchild × Max Ernst (Case currents)",
+    "major": "V The Hierophant",
+    "guardian": "moonchild",
+    "planet": "Venus",
+    "element": "Earth",
+    "lineage": ["max_ernst","paul_foster_case"],
+    "avatar": "/avatars/hierophant-moonchild.png",
+    "labs": {
+      "sound": "harmonics_lab",
+      "vision": "collage_lab",
+      "reiki": "solar_plexus_lab",
+      "texts": [
+        { "title": "Paul Foster Case excerpts (PD notes)", "source": "/docs/pfc_notes.txt" },
+        { "title": "Kircher — Musurgia Universalis (PD figures index)", "source": "/docs/kircher_musurgia_index.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "12tet", "pattern_id": "berlin_grid", "rack_id": "rosslyn_master", "texture_id": "kircher_resonance" },
+    "daimon": { "name": "Scribe-Spirit", "form": "book-sprite", "qualities": ["ritual","glyph","lesson"] },
+    "invocation": "From collage to canon: assemble the visible to unveil the invisible.",
+    "manifest": { "room": "atelier", "spawn_worker": true, "seed": "hierophant-2025-09-24", "preset": "hierophant_collage_harmonics" },
+    "tags": ["major","collage","lineage"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/pfc_notes.txt","/docs/kircher_musurgia_index.txt"] }
+  },
+  {
+    "id": "lovers_carrington",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Lovers — Leonora Carrington current",
+    "major": "VI The Lovers",
+    "guardian": "leonora-carrington",
+    "planet": "Gemini",
+    "element": "Air",
+    "lineage": ["leonora_carrington"],
+    "avatar": "/avatars/lovers-carrington.png",
+    "labs": {
+      "sound": "dream_lab",
+      "vision": "visionary_lab",
+      "reiki": "sacral_lab",
+      "texts": [
+        { "title": "Coniunctio — Rosarium Philosophorum (PD)", "source": "/docs/rosarium_philosophorum_coniunctio.txt" },
+        { "title": "Plato — Symposium (PD selections)", "source": "/docs/plato_symposium_selections.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "wave_half_time", "rack_id": "dream_machine", "texture_id": "visionary_bloom" },
+    "daimon": { "name": "White Horse", "form": "horse-vision", "qualities": ["union","vision"] },
+    "invocation": "Love is the portal where two become a third thing luminous.",
+    "manifest": { "room": "garden", "spawn_worker": true, "seed": "lovers-2025-09-24", "preset": "carrington_dream_palette" },
+    "tags": ["major","visionary","union"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/rosarium_philosophorum_coniunctio.txt","/docs/plato_symposium_selections.txt"] }
+  },
+  {
+    "id": "chariot_kircher",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Chariot — Athanasius Kircher",
+    "major": "VII The Chariot",
+    "guardian": "athanasius-kircher",
+    "planet": "Cancer",
+    "element": "Water",
+    "lineage": ["athanasius_kircher"],
+    "avatar": "/avatars/chariot-kircher.png",
+    "labs": {
+      "sound": "harmonics_lab",
+      "vision": "museum_lab",
+      "reiki": "solar_plexus_lab",
+      "texts": [
+        { "title": "Musurgia Universalis (PD plates)", "source": "/docs/kircher_musurgia_plates.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_just", "pattern_id": "polyrhythm_seven", "rack_id": "harmonograph_engine", "texture_id": "kircher_resonance" },
+    "daimon": { "name": "Mechanical Sphinx", "form": "sphinx-mech", "qualities": ["movement","collection"] },
+    "invocation": "Harness resonance; let order carry you across the waters.",
+    "manifest": { "room": "galleria", "spawn_worker": true, "seed": "chariot-2025-09-24", "preset": "kircher_polyrhythm" },
+    "tags": ["major","collection","movement"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/kircher_musurgia_plates.txt"] }
+  },
+  {
+    "id": "strength_hypatia",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Strength — Hypatia of Alexandria",
+    "major": "VIII Strength",
+    "guardian": "hypatia",
+    "planet": "Sun",
+    "element": "Fire",
+    "lineage": ["hypatia"],
+    "avatar": "/avatars/strength-hypatia.png",
+    "labs": {
+      "sound": "solar_lab",
+      "vision": "sun_geometry_lab",
+      "reiki": "sacral_lab",
+      "texts": [
+        { "title": "Euclid — Elements (PD selections)", "source": "/docs/euclid_elements_selections.txt" },
+        { "title": "Ptolemy — Almagest (PD selections)", "source": "/docs/ptolemy_almagest_selections.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_just", "pattern_id": "polyrhythm_seven", "rack_id": "solar_chime", "texture_id": "hypatia_solar_light" },
+    "daimon": { "name": "Lioness of Clarity", "form": "lioness", "qualities": ["courage","truth"] },
+    "invocation": "Hold the line of reason; let courage be a clear and radiant sun.",
+    "manifest": { "room": "pillar", "spawn_worker": true, "seed": "strength-2025-09-24", "preset": "hypatia_solar_chime" },
+    "tags": ["major","reason","virtue"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/euclid_elements_selections.txt","/docs/ptolemy_almagest_selections.txt"] }
+  },
+  {
+    "id": "hermit_frater_achad",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Hermit — Frater Achad currents",
+    "major": "IX The Hermit",
+    "guardian": "frater-achad",
+    "planet": "Saturn",
+    "element": "Earth",
+    "lineage": ["frater_achad"],
+    "avatar": "/avatars/hermit-achad.png",
+    "labs": {
+      "sound": "solitude_lab",
+      "vision": "lantern_lab",
+      "reiki": "third_eye_lab",
+      "texts": [
+        { "title": "Sefer Yetzirah (PD translation)", "source": "/docs/sefer_yetzirah.txt" },
+        { "title": "Hermetica XIII (PD)", "source": "/docs/hermeticum_XIII.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "wave_half_time", "rack_id": "cave_resonator", "texture_id": "chaos_flux" },
+    "daimon": { "name": "Lantern-Bearer", "form": "lantern-figure", "qualities": ["gnosis","reorientation"] },
+    "invocation": "Withdraw from the clamor; one lamp can redraw the map of the world.",
+    "manifest": { "room": "hermitage", "spawn_worker": true, "seed": "hermit-2025-09-24", "preset": "achad_lantern" },
+    "tags": ["major","study","gnosis"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/sefer_yetzirah.txt","/docs/hermeticum_XIII.txt"] }
+  },
+  {
+    "id": "wheel_fortuna",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Wheel of Fortune — Fortuna × Boethius",
+    "major": "X Wheel of Fortune",
+    "guardian": "fortune-boethius",
+    "planet": "Jupiter",
+    "element": "Air",
+    "lineage": ["boethius","fortuna"],
+    "avatar": "/avatars/wheel-fortuna.png",
+    "labs": {
+      "sound": "chaos_lab",
+      "vision": "cycle_lab",
+      "reiki": "throat_lab",
+      "texts": [
+        { "title": "Boethius — Consolation of Philosophy (PD)", "source": "/docs/boethius_consolation.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "19tet", "pattern_id": "spiral_cycle", "rack_id": "wheel_machine", "texture_id": "spiral_rhythm" },
+    "daimon": { "name": "Turning Wheel", "form": "wheel", "qualities": ["flux","timing","chance"] },
+    "invocation": "The wheel turns; stand centered, move skillfully.",
+    "manifest": { "room": "rotunda", "spawn_worker": true, "seed": "wheel-2025-09-24", "preset": "fortune_spiral_cycle" },
+    "tags": ["major","flux","time"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/boethius_consolation.txt"] }
+  },
+  {
+    "id": "justice_pythagoras",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Justice — Pythagoras current",
+    "major": "XI Justice",
+    "guardian": "pythagoras",
+    "planet": "Venus",
+    "element": "Air",
+    "lineage": ["pythagoras"],
+    "avatar": "/avatars/justice-pythagoras.png",
+    "labs": {
+      "sound": "geometry_lab",
+      "vision": "number_lab",
+      "reiki": "throat_lab",
+      "texts": [
+        { "title": "Nicomachus — Introduction to Arithmetic (PD)", "source": "/docs/nicomachus_intro_arithmetic.txt" },
+        { "title": "Monochord diagrams (PD)", "source": "/docs/monochord_diagrams.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_ratios", "pattern_id": "precise_grid", "rack_id": "monochord", "texture_id": "pythagoras_monochord" },
+    "daimon": { "name": "Monochord Spirit", "form": "monochord", "qualities": ["ratio","equity"] },
+    "invocation": "Number weighs the world; equity is harmony held steady.",
+    "manifest": { "room": "matharium", "spawn_worker": true, "seed": "justice-2025-09-24", "preset": "pythagoras_monochord" },
+    "tags": ["major","ratio","number"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/nicomachus_intro_arithmetic.txt","/docs/monochord_diagrams.txt"] }
+  },
+  {
+    "id": "hanged_man_blake",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Hanged Man — William Blake currents",
+    "major": "XII The Hanged Man",
+    "guardian": "william-blake",
+    "planet": "Neptune",
+    "element": "Water",
+    "lineage": ["william_blake"],
+    "avatar": "/avatars/hanged-blake.png",
+    "labs": {
+      "sound": "visionary_lab",
+      "vision": "engraving_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "Songs of Innocence & Experience (PD selections)", "source": "/docs/blake_songs_selections.txt" },
+        { "title": "Marriage of Heaven & Hell (PD)", "source": "/docs/blake_marriage_heaven_hell.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "visionary_swing", "rack_id": "visionary_frame", "texture_id": "visionary_bloom" },
+    "daimon": { "name": "Hanged Angel", "form": "angel-upside-down", "qualities": ["sacrifice","imagination"] },
+    "invocation": "To see a world in a grain of sand, turn yourself upside down.",
+    "manifest": { "room": "gallery", "spawn_worker": true, "seed": "hangedman-2025-09-24", "preset": "blake_visionary_frame" },
+    "tags": ["major","visionary","sacrifice"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/blake_songs_selections.txt","/docs/blake_marriage_heaven_hell.txt"] }
+  },
+  {
+    "id": "death_ann_abyss",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Death — Ann Abyss (Sekhmet & Hermes currents)",
+    "major": "XIII Death",
+    "guardian": "ann-abyss",
+    "planet": "Pluto",
+    "element": "Water",
+    "lineage": ["ann_abyss","sekhmet","hermes_trismegistus"],
+    "avatar": "/avatars/death-ann-abyss.png",
+    "labs": {
+      "sound": "void_lab",
+      "vision": "abyss_lab",
+      "reiki": "root_lab",
+      "texts": [
+        { "title": "Corpus Hermeticum XIII (Rebirth)", "source": "/docs/hermeticum_XIII.txt" },
+        { "title": "Hymn to Sekhmet (reconstruction)", "source": "/docs/sekhmet_hymn.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "void_pattern", "rack_id": "underworld_gate", "texture_id": "chaos_flux" },
+    "daimon": { "name": "Black Jackal", "form": "jackal-lioness", "qualities": ["grief","law","rebirth"] },
+    "invocation": "In the still dark the law is remembered; rage turns medicine, endings become gates.",
+    "manifest": { "room": "crypt", "spawn_worker": true, "seed": "death-2025-09-24", "preset": "abyss_void_gate" },
+    "tags": ["major","transmutation","death"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/hermeticum_XIII.txt","/docs/sekhmet_hymn.txt"] }
+  },
+  {
+    "id": "temperance_paracelsus",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Temperance — Paracelsus current",
+    "major": "XIV Temperance",
+    "guardian": "paracelsus",
+    "planet": "Jupiter",
+    "element": "Fire",
+    "lineage": ["paracelsus"],
+    "avatar": "/avatars/temperance-paracelsus.png",
+    "labs": {
+      "sound": "alchemy_lab",
+      "vision": "distillation_lab",
+      "reiki": "heart_lab",
+      "texts": [
+        { "title": "Paracelsus — Selected Writings (PD)", "source": "/docs/paracelsus_selected_pd.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_just", "pattern_id": "alchemy_blend", "rack_id": "distiller", "texture_id": "spiral_grid" },
+    "daimon": { "name": "Winged Healer", "form": "winged-urchin", "qualities": ["healing","fusion","measure"] },
+    "invocation": "Mix in wisdom, pour with care; harmony is a practiced art.",
+    "manifest": { "room": "distillery", "spawn_worker": true, "seed": "temperance-2025-09-24", "preset": "paracelsus_distill" },
+    "tags": ["major","alchemy","healing"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/paracelsus_selected_pd.txt"] }
+  },
+  {
+    "id": "devil_goetia",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Devil — Goetia (public-domain anchors)",
+    "major": "XV The Devil",
+    "guardian": "goetia-current",
+    "planet": "Saturn",
+    "element": "Earth",
+    "lineage": ["lemegeton_goetia","pan"],
+    "avatar": "/avatars/devil-goetia.png",
+    "labs": {
+      "sound": "forge_lab",
+      "vision": "shadow_lab",
+      "reiki": "root_lab",
+      "texts": [
+        { "title": "Lemegeton: Goetia (PD edition)", "source": "/docs/lemegeton_goetia_pd.txt" },
+        { "title": "Homeric Hymn to Pan (PD)", "source": "/docs/hymn_to_pan_pd.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "12tet", "pattern_id": "iron_gait", "rack_id": "iron_resonator", "texture_id": "industrial_resonance" },
+    "daimon": { "name": "Horned Shadow", "form": "horned-shadow", "qualities": ["instinct","bondage","awareness"] },
+    "invocation": "Name the chain, learn its weight — then the lock remembers how to open.",
+    "manifest": { "room": "forge", "spawn_worker": true, "seed": "devil-2025-09-24", "preset": "goetia_iron_resonator" },
+    "tags": ["major","shadow","instinct"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/lemegeton_goetia_pd.txt","/docs/hymn_to_pan_pd.txt"] }
+  },
+  {
+    "id": "tower_crowley",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Tower — Crowley (shadow current anchored to PD sources)",
+    "major": "XVI The Tower",
+    "guardian": "crowley-shadow",
+    "planet": "Mars",
+    "element": "Fire",
+    "lineage": ["aleister_crowley","agrippa"],
+    "avatar": "/avatars/tower-crowley.png",
+    "labs": {
+      "sound": "chaos_lab",
+      "vision": "lightning_lab",
+      "reiki": "root_lab",
+      "texts": [
+        { "title": "Genesis 11 — Babel (PD)", "source": "/docs/genesis_11_babel.txt" },
+        { "title": "Agrippa — Mars correspondences (PD)", "source": "/docs/agrippa_planets_mars.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "12tet", "pattern_id": "chaos_blast", "rack_id": "tower_breaker", "texture_id": "industrial_resonance" },
+    "daimon": { "name": "Scarlet Thunder", "form": "lightning-scar", "qualities": ["shock","revelation"] },
+    "invocation": "Let false towers fall; lightning clears the path for truth.",
+    "manifest": { "room": "tower", "spawn_worker": true, "seed": "tower-2025-09-24", "preset": "tower_lightning_blast" },
+    "tags": ["major","revelation","collapse"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/genesis_11_babel.txt","/docs/agrippa_planets_mars.txt"] }
+  },
+  {
+    "id": "star_bruno",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Star — Giordano Bruno",
+    "major": "XVII The Star",
+    "guardian": "bruno",
+    "planet": "Aquarius",
+    "element": "Air",
+    "lineage": ["giordano_bruno"],
+    "avatar": "/avatars/star-bruno.png",
+    "labs": {
+      "sound": "cosmology_lab",
+      "vision": "cosmos_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "On the Infinite Universe (PD)", "source": "/docs/bruno_infinite_universe.txt" },
+        { "title": "Corpus Hermeticum XII (PD)", "source": "/docs/hermeticum_XII.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "wave_half_time", "rack_id": "cosmos_resonator", "texture_id": "bruno_cosmic_infinite" },
+    "daimon": { "name": "Phoenix Flame", "form": "phoenix", "qualities": ["infinity","illumination"] },
+    "invocation": "Hope is a quiet, endless light.",
+    "manifest": { "room": "observatory", "spawn_worker": true, "seed": "star-2025-09-24", "preset": "bruno_cosmos_resonator" },
+    "tags": ["major","cosmology","hope"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/bruno_infinite_universe.txt","/docs/hermeticum_XII.txt"] }
+  },
+  {
+    "id": "moon_hildegard",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Moon — Hildegard of Bingen",
+    "major": "XVIII The Moon",
+    "guardian": "hildegard",
+    "planet": "Moon",
+    "element": "Water",
+    "lineage": ["hildegard_bingen"],
+    "avatar": "/avatars/moon-hildegard.png",
+    "labs": {
+      "sound": "frequency_lab",
+      "vision": "vision_lab",
+      "reiki": "heart_lab",
+      "texts": [
+        { "title": "Scivias (PD images & chants index)", "source": "/docs/hildegard_scivias_index.txt" },
+        { "title": "Gregorian modal theory (PD summary)", "source": "/docs/gregorian_modes_summary.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_just", "pattern_id": "dream_cycle", "rack_id": "symphonia", "texture_id": "hildegard_symphonia" },
+    "daimon": { "name": "Green-Fire Wisp", "form": "wisp", "qualities": ["vision","healing"] },
+    "invocation": "In lunar silence the greening force sings.",
+    "manifest": { "room": "lunar-hall", "spawn_worker": true, "seed": "moon-2025-09-24", "preset": "hildegard_symphonia" },
+    "tags": ["major","chant","vision"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/hildegard_scivias_index.txt","/docs/gregorian_modes_summary.txt"] }
+  },
+  {
+    "id": "sun_leonardo",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Sun — Leonardo da Vinci × Vitruvius",
+    "major": "XIX The Sun",
+    "guardian": "leonardo-vitruvius",
+    "planet": "Sun",
+    "element": "Fire",
+    "lineage": ["leonardo_da_vinci","vitruvius"],
+    "avatar": "/avatars/sun-leonardo.png",
+    "labs": {
+      "sound": "solar_lab",
+      "vision": "geometry_lab",
+      "reiki": "solar_plexus_lab",
+      "texts": [
+        { "title": "Vitruvius — De Architectura (PD)", "source": "/docs/vitruvius_de_architectura.txt" },
+        { "title": "Leonardo — Notebooks (PD selections)", "source": "/docs/leonardo_notebooks_selections.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_ratios", "pattern_id": "solar_drive", "rack_id": "helios_machine", "texture_id": "spiral_grid" },
+    "daimon": { "name": "Solar Eagle", "form": "eagle-sun", "qualities": ["illumination","genius"] },
+    "invocation": "Illumination is craft made radiant.",
+    "manifest": { "room": "sun-hall", "spawn_worker": true, "seed": "sun-2025-09-24", "preset": "leonardo_helios" },
+    "tags": ["major","illumination","craft"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/vitruvius_de_architectura.txt","/docs/leonardo_notebooks_selections.txt"] }
+  },
+  {
+    "id": "judgement_ps_dionysius",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Judgement — Scriptural & Pseudo-Dionysian currents",
+    "major": "XX Judgement",
+    "guardian": "judgement-angel",
+    "planet": "Pluto",
+    "element": "Fire",
+    "lineage": ["ezekiel","ps_dionysius"],
+    "avatar": "/avatars/judgement-angel.png",
+    "labs": {
+      "sound": "angelic_lab",
+      "vision": "resurrection_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "Ezekiel 1 — Living Creatures (PD)", "source": "/docs/ezekiel_ch1_pd.txt" },
+        { "title": "Pseudo-Dionysius — Celestial Hierarchy (PD)", "source": "/docs/ps_dionysius_celestial_hierarchy.txt" },
+        { "title": "Dies Irae (chant, PD)", "source": "/docs/dies_irae_pd.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "angelic_call", "rack_id": "trumpet_gate", "texture_id": "spiral_grid" },
+    "daimon": { "name": "Trumpet Angel", "form": "angel-trumpet", "qualities": ["truth","remembrance"] },
+    "invocation": "Arise — the soul remembers its name.",
+    "manifest": { "room": "choir", "spawn_worker": true, "seed": "judgement-2025-09-24", "preset": "judgement_trumpet_gate" },
+    "tags": ["major","resurrection","truth"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/ezekiel_ch1_pd.txt","/docs/ps_dionysius_celestial_hierarchy.txt","/docs/dies_irae_pd.txt"] }
+  },
+  {
+    "id": "world_cosmogenesis",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The World — Cosmogenesis integration",
+    "major": "XXI The World",
+    "guardian": "cosmogenesis",
+    "planet": "Saturn/Jupiter",
+    "element": "Earth",
+    "lineage": ["giordano_bruno","hermes_trismegistus","vitruvius","ptolemy"],
+    "avatar": "/avatars/world-cosmogenesis.png",
+    "labs": {
+      "sound": "cosmology_lab",
+      "vision": "world_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "Corpus Hermeticum compendium (PD)", "source": "/docs/hermeticum_I_XII_compendium.txt" },
+        { "title": "Ptolemy — Almagest (PD selections)", "source": "/docs/ptolemy_almagest_selections.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "platonic_just", "pattern_id": "spiral_cycle", "rack_id": "cosmos_resonator", "texture_id": "spiral_grid" },
+    "daimon": { "name": "Cosmic Dancer", "form": "dancer-cosmos", "qualities": ["completion","integration"] },
+    "invocation": "Macrocosm and microcosm embrace — the dance completes the circle.",
+    "manifest": { "room": "sanctuary", "spawn_worker": true, "seed": "world-2025-09-24", "preset": "world_cosmos_resonator" },
+    "tags": ["major","integration","completion"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/hermeticum_I_XII_compendium.txt","/docs/ptolemy_almagest_selections.txt"] }
+  },
+  {
+    "id": "mystery_child_extra",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "The Fool-Variant — Moonchild (surreal revision)",
+    "major": "0b The Fool-Variant",
+    "guardian": "moonchild-variant",
+    "planet": "Uranus",
+    "element": "Air",
+    "lineage": ["max_ernst","leonora_carrington"],
+    "avatar": "/avatars/moonchild.png",
+    "labs": {
+      "sound": "texture_lab",
+      "vision": "collage_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "Max Ernst studies (notes)", "source": "/docs/max_ernst_notes.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "surreal_spiral", "rack_id": "surreal_trinity", "texture_id": "moonchild_collage" },
+    "daimon": { "name": "Surreal Companion", "form": "twin-serpent", "qualities": ["vision","misrule"] },
+    "invocation": "Travel sideways and let the mirrors refuse to resolve.",
+    "manifest": { "room": "dreamroom", "spawn_worker": true, "seed": "mchild-2025-09-24", "preset": "moonchild_collage" },
+    "tags": ["variant","surreal","guardian"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/max_ernst_notes.txt"] }
+  },
+  {
+    "id": "aether_star_extra",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Star-Variant — Bruno (cosmic lyric)",
+    "major": "XVIIb The Star-Variant",
+    "guardian": "bruno-variant",
+    "planet": "Aquarius",
+    "element": "Air",
+    "lineage": ["giordano_bruno"],
+    "avatar": "/avatars/star-bruno-variant.png",
+    "labs": {
+      "sound": "cosmic_lab",
+      "vision": "stellar_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "Bruno — supplementary notes", "source": "/docs/bruno_notes_extra.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "star_wave", "rack_id": "cosmic_resonator_variant", "texture_id": "bruno_starfield" },
+    "daimon": { "name": "Silent Light", "form": "star-wisp", "qualities": ["hope","quiet"] },
+    "invocation": "Light as patient breath; hope as quiet craft.",
+    "manifest": { "room": "observatory-2", "spawn_worker": true, "seed": "astar-2025-09-24", "preset": "bruno_starfield" },
+    "tags": ["variant","cosmology","star"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/bruno_notes_extra.txt"] }
+  },
+  {
+    "id": "oracle_extra_anne",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Oracle-Variant — Ann Abyss (deep rites)",
+    "major": "XIIIb Death-Variant",
+    "guardian": "ann-abyss-variant",
+    "planet": "Pluto",
+    "element": "Water",
+    "lineage": ["ann_abyss"],
+    "avatar": "/avatars/ann-abyss-variant.png",
+    "labs": {
+      "sound": "void_lab",
+      "vision": "abyss_lab",
+      "reiki": "root_lab",
+      "texts": [
+        { "title": "Ann Abyss commentary", "source": "/docs/ann_abyss_notes.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "abyss_call", "rack_id": "underworld_variant", "texture_id": "abyssal_grid" },
+    "daimon": { "name": "Gate Warden", "form": "jackal-warden", "qualities": ["threshold","law"] },
+    "invocation": "Within the hush the gate remembers your name.",
+    "manifest": { "room": "crypt-variant", "spawn_worker": true, "seed": "deathvar-2025-09-24", "preset": "abyss_variant" },
+    "tags": ["variant","threshold","death"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/ann_abyss_notes.txt"] }
+  },
+  {
+    "id": "star_extra_museum",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Museum Star — Cosmos Archive",
+    "major": "XVIIc The Star-Museum",
+    "guardian": "cosmos-archive",
+    "planet": "Aquarius",
+    "element": "Air",
+    "lineage": ["museum_archives"],
+    "avatar": "/avatars/star-museum.png",
+    "labs": {
+      "sound": "archival_lab",
+      "vision": "archive_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "Archive index (PD compendium)", "source": "/docs/archive_index.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "archive_wave", "rack_id": "archive_resonator", "texture_id": "museum_grid" },
+    "daimon": { "name": "Archivist Light", "form": "book-wisp", "qualities": ["memory","hope"] },
+    "invocation": "Remember the little lights; they are the map.",
+    "manifest": { "room": "archive", "spawn_worker": true, "seed": "star-museum-2025-09-24", "preset": "archive_cosmos" },
+    "tags": ["variant","archive","memory"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/archive_index.txt"] }
+  },
+  {
+    "id": "judgement_variant",
+    "merge_strategy": "append",
+    "lock": true,
+    "name": "Judgement-Variant — Pseudo-Patristic Call",
+    "major": "XXb Judgement-Variant",
+    "guardian": "judgement-variant",
+    "planet": "Pluto",
+    "element": "Fire",
+    "lineage": ["ps_dionysius","ezekiel"],
+    "avatar": "/avatars/judgement-variant.png",
+    "labs": {
+      "sound": "angelic_lab",
+      "vision": "resurrection_lab",
+      "reiki": "crown_lab",
+      "texts": [
+        { "title": "Pseudo-Dionysius notes (PD)", "source": "/docs/ps_dionysius_notes.txt" }
+      ]
+    },
+    "default_harmonics": { "tuning_id": "fibonacci_phi", "pattern_id": "variant_call", "rack_id": "variant_trumpet", "texture_id": "variant_spiral" },
+    "daimon": { "name": "Echo Angel", "form": "echo-wing", "qualities": ["remembrance","call"] },
+    "invocation": "When the trumpet remembers, the lost remember their names.",
+    "manifest": { "room": "choir-variant", "spawn_worker": true, "seed": "judgement-var-2025-09-24", "preset": "variant_trumpet_gate" },
+    "tags": ["variant","call","memory"],
+    "_provenance": { "author": "Rebecca Susan Lemke (Rebecca Respawn)", "created": "2025-09-24", "sources": ["/docs/ps_dionysius_notes.txt"] }
+  }
+]
