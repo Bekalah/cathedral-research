@@ -77,7 +77,7 @@
     "serve": "serve gh-pages-deployment -l 3000",
     "start": "pnpm run serve",
     "preview": "pnpm run build && pnpm run start",
-    "postinstall": "husky install && node tools/setup-universe.js",
+    "postinstall": "husky install",
     "install:all": "pnpm install --recursive"
   },
   "dependencies": {
