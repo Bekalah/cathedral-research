@@ -68,7 +68,7 @@ app.get('/', (c) => {
       status: '/api/status - Complete system status'
     },
     trauma_safety: 'Maximum CPTSD-safe with ND accommodations',
-    artistic_vision: 'Björk + Tori + Iris + Emma + 21 Taras',
+  artistic_vision: 'Porter Robinson Shelter + Björk + Tori + Iris + Emma + 21 Taras',
     timestamp: new Date().toISOString()
   })
 })
@@ -156,7 +156,7 @@ app.get('/api/fusion/dashboard', (c) => {
     consent_required: "Always and explicitly for all fusion activities",
     trauma_safety: "Maximum CPTSD-safe design with ND accommodations",
     archetypal_protection: "Living beings maintain energetic safety",
-    artistic_integration: "Björk + Tori Amos + Iris van Herpen + Emma Kunz + 21 Taras"
+  artistic_integration: "Porter Robinson Shelter + Björk + Tori Amos + Iris van Herpen + Emma Kunz + 21 Taras"
   })
 })
 
@@ -198,7 +198,7 @@ app.get('/api/status', (c) => {
       always_consensual: 'explicit consent for all activities'
     },
     artistic_integration: {
-      sound: 'Björk organic breathing + Tori archetypal piano',
+      sound: 'Porter Robinson Shelter synths + Björk organic breathing + Tori archetypal piano',
       visual: 'Iris van Herpen flowing + Emma Kunz sacred geometry',
       healing: '21 Tara color temples',
       precision: 'museum-quality couture throughout'

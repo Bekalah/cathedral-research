@@ -38,6 +38,28 @@ class Circuitum99AlphaOmega {
         this.systemType = 'LIVING_STORY_PATHWORKING_SYSTEM';
         this.architecture = 'DOUBLE_TREE_OF_LIFE_NAVIGATION';
         this.integration_status = 'CATHEDRAL_TRINITY_SOUL_COMPONENT';
+        import liberArcanaeArchetypes from '../../liber-arcanae/registry/archetypes.json';
+        import { LiberArcanaeRPGSystem } from '../../liber-arcanae/rpg-system.js';
+
+        // Modular connector for Liber Arcanae integration
+        function getLiberArcanaeCharacterData(arcanaId) {
+            // Find archetype by id from JSON
+            const archetype = liberArcanaeArchetypes.find(a => a.id === arcanaId);
+            if (!archetype) return null;
+            // Generate RPG character from LiberArcanaeRPGSystem
+            const rpg = new LiberArcanaeRPGSystem();
+            const character = rpg.generateArcanaCharacter(archetype.tarot.replace(/\s/g, '_').toUpperCase());
+            return {
+                ...archetype,
+                ...character
+            };
+        }
+
+        // Provenance-protected Liber Arcanae integration
+        this.liberArcanaeConnector = {
+            getCharacter: getLiberArcanaeCharacterData,
+            provenance: 'Source: liber-arcanae/registry/archetypes.json + liber-arcanae/rpg-system.js (see CATHEDRAL_GOLDEN_RULE.md)'
+        };
         
         // 🃏 Complete 78-Card Tarot Integration
         this.tarotSystem = new TarotGameInterface();

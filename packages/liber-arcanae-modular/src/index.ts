@@ -141,7 +141,17 @@ export class ModularLiberArcanae {
             description: 'Endless spirals of potential energy',
             techniques: ['fractal_generation', 'particle_systems', 'infinite_recursion'],
             colorPalette: ['#FFE4B5', '#F0E68C', '#DDA0DD'],
-            influences: ['Alex Grey consciousness maps', 'Ernst Fuchs infinite spirals']
+            influences: [
+              'Alex Grey consciousness maps',
+              'Ernst Fuchs infinite spirals',
+              'Timothy Leary reality tunnels',
+              'Antero Alli paratheatre',
+              'Mary Ann Atwood hermetic philosophy',
+              'John Dee Enochian magic',
+              'Heinrich Cornelius Agrippa occult science',
+              'Paul Foster Case tarot wisdom',
+              'Quantum tunneling and consciousness'
+            ]
           }
         ],
         p5Visualization: this.createFoolVisualization,
@@ -235,6 +245,24 @@ export class ModularLiberArcanae {
       }
       
       // ... Continue with all 22 Major Arcana
+      // Fallback for any missing visualizations or soundscapes
+      for (let arcana of majorArcana) {
+        if (!arcana.p5Visualization) {
+          arcana.p5Visualization = (p: p5) => {
+            p.background(0, 0, 20, 30)
+            p.push()
+            p.translate(0, 0, -100)
+            p.fill('#FFD700')
+            p.noStroke()
+            p.sphere(60)
+            p.pop()
+            this.drawModuleInterface(p, `${arcana.name} - Universal Archetype`)
+          }
+        }
+        if (!arcana.soundscape) {
+          arcana.soundscape = () => [] // Silence or default soundscape
+        }
+      }
     ]
   }
 

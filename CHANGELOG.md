@@ -13,6 +13,7 @@ All deployment workflows reference ND-safe, trauma-aware standards. See [CATHEDR
 - **App Registry**: Centralized metadata system for all applications and packages
 
 ### 🏗️ Architecture Improvements
+ - **NodeFusionEngine**: Added modular orchestration system to connect mythopoetic archetype nodes to real art, sound, game, fusion, chapel, lab, business, and effects modules. Enforces provenance and trauma-safe standards. See packages/node-fusion-engine/index.js.
 - Complete monorepo restructure with apps/, packages/, registry/, devops/
 - Central hub serves as portal to all Cathedral applications  
 - Real-time system health monitoring and app status tracking
@@ -28,6 +29,7 @@ All deployment workflows reference ND-safe, trauma-aware standards. See [CATHEDR
 - Added multi-platform deployment configurations
 
 ### 🚀 Applications Updated
+ - **Circuitum99**: Added modular connector for Liber Arcanae integration. Circuitum99 now imports real archetype/class data from liber-arcanae/registry/archetypes.json and liber-arcanae/rpg-system.js, enabling provenance-protected book/game/character integration. See CATHEDRAL_GOLDEN_RULE.md for standards.
 - **Cathedral Hub** (NEW): React-based central navigation portal
 - **Stone Grimoire**: Fixed TypeScript issues, enhanced UI components
 - **Arcanae Lab**: Updated metadata and integration
