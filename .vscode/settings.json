@@ -3,7 +3,11 @@
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {},
     "editor.suggest.preview": false,
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+    },
     "git.confirmSync": true,
     "git.enableSmartCommit": false,
     "extensions.autoUpdate": false,
