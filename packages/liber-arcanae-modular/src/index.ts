@@ -79,6 +79,7 @@ export interface GameAssetBundle {
 
 export class ModularLiberArcanae {
   private arcanaModules: Map<string, ArcanaeModule> = new Map()
+    private majorArcana: ArcanaeModule[] = []
   private p5Instance: p5 | null = null
   private activeModule: ArcanaeModule | null = null
   
@@ -91,101 +92,186 @@ export class ModularLiberArcanae {
    */
   private initializeModularArcana(): void {
     // Major Arcana (22 cards)
-    const majorArcana = this.createMajorArcana()
-    majorArcana.forEach(arcana => {
-      this.arcanaModules.set(arcana.name, arcana)
-    })
+      this.majorArcana = this.createMajorArcana()
+      for (let arcana of this.majorArcana) {
+        this.arcanaModules.set(arcana.name, arcana)
+      }
+    this.majorArcana.forEach((arcana) => {
+      this.arcanaModules.set(arcana.name, arcana);
+    });
     
     // Minor Arcana (56 cards)
-    const minorArcana = this.createMinorArcana()
-    minorArcana.forEach(arcana => {
-      this.arcanaModules.set(arcana.name, arcana)
-    })
-    
-    console.log('🃏 Modular Liber Arcanae initialized: 78 complete universes ready')
-  }
+    const majorArcana: ArcanaeModule[] = [];
+    // The Fool
+    majorArcana.push({
+      id: 0,
+      name: 'The Fool',
+      element: 'air',
+      keywords: ['potential', 'spontaneity', 'faith', 'beginnings'],
+      colors: ['#FFE4B5', '#F0E68C', '#DDA0DD', '#87CEEB'],
+      frequencies: [174, 285],
+      codexNodes: [1, 22, 43, 65, 87, 109, 131, 144],
+      sacredGeometry: 'infinite_spiral',
+      datasets: [
+        {
+          source: 'NASA Deep Space Images',
+          type: 'nasa',
+          endpoint: 'https://images-api.nasa.gov/search?q=nebula',
+          live: true,
+          artApplications: ['cosmic-backgrounds', 'infinite-textures', 'color-inspiration']
+        },
+        {
+          source: 'Weather Chaos Patterns',
+          type: 'weather',
+          endpoint: 'https://api.openweathermap.org/data/2.5/weather',
+          live: true,
+          artApplications: ['dynamic-environments', 'unpredictable-patterns']
+        }
+      ],
+      artStyles: [
+        {
+          name: 'Infinite Possibility',
+          description: 'Endless spirals of potential energy',
+          techniques: ['fractal_generation', 'particle_systems', 'infinite_recursion'],
+          colorPalette: ['#FFE4B5', '#F0E68C', '#DDA0DD'],
+          influences: [
+            'Alex Grey consciousness maps',
+            'Ernst Fuchs infinite spirals',
+            'Timothy Leary reality tunnels',
+            'Antero Alli paratheatre',
+            'Mary Ann Atwood hermetic philosophy',
+            'John Dee Enochian magic',
+            'Heinrich Cornelius Agrippa occult science',
+            'Paul Foster Case tarot wisdom',
+            'Quantum tunneling and consciousness'
+          ]
+        }
+      ],
+      p5Visualization: this.createFoolVisualization,
+      soundscape: this.createFoolSoundscape,
+      exportPSD: this.createFoolPSD,
+      exportSVG: this.createFoolSVG,
+      export3D: this.createFool3D,
+      exportGameAssets: this.createFoolGameAssets
+    });
+    // The Magician
+    majorArcana.push({
+      id: 1,
+      name: 'The Magician',
+      element: 'mercury',
+      keywords: ['manifestation', 'willpower', 'creation', 'focus'],
+      colors: ['#FF6347', '#FFD700', '#8A2BE2', '#4B0082'],
+      frequencies: [285, 396],
+      codexNodes: [2, 23, 44, 66, 88, 110, 132, 143],
+      sacredGeometry: 'vesica_piscis',
+      datasets: [
+        {
+          source: 'Particle Physics Data',
+          type: 'scientific',
+          endpoint: 'https://api.cern.ch/data/particle-interactions',
+          live: false,
+          artApplications: ['energy-visualization', 'manifestation-patterns', 'creation-dynamics']
+        },
+        {
+          source: 'Electromagnetic Field Data',
+          type: 'scientific',
+          live: true,
+          artApplications: ['energy-fields', 'willpower-visualization', 'magnetic-attractions']
+        }
+      ],
+      artStyles: [
+        {
+          name: 'Manifestation Engine',
+          description: 'Raw creative energy taking form',
+          techniques: ['energy_fields', 'materialization_effects', 'sacred_symbols'],
+          colorPalette: ['#FF6347', '#FFD700', '#8A2BE2'],
+          influences: ['Ernst Fuchs alchemical imagery', 'Alex Grey energy anatomy']
+        }
+      ],
+      p5Visualization: this.createMagicianVisualization,
+      soundscape: this.createMagicianSoundscape,
+      exportPSD: this.createMagicianPSD,
+      exportSVG: this.createMagicianSVG,
+      export3D: this.createMagician3D,
+      exportGameAssets: this.createMagicianGameAssets
+    });
+    // The High Priestess
+    majorArcana.push({
+      id: 2,
+      name: 'High Priestess',
+      element: 'water',
+      keywords: ['intuition', 'mystery', 'sacred feminine', 'inner knowing'],
+      colors: ['#4169E1', '#8FBC8F', '#DDA0DD', '#E6E6FA'],
+      frequencies: [396, 417],
+      codexNodes: [3, 24, 45, 67, 89, 111, 133, 142],
+      sacredGeometry: 'crescent_moon',
+      datasets: [
+        {
+          source: 'Lunar Phase Data',
+          type: 'nasa',
+          endpoint: 'https://api.nasa.gov/planetary/lunar-phase',
+          live: true,
+          artApplications: ['lunar-cycles', 'feminine-rhythms', 'tidal-patterns']
+        },
+        {
+          source: 'Ocean Current Data',
+          type: 'scientific',
+          live: true,
+          artApplications: ['flowing-patterns', 'intuitive-currents', 'deep-mysteries']
+        }
+      ],
+      artStyles: [
+        {
+          name: 'Sacred Feminine Flow',
+          description: 'Intuitive waters of deep knowing',
+          techniques: ['fluid_dynamics', 'moon_phases', 'sacred_veils'],
+          colorPalette: ['#4169E1', '#8FBC8F', '#DDA0DD'],
+          influences: ['Emma Kunz geometric healing', 'Dion Fortune mystical traditions']
+        }
+      ],
+      p5Visualization: this.createHighPriestessVisualization,
+      soundscape: this.createHighPriestessSoundscape,
+      exportPSD: this.createHighPriestessPSD,
+      exportSVG: this.createHighPriestessSVG,
+      export3D: this.createHighPriestess3D,
+      exportGameAssets: this.createHighPriestessGameAssets
+    });
+    // ...repeat for all 22 Major Arcana...
 
-  /**
-   * Create the 22 Major Arcana modules
-   */
-  private createMajorArcana(): ArcanaeModule[] {
-    return [
-      {
-        id: 0,
-        name: 'The Fool',
-        element: 'air',
-        keywords: ['potential', 'spontaneity', 'faith', 'beginnings'],
-        colors: ['#FFE4B5', '#F0E68C', '#DDA0DD', '#87CEEB'],
-        frequencies: [174, 285],
-        codexNodes: [1, 22, 43, 65, 87, 109, 131, 144],
-        sacredGeometry: 'infinite_spiral',
-        datasets: [
-          {
-            source: 'NASA Deep Space Images',
-            type: 'nasa',
-            endpoint: 'https://images-api.nasa.gov/search?q=nebula',
-            live: true,
-            artApplications: ['cosmic-backgrounds', 'infinite-textures', 'color-inspiration']
-          },
-          {
-            source: 'Weather Chaos Patterns',
-            type: 'weather',
-            endpoint: 'https://api.openweathermap.org/data/2.5/weather',
-            live: true,
-            artApplications: ['dynamic-environments', 'unpredictable-patterns']
+    // Fallback for any missing visualizations or soundscapes
+    for (let arcana of majorArcana) {
+      if (!arcana.p5Visualization) {
+        arcana.p5Visualization = (p: p5) => {
+          p.background(0, 0, 20, 30)
+          p.push()
+          p.translate(0, 0, -100)
+          p.fill('#FFD700')
+          p.noStroke()
+          p.sphere(60)
+          p.pop()
+          this.drawModuleInterface(p, `${arcana.name} - Universal Archetype`)
+        }
+      }
+      if (!arcana.soundscape) {
+        arcana.soundscape = () => [] // Silence or default soundscape
+      }
+    }
+    return majorArcana;
+              p.background(0, 0, 20, 30)
+              p.push()
+              p.translate(0, 0, -100)
+              p.fill('#FFD700')
+              p.noStroke()
+              p.sphere(60)
+              p.pop()
+              this.drawModuleInterface(p, `${arcana.name} - Universal Archetype`)
+            }
           }
-        ],
-        artStyles: [
-          {
-            name: 'Infinite Possibility',
-            description: 'Endless spirals of potential energy',
-            techniques: ['fractal_generation', 'particle_systems', 'infinite_recursion'],
-            colorPalette: ['#FFE4B5', '#F0E68C', '#DDA0DD'],
-            influences: [
-              'Alex Grey consciousness maps',
-              'Ernst Fuchs infinite spirals',
-              'Timothy Leary reality tunnels',
-              'Antero Alli paratheatre',
-              'Mary Ann Atwood hermetic philosophy',
-              'John Dee Enochian magic',
-              'Heinrich Cornelius Agrippa occult science',
-              'Paul Foster Case tarot wisdom',
-              'Quantum tunneling and consciousness'
-            ]
+          if (!arcana.soundscape) {
+            arcana.soundscape = () => [] // Silence or default soundscape
           }
-        ],
-        p5Visualization: this.createFoolVisualization,
-        soundscape: this.createFoolSoundscape,
-        exportPSD: this.createFoolPSD,
-        exportSVG: this.createFoolSVG,
-        export3D: this.createFool3D,
-        exportGameAssets: this.createFoolGameAssets
-      },
-      
-      {
-        id: 1,
-        name: 'The Magician',
-        element: 'mercury',
-        keywords: ['manifestation', 'willpower', 'creation', 'focus'],
-        colors: ['#FF6347', '#FFD700', '#8A2BE2', '#4B0082'],
-        frequencies: [285, 396],
-        codexNodes: [2, 23, 44, 66, 88, 110, 132, 143],
-        sacredGeometry: 'vesica_piscis',
-        datasets: [
-          {
-            source: 'Particle Physics Data',
-            type: 'scientific',
-            endpoint: 'https://api.cern.ch/data/particle-interactions',
-            live: false,
-            artApplications: ['energy-visualization', 'manifestation-patterns', 'creation-dynamics']
-          },
-          {
-            source: 'Electromagnetic Field Data',
-            type: 'scientific',
-            live: true,
-            artApplications: ['energy-fields', 'willpower-visualization', 'magnetic-attractions']
-          }
-        ],
+        }
+        return majorArcana
         artStyles: [
           {
             name: 'Manifestation Engine',
@@ -246,7 +332,9 @@ export class ModularLiberArcanae {
       
       // ... Continue with all 22 Major Arcana
       // Fallback for any missing visualizations or soundscapes
-      for (let arcana of majorArcana) {
+  for (let arcana of this.majorArcana) {
+    // ...existing code...
+  }
         if (!arcana.p5Visualization) {
           arcana.p5Visualization = (p: p5) => {
             p.background(0, 0, 20, 30)
@@ -263,7 +351,7 @@ export class ModularLiberArcanae {
           arcana.soundscape = () => [] // Silence or default soundscape
         }
       }
-    ]
+  // ...existing code...
   }
 
   /**
@@ -339,7 +427,7 @@ export class ModularLiberArcanae {
       p.keyPressed = () => this.p5KeyPressed(p)
     }
 
-    this.p5Instance = new p5(sketch, container)
+      this.p5Instance = new (p5 as any)(sketch, container)
   }
 
   private p5Setup(p: p5): void {

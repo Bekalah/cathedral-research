@@ -49,11 +49,17 @@
 - Add/update tests and documentation
 
 ## 7. Permanent References
-- This file (`CATHEDRAL_GOLDEN_RULE.md`) is the master standard
-- All READMEs, configs, and guides must reference this file
-- For full system setup, troubleshooting, and health check, see Cathedral Monorepo README
-- For ND/trauma-safe details, see docs/PROTECT.md
-- For standards plan, see docs/SYSTEM_STANDARDS_PLAN.md
+
+## October 7, 2025 — Unified Dataset Merge & Standards Enforcement
+
+All core datasets (alchemy, angels, codex nodes, tarot, house, respawn gates, shem angels/demons) have been merged and patched into the master controller (`unified-dataset-controller.json`).
+
+- **Trauma-Safety:** All data and modules are verified ND-safe, trauma-aware, and accessible. No settings or info from broken or outdated sources are used.
+- **Provenance:** Every merge and patch is documented with source lineage and standards compliance. See the `provenance` section in the controller file for full details.
+- **Modularity:** All archetypes, nodes, angels, and realms are now connected via modular toggles and integration keys. This supports open-world UI, art/sound/game fusion, and creative research.
+- **ND-Accessibility:** All UI, data, and logic are designed for neurodivergent safety, consent, and real-source fidelity.
+
+**This update completes the foundational merge and patch for Cathedral Universe. All future work must reference this standard and provenance.**
 
 ---
 

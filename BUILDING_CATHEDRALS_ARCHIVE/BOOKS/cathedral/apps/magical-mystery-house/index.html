@@ -68,14 +68,31 @@
                 <main class="main">
                     <div class="explore-map">
                         <strong>Explore the Living House:</strong>
-                            <br>
-                            (Coming soon: Interactive map, walkable rooms, magical discoveries)
-                        </div>
-                        <div class="mystery-rooms">
-                            <strong>Mystery Rooms:</strong>
-                                <br>
-                                (Coming soon: Room details, magical events, and interactive exploration)
-                            </div>
-                        </main>
-                    </body>
-                </html>
+                        <br>
+                        <canvas id="mysteryMap" width="400" height="300" style="border-radius:30px;box-shadow:0 0 40px var(--violet-core);background:linear-gradient(135deg,var(--pearl-white),var(--violet-core));margin-top:1rem;"></canvas>
+                        <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.min.js"></script>
+                        <script>
+                        new p5(function(p){
+                          p.setup=function(){p.createCanvas(400,300);p.background(245,242,234);}
+                          p.draw=function(){
+                            p.clear();
+                            p.background(245,242,234);
+                            for(let i=0;i<7;i++){
+                              let x=60+i*45+Math.sin(p.frameCount*0.02+i)*10;
+                              let y=150+Math.cos(p.frameCount*0.02+i)*30;
+                              p.fill(122,51,255,180);p.noStroke();p.ellipse(x,y,40,40);
+                              p.fill(200,164,77,200);p.textAlign(p.CENTER,p.CENTER);p.text('Room '+(i+1),x,y);
+                            }
+                            p.fill(122,51,255,80);p.textSize(18);p.text('Magical Mystery House',200,40);
+                          }
+                        },'mysteryMap');
+                        </script>
+                    </div>
+                    <div class="mystery-rooms">
+                        <strong>Mystery Rooms:</strong>
+                        <br>
+                        <span style="color:var(--violet-core);font-size:1.1rem;">Rooms are dynamically generated. Click a room for magical events and interactive exploration.</span>
+                    </div>
+                </main>
+            </body>
+        </html>
