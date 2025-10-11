@@ -43,37 +43,41 @@ const SACRED_CHAMBERS = [
     app: 'cathedral-hub',
     color: CATHEDRAL_PALETTE.gold,
     frequency: 528,
-    sacred_geometry: 'vesica_piscis'
+    sacred_geometry: 'vesica_piscis',
+    standards: '/apps/cathedral-hub/golden-rule'
   },
   {
-    id: 'cathedral-of-circuits', 
+    id: 'cathedral-of-circuits',
     title: 'Cathedral of Circuits',
     icon: '⚡',
     description: 'Main experience engine with living fractal systems',
     app: 'cathedral-of-circuits',
     color: CATHEDRAL_PALETTE.violet,
     frequency: 1111,
-    sacred_geometry: 'dodecahedron'
+    sacred_geometry: 'dodecahedron',
+    standards: '/apps/cathedral-of-circuits/golden-rule'
   },
   {
     id: 'stone-grimoire',
     title: 'Stone Grimoire',
-    icon: '📜', 
+    icon: '📜',
     description: 'Mystical creation tools with authentic historical art',
     app: 'stone-grimoire',
     color: CATHEDRAL_PALETTE.aqua,
     frequency: 741,
-    sacred_geometry: 'flower_of_life'
+    sacred_geometry: 'flower_of_life',
+    standards: '/apps/stone-grimoire/golden-rule'
   },
   {
     id: 'arcanae-lab',
     title: 'Arcanae Laboratory',
     icon: '🔬',
     description: 'Consciousness exploration with Angel Tech circuits',
-    app: 'arcanae-lab', 
+    app: 'arcanae-lab',
     color: CATHEDRAL_PALETTE.rose,
     frequency: 963,
-    sacred_geometry: 'icosahedron'
+    sacred_geometry: 'icosahedron',
+    standards: '/apps/arcanae-lab/golden-rule'
   },
   {
     id: 'cosmogenesis-engine',
@@ -83,7 +87,8 @@ const SACRED_CHAMBERS = [
     app: 'cosmogenesis-engine',
     color: CATHEDRAL_PALETTE.accent,
     frequency: 852,
-    sacred_geometry: 'fibonacci_spiral'
+    sacred_geometry: 'fibonacci_spiral',
+    standards: '/apps/cosmogenesis-engine/golden-rule'
   }
 ]
 
@@ -237,100 +242,124 @@ const ChamberPortal: React.FC<ChamberPortalProps> = ({ chamber, index, onActivat
     </>
   )
 }
-// Removed duplicate and misplaced JSX fragments after ChamberPortal
-// Removed stray style object and div after ChamberPortal function
-            marginBottom: '4rem',
-            padding: '3rem 0'
-          }}
-        >
-          <h1 style={{
-            fontSize: '4.5rem',
-            fontWeight: '700',
-            background: `linear-gradient(45deg, ${CATHEDRAL_PALETTE.gold}, ${CATHEDRAL_PALETTE.focus}, ${CATHEDRAL_PALETTE.gold})`,
-            backgroundSize: '200% 200%',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            animation: 'gradient-flow 4s ease infinite',
-            marginBottom: '1rem',
-            textShadow: `0 0 30px ${CATHEDRAL_PALETTE.gold}30`
-          }}>
-            🏛️ Cathedral of Consciousness
-          </h1>
-          
-          <p style={{
-            fontSize: '1.3rem',
-            color: CATHEDRAL_PALETTE.muted,
-            maxWidth: '800px',
-            margin: '0 auto 2rem',
-            lineHeight: 1.6
-          }}>
-            Where ancient sacred architecture meets cutting-edge technology
-            to create a living temple of infinite exploration
-          </p>
 
-          <div style={{
-            display: 'inline-block',
-            background: CATHEDRAL_PALETTE.panel,
-            border: `2px solid ${CATHEDRAL_PALETTE.gold}60`,
-            borderRadius: '25px',
-            padding: '1rem 2rem',
-            backdropFilter: 'blur(10px)'
-          }}>
-            <span style={{ color: CATHEDRAL_PALETTE.gold }}>
-              🎵 Current Frequency: {currentFrequency}Hz
-            </span>
-            <span style={{ color: CATHEDRAL_PALETTE.muted, marginLeft: '1rem' }}>
-              ✨ Unified Creative Machine ✨
-            </span>
-          </div>
-        </motion.header>
+const CathedralUnified: React.FC = () => {
+  const [currentFrequency, setCurrentFrequency] = useState(528)
+  const [activeChamber, setActiveChamber] = useState<string | null>(null)
 
-        {/* Sacred Chambers Grid */}
-        <main>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '2rem',
-            marginBottom: '4rem'
-          }}>
-            {SACRED_CHAMBERS.map((chamber, index) => (
-              <ChamberPortal
-                key={chamber.id}
-                chamber={chamber}
-                index={index}
-                onActivate={() => handleChamberActivate(chamber)}
-              />
-            ))}
-          </div>
-        </main>
+  const handleChamberActivate = (chamber: typeof SACRED_CHAMBERS[0]) => {
+    setActiveChamber(chamber.id)
+    // Navigate to the chamber's app
+    window.location.href = `/apps/${chamber.app}/`
+  }
 
-        {/* Sacred Footer */}
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          style={{
-            textAlign: 'center',
-            padding: '3rem 0',
-            borderTop: `1px solid ${CATHEDRAL_PALETTE.stroke}`,
-            color: CATHEDRAL_PALETTE.muted,
-            lineHeight: 1.8
-          }}
-        >
-          <p>🎭 <strong>Complete Liber Arcanae:</strong> 22 Major Arcana with 3D Sculpting Tools</p>
-          <p>🎵 <strong>Sacred Sound System:</strong> Healing Frequencies • Planetary Correspondences • Crystal Synthesis</p>
-          <p>🏗️ <strong>Museum Architecture:</strong> Golden Ratio • Sacred Geometry • Trauma-Aware Design</p>
-          <p style={{ 
-            color: CATHEDRAL_PALETTE.gold, 
-            fontWeight: '600',
-            marginTop: '1rem',
-            fontSize: '1.1rem'
-          }}>
-            ✨ Where consciousness becomes sacred space ✨
-          </p>
-        </motion.footer>
-      </div>
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: CATHEDRAL_PALETTE.bg,
+      color: CATHEDRAL_PALETTE.ink,
+      fontFamily: 'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {/* Sacred Header */}
+      <motion.header
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        style={{
+          textAlign: 'center',
+          marginBottom: '4rem',
+          padding: '3rem 0'
+        }}
+      >
+        <h1 style={{
+          fontSize: '4.5rem',
+          fontWeight: '700',
+          background: `linear-gradient(45deg, ${CATHEDRAL_PALETTE.gold}, ${CATHEDRAL_PALETTE.focus}, ${CATHEDRAL_PALETTE.gold})`,
+          backgroundSize: '200% 200%',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          animation: 'gradient-flow 4s ease infinite',
+          marginBottom: '1rem',
+          textShadow: `0 0 30px ${CATHEDRAL_PALETTE.gold}30`
+        }}>
+          🏛️ Cathedral of Consciousness
+        </h1>
+
+        <p style={{
+          fontSize: '1.3rem',
+          color: CATHEDRAL_PALETTE.muted,
+          maxWidth: '800px',
+          margin: '0 auto 2rem',
+          lineHeight: 1.6
+        }}>
+          Where ancient sacred architecture meets cutting-edge technology
+          to create a living temple of infinite exploration
+        </p>
+
+        <div style={{
+          display: 'inline-block',
+          background: CATHEDRAL_PALETTE.panel,
+          border: `2px solid ${CATHEDRAL_PALETTE.gold}60`,
+          borderRadius: '25px',
+          padding: '1rem 2rem',
+          backdropFilter: 'blur(10px)'
+        }}>
+          <span style={{ color: CATHEDRAL_PALETTE.gold }}>
+            🎵 Current Frequency: {currentFrequency}Hz
+          </span>
+          <span style={{ color: CATHEDRAL_PALETTE.muted, marginLeft: '1rem' }}>
+            ✨ Unified Creative Machine ✨
+          </span>
+        </div>
+      </motion.header>
+
+      {/* Sacred Chambers Grid */}
+      <main>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+          gap: '2rem',
+          marginBottom: '4rem'
+        }}>
+          {SACRED_CHAMBERS.map((chamber, index) => (
+            <ChamberPortal
+              key={chamber.id}
+              chamber={chamber}
+              index={index}
+              onActivate={() => handleChamberActivate(chamber)}
+            />
+          ))}
+        </div>
+      </main>
+
+      {/* Sacred Footer */}
+      <motion.footer
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        style={{
+          textAlign: 'center',
+          padding: '3rem 0',
+          borderTop: `1px solid ${CATHEDRAL_PALETTE.stroke}`,
+          color: CATHEDRAL_PALETTE.muted,
+          lineHeight: 1.8
+        }}
+      >
+        <p>🎭 <strong>Complete Liber Arcanae:</strong> 22 Major Arcana with 3D Sculpting Tools</p>
+        <p>🎵 <strong>Sacred Sound System:</strong> Healing Frequencies • Planetary Correspondences • Crystal Synthesis</p>
+        <p>🏗️ <strong>Museum Architecture:</strong> Golden Ratio • Sacred Geometry • Trauma-Aware Design</p>
+        <p style={{
+          color: CATHEDRAL_PALETTE.gold,
+          fontWeight: '600',
+          marginTop: '1rem',
+          fontSize: '1.1rem'
+        }}>
+          ✨ Where consciousness becomes sacred space ✨
+        </p>
+      </motion.footer>
 
       {/* CSS Animations */}
       <style jsx>{`
@@ -339,11 +368,11 @@ const ChamberPortal: React.FC<ChamberPortalProps> = ({ chamber, index, onActivat
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
-        
+
         .chamber-portal {
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .chamber-portal:hover {
           box-shadow: 0 25px 50px rgba(255, 215, 0, 0.15);
         }

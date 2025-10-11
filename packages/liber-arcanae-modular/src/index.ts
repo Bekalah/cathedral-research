@@ -78,13 +78,13 @@ export interface GameAssetBundle {
 // =============================================================================
 
 export class ModularLiberArcanae {
-  private arcanaModules: Map<string, ArcanaeModule> = new Map()
-    private majorArcana: ArcanaeModule[] = []
-  private p5Instance: p5 | null = null
-  private activeModule: ArcanaeModule | null = null
+  private arcanaModules: Map<string, ArcanaeModule> = new Map();
+  private majorArcana: ArcanaeModule[] = [];
+  private p5Instance: p5 | null = null;
+  private activeModule: ArcanaeModule | null = null;
   
   constructor() {
-    this.initializeModularArcana()
+  this.initializeModularArcana();
   }
 
   /**
@@ -92,15 +92,18 @@ export class ModularLiberArcanae {
    */
   private initializeModularArcana(): void {
     // Major Arcana (22 cards)
-      this.majorArcana = this.createMajorArcana()
-      for (let arcana of this.majorArcana) {
-        this.arcanaModules.set(arcana.name, arcana)
-      }
-    this.majorArcana.forEach((arcana) => {
+    this.majorArcana = this.createMajorArcana();
+    for (let arcana of this.majorArcana) {
       this.arcanaModules.set(arcana.name, arcana);
-    });
-    
+    }
     // Minor Arcana (56 cards)
+    // ...existing code...
+  }
+
+  /**
+   * Create the 22 Major Arcana modules
+   */
+  private createMajorArcana(): ArcanaeModule[] {
     const majorArcana: ArcanaeModule[] = [];
     // The Fool
     majorArcana.push({
@@ -242,154 +245,56 @@ export class ModularLiberArcanae {
     for (let arcana of majorArcana) {
       if (!arcana.p5Visualization) {
         arcana.p5Visualization = (p: p5) => {
-          p.background(0, 0, 20, 30)
-          p.push()
-          p.translate(0, 0, -100)
-          p.fill('#FFD700')
-          p.noStroke()
-          p.sphere(60)
-          p.pop()
-          this.drawModuleInterface(p, `${arcana.name} - Universal Archetype`)
-        }
+          p.background(0, 0, 20, 30);
+          p.push();
+          p.translate(0, 0, -100);
+          p.fill('#FFD700');
+          p.noStroke();
+          p.sphere(60);
+          p.pop();
+          this.drawModuleInterface(p, `${arcana.name} - Universal Archetype`);
+        };
       }
       if (!arcana.soundscape) {
-        arcana.soundscape = () => [] // Silence or default soundscape
+        arcana.soundscape = () => [];
       }
     }
     return majorArcana;
-              p.background(0, 0, 20, 30)
-              p.push()
-              p.translate(0, 0, -100)
-              p.fill('#FFD700')
-              p.noStroke()
-              p.sphere(60)
-              p.pop()
-              this.drawModuleInterface(p, `${arcana.name} - Universal Archetype`)
-            }
-          }
-          if (!arcana.soundscape) {
-            arcana.soundscape = () => [] // Silence or default soundscape
-          }
-        }
-        return majorArcana
-        artStyles: [
-          {
-            name: 'Manifestation Engine',
-            description: 'Raw creative energy taking form',
-            techniques: ['energy_fields', 'materialization_effects', 'sacred_symbols'],
-            colorPalette: ['#FF6347', '#FFD700', '#8A2BE2'],
-            influences: ['Ernst Fuchs alchemical imagery', 'Alex Grey energy anatomy']
-          }
-        ],
-        p5Visualization: this.createMagicianVisualization,
-        soundscape: this.createMagicianSoundscape,
-        exportPSD: this.createMagicianPSD,
-        exportSVG: this.createMagicianSVG,
-        export3D: this.createMagician3D,
-        exportGameAssets: this.createMagicianGameAssets
-      },
-      
-      {
-        id: 2,
-        name: 'High Priestess',
-        element: 'water',
-        keywords: ['intuition', 'mystery', 'sacred feminine', 'inner knowing'],
-        colors: ['#4169E1', '#8FBC8F', '#DDA0DD', '#E6E6FA'],
-        frequencies: [396, 417],
-        codexNodes: [3, 24, 45, 67, 89, 111, 133, 142],
-        sacredGeometry: 'crescent_moon',
-        datasets: [
-          {
-            source: 'Lunar Phase Data',
-            type: 'nasa',
-            endpoint: 'https://api.nasa.gov/planetary/lunar-phase',
-            live: true,
-            artApplications: ['lunar-cycles', 'feminine-rhythms', 'tidal-patterns']
-          },
-          {
-            source: 'Ocean Current Data',
-            type: 'scientific',
-            live: true,
-            artApplications: ['flowing-patterns', 'intuitive-currents', 'deep-mysteries']
-          }
-        ],
-        artStyles: [
-          {
-            name: 'Sacred Feminine Flow',
-            description: 'Intuitive waters of deep knowing',
-            techniques: ['fluid_dynamics', 'moon_phases', 'sacred_veils'],
-            colorPalette: ['#4169E1', '#8FBC8F', '#DDA0DD'],
-            influences: ['Emma Kunz geometric healing', 'Dion Fortune mystical traditions']
-          }
-        ],
-        p5Visualization: this.createHighPriestessVisualization,
-        soundscape: this.createHighPriestessSoundscape,
-        exportPSD: this.createHighPriestessPSD,
-        exportSVG: this.createHighPriestessSVG,
-        export3D: this.createHighPriestess3D,
-        exportGameAssets: this.createHighPriestessGameAssets
-      }
-      
-      // ... Continue with all 22 Major Arcana
-      // Fallback for any missing visualizations or soundscapes
-  for (let arcana of this.majorArcana) {
-    // ...existing code...
-  }
-        if (!arcana.p5Visualization) {
-          arcana.p5Visualization = (p: p5) => {
-            p.background(0, 0, 20, 30)
-            p.push()
-            p.translate(0, 0, -100)
-            p.fill('#FFD700')
-            p.noStroke()
-            p.sphere(60)
-            p.pop()
-            this.drawModuleInterface(p, `${arcana.name} - Universal Archetype`)
-          }
-        }
-        if (!arcana.soundscape) {
-          arcana.soundscape = () => [] // Silence or default soundscape
-        }
-      }
-  // ...existing code...
   }
 
   /**
    * Create the 56 Minor Arcana modules
    */
   private createMinorArcana(): ArcanaeModule[] {
-    const suits = ['Wands', 'Cups', 'Swords', 'Pentacles']
-    const elements = ['fire', 'water', 'air', 'earth']
-    const minorArcana: ArcanaeModule[] = []
-    
-    suits.forEach((suit, suitIndex) => {
-      const element = elements[suitIndex]
-      
+    const suits = ['Wands', 'Cups', 'Swords', 'Pentacles'];
+    const elements = ['fire', 'water', 'air', 'earth'];
+    const minorArcana: ArcanaeModule[] = [];
+    for (let suitIndex = 0; suitIndex < suits.length; suitIndex++) {
+      const suit = suits[suitIndex];
+      const element = elements[suitIndex];
       // Ace through 10
       for (let i = 1; i <= 10; i++) {
-        minorArcana.push(this.createMinorArcanaCard(suit, element, i))
+        minorArcana.push(this.createMinorArcanaCard(suit, element, i));
       }
-      
       // Court Cards
-      const courtCards = ['Page', 'Knight', 'Queen', 'King']
-      courtCards.forEach((court, courtIndex) => {
-        minorArcana.push(this.createCourtCard(suit, element, court, courtIndex + 11))
-      })
-    })
-    
-    return minorArcana
+      const courtCards = ['Page', 'Knight', 'Queen', 'King'];
+      for (let courtIndex = 0; courtIndex < courtCards.length; courtIndex++) {
+        const court = courtCards[courtIndex];
+        minorArcana.push(this.createCourtCard(suit, element, court, courtIndex + 11));
+      }
+    }
+    return minorArcana;
   }
 
   /**
    * Create a Minor Arcana card module
    */
   private createMinorArcanaCard(suit: string, element: string, number: number): ArcanaeModule {
-    const baseId = 22 + (this.getSuitIndex(suit) * 14) + number - 1
-    
+    const baseId = 22 + (this.getSuitIndex(suit) * 14) + number - 1;
     return {
       id: baseId,
       name: `${number} of ${suit}`,
-      element,
+      element: element,
       keywords: this.getMinorArcanaKeywords(suit, number),
       colors: this.getSuitColors(suit),
       frequencies: this.getMinorArcanaFrequencies(number),
@@ -403,7 +308,7 @@ export class ModularLiberArcanae {
       exportSVG: () => this.createMinorArcanaSVG(suit, number),
       export3D: () => this.createMinorArcana3D(suit, number),
       exportGameAssets: () => this.createMinorArcanaGameAssets(suit, number)
-    }
+    };
   }
 
   // =============================================================================
@@ -414,54 +319,52 @@ export class ModularLiberArcanae {
    * Mount modular system to p5.js canvas
    */
   mountToP5(containerId: string): void {
-    const container = document.getElementById(containerId)
+    const container = document.getElementById(containerId);
     if (!container) {
-      console.warn(`Container ${containerId} not found`)
-      return
+      console.warn(`Container ${containerId} not found`);
+      return;
     }
 
     const sketch = (p: p5) => {
-      p.setup = () => this.p5Setup(p)
-      p.draw = () => this.p5Draw(p)
-      p.mousePressed = () => this.p5MousePressed(p)
-      p.keyPressed = () => this.p5KeyPressed(p)
-    }
+      p.setup = () => this.p5Setup(p);
+      p.draw = () => this.p5Draw(p);
+      p.mousePressed = () => this.p5MousePressed(p);
+      p.keyPressed = () => this.p5KeyPressed(p);
+    };
 
-      this.p5Instance = new (p5 as any)(sketch, container)
+    this.p5Instance = new (p5 as any)(sketch, container);
   }
 
   private p5Setup(p: p5): void {
-    const canvas = p.createCanvas(800, 600, p.WEBGL)
-    p.colorMode(p.HSB, 360, 100, 100, 100)
-    
-    // Start with The Fool by default
-    this.activateModule('The Fool')
-    
-    console.log('🎨 Modular Liber Arcanae p5.js integration ready')
+  const canvas = p.createCanvas(800, 600, p.WEBGL);
+  p.colorMode(p.HSB, 360, 100, 100, 100);
+  // Start with The Fool by default
+  this.activateModule('The Fool');
+  console.log('🎨 Modular Liber Arcanae p5.js integration ready');
   }
 
   private p5Draw(p: p5): void {
     if (this.activeModule && this.activeModule.p5Visualization) {
-      this.activeModule.p5Visualization(p)
+      this.activeModule.p5Visualization(p);
     } else {
       // Default cosmic background
-      p.background(0, 0, 10)
-      this.drawCosmicBackground(p)
+      p.background(0, 0, 10);
+      this.drawCosmicBackground(p);
     }
   }
 
   private p5MousePressed(p: p5): void {
     // Cycle through arcana on mouse press
-    const arcanaNames = Array.from(this.arcanaModules.keys())
-    const currentIndex = arcanaNames.indexOf(this.activeModule?.name || '')
-    const nextIndex = (currentIndex + 1) % arcanaNames.length
-    this.activateModule(arcanaNames[nextIndex])
+  const arcanaNames = Array.from(this.arcanaModules.keys());
+  const currentIndex = arcanaNames.indexOf(this.activeModule?.name || '');
+  const nextIndex = (currentIndex + 1) % arcanaNames.length;
+  this.activateModule(arcanaNames[nextIndex]);
   }
 
   private p5KeyPressed(p: p5): void {
     if (p.key === 's' || p.key === 'S') {
       // Save current visualization
-      p.save(`${this.activeModule?.name.replace(/\s+/g, '-')}-${Date.now()}.png`)
+      p.save(`${this.activeModule?.name.replace(/\s+/g, '-')}-${Date.now()}.png`);
     }
   }
 
@@ -470,134 +373,103 @@ export class ModularLiberArcanae {
   // =============================================================================
 
   private createFoolVisualization = (p: p5): void => {
-    p.background(0, 0, 10, 20) // Trailing effect
-    
-    p.push()
-    p.translate(0, 0, -200)
-    p.rotateY(p.frameCount * 0.01)
-    
+    p.background(0, 0, 10, 20); // Trailing effect
+    p.push();
+    p.translate(0, 0, -200);
+    p.rotateY(p.frameCount * 0.01);
     // Infinite spiral
-    const colors = ['#FFE4B5', '#F0E68C', '#DDA0DD', '#87CEEB']
-    
+    const colors = ['#FFE4B5', '#F0E68C', '#DDA0DD', '#87CEEB'];
     for (let i = 0; i < 200; i++) {
-      const angle = i * 0.1 + p.frameCount * 0.02
-      const radius = i * 2
-      const z = Math.sin(i * 0.05 + p.frameCount * 0.01) * 50
-      
-      p.push()
+      const angle = i * 0.1 + p.frameCount * 0.02;
+      const radius = i * 2;
+      const z = Math.sin(i * 0.05 + p.frameCount * 0.01) * 50;
+      p.push();
       p.translate(
         Math.cos(angle) * radius,
         Math.sin(angle) * radius,
         z
-      )
-      
-      const colorIndex = i % colors.length
-      const color = chroma(colors[colorIndex]).alpha(0.7).hex()
-      p.fill(color)
-      p.noStroke()
-      
-      const size = 5 + Math.sin(i * 0.1 + p.frameCount * 0.02) * 3
-      p.sphere(size)
-      
-      p.pop()
+      );
+      const colorIndex = i % colors.length;
+      const color = chroma(colors[colorIndex]).alpha(0.7).hex();
+      p.fill(color);
+      p.noStroke();
+      const size = 5 + Math.sin(i * 0.1 + p.frameCount * 0.02) * 3;
+      p.sphere(size);
+      p.pop();
     }
-    
-    p.pop()
-    
+    p.pop();
     // UI Overlay
-    this.drawModuleInterface(p, 'The Fool - Infinite Potential')
-  }
+    this.drawModuleInterface(p, 'The Fool - Infinite Potential');
+  };
 
   private createMagicianVisualization = (p: p5): void => {
-    p.background(0, 0, 15, 30)
-    
-    p.push()
-    p.translate(0, 0, -100)
-    
+    p.background(0, 0, 15, 30);
+    p.push();
+    p.translate(0, 0, -100);
     // Vesica Piscis energy field
-    const colors = ['#FF6347', '#FFD700', '#8A2BE2', '#4B0082']
-    
+    const colors = ['#FF6347', '#FFD700', '#8A2BE2', '#4B0082'];
     // Draw two intersecting energy spheres
     for (let i = 0; i < 2; i++) {
-      p.push()
-      p.translate(i === 0 ? -100 : 100, 0, 0)
-      
+      p.push();
+      p.translate(i === 0 ? -100 : 100, 0, 0);
       // Rotating energy field
-      p.rotateY(p.frameCount * 0.02 * (i === 0 ? 1 : -1))
-      
-      const color = chroma(colors[i * 2]).alpha(0.6).hex()
-      p.fill(color)
-      p.noStroke()
-      
+      p.rotateY(p.frameCount * 0.02 * (i === 0 ? 1 : -1));
+      const color = chroma(colors[i * 2]).alpha(0.6).hex();
+      p.fill(color);
+      p.noStroke();
       // Pulsating sphere
-      const size = 80 + Math.sin(p.frameCount * 0.03) * 20
-      p.sphere(size)
-      
-      p.pop()
+      const size = 80 + Math.sin(p.frameCount * 0.03) * 20;
+      p.sphere(size);
+      p.pop();
     }
-    
     // Energy connections
-    p.stroke(colors[1])
-    p.strokeWeight(2)
-    p.line(-100, 0, 0, 100, 0, 0)
-    
-    p.pop()
-    
-    this.drawModuleInterface(p, 'The Magician - Manifestation Engine')
-  }
+    p.stroke(colors[1]);
+    p.strokeWeight(2);
+    p.line(-100, 0, 0, 100, 0, 0);
+    p.pop();
+    this.drawModuleInterface(p, 'The Magician - Manifestation Engine');
+  };
 
   private createHighPriestessVisualization = (p: p5): void => {
-    p.background(240, 30, 20, 40) // Deep blue
-    
-    p.push()
-    p.translate(0, 0, -150)
-    
+    p.background(240, 30, 20, 40); // Deep blue
+    p.push();
+    p.translate(0, 0, -150);
     // Lunar phases and flowing water
-    const colors = ['#4169E1', '#8FBC8F', '#DDA0DD', '#E6E6FA']
-    
+    const colors = ['#4169E1', '#8FBC8F', '#DDA0DD', '#E6E6FA'];
     // Moon phases
     for (let phase = 0; phase < 8; phase++) {
-      const angle = (phase / 8) * Math.PI * 2
-      const radius = 200
-      
-      p.push()
+      const angle = (phase / 8) * Math.PI * 2;
+      const radius = 200;
+      p.push();
       p.translate(
         Math.cos(angle) * radius,
         Math.sin(angle) * radius,
         0
-      )
-      
-      const moonPhase = (p.frameCount * 0.01 + phase * 0.2) % (Math.PI * 2)
-      const brightness = (Math.sin(moonPhase) + 1) * 0.5
-      
-      const color = chroma(colors[phase % colors.length]).alpha(brightness).hex()
-      p.fill(color)
-      p.noStroke()
-      
-      p.sphere(20)
-      
-      p.pop()
+      );
+      const moonPhase = (p.frameCount * 0.01 + phase * 0.2) % (Math.PI * 2);
+      const brightness = (Math.sin(moonPhase) + 1) * 0.5;
+      const color = chroma(colors[phase % colors.length]).alpha(brightness).hex();
+      p.fill(color);
+      p.noStroke();
+      p.sphere(20);
+      p.pop();
     }
-    
     // Flowing water effect
-    p.stroke(colors[1])
-    p.strokeWeight(1)
-    p.noFill()
-    
+    p.stroke(colors[1]);
+    p.strokeWeight(1);
+    p.noFill();
     for (let wave = 0; wave < 50; wave++) {
-      p.beginShape()
+      p.beginShape();
       for (let x = -400; x <= 400; x += 20) {
-        const y = Math.sin((x + wave * 10 + p.frameCount) * 0.01) * 30
-        const z = Math.cos((x + wave * 15 + p.frameCount * 0.5) * 0.008) * 20
-        p.vertex(x, y + wave * 5 - 200, z)
+        const y = Math.sin((x + wave * 10 + p.frameCount) * 0.01) * 30;
+        const z = Math.cos((x + wave * 15 + p.frameCount * 0.5) * 0.008) * 20;
+        p.vertex(x, y + wave * 5 - 200, z);
       }
-      p.endShape()
+      p.endShape();
     }
-    
-    p.pop()
-    
-    this.drawModuleInterface(p, 'High Priestess - Sacred Intuition')
-  }
+    p.pop();
+    this.drawModuleInterface(p, 'High Priestess - Sacred Intuition');
+  };
 
   // =============================================================================
   // UTILITY METHODS
@@ -842,23 +714,23 @@ export class ModularLiberArcanae {
   }
 
   // Placeholder methods for Major Arcana implementations
-  private createFoolSoundscape(): Tone.Player[] { return [] }
-  private createFoolPSD(): LayeredArtwork { return { layers: [], dimensions: { width: 0, height: 0, dpi: 0 }, colorProfile: '' } }
-  private createFoolSVG(): VectorArtwork { return {} as VectorArtwork }
-  private createFool3D(): ThreeDModel { return {} as ThreeDModel }
-  private createFoolGameAssets(): GameAssetBundle { return { sprites: [], animations: [], audio: [], data: {} as GameData } }
+  public createFoolSoundscape(): Tone.Player[] { return [] }
+  public createFoolPSD(): LayeredArtwork { return { layers: [], dimensions: { width: 0, height: 0, dpi: 0 }, colorProfile: '' } }
+  public createFoolSVG(): VectorArtwork { return {} as VectorArtwork }
+  public createFool3D(): ThreeDModel { return {} as ThreeDModel }
+  public createFoolGameAssets(): GameAssetBundle { return { sprites: [], animations: [], audio: [], data: {} as GameData } }
 
-  private createMagicianSoundscape(): Tone.Player[] { return [] }
-  private createMagicianPSD(): LayeredArtwork { return { layers: [], dimensions: { width: 0, height: 0, dpi: 0 }, colorProfile: '' } }
-  private createMagicianSVG(): VectorArtwork { return {} as VectorArtwork }
-  private createMagician3D(): ThreeDModel { return {} as ThreeDModel }
-  private createMagicianGameAssets(): GameAssetBundle { return { sprites: [], animations: [], audio: [], data: {} as GameData } }
+  public createMagicianSoundscape(): Tone.Player[] { return [] }
+  public createMagicianPSD(): LayeredArtwork { return { layers: [], dimensions: { width: 0, height: 0, dpi: 0 }, colorProfile: '' } }
+  public createMagicianSVG(): VectorArtwork { return {} as VectorArtwork }
+  public createMagician3D(): ThreeDModel { return {} as ThreeDModel }
+  public createMagicianGameAssets(): GameAssetBundle { return { sprites: [], animations: [], audio: [], data: {} as GameData } }
 
-  private createHighPriestessSoundscape(): Tone.Player[] { return [] }
-  private createHighPriestessPSD(): LayeredArtwork { return { layers: [], dimensions: { width: 0, height: 0, dpi: 0 }, colorProfile: '' } }
-  private createHighPriestessSVG(): VectorArtwork { return {} as VectorArtwork }
-  private createHighPriestess3D(): ThreeDModel { return {} as ThreeDModel }
-  private createHighPriestessGameAssets(): GameAssetBundle { return { sprites: [], animations: [], audio: [], data: {} as GameData } }
+  public createHighPriestessSoundscape(): Tone.Player[] { return [] }
+  public createHighPriestessPSD(): LayeredArtwork { return { layers: [], dimensions: { width: 0, height: 0, dpi: 0 }, colorProfile: '' } }
+  public createHighPriestessSVG(): VectorArtwork { return {} as VectorArtwork }
+  public createHighPriestess3D(): ThreeDModel { return {} as ThreeDModel }
+  public createHighPriestessGameAssets(): GameAssetBundle { return { sprites: [], animations: [], audio: [], data: {} as GameData } }
 }
 
 // =============================================================================
